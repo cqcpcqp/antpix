@@ -1,0 +1,24 @@
+{
+  "name": "antpix",
+  "version": "0.1.0",
+  "private": true,
+  "description": "生态蚂蚁窝 · 微信小游戏",
+  "uuid": "9f5b4c3e-17b6-4dfa-8311-ae0b9c7f7820",
+  "creator": {
+    "version": "3.8.8"
+  },
+  "scripts": {
+    "check": "npm run prepare:cloud && npm test && npm run typecheck && npm run check:ui",
+    "prepare:cloud": "node --experimental-strip-types scripts/prepare-cloud.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "build:wechat": "node scripts/build.mjs",
+    "typecheck": "node scripts/typecheck.mjs",
+    "check:ui": "node scripts/check-font-coverage.cjs && node scripts/check-ui.cjs && node scripts/check-container-launch.cjs && node scripts/check-predictive-dispatch.cjs && node scripts/check-level-picker.cjs",
+    "check:built": "node scripts/check-built.cjs && CHECK_BUILT=1 node scripts/check-ui.cjs",
+    "generate:containers": "node --experimental-strip-types scripts/generate-container-plans.mjs",
+    "bench:animation": "ANT_ATLAS=1 node scripts/bench-animation.cjs",
+    "bench:dispatch": "node scripts/bench-dispatch.cjs",
+    "generate:ants": "node scripts/generate-ant-atlas.cjs",
+    "preversion": "npm run check"
+  }
+}

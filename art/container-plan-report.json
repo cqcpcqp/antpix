@@ -1,0 +1,2502 @@
+[
+  {
+    "id": "penguin-sailor",
+    "name": "企鹅船长",
+    "sourceHash": "267f36481232f0ffe218df6d6df30fcec8759ad01a7b48aaa048a7bd38d60557",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 22,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 87,
+        "stages": 22,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 85,
+        "stages": 22,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "berry-basket",
+    "name": "野餐莓果篮",
+    "sourceHash": "e8ee36bcc81aac05ae9bd334d45280d95b8fcd4d63a7d769fcb089e6e769813a",
+    "variants": [
+      {
+        "containers": 82,
+        "stages": 22,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 82,
+        "stages": 21,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 82,
+        "stages": 22,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "seaside-seal",
+    "name": "海边小海豹",
+    "sourceHash": "7220e43d4f3a7930b04d6c0b99a58faf4c70bc0a55589c0050a9f48ba0da3952",
+    "variants": [
+      {
+        "containers": 83,
+        "stages": 20,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 83,
+        "stages": 20,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 83,
+        "stages": 20,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "rainy-day",
+    "name": "雨天小步舞",
+    "sourceHash": "3c3f59f8d2931fe839d1cb4eace89d73794ed86fe247141826aac811e4f12c97",
+    "variants": [
+      {
+        "containers": 88,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 38
+      },
+      {
+        "containers": 88,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 86,
+        "stages": 21,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "corgi-garden",
+    "name": "花园柯基",
+    "sourceHash": "903b2860dd35ddbd7f0eacc0a0e7afdd7ca8495003099f2818bf5b4041b55034",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 84,
+        "stages": 20,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "little-gardener",
+    "name": "小小园丁",
+    "sourceHash": "90956c87300410ac502f3b2c0bdd8b3f52fe113c2ffa36675fe5b8181ab8164f",
+    "variants": [
+      {
+        "containers": 89,
+        "stages": 27,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 27,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 86,
+        "stages": 25,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "lemon-teapot",
+    "name": "柠檬茶时光",
+    "sourceHash": "8b2f470c7b196c698a32b97b373734433d752678d38bd19b4668f764d8072da7",
+    "variants": [
+      {
+        "containers": 89,
+        "stages": 29,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 29,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "baker-morning",
+    "name": "面包师的早晨",
+    "sourceHash": "9fda819ef5d4ad73998c736eedd6a59de852f431a8babc80eb9baa4d80e3fc9d",
+    "variants": [
+      {
+        "containers": 91,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 88,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 88,
+        "stages": 33,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "red-panda",
+    "name": "竹林小熊猫",
+    "sourceHash": "5cd8fdb48d8bf150d813f35a896079dbde84d7b7a107c14e195e98786dd98609",
+    "variants": [
+      {
+        "containers": 86,
+        "stages": 26,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 86,
+        "stages": 26,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 28,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "flower-bicycle",
+    "name": "花篮单车",
+    "sourceHash": "78f0bf76531ade8b4cd0c93bffb905f48772a3a7a9b6ccaa6368056783bfbabd",
+    "variants": [
+      {
+        "containers": 94,
+        "stages": 43,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 95,
+        "stages": 46,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 93,
+        "stages": 43,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "otter-shell",
+    "name": "抱贝壳的海獭",
+    "sourceHash": "9f4feb965334a2a701f56b0f95c00d26600f39116d8e9a009e7d417526989367",
+    "variants": [
+      {
+        "containers": 84,
+        "stages": 22,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 85,
+        "stages": 24,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 83,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "fruit-picnic",
+    "name": "果香野餐",
+    "sourceHash": "e5e776e133c48ca46423a1d8818e952eeb9870677ffb7ff30c59be0467af7166",
+    "variants": [
+      {
+        "containers": 86,
+        "stages": 25,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 25,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 86,
+        "stages": 26,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "kite-child",
+    "name": "追风筝的孩子",
+    "sourceHash": "edd19156926ef602631b73bf61b3fae9892a503fbd9f2c757dc47e7519195e4a",
+    "variants": [
+      {
+        "containers": 85,
+        "stages": 23,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 85,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 85,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "sleepy-fox",
+    "name": "树下小狐狸",
+    "sourceHash": "109c9d4f8e83a206177ab537e5a63e923dbd7169d29470db36e3eaac31958e21",
+    "variants": [
+      {
+        "containers": 81,
+        "stages": 19,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 81,
+        "stages": 19,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 83,
+        "stages": 20,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "rain-boots",
+    "name": "雨后小水洼",
+    "sourceHash": "3b3827a4b49140d9aff5b669587a1f67b80928b7ff39c4430cdf419947f2cb8e",
+    "variants": [
+      {
+        "containers": 83,
+        "stages": 20,
+        "minCapacity": 4,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 83,
+        "stages": 20,
+        "minCapacity": 4,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 83,
+        "stages": 20,
+        "minCapacity": 4,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "flower-florist",
+    "name": "小小花艺师",
+    "sourceHash": "927ee671c8c3742b7bcd88244ea14e26c4d0dac6d064eaa4a27475d4e9cdb887",
+    "variants": [
+      {
+        "containers": 90,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 88,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "panda-bamboo",
+    "name": "竹笋午餐",
+    "sourceHash": "4fd19561b9ea8785af2012ee7ba8a02dbce5b6b7c008af930bdca40f024ec4b6",
+    "variants": [
+      {
+        "containers": 88,
+        "stages": 28,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 85,
+        "stages": 24,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 86,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "strawberry-cake",
+    "name": "草莓蛋糕",
+    "sourceHash": "49a3af011cbecc3ec417272b300eb62f8777ed0a2152c08b45e1ac530a9e2822",
+    "variants": [
+      {
+        "containers": 89,
+        "stages": 27,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 85,
+        "stages": 25,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 86,
+        "stages": 24,
+        "minCapacity": 9,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "sailor-child",
+    "name": "小水手出航",
+    "sourceHash": "581a4eb22f6c1753c08f05c2847837c6d0d57a1ba0175f43d6b49c14f37eacd7",
+    "variants": [
+      {
+        "containers": 85,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 85,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 84,
+        "stages": 22,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "snail-leaf",
+    "name": "绿叶上的蜗牛",
+    "sourceHash": "41d8cba0131515745e80f6c1de872d54b7463fd84a9e523f8d87b347306b1421",
+    "variants": [
+      {
+        "containers": 79,
+        "stages": 15,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 80,
+        "stages": 15,
+        "minCapacity": 8,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 80,
+        "stages": 15,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "camping-lantern",
+    "name": "露营灯火",
+    "sourceHash": "06cde14e7f7b427b6407e6f3b3a012d6a0f6557e1dd2c4f8c9a78e0687084cee",
+    "variants": [
+      {
+        "containers": 89,
+        "stages": 29,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 85,
+        "stages": 26,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 88,
+        "stages": 24,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "mushroom-picker",
+    "name": "蘑菇采集员",
+    "sourceHash": "e8e2a377ba44ed3c9974b0a5209dad62f7ac7be2d6eeaf19664c5ca7f3bd98cd",
+    "variants": [
+      {
+        "containers": 92,
+        "stages": 33,
+        "minCapacity": 2,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 89,
+        "stages": 32,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 94,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "koala-branch",
+    "name": "树枝上的考拉",
+    "sourceHash": "9ebc7e0f241fac0214fc8c50a302cca207a39b4bdff9a36d6f16417239ba36f3",
+    "variants": [
+      {
+        "containers": 82,
+        "stages": 18,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 82,
+        "stages": 18,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 82,
+        "stages": 18,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "cherry-jam",
+    "name": "樱桃果酱",
+    "sourceHash": "4d3a1e8eb0553017ed69e0df0cfc91ac13a17dfd67a1f7cc78292f1d7b182093",
+    "variants": [
+      {
+        "containers": 86,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 86,
+        "stages": 23,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 24,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "young-painter",
+    "name": "小画家的调色盘",
+    "sourceHash": "36403d0f5d208b2e5c266f8834c32ef6b208c756a14f99e03aadc22c39638506",
+    "variants": [
+      {
+        "containers": 93,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 94,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "duck-pond",
+    "name": "小鸭游春",
+    "sourceHash": "6ebb82bc40d0086184a26aa750940629a3db81cbfcf2e8c83b18c260ccc60261",
+    "variants": [
+      {
+        "containers": 79,
+        "stages": 14,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 79,
+        "stages": 14,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 79,
+        "stages": 14,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "toy-train",
+    "name": "积木小火车",
+    "sourceHash": "460f3bb4e7220898b80565383672b761efd7b51ac52c141da7ca1cbcafaad9cf",
+    "variants": [
+      {
+        "containers": 88,
+        "stages": 25,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 88,
+        "stages": 25,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 85,
+        "stages": 20,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "sunflower-girl",
+    "name": "向日葵女孩",
+    "sourceHash": "dd943a5a120f42dee1bc81a9c84c094dd34fe6623ca098379e8fd32596898dca",
+    "variants": [
+      {
+        "containers": 89,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 90,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 91,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "hamster-seed",
+    "name": "仓鼠的瓜子",
+    "sourceHash": "b19ce27910a98603a8427937035807a2a7c633d44ad49e87e2c9f46c2c3d6c96",
+    "variants": [
+      {
+        "containers": 80,
+        "stages": 17,
+        "minCapacity": 6,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 80,
+        "stages": 17,
+        "minCapacity": 4,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 80,
+        "stages": 17,
+        "minCapacity": 6,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "lemonade-pitcher",
+    "name": "清凉柠檬水",
+    "sourceHash": "74d485d810849d1c4f7840d7f621c7814755eb43229fc9d20ad9b7afb4b7b18f",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 27,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 27,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 27,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "reading-child",
+    "name": "窗边读书",
+    "sourceHash": "23c3922ada8bb495f5198b747dd1fe02a44fbc312f1a684aac173197e7de3f06",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 28,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 28,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 30,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "alpaca-meadow",
+    "name": "草地羊驼",
+    "sourceHash": "ac7ecdc8622813797364bc4e754d61602597e98e1e798e2815c00ee55786bf87",
+    "variants": [
+      {
+        "containers": 90,
+        "stages": 27,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 85,
+        "stages": 25,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 25,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "ceramic-pots",
+    "name": "陶罐与绿叶",
+    "sourceHash": "eb7a215754bf71bbaed7002571cef5eba948b329ad78c4750cfa58bac1795b1e",
+    "variants": [
+      {
+        "containers": 97,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 97,
+        "stages": 40,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 99,
+        "stages": 41,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "potter-wheel",
+    "name": "转动的陶轮",
+    "sourceHash": "c86686b334a84873f90f3ed80a57f865de40c03fc87799a8cffd081563c3c55b",
+    "variants": [
+      {
+        "containers": 93,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "hedgehog-apple",
+    "name": "刺猬与苹果",
+    "sourceHash": "006ba942334cda526a0cce4856c8ee326efe97eaa370b0b65af10794abe077fe",
+    "variants": [
+      {
+        "containers": 90,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 28,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "hot-air-balloon",
+    "name": "彩色热气球",
+    "sourceHash": "7c638d800fa452ec9e61ef2a7ec341f714593ada7a83fb4bc38b0ce52c884255",
+    "variants": [
+      {
+        "containers": 97,
+        "stages": 43,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 100,
+        "stages": 46,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 98,
+        "stages": 47,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "fishing-grandpa",
+    "name": "溪边垂钓",
+    "sourceHash": "959a429f638767c59a58855eb8facc15ca736dfde9a58ad71dd87b22fe4e558f",
+    "variants": [
+      {
+        "containers": 92,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 90,
+        "stages": 33,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "parrot-mango",
+    "name": "鹦鹉与芒果",
+    "sourceHash": "4780329c057bed0cdfca12b9172bafb3e983e0e127f30b89c6cbe6a80e8ddc6e",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 26,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 87,
+        "stages": 26,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 87,
+        "stages": 26,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "sewing-basket",
+    "name": "缝纫篮",
+    "sourceHash": "5156aa075be75cbebe7e7aaf6187ac6ea56a50a87101f1b011fb205fdfd1bb80",
+    "variants": [
+      {
+        "containers": 96,
+        "stages": 42,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 90,
+        "stages": 37,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 93,
+        "stages": 37,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "icecream-vendor",
+    "name": "冰淇淋小摊",
+    "sourceHash": "52cb722cf72534b55cf8339d49cf8c38be21b2db76cfb092993ea02d90fb2c0d",
+    "variants": [
+      {
+        "containers": 91,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 27,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "rabbit-carrot",
+    "name": "兔子的菜园",
+    "sourceHash": "a56755845a3bc36a3d007431e40d9e62d1110b6de058cb34cf735ee8ee2dd907",
+    "variants": [
+      {
+        "containers": 92,
+        "stages": 33,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 91,
+        "stages": 33,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "retro-camera",
+    "name": "旅行相机",
+    "sourceHash": "4ad306d565ac2f2cab4b7d142f8d370682e0846dccbc130514503a6f04d74c84",
+    "variants": [
+      {
+        "containers": 95,
+        "stages": 40,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 96,
+        "stages": 40,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 98,
+        "stages": 41,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "violin-player",
+    "name": "林间小提琴",
+    "sourceHash": "dc60bcfb9bde80831e6af337bf33ef5d3b94f59e6b4543cc18363499b77cdadf",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 31,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 32,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 90,
+        "stages": 33,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "sea-turtle",
+    "name": "珊瑚海龟",
+    "sourceHash": "52c83f9ce8d9446eb4d7ce4f7f32cd74f9256926dca40eb278a59a8d65cccde1",
+    "variants": [
+      {
+        "containers": 85,
+        "stages": 23,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 25,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 25,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "breakfast-tray",
+    "name": "阳光早餐盘",
+    "sourceHash": "0eff18fef37c7a9cd987d0e0f16fa69e4ac1a8a7b960add509a0b23683053b3a",
+    "variants": [
+      {
+        "containers": 94,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 90,
+        "stages": 40,
+        "minCapacity": 4,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 96,
+        "stages": 44,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "astronaut-garden",
+    "name": "太空小园丁",
+    "sourceHash": "9bab225bf6aacd79cb938f5630dba6a013cc37f7eef50d04815687e2217344bb",
+    "variants": [
+      {
+        "containers": 92,
+        "stages": 37,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "chipmunk-acorn",
+    "name": "花栗鼠的橡果",
+    "sourceHash": "bd0e1da8ecad4d270f706e2447ac94b0a8d2c7c37e400013e4e662c23bc92692",
+    "variants": [
+      {
+        "containers": 93,
+        "stages": 37,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 99,
+        "stages": 44,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 97,
+        "stages": 42,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "paper-lighthouse",
+    "name": "桌上的灯塔",
+    "sourceHash": "87c149ba57a33441343566a4cb1b10ad8c0cbbc12ee753fb62eb2a2d79181cd5",
+    "variants": [
+      {
+        "containers": 95,
+        "stages": 43,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 95,
+        "stages": 43,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 96,
+        "stages": 43,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "ballet-dancer",
+    "name": "花园舞步",
+    "sourceHash": "99ae64597816efad8fc8ab7907734fe41f83406e087f30dc695dab6b2df2413d",
+    "variants": [
+      {
+        "containers": 92,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 38
+      },
+      {
+        "containers": 94,
+        "stages": 31,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 94,
+        "stages": 33,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "beaver-dam",
+    "name": "海狸的小木屋",
+    "sourceHash": "099e3fa85d4c82076714c7ca2fd709b2e697da83644ed2927f08f07aedaa15ce",
+    "variants": [
+      {
+        "containers": 88,
+        "stages": 29,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 33,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 88,
+        "stages": 29,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "spice-kitchen",
+    "name": "厨房香料罐",
+    "sourceHash": "1d67d84b78b902cb5a3c640be29079027fbc117ce583fde6f19ed23c1224f5a9",
+    "variants": [
+      {
+        "containers": 91,
+        "stages": 41,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 93,
+        "stages": 41,
+        "minCapacity": 5,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 41,
+        "minCapacity": 7,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "snowman-builder",
+    "name": "一起堆雪人",
+    "sourceHash": "37f70d075b0e0962f02f0fa8a57bf9b7d1269a1904950b27d490507cb3ecf34e",
+    "variants": [
+      {
+        "containers": 88,
+        "stages": 29,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 32,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 93,
+        "stages": 32,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "flamingo-lagoon",
+    "name": "浅湾火烈鸟",
+    "sourceHash": "e9c55a3e229064de6d7daf68861b535f15472adda9b2bd47c8bf0ae3f86fa9ad",
+    "variants": [
+      {
+        "containers": 93,
+        "stages": 34,
+        "minCapacity": 2,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 94,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 93,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "music-box",
+    "name": "旋转音乐盒",
+    "sourceHash": "66ee826ff38f829851e110bc7f26e7a87a1a4a19d1414b3ca6ac53b8e95abdb6",
+    "variants": [
+      {
+        "containers": 92,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 90,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "mail-carrier",
+    "name": "骑车送信",
+    "sourceHash": "74f65b93edb4ef4e73df4c3edb8dc95dad076196bb8c1e5114db4ac8ead6d3b2",
+    "variants": [
+      {
+        "containers": 90,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 87,
+        "stages": 29,
+        "minCapacity": 4,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 90,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "raccoon-grapes",
+    "name": "浣熊摘葡萄",
+    "sourceHash": "03856afb5d33b5f21d4eaff1f0a117602b00d71e05b985b4c53f5d9e740a62de",
+    "variants": [
+      {
+        "containers": 95,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 96,
+        "stages": 38,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 94,
+        "stages": 38,
+        "minCapacity": 1,
+        "maxCapacity": 38
+      }
+    ]
+  },
+  {
+    "id": "sushi-lunch",
+    "name": "彩色便当",
+    "sourceHash": "8f23daadfd059a43304480a07770a03d766ac69ae1ce0b6002130cb639c0eafe",
+    "variants": [
+      {
+        "containers": 91,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 31,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "scarf-knitter",
+    "name": "织围巾的人",
+    "sourceHash": "002b56e546836b5cc430bc7d37383032b55cf5b712d0442f6bb2695935df8a19",
+    "variants": [
+      {
+        "containers": 94,
+        "stages": 41,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 95,
+        "stages": 40,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 95,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "puffin-cliff",
+    "name": "海鹦望海",
+    "sourceHash": "6c0575cefdb79022e15dafcb2c8e81eb9b1b285cf8bdcdb23237c4bfae70a37d",
+    "variants": [
+      {
+        "containers": 92,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 90,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "clay-whistle",
+    "name": "陶笛与花",
+    "sourceHash": "03672485d15f346934f8f557ed965a17ce960aa165958c78f3c13789594eed5b",
+    "variants": [
+      {
+        "containers": 92,
+        "stages": 38,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 36,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 95,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "bubble-child",
+    "name": "吹泡泡的孩子",
+    "sourceHash": "b3f88404cb7cf337beecb203fbdbe769faa88cd0b55a6971a585a7a9dd420330",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 22,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 22,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 86,
+        "stages": 21,
+        "minCapacity": 2,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "fawn-forest",
+    "name": "林间小鹿",
+    "sourceHash": "265769a50837a461bc574d5847131ab9b368e03a0610c06779765821041f291f",
+    "variants": [
+      {
+        "containers": 91,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 38
+      },
+      {
+        "containers": 93,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "teacup-succulent",
+    "name": "茶杯多肉",
+    "sourceHash": "ffee3698ab2b9a295ea160395d5dfbe1143f510d19bbc5de4e3f81055aa2b2fb",
+    "variants": [
+      {
+        "containers": 89,
+        "stages": 32,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 32,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 32,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "chef-pumpkin",
+    "name": "南瓜浓汤",
+    "sourceHash": "bbb0876b8879cc6c11925f98926cec2475af733bec967e9d7cace2bee9eaed64",
+    "variants": [
+      {
+        "containers": 96,
+        "stages": 39,
+        "minCapacity": 2,
+        "maxCapacity": 38
+      },
+      {
+        "containers": 96,
+        "stages": 41,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 99,
+        "stages": 47,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "owl-library",
+    "name": "书架上的猫头鹰",
+    "sourceHash": "2cbba3968443f9527c4fe150167d50d22ade1a76a0703f450c68fb3ade3be374",
+    "variants": [
+      {
+        "containers": 91,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "beach-bucket",
+    "name": "沙滩小城堡",
+    "sourceHash": "a1b0675a49a324ffb164d601ba29193003e72a0bc383b8a876e062e5d492ffe8",
+    "variants": [
+      {
+        "containers": 88,
+        "stages": 27,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 26,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 26,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "skater-autumn",
+    "name": "秋日滑板",
+    "sourceHash": "220fbaea1475402a9d5393a8d5d3eb341a17fb601a83ee6c6dced7f9ee578e14",
+    "variants": [
+      {
+        "containers": 89,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 89,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 86,
+        "stages": 30,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "capybara-orange",
+    "name": "水豚泡温泉",
+    "sourceHash": "736d6a0dfd8c00b0af5bf3cf4a4621a4ee825345cd1e52aea087fc8647671a94",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 87,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 88,
+        "stages": 32,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "woven-hat",
+    "name": "草帽与雏菊",
+    "sourceHash": "3cc6dee0c44fe1d56d77829261e385b1e96eb80b1b0291c614e9342d5ee2dd66",
+    "variants": [
+      {
+        "containers": 87,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 87,
+        "stages": 30,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 88,
+        "stages": 31,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "mountain-hiker",
+    "name": "山间远足",
+    "sourceHash": "cfc1a8b10e3892d8a425acfecf3fcee23bf61cd28d8a4e328f4daee86836579c",
+    "variants": [
+      {
+        "containers": 94,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "kingfisher-reed",
+    "name": "翠鸟停靠",
+    "sourceHash": "2671b3406cebfc85c6ae450333aee59340797c4d3396380e9c67722da1e2dee5",
+    "variants": [
+      {
+        "containers": 94,
+        "stages": 38,
+        "minCapacity": 3,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 97,
+        "stages": 40,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 96,
+        "stages": 38,
+        "minCapacity": 3,
+        "maxCapacity": 38
+      }
+    ]
+  },
+  {
+    "id": "terrarium-house",
+    "name": "玻璃小花房",
+    "sourceHash": "8984376c366d55fda7f60720e95a4760bc1b04475d4c63caa05cdf74e7b6a89d",
+    "variants": [
+      {
+        "containers": 103,
+        "stages": 64,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 105,
+        "stages": 62,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 104,
+        "stages": 64,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "drummer-child",
+    "name": "小鼓手",
+    "sourceHash": "a8cce98f7b332cd2837961cc67e870ac9fb6873729fcd8de8bb08316b4094c52",
+    "variants": [
+      {
+        "containers": 96,
+        "stages": 38,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 94,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 95,
+        "stages": 37,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "polar-bear",
+    "name": "冰原北极熊",
+    "sourceHash": "a62684066c690b3b0a3eb5f454141a957958553c14effc6ce09e69718095dc39",
+    "variants": [
+      {
+        "containers": 91,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "festival-lantern",
+    "name": "花园纸灯",
+    "sourceHash": "a4b96f345b4ce610392610d98cd385266f8ed613692bc04c556547cd3ea67c82",
+    "variants": [
+      {
+        "containers": 112,
+        "stages": 67,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 105,
+        "stages": 62,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 111,
+        "stages": 68,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "beekeeper-honey",
+    "name": "采蜜时光",
+    "sourceHash": "bf277e4729609d145abe2f849332440dff4d49c7a630372521460795a414f046",
+    "variants": [
+      {
+        "containers": 105,
+        "stages": 61,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 112,
+        "stages": 67,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 105,
+        "stages": 62,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "lemur-fruit",
+    "name": "狐猴的水果",
+    "sourceHash": "1ebd4ccac9904d6979722ae7655ed7968bbed3a798c03c2512aaf475edb6d8f1",
+    "variants": [
+      {
+        "containers": 100,
+        "stages": 49,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 99,
+        "stages": 48,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 103,
+        "stages": 51,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "wooden-robot",
+    "name": "木头小机器人",
+    "sourceHash": "02742ad0da88c98cf2022042656ccc3559bf0cebd43608002354990f91a2338d",
+    "variants": [
+      {
+        "containers": 99,
+        "stages": 44,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 98,
+        "stages": 45,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 98,
+        "stages": 43,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "conductor-train",
+    "name": "小站列车员",
+    "sourceHash": "5cad59c04ecb0b72c40d17b2ab5ec008c0ba89b78ed1b18f6e74bf96d8cfb7b8",
+    "variants": [
+      {
+        "containers": 89,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 91,
+        "stages": 37,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 88,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "dolphin-wave",
+    "name": "跃浪海豚",
+    "sourceHash": "bad858bff9153b3ad75e1f3d7fb40e70018c5021530d8ee5b5065fbec6b08abc",
+    "variants": [
+      {
+        "containers": 94,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 94,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 96,
+        "stages": 40,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "origami-cranes",
+    "name": "纸鹤的午后",
+    "sourceHash": "2602b5c271392297f24c333b6b72dee372537450204c578add4f1bf28798498b",
+    "variants": [
+      {
+        "containers": 99,
+        "stages": 48,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 100,
+        "stages": 50,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 101,
+        "stages": 51,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "orchard-worker",
+    "name": "果园采摘",
+    "sourceHash": "681ef532f2e6f6d9b45a731050ecf3154e65c38a993efa0539654f110e2aff79",
+    "variants": [
+      {
+        "containers": 108,
+        "stages": 59,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 103,
+        "stages": 54,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 111,
+        "stages": 63,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "peacock-garden",
+    "name": "孔雀开屏",
+    "sourceHash": "ce54853f4caa5ceae418b47042e60f2719800a932150818a6f260f246fd1fa24",
+    "variants": [
+      {
+        "containers": 94,
+        "stages": 37,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 93,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 94,
+        "stages": 36,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "cuckoo-clock",
+    "name": "森林小屋钟",
+    "sourceHash": "d0cc83b7d3cfce86f24a6e78c30425724403abf8f6b002eccc98170e28adcb06",
+    "variants": [
+      {
+        "containers": 102,
+        "stages": 51,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 98,
+        "stages": 48,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 100,
+        "stages": 50,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "pizza-maker",
+    "name": "披萨出炉",
+    "sourceHash": "279745a59797cabecf5d94a2594768fa4cb1a9683e3a8ea98f3021cdb0c58fe0",
+    "variants": [
+      {
+        "containers": 106,
+        "stages": 59,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 103,
+        "stages": 56,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 103,
+        "stages": 55,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "seahorse-coral",
+    "name": "珊瑚里的海马",
+    "sourceHash": "d15ac82ac2cd1ded24533e33cf6bbf65d8ff4fe9b6e8f23ee027787822cec698",
+    "variants": [
+      {
+        "containers": 93,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 93,
+        "stages": 39,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 38,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "harvest-basket",
+    "name": "秋收南瓜篮",
+    "sourceHash": "e5e0f50893d0788153e47f0e85a27f7700d5dd5b974a64ed25ff7362b57b455f",
+    "variants": [
+      {
+        "containers": 97,
+        "stages": 46,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 97,
+        "stages": 49,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 97,
+        "stages": 48,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "ceramic-painter",
+    "name": "彩绘陶盘",
+    "sourceHash": "f4ec376a946df1447179a9eae63e203162b27a09d20eae1d0391a8b03d2bb656",
+    "variants": [
+      {
+        "containers": 117,
+        "stages": 75,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 114,
+        "stages": 72,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 119,
+        "stages": 76,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "squirrel-kite",
+    "name": "松鼠的风筝",
+    "sourceHash": "6bc4c8e447bacbe667f857f9d37654ec8fdf80dde1593c83579da79e239f2dc3",
+    "variants": [
+      {
+        "containers": 94,
+        "stages": 35,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 93,
+        "stages": 33,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 34,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "star-telescope",
+    "name": "星空望远镜",
+    "sourceHash": "33358dd96742242b89d6fedc238df711c0977cd1001c4d7e0c26affa29a6632b",
+    "variants": [
+      {
+        "containers": 98,
+        "stages": 46,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 96,
+        "stages": 47,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 96,
+        "stages": 46,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "street-musician",
+    "name": "街角手风琴",
+    "sourceHash": "2e078650d19a7819fcde5bbff80fc19ab0e4721389d04be3057bb83296570d71",
+    "variants": [
+      {
+        "containers": 103,
+        "stages": 52,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 99,
+        "stages": 53,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 101,
+        "stages": 49,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      }
+    ]
+  },
+  {
+    "id": "tropical-fish",
+    "name": "珊瑚小丑鱼",
+    "sourceHash": "3293d4b8415457c0210d5faf5fab90b2c9974684b46d401cc6e45dcfc57ced94",
+    "variants": [
+      {
+        "containers": 106,
+        "stages": 62,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 106,
+        "stages": 61,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 109,
+        "stages": 63,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "botanical-vase",
+    "name": "彩色花瓶",
+    "sourceHash": "1801ca70e87ad4683a59ae275f5f318931d8e6eb9ed222a82995ea9f5a12a93e",
+    "variants": [
+      {
+        "containers": 99,
+        "stages": 54,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 98,
+        "stages": 53,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 101,
+        "stages": 54,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "costume-child",
+    "name": "小小飞行员",
+    "sourceHash": "78a35fdf71467f9056208e91cb033df09fead5e621f5dbda0abaa1c3aaca22ad",
+    "variants": [
+      {
+        "containers": 103,
+        "stages": 48,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 102,
+        "stages": 48,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 103,
+        "stages": 50,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "elephant-water",
+    "name": "小象戏水",
+    "sourceHash": "856cab35c41654925373e45a11a8b658d9f47fb5bf82477d628b7c0a73e032e2",
+    "variants": [
+      {
+        "containers": 93,
+        "stages": 40,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 92,
+        "stages": 39,
+        "minCapacity": 3,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 93,
+        "stages": 38,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "lantern-boat",
+    "name": "莲灯小船",
+    "sourceHash": "33a9e49214a805125413694c2376fc9f86f3cc548633ce54fde6256eaa3ac59f",
+    "variants": [
+      {
+        "containers": 104,
+        "stages": 53,
+        "minCapacity": 2,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 106,
+        "stages": 56,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 103,
+        "stages": 53,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "tea-master",
+    "name": "庭院泡茶",
+    "sourceHash": "17ee4ccd2dae0eaf09c795859f0d917004dcdd5fd9a7811832b6dcb0c4f5066c",
+    "variants": [
+      {
+        "containers": 106,
+        "stages": 58,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 107,
+        "stages": 58,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 107,
+        "stages": 59,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "macaw-jungle",
+    "name": "雨林金刚鹦鹉",
+    "sourceHash": "63ce97abbef62ffe5234d47a4ba43f3cae31539aa69cbab7a9273a4a9519e269",
+    "variants": [
+      {
+        "containers": 99,
+        "stages": 45,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 101,
+        "stages": 46,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 99,
+        "stages": 44,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "celebration-cake",
+    "name": "花园庆祝蛋糕",
+    "sourceHash": "2de5fbd20f06f7439bb8fa34ac68030b49c60b80d6748363bc23c80343776d7f",
+    "variants": [
+      {
+        "containers": 103,
+        "stages": 56,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 104,
+        "stages": 57,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 104,
+        "stages": 58,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  },
+  {
+    "id": "flower-parade",
+    "name": "鲜花游行",
+    "sourceHash": "6cf211bec7a5b0edca688cf1cc95daa36eafd9a4ff19368b7d092fa824f278a7",
+    "variants": [
+      {
+        "containers": 112,
+        "stages": 66,
+        "minCapacity": 1,
+        "maxCapacity": 39
+      },
+      {
+        "containers": 115,
+        "stages": 67,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      },
+      {
+        "containers": 102,
+        "stages": 57,
+        "minCapacity": 1,
+        "maxCapacity": 40
+      }
+    ]
+  }
+]

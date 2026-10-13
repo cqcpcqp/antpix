@@ -1,0 +1,13 @@
+{
+  "players": [
+    {
+      "name": "world_progress",
+      "unique": false,
+      "fields": [
+        { "field": "highest", "order": "desc" },
+        { "field": "reachedAt", "order": "asc" },
+        { "field": "_id", "order": "asc" }
+      ]
+    }
+  ]
+}

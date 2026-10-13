@@ -1,0 +1,23 @@
+/library/
+/temp/
+/local/
+/profiles/
+/build/
+/node_modules/
+.DS_Store
+*.log
+
+# Local tools and generated previews
+**/node_modules/
+**/__pycache__/
+*.py[cod]
+.venv/
+/tmp/
+/output/
+*.cpuprofile
+.env
+.env.*
+!.env.example
+project.private.config.json
+/art/cartoons/sources/*/review-48x60/*
+!/art/cartoons/sources/*/review-48x60/*-48x60.png

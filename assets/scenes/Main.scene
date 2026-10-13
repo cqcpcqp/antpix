@@ -1,0 +1,62 @@
+[
+  {
+    "__type__": "cc.SceneAsset",
+    "_name": "Main",
+    "scene": {
+      "__id__": 1
+    }
+  },
+  {
+    "__type__": "cc.Scene",
+    "_name": "Main",
+    "_children": [
+      {
+        "__id__": 2
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_id": "11fcb94f-5e35-4cc7-8d90-b131a8958ac1"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Game",
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 3
+      }
+    ],
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 33554432
+  },
+  {
+    "__type__": "43c9c1ESm9A8YfZpxNbL26A",
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true
+  }
+]

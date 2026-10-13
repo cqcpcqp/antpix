@@ -1,0 +1,142 @@
+[
+  {
+    "id": "corgi-garden",
+    "file": "01-corgi-garden.png",
+    "name": "花园柯基",
+    "subtitle": "花丛里的好天气",
+    "colors": 10,
+    "approved": true,
+    "level": 5,
+    "runtimePixelFile": "review-48x60/corgi-garden-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "little-gardener",
+    "file": "02-little-gardener.png",
+    "name": "小小园丁",
+    "subtitle": "给向日葵浇水",
+    "colors": 10,
+    "approved": true,
+    "level": 6,
+    "runtimePixelFile": "review-48x60/little-gardener-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "lemon-teapot",
+    "file": "03-lemon-teapot.png",
+    "name": "柠檬茶时光",
+    "subtitle": "窗边的一杯清新",
+    "colors": 11,
+    "approved": true,
+    "level": 7,
+    "runtimePixelFile": "review-48x60/lemon-teapot-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "penguin-sailor",
+    "file": "04-penguin-sailor.png",
+    "name": "企鹅船长",
+    "subtitle": "海湾里的小帆船",
+    "colors": 10,
+    "approved": true,
+    "level": 1,
+    "runtimePixelFile": "review-48x60/penguin-sailor-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "baker-morning",
+    "file": "05-baker-morning.png",
+    "name": "面包师的早晨",
+    "subtitle": "刚出炉的香气",
+    "colors": 12,
+    "approved": true,
+    "level": 8,
+    "runtimePixelFile": "review-48x60/baker-morning-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "berry-basket",
+    "file": "06-berry-basket.png",
+    "name": "野餐莓果篮",
+    "subtitle": "草地上的甜点",
+    "colors": 11,
+    "approved": true,
+    "level": 2,
+    "runtimePixelFile": "review-48x60/berry-basket-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "red-panda",
+    "file": "07-red-panda.png",
+    "name": "竹林小熊猫",
+    "subtitle": "抱着竹子的午后",
+    "colors": 12,
+    "approved": true,
+    "level": 9,
+    "runtimePixelFile": "review-48x60/red-panda-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "rainy-day",
+    "file": "08-rainy-day.png",
+    "name": "雨天小步舞",
+    "subtitle": "踩过亮晶晶的水洼",
+    "colors": 11,
+    "approved": true,
+    "level": 4,
+    "runtimePixelFile": "review-48x60/rainy-day-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "flower-bicycle",
+    "file": "09-flower-bicycle.png",
+    "name": "花篮单车",
+    "subtitle": "沿着春天出发",
+    "colors": 12,
+    "approved": true,
+    "level": 10,
+    "runtimePixelFile": "review-48x60/flower-bicycle-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "seaside-seal",
+    "file": "10-seaside-seal.png",
+    "name": "海边小海豹",
+    "subtitle": "浪花送来的贝壳",
+    "colors": 12,
+    "approved": true,
+    "level": 3,
+    "runtimePixelFile": "review-48x60/seaside-seal-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  }
+]

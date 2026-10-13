@@ -1,0 +1,733 @@
+{
+  "levelCount": 100,
+  "levels": [
+    {
+      "moves": [
+        87,
+        85
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        82
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        83
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        88,
+        86
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        87,
+        84
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        89,
+        87,
+        86
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        89,
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        91,
+        88
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        86,
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        94,
+        95,
+        93
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        84,
+        85,
+        83
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        86,
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        85
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        81,
+        83
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        83
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        90,
+        87,
+        88
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        88,
+        85,
+        86
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        89,
+        85,
+        86
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        85,
+        84
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        79,
+        80
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        89,
+        85,
+        88
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        92,
+        89,
+        94
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        82
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        86,
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        93,
+        94,
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        79
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        88,
+        85
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        89,
+        90,
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        80
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        87,
+        89
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        90,
+        85,
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        97,
+        99
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        93,
+        91,
+        92
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        90,
+        87,
+        89
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        97,
+        100,
+        98
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        92,
+        89,
+        90
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        96,
+        90,
+        93
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        91,
+        87,
+        89
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        92,
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        95,
+        96,
+        98
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        87,
+        89,
+        90
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        85,
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        94,
+        90,
+        96
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        92,
+        89,
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        93,
+        99,
+        97
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        95,
+        96
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        92,
+        94
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        88,
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        91,
+        93
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        88,
+        91,
+        93
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        93,
+        94
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        92,
+        90,
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        90,
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        95,
+        96,
+        94
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        94,
+        95
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        92,
+        90
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        92,
+        95
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        87,
+        86
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        91,
+        93
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        89
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        96,
+        99
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        91,
+        92
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        88,
+        87
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        89,
+        86
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        87,
+        88
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        87,
+        88
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        94,
+        91,
+        92
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        94,
+        97,
+        96
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        103,
+        105,
+        104
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        96,
+        94,
+        95
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        91
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        112,
+        105,
+        111
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        105,
+        112
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        100,
+        99,
+        103
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        99,
+        98
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        89,
+        91,
+        88
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        94,
+        96
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        99,
+        100,
+        101
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        108,
+        103,
+        111
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        94,
+        93
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        102,
+        98,
+        100
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        106,
+        103
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        93,
+        92
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        97
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        117,
+        114,
+        119
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        94,
+        93,
+        92
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        98,
+        96
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        103,
+        99,
+        101
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        106,
+        109
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        99,
+        98,
+        101
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        103,
+        102
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        93,
+        92
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        104,
+        106,
+        103
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        106,
+        107
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        99,
+        101
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        103,
+        104
+      ],
+      "minimumSeconds": 77.75
+    },
+    {
+      "moves": [
+        112,
+        115,
+        102
+      ],
+      "minimumSeconds": 77.75
+    }
+  ]
+}

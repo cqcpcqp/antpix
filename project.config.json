@@ -1,0 +1,10 @@
+{
+  "description": "生态蚂蚁窝 · 微信小游戏与云函数开发",
+  "miniprogramRoot": "build/wechatgame/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "compileType": "game",
+  "appid": "wxd8e27ad9cd0289df",
+  "projectname": "生态蚂蚁窝",
+  "libVersion": "widelyUsed",
+  "setting": { "urlCheck": true, "es6": false, "minified": true }
+}
