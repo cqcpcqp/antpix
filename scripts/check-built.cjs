@@ -231,28 +231,45 @@ assert.equal(
 );
 console.log('Nick catalog and deleted artwork save migration passed.');
 
-// Replay a complete selectable-head witness for every offline plan in emitted JS.
+// Replay the planned dependencies using the actual emitted model and routing code.
+const { nearestAntTarget, AntTargetSearch } = load('chunks:///_virtual/routing.ts');
+const { worldToGrid, collectionSlotX, collectionSlotY } = load('chunks:///_virtual/boardLayout.ts');
 let solvedPlans = 0;
 for (let level = 0; level < LEVEL_COUNT; level++)
   for (let variant = 0; variant < 3; variant++) {
     const art = makeLevel(level),
       m = new GardenModel(art, () => (variant + 0.1) / 3);
-    const count = art.containerPlans[variant].length;
-    for (let id = 0; id < count; id++) {
+    const search = new AntTargetSearch();
+    for (let id = 0; id < art.containerPlans[variant].length; id++) {
       if (id % 9 === 0) m.shuffle();
       assert.ok(
         m.columns.some((column) => column[0]?.id === id),
-        'planned next card must be selectable',
+        'witness must be selectable',
       );
-      const slot = m.place(id);
-      let steps = 0;
-      while (m.slots[slot]) {
-        const p = m.pick(slot);
-        assert.ok(p, 'planned container must be able to finish');
-        assert.ok(m.lift(p));
-        m.arrive(p);
-        assert.ok(++steps <= 40);
+      assert.ok(m.place(id) >= 0, 'witness must fit five slots');
+      let progressed = true;
+      while (progressed) {
+        progressed = false;
+        for (let slot = 0; slot < m.slots.length; slot++) {
+          const target = nearestAntTarget(
+            { ...art, pixels: m.pixels },
+            worldToGrid({
+              x: collectionSlotX(slot, m.slots.length),
+              y: collectionSlotY(slot) + 42,
+            }),
+            m.availableTargets(slot),
+            0.45,
+            search,
+          );
+          if (!target) continue;
+          const pickup = m.pick(slot, target);
+          assert.ok(pickup);
+          assert.ok(m.lift(pickup));
+          m.arrive(pickup);
+          progressed = true;
+        }
       }
+      assert.ok(m.slots.filter(Boolean).length <= 1);
     }
     assert.equal(m.complete, true);
     assert.equal(m.collected, art.pixels.length);

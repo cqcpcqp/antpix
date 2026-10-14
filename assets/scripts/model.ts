@@ -82,8 +82,8 @@ export class GardenModel {
         if (level.containerPlans) {
             const plan =
                 level.containerPlans[Math.floor(this.random() * level.containerPlans.length)];
-            for (const [color, capacity] of plan)
-                jars.push({
+            for (const [color, capacity, column] of plan)
+                this.columns[column].push({
                     id: this.serial++,
                     color,
                     capacity,
@@ -105,8 +105,8 @@ export class GardenModel {
                     count -= capacity;
                 }
             });
+            jars.forEach((jar, index) => this.columns[index % 5].push(jar));
         }
-        jars.forEach((jar, index) => this.columns[index % 5].push(jar));
         this.shuffle();
     }
 

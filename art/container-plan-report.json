@@ -5,22 +5,61 @@
     "sourceHash": "267f36481232f0ffe218df6d6df30fcec8759ad01a7b48aaa048a7bd38d60557",
     "variants": [
       {
-        "containers": 87,
-        "stages": 22,
+        "containers": 86,
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          17,
+          17,
+          17
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "6584ad96d8d1706eab264e83612a1c014b9455d46720c15d7f0a4064a556c02e",
+        "stages": 82,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
         "containers": 87,
-        "stages": 22,
-        "minCapacity": 1,
-        "maxCapacity": 39
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          17,
+          16,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "abfa7476115bdd25e44b04a294517885f023a4f4b4ab51d698738c0d3e6eed42",
+        "stages": 84,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 85,
-        "stages": 22,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 87,
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          16,
+          18,
+          17,
+          19
+        ],
+        "minCapacity": 7,
+        "maxCapacity": 40,
+        "planHash": "96d1284e8cab2cfe4f2552fd789da0ba3195749f977af503195c903ea7a0c94a",
+        "stages": 86,
+        "dependencies": 0,
+        "trainingWins": 4
       }
     ]
   },
@@ -30,22 +69,61 @@
     "sourceHash": "e8ee36bcc81aac05ae9bd334d45280d95b8fcd4d63a7d769fcb089e6e769813a",
     "variants": [
       {
-        "containers": 82,
-        "stages": 22,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "9c29b6d9c07e6719d1cf1c5d9d68e98f0454b5d570f3ba30877155fdaa6bd6d6",
+        "stages": 90,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 82,
-        "stages": 21,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "c335dce91199016f29449457b6aaa93d49a1b9e79ba17f1002b9439a217bb6ec",
+        "stages": 90,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 82,
-        "stages": 22,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 88,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          17,
+          18,
+          19
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "69ca645331cb93420612eb35e8a9e0bbc292208c6781022b8a634a7da1a62581",
+        "stages": 88,
+        "dependencies": 0,
+        "trainingWins": 4
       }
     ]
   },
@@ -55,22 +133,61 @@
     "sourceHash": "7220e43d4f3a7930b04d6c0b99a58faf4c70bc0a55589c0050a9f48ba0da3952",
     "variants": [
       {
-        "containers": 83,
-        "stages": 20,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 3,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "4efc7f1bd76efd292da7ef3aaccce88deef540e726c26aaf2aae44abe1fe2cc7",
+        "stages": 86,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 83,
-        "stages": 20,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 87,
+        "openingColors": 4,
+        "maxRun": 3,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          18,
+          17,
+          17
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "475b948df842b69693bf62b76da6056032dbdc0e39ebffef1a7edf359feb11d5",
+        "stages": 84,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 83,
-        "stages": 20,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 86,
+        "openingColors": 4,
+        "maxRun": 3,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          18,
+          17,
+          17
+        ],
+        "minCapacity": 5,
+        "maxCapacity": 40,
+        "planHash": "c676b58808a7f5f5ba5102bd39748d594710f590e590de590d44bf50073a1e05",
+        "stages": 83,
+        "dependencies": 0,
+        "trainingWins": 4
       }
     ]
   },
@@ -81,21 +198,60 @@
     "variants": [
       {
         "containers": 88,
-        "stages": 23,
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          18,
+          18,
+          17
+        ],
         "minCapacity": 1,
-        "maxCapacity": 38
+        "maxCapacity": 40,
+        "planHash": "fe375e21a9f9c21f4af41d08080bca7459482e471c14bc1cd050c7c653751814",
+        "stages": 86,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 88,
-        "stages": 23,
+        "containers": 89,
+        "openingColors": 3,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "61da4cea1cac3c011f71601079cd9d7ff13501655b0b12e6e3f7459008f68698",
+        "stages": 89,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 86,
-        "stages": 21,
-        "minCapacity": 1,
-        "maxCapacity": 39
+        "containers": 87,
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          18,
+          17,
+          17
+        ],
+        "minCapacity": 6,
+        "maxCapacity": 40,
+        "planHash": "16f83ed3d2067ea9a9269ba12b46d738ec90b358cb99447caba5ba28ecdcf523",
+        "stages": 86,
+        "dependencies": 0,
+        "trainingWins": 4
       }
     ]
   },
@@ -105,22 +261,61 @@
     "sourceHash": "903b2860dd35ddbd7f0eacc0a0e7afdd7ca8495003099f2818bf5b4041b55034",
     "variants": [
       {
-        "containers": 87,
-        "stages": 23,
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          17,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "7bc7a3f05fdf78c0b8a15e5b47b52ff69e5135ec0a1f6c1329a831aa8c393c88",
+        "stages": 89,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 87,
-        "stages": 23,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 84,
-        "stages": 20,
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          17,
+          19
+        ],
         "minCapacity": 2,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e67e1362f2ff5518a96e8a50ac15832824375d30edabfe0fc174d7698b66296a",
+        "stages": 90,
+        "dependencies": 0,
+        "trainingWins": 4
+      },
+      {
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          17,
+          17,
+          19
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "46ca80a7dc3e3667d3711b6e7c80f7dfda478aa8a7c7ac43e1e6d074b739198c",
+        "stages": 89,
+        "dependencies": 0,
+        "trainingWins": 4
       }
     ]
   },
@@ -130,22 +325,61 @@
     "sourceHash": "90956c87300410ac502f3b2c0bdd8b3f52fe113c2ffa36675fe5b8181ab8164f",
     "variants": [
       {
-        "containers": 89,
-        "stages": 27,
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "7d2602db5e25c6faf20685c94cc573cb18b6c0abacf4b98c0194be6b636483d8",
+        "stages": 89,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 87,
-        "stages": 27,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 88,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          17,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "3f88e6e261ce5c3dc73326846b13600860fbe7d9ba44e7ff00adb11be773fbbf",
+        "stages": 88,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
         "containers": 86,
-        "stages": 25,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          16,
+          18,
+          18,
+          17
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "6efc9621f9a11542138b14c97905e3b5c06cefe58836ec536ca8faab5ae6a79b",
+        "stages": 84,
+        "dependencies": 0,
+        "trainingWins": 4
       }
     ]
   },
@@ -155,22 +389,61 @@
     "sourceHash": "8b2f470c7b196c698a32b97b373734433d752678d38bd19b4668f764d8072da7",
     "variants": [
       {
-        "containers": 89,
-        "stages": 29,
+        "containers": 93,
+        "openingColors": 3,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "6bf165eb94f3d86c9a4027ef18ce551129d01692697b58f4631df0c902a7d5f6",
+        "stages": 93,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
         "containers": 91,
-        "stages": 31,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "f617f0ef0e262c12452e087382417a062ae98103b731624714f00db72fa81abf",
+        "stages": 91,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 89,
-        "stages": 29,
+        "containers": 93,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          18,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "5ae956f67a33a872deb319aa8c8778d94e6d9e803d784f241da0958f6a079e8b",
+        "stages": 93,
+        "dependencies": 0,
+        "trainingWins": 4
       }
     ]
   },
@@ -180,22 +453,61 @@
     "sourceHash": "9fda819ef5d4ad73998c736eedd6a59de852f431a8babc80eb9baa4d80e3fc9d",
     "variants": [
       {
-        "containers": 91,
-        "stages": 36,
+        "containers": 94,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "1bbcd26969a44d36333bba333ac82c8f8516bcedbaef834ad6b065b243680b26",
+        "stages": 94,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 88,
-        "stages": 34,
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "eeae8ed4b14fabeb24f92877bd9d175c8ef0bc6ba243b9f6be9cdc00b44ebde1",
+        "stages": 94,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 88,
-        "stages": 33,
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "b16f6f1112bf265fab474ee33a0f7a8640e685c2dc763edf800482cac6c1cf9c",
+        "stages": 99,
+        "dependencies": 0,
+        "trainingWins": 3
       }
     ]
   },
@@ -205,22 +517,61 @@
     "sourceHash": "5cd8fdb48d8bf150d813f35a896079dbde84d7b7a107c14e195e98786dd98609",
     "variants": [
       {
-        "containers": 86,
-        "stages": 26,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "432f02d1bfa8497bbaae942a26d53151005fc04a73a8b286cec273173f4776b4",
+        "stages": 93,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 86,
-        "stages": 26,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "bdbb71e587022aa5669ed9476360455a824bdf5c37decc95c0df778b1f0b64af",
+        "stages": 95,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 87,
-        "stages": 28,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "51bc4082cba295d9480fd07afc84b3678159b63163c342c333261d63649e0a1c",
+        "stages": 93,
+        "dependencies": 0,
+        "trainingWins": 3
       }
     ]
   },
@@ -230,22 +581,61 @@
     "sourceHash": "78f0bf76531ade8b4cd0c93bffb905f48772a3a7a9b6ccaa6368056783bfbabd",
     "variants": [
       {
-        "containers": 94,
-        "stages": 43,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "81c02f14e8563480b7e34c0056f6a4bef1a9d8c15f8f5d0464c463d7ed2c95f5",
+        "stages": 96,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 95,
-        "stages": 46,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          20,
+          20
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "0859c23c36823deac6adcb0dae529b4e932546b114420fda04b25cfc92cb6ba4",
+        "stages": 99,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 93,
-        "stages": 43,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 97,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          21
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "12f7a59cb9e4c4b461936c64bc4d3c9274516449a42d8aefccf2029a2572b5c7",
+        "stages": 97,
+        "dependencies": 0,
+        "trainingWins": 3
       }
     ]
   },
@@ -255,22 +645,61 @@
     "sourceHash": "9f4feb965334a2a701f56b0f95c00d26600f39116d8e9a009e7d417526989367",
     "variants": [
       {
-        "containers": 84,
-        "stages": 22,
-        "minCapacity": 1,
-        "maxCapacity": 39
+        "containers": 89,
+        "openingColors": 5,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          16,
+          17,
+          19,
+          17,
+          20
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "44135fb4c5b47a0cf73405a5b033df44fbd2cdf687993611103894f2413bbcf8",
+        "stages": 88,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 85,
-        "stages": 24,
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "8cea26a50fb70b879a1b535c81c4aa27f8eb5b58abac750a51cdbcb9c962eb03",
+        "stages": 89,
+        "dependencies": 1,
+        "trainingWins": 4
       },
       {
-        "containers": 83,
-        "stages": 23,
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          19,
+          17,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "490b973c65636ae7ce103ae4a480f7a9a79e22b0a00754139dd0f0fe0f97fc51",
+        "stages": 89,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -280,22 +709,61 @@
     "sourceHash": "e5e776e133c48ca46423a1d8818e952eeb9870677ffb7ff30c59be0467af7166",
     "variants": [
       {
-        "containers": 86,
-        "stages": 25,
+        "containers": 90,
+        "openingColors": 5,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          17,
+          18,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "042d1fb5a047e12c9a771a1e634a2fb4f2ca62e3031990796f33b1cfe2e5a050",
+        "stages": 88,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 25,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 88,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          17,
+          17,
+          18
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "b1f22fa1de0ae0e13f060d9774c9dcb9a1020266f6ddee5379347f4160b8c0db",
+        "stages": 88,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 86,
-        "stages": 26,
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          17,
+          17,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "c86db53c0481beec14995d2fb0e08f5417f5a3f77b844d80cc9f971cc23c1bc6",
+        "stages": 89,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -305,22 +773,61 @@
     "sourceHash": "edd19156926ef602631b73bf61b3fae9892a503fbd9f2c757dc47e7519195e4a",
     "variants": [
       {
-        "containers": 85,
-        "stages": 23,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 83,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          16,
+          18,
+          15,
+          16
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "bdf3911d71f2f1da85523dbb94a658c2b68e851d25af7999ecad3b4fc61fd655",
+        "stages": 80,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 85,
-        "stages": 23,
+        "containers": 84,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          16,
+          17,
+          17,
+          17,
+          17
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "8b6655994263d95b69bf53aff302991c14421659214c5942096803b87d3d881f",
+        "stages": 81,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 85,
-        "stages": 23,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 84,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          15,
+          16,
+          19,
+          15
+        ],
+        "minCapacity": 5,
+        "maxCapacity": 40,
+        "planHash": "37faf3f0e3bce72dafc4df0a8f8f50f9979327b34e0deca59fbe84909b33158f",
+        "stages": 83,
+        "dependencies": 0,
+        "trainingWins": 3
       }
     ]
   },
@@ -330,22 +837,61 @@
     "sourceHash": "109c9d4f8e83a206177ab537e5a63e923dbd7169d29470db36e3eaac31958e21",
     "variants": [
       {
-        "containers": 81,
-        "stages": 19,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 81,
-        "stages": 19,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
         "containers": 83,
-        "stages": 20,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          16,
+          16,
+          17,
+          17
+        ],
+        "minCapacity": 7,
+        "maxCapacity": 40,
+        "planHash": "2939d6820ee90ec3274a26e61dce2338524f90a06fa87e78db04b982fac7aa00",
+        "stages": 82,
+        "dependencies": 0,
+        "trainingWins": 4
+      },
+      {
+        "containers": 85,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          17,
+          17,
+          17
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "ee56867d1f02b786945ef28db07897170b37a558ef1c0b37bfbd67c8d38cb5fb",
+        "stages": 85,
+        "dependencies": 1,
+        "trainingWins": 4
+      },
+      {
+        "containers": 84,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          17,
+          16,
+          16
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "de5af4707bf8ebfb3deccdcbc6c12fe9fbda5ae2ed0483944dbb509c3bde19c9",
+        "stages": 84,
+        "dependencies": 1,
+        "trainingWins": 4
       }
     ]
   },
@@ -355,22 +901,61 @@
     "sourceHash": "3b3827a4b49140d9aff5b669587a1f67b80928b7ff39c4430cdf419947f2cb8e",
     "variants": [
       {
-        "containers": 83,
-        "stages": 20,
-        "minCapacity": 4,
-        "maxCapacity": 40
+        "containers": 87,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          17,
+          16,
+          20
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "ef5d00ee6c5841f114e84e323db05e4f2413af79a45cdca78678bb703ec76177",
+        "stages": 87,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 83,
-        "stages": 20,
-        "minCapacity": 4,
-        "maxCapacity": 40
+        "containers": 88,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          18,
+          17,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "cb7c033adba925d503d7ba835a3d233fba700dd2f1bdecc8802ba3de60432150",
+        "stages": 88,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 83,
-        "stages": 20,
-        "minCapacity": 4,
-        "maxCapacity": 40
+        "containers": 86,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          17,
+          16,
+          19
+        ],
+        "minCapacity": 7,
+        "maxCapacity": 40,
+        "planHash": "41e1d13cd66fa000beec4f3f57b56a0f3af6408ceb6520812327b6c01642eb0d",
+        "stages": 86,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -380,22 +965,61 @@
     "sourceHash": "927ee671c8c3742b7bcd88244ea14e26c4d0dac6d064eaa4a27475d4e9cdb887",
     "variants": [
       {
-        "containers": 90,
-        "stages": 35,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "cfa5b6743e755434886d0c9ea8ba0486974478f546f8e61f85be5fefc8f6921e",
+        "stages": 92,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 30,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          20,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "8c6144f60f7ec5c549d9a3e92a9b884d4804cd73d896f847f2b5dd944443f791",
+        "stages": 94,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 88,
-        "stages": 31,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 91,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "d73a14435fa9faac78e86cf59f6d5322070011c5f9bc3a359b1e233fe5a4a50c",
+        "stages": 91,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -405,22 +1029,61 @@
     "sourceHash": "4fd19561b9ea8785af2012ee7ba8a02dbce5b6b7c008af930bdca40f024ec4b6",
     "variants": [
       {
-        "containers": 88,
-        "stages": 28,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          17,
+          18,
+          18
+        ],
+        "minCapacity": 5,
+        "maxCapacity": 40,
+        "planHash": "fda02863fa534ffb0aaa72ea18066381c663842e55439662a056822f925d8850",
+        "stages": 90,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 85,
-        "stages": 24,
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "abfb68adda6af3cdf3fc69d206e309b176e9cf1f9ff8d6d3b84b565a898cb3f5",
+        "stages": 94,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 86,
-        "stages": 23,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 3,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 5,
+        "maxCapacity": 40,
+        "planHash": "15fd8cafac70097e0814de8ab9e4d009f68ea3e0de0744df21a9ebcab72b2193",
+        "stages": 90,
+        "dependencies": 1,
+        "trainingWins": 4
       }
     ]
   },
@@ -430,22 +1093,61 @@
     "sourceHash": "49a3af011cbecc3ec417272b300eb62f8777ed0a2152c08b45e1ac530a9e2822",
     "variants": [
       {
-        "containers": 89,
-        "stages": 27,
+        "containers": 92,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 2,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "88d34681754e72b7920a942aa08fba266af8a3c3cdd8c519a5de794ab11d7f64",
+        "stages": 92,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 85,
-        "stages": 25,
+        "containers": 92,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "2fe3addf50f738289a72f192f98c58a874c2f63ac3b70d5b86397d3a83ea4d14",
+        "stages": 92,
+        "dependencies": 1,
+        "trainingWins": 3
+      },
+      {
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 86,
-        "stages": 24,
-        "minCapacity": 9,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e5a83aa265223f58c95eff167993f32b41338165e93b5132952e8fe06f0a9b31",
+        "stages": 96,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -455,22 +1157,61 @@
     "sourceHash": "581a4eb22f6c1753c08f05c2847837c6d0d57a1ba0175f43d6b49c14f37eacd7",
     "variants": [
       {
-        "containers": 85,
-        "stages": 23,
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          19,
+          17,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "b593d5c21398267cd544f75121b23d4b2675f5715a961d28594ca9645254fce5",
+        "stages": 88,
+        "dependencies": 1,
+        "trainingWins": 3
+      },
+      {
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "5a1565325e0ed54d25e0a5b38edbe0a692dc53960739b68f680ef1ac6bb30659",
+        "stages": 89,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
         "containers": 85,
-        "stages": 23,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 84,
-        "stages": 22,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          16,
+          17,
+          18,
+          17,
+          17
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "6da4fcd353e1b6ce5fda01b1d91d2a5200c81fcda93f61a3cf6040a89d7afef3",
+        "stages": 84,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -480,22 +1221,61 @@
     "sourceHash": "41d8cba0131515745e80f6c1de872d54b7463fd84a9e523f8d87b347306b1421",
     "variants": [
       {
-        "containers": 79,
-        "stages": 15,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 86,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          16,
+          19,
+          19,
+          16,
+          16
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "be7a1f059b2418ba6e166701bdcb98db7da81629f16211f5dc9d44d0b47403ca",
+        "stages": 83,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 80,
-        "stages": 15,
-        "minCapacity": 8,
-        "maxCapacity": 40
+        "containers": 86,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          16,
+          19,
+          16,
+          16
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "1c45d78841c5c6894bd61c648a955df72548305d3e0d17e0d13ccfe5bd8bbc48",
+        "stages": 81,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 80,
-        "stages": 15,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 88,
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          17,
+          17
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "4da490a8845e43a25c9719c5f9f575cdc6396c69cc7b2ccfc28007e0b9d8167c",
+        "stages": 84,
+        "dependencies": 1,
+        "trainingWins": 4
       }
     ]
   },
@@ -505,22 +1285,61 @@
     "sourceHash": "06cde14e7f7b427b6407e6f3b3a012d6a0f6557e1dd2c4f8c9a78e0687084cee",
     "variants": [
       {
-        "containers": 89,
-        "stages": 29,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 85,
-        "stages": 26,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
         "containers": 88,
-        "stages": 24,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          17,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "62dac0148098196f88d21fdccd65aff5c3f25e01f992969353361d9b7cfa9568",
+        "stages": 86,
+        "dependencies": 0,
+        "trainingWins": 4
+      },
+      {
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          17,
+          18,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "d9e51eff51d91dac3ad00f8099f5f07bfef4d87460aeb5666300dc73a4e64ac4",
+        "stages": 88,
+        "dependencies": 1,
+        "trainingWins": 3
+      },
+      {
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          17,
+          17,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "710cd3bbe0510063cf496bc3f6444f0c61fde918ccc1435db05c76c49e2938c7",
+        "stages": 85,
+        "dependencies": 0,
+        "trainingWins": 3
       }
     ]
   },
@@ -530,22 +1349,61 @@
     "sourceHash": "e8e2a377ba44ed3c9974b0a5209dad62f7ac7be2d6eeaf19664c5ca7f3bd98cd",
     "variants": [
       {
-        "containers": 92,
-        "stages": 33,
+        "containers": 91,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 2,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "74a9d833b1d7107f9cb27c3946a212286f5366f18f77e98b022804d325e21505",
+        "stages": 91,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 32,
-        "minCapacity": 2,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 94,
-        "stages": 34,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "5f45a1ff591516e5d26458f364a571ad251b8d57519c779b243e0c959abd00e1",
+        "stages": 95,
+        "dependencies": 1,
+        "trainingWins": 3
+      },
+      {
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          20,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "726ef3d9e2cc01c7e73d0e10191f6943bb105039a939056176fdb7cdd94e370e",
+        "stages": 96,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -555,22 +1413,61 @@
     "sourceHash": "9ebc7e0f241fac0214fc8c50a302cca207a39b4bdff9a36d6f16417239ba36f3",
     "variants": [
       {
-        "containers": 82,
-        "stages": 18,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 85,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          17,
+          17,
+          17
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "58f54bf2bb88047a56f32934cbafcefa5c2e961904fca8b7acc9346568a33eb5",
+        "stages": 85,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 82,
-        "stages": 18,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 87,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          18,
+          18,
+          17
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "43f98dd709bf33b64d3175ee123be6787f9ef7ed47edf66a08f0c15b2642c796",
+        "stages": 86,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 82,
-        "stages": 18,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 85,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          17,
+          17,
+          17
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "68c4039442951927b211973c3d99c112ac471cc4b85138e6f89d8612d76be9bc",
+        "stages": 85,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -580,22 +1477,61 @@
     "sourceHash": "4d3a1e8eb0553017ed69e0df0cfc91ac13a17dfd67a1f7cc78292f1d7b182093",
     "variants": [
       {
-        "containers": 86,
-        "stages": 23,
+        "containers": 84,
+        "openingColors": 3,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          17,
+          16,
+          17
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "ff46fd28efbe4c26b228b9785bce3651c34752f737b0252c613acd7b434a0a49",
+        "stages": 84,
+        "dependencies": 1,
+        "trainingWins": 3
+      },
+      {
+        "containers": 88,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          16,
+          17,
+          17,
+          21
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "775eab7f5137aff27197bd7d18499c5bef3ae0428f70f48c9a9caeff264422b5",
+        "stages": 88,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
         "containers": 86,
-        "stages": 23,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 87,
-        "stages": 24,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          16,
+          19,
+          17,
+          17,
+          17
+        ],
+        "minCapacity": 21,
+        "maxCapacity": 40,
+        "planHash": "6b0d9fe4b5c84eb3d385ae674fc6cb4c7413be141ad3ba971542ff95a6554fe3",
+        "stages": 86,
+        "dependencies": 0,
+        "trainingWins": 3
       }
     ]
   },
@@ -605,22 +1541,61 @@
     "sourceHash": "36403d0f5d208b2e5c266f8834c32ef6b208c756a14f99e03aadc22c39638506",
     "variants": [
       {
-        "containers": 93,
-        "stages": 36,
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "d2fb5d7832c41a06afed90eb6c0064c88c019654a9800d8bcd508c84f369c916",
+        "stages": 98,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 94,
-        "stages": 36,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          20
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "8311f70f745f69c9af90193afad9ad8c189552897eecf0b2603ec6f44303ba54",
+        "stages": 96,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 35,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "083e7a71696729e0619ac7e2cdaf40338e1316e8cbb1cff26b6fab0063293d87",
+        "stages": 95,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -630,22 +1605,61 @@
     "sourceHash": "6ebb82bc40d0086184a26aa750940629a3db81cbfcf2e8c83b18c260ccc60261",
     "variants": [
       {
-        "containers": 79,
-        "stages": 14,
+        "containers": 83,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          16,
+          16,
+          17,
+          16
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "8b8a0d4fe9b856a05dd639398c0f51e1830976ea99fcb4eab87ca3d77cc94be0",
+        "stages": 81,
+        "dependencies": 1,
+        "trainingWins": 4
       },
       {
-        "containers": 79,
-        "stages": 14,
+        "containers": 83,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          14,
+          14,
+          14,
+          23
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "19717af4dab02ca11ccb2ae80725e88410d5baf921a852ea626339a0f31f6f52",
+        "stages": 82,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 79,
-        "stages": 14,
+        "containers": 85,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          15,
+          16,
+          15,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "07e1a916c449c23a88d02682034e193ef3aabde547b1525a5788a692cb5f83f4",
+        "stages": 84,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -656,21 +1670,60 @@
     "variants": [
       {
         "containers": 88,
-        "stages": 25,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          18,
+          18,
+          17
+        ],
+        "minCapacity": 5,
+        "maxCapacity": 40,
+        "planHash": "4efb0eab9eedb36b4194938cd914685848869e7bd6e7b44ee6b00acf7ef2f3ae",
+        "stages": 88,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 88,
-        "stages": 25,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          19,
+          18,
+          18
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "b16510c07d6fb1e55f44f901ba1c3e5910b2ceafc101cf755a03d10feb804f46",
+        "stages": 90,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 85,
-        "stages": 20,
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          17,
+          19,
+          17
+        ],
         "minCapacity": 2,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e3f74f5194f868a304b71d75fdec3f6739810af1c839e1163e8c7c14ffdcdad5",
+        "stages": 89,
+        "dependencies": 0,
+        "trainingWins": 4
       }
     ]
   },
@@ -680,22 +1733,61 @@
     "sourceHash": "dd943a5a120f42dee1bc81a9c84c094dd34fe6623ca098379e8fd32596898dca",
     "variants": [
       {
-        "containers": 89,
-        "stages": 30,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "19acc08da9995477a71a824f1afc774031cb26db74374b718b68ad23dcdc9745",
+        "stages": 93,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 90,
-        "stages": 30,
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "ff8b6405e15c5cf5b19fb3915a1ae2770713d4d6822a837dae8b4fe27aad886f",
+        "stages": 95,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 31,
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          23,
+          17,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "f15ac9ab1cd9fa1228e0702be783683408da115317a3fd4f0f042cbacaec1aa1",
+        "stages": 94,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -705,22 +1797,61 @@
     "sourceHash": "b19ce27910a98603a8427937035807a2a7c633d44ad49e87e2c9f46c2c3d6c96",
     "variants": [
       {
-        "containers": 80,
-        "stages": 17,
-        "minCapacity": 6,
-        "maxCapacity": 40
+        "containers": 84,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          16,
+          17,
+          17,
+          17
+        ],
+        "minCapacity": 13,
+        "maxCapacity": 40,
+        "planHash": "572149fbc2c929fad47a3480eabbb56fccc94b7c137e882550dab25f8efb7282",
+        "stages": 84,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 80,
-        "stages": 17,
-        "minCapacity": 4,
-        "maxCapacity": 40
+        "containers": 84,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          22,
+          16,
+          15,
+          16,
+          15
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "cd2552486dbc2977bd70cb6cb4092e0647ae89f596c5ca68709a095c25fe0da2",
+        "stages": 84,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 80,
-        "stages": 17,
-        "minCapacity": 6,
-        "maxCapacity": 40
+        "containers": 83,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          16,
+          17,
+          17,
+          16,
+          17
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "2ed07a201b9b41dce0b0ab6291a1a935121f55ce425e22d57a9018605a1abc3e",
+        "stages": 83,
+        "dependencies": 0,
+        "trainingWins": 3
       }
     ]
   },
@@ -730,22 +1861,61 @@
     "sourceHash": "74d485d810849d1c4f7840d7f621c7814755eb43229fc9d20ad9b7afb4b7b18f",
     "variants": [
       {
-        "containers": 87,
-        "stages": 27,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          17,
+          18,
+          18
+        ],
+        "minCapacity": 6,
+        "maxCapacity": 40,
+        "planHash": "2c42af1da4a8ec5da8bf2bb5cfe9dda5e5d1b9ed0a36836e150ae05748475a13",
+        "stages": 90,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 27,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "85fc953b679b5cd0bab150c2ce6f5e7f3f18e1206d661d565afd79773edeffae",
+        "stages": 93,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 27,
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          17
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "173a6bc0d17b4a308f4cc6ec670d37ca3658de5188cf26c88cb5f20138f06505",
+        "stages": 89,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -755,22 +1925,61 @@
     "sourceHash": "23c3922ada8bb495f5198b747dd1fe02a44fbc312f1a684aac173197e7de3f06",
     "variants": [
       {
-        "containers": 87,
-        "stages": 28,
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e4203ce6c1aa18a1eb178f9fd3477d7cfb88743b1610ae10076abd35893b16c1",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 28,
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "8cae3be5ed140de4e1e32c21addb6d78291a5bab924d52a2d9b19dcb0c27ef80",
+        "stages": 96,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 30,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "b56c08eee9754685f858cc9ec8db5353639556ec372d1c9292c6317f2e52d255",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -780,22 +1989,61 @@
     "sourceHash": "ac7ecdc8622813797364bc4e754d61602597e98e1e798e2815c00ee55786bf87",
     "variants": [
       {
+        "containers": 88,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          17,
+          17,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "b969ed0233006938a4321d6b695e7bb633534e5c042ba49cb7a315f40eede6b4",
+        "stages": 88,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
         "containers": 90,
-        "stages": 27,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          20,
+          17,
+          17,
+          17
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "e588c2579855418060c2a325851f06496185ab87cd3126360c3369b207470242",
+        "stages": 90,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 85,
-        "stages": 25,
+        "containers": 89,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          17,
+          17,
+          18,
+          18
+        ],
         "minCapacity": 3,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 87,
-        "stages": 25,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "16c0b67a9c183366f605a3d8ae78580bd3d121c3745d5092fbfab3517fe419ef",
+        "stages": 89,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -805,22 +2053,61 @@
     "sourceHash": "eb7a215754bf71bbaed7002571cef5eba948b329ad78c4750cfa58bac1795b1e",
     "variants": [
       {
-        "containers": 97,
-        "stages": 39,
+        "containers": 100,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "2fd44e2321dc4a9ad5ee695e8cd28fd62bfe72e6846971f10be5d18913c654a3",
+        "stages": 100,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          19,
+          20
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "90ba7e96932ee70c72d1df70fd1c4d6e4665dd753f84538b965cfb7a62de40ba",
+        "stages": 98,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
         "containers": 97,
-        "stages": 40,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          20,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 99,
-        "stages": 41,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "ccf325130b24ccd82724b6f382e3e567c40c9aa0d86917b140c139c2f6b55af0",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -831,21 +2118,60 @@
     "variants": [
       {
         "containers": 93,
-        "stages": 39,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "11870ecad177ae9c65e5b16b2a3ba8ea7cb74550122263d41c394de986ffffcf",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 39,
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          20,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "4b857b3ce9c92fd21e2d94e83fa1c927241da7c2ada75c2c5779db7440248960",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 92,
-        "stages": 36,
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e1eeec16d97f42eec4ff95b9204c93d460a9242a77b023f4c791fa16ea3c1b5d",
+        "stages": 98,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -855,22 +2181,61 @@
     "sourceHash": "006ba942334cda526a0cce4856c8ee326efe97eaa370b0b65af10794abe077fe",
     "variants": [
       {
+        "containers": 91,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "a578876ec4b7a7dc4ad8bd963f90ca878699ab3354a85ef3255e116706a0eac5",
+        "stages": 91,
+        "dependencies": 1,
+        "trainingWins": 3
+      },
+      {
         "containers": 90,
-        "stages": 31,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "6aa5c03343483f889330ec8c86608c0ac08a2ec20dbf64e961a54b3e371dc82a",
+        "stages": 90,
+        "dependencies": 1,
+        "trainingWins": 4
       },
       {
-        "containers": 87,
-        "stages": 28,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 89,
-        "stages": 30,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "8a0b10993714cc33021fceac020863de600cd270c5cb772efc41c17c5efcb5d1",
+        "stages": 93,
+        "dependencies": 1,
+        "trainingWins": 4
       }
     ]
   },
@@ -880,22 +2245,61 @@
     "sourceHash": "7c638d800fa452ec9e61ef2a7ec341f714593ada7a83fb4bc38b0ce52c884255",
     "variants": [
       {
-        "containers": 97,
-        "stages": 43,
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "837ffc337409f53f72e0acc91557a20582c4d67785c706d5ae879175b211327b",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 2
       },
       {
-        "containers": 100,
-        "stages": 46,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "c3d47eaadf94734b2c6090c2f72d6376f57bda2b7700bbcc064067ca5b9e2116",
+        "stages": 94,
+        "dependencies": 2,
+        "trainingWins": 1
       },
       {
-        "containers": 98,
-        "stages": 47,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          23,
+          18,
+          17
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "40a48cdd8558f6f8fee4184359dbdac8f983c8e769828d3a8f9536db272be3c8",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 1
       }
     ]
   },
@@ -905,22 +2309,61 @@
     "sourceHash": "959a429f638767c59a58855eb8facc15ca736dfde9a58ad71dd87b22fe4e558f",
     "variants": [
       {
+        "containers": 91,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "aae345e99bebdc0391de93d80808eb7c9fbe545c05b03519434705a98f5bad29",
+        "stages": 91,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
         "containers": 92,
-        "stages": 34,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          19,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "1bcb9b81f38d3d01b7c773e695364d632ee6c34df3c72eb2ec1a91904d4ea0e7",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 30,
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          20,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 90,
-        "stages": 33,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "4430aa3120633b1982b7d0d2f60392d753772b3ae5c128123be54665a2b37c5e",
+        "stages": 96,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -930,22 +2373,61 @@
     "sourceHash": "4780329c057bed0cdfca12b9172bafb3e983e0e127f30b89c6cbe6a80e8ddc6e",
     "variants": [
       {
-        "containers": 87,
-        "stages": 26,
+        "containers": 91,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "6930fb636043b6a459e64eb592eeab8e05295fbe4b861ac6322de767af0b111c",
+        "stages": 91,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 26,
+        "containers": 92,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "0902dc4f660a5cc0b8de7dc6c4a07941ff6f3bf28a05667c53df07b9c859071d",
+        "stages": 92,
+        "dependencies": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 87,
-        "stages": 26,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "a7b045e591ddbc4be8b74ee3c745f4d5fd5a86b182aab852482f4a746c1cc789",
+        "stages": 93,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -955,22 +2437,61 @@
     "sourceHash": "5156aa075be75cbebe7e7aaf6187ac6ea56a50a87101f1b011fb205fdfd1bb80",
     "variants": [
       {
-        "containers": 96,
-        "stages": 42,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 90,
-        "stages": 37,
-        "minCapacity": 2,
-        "maxCapacity": 40
-      },
-      {
         "containers": 93,
-        "stages": 37,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "c7ec7449a8a242d4ab82cf384ebf464c3771e778d776e9b7c28f41f1121dc6f5",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 5,
+        "maxCapacity": 40,
+        "planHash": "cb181f08508b6c3f8ede2d96fd87c50844081a0cdc3dbc930450bd5e9b7c2fe6",
+        "stages": 93,
+        "dependencies": 1,
+        "trainingWins": 3
+      },
+      {
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          18
+        ],
+        "minCapacity": 6,
+        "maxCapacity": 40,
+        "planHash": "eca6255a3344e9328d3747afede5d99cceaab920bbf3699983fb30f06940e76d",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -980,22 +2501,61 @@
     "sourceHash": "52cb722cf72534b55cf8339d49cf8c38be21b2db76cfb092993ea02d90fb2c0d",
     "variants": [
       {
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          18,
+          19,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "764f0adb103e6459256b529d673832a73757cd4c3013bb6d515205b072d4669c",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 2
+      },
+      {
         "containers": 91,
-        "stages": 30,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 87,
-        "stages": 27,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          18,
+          17,
+          18,
+          18
+        ],
         "minCapacity": 3,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "6bacbb9835d90a35cf71559f4681e85eb2013493aeb8fa5aa7307b0490ec79e2",
+        "stages": 91,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 30,
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "42598bcb457cfdc1e292ed06b4f70ef040a1547e9d289299a3d1129268936728",
+        "stages": 94,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1005,22 +2565,61 @@
     "sourceHash": "a56755845a3bc36a3d007431e40d9e62d1110b6de058cb34cf735ee8ee2dd907",
     "variants": [
       {
-        "containers": 92,
-        "stages": 33,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "f0258876e636de5256608ddf21914e0df840c20f8b635d635f734dc3c7733019",
+        "stages": 95,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 33,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "d32fdc9a1eae321076fa850de0ff0882c2563c1ef9b84e79f09db5e20565f869",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 92,
-        "stages": 34,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "fa7b9044951937f675c855431d6a3d11c796026d79139b3fd4c08cf5d6a82fe4",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1030,22 +2629,61 @@
     "sourceHash": "4ad306d565ac2f2cab4b7d142f8d370682e0846dccbc130514503a6f04d74c84",
     "variants": [
       {
-        "containers": 95,
-        "stages": 40,
+        "containers": 97,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "163a6aa9332583b5f4a325c28a9b34d7eb571ea9a51c184f3f2ca938ac2c3c0b",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 96,
-        "stages": 40,
+        "containers": 97,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "abc9f8aff103fe43c8f7b8b65ca78c5db98985a56e1392a705bd40cf751abb2c",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 1
       },
       {
-        "containers": 98,
-        "stages": 41,
+        "containers": 99,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "fd6095a9253b8c959ebfb7cbd6df46a11b8790a3128d9f7baa2955439bf97c59",
+        "stages": 99,
+        "dependencies": 2,
+        "trainingWins": 1
       }
     ]
   },
@@ -1055,22 +2693,61 @@
     "sourceHash": "dc60bcfb9bde80831e6af337bf33ef5d3b94f59e6b4543cc18363499b77cdadf",
     "variants": [
       {
-        "containers": 87,
-        "stages": 31,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          20,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "6b136c364873a497119c9d76d297770a8360da300cd166d78480463db0b1a9c3",
+        "stages": 98,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 32,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          20,
+          20,
+          19
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "fc07d99d13bd86fa314e63c69535be2bf427ec08f6f9f57c1b91d6cf72689bf1",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 90,
-        "stages": 33,
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "22542eb2f62f391613f299bdf1c5b3d26a24fd1b956d82e665418eda78e366e4",
+        "stages": 96,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1080,22 +2757,61 @@
     "sourceHash": "52c83f9ce8d9446eb4d7ce4f7f32cd74f9256926dca40eb278a59a8d65cccde1",
     "variants": [
       {
-        "containers": 85,
-        "stages": 23,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          20,
+          19,
+          18,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "60d009eb445f7b4473eefce66ba68dd3f94278e4baa918e3be93a43f4df9b33f",
+        "stages": 94,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 25,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          17,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "2722903419746e78a5110c6f5e7e2b8506fb6d23b7f196bf3d6c02fd9e988adc",
+        "stages": 89,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 25,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          18,
+          17,
+          17,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "ea45091b8c4f4e373634b9a418a9ce53c27d9ea0b46eb20e981239a1f25849d9",
+        "stages": 90,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -1105,22 +2821,61 @@
     "sourceHash": "0eff18fef37c7a9cd987d0e0f16fa69e4ac1a8a7b960add509a0b23683053b3a",
     "variants": [
       {
-        "containers": 94,
-        "stages": 39,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 90,
-        "stages": 40,
-        "minCapacity": 4,
-        "maxCapacity": 40
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "21d9066ccac0bf8b0c619090c3a7c22117e0e432de01e0cd8881fccffd182463",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 2
       },
       {
         "containers": 96,
-        "stages": 44,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "de8c9d3ed40475735614e0cc79921689f4caf9e7384639417d015b68524ba275",
+        "stages": 96,
+        "dependencies": 2,
+        "trainingWins": 2
+      },
+      {
+        "containers": 95,
+        "openingColors": 3,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "f242943dce0de65104fa7e18405db9c92aa77565903273e55b16cd24a1aaea2e",
+        "stages": 95,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1130,22 +2885,61 @@
     "sourceHash": "9bab225bf6aacd79cb938f5630dba6a013cc37f7eef50d04815687e2217344bb",
     "variants": [
       {
-        "containers": 92,
-        "stages": 37,
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "c160a63fcc5a17b9e3b16c1bddbe394b463957719f1f0edfbcea9b786ef3732c",
+        "stages": 96,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 34,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "9b3dfb438da2ec7ca55b1939c127e4a3bb1b9d50327937b4457f0420d1de6192",
+        "stages": 95,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 34,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 94,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "d68c97e4b9716dde8752411c93ce342fc7ee55e21c6e92a456dbaee0547813ad",
+        "stages": 94,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1155,22 +2949,61 @@
     "sourceHash": "bd0e1da8ecad4d270f706e2447ac94b0a8d2c7c37e400013e4e662c23bc92692",
     "variants": [
       {
-        "containers": 93,
-        "stages": 37,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "bd3c8d6b5265a8b1af575c8be352ee55e030c74389a596dad46742f564c40dc9",
+        "stages": 95,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 99,
-        "stages": 44,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "5eee0bef50559c33419b60c2469c64b613e66bdd3df24b827271c81cb7403049",
+        "stages": 96,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
         "containers": 97,
-        "stages": 42,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          20,
+          20,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "35152e8ea1bd57c29571bd77749a2ab252aacfe97f64890347ab792259ebad00",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1181,21 +3014,60 @@
     "variants": [
       {
         "containers": 95,
-        "stages": 43,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "6f2ba394e983582edf0838e09f82066c1468c35b84b2d503aa1f8889445d7f0a",
+        "stages": 95,
+        "dependencies": 2,
+        "trainingWins": 2
       },
       {
-        "containers": 95,
-        "stages": 43,
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "cd861558a93782f6e1898140bbf937d00141a406e068bcfea62e6bfd2792b548",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
         "containers": 96,
-        "stages": 43,
-        "minCapacity": 1,
-        "maxCapacity": 39
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          20,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "13f05d5e99005e4c0d4f6ae82cc9366355508af960a3f42757aff2ac8202c09f",
+        "stages": 96,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1206,21 +3078,60 @@
     "variants": [
       {
         "containers": 92,
-        "stages": 30,
-        "minCapacity": 1,
-        "maxCapacity": 38
-      },
-      {
-        "containers": 94,
-        "stages": 31,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 2,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "698c6fef20bc2294afa4759c125edfd0a821f1a69867c6ffbf73ea71b2d21309",
+        "stages": 91,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "01957bfdf756239492a1977c594de907d33e42d8c0028b00e5c2e67420f7a75f",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
         "containers": 94,
-        "stages": 33,
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e2bb827dbcb913b91f2bcd65475803f34d4d67c080a54a6bdc4c25c5ec5c5b25",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1230,22 +3141,61 @@
     "sourceHash": "099e3fa85d4c82076714c7ca2fd709b2e697da83644ed2927f08f07aedaa15ce",
     "variants": [
       {
-        "containers": 88,
-        "stages": 29,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "f2b131d5d6fe8ab93a3403388a663bd921d833e7e9ab19e4a3d4713cd9f696d1",
+        "stages": 90,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 33,
+        "containers": 92,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "66cb258cfbc45eab819fb8747fb9d17eca80ddfb9c0ce534a83150e1f0a5e5c7",
+        "stages": 92,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 88,
-        "stages": 29,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "96b41944abef87a3f85018a0739d1bb69fed2cc70597640858761f8606af085b",
+        "stages": 94,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1255,22 +3205,61 @@
     "sourceHash": "1d67d84b78b902cb5a3c640be29079027fbc117ce583fde6f19ed23c1224f5a9",
     "variants": [
       {
-        "containers": 91,
-        "stages": 41,
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          20
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "ada8cbba92ceae4f2256ecb0d0b9622f3502be3a756be316b9880091aaa2c34b",
+        "stages": 97,
+        "dependencies": 3,
+        "trainingWins": 3
+      },
+      {
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 2,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "60ea7910d0105a71efb5564415fcd25069c99fc3028f02c422638bdbbde9ecec",
+        "stages": 95,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 93,
-        "stages": 41,
-        "minCapacity": 5,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 91,
-        "stages": 41,
-        "minCapacity": 7,
-        "maxCapacity": 40
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "2875e63f9120f887ae5ae2848528ab92bc10f632d39ef6555a9959b19f4bc74d",
+        "stages": 99,
+        "dependencies": 2,
+        "trainingWins": 2
       }
     ]
   },
@@ -1280,22 +3269,61 @@
     "sourceHash": "37f70d075b0e0962f02f0fa8a57bf9b7d1269a1904950b27d490507cb3ecf34e",
     "variants": [
       {
-        "containers": 88,
-        "stages": 29,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 91,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          18,
+          21,
+          17,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "7cc77d817b4e7f120c84985b59725b8f58deb75c27293c851b37f1345a5534c6",
+        "stages": 90,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
+        "containers": 89,
+        "openingColors": 3,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "d8cbf4c9fa5931411096b3eeb39c3a8de6f9bf5dde355300c190a4dc90f2318e",
+        "stages": 89,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
         "containers": 91,
-        "stages": 32,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          20,
+          18,
+          17,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 93,
-        "stages": 32,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "7d85e7617b00cb29741ea8a1537f19b40b5ef401dbf74012cbb6c9bb34581ef4",
+        "stages": 91,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1305,22 +3333,61 @@
     "sourceHash": "e9c55a3e229064de6d7daf68861b535f15472adda9b2bd47c8bf0ae3f86fa9ad",
     "variants": [
       {
-        "containers": 93,
-        "stages": 34,
-        "minCapacity": 2,
-        "maxCapacity": 39
+        "containers": 95,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "68f7f140e314bd13df2988949abb19be6abd203b684219f1ea82db2d8d3055af",
+        "stages": 95,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 94,
-        "stages": 35,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "ee245dd93ba247d66fdfd8e6332d4d6c999f5daa27cc32a7a0ff9e7ed93ee667",
+        "stages": 95,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 93,
-        "stages": 34,
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          18,
+          19,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "73e79bba7c4853774b1b3587c43642fb855cd28be9b010e80b35b6e528ffad12",
+        "stages": 92,
+        "dependencies": 3,
+        "trainingWins": 3
       }
     ]
   },
@@ -1331,21 +3398,60 @@
     "variants": [
       {
         "containers": 92,
-        "stages": 36,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "955119a2a4dcf08cd61061dc68faf6456b83ee115052483d78b2b16fac4cc474",
+        "stages": 92,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 90,
-        "stages": 36,
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "d636b19065ffdf39cb7c460c25476c003a64e06bc792907452ca31f943397e0a",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 2
       },
       {
-        "containers": 91,
-        "stages": 36,
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "39c6712c479360fdb2c4d2b7100a3249f62d277074dde71d0c2fb27021dbdf11",
+        "stages": 92,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -1355,22 +3461,61 @@
     "sourceHash": "74f65b93edb4ef4e73df4c3edb8dc95dad076196bb8c1e5114db4ac8ead6d3b2",
     "variants": [
       {
-        "containers": 90,
-        "stages": 30,
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          20,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "d1235494ebeb234ab24b22fd03111c50161e651eb0b027c2de080898301eb182",
+        "stages": 97,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 29,
-        "minCapacity": 4,
-        "maxCapacity": 40
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "73725a965207cd0cf40064accfb2933df40100098ec5921c397d515cc4b591f7",
+        "stages": 94,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 90,
-        "stages": 30,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 97,
+        "openingColors": 3,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          20,
+          20,
+          19,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "53a5f065bd547bda942dd69cf3bad573a8d232886d356e5c636dde3c15bda5b0",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1380,22 +3525,61 @@
     "sourceHash": "03856afb5d33b5f21d4eaff1f0a117602b00d71e05b985b4c53f5d9e740a62de",
     "variants": [
       {
-        "containers": 95,
-        "stages": 39,
+        "containers": 102,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          21,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "19cde0da140d9f62529a154f550c3f1ed8a6dfbd7ef7a9859e43c5c2db7690d2",
+        "stages": 102,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 96,
-        "stages": 38,
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "2049257fe22cfe7bf9efa7a188780af851f38bf884eda2e62ea2c73470073a94",
+        "stages": 99,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 94,
-        "stages": 38,
+        "containers": 98,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 38
+        "maxCapacity": 40,
+        "planHash": "e74f1f2139fd9598de7843916fdf59db93778cadd69ee1ea9dc68243b90305c9",
+        "stages": 98,
+        "dependencies": 3,
+        "trainingWins": 3
       }
     ]
   },
@@ -1405,22 +3589,61 @@
     "sourceHash": "8f23daadfd059a43304480a07770a03d766ac69ae1ce0b6002130cb639c0eafe",
     "variants": [
       {
-        "containers": 91,
-        "stages": 30,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "7224a721b6a490f308d757ef4c22ead72d0336cf668514acc0b0c7ab56d70fea",
+        "stages": 90,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 31,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 89,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 9,
+        "maxCapacity": 40,
+        "planHash": "fbf43bc87d478b6f2c1db1a9b9b4b8b86cf63c8330c240a7681c3897a526ffa0",
+        "stages": 89,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 31,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 92,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "3ac98776df687befd595606397ca18d56a49683496ab3d11214b8b8a68083dd0",
+        "stages": 92,
+        "dependencies": 3,
+        "trainingWins": 3
       }
     ]
   },
@@ -1430,22 +3653,61 @@
     "sourceHash": "002b56e546836b5cc430bc7d37383032b55cf5b712d0442f6bb2695935df8a19",
     "variants": [
       {
-        "containers": 94,
-        "stages": 41,
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          20,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "0385e0740143dd808567bba21e82c4762a31d0e6e7b46c3d31899729b0598be5",
+        "stages": 98,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 95,
-        "stages": 40,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          20,
+          20
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "87c8b8da00f067c985feac0d37c517788f1a3ac0a7126ca583d940357e9a8ca6",
+        "stages": 98,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
-        "containers": 95,
-        "stages": 39,
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "7f73b85711a907910a41b0b665cf070481505135c6403cb806f5921d2d2dc375",
+        "stages": 99,
+        "dependencies": 3,
+        "trainingWins": 3
       }
     ]
   },
@@ -1455,22 +3717,61 @@
     "sourceHash": "6c0575cefdb79022e15dafcb2c8e81eb9b1b285cf8bdcdb23237c4bfae70a37d",
     "variants": [
       {
-        "containers": 92,
-        "stages": 34,
-        "minCapacity": 1,
-        "maxCapacity": 39
+        "containers": 93,
+        "openingColors": 5,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "e34fe714f8dae9d22fc8aa572735f8e918676e384032895aad27de360cfe9e1e",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 90,
-        "stages": 34,
+        "containers": 92,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "54f348e329729428c15a8ac149f1228af0b8eb3333743fec3d494e9251685668",
+        "stages": 92,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 92,
-        "stages": 34,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 93,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "8947821b214d59f9df3041b717eda4bdef38ade54ed30dff8e1c26409af5f1b0",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 3
       }
     ]
   },
@@ -1480,22 +3781,61 @@
     "sourceHash": "03672485d15f346934f8f557ed965a17ce960aa165958c78f3c13789594eed5b",
     "variants": [
       {
-        "containers": 92,
-        "stages": 38,
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 3,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "bb19609efd6a210cf0b1c8af9ac1fdd757d792095bffb9dbe2b30f565f03322b",
+        "stages": 94,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 92,
-        "stages": 36,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 101,
+        "openingColors": 4,
+        "maxRun": 3,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          21
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "cb9552d4322c01a8f98facac8c8f87c514d1126eace168168ef656fbe33d4cc0",
+        "stages": 98,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 95,
-        "stages": 39,
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 3,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "765cffee5ed4377228e3e5c5f9d316fbcdbb8061d475df3db199fef7662cb354",
+        "stages": 91,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -1505,22 +3845,61 @@
     "sourceHash": "b3f88404cb7cf337beecb203fbdbe769faa88cd0b55a6971a585a7a9dd420330",
     "variants": [
       {
-        "containers": 87,
-        "stages": 22,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 87,
-        "stages": 22,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 85,
+        "openingColors": 4,
+        "maxRun": 3,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          17,
+          18,
+          16
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "1db2d0959d2ee2c96e13e8654bed6d9c5a1bf6c38723e4f18ef556b893a3d5c8",
+        "stages": 81,
+        "dependencies": 1,
+        "trainingWins": 4
       },
       {
         "containers": 86,
-        "stages": 21,
-        "minCapacity": 2,
-        "maxCapacity": 39
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          17,
+          17,
+          16,
+          18
+        ],
+        "minCapacity": 5,
+        "maxCapacity": 40,
+        "planHash": "d41f2f852650c9796e9c117e2ad1ebd391945898717d018c5b0cd1f5deff5037",
+        "stages": 85,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
+        "containers": 88,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          17,
+          17,
+          19,
+          16,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "2218e660f355fa95b3ac3c73ab8fcfedb88f667495189f62749b3d6460a76289",
+        "stages": 88,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -1530,22 +3909,61 @@
     "sourceHash": "265769a50837a461bc574d5847131ab9b368e03a0610c06779765821041f291f",
     "variants": [
       {
-        "containers": 91,
-        "stages": 31,
-        "minCapacity": 1,
-        "maxCapacity": 38
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "a6303c7110ca7a6c0552cb0be64c1db9150fecde60740f0b9ffe0d24c027406e",
+        "stages": 95,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 93,
-        "stages": 34,
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          20,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "250ee621f23eaf0f17a0c50753b30b3e9923e092677906726d9094edd6fdf9bd",
+        "stages": 95,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 34,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "51742c3d3d3eeb4f8094373b7541c62085ee5bf27f6c02bf68e6b8bf64ece4bf",
+        "stages": 95,
+        "dependencies": 3,
+        "trainingWins": 3
       }
     ]
   },
@@ -1555,22 +3973,61 @@
     "sourceHash": "ffee3698ab2b9a295ea160395d5dfbe1143f510d19bbc5de4e3f81055aa2b2fb",
     "variants": [
       {
-        "containers": 89,
-        "stages": 32,
+        "containers": 93,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "b6093999d4ca03617ec9bb05ebae1ae9ce077031adff60c9a600e7fbb78bdbc9",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 32,
+        "containers": 91,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "5a5214d8955a700ff954304c548e45bdfccd672134881bfad9536af27e2d3081",
+        "stages": 91,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 32,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "000109cc819f94d7402fec38d9c1b217c5024ea5b1e685ead706214249bfceb6",
+        "stages": 93,
+        "dependencies": 3,
+        "trainingWins": 3
       }
     ]
   },
@@ -1580,22 +4037,61 @@
     "sourceHash": "bbb0876b8879cc6c11925f98926cec2475af733bec967e9d7cace2bee9eaed64",
     "variants": [
       {
-        "containers": 96,
-        "stages": 39,
+        "containers": 100,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "79ecd603e684d19250a165b5b646bf992f93982b7dd0d75c5feda684298ea0b1",
+        "stages": 100,
+        "dependencies": 3,
+        "trainingWins": 3
+      },
+      {
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          20,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "94da1f04335dba9fee652b2060091308460d9cdd05276c29b3177d9aebed4fb1",
+        "stages": 97,
+        "dependencies": 3,
+        "trainingWins": 2
+      },
+      {
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          19,
+          19
+        ],
         "minCapacity": 2,
-        "maxCapacity": 38
-      },
-      {
-        "containers": 96,
-        "stages": 41,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 99,
-        "stages": 47,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "1fa3a80af109c6ac9224ca2a171cc96607fea6157372c5075030edd609ea3d6c",
+        "stages": 97,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -1605,22 +4101,61 @@
     "sourceHash": "2cbba3968443f9527c4fe150167d50d22ade1a76a0703f450c68fb3ade3be374",
     "variants": [
       {
-        "containers": 91,
-        "stages": 35,
+        "containers": 97,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "9c9d5b080b2ee449ea63c78f4f49325366b613bb49ef3027d5cbe5b5c847627b",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 3
       },
       {
-        "containers": 92,
-        "stages": 36,
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "fe14458e1f0da76a8cbb1805fc5376cacd62a7a3c6ddcd88073437278a571636",
+        "stages": 99,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 92,
-        "stages": 36,
+        "containers": 95,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "421b7f4b4099398432588ca595f335cb61ca0f8b6b3aa2f7f7df2e567ece3979",
+        "stages": 95,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -1630,22 +4165,61 @@
     "sourceHash": "a1b0675a49a324ffb164d601ba29193003e72a0bc383b8a876e062e5d492ffe8",
     "variants": [
       {
-        "containers": 88,
-        "stages": 27,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 87,
-        "stages": 26,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 87,
-        "stages": 26,
+        "containers": 93,
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 2,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "c0aa4e163d098778a6a1ee6533335db5573801fe340cd95f16dd4a7ec748b76d",
+        "stages": 91,
+        "dependencies": 3,
+        "trainingWins": 3
+      },
+      {
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          19,
+          18,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "053e72912d49e63574f84181dca4cedf56efe0310ba9505257a32249a6cbc803",
+        "stages": 92,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "a97583601b2798401588e50b71383a8131855bbb982ca1825864dff2b3c3bb36",
+        "stages": 91,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -1655,22 +4229,61 @@
     "sourceHash": "220fbaea1475402a9d5393a8d5d3eb341a17fb601a83ee6c6dced7f9ee578e14",
     "variants": [
       {
-        "containers": 89,
-        "stages": 31,
+        "containers": 91,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "bda6fb2c27ade11a4e75a9e12b8bd58f8adf8d4c8cc85a81b661d4a2aa0f70cf",
+        "stages": 91,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 89,
-        "stages": 30,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e6cb564ad9cd29e643d613519ba7bd82678f55a63db319b502a7e0b562d42c48",
+        "stages": 95,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 86,
-        "stages": 30,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          20,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "23e8acdcc66deb535f601fc741732d960d6a24f9a48780ae65a69bfd18b3b476",
+        "stages": 93,
+        "dependencies": 1,
+        "trainingWins": 3
       }
     ]
   },
@@ -1680,22 +4293,61 @@
     "sourceHash": "736d6a0dfd8c00b0af5bf3cf4a4621a4ee825345cd1e52aea087fc8647671a94",
     "variants": [
       {
-        "containers": 87,
-        "stages": 31,
-        "minCapacity": 1,
-        "maxCapacity": 39
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          20
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "ff05ac03d5c49939112e630460f5fed3d4c1092c2c7130c0ecb7335bae5a0bb1",
+        "stages": 96,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 31,
-        "minCapacity": 1,
-        "maxCapacity": 39
-      },
-      {
-        "containers": 88,
-        "stages": 32,
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 2,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "851421bf374f4ed1f8578bbe293db870a56095465b7e33c3bb419db811c0d177",
+        "stages": 95,
+        "dependencies": 3,
+        "trainingWins": 2
+      },
+      {
+        "containers": 93,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          18,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "163bb5fc65414d91b776c10e6743be296ceec1020139d11c2e968a78e9321e52",
+        "stages": 93,
+        "dependencies": 3,
+        "trainingWins": 3
       }
     ]
   },
@@ -1705,22 +4357,61 @@
     "sourceHash": "3cc6dee0c44fe1d56d77829261e385b1e96eb80b1b0291c614e9342d5ee2dd66",
     "variants": [
       {
-        "containers": 87,
-        "stages": 35,
+        "containers": 94,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "8e633971795f89b099b5fa941ba812965ad1427cc9cbf4c6f6a62370a76dea2f",
+        "stages": 94,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 87,
-        "stages": 30,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 90,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          18
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "e2f2b8052e37e95860737ec93a870d27988d37f30dd505076fd0880f969e481a",
+        "stages": 90,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
-        "containers": 88,
-        "stages": 31,
+        "containers": 96,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "207bd08337b25803eb0f2ef6d477128645434500a6cad395bb62b4ed1a9c3d5d",
+        "stages": 96,
+        "dependencies": 3,
+        "trainingWins": 3
       }
     ]
   },
@@ -1730,22 +4421,61 @@
     "sourceHash": "cfc1a8b10e3892d8a425acfecf3fcee23bf61cd28d8a4e328f4daee86836579c",
     "variants": [
       {
-        "containers": 94,
-        "stages": 36,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          20,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "f2fa869bf9b5171507933bd90f5ba73f716fae85d19cd375e982f60cda09244f",
+        "stages": 92,
+        "dependencies": 1,
+        "trainingWins": 2
       },
       {
         "containers": 91,
-        "stages": 36,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          18,
+          18,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "650d54ecbeb4992fcc43ce213b817023f16b2c0aa3b3b857162067c9954555ae",
+        "stages": 91,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
-        "containers": 92,
-        "stages": 36,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 91,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          19,
+          18,
+          18
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "264c1206e6c0b4a2e4b142ac54c38acb5abfbd6b835e5a9e4bd73ee83bd061f3",
+        "stages": 91,
+        "dependencies": 0,
+        "trainingWins": 1
       }
     ]
   },
@@ -1755,22 +4485,61 @@
     "sourceHash": "2671b3406cebfc85c6ae450333aee59340797c4d3396380e9c67722da1e2dee5",
     "variants": [
       {
-        "containers": 94,
-        "stages": 38,
-        "minCapacity": 3,
-        "maxCapacity": 39
-      },
-      {
-        "containers": 97,
-        "stages": 40,
+        "containers": 93,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "819933a71959e84f74ecb1c2a4b4fd661be61ca88b5c1c33eff9f1c715cb68d4",
+        "stages": 93,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
         "containers": 96,
-        "stages": 38,
-        "minCapacity": 3,
-        "maxCapacity": 38
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "af9cc57bed19f59e9b4477accd4fae6e15ba7bc03b071a99d4d0d066bb024b0f",
+        "stages": 96,
+        "dependencies": 0,
+        "trainingWins": 2
+      },
+      {
+        "containers": 95,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          19,
+          20,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "5da64a6aabfc301033a27691296a443c6866c1d3c8229b6228eec1000c09eb9e",
+        "stages": 95,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -1780,22 +4549,61 @@
     "sourceHash": "8984376c366d55fda7f60720e95a4760bc1b04475d4c63caa05cdf74e7b6a89d",
     "variants": [
       {
-        "containers": 103,
-        "stages": 64,
+        "containers": 102,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "6007d4ec5112bb09899c7dc787d8e3f9471c5e558db199332ea1490492540086",
+        "stages": 102,
+        "dependencies": 3,
+        "trainingWins": 1
       },
       {
-        "containers": 105,
-        "stages": 62,
+        "containers": 99,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "d2fbe0de828c97639050a4ddb24a9a29057b974be6599e4ad3b1a518ca696410",
+        "stages": 99,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
-        "containers": 104,
-        "stages": 64,
+        "containers": 101,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "c3e95e59c6e81da5cb95316ddf4e1da39e2d89592f65b43a1049495821914be7",
+        "stages": 101,
+        "dependencies": 3,
+        "trainingWins": 1
       }
     ]
   },
@@ -1805,22 +4613,61 @@
     "sourceHash": "a8cce98f7b332cd2837961cc67e870ac9fb6873729fcd8de8bb08316b4094c52",
     "variants": [
       {
-        "containers": 96,
-        "stages": 38,
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "f1392cc69d652e0dd0421e5525b9819e2744dee90e36391401e67af591843600",
+        "stages": 98,
+        "dependencies": 1,
+        "trainingWins": 2
       },
       {
-        "containers": 94,
-        "stages": 36,
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "64666b27e497fe2a841e2a46b1ef46dfce9f68c07406816009a105cd65623296",
+        "stages": 99,
+        "dependencies": 3,
+        "trainingWins": 1
       },
       {
-        "containers": 95,
-        "stages": 37,
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "4ce17c06300d85fe437bd2d9ea1c001fd006eb4af711cc59ce0879aeed65ce73",
+        "stages": 97,
+        "dependencies": 2,
+        "trainingWins": 2
       }
     ]
   },
@@ -1830,22 +4677,61 @@
     "sourceHash": "a62684066c690b3b0a3eb5f454141a957958553c14effc6ce09e69718095dc39",
     "variants": [
       {
-        "containers": 91,
-        "stages": 35,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "b9906d9ee57391a99a41ffd25653bfb37656dd5bf2d2794e21e104e9dcfc04fc",
+        "stages": 91,
+        "dependencies": 2,
+        "trainingWins": 3
+      },
+      {
+        "containers": 92,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          18,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "59de3020cfcd42e30cacc0c61e683035de6f8a2deccb771a52e7d5183ef6c347",
+        "stages": 91,
+        "dependencies": 1,
+        "trainingWins": 2
       },
       {
         "containers": 91,
-        "stages": 35,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 91,
-        "stages": 35,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "3d6cfaff4e2682918d32527f748205afc24374e82c45fe827cb3b0932aec495a",
+        "stages": 90,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -1855,22 +4741,61 @@
     "sourceHash": "a4b96f345b4ce610392610d98cd385266f8ed613692bc04c556547cd3ea67c82",
     "variants": [
       {
-        "containers": 112,
-        "stages": 67,
+        "containers": 108,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          22,
+          22,
+          22
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 105,
-        "stages": 62,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "13633fa6a9d9fc4bbd3e55a64b1dd0c4e7711c6f63e25eeaa3554814820e1ab6",
+        "stages": 108,
+        "dependencies": 2,
+        "trainingWins": 1
       },
       {
         "containers": 111,
-        "stages": 68,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          22,
+          22,
+          22,
+          23,
+          22
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "bf8b05329dd20644f298c8f59339417e9a8ccffd96982b94c76eeb0cf836b2b7",
+        "stages": 111,
+        "dependencies": 3,
+        "trainingWins": 2
+      },
+      {
+        "containers": 111,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          22,
+          22,
+          23,
+          22,
+          22
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "a3f803df94dbae1666ad06b00734154c4a019a137f943830284458d80f7973a9",
+        "stages": 111,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -1880,22 +4805,61 @@
     "sourceHash": "bf277e4729609d145abe2f849332440dff4d49c7a630372521460795a414f046",
     "variants": [
       {
-        "containers": 105,
-        "stages": 61,
+        "containers": 103,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          20,
+          21,
+          21,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "c8ba593a13eed64ab0e55ac72e27d0f5b84799085748467a7f5914e661733282",
+        "stages": 103,
+        "dependencies": 2,
+        "trainingWins": 0
       },
       {
-        "containers": 112,
-        "stages": 67,
+        "containers": 114,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          23,
+          22,
+          23,
+          23,
+          23
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "5564aedcc34716ecfb7f7256ad2e1ef6dee836a0aeb103294f3bc4e5781df4e1",
+        "stages": 114,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
-        "containers": 105,
-        "stages": 62,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 104,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          20,
+          21,
+          21,
+          21
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "61030ee9dd8825aaea6f9d8c6a0bcf95b759db72d32416817eae43f73f279ade",
+        "stages": 104,
+        "dependencies": 4,
+        "trainingWins": 2
       }
     ]
   },
@@ -1905,22 +4869,61 @@
     "sourceHash": "1ebd4ccac9904d6979722ae7655ed7968bbed3a798c03c2512aaf475edb6d8f1",
     "variants": [
       {
-        "containers": 100,
-        "stages": 49,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 102,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          20,
+          20,
+          20,
+          21
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "5432c5f838078a5b762d42e1af3c151b3a3d6057133484a8b93c07808f33454a",
+        "stages": 102,
+        "dependencies": 2,
+        "trainingWins": 2
       },
       {
-        "containers": 99,
-        "stages": 48,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 101,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          20,
+          20
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "e08771c085b94216c2a6920a1932ad72186a60484f6d5cbe234875ca7da21d3d",
+        "stages": 101,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
-        "containers": 103,
-        "stages": 51,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 104,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "3e2b5d230e60f2e5d73c57f19de094942f575ffae521c0467a3f4416b64bd5b4",
+        "stages": 104,
+        "dependencies": 4,
+        "trainingWins": 1
       }
     ]
   },
@@ -1930,22 +4933,61 @@
     "sourceHash": "02742ad0da88c98cf2022042656ccc3559bf0cebd43608002354990f91a2338d",
     "variants": [
       {
+        "containers": 95,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          18,
+          21,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "73176f3bbc9d6e0be66684b5fd15f08beb2a301244162142e89b6df10c284a90",
+        "stages": 95,
+        "dependencies": 3,
+        "trainingWins": 2
+      },
+      {
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          20,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "56e620236c0a6dde643b63db07347e821f0a9f6ebeaca3b5131d949f272c7e46",
+        "stages": 98,
+        "dependencies": 4,
+        "trainingWins": 2
+      },
+      {
         "containers": 99,
-        "stages": 44,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 98,
-        "stages": 45,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 98,
-        "stages": 43,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "9aa0ddc6b7b95ae5fc9e92a736ddb38c7f33aae3307dcb75ceb9ea503ac12a73",
+        "stages": 99,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -1955,22 +4997,61 @@
     "sourceHash": "5cad59c04ecb0b72c40d17b2ab5ec008c0ba89b78ed1b18f6e74bf96d8cfb7b8",
     "variants": [
       {
-        "containers": 89,
-        "stages": 36,
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "82889cd2453c379c8cec9179bb4af895bc503e6f78eebe20a067f0c7bb828559",
+        "stages": 94,
+        "dependencies": 0,
+        "trainingWins": 3
       },
       {
-        "containers": 91,
-        "stages": 37,
+        "containers": 93,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          19,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "660c4f76ac55f225adb9b242b4a3ce974aef787a7659be1358c2466f28f66429",
+        "stages": 93,
+        "dependencies": 2,
+        "trainingWins": 2
       },
       {
-        "containers": 88,
-        "stages": 35,
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "eb6b9c3a246d886ceac8813b0a872af4a00535edaf9704c396e841cae08b8b7c",
+        "stages": 94,
+        "dependencies": 0,
+        "trainingWins": 2
       }
     ]
   },
@@ -1981,21 +5062,60 @@
     "variants": [
       {
         "containers": 94,
-        "stages": 36,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          18
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "13deb9d22731a84469cb4f000769cdef35d510bfffc65f1319341f69063c4083",
+        "stages": 93,
+        "dependencies": 1,
+        "trainingWins": 2
       },
       {
         "containers": 94,
-        "stages": 36,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          19,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "1785c54b7a52d09e179e9152baad732836f3966ca949bef106d334797c662210",
+        "stages": 92,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
-        "containers": 96,
-        "stages": 40,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 97,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          20,
+          19
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "4676523c0f68702fcf860e496b02b153bd6ddd1e0e4072c093282d6320089814",
+        "stages": 96,
+        "dependencies": 0,
+        "trainingWins": 2
       }
     ]
   },
@@ -2005,22 +5125,61 @@
     "sourceHash": "2602b5c271392297f24c333b6b72dee372537450204c578add4f1bf28798498b",
     "variants": [
       {
-        "containers": 99,
-        "stages": 48,
+        "containers": 104,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "3786fcab38581166b2f99514d4c20305357807eb188c8608623e9d0b7b1f84b1",
+        "stages": 104,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
-        "containers": 100,
-        "stages": 50,
+        "containers": 104,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          20,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "4c8a4b41340f2a2b6a2f6a2d35ec8cbb4b29fb87868a7184c878cdefffc9a73b",
+        "stages": 104,
+        "dependencies": 4,
+        "trainingWins": 0
       },
       {
-        "containers": 101,
-        "stages": 51,
+        "containers": 104,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "4b678721d7fe947dae1ead877cd567387d92aad0ef0732c921f3e2e85f699bd7",
+        "stages": 104,
+        "dependencies": 4,
+        "trainingWins": 2
       }
     ]
   },
@@ -2030,22 +5189,61 @@
     "sourceHash": "681ef532f2e6f6d9b45a731050ecf3154e65c38a993efa0539654f110e2aff79",
     "variants": [
       {
-        "containers": 108,
-        "stages": 59,
+        "containers": 105,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e190e5574ba9a991980c32a735151ba9bb13172c10a6ee530c9ffb85a55cc19e",
+        "stages": 105,
+        "dependencies": 4,
+        "trainingWins": 1
       },
       {
-        "containers": 103,
-        "stages": 54,
+        "containers": 104,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "30ffdc8c79e85dc73d325de26fb6820eceb5f3a1887f3f85976c7a447a57609e",
+        "stages": 104,
+        "dependencies": 4,
+        "trainingWins": 1
       },
       {
-        "containers": 111,
-        "stages": 63,
+        "containers": 107,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          22,
+          21,
+          22,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "0397a561494f72f65f8834e7f4161d20124eba7edd58ad7ac701949dcf3c339d",
+        "stages": 107,
+        "dependencies": 4,
+        "trainingWins": 0
       }
     ]
   },
@@ -2055,22 +5253,61 @@
     "sourceHash": "ce54853f4caa5ceae418b47042e60f2719800a932150818a6f260f246fd1fa24",
     "variants": [
       {
-        "containers": 94,
-        "stages": 37,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
         "containers": 93,
-        "stages": 35,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          18,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "d1521f89ccc9a96e478c312caa3d752aa4782788d854a38e9572e4944e8fa2de",
+        "stages": 93,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
-        "containers": 94,
-        "stages": 36,
+        "containers": 97,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          20,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "78cc8ce8fc8f626da10cdafdb0a0fdb7e4219d40b84157f6d605664e41a9d83e",
+        "stages": 97,
+        "dependencies": 4,
+        "trainingWins": 2
+      },
+      {
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "d9bb80e37ad138d609e46f98224b16ff0ab94aa4aa4f0289cfe50cc856df4599",
+        "stages": 98,
+        "dependencies": 2,
+        "trainingWins": 2
       }
     ]
   },
@@ -2081,21 +5318,60 @@
     "variants": [
       {
         "containers": 102,
-        "stages": 51,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          21,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "ef4a018cc53507e010522b40420d42aaf3ec7fdad8dc37c7ccf7925707e6edfc",
+        "stages": 102,
+        "dependencies": 2,
+        "trainingWins": 2
       },
       {
-        "containers": 98,
-        "stages": 48,
+        "containers": 102,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          20,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "23d14f24a81c4964d53ff74593881bfa35b9862bf76d7116ae84f0f5cab3dd6a",
+        "stages": 102,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
         "containers": 100,
-        "stages": 50,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "8f1044d532abc42566005662e392516a299df7b69c9350946c233ad2cb14f9be",
+        "stages": 100,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -2105,22 +5381,61 @@
     "sourceHash": "279745a59797cabecf5d94a2594768fa4cb1a9683e3a8ea98f3021cdb0c58fe0",
     "variants": [
       {
+        "containers": 102,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          21,
+          21
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "c5b1f2de13aaa0846a895263342b366f352817198627e87326fedc0eb95bd69a",
+        "stages": 102,
+        "dependencies": 4,
+        "trainingWins": 2
+      },
+      {
+        "containers": 103,
+        "openingColors": 5,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          21,
+          21
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "68b639946c5df470552518c01bb79a9a954f67b8ac12936cdd0a8fada1fe23f3",
+        "stages": 102,
+        "dependencies": 4,
+        "trainingWins": 2
+      },
+      {
         "containers": 106,
-        "stages": 59,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          22,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 103,
-        "stages": 56,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 103,
-        "stages": 55,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "bd00181abe38af1f7f2a5e3835fa9f9f6d687768b1ce0ee62938ca6a9ceefb02",
+        "stages": 106,
+        "dependencies": 4,
+        "trainingWins": 2
       }
     ]
   },
@@ -2130,22 +5445,61 @@
     "sourceHash": "d15ac82ac2cd1ded24533e33cf6bbf65d8ff4fe9b6e8f23ee027787822cec698",
     "variants": [
       {
-        "containers": 93,
-        "stages": 39,
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "0f61b0033e00c4d14cfc0eaaa6c2f361a81d10cf906a54d53aadbc0d90c2c530",
+        "stages": 98,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 93,
-        "stages": 39,
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e7718a0169ee38154acf1b74f5ef538a78f3cd605effb6f164a4829fb7f2d761",
+        "stages": 96,
+        "dependencies": 1,
+        "trainingWins": 3
       },
       {
-        "containers": 92,
-        "stages": 38,
+        "containers": 94,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "218f787dc2609d6a595830f9daff4e1e35782082be53d2bbbcf3d646b8027807",
+        "stages": 94,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -2155,22 +5509,61 @@
     "sourceHash": "e5e0f50893d0788153e47f0e85a27f7700d5dd5b974a64ed25ff7362b57b455f",
     "variants": [
       {
-        "containers": 97,
-        "stages": 46,
+        "containers": 103,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "5cdedd9e258ed845e571db10bd0cd9a7d1ce2abdd021d2c9ed68ef64c8af2152",
+        "stages": 103,
+        "dependencies": 4,
+        "trainingWins": 3
       },
       {
-        "containers": 97,
-        "stages": 49,
+        "containers": 105,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "2284bbb13ce7d2060e7ccdb46d154ef86449513535bcba87cc4ea1782a39334a",
+        "stages": 105,
+        "dependencies": 3,
+        "trainingWins": 1
       },
       {
-        "containers": 97,
-        "stages": 48,
+        "containers": 105,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "d0d6e0325e9caba2b9d044b32dfb5312c392f54e2d44521c254b3c491a427ee0",
+        "stages": 105,
+        "dependencies": 4,
+        "trainingWins": 3
       }
     ]
   },
@@ -2180,22 +5573,61 @@
     "sourceHash": "f4ec376a946df1447179a9eae63e203162b27a09d20eae1d0391a8b03d2bb656",
     "variants": [
       {
-        "containers": 117,
-        "stages": 75,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
         "containers": 114,
-        "stages": 72,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          23,
+          23,
+          23,
+          22,
+          23
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "6068134ce30a09e2d3a5772e3708101cf74010b01fc3c793e3d6372a87feb247",
+        "stages": 114,
+        "dependencies": 4,
+        "trainingWins": 0
       },
       {
-        "containers": 119,
-        "stages": 76,
+        "containers": 109,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          22,
+          22,
+          22,
+          22
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "93f0eb04c7ca48f48a8b963fb16c8ec8dd65286ed1f6e553224a29394dbc50a1",
+        "stages": 109,
+        "dependencies": 4,
+        "trainingWins": 1
+      },
+      {
+        "containers": 110,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          22,
+          22,
+          22,
+          22,
+          22
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "99cd090cb9ec8ecf0263b51200ffacef2a0b859aa75e68b66a47e50cee255725",
+        "stages": 110,
+        "dependencies": 4,
+        "trainingWins": 0
       }
     ]
   },
@@ -2205,22 +5637,61 @@
     "sourceHash": "6bc4c8e447bacbe667f857f9d37654ec8fdf80dde1593c83579da79e239f2dc3",
     "variants": [
       {
-        "containers": 94,
-        "stages": 35,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
         "containers": 93,
-        "stages": 33,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          18,
+          19,
+          18,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "70e60a3bf5d8768cd886bbe8e213481591666d6b7dd7471068c1bac4bc236821",
+        "stages": 90,
+        "dependencies": 2,
+        "trainingWins": 2
       },
       {
-        "containers": 92,
-        "stages": 34,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 91,
+        "openingColors": 5,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          18,
+          19,
+          18,
+          18
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "8d260cf03ea90e86616e870d20c0d2d9225e334f8eb40b72900f10035817f68c",
+        "stages": 88,
+        "dependencies": 3,
+        "trainingWins": 2
+      },
+      {
+        "containers": 94,
+        "openingColors": 5,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          18,
+          20,
+          18,
+          18,
+          20
+        ],
+        "minCapacity": 3,
+        "maxCapacity": 40,
+        "planHash": "3c2543552b3e60e39a2a719e935a30a26683d98e42d2ffc6ddd969016353c6ba",
+        "stages": 91,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -2230,22 +5701,61 @@
     "sourceHash": "33358dd96742242b89d6fedc238df711c0977cd1001c4d7e0c26affa29a6632b",
     "variants": [
       {
+        "containers": 102,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          20,
+          20,
+          21,
+          20
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "82fc541517715ffaba1ad8bae4774115af1d172aafeb2e34f4bd99062b549c75",
+        "stages": 102,
+        "dependencies": 4,
+        "trainingWins": 2
+      },
+      {
+        "containers": 101,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          21
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "e52bf01c02838733a9c2b6453a2f6bf7c8fe197103fdca3d881802d573039ff0",
+        "stages": 101,
+        "dependencies": 3,
+        "trainingWins": 1
+      },
+      {
         "containers": 98,
-        "stages": 46,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 96,
-        "stages": 47,
-        "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 96,
-        "stages": 46,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "82b2fccc9a19c18d88291c5e97acf8805eaac9cba3ac7e5548132f1692087434",
+        "stages": 98,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -2255,22 +5765,61 @@
     "sourceHash": "2e078650d19a7819fcde5bbff80fc19ab0e4721389d04be3057bb83296570d71",
     "variants": [
       {
-        "containers": 103,
-        "stages": 52,
+        "containers": 107,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          22,
+          21,
+          22,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "44009eea01d64b502e59f28eb5c3b152ddb43316805dc53dbae4348f62678710",
+        "stages": 107,
+        "dependencies": 4,
+        "trainingWins": 1
       },
       {
-        "containers": 99,
-        "stages": 53,
+        "containers": 102,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "b6d4887d7b9fd7da86860e0fb3301f350429f2c678ed4d78f717f8ff9681b8b5",
+        "stages": 102,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
         "containers": 101,
-        "stages": 49,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          20,
+          20,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "621d1a69eea1b7ebecfa019f8155c01f9e8e9f4e95458309dd13e1e47146c930",
+        "stages": 101,
+        "dependencies": 4,
+        "trainingWins": 3
       }
     ]
   },
@@ -2280,22 +5829,61 @@
     "sourceHash": "3293d4b8415457c0210d5faf5fab90b2c9974684b46d401cc6e45dcfc57ced94",
     "variants": [
       {
-        "containers": 106,
-        "stages": 62,
+        "containers": 103,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          21,
+          21,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "4c4f89a6080921b6d245539a2b0efc0d0ca3806df5f1445c6e086bc29f6e1770",
+        "stages": 103,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
-        "containers": 106,
-        "stages": 61,
+        "containers": 102,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          20,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "e5796e6b4e6ebe8b6c98bfdde7bc2c1703131f90fb883994e50d1898e75547e8",
+        "stages": 102,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 109,
-        "stages": 63,
+        "containers": 103,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "50c2b15a2b68cf9406049c81a814792c7c781fc8f1cbecbdb243078de92f7d27",
+        "stages": 103,
+        "dependencies": 1,
+        "trainingWins": 0
       }
     ]
   },
@@ -2305,22 +5893,61 @@
     "sourceHash": "1801ca70e87ad4683a59ae275f5f318931d8e6eb9ed222a82995ea9f5a12a93e",
     "variants": [
       {
-        "containers": 99,
-        "stages": 54,
+        "containers": 108,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          22,
+          22,
+          22
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 98,
-        "stages": 53,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "a014394ef9c7175a1c64a4b55d9cc340b0211bd77b0df2cac7a3725cf2bdbfd1",
+        "stages": 108,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
         "containers": 101,
-        "stages": 54,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "bd54064d38dba6253546f697536efef6d3768dd64bf947953468c26e51411eba",
+        "stages": 101,
+        "dependencies": 4,
+        "trainingWins": 2
+      },
+      {
+        "containers": 104,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "e308cf6b9b3f084a8607ac8f79d85c7d364a25340429396d3c62e545206dd29b",
+        "stages": 104,
+        "dependencies": 4,
+        "trainingWins": 2
       }
     ]
   },
@@ -2330,22 +5957,61 @@
     "sourceHash": "78a35fdf71467f9056208e91cb033df09fead5e621f5dbda0abaa1c3aaca22ad",
     "variants": [
       {
-        "containers": 103,
-        "stages": 48,
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "db8970b901e36bf3745400f848a0eff9f121597dda2630e9a7d16eff25a2fa9e",
+        "stages": 98,
+        "dependencies": 4,
+        "trainingWins": 1
       },
       {
-        "containers": 102,
-        "stages": 48,
+        "containers": 99,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          20,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "c42be1cadb501caa972bb76c67bc79b5792da8ff80c38ddfb3783e94b44df61d",
+        "stages": 99,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
-        "containers": 103,
-        "stages": 50,
+        "containers": 95,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          19,
+          19,
+          19,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "2613f1d73e41bed5e3f3d17ada069dc367ec449d90050332b440c546fcfe8686",
+        "stages": 95,
+        "dependencies": 3,
+        "trainingWins": 0
       }
     ]
   },
@@ -2355,22 +6021,61 @@
     "sourceHash": "856cab35c41654925373e45a11a8b658d9f47fb5bf82477d628b7c0a73e032e2",
     "variants": [
       {
-        "containers": 93,
-        "stages": 40,
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "00c58b44c5ff986ac80fad85b7349247f89d0519d9c0b766650a02492de1b6a0",
+        "stages": 98,
+        "dependencies": 3,
+        "trainingWins": 2
       },
       {
-        "containers": 92,
-        "stages": 39,
-        "minCapacity": 3,
-        "maxCapacity": 40
+        "containers": 96,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          18,
+          19,
+          19,
+          19
+        ],
+        "minCapacity": 2,
+        "maxCapacity": 40,
+        "planHash": "a4eff68323c32154a55f473510b2612e76fd0a140c7dff7459bec91480c0e04b",
+        "stages": 95,
+        "dependencies": 2,
+        "trainingWins": 1
       },
       {
-        "containers": 93,
-        "stages": 38,
+        "containers": 98,
+        "openingColors": 4,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          19
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "50400a456bc207b6f4ca1618404272efd6302c3a20a544a28d82aa3a3464fb98",
+        "stages": 97,
+        "dependencies": 4,
+        "trainingWins": 2
       }
     ]
   },
@@ -2380,22 +6085,61 @@
     "sourceHash": "33a9e49214a805125413694c2376fc9f86f3cc548633ce54fde6256eaa3ac59f",
     "variants": [
       {
-        "containers": 104,
-        "stages": 53,
-        "minCapacity": 2,
-        "maxCapacity": 40
+        "containers": 109,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          22,
+          21,
+          22,
+          22,
+          22
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "a545538462938ff5189d2ddb741236a0b5e6f27985032f903490d3dd0b3a9a9b",
+        "stages": 109,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
         "containers": 106,
-        "stages": 56,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          22,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "7eebcb2b977b33c58db979255710d27ddc5fa3a7760a1e79ebc9b582145129d7",
+        "stages": 106,
+        "dependencies": 4,
+        "trainingWins": 1
       },
       {
-        "containers": 103,
-        "stages": 53,
+        "containers": 106,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          22,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "3adaefa5a0f572c67e050ecfef1ae2553678b27a5ecc21d31577c8e06588042b",
+        "stages": 106,
+        "dependencies": 4,
+        "trainingWins": 1
       }
     ]
   },
@@ -2405,22 +6149,61 @@
     "sourceHash": "17ee4ccd2dae0eaf09c795859f0d917004dcdd5fd9a7811832b6dcb0c4f5066c",
     "variants": [
       {
-        "containers": 106,
-        "stages": 58,
+        "containers": 99,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "71c0550a6b737c78ef1645d683bfee42d6889a0b4d7dfecbfa151bacf561d472",
+        "stages": 99,
+        "dependencies": 3,
+        "trainingWins": 1
       },
       {
-        "containers": 107,
-        "stages": 58,
+        "containers": 99,
+        "openingColors": 3,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          19,
+          20,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "a8c3956fe6f99a0d5a7906cc08c2339d1eada2e621ce58c5e7dbbd0db490f923",
+        "stages": 99,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
-        "containers": 107,
-        "stages": 59,
+        "containers": 103,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          21,
+          21,
+          21,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "4ea73e404b401724cfce6908430c77878268656dc5c14e291212757021d47bf5",
+        "stages": 103,
+        "dependencies": 4,
+        "trainingWins": 2
       }
     ]
   },
@@ -2431,21 +6214,60 @@
     "variants": [
       {
         "containers": 99,
-        "stages": 45,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
-      },
-      {
-        "containers": 101,
-        "stages": 46,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "7550a456c2d9578e4570f6ce6afe9ad023e43529a0cb0f58b568f4afbd840eef",
+        "stages": 99,
+        "dependencies": 4,
+        "trainingWins": 2
       },
       {
         "containers": 99,
-        "stages": 44,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          20,
+          19,
+          20
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "a9300a56cb1e7d9077efbd8a21cf32aea60a2f0300a39e04678bdb2f720bbb77",
+        "stages": 99,
+        "dependencies": 4,
+        "trainingWins": 2
+      },
+      {
+        "containers": 97,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          19,
+          19,
+          20,
+          19
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 40,
+        "planHash": "08ba2fc1307b202d827de139a08869175ae5dfd61cede9b2bba2bdc55c4fc1b6",
+        "stages": 97,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -2455,22 +6277,61 @@
     "sourceHash": "2de5fbd20f06f7439bb8fa34ac68030b49c60b80d6748363bc23c80343776d7f",
     "variants": [
       {
-        "containers": 103,
-        "stages": 56,
-        "minCapacity": 1,
-        "maxCapacity": 40
+        "containers": 101,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          20,
+          20,
+          20,
+          20
+        ],
+        "minCapacity": 4,
+        "maxCapacity": 40,
+        "planHash": "4bd94b73c7f16995d98101f7a4b7cb20add453f8f47355e6d0d86bb847dde0b8",
+        "stages": 101,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 104,
-        "stages": 57,
+        "containers": 105,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "c2660d0ff205d3a8ba8d6ee7beb4b9addd2ab9b390b3d0e8fd45ecfbe246af9f",
+        "stages": 105,
+        "dependencies": 3,
+        "trainingWins": 3
       },
       {
-        "containers": 104,
-        "stages": 58,
+        "containers": 105,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "9ebcb73ac5edf9ef0099806a98fd55eb2a8305287ef053236bd8f9cb1536dc40",
+        "stages": 105,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   },
@@ -2480,22 +6341,61 @@
     "sourceHash": "6cf211bec7a5b0edca688cf1cc95daa36eafd9a4ff19368b7d092fa824f278a7",
     "variants": [
       {
-        "containers": 112,
-        "stages": 66,
+        "containers": 104,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          20,
+          21,
+          21,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 39
+        "maxCapacity": 40,
+        "planHash": "87191c66c44deabcf83a42654a50565999d0e524201456e69863fbbb1a652c26",
+        "stages": 104,
+        "dependencies": 4,
+        "trainingWins": 1
       },
       {
-        "containers": 115,
-        "stages": 67,
+        "containers": 104,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "fe74f149879ea0a776c36d1ba1e971582e1bdca983100c23b4ec64b05125ea5a",
+        "stages": 104,
+        "dependencies": 2,
+        "trainingWins": 1
       },
       {
         "containers": 102,
-        "stages": 57,
+        "openingColors": 5,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnLengths": [
+          20,
+          20,
+          21,
+          20,
+          21
+        ],
         "minCapacity": 1,
-        "maxCapacity": 40
+        "maxCapacity": 40,
+        "planHash": "92f53ce54cf4418c448c91955a5eea2c41da2d7b7abb94a61279ef02eb62c116",
+        "stages": 102,
+        "dependencies": 3,
+        "trainingWins": 2
       }
     ]
   }

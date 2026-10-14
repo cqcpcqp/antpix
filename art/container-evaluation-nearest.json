@@ -1,0 +1,1775 @@
+{
+  "nearest": true,
+  "trials": 1,
+  "method": "Five basic slots; settle reachable work after each selection. Fixed held-out seeds; not human win rates or animation timing.",
+  "results": [
+    {
+      "name": "baseline",
+      "stages": [
+        {
+          "from": 1,
+          "to": 10,
+          "plans": 12,
+          "singleColorOpenings": 9,
+          "containers": 1052,
+          "longRunContainers": 519,
+          "policies": {
+            "random": {
+              "games": 12,
+              "wins": 2,
+              "earlyFailures": 1
+            },
+            "exposed": {
+              "games": 12,
+              "wins": 9,
+              "earlyFailures": 0
+            },
+            "capacity": {
+              "games": 12,
+              "wins": 9,
+              "earlyFailures": 0
+            }
+          }
+        },
+        {
+          "from": 11,
+          "to": 30,
+          "plans": 3,
+          "singleColorOpenings": 3,
+          "containers": 239,
+          "longRunContainers": 203,
+          "policies": {
+            "random": {
+              "games": 3,
+              "wins": 1,
+              "earlyFailures": 0
+            },
+            "exposed": {
+              "games": 3,
+              "wins": 3,
+              "earlyFailures": 0
+            },
+            "capacity": {
+              "games": 3,
+              "wins": 3,
+              "earlyFailures": 0
+            }
+          }
+        },
+        {
+          "from": 31,
+          "to": 60,
+          "plans": 3,
+          "singleColorOpenings": 3,
+          "containers": 279,
+          "longRunContainers": 83,
+          "policies": {
+            "random": {
+              "games": 3,
+              "wins": 0,
+              "earlyFailures": 0
+            },
+            "exposed": {
+              "games": 3,
+              "wins": 3,
+              "earlyFailures": 0
+            },
+            "capacity": {
+              "games": 3,
+              "wins": 3,
+              "earlyFailures": 0
+            }
+          }
+        },
+        {
+          "from": 61,
+          "to": 100,
+          "plans": 3,
+          "singleColorOpenings": 0,
+          "containers": 329,
+          "longRunContainers": 15,
+          "policies": {
+            "random": {
+              "games": 3,
+              "wins": 0,
+              "earlyFailures": 0
+            },
+            "exposed": {
+              "games": 3,
+              "wins": 0,
+              "earlyFailures": 0
+            },
+            "capacity": {
+              "games": 3,
+              "wins": 1,
+              "earlyFailures": 0
+            }
+          }
+        }
+      ],
+      "rows": [
+        {
+          "level": 1,
+          "variant": 0,
+          "containers": 87,
+          "openingColors": 1,
+          "maxRun": 14,
+          "longRunContainers": 55,
+          "columnLengths": [
+            18,
+            18,
+            17,
+            17,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 39,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 1,
+          "variant": 1,
+          "containers": 87,
+          "openingColors": 1,
+          "maxRun": 14,
+          "longRunContainers": 55,
+          "columnLengths": [
+            18,
+            18,
+            17,
+            17,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 39,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 1,
+          "variant": 2,
+          "containers": 85,
+          "openingColors": 1,
+          "maxRun": 16,
+          "longRunContainers": 57,
+          "columnLengths": [
+            17,
+            17,
+            17,
+            17,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 3,
+          "variant": 0,
+          "containers": 83,
+          "openingColors": 1,
+          "maxRun": 16,
+          "longRunContainers": 52,
+          "columnLengths": [
+            17,
+            17,
+            17,
+            16,
+            16
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            }
+          }
+        },
+        {
+          "level": 3,
+          "variant": 1,
+          "containers": 83,
+          "openingColors": 1,
+          "maxRun": 16,
+          "longRunContainers": 52,
+          "columnLengths": [
+            17,
+            17,
+            17,
+            16,
+            16
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            }
+          }
+        },
+        {
+          "level": 3,
+          "variant": 2,
+          "containers": 83,
+          "openingColors": 1,
+          "maxRun": 16,
+          "longRunContainers": 52,
+          "columnLengths": [
+            17,
+            17,
+            17,
+            16,
+            16
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            }
+          }
+        },
+        {
+          "level": 4,
+          "variant": 0,
+          "containers": 88,
+          "openingColors": 1,
+          "maxRun": 15,
+          "longRunContainers": 58,
+          "columnLengths": [
+            18,
+            18,
+            18,
+            17,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 38,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        },
+        {
+          "level": 4,
+          "variant": 1,
+          "containers": 88,
+          "openingColors": 1,
+          "maxRun": 15,
+          "longRunContainers": 57,
+          "columnLengths": [
+            18,
+            18,
+            18,
+            17,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 39,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            }
+          }
+        },
+        {
+          "level": 4,
+          "variant": 2,
+          "containers": 86,
+          "openingColors": 1,
+          "maxRun": 15,
+          "longRunContainers": 57,
+          "columnLengths": [
+            18,
+            17,
+            17,
+            17,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 39,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            }
+          }
+        },
+        {
+          "level": 10,
+          "variant": 0,
+          "containers": 94,
+          "openingColors": 3,
+          "maxRun": 7,
+          "longRunContainers": 7,
+          "columnLengths": [
+            19,
+            19,
+            19,
+            19,
+            18
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            }
+          }
+        },
+        {
+          "level": 10,
+          "variant": 1,
+          "containers": 95,
+          "openingColors": 3,
+          "maxRun": 6,
+          "longRunContainers": 11,
+          "columnLengths": [
+            19,
+            19,
+            19,
+            19,
+            19
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            }
+          }
+        },
+        {
+          "level": 10,
+          "variant": 2,
+          "containers": 93,
+          "openingColors": 3,
+          "maxRun": 6,
+          "longRunContainers": 6,
+          "columnLengths": [
+            19,
+            19,
+            19,
+            18,
+            18
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            }
+          }
+        },
+        {
+          "level": 20,
+          "variant": 0,
+          "containers": 79,
+          "openingColors": 1,
+          "maxRun": 21,
+          "longRunContainers": 67,
+          "columnLengths": [
+            16,
+            16,
+            16,
+            16,
+            15
+          ],
+          "minCapacity": 3,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 20,
+          "variant": 1,
+          "containers": 80,
+          "openingColors": 1,
+          "maxRun": 21,
+          "longRunContainers": 68,
+          "columnLengths": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ],
+          "minCapacity": 8,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 20,
+          "variant": 2,
+          "containers": 80,
+          "openingColors": 1,
+          "maxRun": 21,
+          "longRunContainers": 68,
+          "columnLengths": [
+            16,
+            16,
+            16,
+            16,
+            16
+          ],
+          "minCapacity": 3,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 60,
+          "variant": 0,
+          "containers": 92,
+          "openingColors": 1,
+          "maxRun": 11,
+          "longRunContainers": 26,
+          "columnLengths": [
+            19,
+            19,
+            18,
+            18,
+            18
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        },
+        {
+          "level": 60,
+          "variant": 1,
+          "containers": 92,
+          "openingColors": 1,
+          "maxRun": 11,
+          "longRunContainers": 31,
+          "columnLengths": [
+            19,
+            19,
+            18,
+            18,
+            18
+          ],
+          "minCapacity": 2,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        },
+        {
+          "level": 60,
+          "variant": 2,
+          "containers": 95,
+          "openingColors": 1,
+          "maxRun": 11,
+          "longRunContainers": 26,
+          "columnLengths": [
+            19,
+            19,
+            19,
+            19,
+            19
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 100,
+          "variant": 0,
+          "containers": 112,
+          "openingColors": 2,
+          "maxRun": 5,
+          "longRunContainers": 5,
+          "columnLengths": [
+            23,
+            23,
+            22,
+            22,
+            22
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 39,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            }
+          }
+        },
+        {
+          "level": 100,
+          "variant": 1,
+          "containers": 115,
+          "openingColors": 2,
+          "maxRun": 5,
+          "longRunContainers": 5,
+          "columnLengths": [
+            23,
+            23,
+            23,
+            23,
+            23
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            }
+          }
+        },
+        {
+          "level": 100,
+          "variant": 2,
+          "containers": 102,
+          "openingColors": 2,
+          "maxRun": 5,
+          "longRunContainers": 5,
+          "columnLengths": [
+            21,
+            21,
+            20,
+            20,
+            20
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "current",
+      "stages": [
+        {
+          "from": 1,
+          "to": 10,
+          "plans": 12,
+          "singleColorOpenings": 0,
+          "containers": 1078,
+          "longRunContainers": 0,
+          "policies": {
+            "random": {
+              "games": 12,
+              "wins": 1,
+              "earlyFailures": 6
+            },
+            "exposed": {
+              "games": 12,
+              "wins": 11,
+              "earlyFailures": 0
+            },
+            "capacity": {
+              "games": 12,
+              "wins": 12,
+              "earlyFailures": 0
+            }
+          }
+        },
+        {
+          "from": 11,
+          "to": 30,
+          "plans": 3,
+          "singleColorOpenings": 0,
+          "containers": 260,
+          "longRunContainers": 0,
+          "policies": {
+            "random": {
+              "games": 3,
+              "wins": 1,
+              "earlyFailures": 2
+            },
+            "exposed": {
+              "games": 3,
+              "wins": 3,
+              "earlyFailures": 0
+            },
+            "capacity": {
+              "games": 3,
+              "wins": 3,
+              "earlyFailures": 0
+            }
+          }
+        },
+        {
+          "from": 31,
+          "to": 60,
+          "plans": 3,
+          "singleColorOpenings": 0,
+          "containers": 292,
+          "longRunContainers": 0,
+          "policies": {
+            "random": {
+              "games": 3,
+              "wins": 0,
+              "earlyFailures": 3
+            },
+            "exposed": {
+              "games": 3,
+              "wins": 1,
+              "earlyFailures": 0
+            },
+            "capacity": {
+              "games": 3,
+              "wins": 3,
+              "earlyFailures": 0
+            }
+          }
+        },
+        {
+          "from": 61,
+          "to": 100,
+          "plans": 3,
+          "singleColorOpenings": 0,
+          "containers": 310,
+          "longRunContainers": 0,
+          "policies": {
+            "random": {
+              "games": 3,
+              "wins": 0,
+              "earlyFailures": 3
+            },
+            "exposed": {
+              "games": 3,
+              "wins": 0,
+              "earlyFailures": 0
+            },
+            "capacity": {
+              "games": 3,
+              "wins": 2,
+              "earlyFailures": 0
+            }
+          }
+        }
+      ],
+      "rows": [
+        {
+          "level": 1,
+          "variant": 0,
+          "containers": 86,
+          "openingColors": 3,
+          "maxRun": 2,
+          "longRunContainers": 0,
+          "columnLengths": [
+            17,
+            18,
+            17,
+            17,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 1,
+          "variant": 1,
+          "containers": 87,
+          "openingColors": 3,
+          "maxRun": 2,
+          "longRunContainers": 0,
+          "columnLengths": [
+            17,
+            18,
+            17,
+            16,
+            19
+          ],
+          "minCapacity": 2,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 1,
+          "variant": 2,
+          "containers": 87,
+          "openingColors": 3,
+          "maxRun": 2,
+          "longRunContainers": 0,
+          "columnLengths": [
+            17,
+            16,
+            18,
+            17,
+            19
+          ],
+          "minCapacity": 7,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 3,
+          "variant": 0,
+          "containers": 89,
+          "openingColors": 4,
+          "maxRun": 3,
+          "longRunContainers": 0,
+          "columnLengths": [
+            17,
+            18,
+            18,
+            18,
+            18
+          ],
+          "minCapacity": 2,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 3,
+          "variant": 1,
+          "containers": 87,
+          "openingColors": 4,
+          "maxRun": 3,
+          "longRunContainers": 0,
+          "columnLengths": [
+            18,
+            17,
+            18,
+            17,
+            17
+          ],
+          "minCapacity": 2,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 3,
+          "variant": 2,
+          "containers": 86,
+          "openingColors": 4,
+          "maxRun": 3,
+          "longRunContainers": 0,
+          "columnLengths": [
+            17,
+            17,
+            18,
+            17,
+            17
+          ],
+          "minCapacity": 5,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            }
+          }
+        },
+        {
+          "level": 4,
+          "variant": 0,
+          "containers": 88,
+          "openingColors": 3,
+          "maxRun": 2,
+          "longRunContainers": 0,
+          "columnLengths": [
+            18,
+            17,
+            18,
+            18,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        },
+        {
+          "level": 4,
+          "variant": 1,
+          "containers": 89,
+          "openingColors": 3,
+          "maxRun": 1,
+          "longRunContainers": 0,
+          "columnLengths": [
+            18,
+            17,
+            18,
+            18,
+            18
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            }
+          }
+        },
+        {
+          "level": 4,
+          "variant": 2,
+          "containers": 87,
+          "openingColors": 3,
+          "maxRun": 2,
+          "longRunContainers": 0,
+          "columnLengths": [
+            18,
+            17,
+            18,
+            17,
+            17
+          ],
+          "minCapacity": 6,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 1
+            }
+          }
+        },
+        {
+          "level": 10,
+          "variant": 0,
+          "containers": 96,
+          "openingColors": 4,
+          "maxRun": 1,
+          "longRunContainers": 0,
+          "columnLengths": [
+            20,
+            19,
+            19,
+            19,
+            19
+          ],
+          "minCapacity": 2,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 4
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        },
+        {
+          "level": 10,
+          "variant": 1,
+          "containers": 99,
+          "openingColors": 4,
+          "maxRun": 1,
+          "longRunContainers": 0,
+          "columnLengths": [
+            20,
+            19,
+            20,
+            20,
+            20
+          ],
+          "minCapacity": 2,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 4
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            }
+          }
+        },
+        {
+          "level": 10,
+          "variant": 2,
+          "containers": 97,
+          "openingColors": 5,
+          "maxRun": 1,
+          "longRunContainers": 0,
+          "columnLengths": [
+            19,
+            19,
+            19,
+            19,
+            21
+          ],
+          "minCapacity": 4,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 20,
+          "variant": 0,
+          "containers": 86,
+          "openingColors": 4,
+          "maxRun": 2,
+          "longRunContainers": 0,
+          "columnLengths": [
+            16,
+            19,
+            19,
+            16,
+            16
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 20,
+          "variant": 1,
+          "containers": 86,
+          "openingColors": 4,
+          "maxRun": 2,
+          "longRunContainers": 0,
+          "columnLengths": [
+            19,
+            16,
+            19,
+            16,
+            16
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 4
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 20,
+          "variant": 2,
+          "containers": 88,
+          "openingColors": 3,
+          "maxRun": 2,
+          "longRunContainers": 0,
+          "columnLengths": [
+            18,
+            18,
+            18,
+            17,
+            17
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 4
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 0
+            }
+          }
+        },
+        {
+          "level": 60,
+          "variant": 0,
+          "containers": 97,
+          "openingColors": 4,
+          "maxRun": 3,
+          "longRunContainers": 0,
+          "columnLengths": [
+            20,
+            20,
+            19,
+            19,
+            19
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        },
+        {
+          "level": 60,
+          "variant": 1,
+          "containers": 101,
+          "openingColors": 4,
+          "maxRun": 3,
+          "longRunContainers": 0,
+          "columnLengths": [
+            20,
+            20,
+            20,
+            20,
+            21
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 4
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 2
+            }
+          }
+        },
+        {
+          "level": 60,
+          "variant": 2,
+          "containers": 94,
+          "openingColors": 4,
+          "maxRun": 3,
+          "longRunContainers": 0,
+          "columnLengths": [
+            19,
+            19,
+            19,
+            19,
+            18
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        },
+        {
+          "level": 100,
+          "variant": 0,
+          "containers": 104,
+          "openingColors": 4,
+          "maxRun": 1,
+          "longRunContainers": 0,
+          "columnLengths": [
+            21,
+            20,
+            21,
+            21,
+            21
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            }
+          }
+        },
+        {
+          "level": 100,
+          "variant": 1,
+          "containers": 104,
+          "openingColors": 5,
+          "maxRun": 1,
+          "longRunContainers": 0,
+          "columnLengths": [
+            21,
+            21,
+            21,
+            20,
+            21
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        },
+        {
+          "level": 100,
+          "variant": 2,
+          "containers": 102,
+          "openingColors": 5,
+          "maxRun": 1,
+          "longRunContainers": 0,
+          "columnLengths": [
+            20,
+            20,
+            21,
+            20,
+            21
+          ],
+          "minCapacity": 1,
+          "maxCapacity": 40,
+          "policies": {
+            "random": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 1,
+              "maxStalled": 5
+            },
+            "exposed": {
+              "games": 1,
+              "wins": 0,
+              "earlyFailures": 0,
+              "maxStalled": 5
+            },
+            "capacity": {
+              "games": 1,
+              "wins": 1,
+              "earlyFailures": 0,
+              "maxStalled": 3
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "name": "antpix",
   "version": "0.1.0",
   "private": true,
-  "description": "生态蚂蚁窝 · 微信小游戏",
+  "description": "\u751f\u6001\u8682\u8681\u7a9d \u00b7 \u5fae\u4fe1\u5c0f\u6e38\u620f",
   "uuid": "9f5b4c3e-17b6-4dfa-8311-ae0b9c7f7820",
   "creator": {
     "version": "3.8.8"
@@ -23,7 +23,9 @@
     "bench:dispatch": "node scripts/bench-dispatch.cjs",
     "generate:ants": "node scripts/generate-ant-atlas.cjs",
     "preversion": "npm run check",
-    "lint:all": "eslint ."
+    "lint:all": "eslint .",
+    "evaluate:containers": "node --experimental-strip-types scripts/evaluate-container-plans.mjs",
+    "check:containers": "node scripts/check-container-gameplay.cjs"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

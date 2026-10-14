@@ -51,7 +51,7 @@ lines=[
  '// Generated from underelay image2 illustrations. Source manifests retain review status.',
  'export const GRID_WIDTH = 48;', 'export const GRID_HEIGHT = 60;',
  'export const PALETTE: string[] = '+json.dumps(palette,separators=(',',':'))+';',
- 'export interface Level { containerPlans?: [number,number][][]; id?: string; difficulty?: number; colors?: number; name: string; subtitle: string; width: number; height: number; pixels: number[]; capacity: number; }',
+ 'export interface Level { containerPlans?: [number,number,number][][]; id?: string; difficulty?: number; colors?: number; name: string; subtitle: string; width: number; height: number; pixels: number[]; capacity: number; }',
  'const PACKED_ARTWORKS = '+json.dumps(artworks,ensure_ascii=False,separators=(',',':'))+';',
  '''export const ARTWORKS = PACKED_ARTWORKS.map(({data, ...art}) => {
  const pixels: number[] = [];
@@ -64,15 +64,17 @@ lines=[
  }
  return {...art, pixels};
 });''',
- '''const COUNTS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
-export const CONTAINER_PLANS: Record<string, [number,number][][]> = {};
+ '''const PLAN_DIGITS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?&<>()[]{}@%$#';
+export const CONTAINER_PLANS: Record<string, [number,number,number][][]> = {};
 for (const art of ARTWORKS) {
  const packed = PACKED_CONTAINER_PLANS[art.id];
  if (!packed) continue; // Plans are added by the offline generation step.
  CONTAINER_PLANS[art.id] = packed.map(data => {
-  const jars: [number,number][] = [];
-  for (let i = 0; i < data.length; i += 2)
-   jars.push([art.swatches[data.charCodeAt(i) - 65], COUNTS.indexOf(data[i+1])]);
+  const jars: [number,number,number][] = [];
+  for (let i = 0; i < data.length; i += 2) {
+   const value = PLAN_DIGITS.indexOf(data[i]) * 85 + PLAN_DIGITS.indexOf(data[i+1]);
+   jars.push([art.swatches[Math.floor(value / 200)], Math.floor(value / 5) % 40 + 1, value % 5]);
+  }
   return jars;
  });
 }''',
