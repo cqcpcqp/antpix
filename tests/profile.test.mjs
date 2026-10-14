@@ -7,7 +7,7 @@ import {
   claimRewards,
   buyOrEquip,
   recordWin,
-} from '../assets/scripts/profile.ts';
+} from '../assets/scripts/domain/profile/profile.ts';
 test('existing save upgrades without losing progress', () => {
   const p = readProfile(
     JSON.stringify({

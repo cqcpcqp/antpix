@@ -1,6 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { AntTargetSearch, nearestAntTarget, clearSegment } from '../assets/scripts/routing.ts';
+import {
+  AntTargetSearch,
+  nearestAntTarget,
+  clearSegment,
+} from '../assets/scripts/domain/routing/routing.ts';
 
 // Independent small-board oracle: linear minimum selection, no production heap,
 // no path smoothing, and exact collision checks on every graph edge.

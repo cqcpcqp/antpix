@@ -16,12 +16,13 @@ export default defineConfig([
     'output/**',
     '.venv/**',
     'art/**',
-    'assets/scripts/levels.ts',
+    'assets/scripts/domain/levels/levels.ts',
     'cloudfunctions/game/profile.js',
   ]),
   {
     files: ['**/*.{js,mjs,cjs,ts}'],
     extends: [js.configs.recommended],
+    rules: { 'max-lines': ['error', { max: 400, skipBlankLines: false, skipComments: false }] },
   },
   {
     files: ['scripts/**/*.{mjs,cjs}', 'tests/**/*.mjs', 'cloudfunctions/**/*.js', '*.mjs'],

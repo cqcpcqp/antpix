@@ -96,80 +96,102 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   const { PixelGarden } = load(resolve('assets/scripts/PixelGarden.ts'));
   const game = new PixelGarden();
   game.onLoad();
-  assert.equal(game.cloudBusy, true);
-  assert.equal(game.modal, null, 'login must not open a blocking dialog');
-  assert.equal(game.cloudStatus.parent, game.home, 'login loads inside the homepage');
+  assert.equal(game.runtime.cloud.cloudBusy, true);
+  assert.equal(game.runtime.overlays.modal, null, 'login must not open a blocking dialog');
+  assert.equal(
+    game.runtime.cloudStatus.cloudStatus.parent,
+    game.runtime.home.home,
+    'login loads inside the homepage',
+  );
   const beforeLoginActions = actions.length;
-  game.startLevel(0);
+  game.runtime.session.startLevel(0);
   assert.equal(actions.length, beforeLoginActions, 'cannot start before progress is known');
-  game.settings();
-  const settings = game.modal;
+  game.runtime.settings.settings();
+  const settings = game.runtime.overlays.modal;
   releaseLogin();
   loginGate = null;
   await flush();
-  assert.equal(game.modal, settings, 'login must not dismiss local settings');
-  game.closeModal();
+  assert.equal(game.runtime.overlays.modal, settings, 'login must not dismiss local settings');
+  game.runtime.overlays.closeModal();
 
-  assert.equal(game.cloudBusy, false);
-  assert.equal(game.save.unlocked, 0);
-  game.startLevel(0);
-  assert.equal(game.cloudBusy, true);
-  assert.equal(game.modal, null, 'starting keeps the homepage visible');
+  assert.equal(game.runtime.cloud.cloudBusy, false);
+  assert.equal(game.runtime.profile.save.unlocked, 0);
+  game.runtime.session.startLevel(0);
+  assert.equal(game.runtime.cloud.cloudBusy, true);
+  assert.equal(game.runtime.overlays.modal, null, 'starting keeps the homepage visible');
   const startCount = actions.filter((action) => action === 'start').length;
-  game.startLevel(0);
+  game.runtime.session.startLevel(0);
   assert.equal(actions.filter((action) => action === 'start').length, startCount);
   await flush();
-  assert.equal(game.cloudRunId, 'run-2');
+  assert.equal(game.runtime.cloud.cloudRunId, 'run-2');
   const previousRequests = actions.length;
 
   now += 120000;
-  game.elapsed = 120;
-  game.model.moves = levels[0].moves[0];
-  game.victory();
-  assert.equal(game.save.completed.length, 0, 'no optimistic progress before cloud confirmation');
-  game.settings();
-  const savingSettings = game.modal;
+  game.runtime.session.elapsed = 120;
+  game.runtime.session.model.moves = levels[0].moves[0];
+  game.runtime.victory.victory();
+  assert.equal(
+    game.runtime.profile.save.completed.length,
+    0,
+    'no optimistic progress before cloud confirmation',
+  );
+  game.runtime.settings.settings();
+  const savingSettings = game.runtime.overlays.modal;
   await flush();
-  assert.equal(game.modal, savingSettings, 'settlement must preserve an open settings drawer');
-  game.closeModal();
-  game.updateOverlays(0);
-  assert.equal(game.save.unlocked, 1);
-  assert.equal(game.save.completed[0], 0);
-  assert.ok(game.celebration);
-  game.finishCelebration();
-  const victoryView = game.modal;
+  assert.equal(
+    game.runtime.overlays.modal,
+    savingSettings,
+    'settlement must preserve an open settings drawer',
+  );
+  game.runtime.overlays.closeModal();
+  game.runtime.overlays.updateOverlays(0);
+  assert.equal(game.runtime.profile.save.unlocked, 1);
+  assert.equal(game.runtime.profile.save.completed[0], 0);
+  assert.ok(game.runtime.victory.celebration);
+  game.runtime.victory.finishCelebration();
+  const victoryView = game.runtime.overlays.modal;
   failClaim = true;
-  game.claimCloudRewards();
+  game.runtime.cloud.claimCloudRewards();
   await flush();
-  assert.equal(game.modal, victoryView, 'failure keeps the original content');
-  assert.equal(game.save.coins, 0, 'failed claim must not grant optimistic coins');
-  assert.ok(game.cloudRetry);
+  assert.equal(game.runtime.overlays.modal, victoryView, 'failure keeps the original content');
+  assert.equal(game.runtime.profile.save.coins, 0, 'failed claim must not grant optimistic coins');
+  assert.ok(game.runtime.cloud.cloudRetry);
   failClaim = false;
-  game.cloudStatus.emit('end');
+  game.runtime.cloudStatus.cloudStatus.emit('end');
   await flush();
-  assert.equal(game.save.coins, 130);
+  assert.equal(game.runtime.profile.save.coins, 130);
   boardGate = new Promise((resolve) => {
     releaseBoard = resolve;
   });
-  game.worldLeaderboard(0);
+  game.runtime.social.worldLeaderboard(0);
   assert.ok(
-    game.modal.children.some((node) => node.components.some((c) => c.string === '世界排行榜')),
+    game.runtime.overlays.modal.children.some((node) =>
+      node.components.some((c) => c.string === '世界排行榜'),
+    ),
   );
-  assert.equal(game.cloudStatus.parent, game.modal, 'rank loading stays in the rank content');
-  game.closeModal();
-  assert.equal(game.cloudBusy, false, 'leaving a read-only view releases the UI');
-  game.settings();
-  const newerView = game.modal;
+  assert.equal(
+    game.runtime.cloudStatus.cloudStatus.parent,
+    game.runtime.overlays.modal,
+    'rank loading stays in the rank content',
+  );
+  game.runtime.overlays.closeModal();
+  assert.equal(game.runtime.cloud.cloudBusy, false, 'leaving a read-only view releases the UI');
+  game.runtime.settings.settings();
+  const newerView = game.runtime.overlays.modal;
   releaseBoard();
   boardGate = null;
   await flush();
-  assert.equal(game.modal, newerView, 'late rank data must not reopen a dismissed view');
-  game.closeModal();
-  game.friendLeaderboard(0);
+  assert.equal(
+    game.runtime.overlays.modal,
+    newerView,
+    'late rank data must not reopen a dismissed view',
+  );
+  game.runtime.overlays.closeModal();
+  game.runtime.social.friendLeaderboard(0);
   await flush();
-  game.modal.children.find((node) => node.name === '刷新').emit('end');
+  game.runtime.overlays.modal.children.find((node) => node.name === '刷新').emit('end');
   assert.equal(friendMessages.filter((message) => message.type === 'ant-friends').length, 2);
-  game.closeModal();
+  game.runtime.overlays.closeModal();
   assert.equal(
     local.has('pixel-garden-v1'),
     false,
@@ -178,8 +200,8 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   const reopened = new PixelGarden();
   reopened.onLoad();
   await flush();
-  assert.equal(reopened.save.selected, 1);
-  assert.equal(reopened.save.coins, 130);
+  assert.equal(reopened.runtime.profile.save.selected, 1);
+  assert.equal(reopened.runtime.profile.save.coins, 130);
 });
 
 test('open data domain sorts friends, stays on valid pages and ignores late responses', () => {
@@ -248,7 +270,7 @@ test('reward video grants only on complete close, removes listeners and recovers
       removed++;
     },
   };
-  const source = readFileSync('assets/scripts/rewardAd.ts', 'utf8').replace(
+  const source = readFileSync('assets/scripts/platform/wechat/rewardAd.ts', 'utf8').replace(
     "REWARDED_VIDEO_AD_UNIT_ID = ''",
     "REWARDED_VIDEO_AD_UNIT_ID = 'test-placement'",
   );

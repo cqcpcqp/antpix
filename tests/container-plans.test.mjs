@@ -2,8 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { makeLevel, LEVEL_COUNT } from '../assets/scripts/levels.ts';
-import { GardenModel } from '../assets/scripts/model.ts';
+import { makeLevel, LEVEL_COUNT } from '../assets/scripts/domain/levels/levels.ts';
+import { GardenModel } from '../assets/scripts/domain/game/model.ts';
 import { settleContainers } from '../scripts/container-simulation.mjs';
 const report = JSON.parse(
   readFileSync(new URL('../art/container-plan-report.json', import.meta.url)),

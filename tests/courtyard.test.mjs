@@ -5,7 +5,7 @@ import {
   readProfile,
   buyOrEquipFurnishing,
   upgradeCourtyard,
-} from '../assets/scripts/profile.ts';
+} from '../assets/scripts/domain/profile/profile.ts';
 
 test('furnishings charge once, equip independently and preserve balance on rejected purchases', () => {
   const profile = freshProfile();

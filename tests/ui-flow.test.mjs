@@ -3,13 +3,13 @@ import assert from 'node:assert/strict';
 import headless from '../scripts/headless-game.cjs';
 const { load, cc } = headless;
 const { PixelGarden } = load(process.cwd() + '/assets/scripts/PixelGarden.ts');
-const { CloudGameError } = load(process.cwd() + '/assets/scripts/cloudGame.ts');
-const ads = load(process.cwd() + '/assets/scripts/rewardAd.ts');
+const { CloudGameError } = load(process.cwd() + '/assets/scripts/platform/wechat/cloudGame.ts');
+const ads = load(process.cwd() + '/assets/scripts/platform/wechat/rewardAd.ts');
 const flush = () => new Promise((resolve) => setImmediate(resolve));
 const create = () => {
   const game = new PixelGarden();
   game.onLoad();
-  game.startLevel(0);
+  game.runtime.session.startLevel(0);
   return game;
 };
 const click = (parent, name) => {
@@ -20,47 +20,47 @@ const click = (parent, name) => {
 
 test('blocked players can leave without restarting or watching an ad', () => {
   const game = create();
-  game.showBlocked();
-  click(game.modal, '返回主页');
-  assert.ok(game.home);
-  assert.equal(game.modal, null);
-  assert.equal(game.rewardAdDemo, null);
+  game.runtime.settings.showBlocked();
+  click(game.runtime.overlays.modal, '返回主页');
+  assert.ok(game.runtime.home.home);
+  assert.equal(game.runtime.overlays.modal, null);
+  assert.equal(game.runtime.boosts.rewardAdDemo, null);
 });
 
 test('home recommends the next level but preserves a resumable run', () => {
   const game = create();
-  game.victory();
-  game.finishCelebration();
-  game.showHome();
-  click(game.home, '开始游戏');
-  assert.equal(game.save.selected, 1);
-  const model = game.model;
-  game.showHome();
-  click(game.home, '继续游戏');
-  assert.equal(game.model, model);
+  game.runtime.victory.victory();
+  game.runtime.victory.finishCelebration();
+  game.runtime.home.showHome();
+  click(game.runtime.home.home, '开始游戏');
+  assert.equal(game.runtime.profile.save.selected, 1);
+  const model = game.runtime.session.model;
+  game.runtime.home.showHome();
+  click(game.runtime.home.home, '继续游戏');
+  assert.equal(game.runtime.session.model, model);
 });
 
 test('speed unlock is reusable within the level and restart requires confirmation', () => {
   const game = create();
-  game.requestSpeed();
-  game.updateOverlays(3.1);
-  assert.equal(game.speed, 2);
-  game.requestSpeed();
-  assert.equal(game.speed, 1);
-  game.requestSpeed();
-  assert.equal(game.speed, 2);
-  assert.equal(game.rewardAdDemo, null);
-  const model = game.model;
-  game.settings();
-  click(game.drawerSheet, '重新开始');
-  click(game.modal, '继续游戏');
-  assert.equal(game.model, model);
-  game.settings();
-  click(game.drawerSheet, '重新开始');
-  click(game.modal, '重新开始');
-  assert.notEqual(game.model, model);
-  assert.equal(game.speed, 1);
-  assert.equal(game.speedUnlocked, false);
+  game.runtime.boosts.requestSpeed();
+  game.runtime.overlays.updateOverlays(3.1);
+  assert.equal(game.runtime.session.speed, 2);
+  game.runtime.boosts.requestSpeed();
+  assert.equal(game.runtime.session.speed, 1);
+  game.runtime.boosts.requestSpeed();
+  assert.equal(game.runtime.session.speed, 2);
+  assert.equal(game.runtime.boosts.rewardAdDemo, null);
+  const model = game.runtime.session.model;
+  game.runtime.settings.settings();
+  click(game.runtime.overlays.drawerSheet, '重新开始');
+  click(game.runtime.overlays.modal, '继续游戏');
+  assert.equal(game.runtime.session.model, model);
+  game.runtime.settings.settings();
+  click(game.runtime.overlays.drawerSheet, '重新开始');
+  click(game.runtime.overlays.modal, '重新开始');
+  assert.notEqual(game.runtime.session.model, model);
+  assert.equal(game.runtime.session.speed, 1);
+  assert.equal(game.runtime.session.speedUnlocked, false);
 });
 
 test('first-run instructions pause play, persist completion and remain accessible', () => {
@@ -72,22 +72,22 @@ test('first-run instructions pause play, persist completion and remain accessibl
   };
   try {
     const game = create();
-    assert.ok(game.modal);
+    assert.ok(game.runtime.overlays.modal);
     game.update(1);
-    assert.equal(game.elapsed, 0);
-    click(game.modal, '下一步');
-    click(game.modal, '下一步');
-    click(game.modal, '开始收集');
-    assert.equal(game.modal, null);
+    assert.equal(game.runtime.session.elapsed, 0);
+    click(game.runtime.overlays.modal, '下一步');
+    click(game.runtime.overlays.modal, '下一步');
+    click(game.runtime.overlays.modal, '开始收集');
+    assert.equal(game.runtime.overlays.modal, null);
     const reopened = create();
-    assert.equal(reopened.modal, null);
-    reopened.settings();
-    click(reopened.drawerSheet, '操作说明');
-    assert.ok(reopened.modal);
-    game.cardViews.find((view) => view.row === 1).node.emit('start');
-    game.cardViews.find((view) => view.row === 1).node.emit('end');
-    assert.ok(game.notification);
-    assert.equal(game.model.moves, 0);
+    assert.equal(reopened.runtime.overlays.modal, null);
+    reopened.runtime.settings.settings();
+    click(reopened.runtime.overlays.drawerSheet, '操作说明');
+    assert.ok(reopened.runtime.overlays.modal);
+    game.runtime.queue.cardViews.find((view) => view.row === 1).node.emit('start');
+    game.runtime.queue.cardViews.find((view) => view.row === 1).node.emit('end');
+    assert.ok(game.runtime.notices.notification);
+    assert.equal(game.runtime.session.model.moves, 0);
   } finally {
     cc.sys.localStorage = storage;
   }
@@ -103,21 +103,25 @@ test('phone hit regions reach 44 pixels without overlapping queue rows or rank a
     ]) {
       cc.view.getFrameSize = () => frame;
       const game = create(),
-        scale = frame.width / game.screenWidth;
+        scale = frame.width / game.runtime.lifecycle.screenWidth;
       const bounds = (node) => node.getComponent(cc.UITransform);
-      assert.ok(bounds(game.speedLabel.node.parent).height * scale >= 44 - 1e-8);
-      const rows = game.cardViews.filter((view) => view.column === 0).sort((a, b) => a.row - b.row);
-      assert.ok(bounds(rows[0].node).height * scale * game.playfield.scale.y >= 44 - 1e-8);
+      assert.ok(bounds(game.runtime.layout.speedLabel.node.parent).height * scale >= 44 - 1e-8);
+      const rows = game.runtime.queue.cardViews
+        .filter((view) => view.column === 0)
+        .sort((a, b) => a.row - b.row);
+      assert.ok(
+        bounds(rows[0].node).height * scale * game.runtime.layout.playfield.scale.y >= 44 - 1e-8,
+      );
       assert.ok(
         rows[0].targetY - rows[1].targetY >=
           (bounds(rows[0].node).height + bounds(rows[1].node).height) / 2,
       );
-      game.cloudMode = true;
-      game.cloudReady = true;
-      game.cloud = { leaderboard: async () => ({ rows: [], hasNext: true }) };
-      game.worldLeaderboard(0);
+      game.runtime.cloud.cloudMode = true;
+      game.runtime.cloud.cloudReady = true;
+      game.runtime.cloud.cloud = { leaderboard: async () => ({ rows: [], hasNext: true }) };
+      game.runtime.social.worldLeaderboard(0);
       await flush();
-      const actions = game.modal.children.filter((node) =>
+      const actions = game.runtime.overlays.modal.children.filter((node) =>
         ['返回', '微信好友榜', '下一页'].includes(node.name),
       );
       for (let i = 0; i < actions.length; i++)
@@ -137,11 +141,11 @@ test('ad confirmation pauses a nearly complete run and settlement is submitted e
   ads.showRewardedVideo = async () => true;
   try {
     const game = create();
-    game.cloudMode = true;
-    game.cloudReady = true;
-    game.cloudRunId = 'run';
+    game.runtime.cloud.cloudMode = true;
+    game.runtime.cloud.cloudReady = true;
+    game.runtime.cloud.cloudRunId = 'run';
     const state = {
-      profile: game.save,
+      profile: game.runtime.profile.save,
       highest: -1,
       reachedAt: 0,
       serverTime: Date.now(),
@@ -149,7 +153,7 @@ test('ad confirmation pauses a nearly complete run and settlement is submitted e
     };
     let confirm;
     const actions = [];
-    game.cloud = {
+    game.runtime.cloud.cloud = {
       mutate: async (action) => {
         actions.push(action);
         if (action === 'adComplete')
@@ -159,24 +163,24 @@ test('ad confirmation pauses a nearly complete run and settlement is submitted e
         return state;
       },
     };
-    game.watchCloudAd('speed', () => {
-      game.speed = 2;
+    game.runtime.cloud.watchCloudAd('speed', () => {
+      game.runtime.session.speed = 2;
     });
     await flush();
-    game.model.pixels.fill(-1);
-    game.model.remaining = 0;
-    game.model.collected = game.model.level.pixels.length;
+    game.runtime.session.model.pixels.fill(-1);
+    game.runtime.session.model.remaining = 0;
+    game.runtime.session.model.collected = game.runtime.session.model.level.pixels.length;
     game.update(0.05);
-    assert.equal(game.elapsed, 0);
-    assert.equal(game.won, false);
-    game.victory();
-    assert.equal(game.won, false);
+    assert.equal(game.runtime.session.elapsed, 0);
+    assert.equal(game.runtime.session.won, false);
+    game.runtime.victory.victory();
+    assert.equal(game.runtime.session.won, false);
     confirm();
     await flush();
     game.update(0.05);
     await flush();
-    assert.equal(game.won, true);
-    assert.ok(game.celebration);
+    assert.equal(game.runtime.session.won, true);
+    assert.ok(game.runtime.victory.celebration);
     game.update(0.05);
     assert.equal(actions.filter((action) => action === 'complete').length, 1);
   } finally {
@@ -186,16 +190,16 @@ test('ad confirmation pauses a nearly complete run and settlement is submitted e
 
 test('invalid sessions offer a new run instead of retrying an expired run', async () => {
   const game = create();
-  game.cloudMode = true;
-  game.cloudReady = true;
-  game.cloudRunId = 'expired';
+  game.runtime.cloud.cloudMode = true;
+  game.runtime.cloud.cloudReady = true;
+  game.runtime.cloud.cloudRunId = 'expired';
   const actions = [];
-  game.cloud = {
+  game.runtime.cloud.cloud = {
     mutate: async (action, values) => {
       actions.push(action);
       if (action === 'complete') throw new CloudGameError('SESSION', '本次挑战已失效，请重新开始');
       return {
-        profile: game.save,
+        profile: game.runtime.profile.save,
         highest: -1,
         reachedAt: 0,
         serverTime: Date.now(),
@@ -203,13 +207,13 @@ test('invalid sessions offer a new run instead of retrying an expired run', asyn
       };
     },
   };
-  game.victory();
+  game.runtime.victory.victory();
   await flush();
-  assert.equal(game.cloudRetry, null);
-  click(game.modal, '重新开始');
+  assert.equal(game.runtime.cloud.cloudRetry, null);
+  click(game.runtime.overlays.modal, '重新开始');
   await flush();
   assert.deepEqual(actions, ['complete', 'start']);
-  assert.equal(game.cloudRunId, 'new');
-  assert.equal(game.won, false);
-  assert.equal(game.modal, null);
+  assert.equal(game.runtime.cloud.cloudRunId, 'new');
+  assert.equal(game.runtime.session.won, false);
+  assert.equal(game.runtime.overlays.modal, null);
 });

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { GardenModel } from '../assets/scripts/model.ts';
-import { nearestAntTarget } from '../assets/scripts/routing.ts';
+import { GardenModel } from '../assets/scripts/domain/game/model.ts';
+import { nearestAntTarget } from '../assets/scripts/domain/routing/routing.ts';
 
 test('reservation exposes future tasks immediately but never permits premature lifting', () => {
   const m = new GardenModel(

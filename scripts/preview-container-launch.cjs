@@ -18,7 +18,7 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
   cc.view.getFrameSize = () => ({ width: 411, height: previewHeight });
   const game = new PixelGarden();
   game.onLoad();
-  game.startLevel(0);
+  game.runtime.session.startLevel(0);
   const digitFont = { name: 'Clean container digits' };
   resourceLoads.get('fonts/container-digits')(null, digitFont);
   const digitImage = await loadImage('assets/resources/fonts/container-digits.png');
@@ -52,11 +52,14 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
     sources.set(texture, image);
   }
   for (let i = 0; i < 3; i++)
-    game.model.place(game.model.visibleQueue.find((v) => v.row === 0).jar.id);
-  game.drawSlots();
-  game.drawQueue();
+    game.runtime.session.model.place(
+      game.runtime.session.model.visibleQueue.find((v) => v.row === 0).jar.id,
+    );
+  game.runtime.containers.drawSlots();
+  game.runtime.queue.drawQueue();
   if (process.env.TRAY_PREVIEW)
-    for (const card of game.cardViews) card.node.setPosition(card.node.position.x, card.targetY);
+    for (const card of game.runtime.queue.cardViews)
+      card.node.setPosition(card.node.position.x, card.targetY);
   const render = (width, height, root, zoom = 1, center = { x: 0, y: 0 }) => {
     const canvas = createCanvas(width, height),
       ctx = canvas.getContext('2d');
@@ -231,87 +234,129 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
   mkdirSync(out, { recursive: true });
   writeFileSync(
     `${out}/game.png`,
-    render(411, previewHeight, game.gameRoot, 411 / game.screenWidth),
+    render(
+      411,
+      previewHeight,
+      game.runtime.lifecycle.gameRoot,
+      411 / game.runtime.lifecycle.screenWidth,
+    ),
   );
   writeFileSync(
     `${out}/containers.png`,
-    render(750, process.env.TRAY_PREVIEW ? 450 : 345, game.gameRoot, 1, {
+    render(750, process.env.TRAY_PREVIEW ? 450 : 345, game.runtime.lifecycle.gameRoot, 1, {
       x: 0,
       y: process.env.TRAY_PREVIEW ? -435 : -397,
     }),
   );
   const sampleLabels = [
-    game.slotViews[0].label,
-    game.slotViews[1].label,
-    ...game.cardViews.filter((c) => c.node.active).map((c) => c.label),
+    game.runtime.containers.slotViews[0].label,
+    game.runtime.containers.slotViews[1].label,
+    ...game.runtime.queue.cardViews.filter((c) => c.node.active).map((c) => c.label),
   ];
   const originalNumbers = sampleLabels.map((label) => label.string);
   sampleLabels.forEach((label, i) => {
     label.string = ['1', '11', '12', '13', '23'][i % 5];
-    game.containerNumber(label);
+    game.runtime.containers.containerNumber(label);
   });
-  writeFileSync(`${out}/alignment.png`, render(750, 345, game.gameRoot, 1, { x: 0, y: -397 }));
+  writeFileSync(
+    `${out}/alignment.png`,
+    render(750, 345, game.runtime.lifecycle.gameRoot, 1, { x: 0, y: -397 }),
+  );
   sampleLabels.forEach((label, i) => {
     label.string = originalNumbers[i];
-    game.containerNumber(label);
+    game.runtime.containers.containerNumber(label);
   });
   for (let i = 0; i < 36; i++) {
     game.update(1 / 60);
     writeFileSync(
       `${out}/launch-${String(i).padStart(2, '0')}.png`,
-      render(750, 190, game.gameRoot, 1, { x: 0, y: -275 }),
+      render(750, 190, game.runtime.lifecycle.gameRoot, 1, { x: 0, y: -275 }),
     );
   }
   if (process.env.PIXEL_D_PREVIEW) {
     // Identical comparison removal pattern, rendered by the actual game method.
-    for (let row = game.model.level.height - 8; row < game.model.level.height; row++)
-      for (let col = 0; col < game.model.level.width; col++) {
+    for (
+      let row = game.runtime.session.model.level.height - 8;
+      row < game.runtime.session.model.level.height;
+      row++
+    )
+      for (let col = 0; col < game.runtime.session.model.level.width; col++) {
         const depth = (col * 17 + 7) % 9;
         if (
-          row >= game.model.level.height - 7 + depth * 0.65 ||
-          (row >= game.model.level.height - 4 && (col % 7 === 0 || col % 11 === 0))
+          row >= game.runtime.session.model.level.height - 7 + depth * 0.65 ||
+          (row >= game.runtime.session.model.level.height - 4 && (col % 7 === 0 || col % 11 === 0))
         )
-          game.model.pixels[row * game.model.level.width + col] = -1;
+          game.runtime.session.model.pixels[row * game.runtime.session.model.level.width + col] =
+            -1;
       }
-    game.drawBoard();
+    game.runtime.layout.drawBoard();
     writeFileSync(
       `${out}/game-with-edge.png`,
-      render(411, 822, game.gameRoot, 411 / game.screenWidth),
+      render(411, 822, game.runtime.lifecycle.gameRoot, 411 / game.runtime.lifecycle.screenWidth),
     );
-    writeFileSync(`${out}/dense.png`, render(640, 330, game.gameRoot, 2.6, { x: -32, y: 365 }));
-    writeFileSync(`${out}/edge.png`, render(640, 330, game.gameRoot, 2.6, { x: 0, y: -59 }));
+    writeFileSync(
+      `${out}/dense.png`,
+      render(640, 330, game.runtime.lifecycle.gameRoot, 2.6, { x: -32, y: 365 }),
+    );
+    writeFileSync(
+      `${out}/edge.png`,
+      render(640, 330, game.runtime.lifecycle.gameRoot, 2.6, { x: 0, y: -59 }),
+    );
   }
   if (process.env.TRAY_PREVIEW) {
-    writeFileSync(`${out}/wood-nest.png`, render(750, 560, game.gameRoot, 1, { x: 0, y: -390 }));
-    game.startLevel(0);
-    for (const card of game.cardViews) card.node.setPosition(card.node.position.x, card.targetY);
-    writeFileSync(`${out}/empty-slots.png`, render(750, 450, game.gameRoot, 1, { x: 0, y: -435 }));
-    game.requestSlotExpansion();
-    game.rewardAdDemo.complete();
-    game.rewardAdDemo = null;
-    game.closeModal();
+    writeFileSync(
+      `${out}/wood-nest.png`,
+      render(750, 560, game.runtime.lifecycle.gameRoot, 1, { x: 0, y: -390 }),
+    );
+    game.runtime.session.startLevel(0);
+    for (const card of game.runtime.queue.cardViews)
+      card.node.setPosition(card.node.position.x, card.targetY);
+    writeFileSync(
+      `${out}/empty-slots.png`,
+      render(750, 450, game.runtime.lifecycle.gameRoot, 1, { x: 0, y: -435 }),
+    );
+    game.runtime.boosts.requestSlotExpansion();
+    game.runtime.boosts.rewardAdDemo.complete();
+    game.runtime.boosts.rewardAdDemo = null;
+    game.runtime.overlays.closeModal();
     for (let i = 0; i < 6; i++)
-      game.model.place(game.model.visibleQueue.find((v) => v.row === 0).jar.id);
-    game.drawSlots();
-    game.drawQueue();
-    for (const card of game.cardViews) card.node.setPosition(card.node.position.x, card.targetY);
+      game.runtime.session.model.place(
+        game.runtime.session.model.visibleQueue.find((v) => v.row === 0).jar.id,
+      );
+    game.runtime.containers.drawSlots();
+    game.runtime.queue.drawQueue();
+    for (const card of game.runtime.queue.cardViews)
+      card.node.setPosition(card.node.position.x, card.targetY);
     writeFileSync(
       `${out}/expanded-game.png`,
-      render(411, previewHeight, game.gameRoot, 411 / game.screenWidth),
+      render(
+        411,
+        previewHeight,
+        game.runtime.lifecycle.gameRoot,
+        411 / game.runtime.lifecycle.screenWidth,
+      ),
     );
     for (let expansion = 0; expansion < 3; expansion++) {
-      game.requestSlotExpansion();
-      game.rewardAdDemo.complete();
-      game.rewardAdDemo = null;
-      game.closeModal();
-      game.model.place(game.model.visibleQueue.find((v) => v.row === 0).jar.id);
+      game.runtime.boosts.requestSlotExpansion();
+      game.runtime.boosts.rewardAdDemo.complete();
+      game.runtime.boosts.rewardAdDemo = null;
+      game.runtime.overlays.closeModal();
+      game.runtime.session.model.place(
+        game.runtime.session.model.visibleQueue.find((v) => v.row === 0).jar.id,
+      );
     }
-    game.drawSlots();
-    game.drawQueue();
-    for (const card of game.cardViews) card.node.setPosition(card.node.position.x, card.targetY);
+    game.runtime.containers.drawSlots();
+    game.runtime.queue.drawQueue();
+    for (const card of game.runtime.queue.cardViews)
+      card.node.setPosition(card.node.position.x, card.targetY);
     writeFileSync(
       `${out}/fully-expanded-game.png`,
-      render(411, previewHeight, game.gameRoot, 411 / game.screenWidth),
+      render(
+        411,
+        previewHeight,
+        game.runtime.lifecycle.gameRoot,
+        411 / game.runtime.lifecycle.screenWidth,
+      ),
     );
   }
   game.onDestroy();

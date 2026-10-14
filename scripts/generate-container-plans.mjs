@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { planContainers, selectLayout, encodeContainerPlan } from './container-planner.mjs';
-const file = resolve(process.argv[2] || 'assets/scripts/levels.ts');
+const file = resolve(process.argv[2] || 'assets/scripts/domain/levels/levels.ts');
 const reportFile = resolve(process.argv[3] || 'art/container-plan-report.json');
 const { ARTWORKS, GRID_WIDTH, GRID_HEIGHT } = await import(pathToFileURL(file));
 const plans = {},

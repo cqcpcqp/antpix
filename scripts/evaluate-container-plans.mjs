@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import { ARTWORKS, makeLevel } from '../assets/scripts/levels.ts';
+import { ARTWORKS, makeLevel } from '../assets/scripts/domain/levels/levels.ts';
 import { planMetrics, simulatePlan } from './container-simulation.mjs';
 
 const args = process.argv.slice(2);

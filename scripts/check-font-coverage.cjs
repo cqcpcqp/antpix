@@ -10,7 +10,9 @@ for (const line of readFileSync('assets/resources/fonts/ant-nest-bitmap.fnt', 'u
   glyphs.set(glyph.id, glyph);
 }
 const required = new Set(Array.from({ length: 95 }, (_, i) => String.fromCharCode(i + 32)));
-for (const file of readdirSync('assets/scripts').filter((f) => f.endsWith('.ts')))
+for (const file of readdirSync('assets/scripts', { recursive: true }).filter((f) =>
+  f.endsWith('.ts'),
+))
   for (const char of readFileSync(`assets/scripts/${file}`, 'utf8'))
     if (char.codePointAt(0) >= 160) required.add(char);
 for (const char of readFileSync('cloudfunctions/game/service.js', 'utf8'))

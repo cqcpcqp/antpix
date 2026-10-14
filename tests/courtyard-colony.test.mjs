@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const { load } = require('../scripts/headless-game.cjs');
-const { CourtyardColony } = load(process.cwd() + '/assets/scripts/courtyardColony.ts');
+const { CourtyardColony } = load(
+  process.cwd() + '/assets/scripts/domain/courtyard/courtyardColony.ts',
+);
 const tick = (c, seconds, living = '', garden = '', hour = 12, inspect = () => {}) => {
   for (let i = 0; i < seconds * 60; i++) {
     c.update(1 / 60, living, garden, hour);

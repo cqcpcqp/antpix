@@ -1,13 +1,5 @@
 {
-  "assets/scripts/PixelGarden.ts": {
-    "@typescript-eslint/no-unused-vars": {
-      "count": 1
-    },
-    "no-empty": {
-      "count": 2
-    }
-  },
-  "assets/scripts/boardLayout.ts": {
+  "assets/scripts/presentation/boardLayout.ts": {
     "@typescript-eslint/no-unused-vars": {
       "count": 1
     }
@@ -15,11 +7,6 @@
   "cloudfunctions/game/index.js": {
     "no-unused-vars": {
       "count": 1
-    }
-  },
-  "scripts/check-ui.cjs": {
-    "no-unused-vars": {
-      "count": 2
     }
   },
   "scripts/preview-ui.cjs": {
@@ -30,11 +17,6 @@
   "tests/cloud-ui.test.mjs": {
     "no-unused-vars": {
       "count": 3
-    }
-  },
-  "tests/model.test.mjs": {
-    "no-unused-vars": {
-      "count": 1
     }
   },
   "tests/ui-flow.test.mjs": {

@@ -24,8 +24,8 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
   const levelIndex = Number(process.env.PREVIEW_LEVEL || 0);
   const game = new PixelGarden();
   game.onLoad();
-  game.save.unlocked = Math.max(game.save.unlocked, levelIndex);
-  game.startLevel(levelIndex);
+  game.runtime.profile.save.unlocked = Math.max(game.runtime.profile.save.unlocked, levelIndex);
+  game.runtime.session.startLevel(levelIndex);
   const digitFont = { name: 'Clean container digits' };
   resourceLoads.get('fonts/container-digits')(null, digitFont);
   const digitImage = await loadImage('assets/resources/fonts/container-digits.png');
@@ -269,91 +269,100 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
   const shot = (name) =>
     writeFileSync(
       out + '/' + name + '.png',
-      render(previewWidth, previewHeight, game.root, previewWidth / game.screenWidth),
+      render(
+        previewWidth,
+        previewHeight,
+        game.runtime.lifecycle.root,
+        previewWidth / game.runtime.lifecycle.screenWidth,
+      ),
     );
-  game.startLevel(levelIndex);
+  game.runtime.session.startLevel(levelIndex);
   shot('game');
   for (let i = 0; i < 3; i++)
-    game.model.place(game.model.visibleQueue.find((v) => v.row === 0).jar.id);
-  game.drawSlots();
-  game.drawQueue();
+    game.runtime.session.model.place(
+      game.runtime.session.model.visibleQueue.find((v) => v.row === 0).jar.id,
+    );
+  game.runtime.containers.drawSlots();
+  game.runtime.queue.drawQueue();
   for (let i = 0; i < 80; i++) game.update(0.05);
   shot('playing');
-  game.settings();
-  game.updateOverlays(0.5);
+  game.runtime.settings.settings();
+  game.runtime.overlays.updateOverlays(0.5);
   shot('settings');
-  game.closeModal();
-  game.requestSpeed();
+  game.runtime.overlays.closeModal();
+  game.runtime.boosts.requestSpeed();
   shot('speed');
-  game.closeModal();
-  game.showBlocked();
+  game.runtime.overlays.closeModal();
+  game.runtime.settings.showBlocked();
   shot('blocked');
-  game.closeModal();
-  game.startLevel(levelIndex);
-  game.model.pixels.fill(-1);
-  game.model.remaining = 0;
-  game.model.collected = game.model.level.pixels.length;
-  game.drawBoard();
-  game.queueCount.string = game.queueCaption();
-  game.victory();
-  game.finishCelebration();
+  game.runtime.overlays.closeModal();
+  game.runtime.session.startLevel(levelIndex);
+  game.runtime.session.model.pixels.fill(-1);
+  game.runtime.session.model.remaining = 0;
+  game.runtime.session.model.collected = game.runtime.session.model.level.pixels.length;
+  game.runtime.layout.drawBoard();
+  game.runtime.layout.queueCount.string = game.runtime.queue.queueCaption();
+  game.runtime.victory.victory();
+  game.runtime.victory.finishCelebration();
   shot('victory');
-  game.closeModal();
-  game.showHome();
+  game.runtime.overlays.closeModal();
+  game.runtime.home.showHome();
   shot('home');
-  game.levelPicker();
+  game.runtime.album.levelPicker();
   shot('levels');
-  game.closeModal();
-  game.save.unlocked = 0;
-  game.levelPicker();
+  game.runtime.overlays.closeModal();
+  game.runtime.profile.save.unlocked = 0;
+  game.runtime.album.levelPicker();
   shot('locked-levels');
-  game.closeModal();
-  game.shop();
-  game.updateOverlays(0.5);
+  game.runtime.overlays.closeModal();
+  game.runtime.shop.shop();
+  game.runtime.overlays.updateOverlays(0.5);
   shot('shop');
-  game.closeModal();
-  game.save.coins = 10000;
-  game.shop('garden', 'lantern-garden');
-  game.updateOverlays(0.5);
+  game.runtime.overlays.closeModal();
+  game.runtime.profile.save.coins = 10000;
+  game.runtime.shop.shop('garden', 'lantern-garden');
+  game.runtime.overlays.updateOverlays(0.5);
   shot('courtyard-preview');
-  game.closeModal();
-  const { FURNISHINGS, buyOrEquipFurnishing } = load(process.cwd() + '/assets/scripts/profile.ts');
+  game.runtime.overlays.closeModal();
+  const { FURNISHINGS, buyOrEquipFurnishing } = load(
+    process.cwd() + '/assets/scripts/domain/profile/profile.ts',
+  );
   for (const id of ['flower-arch', 'wood-path', 'lantern-garden', 'dew-pond'])
-    buyOrEquipFurnishing(game.save, id);
-  game.showHome();
+    buyOrEquipFurnishing(game.runtime.profile.save, id);
+  game.runtime.home.showHome();
   shot('courtyard-furnished');
-  game.nestShop();
-  game.updateOverlays(0.5);
+  game.runtime.shop.nestShop();
+  game.runtime.overlays.updateOverlays(0.5);
   shot('nest-shop');
-  game.closeModal();
-  game.leaderboard();
+  game.runtime.overlays.closeModal();
+  game.runtime.social.leaderboard();
   shot('records');
-  game.closeModal();
-  game.favoriteGuide();
+  game.runtime.overlays.closeModal();
+  game.runtime.home.favoriteGuide();
   shot('favorite');
-  game.closeModal();
-  game.cloudMode = true;
-  game.cloudReady = false;
-  game.cloudRunId = '';
-  game.showHome();
-  game.cloudTask(
+  game.runtime.overlays.closeModal();
+  game.runtime.cloud.cloudMode = true;
+  game.runtime.cloud.cloudReady = false;
+  game.runtime.cloud.cloudRunId = '';
+  game.runtime.home.showHome();
+  game.runtime.cloud.cloudTask(
     () => new Promise(() => {}),
     () => {},
     '正在同步进度…',
   );
   shot('cloud-home');
-  game.settings();
-  game.updateOverlays(0.5);
+  game.runtime.settings.settings();
+  game.runtime.overlays.updateOverlays(0.5);
   shot('cloud-settings');
-  game.closeModal();
-  game.cloudBusy = false;
-  game.cloudMessage = '';
-  game.cloudReady = true;
-  game.showHome();
-  game.cloud = { leaderboard: () => new Promise(() => {}) };
-  game.worldLeaderboard(0);
+  game.runtime.overlays.closeModal();
+  game.runtime.cloud.cloudBusy = false;
+  game.runtime.cloud.cloudMessage = '';
+  game.runtime.cloud.cloudReady = true;
+  game.runtime.home.showHome();
+  game.runtime.cloud.cloud = { leaderboard: () => new Promise(() => {}) };
+  game.runtime.social.worldLeaderboard(0);
   shot('cloud-rank');
-  game.closeModal();
+  game.runtime.overlays.closeModal();
   game.onDestroy();
   console.log('UI previews saved to ' + out);
 })();

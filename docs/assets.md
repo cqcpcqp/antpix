@@ -26,7 +26,7 @@ export NODE_PATH="$PWD/temp/level-image-font-tools/node_modules"
 python3 scripts/generate-image2-levels.py
 npm run generate:containers
 npm run prepare:cloud
-python3 scripts/check-catalog-images.py assets/scripts/levels.ts art/cartoons/sources/image2-20261010 art/cartoons/sources/image2-levels-011-100
+python3 scripts/check-catalog-images.py assets/scripts/domain/levels/levels.ts art/cartoons/sources/image2-20261010 art/cartoons/sources/image2-levels-011-100
 npm run check
 ```
 
@@ -61,7 +61,7 @@ npm run check
 | 局内背景           | `art/ui/sources/game-background.png`                | `scripts/prepare-sage-background.py`                       |
 | 首页按钮与标题     | `art/ui/sources/home-actions.png`、`home-title.png` | `scripts/prepare-home-actions.py`、`prepare-home-title.py` |
 | 庭院与装饰         | `art/homestead/` 正式原图                           | `art/homestead/prepare-assets.py`                          |
-| 蚂蚁与货物图集     | `assets/scripts/gardenDrawing.ts`                   | `npm run generate:ants`                                    |
+| 蚂蚁与货物图集     | `assets/scripts/presentation/gardenDrawing.ts`      | `npm run generate:ants`                                    |
 | 点击音效           | 合成参数                                            | `scripts/prepare-tap.py`                                   |
 | 背景音乐和通关音效 | Easy Lemon 原始音乐、合成参数                       | `scripts/prepare-audio.py /path/to/Easy-Lemon.mp3`         |
 

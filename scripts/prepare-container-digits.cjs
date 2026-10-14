@@ -52,7 +52,7 @@ for (let i = 0; i < 10; i++) {
   );
 }
 writeFileSync(
-  'assets/scripts/containerTypography.ts',
+  'assets/scripts/presentation/containerTypography.ts',
   `// Generated from visible digit ink; do not use system-font advance widths.\nconst metrics: number[][] = ${JSON.stringify(metrics)};\n\nexport function containerNumberOffset(text: string, size: number): number {\n    let pen = 0, weight = 0, moment = 0, right = 0;\n    for (const digit of text) {\n        const [width, mass, center] = metrics[Number(digit)];\n        moment += (pen + center) * mass;\n        weight += mass;\n        right = pen + width;\n        pen += width + 3;\n    }\n    return weight ? (right / 2 - moment / weight) * size / 48 : 0;\n}\n`,
 );
 const base = 'assets/resources/fonts/container-digits';

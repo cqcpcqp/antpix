@@ -1,19 +1,21 @@
 # 代码组织与开发约定
 
+实现与重构规则以根目录 [agent.md](../agent.md) 为准，本页提供业务导航与验证方式。
+
 ## 从哪里开始读
 
-当前版本包含 100 幅已验收的原创画作，网格为 48×60。关卡顺序以 `assets/scripts/levels.ts` 及 `art/cartoons/runtime-catalog.json` 指定的 manifest 为准。素材重建见 [素材维护](assets.md)。
+当前版本包含 100 幅已验收的原创画作，网格为 48×60。关卡顺序以 `assets/scripts/domain/levels/levels.ts` 及 `art/cartoons/runtime-catalog.json` 指定的 manifest 为准。素材重建见 [素材维护](assets.md)。
 
-| 要理解或修改的内容                   | 入口                              | 职责边界                                 |
-| ------------------------------------ | --------------------------------- | ---------------------------------------- |
-| 页面、交互、暂停、资源生命周期       | `assets/scripts/PixelGarden.ts`   | Cocos 组件负责组织流程和更新界面         |
-| 容器选择、可达像素、预占、取块、送达 | `assets/scripts/model.ts`         | 纯规则，不引用 Cocos、存储或页面         |
-| 寻路、路径合并、距离和姿态采样       | `assets/scripts/routing.ts`       | 纯算法，使用网格坐标                     |
-| 画板布局、槽位位置、坐标转换         | `assets/scripts/boardLayout.ts`   | 纯布局，明确网格坐标与画面坐标的边界     |
-| 像素与蚂蚁绘图                       | `assets/scripts/gardenDrawing.ts` | 不改模型或组件状态，运行时和离线图集共用 |
-| 存档迁移、奖励、装扮、最佳成绩       | `assets/scripts/profile.ts`       | 纯存档规则；实际读写由组件执行           |
-| 微信激励视频调用                     | `assets/scripts/rewardAd.ts`      | 平台适配，测试广告界面由组件负责         |
-| 关卡与调色板数据                     | `assets/scripts/levels.ts`        | 自动生成，不手改                         |
+| 要理解或修改的内容                   | 入口                                           | 职责边界                                 |
+| ------------------------------------ | ---------------------------------------------- | ---------------------------------------- |
+| 场景生命周期转发                     | `assets/scripts/PixelGarden.ts`                | 仅委托 app/GardenRuntime 及控制器        |
+| 容器选择、可达像素、预占、取块、送达 | `assets/scripts/domain/game/model.ts`          | 纯规则，不引用 Cocos、存储或页面         |
+| 寻路、路径合并、距离和姿态采样       | `assets/scripts/domain/routing/routing.ts`     | 纯算法，使用网格坐标                     |
+| 画板布局、槽位位置、坐标转换         | `assets/scripts/presentation/boardLayout.ts`   | 纯布局，明确网格坐标与画面坐标的边界     |
+| 像素与蚂蚁绘图                       | `assets/scripts/presentation/gardenDrawing.ts` | 不改模型或组件状态，运行时和离线图集共用 |
+| 存档迁移、奖励、装扮、最佳成绩       | `assets/scripts/domain/profile/profile.ts`     | 纯存档规则；实际读写由组件执行           |
+| 微信激励视频调用                     | `assets/scripts/platform/wechat/rewardAd.ts`   | 平台适配，测试广告界面由组件负责         |
+| 关卡与调色板数据                     | `assets/scripts/domain/levels/levels.ts`       | 自动生成，不手改                         |
 
 依赖方向：组件调用规则、寻路、布局、绘图和平台适配；纯规则模块不反向依赖组件。不要通过创建 `utils.ts`、`helpers.ts` 等笼统文件来混放不相关逻辑。只有具备明确职责、实际调用方和稳定输入输出时才提取模块。
 
@@ -47,7 +49,7 @@
 
 ## 怎样验证
 
-本机 Node.js 24 与 Cocos Creator 3.8.8 已提供所需工具。首次使用执行 `npm ci` 安装开发依赖。日常修改执行 `npm run format` 统一排版，执行 `npm run lint` 检查代码问题。`npm run check` 依次运行格式检查、ESLint、云端规则生成、规则测试、严格类型检查和无界面组件回归。组件回归使用模拟渲染器，不打开浏览器。
+本机 Node.js 24 与 Cocos Creator 3.8.8 已提供所需工具。首次使用执行 `npm ci` 安装开发依赖。日常修改执行 `npm run format` 统一排版，执行 `npm run lint` 检查代码问题。`npm run check` 依次运行格式检查、ESLint、结构检查、云端规则生成、规则测试、严格类型检查和无界面组件回归。组件回归使用模拟渲染器，不打开浏览器。
 
 涉及派工、动画或性能时再运行 `npm run bench:animation`。行为对比关注 `behaviorHash`、帧数、峰值蚂蚁数和变换写入次数；CPU 耗时有波动，不代表真机 FPS。
 
@@ -61,14 +63,20 @@ UI 使用不含描边的白色位图字库，由 Label 的颜色区分标题、�
 
 未在对话中获得浏览器使用授权时，不打开浏览器测试。屏幕适配、GPU 表现和微信生命周期还需要按任务范围在真机验证。
 
-## 后续模块拆分
+## 模块导航
 
-`PixelGarden.ts` 仍包含主页、关卡选择、商店、弹窗与资源管理。后续修改这些功能时，按页面提取视图，让视图通过明确的回调请求导航或购买，组件保留模型和资源所有权。不要用巨大 context 对象、继承链或共享可变状态把原组件拆到多个文件；模块边界应当减少读者需要同时理解的内容。
+`app/GardenRuntime.ts` 显式组装控制器，`app/Lifecycle.ts` 管理启动与释放，`app/GameLoop.ts` 明确每帧门控与执行顺序。`features/home` 管理主页、选关、商店、排行榜与设置；`features/gameplay` 管理关卡、容器、预览、蚂蚁派工与动画；`features/courtyard` 管理庭院呈现；`features/ui` 管理界面基础元素和弹层。
+
+领域规则位于 `domain`，不依赖 Cocos。`domain/game/PlannedExposure.ts` 只管理预占后的预计连通性，真实移除与送达仍由模型处理。寻路的几何、搜索缓存、单目标/多目标搜索和采样分别存放，公开入口仍是 `domain/routing/routing.ts`。底层绘图与坐标转换在 `presentation`，微信调用在 `platform/wechat`。
+
+模块构造时仅保存明确声明的协作者并分配自身状态；不能触发尚未完成组装的其他控制器。测试直接观察状态所有者，不在场景入口保留旧字段兼容代理。
+
+`npm run check:architecture` 检查模块分层、运行时循环导入和 Cocos 脚本元数据；ESLint 限制手写文件不超过 400 行。`scripts/check-ui.cjs` 只组织有序检查，断言按场景放在 `scripts/ui-checks`。
 
 ## 自动格式化与静态检查
 
 Prettier 负责排版，ESLint 使用 JavaScript / TypeScript 推荐规则检查代码问题，`eslint-config-prettier` 关闭与格式化冲突的规则。配置分别见 `.prettierrc.json`、`.prettierignore` 和 `eslint.config.mjs`。保留单引号，行宽为 100，缩进遵循 `.editorconfig`。
 
-检查覆盖手写业务代码、云函数、微信开放数据域、开发脚本和测试。构建缓存、素材数据、Cocos 场景及设置、自动生成的 `assets/scripts/levels.ts`、`cloudfunctions/game/profile.js` 和云端关卡目录不参与排版；生成代码不参与 ESLint。请修改对应源文件或生成脚本。
+检查覆盖手写业务代码、云函数、微信开放数据域、开发脚本和测试。构建缓存、素材数据、Cocos 场景及设置、自动生成的 `assets/scripts/domain/levels/levels.ts`、`cloudfunctions/game/profile.js` 和云端关卡目录不参与排版；生成代码不参与 ESLint。请修改对应源文件或生成脚本。
 
-本次接入保持业务代码纯格式化，13 处已有 ESLint 问题记录在 `eslint-baseline.json`。`npm run lint` 使用基线，阻止同文件同规则的问题数增长或其他新错误；`npm run lint:all` 显示全部问题（当前会退出失败）。基线按文件和规则计数，不能识别同数量的问题替换。修复已有问题后执行 `npm run lint -- --prune-suppressions` 清理基线；不要通过扩大基线跳过新增问题。
+尚未清理的历史 ESLint 问题记录在 `eslint-baseline.json`。`npm run lint` 使用基线，阻止同文件同规则的问题数增长或其他新错误；`npm run lint:all` 显示全部问题（当前会退出失败）。基线按文件和规则计数，不能识别同数量的问题替换。修复已有问题后执行 `npm run lint -- --prune-suppressions` 清理基线；不要通过扩大基线跳过新增问题。

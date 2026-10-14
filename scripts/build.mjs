@@ -14,7 +14,12 @@ const creator =
   '/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/MacOS/CocosCreator';
 const cloudPrep = spawnSync(
   process.execPath,
-  ['--experimental-strip-types', 'scripts/prepare-cloud.mjs'],
+  [
+    '--experimental-strip-types',
+    '--import',
+    './scripts/register-typescript.mjs',
+    'scripts/prepare-cloud.mjs',
+  ],
   { stdio: 'inherit' },
 );
 if (cloudPrep.status !== 0) process.exit(cloudPrep.status ?? 1);
@@ -99,6 +104,8 @@ if (result.status === 0 || result.status === 36) {
     process.execPath,
     [
       '--experimental-strip-types',
+      '--import',
+      './scripts/register-typescript.mjs',
       '--test',
       'tests/cloud-ui.test.mjs',
       'tests/courtyard-ui.test.mjs',

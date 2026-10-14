@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
-import { CloudGame } from '../assets/scripts/cloudGame.ts';
-import { freshProfile, SKINS } from '../assets/scripts/profile.ts';
-import { LEVEL_COUNT, makeLevel } from '../assets/scripts/levels.ts';
+import { CloudGame } from '../assets/scripts/platform/wechat/cloudGame.ts';
+import { freshProfile, SKINS } from '../assets/scripts/domain/profile/profile.ts';
+import { LEVEL_COUNT, makeLevel } from '../assets/scripts/domain/levels/levels.ts';
 const require = createRequire(import.meta.url);
 const { createService, dayAt } = require('../cloudfunctions/game/service.js');
 const { levels } = require('../cloudfunctions/game/catalog.json');

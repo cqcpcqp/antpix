@@ -1,11 +1,11 @@
 // Offline analysis: resolve all reachable work between selections. This measures
 // decisions, not animation time or human win rates. No extra slots or ads.
-import { GRID_WIDTH, GRID_HEIGHT } from '../assets/scripts/levels.ts';
-import { GardenModel } from '../assets/scripts/model.ts';
-import { AntTargetSearch, nearestAntTarget } from '../assets/scripts/routing.ts';
+import { GRID_WIDTH, GRID_HEIGHT } from '../assets/scripts/domain/levels/levels.ts';
+import { GardenModel } from '../assets/scripts/domain/game/model.ts';
+import { AntTargetSearch, nearestAntTarget } from '../assets/scripts/domain/routing/routing.ts';
 import headless from './headless-game.cjs';
 const { worldToGrid, collectionSlotX, collectionSlotY } = headless.load(
-  new URL('../assets/scripts/boardLayout.ts', import.meta.url).pathname,
+  new URL('../assets/scripts/presentation/boardLayout.ts', import.meta.url).pathname,
 );
 
 // Four-way collection closure, entering only from the bottom edge.

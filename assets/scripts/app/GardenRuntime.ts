@@ -1,0 +1,64 @@
+import type { Component } from 'cc';
+import { CourtyardController } from '../features/courtyard/CourtyardController';
+import { AntDispatch } from '../features/gameplay/AntDispatch';
+import { AntFlights } from '../features/gameplay/AntFlights';
+import { AntRenderer } from '../features/gameplay/AntRenderer';
+import { BoardView } from '../features/gameplay/BoardView';
+import { BoostController } from '../features/gameplay/BoostController';
+import { ContainerMotion } from '../features/gameplay/ContainerMotion';
+import { ContainerRenderer } from '../features/gameplay/ContainerRenderer';
+import { LevelSession } from '../features/gameplay/LevelSession';
+import { PixelPreview } from '../features/gameplay/PixelPreview';
+import { QueueView } from '../features/gameplay/QueueView';
+import { VictoryScreen } from '../features/gameplay/VictoryScreen';
+import { AlbumScreen } from '../features/home/AlbumScreen';
+import { HomeScreen } from '../features/home/HomeScreen';
+import { SettingsScreen } from '../features/home/SettingsScreen';
+import { ShopScreen } from '../features/home/ShopScreen';
+import { SocialScreen } from '../features/home/SocialScreen';
+import { CloudStatusView } from '../features/ui/CloudStatusView';
+import { Notifications } from '../features/ui/Notifications';
+import { OverlayController } from '../features/ui/OverlayController';
+import { UiFactory } from '../features/ui/UiFactory';
+import { BoardAssets } from './BoardAssets';
+import { CloudSession } from './CloudSession';
+import { GameAssets } from './GameAssets';
+import { GameAudio } from './GameAudio';
+import { GameLoop } from './GameLoop';
+import { HomeAssets } from './HomeAssets';
+import { Lifecycle } from './Lifecycle';
+import { ProfileStore } from './ProfileStore';
+
+/** Composition root. Constructors allocate state only; onLoad starts effects after wiring. */
+export class GardenRuntime {
+    constructor(readonly host: Component) {}
+    readonly lifecycle: Lifecycle = new Lifecycle(this);
+    readonly ui: UiFactory = new UiFactory(this);
+    readonly layout: BoardView = new BoardView(this);
+    readonly home: HomeScreen = new HomeScreen(this);
+    readonly album: AlbumScreen = new AlbumScreen(this);
+    readonly social: SocialScreen = new SocialScreen(this);
+    readonly courtyard: CourtyardController = new CourtyardController(this);
+    readonly shop: ShopScreen = new ShopScreen(this);
+    readonly session: LevelSession = new LevelSession(this);
+    readonly ants: AntRenderer = new AntRenderer(this);
+    readonly containers: ContainerRenderer = new ContainerRenderer(this);
+    readonly queue: QueueView = new QueueView(this);
+    readonly boosts: BoostController = new BoostController(this);
+    readonly preview: PixelPreview = new PixelPreview(this);
+    readonly loop: GameLoop = new GameLoop(this);
+    readonly dispatch: AntDispatch = new AntDispatch(this);
+    readonly motion: ContainerMotion = new ContainerMotion(this);
+    readonly flights: AntFlights = new AntFlights(this);
+    readonly audio: GameAudio = new GameAudio(this);
+    readonly cloud: CloudSession = new CloudSession(this);
+    readonly cloudStatus: CloudStatusView = new CloudStatusView(this);
+    readonly profile: ProfileStore = new ProfileStore(this);
+    readonly overlays: OverlayController = new OverlayController(this);
+    readonly notices: Notifications = new Notifications(this);
+    readonly settings: SettingsScreen = new SettingsScreen(this);
+    readonly victory: VictoryScreen = new VictoryScreen(this);
+    readonly assets: GameAssets = new GameAssets();
+    readonly homeAssets: HomeAssets = new HomeAssets(this);
+    readonly boardAssets: BoardAssets = new BoardAssets(this);
+}

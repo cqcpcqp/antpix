@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { makeLevel, LEVEL_COUNT } from '../assets/scripts/levels.ts';
-import { GardenModel } from '../assets/scripts/model.ts';
+import { makeLevel, LEVEL_COUNT } from '../assets/scripts/domain/levels/levels.ts';
+import { GardenModel } from '../assets/scripts/domain/game/model.ts';
 import {
   encodeContainerPlan,
   planContainers,

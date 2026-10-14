@@ -5,8 +5,8 @@ const { createHash } = require('node:crypto');
 const { load, Texture2D, resourceLoads } = require('./headless-game.cjs');
 const root = process.env.GAME_SCRIPT_ROOT || process.cwd() + '/assets/scripts';
 const { PixelGarden } = load(root + '/PixelGarden.ts');
-const { GardenModel } = load(root + '/model.ts');
-const { makeLevel } = load(root + '/levels.ts');
+const { GardenModel } = load(root + '/domain/game/model.ts');
+const { makeLevel } = load(root + '/domain/levels/levels.ts');
 const levels = (process.env.BENCH_LEVELS || '1,5,9').split(',').map(Number);
 const scenarios = process.env.BENCH_SLOTS
   ? [[Number(process.env.BENCH_SLOTS), Number(process.env.BENCH_SPEED || 1)]]
@@ -24,56 +24,62 @@ for (const level of levels)
     Math.random = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
     const g = new PixelGarden();
     g.onLoad();
-    g.startLevel(0);
+    g.runtime.session.startLevel(0);
     resourceLoads.get('ants/workers/texture')(null, new Texture2D());
-    g.model = new GardenModel(makeLevel(level - 1), () => 0.5);
-    while (g.model.slots.length < slots) g.model.slots.push(null);
-    g.drawSlots();
-    g.drawQueue();
-    g.drawBoard();
-    g.speed = speed;
+    g.runtime.session.model = new GardenModel(makeLevel(level - 1), () => 0.5);
+    while (g.runtime.session.model.slots.length < slots) g.runtime.session.model.slots.push(null);
+    g.runtime.containers.drawSlots();
+    g.runtime.queue.drawQueue();
+    g.runtime.layout.drawBoard();
+    g.runtime.session.speed = speed;
     const hash = createHash('sha256'),
       times = [],
       draining = [];
     let dispatchMs = 0,
       peakAnts = 0,
       frame = 0;
-    const dispatch = g.dispatchAnts;
-    g.dispatchAnts = function (dt) {
+    const dispatch = g.runtime.dispatch.dispatchAnts;
+    g.runtime.dispatch.dispatchAnts = function (dt) {
       const t = performance.now();
       dispatch.call(this, dt);
       dispatchMs += performance.now() - t;
     };
-    for (; frame < limit && !g.won && !g.modal; frame++) {
+    for (; frame < limit && !g.runtime.session.won && !g.runtime.overlays.modal; frame++) {
       // Follow the offline plan's order via selectable column heads, or reproduce
       // a naive queue-first player. Neither policy changes game rules or timings.
-      while ((refill || frame === 0) && g.model.slots.includes(null) && g.model.queue.length) {
+      while (
+        (refill || frame === 0) &&
+        g.runtime.session.model.slots.includes(null) &&
+        g.runtime.session.model.queue.length
+      ) {
         const jar =
           policy === 'queue'
-            ? g.model.queue[0]
-            : g.model.columns
+            ? g.runtime.session.model.queue[0]
+            : g.runtime.session.model.columns
                 .map((c) => c[0])
                 .filter(Boolean)
                 .sort((a, b) => a.id - b.id)[0];
-        g.model.place(jar.id);
-        g.drawSlots();
-        g.drawQueue();
+        g.runtime.session.model.place(jar.id);
+        g.runtime.containers.drawSlots();
+        g.runtime.queue.drawQueue();
       }
-      const onlyFlights = g.model.slots.every((j) => j === null) && g.flights.length > 0;
+      const onlyFlights =
+        g.runtime.session.model.slots.every((j) => j === null) &&
+        g.runtime.flights.flights.length > 0;
       const begin = performance.now();
       g.update(1 / 60);
       times.push(performance.now() - begin);
       if (onlyFlights) draining.push(times.at(-1));
-      peakAnts = Math.max(peakAnts, g.flights.length);
+      peakAnts = Math.max(peakAnts, g.runtime.flights.flights.length);
       hash.update(
         JSON.stringify([
-          g.model.collected,
-          g.model.remaining,
-          g.model.pixels,
-          g.model.slots,
-          g.model.queue,
-          g.dispatchClocks,
-          g.flights.map((f) => [
+          g.runtime.session.model.collected,
+          g.runtime.session.model.remaining,
+          g.runtime.session.model.pixels,
+          g.runtime.session.model.slots,
+          g.runtime.session.model.queue,
+          g.runtime.dispatch.dispatchClocks,
+          g.runtime.flights.flights.map((f) => [
             f.pickup,
             f.phase,
             f.elapsed,
@@ -95,8 +101,8 @@ for (const level of levels)
       speed,
       frames: frame,
       peakAnts,
-      collected: g.model.collected,
-      blocked: !!g.modal,
+      collected: g.runtime.session.model.collected,
+      blocked: !!g.runtime.overlays.modal,
       totalMs: times.reduce((a, b) => a + b, 0),
       dispatchMs,
       p99Ms: times[Math.floor(times.length * 0.99)],

@@ -7,8 +7,8 @@ import {
   sampleRoute,
   prepareRoute,
   samplePreparedRoute,
-} from '../assets/scripts/routing.ts';
-import { makeLevel, LEVEL_COUNT } from '../assets/scripts/levels.ts';
+} from '../assets/scripts/domain/routing/routing.ts';
+import { makeLevel, LEVEL_COUNT } from '../assets/scripts/domain/levels/levels.ts';
 const grid = (width, height, pixels) => ({ width, height, pixels });
 function clearPath(b, path) {
   for (let i = 1; i < path.length; i++)
@@ -186,7 +186,7 @@ test('clearance preserves single-cell passages and routes around a return wall',
 });
 
 test('nearest assignment compares walking distance instead of row or straight-line proximity', async () => {
-  const { nearestAntTarget } = await import('../assets/scripts/routing.ts');
+  const { nearestAntTarget } = await import('../assets/scripts/domain/routing/routing.ts');
   const b = grid(7, 7, Array(49).fill(-1));
   for (let y = 0; y < 6; y++) b.pixels[y * 7 + 2] = 1;
   const start = { x: 0, y: 0 },
@@ -202,7 +202,7 @@ test('nearest assignment compares walking distance instead of row or straight-li
       assert.ok(routeLength(choice.path) <= routeLength(findAntRoute(b, start, a, 0.45)) + 1e-9);
 });
 test('nearest assignment evaluates every contact side and uses the individual departure point', async () => {
-  const { nearestAntTarget } = await import('../assets/scripts/routing.ts');
+  const { nearestAntTarget } = await import('../assets/scripts/domain/routing/routing.ts');
   const b = grid(7, 7, Array(49).fill(-1));
   const targets = [
     {
@@ -223,7 +223,7 @@ test('nearest assignment evaluates every contact side and uses the individual de
 
 test('reused target search preserves equal-distance ties and never reuses routes after start or board changes', async () => {
   const { AntTargetSearch, nearestAntTarget, routeLength } =
-    await import('../assets/scripts/routing.ts');
+    await import('../assets/scripts/domain/routing/routing.ts');
   const search = new AntTargetSearch();
   function reference(board, start, targets) {
     const candidates = targets
@@ -299,7 +299,7 @@ test('reused target search preserves equal-distance ties and never reuses routes
 });
 
 test('outbound and return routes use interior passages instead of either side border', async () => {
-  const { nearestAntTarget } = await import('../assets/scripts/routing.ts');
+  const { nearestAntTarget } = await import('../assets/scripts/domain/routing/routing.ts');
   for (const mirrored of [false, true]) {
     const board = grid(7, 7, Array(49).fill(-1));
     const x = (v) => (mirrored ? 6 - v : v);
@@ -340,7 +340,7 @@ test('side walls block smoothing and waiting movement but leave the bottom entra
 });
 
 test('a reserved passage keeps followers waiting inside instead of bypassing the wall', async () => {
-  const { nearestAntTarget } = await import('../assets/scripts/routing.ts');
+  const { nearestAntTarget } = await import('../assets/scripts/domain/routing/routing.ts');
   const real = grid(7, 7, Array(49).fill(-1));
   for (let x = 0; x < 7; x++) real.pixels[4 * 7 + x] = 1;
   const start = { x: 0, y: 9 },

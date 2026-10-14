@@ -8,7 +8,7 @@ from PIL import Image
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--source',action='append',type=Path)
-parser.add_argument('--output',type=Path,default=root/'assets/scripts/levels.ts')
+parser.add_argument('--output',type=Path,default=root/'assets/scripts/domain/levels/levels.ts')
 parser.add_argument('--candidate',action='store_true')
 args=parser.parse_args()
 output=args.output.resolve()

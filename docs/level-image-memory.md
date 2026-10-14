@@ -57,7 +57,7 @@
 
 ## 现有工程事实（不是用户新确认的美术约束）
 
-- 当前正式关卡网格为 48×60，共 2,880 格，画幅比例为 4:5，见 `assets/scripts/levels.ts`。
+- 当前正式关卡网格为 48×60，共 2,880 格，画幅比例为 4:5，见 `assets/scripts/domain/levels/levels.ts`。
 - 工程网格已按用户正式切换请求同步；关卡数据、容器规划、渲染行数、颜色图集与相关检查均需保持一致。
 - `scripts/optimize-level-pixels.py` 从原图生成 48×60 像素图，`scripts/generate-image2-levels.py` 读取 `review-48x60/` 后生成正式关卡数据。
 - 当前 100 关原图和最终提示词位于 `art/cartoons/runtime-catalog.json` 指定的两个来源目录；manifest 保留实际关卡顺序和验收状态。

@@ -65,8 +65,8 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
       sources.set(texture, image);
     }
     if (process.env.RESIDENT_PREVIEW) {
-      game.courtyardColony.random = () => 0.5;
-      game.courtyardColony.residents.forEach((r) => {
+      game.runtime.courtyard.courtyardColony.random = () => 0.5;
+      game.runtime.courtyard.courtyardColony.residents.forEach((r) => {
         r.random = () => 0.5;
       });
       const furniture =
@@ -75,19 +75,23 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
           : process.env.RESIDENT_PREVIEW === 'seed'
             ? 'seed-pantry'
             : 'leaf-bed';
-      game.save.courtyard.equipped.living = furniture;
-      game.save.courtyard.owned.push(furniture);
-      game.courtyardHour = () => (process.env.RESIDENT_PREVIEW === 'night' ? 22 : 12);
+      game.runtime.profile.save.courtyard.equipped.living = furniture;
+      game.runtime.profile.save.courtyard.owned.push(furniture);
+      game.runtime.courtyard.courtyardHour = () =>
+        process.env.RESIDENT_PREVIEW === 'night' ? 22 : 12;
       if (process.env.RESIDENT_PREVIEW === 'night') {
-        game.save.courtyard.equipped.garden = 'lantern-garden';
-        game.save.courtyard.owned.push('lantern-garden');
+        game.runtime.profile.save.courtyard.equipped.garden = 'lantern-garden';
+        game.runtime.profile.save.courtyard.owned.push('lantern-garden');
       }
-      game.refreshCourtyard();
+      game.runtime.courtyard.refreshCourtyard();
     }
     const canvas = createCanvas(width, height),
       ctx = canvas.getContext('2d');
     ctx.translate(width / 2, height / 2);
-    ctx.scale(width / game.screenWidth, -height / game.screenHeight);
+    ctx.scale(
+      width / game.runtime.lifecycle.screenWidth,
+      -height / game.runtime.lifecycle.screenHeight,
+    );
     const tinted = new Map();
     const draw = (node) => {
       if (!node.active) return;
@@ -188,14 +192,14 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
         ctx.resetTransform();
         ctx.clearRect(0, 0, width, height);
         ctx.restore();
-        draw(game.home);
+        draw(game.runtime.home.home);
         writeFileSync(
           `temp/previews/resident-${process.env.RESIDENT_PREVIEW}/${String(frame).padStart(4, '0')}.png`,
           canvas.toBuffer('image/png'),
         );
       }
     }
-    draw(game.home);
+    draw(game.runtime.home.home);
     writeFileSync(`temp/previews/home-${width}x${height}.png`, canvas.toBuffer('image/png'));
     game.onDestroy();
   }

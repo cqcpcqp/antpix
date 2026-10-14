@@ -1,4 +1,4 @@
-import { GardenModel } from '../assets/scripts/model.ts';
+import { GardenModel } from '../assets/scripts/domain/game/model.ts';
 import {
   colorClosure,
   seededRandom,

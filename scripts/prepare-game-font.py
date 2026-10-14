@@ -7,7 +7,7 @@ from fontTools.varLib.instancer import instantiateVariableFont
 from fontTools import subset
 root=Path(__file__).resolve().parents[1]
 chars=set(chr(i) for i in range(32,127))
-for p in (root/'assets/scripts').glob('*.ts'):
+for p in (root/'assets/scripts').rglob('*.ts'):
  chars.update(c for c in p.read_text() if ord(c)>=160)
 chars.update(c for c in (root/'cloudfunctions/game/service.js').read_text() if ord(c)>=160)
 font=TTFont(root/'art/fonts/noto-NotoSansSC[wght].ttf')

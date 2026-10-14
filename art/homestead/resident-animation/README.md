@@ -20,7 +20,7 @@
 
 `prepare.py` 清理白底、统一脚底位置，生成 512×384、128 色透明图集，并提取现有背景的洞口遮挡。执行 `python3 art/homestead/resident-animation/prepare.py` 可重建运行素材。角色采用十二姿势图集配合程序动画：迈步帧随实际路程切换、轻微起伏、坐下升降、呼吸、喝水点头和挥手；没有引入骨骼运行库。
 
-程序入口：`assets/scripts/courtyardColony.ts` 管理场景事件和资源预约，`courtyardLife.ts` 管理单只动作，`courtyardResident.ts` 显示角色，`courtyardAtmosphere.ts` 显示水纹、种子和夜间氛围。
+程序入口：`assets/scripts/domain/courtyard/courtyardColony.ts` 管理场景事件和资源预约，`courtyardLife.ts` 管理单只动作，`courtyardResident.ts` 显示角色，`courtyardAtmosphere.ts` 显示水纹、种子和夜间氛围。
 
 ## 离线预览与验证
 

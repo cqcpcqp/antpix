@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { CourtyardLife } from '../assets/scripts/courtyardLife.ts';
+import { CourtyardLife } from '../assets/scripts/domain/courtyard/courtyardLife.ts';
 const step = (life, chair, seconds) => {
   for (let i = 0; i < seconds * 60; i++) life.update(1 / 60, chair);
 };

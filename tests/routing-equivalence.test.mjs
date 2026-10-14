@@ -7,7 +7,7 @@ import {
   nearestAntTarget,
   clearSegment,
   routeLength,
-} from '../assets/scripts/routing.ts';
+} from '../assets/scripts/domain/routing/routing.ts';
 import {
   findAntRoute as reference,
   clearSegment as referenceClear,

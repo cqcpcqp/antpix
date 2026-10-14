@@ -10,7 +10,7 @@
 4. 每个序列评估八种分列候选，每种用四个固定训练种子测试简单选色策略，结合目标通过率、过早失败、开局颜色数和列长差异选择方案。目标通过率随关卡进度从 0.9 降到 0.5，是候选评分参数，不是保证值或玩家通关率。
 5. 每关保存三套方案。运行时仅随机选方案、交换整列位置。条目为 `[颜色, 容量, 列号]`，编码成两个 Base85 字符，避免增加微信包体。
 
-实现：`scripts/container-planner.mjs`、`scripts/container-simulation.mjs`、`scripts/generate-container-plans.mjs`。运行时读取：`assets/scripts/model.ts`。关卡源模板同步于 `scripts/generate-image2-levels.py`。
+实现：`scripts/container-planner.mjs`、`scripts/container-simulation.mjs`、`scripts/generate-container-plans.mjs`。运行时读取：`assets/scripts/domain/game/model.ts`。关卡源模板同步于 `scripts/generate-image2-levels.py`。
 
 ## 迭代记录
 

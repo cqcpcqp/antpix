@@ -5,8 +5,10 @@ const { mkdirSync, writeFileSync, readFileSync } = require('node:fs');
 const assert = require('node:assert/strict');
 const { spawnSync } = require('node:child_process');
 const { load } = require('./headless-game.cjs');
-const { drawAnt, drawBoardPixel } = load(process.cwd() + '/assets/scripts/gardenDrawing.ts');
-const { CELL_SIZE } = load(process.cwd() + '/assets/scripts/boardLayout.ts');
+const { drawAnt, drawBoardPixel } = load(
+  process.cwd() + '/assets/scripts/presentation/gardenDrawing.ts',
+);
+const { CELL_SIZE } = load(process.cwd() + '/assets/scripts/presentation/boardLayout.ts');
 const PALETTE = ['#000000', '#FFFFFF'];
 const CELL = 64,
   COLUMNS = 4,

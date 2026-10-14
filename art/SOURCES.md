@@ -8,7 +8,7 @@
 - 第 11–100 关：`cartoons/sources/image2-levels-011-100/`。
 - 正式来源目录由 `cartoons/runtime-catalog.json` 指定。各 manifest 保存关卡顺序、原图文件、色数、验收状态与正式像素文件路径。
 - `prompts.jsonl` 保存当前原图对应的最终提示词；`review-48x60/` 中的像素 PNG 是正式关卡重建输入，必须保留。
-- 游戏仅加载 `assets/scripts/levels.ts`，原图不打入游戏包。
+- 游戏仅加载 `assets/scripts/domain/levels/levels.ts`，原图不打入游戏包。
 
 ## UI 与庭院
 
