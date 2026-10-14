@@ -12,7 +12,16 @@ const {
   resourceLoads,
 } = require('./headless-game.cjs');
 const { PixelGarden } = load(process.cwd() + '/assets/scripts/PixelGarden.ts');
-GlobalFonts.registerFromPath('assets/resources/fonts/ant-nest-heavy.ttf', 'Game');
+// Match Cocos sibling ordering for the offline renderer (the test mock is minimal).
+cc.Node.prototype.setSiblingIndex = function (index) {
+  if (!this.parent) return;
+  const siblings = this.parent.children;
+  const current = siblings.indexOf(this);
+  if (current >= 0) siblings.splice(current, 1);
+  siblings.splice(Math.max(0, Math.min(index, siblings.length)), 0, this);
+};
+
+GlobalFonts.registerFromPath('art/fonts/ant-nest-heavy.ttf', 'Game');
 const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
 (async () => {
   const image = await loadImage('assets/resources/home/garden.jpg');
@@ -47,13 +56,44 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
       resourceLoads.get(`home/${name}/texture`)(null, texture);
       sources.set(texture, image);
     }
+    for (const name of ['furnishings', 'resident', 'resident-door']) {
+      const image = await loadImage(`assets/resources/home/${name}.png`);
+      const texture = new Texture2D();
+      texture.width = image.width;
+      texture.height = image.height;
+      resourceLoads.get(`home/${name}/texture`)(null, texture);
+      sources.set(texture, image);
+    }
+    if (process.env.RESIDENT_PREVIEW) {
+      game.courtyardColony.random = () => 0.5;
+      game.courtyardColony.residents.forEach((r) => {
+        r.random = () => 0.5;
+      });
+      const furniture =
+        process.env.RESIDENT_PREVIEW === 'pond'
+          ? 'dew-pond'
+          : process.env.RESIDENT_PREVIEW === 'seed'
+            ? 'seed-pantry'
+            : 'leaf-bed';
+      game.save.courtyard.equipped.living = furniture;
+      game.save.courtyard.owned.push(furniture);
+      game.courtyardHour = () => (process.env.RESIDENT_PREVIEW === 'night' ? 22 : 12);
+      if (process.env.RESIDENT_PREVIEW === 'night') {
+        game.save.courtyard.equipped.garden = 'lantern-garden';
+        game.save.courtyard.owned.push('lantern-garden');
+      }
+      game.refreshCourtyard();
+    }
     const canvas = createCanvas(width, height),
       ctx = canvas.getContext('2d');
     ctx.translate(width / 2, height / 2);
     ctx.scale(width / game.screenWidth, -height / game.screenHeight);
+    const tinted = new Map();
     const draw = (node) => {
       if (!node.active) return;
       ctx.save();
+      const opacity = node.getComponent(cc.UIOpacity);
+      if (opacity) ctx.globalAlpha *= opacity.opacity / 255;
       ctx.translate(node.position.x, node.position.y);
       ctx.rotate((node.angle * Math.PI) / 180);
       ctx.scale(node.scale.x, node.scale.y);
@@ -83,7 +123,30 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
             bounds = node.getComponent(cc.UITransform);
           ctx.save();
           ctx.scale(1, -1);
-          const source = sources.get(component.spriteFrame.texture);
+          let source = sources.get(component.spriteFrame.texture);
+          const c = component.color;
+          if (c && (c.r !== 255 || c.g !== 255 || c.b !== 255)) {
+            const key =
+              [...sources.keys()].indexOf(component.spriteFrame.texture) +
+              ':' +
+              c.r +
+              ':' +
+              c.g +
+              ':' +
+              c.b;
+            if (!tinted.has(key)) {
+              const copy = createCanvas(source.width, source.height),
+                paint = copy.getContext('2d');
+              paint.drawImage(source, 0, 0);
+              paint.globalCompositeOperation = 'multiply';
+              paint.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
+              paint.fillRect(0, 0, source.width, source.height);
+              paint.globalCompositeOperation = 'destination-in';
+              paint.drawImage(source, 0, 0);
+              tinted.set(key, copy);
+            }
+            source = tinted.get(key);
+          }
           ctx.drawImage(
             source,
             crop.x,
@@ -117,6 +180,21 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
       node.children.forEach(draw);
       ctx.restore();
     };
+    if (process.env.RESIDENT_PREVIEW && width === 390) {
+      mkdirSync(`temp/previews/resident-${process.env.RESIDENT_PREVIEW}`, { recursive: true });
+      for (let frame = 0; frame < 480; frame++) {
+        for (let tick = 0; tick < 5; tick++) game.update(1 / 60);
+        ctx.save();
+        ctx.resetTransform();
+        ctx.clearRect(0, 0, width, height);
+        ctx.restore();
+        draw(game.home);
+        writeFileSync(
+          `temp/previews/resident-${process.env.RESIDENT_PREVIEW}/${String(frame).padStart(4, '0')}.png`,
+          canvas.toBuffer('image/png'),
+        );
+      }
+    }
     draw(game.home);
     writeFileSync(`temp/previews/home-${width}x${height}.png`, canvas.toBuffer('image/png'));
     game.onDestroy();

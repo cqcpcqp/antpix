@@ -1,3 +1,4 @@
+require('./check-wechat-package.cjs');
 // This suite executes the actual generated JS and the actual generated Babel helpers.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');

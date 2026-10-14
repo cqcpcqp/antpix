@@ -4,7 +4,7 @@ Cocos Creator **3.8.8** / TypeScript / 微信小游戏。当前版本包含 100 
 
 ## 版本管理
 
-当前项目版本为 **0.1.0**，以根目录 `package.json` 的 `version` 为准，Git 标签格式为 `vX.Y.Z`。升级步骤见 [版本管理](docs/versioning.md)，每版变更记录在 [更新日志](CHANGELOG.md)。
+当前项目版本为 **0.2.0**，以根目录 `package.json` 的 `version` 为准，Git 标签格式为 `vX.Y.Z`。升级步骤见 [版本管理](docs/versioning.md)，每版变更记录在 [更新日志](CHANGELOG.md)。
 
 ## 开发入口
 

@@ -62,7 +62,10 @@ test('courtyard previews never charge or persist, closing restores actual furnis
   assert.equal(JSON.stringify(game.save), before);
   game.closeModal();
   assert.equal(game.courtyardPreview, undefined);
-  assert.equal(game.courtyardNode.children.length, 0);
+  assert.equal(
+    game.courtyardNode.children.filter((node) => node.name.startsWith('Furnishing ')).length,
+    0,
+  );
   assert.equal(game.homeScene.node.position.y, 0);
   assert.equal(game.homeTitle.node.active, true);
   game.onDestroy();
@@ -223,5 +226,85 @@ test('cloud purchase has no optimistic spend and ignores additional taps while p
   assert.equal(game.save.coins, 320);
   assert.equal(game.save.courtyard.equipped.entrance, 'leaf-awning');
   assert.equal(game.modal, null, 'late completion must not reopen a dismissed drawer');
+  game.onDestroy();
+});
+
+test('homepage life survives decoration refresh and pauses behind overlays or in background', () => {
+  const game = makeGame();
+  const texture = new Texture2D();
+  texture.width = 512;
+  texture.height = 384;
+  resourceLoads.get('home/resident/texture')(null, texture);
+  const life = game.courtyardLife;
+  for (let i = 0; i < 180; i++) game.update(1 / 60);
+  assert.notEqual(life.action, 'inside');
+  const before = { x: life.x, y: life.y, elapsed: life.elapsed };
+  game.shop('living', 'leaf-bed');
+  for (let i = 0; i < 100; i++) game.update(1 / 60);
+  assert.deepEqual({ x: life.x, y: life.y, elapsed: life.elapsed }, before);
+  assert.equal(life.chair, false, 'unbought preview does not unlock an interaction');
+  game.closeModal();
+  game.showHome();
+  assert.equal(game.courtyardLife, life);
+  assert.deepEqual({ x: life.x, y: life.y, elapsed: life.elapsed }, before);
+  game.paused = true;
+  game.update(0.05);
+  assert.equal(life.elapsed, before.elapsed);
+  game.paused = false;
+  game.update(0.05);
+  assert.ok(life.elapsed > before.elapsed);
+  game.onDestroy();
+});
+
+test('three residents and night lighting stay below home controls and pause together', () => {
+  const game = makeGame();
+  const texture = new Texture2D();
+  texture.width = 512;
+  texture.height = 384;
+  resourceLoads.get('home/resident/texture')(null, texture);
+  game.courtyardHour = () => 22;
+  game.save.courtyard.equipped.garden = 'lantern-garden';
+  game.refreshCourtyard();
+  assert.equal(game.courtyardResidents.length, 3);
+  for (const view of game.courtyardResidents) assert.equal(view.root.parent, game.courtyardNode);
+  for (let i = 0; i < 120; i++) game.update(1 / 60);
+  assert.equal(game.courtyardColony.night, true);
+  const before = game.courtyardColony.residents.map((r) => [r.x, r.y, r.elapsed]);
+  game.shop('living', 'dew-pond');
+  for (let i = 0; i < 60; i++) game.update(1 / 60);
+  assert.deepEqual(
+    game.courtyardColony.residents.map((r) => [r.x, r.y, r.elapsed]),
+    before,
+  );
+  assert.ok(game.courtyardResidents.every((v) => !v.root.active));
+  game.closeModal();
+  game.update(1 / 60);
+  assert.ok(game.courtyardResidents.every((v) => v.root.active));
+  game.courtyardHour = () => 12;
+  game.update(1 / 60);
+  assert.equal(game.courtyardColony.night, false);
+  game.onDestroy();
+});
+
+test('different-sized residents share the same ground anchor as their shadow', () => {
+  const game = makeGame();
+  const texture = new Texture2D();
+  texture.width = 512;
+  texture.height = 384;
+  resourceLoads.get('home/resident/texture')(null, texture);
+  game.courtyardColony.residents.forEach((r, i) => {
+    r.x = 450 + i * 60;
+    r.y = 870;
+    r.action = 'rest';
+    r.activity = 'sun';
+    r.elapsed = 0;
+    const view = game.courtyardResidents[i];
+    view.render(r, false);
+    const body = view.root.children.find((n) => n.name === 'Resident pose');
+    const shadow = view.root.children.find((n) => n.name === 'Resident ground shadow');
+    const height = body.getComponent(cc.UITransform).height;
+    assert.ok(Math.abs(shadow.position.y + (height * 58) / 128) < 1e-8);
+    assert.ok(Math.abs(view.root.position.y + shadow.position.y - (768 - r.y) * view.scale) < 1e-8);
+  });
   game.onDestroy();
 });

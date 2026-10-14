@@ -16,10 +16,14 @@ writeFileSync(
 );
 const levels = Array.from({ length: LEVEL_COUNT }, (_, index) => {
   const level = makeLevel(index);
+  const moves = [...new Set(level.containerPlans.map((plan) => plan.length))];
   return {
-    moves: [...new Set(level.containerPlans.map((plan) => plan.length))],
-    // Conservative lower bound: nine slots, 2x speed, no walking time.
-    minimumSeconds: Math.max(0, ((level.pixels.length - 9) * 0.25) / 9 - 2),
+    moves,
+    // Conservative lower bound: nine slots, 4x finishing speed throughout,
+    // and no walking/entry time. Every new jar dispatches its first ant
+    // immediately; only the remaining ants require a 0.5 / 4 second interval.
+    // Use the largest plan so this shared bound accepts every allowed plan.
+    minimumSeconds: Math.max(0, ((level.pixels.length - Math.max(...moves)) * (0.5 / 4)) / 9 - 2),
   };
 });
 writeFileSync(

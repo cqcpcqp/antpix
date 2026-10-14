@@ -53,7 +53,7 @@ npm run check
 | 资源               | 输入                                                | 加工脚本                                                   |
 | ------------------ | --------------------------------------------------- | ---------------------------------------------------------- |
 | UI 字体子集        | `art/fonts/noto-NotoSansSC[wght].ttf`、当前文案     | `scripts/prepare-game-font.py`                             |
-| UI 位图字库        | `assets/resources/fonts/ant-nest-heavy.ttf`         | `scripts/prepare-bitmap-font.cjs`                          |
+| UI 位图字库        | `art/fonts/ant-nest-heavy.ttf`                      | `scripts/prepare-bitmap-font.cjs`                          |
 | 容器数字           | 当前数字排版代码                                    | `scripts/prepare-container-digits.cjs`                     |
 | 容器图集           | `art/ui/sources/containers.png`                     | `scripts/prepare-container-atlas.py`                       |
 | 木托盘、橡果       | `art/ui/sources/wood-tray.png`                      | `scripts/prepare-wood-trays.py`                            |

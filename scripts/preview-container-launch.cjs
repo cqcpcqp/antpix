@@ -11,7 +11,7 @@ const {
   resourceLoads,
 } = require('./headless-game.cjs');
 const { PixelGarden } = load(process.cwd() + '/assets/scripts/PixelGarden.ts');
-GlobalFonts.registerFromPath('assets/resources/fonts/ant-nest-heavy.ttf', 'Game');
+GlobalFonts.registerFromPath('art/fonts/ant-nest-heavy.ttf', 'Game');
 const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
 (async () => {
   const previewHeight = Number(process.env.PREVIEW_HEIGHT || 822);

@@ -1,6 +1,6 @@
 # 版本管理
 
-项目名称为 `antpix`，当前初始版本为 `0.1.0`。根目录 `package.json` 的 `version` 是项目版本的唯一来源，每个版本对应一个 Git 标签 `vX.Y.Z`。主分支为 `main`。
+项目名称为 `antpix`，当前版本为 `0.2.0`。根目录 `package.json` 的 `version` 是项目版本的唯一来源，每个版本对应一个 Git 标签 `vX.Y.Z`。主分支为 `main`。
 
 ## 版本规则
 
@@ -39,11 +39,11 @@ git log -1 --oneline
 git describe --tags --exact-match
 ```
 
-当前仅建立本地 Git 仓库。将来配置远程仓库后，按需推送代码与标签：
+已配置 `origin` 远程仓库。发布版本时推送代码与对应标签：
 
 ```sh
 git push origin main
-git push origin v0.1.1
+git push origin v0.2.0
 ```
 
 创建标签只记录源码版本，不会自动部署云函数、上传微信小游戏或完成真机验收。

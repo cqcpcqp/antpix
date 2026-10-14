@@ -19,6 +19,6 @@ s=subset.Subsetter(options=options);s.populate(unicodes=[ord(c) for c in chars])
 # Modified/subset family name; retain upstream copyright and license records.
 for name_id,value in [(1,'Ant Nest Heavy'),(2,'Regular'),(3,'AntNestHeavy-700-subset'),(4,'Ant Nest Heavy'),(6,'AntNestHeavy')]:
  font['name'].setName(value,name_id,3,1,0x409)
-out=root/'assets/resources/fonts';out.mkdir(exist_ok=True)
+out=root/'art/fonts';out.mkdir(exist_ok=True)
 font.save(out/'ant-nest-heavy.ttf')
 print('Subset:',len(chars),'characters,',round((out/'ant-nest-heavy.ttf').stat().st_size/1024,1),'KB')

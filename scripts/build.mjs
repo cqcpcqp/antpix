@@ -82,6 +82,7 @@ if (result.status === 0 || result.status === 36) {
 // Verify the emitted code, since Cocos compilation can change iterable semantics.
 if (result.status === 0 || result.status === 36) {
   for (const script of [
+    'scripts/check-wechat-package.cjs',
     'scripts/check-built.cjs',
     'scripts/check-ui.cjs',
     'scripts/check-container-launch.cjs',

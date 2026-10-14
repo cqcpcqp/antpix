@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { CloudGame } from '../assets/scripts/cloudGame.ts';
 import { freshProfile, SKINS } from '../assets/scripts/profile.ts';
+import { LEVEL_COUNT, makeLevel } from '../assets/scripts/levels.ts';
 const require = createRequire(import.meta.url);
 const { createService, dayAt } = require('../cloudfunctions/game/service.js');
 const { levels } = require('../cloudfunctions/game/catalog.json');
@@ -87,6 +88,33 @@ async function win(f, level, user = 'alice') {
 test('generated server rules match client catalog and assets', () => {
   assert.deepEqual(generated.freshProfile(), freshProfile());
   assert.deepEqual(generated.SKINS, SKINS);
+  assert.equal(levels.length, LEVEL_COUNT);
+  for (let index = 0; index < LEVEL_COUNT; index++) {
+    const level = makeLevel(index);
+    assert.deepEqual(levels[index].moves, [...new Set(level.containerPlans.map((p) => p.length))]);
+    for (const plan of level.containerPlans) {
+      const fastestDispatch = ((level.pixels.length - plan.length) * 0.125) / 9;
+      assert.ok(levels[index].minimumSeconds <= fastestDispatch, `level ${index + 1}`);
+    }
+  }
+});
+test('level 17 accepts accelerated scores and still rejects scores below the time bound', async () => {
+  const f = fixture();
+  await f.call('login');
+  for (let level = 0; level < 16; level++) assert.equal((await win(f, level)).ok, true);
+  for (const moves of levels[16].moves) {
+    const start = await f.call('start', { level: 16 });
+    f.advance(120000);
+    const request = { runId: start.output.runId, moves };
+    assert.equal(
+      (await f.call('complete', { ...request, seconds: levels[16].minimumSeconds - 0.01 })).code,
+      'SCORE',
+    );
+    assert.equal(
+      (await f.call('complete', { ...request, seconds: levels[16].minimumSeconds })).ok,
+      true,
+    );
+  }
 });
 test('trusted WeChat identity only; users cannot submit balance or another identity', async () => {
   const f = fixture();
