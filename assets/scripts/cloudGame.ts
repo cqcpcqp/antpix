@@ -18,8 +18,17 @@ export interface WorldBoard {
     hasNext: boolean;
 }
 type Failure = { ok: false; code: string; message: string };
-type Request = { action: string; catalogVersion: number; requestId?: string; [key: string]: unknown };
-type Storage = { getItem(key: string): string | null; setItem(key: string, value: string): void; removeItem(key: string): void };
+type Request = {
+    action: string;
+    catalogVersion: number;
+    requestId?: string;
+    [key: string]: unknown;
+};
+type Storage = {
+    getItem(key: string): string | null;
+    setItem(key: string, value: string): void;
+    removeItem(key: string): void;
+};
 type Transport = <T>(data: Request) => Promise<T | Failure>;
 export class CloudGameError extends Error {
     code: string;
@@ -32,12 +41,22 @@ export function wechatAvailable(): boolean {
     return typeof (globalThis as unknown as { wx?: unknown }).wx !== 'undefined';
 }
 export function wechatTransport(): Transport {
-    const wxApi = (globalThis as unknown as { wx: { cloud: {
-        init(options: { env: string }): void;
-        callFunction(options: { name: string; data: Request }): Promise<{ result: unknown }>;
-    } } }).wx;
+    const wxApi = (
+        globalThis as unknown as {
+            wx: {
+                cloud: {
+                    init(options: { env: string }): void;
+                    callFunction(options: {
+                        name: string;
+                        data: Request;
+                    }): Promise<{ result: unknown }>;
+                };
+            };
+        }
+    ).wx;
     wxApi.cloud.init({ env: CLOUD_ENV });
-    return async <T>(data: Request) => (await wxApi.cloud.callFunction({ name: 'game', data })).result as T | Failure;
+    return async <T>(data: Request) =>
+        (await wxApi.cloud.callFunction({ name: 'game', data })).result as T | Failure;
 }
 
 // Persist the exact request before sending; a timeout may have happened after commit.
@@ -50,14 +69,19 @@ export class CloudGame {
         this.transport = transport;
         this.storage = storage;
     }
-    private key() { return `ant-cloud-pending:${CLOUD_ENV}:${this.userId}`; }
+    private key() {
+        return `ant-cloud-pending:${CLOUD_ENV}:${this.userId}`;
+    }
     private async call<T extends { ok: true }>(data: Request): Promise<T> {
         const result = await this.transport<T>(data);
         if (!result.ok) throw new CloudGameError(result.code, result.message);
         return result;
     }
     async login(): Promise<CloudState> {
-        const state = await this.call<CloudState>({ action: 'login', catalogVersion: CATALOG_VERSION });
+        const state = await this.call<CloudState>({
+            action: 'login',
+            catalogVersion: CATALOG_VERSION,
+        });
         this.userId = state.output.userId!;
         const pending = this.storage.getItem(this.key());
         if (pending) return this.send(JSON.parse(pending));
@@ -67,11 +91,24 @@ export class CloudGame {
         if (this.busy) throw new Error('Another cloud request is running');
         if (!this.userId) throw new Error('Cloud login is required');
         const pending = this.storage.getItem(this.key());
-        const request: Request = pending ? JSON.parse(pending) : {
-            ...values, action, catalogVersion: CATALOG_VERSION,
-            requestId: Date.now().toString(36) + '-' + Math.random().toString(36).slice(2) + '-' + Math.random().toString(36).slice(2),
-        };
-        if (pending && (request.action !== action || Object.keys(values).some(key => request[key] !== values[key])))
+        const request: Request = pending
+            ? JSON.parse(pending)
+            : {
+                  ...values,
+                  action,
+                  catalogVersion: CATALOG_VERSION,
+                  requestId:
+                      Date.now().toString(36) +
+                      '-' +
+                      Math.random().toString(36).slice(2) +
+                      '-' +
+                      Math.random().toString(36).slice(2),
+              };
+        if (
+            pending &&
+            (request.action !== action ||
+                Object.keys(values).some((key) => request[key] !== values[key]))
+        )
             throw new Error('Resolve the pending request before starting another action');
         this.storage.setItem(this.key(), JSON.stringify(request));
         return this.send(request);

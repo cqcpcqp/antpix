@@ -44,18 +44,18 @@
 
 统一使用 `wx.cloud.callFunction({name: 'game', data})`，请求带 `catalogVersion: 4`。
 
-| action | 额外参数 | 功能 |
-| --- | --- | --- |
-| login | 无 | 创建或读取云存档 |
-| start | requestId、level（0 起算） | 检查解锁并创建关卡会话 |
-| complete | requestId、runId、seconds、moves | 结算通关、解锁、更新排名 |
-| claim | requestId | 领取当日及首通奖励 |
-| shop | requestId、skin | 购买或装备局内洞口装扮 |
-| furnish | requestId、item | 购买或装备指定庭院装饰 |
-| unfurnish | requestId、slot（entrance / path / garden / living） | 收起指定位置的装饰，保留所有权 |
-| adStart | requestId、runId、placement（speed / slot） | 创建广告观看会话 |
-| adComplete | requestId、adId | 完整观看回调计数 |
-| leaderboard | page（0–9） | 读取世界榜 |
+| action      | 额外参数                                             | 功能                           |
+| ----------- | ---------------------------------------------------- | ------------------------------ |
+| login       | 无                                                   | 创建或读取云存档               |
+| start       | requestId、level（0 起算）                           | 检查解锁并创建关卡会话         |
+| complete    | requestId、runId、seconds、moves                     | 结算通关、解锁、更新排名       |
+| claim       | requestId                                            | 领取当日及首通奖励             |
+| shop        | requestId、skin                                      | 购买或装备局内洞口装扮         |
+| furnish     | requestId、item                                      | 购买或装备指定庭院装饰         |
+| unfurnish   | requestId、slot（entrance / path / garden / living） | 收起指定位置的装饰，保留所有权 |
+| adStart     | requestId、runId、placement（speed / slot）          | 创建广告观看会话               |
+| adComplete  | requestId、adId                                      | 完整观看回调计数               |
+| leaderboard | page（0–9）                                          | 读取世界榜                     |
 
 存档成功响应：`{ok:true, profile, day, serverTime, adViews, highest, reachedAt, output}`。`output` 按操作返回 `userId/runId/adId/amount/purchase`；无额外结果时为空对象。榜单响应：`{ok:true, rows, hasNext}`。业务拒绝：`{ok:false, code, message}`；网络或平台故障由调用 Promise 抛出。客户端严格消费约定字段，不猜测字段、不填默认值。
 

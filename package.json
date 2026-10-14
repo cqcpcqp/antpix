@@ -8,7 +8,10 @@
     "version": "3.8.8"
   },
   "scripts": {
-    "check": "npm run prepare:cloud && npm test && npm run typecheck && npm run check:ui",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --suppressions-location eslint-baseline.json",
+    "check": "npm run format:check && npm run lint && npm run prepare:cloud && npm test && npm run typecheck && npm run check:ui",
     "prepare:cloud": "node --experimental-strip-types scripts/prepare-cloud.mjs",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "build:wechat": "node scripts/build.mjs",
@@ -19,6 +22,16 @@
     "bench:animation": "ANT_ATLAS=1 node scripts/bench-animation.cjs",
     "bench:dispatch": "node scripts/bench-dispatch.cjs",
     "generate:ants": "node scripts/generate-ant-atlas.cjs",
-    "preversion": "npm run check"
+    "preversion": "npm run check",
+    "lint:all": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.2"
   }
 }

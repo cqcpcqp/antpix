@@ -9,10 +9,13 @@ Cocos Creator **3.8.8** / TypeScript / 微信小游戏。当前版本包含 100 
 ## 开发入口
 
 1. 使用 Cocos Dashboard 导入项目，以 Creator 3.8.8 打开 `assets/scenes/Main.scene`。UI 由组件在运行时创建。
-2. 使用 Node.js 24 执行源码检查和构建。规则测试不需要安装根目录 npm 依赖；类型检查使用本机 Cocos 工具链。
+2. 使用 Node.js 24 执行源码检查和构建。先执行 `npm ci` 安装开发依赖；类型检查使用本机 Cocos 工具链。
 3. 微信开发者工具导入 `build/wechatgame` 试玩；云函数部署入口为根目录 `project.config.json`。
 
 ```sh
+npm ci
+npm run format
+npm run lint
 npm run check
 WECHAT_APPID=wxd8e27ad9cd0289df npm run build:wechat
 ```
@@ -40,14 +43,14 @@ WECHAT_APPID=wxd8e27ad9cd0289df npm run build:wechat
 
 ## 目录
 
-| 目录 | 内容 |
-| --- | --- |
-| `assets/` | 当前场景、业务源码、运行资源与 Cocos `.meta` |
-| `cloudfunctions/`、`wechat/` | 云函数、数据库配置、开放数据域 |
-| `scripts/`、`tests/` | 当前构建、素材加工、无界面回归与性能工具 |
-| `art/` | 当前素材源文件、已验收像素图、许可和容器规划报告 |
-| `docs/` | 开发规范、素材流程、接口说明、图片约束及待解决问题 |
-| `settings/` | 共享 Cocos 项目设置 |
+| 目录                         | 内容                                               |
+| ---------------------------- | -------------------------------------------------- |
+| `assets/`                    | 当前场景、业务源码、运行资源与 Cocos `.meta`       |
+| `cloudfunctions/`、`wechat/` | 云函数、数据库配置、开放数据域                     |
+| `scripts/`、`tests/`         | 当前构建、素材加工、无界面回归与性能工具           |
+| `art/`                       | 当前素材源文件、已验收像素图、许可和容器规划报告   |
+| `docs/`                      | 开发规范、素材流程、接口说明、图片约束及待解决问题 |
+| `settings/`                  | 共享 Cocos 项目设置                                |
 
 `build/`、`library/`、`temp/`、`profiles/` 为本地生成内容，不提交 Git；不要手改其中的业务产物。素材源文件与运行资源都应提交，不能只提交运行图片而丢失加工输入。
 

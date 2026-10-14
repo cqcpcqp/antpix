@@ -26,14 +26,14 @@ export function collectionSlotY(slot: number): number {
 /** Grid coordinates refer to cell centers; grid y increases downward. */
 export function gridToWorld(point: RoutePoint): RoutePoint {
     return {
-        x: BOARD_LEFT + (point.x + .5) * CELL_SIZE,
-        y: BOARD_TOP - (point.y + .5) * CELL_SIZE,
+        x: BOARD_LEFT + (point.x + 0.5) * CELL_SIZE,
+        y: BOARD_TOP - (point.y + 0.5) * CELL_SIZE,
     };
 }
 
 export function worldToGrid(point: RoutePoint): RoutePoint {
     return {
-        x: (point.x - BOARD_LEFT) / CELL_SIZE - .5,
-        y: (BOARD_TOP - point.y) / CELL_SIZE - .5,
+        x: (point.x - BOARD_LEFT) / CELL_SIZE - 0.5,
+        y: (BOARD_TOP - point.y) / CELL_SIZE - 0.5,
     };
 }

@@ -13,12 +13,16 @@ type RewardedVideo = {
 let watching = false;
 export async function showRewardedVideo(): Promise<boolean> {
     if (!rewardedVideoConfigured() || watching) return false;
-    const wxApi = (globalThis as unknown as { wx?: { createRewardedVideoAd(options: { adUnitId: string }): RewardedVideo } }).wx;
+    const wxApi = (
+        globalThis as unknown as {
+            wx?: { createRewardedVideoAd(options: { adUnitId: string }): RewardedVideo };
+        }
+    ).wx;
     if (!wxApi) return false;
     watching = true;
     try {
         const ad = wxApi.createRewardedVideoAd({ adUnitId: REWARDED_VIDEO_AD_UNIT_ID });
-        return await new Promise<boolean>(resolve => {
+        return await new Promise<boolean>((resolve) => {
             let settled = false;
             const finish = (completed: boolean) => {
                 if (settled) return;
@@ -31,7 +35,11 @@ export async function showRewardedVideo(): Promise<boolean> {
             const fail = () => finish(false);
             ad.onClose(close);
             ad.onError(fail);
-            ad.load().then(() => { if (!settled) return ad.show(); }).catch(fail);
+            ad.load()
+                .then(() => {
+                    if (!settled) return ad.show();
+                })
+                .catch(fail);
         });
     } catch {
         return false;

@@ -44,20 +44,20 @@ npm run check
 
 ## 字体、UI、庭院和音频
 
-| 资源 | 输入 | 加工脚本 |
-| --- | --- | --- |
-| UI 字体子集 | `art/fonts/noto-NotoSansSC[wght].ttf`、当前文案 | `scripts/prepare-game-font.py` |
-| UI 位图字库 | `assets/resources/fonts/ant-nest-heavy.ttf` | `scripts/prepare-bitmap-font.cjs` |
-| 容器数字 | 当前数字排版代码 | `scripts/prepare-container-digits.cjs` |
-| 容器图集 | `art/ui/sources/containers.png` | `scripts/prepare-container-atlas.py` |
-| 木托盘、橡果 | `art/ui/sources/wood-tray.png` | `scripts/prepare-wood-trays.py` |
-| 洞口 | `art/ui/sources/wood-hole.png` | `scripts/prepare-wood-nest.py` |
-| 局内背景 | `art/ui/sources/game-background.png` | `scripts/prepare-sage-background.py` |
-| 首页按钮与标题 | `art/ui/sources/home-actions.png`、`home-title.png` | `scripts/prepare-home-actions.py`、`prepare-home-title.py` |
-| 庭院与装饰 | `art/homestead/` 正式原图 | `art/homestead/prepare-assets.py` |
-| 蚂蚁与货物图集 | `assets/scripts/gardenDrawing.ts` | `npm run generate:ants` |
-| 点击音效 | 合成参数 | `scripts/prepare-tap.py` |
-| 背景音乐和通关音效 | Easy Lemon 原始音乐、合成参数 | `scripts/prepare-audio.py /path/to/Easy-Lemon.mp3` |
+| 资源               | 输入                                                | 加工脚本                                                   |
+| ------------------ | --------------------------------------------------- | ---------------------------------------------------------- |
+| UI 字体子集        | `art/fonts/noto-NotoSansSC[wght].ttf`、当前文案     | `scripts/prepare-game-font.py`                             |
+| UI 位图字库        | `assets/resources/fonts/ant-nest-heavy.ttf`         | `scripts/prepare-bitmap-font.cjs`                          |
+| 容器数字           | 当前数字排版代码                                    | `scripts/prepare-container-digits.cjs`                     |
+| 容器图集           | `art/ui/sources/containers.png`                     | `scripts/prepare-container-atlas.py`                       |
+| 木托盘、橡果       | `art/ui/sources/wood-tray.png`                      | `scripts/prepare-wood-trays.py`                            |
+| 洞口               | `art/ui/sources/wood-hole.png`                      | `scripts/prepare-wood-nest.py`                             |
+| 局内背景           | `art/ui/sources/game-background.png`                | `scripts/prepare-sage-background.py`                       |
+| 首页按钮与标题     | `art/ui/sources/home-actions.png`、`home-title.png` | `scripts/prepare-home-actions.py`、`prepare-home-title.py` |
+| 庭院与装饰         | `art/homestead/` 正式原图                           | `art/homestead/prepare-assets.py`                          |
+| 蚂蚁与货物图集     | `assets/scripts/gardenDrawing.ts`                   | `npm run generate:ants`                                    |
+| 点击音效           | 合成参数                                            | `scripts/prepare-tap.py`                                   |
+| 背景音乐和通关音效 | Easy Lemon 原始音乐、合成参数                       | `scripts/prepare-audio.py /path/to/Easy-Lemon.mp3`         |
 
 新增 UI 文案或关卡名称时，依次运行 `python3 scripts/prepare-game-font.py` 和 `node scripts/prepare-bitmap-font.cjs`，再运行 `npm run check:ui`。这两步必须一起执行，不能只更新位图而保留旧字体子集。
 
