@@ -174,6 +174,7 @@ export class PixelGarden extends Component {
     private queue!: Node;
     private queueCount!: Label;
     private speedLabel!: Label;
+    private speedVideo!: Node;
     private expansionBoard!: Node;
     private levelLabel!: Label;
     private slotLabels: Label[] = [];
@@ -208,6 +209,11 @@ export class PixelGarden extends Component {
     private dispatchJarIds = Array(5).fill(-1);
     private speed = 1;
     private speedUnlocked = false;
+    private finishing = false;
+
+    private get effectiveSpeed() {
+        return this.finishing ? 4 : this.speed;
+    }
     private paused = false;
     private modal: Node | null = null;
     private elapsed = 0;
@@ -647,6 +653,7 @@ export class PixelGarden extends Component {
         this.speedLabel.enableOutline = false;
         this.speedLabel.color = color('#73573D');
         const speedVideo = this.graphics(this.speedLabel.node.parent!, 'Speed video mark');
+        this.speedVideo = speedVideo.node;
         speedVideo.fillColor = color('#907653');
         speedVideo.moveTo(25, -7); speedVideo.lineTo(36, 0); speedVideo.lineTo(25, 7); speedVideo.close(); speedVideo.fill();
         // Enlarge the board and trays together around the board's top edge.
@@ -1174,7 +1181,10 @@ export class PixelGarden extends Component {
         this.won = false;
         this.speed = 1;
         this.speedUnlocked = false;
+        this.finishing = false;
         this.speedLabel.string = '1×';
+        this.speedLabel.node.setPosition(-13, 1);
+        this.speedVideo.active = true;
         this.updateExpansionBoard();
         this.effects.clear();
         this.drawBoard();
@@ -1545,11 +1555,16 @@ export class PixelGarden extends Component {
     private queueCaption() {
         if (!this.model)
             return '';
-        return `已收集 ${Math.floor(this.model.collected / this.model.level.pixels.length * 100)}%`;
+        const progress = `已收集 ${Math.floor(this.model.collected / this.model.level.pixels.length * 100)}%`;
+        return this.finishing ? `收尾加速 · ${progress}` : progress;
     }
 
     private requestSpeed() {
         if (this.won || this.rewardAdDemo || this.cloudBusy) return;
+        if (this.model.finishing) {
+            this.updateFinishing();
+            return;
+        }
         if (this.speedUnlocked) {
             this.speed = this.speed === 1 ? 2 : 1;
             this.speedLabel.string = `${this.speed}×`;
@@ -1719,6 +1734,15 @@ export class PixelGarden extends Component {
         this.queueCount.string = count ? `同色 ${count} 块` : '同色已收集完';
     }
 
+    private updateFinishing() {
+        const finishing = this.model.finishing;
+        if (finishing === this.finishing) return;
+        this.finishing = finishing;
+        this.speedLabel.string = `${this.effectiveSpeed}×`;
+        this.speedLabel.node.setPosition(finishing ? 0 : -13, 1);
+        this.speedVideo.active = !finishing;
+    }
+
     update(dt: number) {
         if (!this.paused) {
             this.updateOverlays(Math.min(dt, .05));
@@ -1741,6 +1765,7 @@ export class PixelGarden extends Component {
         }
         this.updatePreview(dt);
         this.elapsed += dt;
+        this.updateFinishing();
         dt = Math.min(dt, .05);
         this.updateQueueMotion(dt);
         this.updateContainerTransitions(dt);
@@ -1800,7 +1825,7 @@ export class PixelGarden extends Component {
             }
             // Land before releasing ants so their launch origin stays at the rim.
             if (this.slotViews[slot].entryElapsed >= 0) continue;
-            this.dispatchClocks[slot] = Math.min(DISPATCH_INTERVAL, this.dispatchClocks[slot] + dt * this.speed);
+            this.dispatchClocks[slot] = Math.min(DISPATCH_INTERVAL, this.dispatchClocks[slot] + dt * this.effectiveSpeed);
             if (this.dispatchClocks[slot] < DISPATCH_INTERVAL)
                 continue;
             const origin = worldToGrid({ x: collectionSlotX(slot, this.model.slots.length), y: collectionSlotY(slot) + 42 });
@@ -1916,7 +1941,7 @@ export class PixelGarden extends Component {
         for (const view of this.slotViews) {
             if (view.launchElapsed < 0)
                 continue;
-            view.launchElapsed += dt * this.speed;
+            view.launchElapsed += dt * this.effectiveSpeed;
             const t = view.launchElapsed;
             let stretch = 0;
             if (t < .055)
@@ -1942,7 +1967,7 @@ export class PixelGarden extends Component {
         for (let i = this.flights.length - 1; i >= 0; i--) {
             const trip = this.flights[i];
             const previousElapsed = trip.elapsed;
-            trip.elapsed += dt * this.speed;
+            trip.elapsed += dt * this.effectiveSpeed;
             const walk = Math.max(.8, trip.distance / (trip.phase === 'return' ? 160 : 210));
             if (trip.phase === 'outbound') {
                 // A frame that crosses a bend must stop on its waypoint first;

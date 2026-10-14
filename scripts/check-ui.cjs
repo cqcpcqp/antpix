@@ -134,8 +134,11 @@ game.drawSlots();game.update(.016);assert.equal(game.flights.length,1);assert.ok
 console.log('Whole-picture highlight caching and non-blocking bottom-first dispatch checks passed.');
 
 // Five independent dispatchers keep launching at intervals even above three in flight.
-game.startLevel(0);game.model=new GardenModel({name:'parallel',subtitle:'',width:GRID_WIDTH,height:GRID_HEIGHT,pixels:Array.from({length:PIXEL_COUNT},(_,i)=>i%5),capacity:Math.ceil(PIXEL_COUNT/5)});
-while(game.model.queue.length)game.model.place(game.model.queue[0].id);
+// Keep more containers queued so this checks ordinary 1x dispatch, not finishing.
+game.startLevel(0);game.model=new GardenModel({name:'parallel',subtitle:'',width:GRID_WIDTH,height:GRID_HEIGHT,pixels:Array(PIXEL_COUNT).fill(0),capacity:PIXEL_COUNT/10},()=>.5);
+for(let slot=0;slot<5;slot++)game.model.place(game.model.queue[0].id);
+const dispatched=[],pickParallel=game.model.pick.bind(game.model);
+game.model.pick=(...args)=>{const pickup=pickParallel(...args);if(pickup)dispatched.push(pickup);return pickup;};
 game.drawSlots();game.drawQueue();game.update(.016);
 assert.equal(game.flights.length,5);assert.equal(new Set(game.flights.map(f=>f.pickup.slot)).size,5);
 for(let i=0;i<9;i++)game.update(.05);
@@ -146,9 +149,9 @@ for(let slot=0;slot<5;slot++)assert.equal(game.flights.filter(f=>f.pickup.slot==
 game.update(.05);assert.equal(game.flights.length,15);
 assert.equal(new Set(game.flights.map(f=>f.pickup.pixel)).size,15);
 for(let i=0;i<21;i++)game.update(.05);
-assert.equal(game.flights.length,25,'all five containers should keep launching before earlier ants return');
-for(let slot=0;slot<5;slot++)assert.equal(game.flights.filter(f=>f.pickup.slot===slot).length,5);
-assert.equal(new Set(game.flights.map(f=>f.pickup.pixel)).size,25);
+assert.equal(dispatched.length,25,'all five containers should keep launching independently of earlier arrivals');
+for(let slot=0;slot<5;slot++)assert.equal(dispatched.filter(p=>p.slot===slot).length,5);
+assert.equal(new Set(dispatched.map(p=>p.pixel)).size,25);
 console.log('Five slots independently dispatch beyond three in flight; interval and pixel reservations preserved.');
 
 // Container labels decrement in the departure frame, stay stable on delivery,

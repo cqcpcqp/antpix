@@ -115,6 +115,12 @@ export class GardenModel {
         return this.pending.size;
     }
 
+    get finishing() {
+        // Once every container is selected, exact per-color capacities cover
+        // the remaining board. Full slots alone do not imply a safe finish.
+        return !this.complete && this.columns.every(column => column.length === 0);
+    }
+
     get carrying() {
         let count = 0;
         this.pending.forEach(p => {
