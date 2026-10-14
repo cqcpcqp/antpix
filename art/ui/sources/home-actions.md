@@ -2,8 +2,10 @@
 
 Generated with underelay `gpt-image-2` through the codex-image CLI on 2026-10-01.
 Selected source: `home-actions.png`.
-`scripts/prepare-home-actions.py` removes the magenta background, crops four objects, preserves their aspect ratios, and exports transparent 128-color PNG files to `assets/resources/home/{play,album,shop,rank}.png`.
-Labels, level number, interaction and press feedback are rendered by the game.
+`scripts/prepare-home-actions.py` removes the magenta background, crops the three navigation objects, preserves their aspect ratios, and exports transparent 128-color PNG files to `assets/resources/home/{album,shop,rank}.png`.
+Navigation labels, level number, interaction and press feedback are rendered by the game.
+
+The play button has been replaced by the approved mint design; see [home-play-mint.md](home-play-mint.md). The old sheet is retained as the navigation source, but its old play button is no longer exported.
 
 Selected prompt:
 

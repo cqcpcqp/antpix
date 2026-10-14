@@ -21,8 +21,8 @@ export class CloudStatusView {
                 (!this.game.cloud.cloudBusy && !this.game.cloud.cloudMessage) ||
                 !!this.game.home.home ||
                 !!this.game.overlays.modal;
-        if (this.game.home.homePlayLabel)
-            this.game.home.homePlayLabel.node.active =
+        if (this.game.home.homePlayArtwork)
+            this.game.home.homePlayArtwork.active =
                 !!this.game.overlays.modal ||
                 this.game.cloud.cloudReady ||
                 !this.game.cloud.cloudMode;
@@ -46,10 +46,10 @@ export class CloudStatusView {
               ? this.game.overlays.modalStatusY
               : this.game.home.home
                 ? homeLogin
-                    ? -233
-                    : -585
+                    ? this.game.home.homePlayY
+                    : this.game.home.homeRewardY
                 : 670;
-        const width = inGame ? 300 : homeLogin || this.game.overlays.drawerSheet ? 500 : 610;
+        const width = inGame ? 300 : homeLogin ? 400 : this.game.overlays.drawerSheet ? 500 : 610;
         const n = this.game.ui.node2d(
             'Cloud status',
             parent,

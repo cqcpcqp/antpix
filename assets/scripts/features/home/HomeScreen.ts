@@ -1,4 +1,4 @@
-import { Graphics, Label, Node, Sprite } from 'cc';
+import { Graphics, Node, Sprite } from 'cc';
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { color, GREEN, INK, MUTED, PAPER } from '../../presentation/gameVisuals';
 import { claimRewards, rewardAmount } from '../../domain/profile/profile';
@@ -34,7 +34,7 @@ export class HomeScreen {
         }
         this.homeScene = null;
         this.homeTitle = null;
-        this.homePlayLabel = null;
+        this.homePlayArtwork = null;
         this.homeRewardButton = null;
         this.game.lifecycle.gameRoot.active = true;
     }
@@ -45,6 +45,7 @@ export class HomeScreen {
             .addComponent(Sprite);
         sprite.sizeMode = Sprite.SizeMode.CUSTOM;
         sprite.spriteFrame = this.game.assets.homeActionFrames.get(name) ?? null;
+        return sprite.node;
     }
 
     homePress(node: Node, x: number, y: number, action: () => void) {
@@ -71,12 +72,14 @@ export class HomeScreen {
         kind: 'album' | 'shop' | 'rank',
         action: () => void,
     ) {
-        const node = this.game.ui.node2d(title, parent, x, -406, 184, 180);
-        this.homeAsset(node, kind, 0, 20, 152, 136);
+        // Anchor to the viewport, leaving room for the bottom gesture safe area.
+        const y = -this.game.lifecycle.screenHeight / 2 + 145;
+        const node = this.game.ui.node2d(title, parent, x, y, 144, 138);
+        this.homeAsset(node, kind, 0, 15, 110, 98);
         const caption = this.game.ui.graphics(node, 'Home caption');
-        this.game.ui.box(caption, 0, -65, 142, 46, 23, '#FFF7DF');
-        this.game.ui.text(node, title, 0, -65, 27, '#4E6239', 136);
-        this.homePress(node, x, -406, () => {
+        this.game.ui.box(caption, 0, -47, 110, 36, 18, '#FFF7DF');
+        this.game.ui.text(node, title, 0, -47, 24, '#4E6239', 104);
+        this.homePress(node, x, y, () => {
             if (this.game.cloud.cloudMode && !this.game.cloud.cloudReady) return;
             action();
         });
@@ -151,35 +154,28 @@ export class HomeScreen {
         const frame = this.game.ui.graphics(painting, 'Painting border');
         islandPanel(frame, 0, 0, 124, 155, PAPER);
         this.game.ui.artwork(painting, target, 0, 0, 110);
-        // Keep all home actions together; conditional rewards never shift controls.
-        const playY = -235;
+        // Keep the approved proportions; rewards occupy the gap above bottom navigation.
+        const playY = this.homePlayY;
         const playNode = this.game.ui.node2d(
             resume ? '继续游戏' : '开始游戏',
             n,
             0,
             playY,
-            630,
-            122,
-        );
-        this.homeAsset(playNode, 'play', 0, 0, 630, 100);
-        const playLabel = this.game.ui.text(
-            playNode,
-            this.game.cloud.cloudMode && !this.game.cloud.cloudReady
-                ? '正在同步进度…'
-                : resume
-                  ? '继续游戏'
-                  : '开始游戏',
-            0,
-            2,
-            34,
-            INK,
             500,
+            160,
         );
-        this.homePlayLabel = playLabel;
-        playLabel.color = color('#245844');
-        const tag = this.game.ui.node2d('Level paper tag', playNode, 0, 48, 154, 42);
+        this.homeAsset(playNode, 'play', 0, 0, 500, 160);
+        this.homePlayArtwork = this.homeAsset(
+            playNode,
+            resume ? 'play-resume' : 'play-start',
+            12,
+            0,
+            330,
+            88,
+        );
+        const tag = this.game.ui.node2d('Level paper tag', playNode, 0, 91, 204, 48);
         const tagArt = tag.addComponent(Graphics);
-        islandPanel(tagArt, 0, 0, 154, 42, '#FFF6D8');
+        islandPanel(tagArt, 0, 0, 204, 48, '#FFF6D8');
         const tagText = this.game.ui.text(
             tag,
             this.game.cloud.cloudMode && !this.game.cloud.cloudReady
@@ -189,7 +185,7 @@ export class HomeScreen {
             0,
             23,
             INK,
-            140,
+            184,
         );
         tagText.color = color('#795D38');
         tagText.enableOutline = false;
@@ -205,7 +201,7 @@ export class HomeScreen {
             } else this.game.session.startLevel(target);
         });
         this.homeTile(n, '关卡', -220, 'album', () => this.game.album.levelPicker());
-        this.homeTile(n, '装修', 0, 'shop', () => this.game.shop.shop());
+        this.homeTile(n, '装饰', 0, 'shop', () => this.game.shop.shop());
         this.homeTile(n, '排行榜', 220, 'rank', () => this.game.social.leaderboard());
         const rewards = rewardAmount(this.game.profile.save, this.game.cloud.rewardDay());
         this.homeRewardButton = null;
@@ -214,9 +210,9 @@ export class HomeScreen {
                 n,
                 `领取奖励  +${rewards} 金币`,
                 0,
-                -585,
-                630,
-                68,
+                this.homeRewardY,
+                460,
+                56,
                 '#FFF8E0',
                 () => {
                     if (this.game.cloud.cloudMode) {
@@ -279,7 +275,15 @@ export class HomeScreen {
 
     homeTitle: Sprite | null = null;
 
-    homePlayLabel: Label | null = null;
+    homePlayArtwork: Node | null = null;
+
+    get homePlayY() {
+        return -this.game.lifecycle.screenHeight * 0.22;
+    }
+
+    get homeRewardY() {
+        return this.homePlayY - 145;
+    }
 
     homeRewardButton: Node | null = null;
 }

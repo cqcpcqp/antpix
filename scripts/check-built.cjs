@@ -42,7 +42,7 @@ assert.deepEqual(
   fs.readFileSync('assets/resources/home/title.png'),
   'built title must match the generated transparent asset',
 );
-for (const name of ['play', 'album', 'shop', 'rank']) {
+for (const name of ['play', 'play-start', 'play-resume', 'album', 'shop', 'rank']) {
   const path = Object.values(bundle.paths).find((path) => path[0] === `home/${name}/texture`);
   assert.ok(path, `${name} home asset must be bundled`);
   assert.equal(bundle.types[path[1]], 'cc.Texture2D');

@@ -98,7 +98,7 @@ module.exports = function checkResponsive({
     responsive.runtime.home.showHome();
     assert.equal(responsive.runtime.home.homeScene.spriteFrame.texture, homeTexture);
     assert.equal(responsive.runtime.home.homeTitle.spriteFrame.texture, titleTexture);
-    const controls = ['开始游戏', '关卡', '装修', '排行榜'];
+    const controls = ['开始游戏', '关卡', '装饰', '排行榜'];
     for (const name of controls) {
       const node = responsive.runtime.home.home.children.find((n) => n.name === name),
         bounds = node.getComponent(cc.UITransform);

@@ -12,6 +12,33 @@ const makeGame = () => {
   return game;
 };
 
+test('night tint leaves the courtyard visible without relying on Graphics node opacity', () => {
+  const game = makeGame();
+  const courtyard = game.runtime.courtyard;
+  for (const hour of [12, 22, 5, 6, 18, 12]) {
+    courtyard.courtyardHour = () => hour;
+    courtyard.refreshCourtyard();
+    const veil = courtyard.courtyardNode.children.find((n) => n.name === 'Courtyard evening light');
+    assert.equal(veil.active, hour >= 18 || hour < 6);
+    // The WebGL Graphics assembler uses fill colours as vertex colours, not UIOpacity.
+    const fills = veil.getComponent(cc.Graphics).commands;
+    assert.equal(fills.length, 1);
+    assert.ok(
+      fills[0].color.a > 0 && fills[0].color.a < 128,
+      'most background light must remain visible',
+    );
+    assert.equal(veil.getComponent(cc.UIOpacity), null);
+    // Dawn must also remove an existing night veil without rebuilding the page.
+    courtyard.courtyardColony.night = false;
+    courtyard.courtyardAtmosphere.render(courtyard.courtyardColony, false);
+    assert.equal(veil.active, false);
+    courtyard.courtyardColony.night = true;
+    courtyard.courtyardAtmosphere.render(courtyard.courtyardColony, true);
+    assert.equal(veil.active, true);
+  }
+  game.onDestroy();
+});
+
 test('selecting decorations preserves the drawer position and opening animation', () => {
   const game = makeGame();
   game.runtime.shop.shop();

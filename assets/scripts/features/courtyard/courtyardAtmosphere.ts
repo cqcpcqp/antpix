@@ -1,8 +1,8 @@
-import { Color, Graphics, Layers, Node, UIOpacity } from 'cc';
+import { Color, Graphics, Layers, Node } from 'cc';
 import { CourtyardColony } from '../../domain/courtyard/courtyardColony';
 
 export class CourtyardAtmosphere {
-    private veil: UIOpacity;
+    private veil: Node;
     private effects: Graphics;
     private root: Node;
     private lastNight = -1;
@@ -17,11 +17,13 @@ export class CourtyardAtmosphere {
         night.parent = parent;
 
         const g = night.addComponent(Graphics);
-        g.fillColor = new Color(16, 31, 76, 255);
+        // Cocos 3.8 Graphics submits a model with baked vertex colours: UIOpacity
+        // does not fade this mesh. Bake translucency into the fill itself.
+        g.fillColor = new Color(16, 31, 76, 105);
         g.rect(-width / 2, -height / 2, width, height);
         g.fill();
-        this.veil = night.addComponent(UIOpacity);
-        this.veil.opacity = 0;
+        this.veil = night;
+        this.veil.active = false;
         this.root = new Node('Courtyard water seed and lantern light');
         this.root.layer = Layers.Enum.UI_2D;
         this.root.parent = parent;
@@ -30,7 +32,7 @@ export class CourtyardAtmosphere {
     render(colony: CourtyardColony, hidden: boolean) {
         const target = colony.night ? 105 : 0;
         if (this.lastNight !== target) {
-            this.veil.opacity = target;
+            this.veil.active = target > 0;
             this.lastNight = target;
         }
         this.root.active = !hidden;

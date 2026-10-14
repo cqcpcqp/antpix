@@ -27,7 +27,7 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
   const image = await loadImage('assets/resources/home/garden.jpg');
   const title = await loadImage('assets/resources/home/title.png');
   const actions = {};
-  for (const name of ['play', 'album', 'shop', 'rank'])
+  for (const name of ['play', 'play-start', 'play-resume', 'album', 'shop', 'rank'])
     actions[name] = await loadImage(`assets/resources/home/${name}.png`);
   for (const [width, height] of [
     [390, 844],
@@ -37,6 +37,8 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
     cc.view.getFrameSize = () => ({ width, height });
     const game = new PixelGarden();
     game.onLoad();
+    // Stable daylight makes asset and spacing comparisons independent of local time.
+    game.runtime.courtyard.courtyardHour = () => Number(process.env.HOME_PREVIEW_HOUR ?? 12);
     const texture = new Texture2D();
     texture.width = image.width;
     texture.height = image.height;
@@ -97,7 +99,8 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
       if (!node.active) return;
       ctx.save();
       const opacity = node.getComponent(cc.UIOpacity);
-      if (opacity) ctx.globalAlpha *= opacity.opacity / 255;
+      // Graphics uses baked fill alpha in Cocos 3.8's model render path.
+      if (opacity && !node.getComponent(Graphics)) ctx.globalAlpha *= opacity.opacity / 255;
       ctx.translate(node.position.x, node.position.y);
       ctx.rotate((node.angle * Math.PI) / 180);
       ctx.scale(node.scale.x, node.scale.y);

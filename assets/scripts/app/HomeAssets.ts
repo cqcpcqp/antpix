@@ -109,7 +109,7 @@ export class HomeAssets {
             this.game.assets.homeTitleFrame = frame;
             if (this.game.home.homeTitle) this.game.home.homeTitle.spriteFrame = frame;
         });
-        for (const name of ['play', 'album', 'shop', 'rank'])
+        for (const name of ['play', 'play-start', 'play-resume', 'album', 'shop', 'rank'])
             resources.load(`home/${name}/texture`, Texture2D, (error, texture) => {
                 if (!this.game.host.isValid) return;
                 if (error) {
