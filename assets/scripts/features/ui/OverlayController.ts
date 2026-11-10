@@ -45,7 +45,7 @@ export class OverlayController {
         const ad = this.game.boosts.rewardAdDemo;
         if (ad) {
             ad.remaining -= dt;
-            if (ad.remaining > 0) ad.label.string = `测试广告 ${Math.ceil(ad.remaining)} 秒`;
+            if (ad.remaining > 0) ad.label.string = `${Math.ceil(ad.remaining)}`;
             else {
                 this.game.boosts.rewardAdDemo = null;
                 const complete = ad.complete;

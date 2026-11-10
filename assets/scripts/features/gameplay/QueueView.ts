@@ -117,14 +117,7 @@ export class QueueView {
                         return;
                     }
                     const slot = this.game.session.model.place(card.id);
-                    if (slot < 0) {
-                        this.game.notices.notify(
-                            '收集槽已满',
-                            '等小蚂蚁出发完，再选择新的容器',
-                            'warning',
-                        );
-                        return;
-                    }
+                    if (slot < 0) return;
                     this.game.audio.play('tap');
                     this.game.containers.drawSlots();
                     const placed = this.game.containers.slotViews[slot];

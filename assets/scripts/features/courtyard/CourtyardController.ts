@@ -92,8 +92,6 @@ export class CourtyardController {
         this.courtyardNode.setPosition(0, previewOffset);
         this.game.home.homeScene!.node.setPosition(0, previewOffset);
         if (this.game.home.homeTitle) this.game.home.homeTitle.node.active = !this.courtyardPreview;
-        const painting = this.game.home.home.children.find((node) => node.name === 'Home painting');
-        if (painting) painting.active = !this.courtyardPreview;
     }
 
     courtyardNode: Node | null = null;

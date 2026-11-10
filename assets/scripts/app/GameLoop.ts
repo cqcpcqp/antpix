@@ -5,6 +5,7 @@ export class GameLoop {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
+            | 'startup'
             | 'courtyard'
             | 'lifecycle'
             | 'overlays'
@@ -23,6 +24,7 @@ export class GameLoop {
         >,
     ) {}
     update(dt: number) {
+        if (!this.game.lifecycle.paused) this.game.startup.update(dt);
         this.game.courtyard.updateCourtyard(dt);
         if (!this.game.lifecycle.paused) {
             this.game.overlays.updateOverlays(Math.min(dt, 0.05));

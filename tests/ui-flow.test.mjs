@@ -122,13 +122,15 @@ test('phone hit regions reach 44 pixels without overlapping queue rows or rank a
       game.runtime.social.worldLeaderboard(0);
       await flush();
       const actions = game.runtime.overlays.modal.children.filter((node) =>
-        ['返回', '微信好友榜', '下一页'].includes(node.name),
+        ['返回', '微信好友榜', '下一页', '微信头像昵称'].includes(node.name),
       );
       for (let i = 0; i < actions.length; i++)
         for (let j = i + 1; j < actions.length; j++)
           assert.ok(
             Math.abs(actions[i].position.y - actions[j].position.y) >=
-              (bounds(actions[i]).height + bounds(actions[j]).height) / 2,
+              (bounds(actions[i]).height + bounds(actions[j]).height) / 2 ||
+              Math.abs(actions[i].position.x - actions[j].position.x) >=
+                (bounds(actions[i]).width + bounds(actions[j]).width) / 2,
           );
     }
   } finally {

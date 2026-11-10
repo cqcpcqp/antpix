@@ -7,7 +7,7 @@ export class CloudStatusView {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
-            'layout' | 'cloud' | 'home' | 'overlays' | 'lifecycle' | 'ui'
+            'startup' | 'layout' | 'cloud' | 'home' | 'overlays' | 'lifecycle' | 'ui'
         >,
     ) {}
     refreshCloudStatus() {
@@ -32,6 +32,10 @@ export class CloudStatusView {
         if (this.game.overlays.drawerSubtitle)
             this.game.overlays.drawerSubtitle.node.active =
                 !this.game.cloud.cloudBusy && !this.game.cloud.cloudMessage;
+        if (this.game.startup.active && this.game.cloud.cloudMode && !this.game.cloud.cloudReady) {
+            this.game.startup.refresh();
+            return;
+        }
         if (!this.game.cloud.cloudBusy && !this.game.cloud.cloudMessage) return;
         const parent =
             this.game.overlays.drawerSheet ??

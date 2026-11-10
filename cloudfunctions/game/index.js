@@ -25,7 +25,7 @@ const service = createService({
                 .orderBy('_id', 'asc')
                 .skip(skip)
                 .limit(limit)
-                .field({ player: true, highest: true, reachedAt: true })
+                .field({ player: true, identity: true, highest: true, reachedAt: true })
                 .get()
         ).data,
 });

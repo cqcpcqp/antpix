@@ -3,7 +3,9 @@ const { createCanvas, GlobalFonts } = require('@napi-rs/canvas');
 const { readFileSync, readdirSync, writeFileSync } = require('node:fs');
 GlobalFonts.registerFromPath('art/fonts/ant-nest-heavy.ttf', 'GameHeavy');
 const chars = new Set(Array.from({ length: 95 }, (_, i) => String.fromCharCode(i + 32)));
-for (const file of readdirSync('assets/scripts').filter((f) => f.endsWith('.ts')))
+for (const file of readdirSync('assets/scripts', { recursive: true }).filter((f) =>
+  f.endsWith('.ts'),
+))
   for (const char of readFileSync(`assets/scripts/${file}`, 'utf8'))
     if (char.codePointAt(0) >= 160) chars.add(char);
 for (const char of readFileSync('cloudfunctions/game/service.js', 'utf8'))

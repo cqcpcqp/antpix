@@ -1,6 +1,6 @@
 import { Label } from 'cc';
 import type { GardenRuntime } from '../../app/GardenRuntime';
-import { INK, MUTED, PAPER } from '../../presentation/gameVisuals';
+import { INK, PAPER } from '../../presentation/gameVisuals';
 import { rewardedVideoConfigured, showRewardedVideo } from '../../platform/wechat/rewardAd';
 import { EXPANSION_COLUMNS, EXTRA_SLOT_Y, queueColumnX } from '../../presentation/boardLayout';
 
@@ -31,31 +31,17 @@ export class BoostController {
             this.game.layout.speedLabel.string = `${this.game.session.speed}×`;
             return;
         }
-        const n = this.game.overlays.openModal(
-            '开启二倍速',
-            '观看完整广告后，蚂蚁会以二倍速度工作',
-            420,
-        );
+        const n = this.game.overlays.openModal('开启二倍速', '', 360);
         const status = this.game.ui.text(
             n,
-            rewardedVideoConfigured() ? '广告准备中…' : '测试广告 3 秒',
+            rewardedVideoConfigured() ? '准备中…' : '3',
             0,
-            45,
-            28,
+            0,
+            48,
             INK,
             520,
         );
-        this.game.ui.text(
-            n,
-            rewardedVideoConfigured() ? '完整观看视频即可获得' : '当前为测试演示，不会播放真实广告',
-            0,
-            0,
-            24,
-            MUTED,
-            560,
-        );
-        this.game.ui.text(n, '仅本关生效 · 取消不会消耗任何物品', 0, -52, 23, MUTED, 560);
-        this.game.ui.button(n, '取消', 0, -145, 300, 64, PAPER, () =>
+        this.game.ui.button(n, '取消', 0, -115, 300, 64, PAPER, () =>
             this.game.overlays.closeModal(),
         );
         const complete = () => {
@@ -73,7 +59,7 @@ export class BoostController {
                 if (!this.game.host.isValid || this.game.overlays.modal !== n) return;
                 this.game.overlays.closeModal();
                 if (ok) complete();
-                else this.game.notices.notify('广告未完成', '看完广告后才能开启二倍速', 'warning');
+                else this.game.notices.notify('未能开启', '请重试开启二倍速', 'warning');
             });
             return;
         }
@@ -98,31 +84,17 @@ export class BoostController {
             this.game.cloud.cloudBusy
         )
             return;
-        const n = this.game.overlays.openModal(
-            '扩展收集槽位',
-            '观看完整广告后增加一个容器位置',
-            420,
-        );
+        const n = this.game.overlays.openModal('扩展收集槽位', '', 360);
         const status = this.game.ui.text(
             n,
-            rewardedVideoConfigured() ? '广告准备中…' : '测试广告 3 秒',
+            rewardedVideoConfigured() ? '准备中…' : '3',
             0,
-            45,
-            28,
+            0,
+            48,
             INK,
             520,
         );
-        this.game.ui.text(
-            n,
-            rewardedVideoConfigured() ? '完整观看视频即可获得' : '当前为测试演示，不会播放真实广告',
-            0,
-            0,
-            24,
-            MUTED,
-            560,
-        );
-        this.game.ui.text(n, '仅本关生效 · 新槽位会出现在托盘上方', 0, -52, 23, MUTED, 560);
-        this.game.ui.button(n, '取消', 0, -145, 300, 64, PAPER, () =>
+        this.game.ui.button(n, '取消', 0, -115, 300, 64, PAPER, () =>
             this.game.overlays.closeModal(),
         );
         const complete = () => {
@@ -146,7 +118,7 @@ export class BoostController {
                 if (!this.game.host.isValid || this.game.overlays.modal !== n) return;
                 this.game.overlays.closeModal();
                 if (ok) complete();
-                else this.game.notices.notify('广告未完成', '看完广告后才能扩展槽位', 'warning');
+                else this.game.notices.notify('未能扩展', '请重试扩展槽位', 'warning');
             });
             return;
         }

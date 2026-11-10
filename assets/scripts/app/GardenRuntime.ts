@@ -20,6 +20,8 @@ import { CloudStatusView } from '../features/ui/CloudStatusView';
 import { Notifications } from '../features/ui/Notifications';
 import { OverlayController } from '../features/ui/OverlayController';
 import { UiFactory } from '../features/ui/UiFactory';
+import { StartupView } from '../features/ui/StartupView';
+import { StartupController } from './StartupController';
 import { BoardAssets } from './BoardAssets';
 import { CloudSession } from './CloudSession';
 import { GameAssets } from './GameAssets';
@@ -32,6 +34,8 @@ import { ProfileStore } from './ProfileStore';
 /** Composition root. Constructors allocate state only; onLoad starts effects after wiring. */
 export class GardenRuntime {
     constructor(readonly host: Component) {}
+    readonly startup: StartupController = new StartupController(this);
+    readonly startupView: StartupView = new StartupView(this);
     readonly lifecycle: Lifecycle = new Lifecycle(this);
     readonly ui: UiFactory = new UiFactory(this);
     readonly layout: BoardView = new BoardView(this);

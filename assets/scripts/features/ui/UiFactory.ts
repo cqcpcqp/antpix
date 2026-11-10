@@ -1,7 +1,6 @@
 import { BitmapFont, Font, Graphics, Label, Layers, Node, UITransform } from 'cc';
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { color, GREEN, INK, PAPER } from '../../presentation/gameVisuals';
-import { makeLevel, PALETTE } from '../../domain/levels/levels';
 import { ISLAND, islandPanel } from '../../presentation/islandTheme';
 
 /** Creates shared UI primitives; owns font application. */
@@ -134,27 +133,6 @@ export class UiFactory {
             this.game.audio.play('tap');
             this.game.settings.settings();
         });
-    }
-
-    artwork(parent: Node, index: number, x: number, y: number, width: number, muted = false) {
-        const level = makeLevel(index),
-            step = width / level.width,
-            g = this.graphics(parent, 'Artwork preview');
-        for (let i = 0; i < level.pixels.length; i++) {
-            const c = color(PALETTE[level.pixels[i]]);
-            if (muted) {
-                const gray = (c.r + c.g + c.b) / 3;
-                c.r = c.g = c.b = Math.round(gray * 0.55 + 90);
-            }
-            g.fillColor = c;
-            g.rect(
-                x - width / 2 + (i % level.width) * step,
-                y + (width * 1.25) / 2 - Math.floor(i / level.width) * step - step,
-                step + 0.1,
-                step + 0.1,
-            );
-            g.fill();
-        }
     }
 
     gameFont: Font | null = null;

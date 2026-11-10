@@ -67,7 +67,8 @@ test('illustrated start/resume lettering loads asynchronously and yields to clou
   cloud.cloudMessage = '正在同步进度…';
   cloudStatus.refreshCloudStatus();
   assert.equal(home.homePlayArtwork.active, false);
-  assert.equal(cloudStatus.cloudStatus.position.y, home.homePlayY);
+  assert.equal(cloudStatus.cloudStatus, null, 'initial login uses the unified startup');
+  assert.ok(game.runtime.startupView.root);
   home.home.children.find((n) => n.name === '开始游戏').emit('end');
   assert.ok(home.home, 'syncing cannot start a level');
   cloud.cloudMode = false;

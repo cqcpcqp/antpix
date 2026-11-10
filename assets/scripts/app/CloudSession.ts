@@ -17,7 +17,15 @@ export class CloudSession {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
-            'profile' | 'home' | 'cloudStatus' | 'host' | 'overlays' | 'ui' | 'session' | 'notices'
+            | 'startup'
+            | 'profile'
+            | 'home'
+            | 'cloudStatus'
+            | 'host'
+            | 'overlays'
+            | 'ui'
+            | 'session'
+            | 'notices'
         >,
     ) {}
     rewardDay() {
@@ -36,7 +44,8 @@ export class CloudSession {
                 this.applyCloudState(state);
                 this.cloudReady = true;
                 this.game.profile.save.selected = this.game.profile.save.unlocked;
-                this.game.home.showHome(true);
+                if (this.game.startup.active) this.game.startup.refresh();
+                else this.game.home.showHome(true);
             },
             '正在同步进度…',
         );
@@ -142,12 +151,12 @@ export class CloudSession {
         this.cloudTask(
             () => this.cloud!.mutate('adStart', { runId: this.cloudRunId, placement }),
             (state) => {
-                this.game.overlays.openModal('广告准备中', '完整观看视频即可获得', 360);
+                this.game.overlays.openModal('准备中', '', 360);
                 showRewardedVideo().then((ok) => {
                     if (!this.game.host.isValid) return;
                     this.game.overlays.closeModal();
                     if (!ok) {
-                        this.game.notices.notify('广告未完成', '看完广告后才能获得奖励', 'warning');
+                        this.game.notices.notify('未能完成', '请重试', 'warning');
                         return;
                     }
                     this.cloudTask(
@@ -156,11 +165,11 @@ export class CloudSession {
                             this.applyCloudState(result);
                             complete();
                         },
-                        '正在确认广告奖励…',
+                        '正在确认…',
                     );
                 });
             },
-            '正在准备广告…',
+            '正在准备…',
         );
     }
 

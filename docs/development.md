@@ -55,7 +55,7 @@
 
 涉及绘图时执行 `npm run generate:ants -- --check`，验证图集与共享绘图一致。该开发工具需要可解析的 `@napi-rs/canvas`，可通过 `NODE_PATH` 指向已有依赖。
 
-UI 使用不含描边的白色位图字库，由 Label 的颜色区分标题、正文和辅助信息；容器数字保留独立字库。新增文案或画作名称后，先运行 `python3 scripts/prepare-game-font.py`，再运行 `node scripts/prepare-bitmap-font.cjs`（需要 fonttools、Pillow 与 `@napi-rs/canvas`）。两步必须一起执行，否则旧 TTF 子集可能把新字符烘焙成空白。`npm run check:ui` 会验证交付字库的字符覆盖及非空字形。
+UI 使用不含描边的白色位图字库，由 Label 的颜色区分标题、正文和辅助信息；容器数字保留独立字库。新增文案或画作名称后，先运行 `python3 scripts/prepare-game-font.py`，再运行 `node scripts/prepare-bitmap-font.cjs`（需要 fonttools、Pillow、zopfli 与 `@napi-rs/canvas`）。两步必须一起执行，否则旧 TTF 子集可能把新字符烘焙成空白。`npm run check:ui` 会验证交付字库的字符覆盖及非空字形。
 
 运行 `node scripts/preview-ui.cjs` 可离线渲染主要页面，默认输出到 `temp/previews/ui-390x844/`；通过 `PREVIEW_WIDTH` 和 `PREVIEW_HEIGHT` 检查其他屏幕比例。该工具使用实际位图字体、贴图和组件节点，模拟字体缩放与九宫格；它不是 Cocos 或真机截图，不能测量实际帧率和触摸行为。
 
@@ -80,3 +80,14 @@ Prettier 负责排版，ESLint 使用 JavaScript / TypeScript 推荐规则检查
 检查覆盖手写业务代码、云函数、微信开放数据域、开发脚本和测试。构建缓存、素材数据、Cocos 场景及设置、自动生成的 `assets/scripts/domain/levels/levels.ts`、`cloudfunctions/game/profile.js` 和云端关卡目录不参与排版；生成代码不参与 ESLint。请修改对应源文件或生成脚本。
 
 尚未清理的历史 ESLint 问题记录在 `eslint-baseline.json`。`npm run lint` 使用基线，阻止同文件同规则的问题数增长或其他新错误；`npm run lint:all` 显示全部问题（当前会退出失败）。基线按文件和规则计数，不能识别同数量的问题替换。修复已有问题后执行 `npm run lint -- --prune-suppressions` 清理基线；不要通过扩大基线跳过新增问题。
+
+## 统一启动页（A1）
+
+微信启动页使用首页草地背景、木牌标题和蜂蜜金进度条，底部显示健康游戏忠告与沪ICP备2026059452。`presentation/startupLayout.ts` 是场景与引擎启动前绘制的共同布局和文案来源。
+
+- `scripts/install-startup.mjs` 在微信构建后替换生成的 `first-screen.js`、关闭引擎 Splash，保留微信真机打包仍会读取的 `logo.png`、`slogan.png`，但不显示默认启动画面；背景与标题直接引用构建资源，不重复打包。
+- 引擎初始化占 0–30%，`app/StartupController.ts` 记录音频、首页、游戏素材回调完成情况，占 60%；首次云登录占 10%。资源应用与登录均成功后才显示 100%，并在完成帧之后展示首页。
+- 启动资源失败只重试失败的加载，登录错误沿用 `CloudSession` 的原始错误和重试入口；启动过程中不额外展示首页登录 loading。进入首页后的业务请求仍使用原有局部状态展示。
+- `NODE_PATH=<canvas 依赖目录> node scripts/preview-startup.cjs` 可生成启动前与场景内的离线布局预览，不打开浏览器。微信 WebGL 接管与真机启动耗时仍需要微信开发者工具/设备验证。
+
+启动前的布局和素材路径由构建器输出为 `startup/layout.js`、`startup/assets.js`，通过 `module.exports` 导出。微信小游戏的 `require` 不按 Node 方式加载 JSON；包体检查会按微信的 JS 模块解析规则装载完整启动依赖链，避免仅在 Node 测试中通过。

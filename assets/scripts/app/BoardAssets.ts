@@ -1,4 +1,4 @@
-import { BitmapFont, Label, Node, Rect, resources, Size, SpriteFrame, Texture2D } from 'cc';
+import { BitmapFont, Label, Node, Rect, Size, SpriteFrame, Texture2D } from 'cc';
 import { SKINS } from '../domain/profile/profile';
 import type { GardenRuntime } from './GardenRuntime';
 
@@ -7,6 +7,7 @@ export class BoardAssets {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
+            | 'startup'
             | 'host'
             | 'assets'
             | 'ants'
@@ -22,7 +23,7 @@ export class BoardAssets {
     loadBoardAssets() {
         // Shared tinted silhouettes plus neutral highlights/legs keep texture size
         // constant as the level catalog grows. Both layers share one material.
-        resources.load('ants/workers/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('ants/workers/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('蚂蚁图集加载失败', error);
@@ -40,7 +41,7 @@ export class BoardAssets {
             }
             for (const visual of this.game.ants.antPool) this.game.ants.useAntAtlas(visual);
         });
-        resources.load('trays/wood-hole/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('trays/wood-hole/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('木质洞口素材加载失败', error);
@@ -60,7 +61,7 @@ export class BoardAssets {
             if (this.game.shop.nestShopContent) this.game.shop.nestShop();
         });
         for (const name of ['wood', 'acorn', 'garden-background'])
-            resources.load(`trays/${name}/texture`, Texture2D, (error, texture) => {
+            this.game.startup.load(`trays/${name}/texture`, Texture2D, (error, texture) => {
                 if (!this.game.host.isValid) return;
                 if (error) {
                     console.error('木托盘素材加载失败', error);
@@ -82,7 +83,7 @@ export class BoardAssets {
                 for (const sprite of this.game.layout.traySprites)
                     if (sprite.node.name === name) sprite.spriteFrame = frame;
             });
-        resources.load('containers/boxes/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('containers/boxes/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('容器图集加载失败', error);
@@ -117,7 +118,7 @@ export class BoardAssets {
                 }
             }
         });
-        resources.load('fonts/container-digits', BitmapFont, (error, font) => {
+        this.game.startup.load('fonts/container-digits', BitmapFont, (error, font) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('容器数字字体加载失败', error);
@@ -126,7 +127,7 @@ export class BoardAssets {
             this.game.ui.containerFont = font;
             for (const label of this.game.ui.containerLabels) label.font = font;
         });
-        resources.load('fonts/ant-nest-bitmap', BitmapFont, (error, font) => {
+        this.game.startup.load('fonts/ant-nest-bitmap', BitmapFont, (error, font) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('游戏字体加载失败', error);

@@ -138,6 +138,18 @@ class SpriteFrame {
   }
 }
 class Texture2D {
+  reset(options) {
+    Object.assign(this, options);
+  }
+  setWrapMode(wrapS, wrapT) {
+    Object.assign(this, { wrapS, wrapT });
+  }
+  uploadData(pixels) {
+    this.pixels = pixels;
+  }
+  destroy() {
+    this.destroyed = true;
+  }
   refs = 0;
   addRef() {
     this.refs++;
@@ -146,6 +158,8 @@ class Texture2D {
     this.refs--;
   }
 }
+Texture2D.PixelFormat = { RGBA8888: 0 };
+Texture2D.WrapMode = { CLAMP_TO_EDGE: 2 };
 class Size {
   constructor(width, height) {
     Object.assign(this, { width, height });
@@ -158,7 +172,7 @@ class Rect {
 }
 const resourceLoads = new Map();
 class Label {}
-Label.HorizontalAlign = { CENTER: 0 };
+Label.HorizontalAlign = { CENTER: 0, LEFT: 1, RIGHT: 2 };
 Label.VerticalAlign = { CENTER: 0 };
 Label.Overflow = { SHRINK: 0 };
 class UITransform {
@@ -199,6 +213,7 @@ const cc = {
   Size,
   SubContextView: class {},
   Canvas: class {},
+  BlockInputEvents: class {},
   Camera,
   UITransform,
   Graphics,

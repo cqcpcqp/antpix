@@ -1,4 +1,4 @@
-import { Node, Rect, resources, Size, Sprite, SpriteFrame, Texture2D } from 'cc';
+import { Node, Rect, Size, Sprite, SpriteFrame, Texture2D } from 'cc';
 import { FURNISHINGS } from '../domain/profile/profile';
 import type { GardenRuntime } from './GardenRuntime';
 
@@ -7,11 +7,11 @@ export class HomeAssets {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
-            'host' | 'assets' | 'lifecycle' | 'home' | 'courtyard' | 'overlays'
+            'startup' | 'host' | 'assets' | 'lifecycle' | 'home' | 'courtyard' | 'overlays'
         >,
     ) {}
     loadHomeAssets() {
-        resources.load('home/garden/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('home/garden/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('首页场景加载失败', error);
@@ -33,7 +33,7 @@ export class HomeAssets {
             this.game.assets.homeFrame = frame;
             if (this.game.home.homeScene) this.game.home.homeScene.spriteFrame = frame;
         });
-        resources.load('home/resident-door/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('home/resident-door/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('Resident doorway artwork load failed', error);
@@ -49,7 +49,7 @@ export class HomeAssets {
             this.game.assets.residentDoorFrame = frame;
             this.game.courtyard.refreshCourtyard();
         });
-        resources.load('home/resident/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('home/resident/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('庭院小蚂蚁加载失败', error);
@@ -67,7 +67,7 @@ export class HomeAssets {
             }
             this.game.courtyard.refreshCourtyard();
         });
-        resources.load('home/furnishings/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('home/furnishings/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('庭院装饰加载失败', error);
@@ -93,7 +93,7 @@ export class HomeAssets {
             };
             if (this.game.overlays.modal) updateSamples(this.game.overlays.modal);
         });
-        resources.load('home/title/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('home/title/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
                 console.error('首页标题加载失败', error);
@@ -110,7 +110,7 @@ export class HomeAssets {
             if (this.game.home.homeTitle) this.game.home.homeTitle.spriteFrame = frame;
         });
         for (const name of ['play', 'play-start', 'play-resume', 'album', 'shop', 'rank'])
-            resources.load(`home/${name}/texture`, Texture2D, (error, texture) => {
+            this.game.startup.load(`home/${name}/texture`, Texture2D, (error, texture) => {
                 if (!this.game.host.isValid) return;
                 if (error) {
                     console.error('首页按钮素材加载失败', name, error);

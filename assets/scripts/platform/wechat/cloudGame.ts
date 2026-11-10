@@ -12,9 +12,18 @@ export interface CloudState {
     reachedAt: number;
     output: { userId?: string; runId?: string; adId?: string; amount?: number; purchase?: string };
 }
+import type { PlayerIdentity } from './playerIdentity';
+
 export interface WorldBoard {
     ok: true;
-    rows: { rank: number; player: string; highest: number; reachedAt: number; self: boolean }[];
+    rows: {
+        rank: number;
+        player: string;
+        identity: PlayerIdentity | null;
+        highest: number;
+        reachedAt: number;
+        self: boolean;
+    }[];
     hasNext: boolean;
 }
 type Failure = { ok: false; code: string; message: string };

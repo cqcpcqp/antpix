@@ -148,12 +148,6 @@ export class HomeScreen {
             .addComponent(Sprite);
         this.homeTitle.sizeMode = Sprite.SizeMode.CUSTOM;
         this.homeTitle.spriteFrame = this.game.assets.homeTitleFrame;
-        // The landscape is the focal point; keep the playable artwork as a small print.
-        const painting = this.game.ui.node2d('Home painting', n, 250, 315, 124, 155);
-        painting.angle = -3;
-        const frame = this.game.ui.graphics(painting, 'Painting border');
-        islandPanel(frame, 0, 0, 124, 155, PAPER);
-        this.game.ui.artwork(painting, target, 0, 0, 110);
         // Keep the approved proportions; rewards occupy the gap above bottom navigation.
         const playY = this.homePlayY;
         const playNode = this.game.ui.node2d(

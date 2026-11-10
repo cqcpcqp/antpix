@@ -1,0 +1,23 @@
+/** Shared A1 layout, also serialized into the pre-engine WeChat startup renderer. */
+export const STARTUP = {
+    width: 750,
+    minimumHeight: 1500,
+    titleWidth: 646,
+    titleTopRatio: 0.237,
+    barWidth: 566,
+    barHeight: 30,
+    barBottom: 354,
+    statusBottom: 416,
+    engineProgress: 30,
+    resourceWeight: 60,
+    loading: '正在加载游戏资源',
+    syncing: '正在同步游戏进度',
+    ready: '加载完成',
+    resourceError: '资源加载未完成，点击重试',
+    healthTitle: '健康游戏忠告',
+    healthLines: [
+        '抵制不良游戏  拒绝盗版游戏  注意自我保护',
+        '适度游戏益脑  沉迷游戏伤身  合理安排时间',
+    ],
+    registration: '沪ICP备2026059452',
+};

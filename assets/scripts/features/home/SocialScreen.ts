@@ -1,4 +1,5 @@
 import { SubContextView } from 'cc';
+import { drawWorldPlayer, showWorldIdentity } from './WorldIdentity';
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { GREEN, INK, MUTED, PAPER } from '../../presentation/gameVisuals';
 import { makeLevel } from '../../domain/levels/levels';
@@ -6,6 +7,7 @@ import { claimRewards, rewardAmount } from '../../domain/profile/profile';
 import {
     authorizeFriends,
     changeFriendPage,
+    openFriendSettings,
     showFriendPage,
     syncFriendScore,
 } from '../../platform/wechat/friendBoard';
@@ -15,7 +17,7 @@ export class SocialScreen {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
-            'cloud' | 'profile' | 'lifecycle' | 'overlays' | 'ui' | 'home' | 'notices'
+            'cloud' | 'profile' | 'lifecycle' | 'overlays' | 'ui' | 'home' | 'notices' | 'social'
         >,
     ) {}
     leaderboard(page = 0) {
@@ -149,26 +151,19 @@ export class SocialScreen {
             () => this.game.cloud.cloud!.leaderboard(page),
             (result) => {
                 if (!result.rows.length) this.game.ui.text(n, '还没有通关成绩', 0, 80, 30);
-                result.rows.forEach((row, i) =>
-                    this.game.ui.text(
-                        n,
-                        `${row.rank}. ${row.self ? '我' : row.player}   第 ${row.highest} 关`,
-                        0,
-                        300 - i * 51,
-                        24,
-                        row.self ? '#366650' : INK,
-                        560,
-                    ),
+                result.rows.forEach((row, i) => drawWorldPlayer(this.game, n, row, 300 - i * 51));
+                this.game.ui.button(n, '微信头像昵称', 0, -270, 230, 48, PAPER, () =>
+                    showWorldIdentity(this.game, page),
                 );
                 if (page > 0)
-                    this.game.ui.button(n, '上一页', -175, -270, 150, 48, PAPER, () =>
+                    this.game.ui.button(n, '上一页', -215, -270, 150, 48, PAPER, () =>
                         this.worldLeaderboard(page - 1),
                     );
                 if (result.hasNext)
-                    this.game.ui.button(n, '下一页', 175, -270, 150, 48, PAPER, () =>
+                    this.game.ui.button(n, '下一页', 215, -270, 150, 48, PAPER, () =>
                         this.worldLeaderboard(page + 1),
                     );
-                this.game.ui.text(n, '展示前一百名玩家', 0, -195, 22, MUTED);
+                this.game.ui.text(n, '展示前一百名玩家', 0, -210, 22, MUTED);
                 this.game.ui.button(n, '微信好友榜', 0, -270 - gap, 300, 48, PAPER, () =>
                     this.friendLeaderboard(0),
                 );
@@ -178,7 +173,7 @@ export class SocialScreen {
         );
     }
 
-    friendLeaderboard(page: number) {
+    friendLeaderboard(page: number, settings = false) {
         if (
             !this.game.cloud.cloudReady ||
             (this.game.cloud.cloudBusy && !this.game.cloud.cloudCancellable)
@@ -203,10 +198,31 @@ export class SocialScreen {
         this.game.overlays.modalStatusY = 80;
         this.game.cloud.cloudTask(
             async () => {
-                await authorizeFriends();
-                await syncFriendScore(this.game.cloud.cloudHighest, this.game.cloud.cloudReachedAt);
+                const allowed = await (settings ? openFriendSettings() : authorizeFriends());
+                if (allowed)
+                    await syncFriendScore(
+                        this.game.cloud.cloudHighest,
+                        this.game.cloud.cloudReachedAt,
+                    );
+                return allowed;
             },
-            () => {
+            (allowed) => {
+                if (!allowed) {
+                    this.game.ui.text(n, '你尚未允许使用微信朋友信息', 0, 100, 26);
+                    this.game.ui.text(n, '允许后可查看好友的头像、昵称与成绩', 0, 40, 23, MUTED);
+                    this.game.ui.button(
+                        n,
+                        '打开授权设置',
+                        0,
+                        -70,
+                        360,
+                        64,
+                        GREEN,
+                        () => this.friendLeaderboard(page, true),
+                        '#FFFFFF',
+                    );
+                    return;
+                }
                 this.game.overlays.closeModal();
                 const content = this.game.overlays.openModal(
                     '微信好友排行榜',

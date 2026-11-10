@@ -150,7 +150,7 @@ export class SettingsScreen {
         this.game.ui.text(
             n,
             this.game.session.model.slots.length < 5 + EXPANSION_COLUMNS.length
-                ? '观看视频可增加一个槽位，本关生效'
+                ? '可增加一个槽位，本关生效'
                 : '可以重新开始，或返回主页休息一下',
             0,
             -5,

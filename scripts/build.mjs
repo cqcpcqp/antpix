@@ -1,3 +1,4 @@
+import { installStartup } from './install-startup.mjs';
 import { spawnSync } from 'node:child_process';
 import {
   existsSync,
@@ -71,6 +72,7 @@ if (result.status === 0 || result.status === 36) {
     resolve('build/wechatgame/THIRD_PARTY_NOTICES.txt'),
     readFileSync('THIRD_PARTY_NOTICES.md', 'utf8'),
   );
+  installStartup();
   // Keep the whole local package below WeChat's 4 MiB main-package limit.
   const folderSize = (dir) =>
     readdirSync(dir, { withFileTypes: true }).reduce((total, entry) => {
@@ -108,6 +110,8 @@ if (result.status === 0 || result.status === 36) {
       './scripts/register-typescript.mjs',
       '--test',
       'tests/cloud-ui.test.mjs',
+      'tests/startup.test.mjs',
+      'tests/startup-package.test.mjs',
       'tests/courtyard-ui.test.mjs',
       'tests/interaction-polish.test.mjs',
     ],

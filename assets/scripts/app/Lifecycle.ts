@@ -8,7 +8,6 @@ import {
     Layers,
     Node,
     ResolutionPolicy,
-    resources,
     sys,
     view,
 } from 'cc';
@@ -20,6 +19,7 @@ export class Lifecycle {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
+            | 'startup'
             | 'preview'
             | 'audio'
             | 'profile'
@@ -110,15 +110,16 @@ export class Lifecycle {
         this.game.audio.music.loop = true;
         this.game.audio.music.playOnAwake = false;
         this.game.audio.music.volume = 0;
+        this.game.startup.begin();
         this.root.on(Node.EventType.TOUCH_END, () => this.game.audio.unlockAudio());
-        resources.load('audio/garden-bgm', AudioClip, (error, clip) => {
+        this.game.startup.load('audio/garden-bgm', AudioClip, (error, clip) => {
             if (!error && this.game.host.isValid) {
                 this.game.audio.music.clip = clip;
                 this.game.audio.syncMusic();
             }
         });
         for (const name of ['tap', 'win'])
-            resources.load('audio/' + name, AudioClip, (error, clip) => {
+            this.game.startup.load('audio/' + name, AudioClip, (error, clip) => {
                 if (!error && this.game.host.isValid) this.game.audio.clips.set(name, clip);
             });
         game.on(Game.EVENT_HIDE, this.hideHandler);
@@ -129,9 +130,11 @@ export class Lifecycle {
         if (this.game.cloud.cloudMode) this.game.cloud.connectCloud();
         this.game.homeAssets.loadHomeAssets();
         this.game.boardAssets.loadBoardAssets();
+        this.game.startup.seal();
     }
 
     onDestroy() {
+        this.game.startup.destroy();
         for (const frame of this.game.assets.residentFrames) frame.destroy();
         this.game.assets.residentTexture?.decRef();
         this.game.assets.residentDoorFrame?.destroy();

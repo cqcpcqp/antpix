@@ -30,7 +30,7 @@ export default defineConfig([
   },
   {
     files: ['wechat/**/*.js'],
-    languageOptions: { globals: { ...globals.es2020, wx: 'readonly' } },
+    languageOptions: { globals: { ...globals.es2020, wx: 'readonly', console: 'readonly' } },
   },
   {
     files: ['assets/scripts/**/*.ts'],
