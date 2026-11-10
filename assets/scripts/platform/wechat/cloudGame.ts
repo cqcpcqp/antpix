@@ -12,14 +12,12 @@ export interface CloudState {
     reachedAt: number;
     output: { userId?: string; runId?: string; adId?: string; amount?: number; purchase?: string };
 }
-import type { PlayerIdentity } from './playerIdentity';
 
 export interface WorldBoard {
     ok: true;
     rows: {
         rank: number;
         player: string;
-        identity: PlayerIdentity | null;
         highest: number;
         reachedAt: number;
         self: boolean;
@@ -93,7 +91,12 @@ export class CloudGame {
         });
         this.userId = state.output.userId!;
         const pending = this.storage.getItem(this.key());
-        if (pending) return this.send(JSON.parse(pending));
+        if (pending) {
+            const request: Request = JSON.parse(pending);
+            // Retire old local profile uploads without replaying personal data after removal.
+            if (request.action === 'identity') this.storage.removeItem(this.key());
+            else return this.send(request);
+        }
         return state;
     }
     async mutate(action: string, values: Record<string, unknown> = {}): Promise<CloudState> {

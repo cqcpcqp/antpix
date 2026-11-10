@@ -4,23 +4,19 @@ const { readFileSync, existsSync, readdirSync, statSync } = require('node:fs');
 const { resolve } = require('node:path');
 const root = resolve('build/wechatgame');
 const game = JSON.parse(readFileSync(resolve(root, 'game.json'), 'utf8'));
-assert.equal(game.openDataContext, 'open-data');
+assert.equal(Object.hasOwn(game, 'openDataContext'), false);
+assert.equal(existsSync(resolve(root, 'open-data')), false);
 for (const name of [
   'game.js',
   'logo.png',
   'slogan.png',
   'project.config.json',
-  'open-data/index.js',
   'THIRD_PARTY_NOTICES.txt',
   'startup/painter.js',
   'startup/layout.js',
   'startup/assets.js',
 ])
   assert.ok(existsSync(resolve(root, name)), `Incomplete WeChat package: ${name}`);
-assert.deepEqual(
-  readFileSync(resolve(root, 'open-data/index.js')),
-  readFileSync('wechat/open-data/index.js'),
-);
 const { checkStartupModules } = require('./check-startup-modules.cjs');
 const { layout: startup, artwork } = checkStartupModules(root);
 assert.equal(startup.registration, '沪ICP备2026059452');
@@ -46,5 +42,5 @@ const size = (dir) =>
 const bytes = size(root);
 assert.ok(bytes < 4 * 1024 * 1024, `WeChat main package is ${(bytes / 1024).toFixed(1)} KiB`);
 console.log(
-  `WeChat package complete: ${(bytes / 1024).toFixed(1)} / 4096 KiB, open-data entry verified.`,
+  `WeChat package complete: ${(bytes / 1024).toFixed(1)} / 4096 KiB, anonymous leaderboard package verified.`,
 );

@@ -25,10 +25,6 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   let releaseBoard;
   let boardGate = null;
   let failClaim = false;
-  let friendPermission;
-  let settingsOpened = 0;
-  let identityTap;
-  let identityDestroyed = 0;
   const service = createService(
     {
       transaction: async (work) =>
@@ -38,15 +34,17 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
             records.set(collection + id, structuredClone(data));
           },
         }),
-      leaderboard: async () => [],
+      leaderboard: async (skip, limit) =>
+        [...records]
+          .filter(([key, record]) => key.startsWith('players') && record.highest > 0)
+          .map(([key, record]) => ({ ...record, _id: key.slice('players'.length) }))
+          .sort((a, b) => b.highest - a.highest || a.reachedAt - b.reachedAt)
+          .slice(skip, skip + limit),
     },
     () => now,
     () => 'run-' + ++serial,
   );
-  const hidden = new Set(),
-    shown = new Set(),
-    actions = [],
-    friendMessages = [];
+  const actions = [];
   const wx = {
     cloud: {
       init: ({ env }) => assert.equal(env, 'cloudbase-d9glil4qk6b5865ba'),
@@ -61,25 +59,6 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
         };
       },
     },
-    setUserCloudStorage: ({ success }) => success(),
-    authorize: ({ success }) => success(),
-    requirePrivacyAuthorize: ({ success }) => success(),
-    getSetting: ({ success }) =>
-      success({ authSetting: { 'scope.WxFriendInteraction': friendPermission } }),
-    openSetting: ({ success }) => {
-      settingsOpened++;
-      friendPermission = true;
-      success({ authSetting: { 'scope.WxFriendInteraction': true } });
-    },
-    createUserInfoButton: () => ({
-      onTap: (callback) => {
-        identityTap = callback;
-      },
-      destroy: () => {
-        identityDestroyed++;
-      },
-    }),
-    getOpenDataContext: () => ({ postMessage: (message) => friendMessages.push(message) }),
   };
   cc.sys.localStorage = {
     getItem: (key) => local.get(key) ?? null,
@@ -215,34 +194,20 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
     'late rank data must not reopen a dismissed view',
   );
   game.runtime.overlays.closeModal();
-  game.runtime.social.friendLeaderboard(0);
-  await flush();
-  game.runtime.overlays.modal.children.find((node) => node.name === '刷新').emit('end');
-  assert.equal(friendMessages.filter((message) => message.type === 'ant-friends').length, 2);
-  game.runtime.overlays.closeModal();
-  friendPermission = false;
-  game.runtime.social.friendLeaderboard(0);
-  await flush();
-  const permissionPanel = game.runtime.overlays.modal;
-  permissionPanel.children.find((node) => node.name === '打开授权设置').emit('end');
-  assert.equal(settingsOpened, 1, 'openSetting is called directly within the user click');
-  await flush();
-  assert.ok(game.runtime.overlays.modal.children.some((node) => node.name === 'Friend board'));
-  game.runtime.overlays.closeModal();
   game.runtime.social.worldLeaderboard(0);
   await flush();
-  game.runtime.overlays.modal.children.find((node) => node.name === '微信头像昵称').emit('end');
-  await flush();
-  identityTap({
-    errMsg: 'getUserInfo:ok',
-    userInfo: {
-      nickName: '真实昵称',
-      avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/test/132',
-    },
-  });
-  await flush();
-  assert.equal(identityDestroyed, 1);
-  assert.ok(actions.includes('identity'), 'identity is persisted only after native authorization');
+  assert.deepEqual(
+    game.runtime.overlays.modal.children
+      .filter((node) => node.isValid && node.active && node.name !== 'Text')
+      .map((node) => node.name),
+    ['返回'],
+    'anonymous leaderboard has no profile authorization or friend entry',
+  );
+  const labels = game.runtime.overlays.modal.children.map(
+    (node) => node.getComponent(cc.Label)?.string,
+  );
+  assert.ok(labels.includes('我'));
+  assert.ok(labels.includes('第 1 关'));
 
   game.runtime.overlays.closeModal();
   assert.equal(
@@ -255,70 +220,6 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   await flush();
   assert.equal(reopened.runtime.profile.save.selected, 1);
   assert.equal(reopened.runtime.profile.save.coins, 130);
-});
-
-test('open data domain sorts friends, stays on valid pages and ignores late responses', () => {
-  let receive;
-  const requests = [],
-    text = [],
-    images = [],
-    drawn = [];
-  const context = {
-    clearRect() {
-      text.length = 0;
-    },
-    drawImage: (image) => drawn.push(image),
-    save() {},
-    restore() {},
-    scale() {},
-    fillText: (value) => text.push(value),
-  };
-  const wx = {
-    getSharedCanvas: () => ({ width: 640, height: 960, getContext: () => context }),
-    onMessage: (callback) => {
-      receive = callback;
-    },
-    getFriendCloudStorage: (options) => requests.push(options),
-    createImage: () => {
-      const image = {};
-      images.push(image);
-      return image;
-    },
-  };
-  vm.runInNewContext(readFileSync('wechat/open-data/index.js', 'utf8'), { wx, console });
-  receive({ type: 'ant-friends', page: 0 });
-  receive({ type: 'ant-friends', page: 0 });
-  const friend = (nickname, highest, reachedAt) => ({
-    nickname,
-    avatarUrl: `https://example.com/${nickname}.png`,
-    openid: nickname,
-    KVDataList: [{ key: 'ant-progress-v4', value: JSON.stringify({ highest, reachedAt }) }],
-  });
-  requests[1].success({
-    data: [friend('后来', 2, 20), friend('先到', 2, 10), friend('领先', 3, 30)],
-  });
-  assert.equal(text[0], '1');
-  assert.equal(text[1], '领先');
-  assert.equal(text[3], '2');
-  assert.equal(text[4], '先到');
-  images[0].onload();
-  assert.equal(drawn.at(-1), images[0]);
-  requests[0].success({ data: [] });
-  assert.equal(text[0], '1');
-  assert.equal(text[1], '领先');
-  for (let i = 0; i < 20; i++) receive({ type: 'ant-friends-page', delta: 1 });
-  receive({ type: 'ant-friends-page', delta: -1 });
-  assert.ok(text.includes('第 1 / 1 页'));
-  receive({ type: 'ant-friends', page: 0 });
-  const count = drawn.length;
-  images[1].onload();
-  assert.equal(drawn.length, count, 'late avatar must not repaint a refreshed board');
-  requests[2].fail({ errMsg: 'test read failure' });
-  assert.ok(text.includes('读取失败，请点击刷新重试'));
-  receive({ type: 'ant-friends', page: 0 });
-  requests[3].success({ data: [friend('领先', 3, 30)] });
-  assert.equal(text[0], '1');
-  assert.equal(text[1], '领先');
 });
 
 test('reward video grants only on complete close, removes listeners and recovers from errors', async () => {

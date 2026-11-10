@@ -57,8 +57,6 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                     rows: rows.slice(0, 10).map((row, index) => ({
                         rank: event.page * 10 + index + 1,
                         player: row.player,
-                        // Pre-identity database records have no public profile yet.
-                        identity: row.identity === undefined ? null : row.identity,
                         highest: row.highest,
                         reachedAt: row.reachedAt,
                         self: row._id === uid,
@@ -73,7 +71,6 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                         user = {
                             profile: freshProfile(),
                             player: '蚂蚁' + uuid().replace(/-/g, '').slice(0, 8),
-                            identity: null,
                             highest: 0,
                             reachedAt: 0,
                             adViews: 0,
@@ -115,34 +112,6 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                 }
                 const output = {};
                 switch (event.action) {
-                    case 'identity': {
-                        const identity =
-                            event.nickname === null && event.avatarUrl === null
-                                ? null
-                                : { nickname: event.nickname, avatarUrl: event.avatarUrl };
-                        requireRule(
-                            identity === null ||
-                                (typeof identity === 'object' &&
-                                    typeof identity.nickname === 'string' &&
-                                    identity.nickname.trim().length > 0 &&
-                                    Array.from(identity.nickname).length <= 64 &&
-                                    typeof identity.avatarUrl === 'string' &&
-                                    identity.avatarUrl.length <= 2048 &&
-                                    /^https:\/\/(?:[a-z0-9-]+\.)*qlogo\.cn\//i.test(
-                                        identity.avatarUrl,
-                                    )),
-                            'INPUT',
-                            '微信头像昵称无效',
-                        );
-                        user.identity =
-                            identity === null
-                                ? null
-                                : {
-                                      nickname: identity.nickname,
-                                      avatarUrl: identity.avatarUrl,
-                                  };
-                        break;
-                    }
                     case 'start':
                         requireRule(
                             Number.isInteger(event.level) &&

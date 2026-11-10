@@ -28,9 +28,8 @@ assets/scripts/
     courtyard/                # 庭院场景与角色呈现
     ui/                       # 按钮、弹窗、抽屉、通知与云状态展示
   presentation/               # 无业务流程的布局、主题、绘图、视图类型与视觉常量
-  platform/wechat/            # 云函数、广告与好友榜平台适配
+  platform/wechat/            # 云函数与广告平台适配
 cloudfunctions/game/          # 云端入口与服务端规则
-wechat/open-data/              # 微信开放数据域
 scripts/ui-checks/            # 按场景组织的有序无界面集成检查
 scripts/                      # 构建、素材、验证、性能工具
 tests/helpers/               # 测试夹具；不得导入后自动注册测试

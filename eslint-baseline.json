@@ -16,7 +16,7 @@
   },
   "tests/cloud-ui.test.mjs": {
     "no-unused-vars": {
-      "count": 3
+      "count": 1
     }
   },
   "tests/ui-flow.test.mjs": {

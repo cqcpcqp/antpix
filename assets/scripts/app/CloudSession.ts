@@ -7,7 +7,6 @@ import {
     wechatAvailable,
     wechatTransport,
 } from '../platform/wechat/cloudGame';
-import { syncFriendScore } from '../platform/wechat/friendBoard';
 import { showRewardedVideo } from '../platform/wechat/rewardAd';
 import type { GardenRuntime } from './GardenRuntime';
 import { GREEN, PAPER } from '../presentation/gameVisuals';
@@ -56,10 +55,6 @@ export class CloudSession {
         this.game.profile.save = state.profile;
         this.game.profile.save.sound = sound;
         this.game.profile.save.music = music;
-        if (state.highest !== this.cloudHighest || state.reachedAt !== this.cloudReachedAt)
-            syncFriendScore(state.highest, state.reachedAt).catch((error) =>
-                console.warn('Friend score sync failed; retry when opening friends', error),
-            );
         this.cloudHighest = state.highest;
         this.cloudReachedAt = state.reachedAt;
         this.serverOffset = state.serverTime - Date.now();

@@ -1,23 +1,13 @@
-import { SubContextView } from 'cc';
-import { drawWorldPlayer, showWorldIdentity } from './WorldIdentity';
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { GREEN, INK, MUTED, PAPER } from '../../presentation/gameVisuals';
 import { makeLevel } from '../../domain/levels/levels';
 import { claimRewards, rewardAmount } from '../../domain/profile/profile';
-import {
-    authorizeFriends,
-    changeFriendPage,
-    openFriendSettings,
-    showFriendPage,
-    syncFriendScore,
-} from '../../platform/wechat/friendBoard';
-
 /** Displays rewards and leaderboards via existing platform adapters. */
 export class SocialScreen {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
-            'cloud' | 'profile' | 'lifecycle' | 'overlays' | 'ui' | 'home' | 'notices' | 'social'
+            'cloud' | 'profile' | 'lifecycle' | 'overlays' | 'ui' | 'home' | 'notices'
         >,
     ) {}
     leaderboard(page = 0) {
@@ -151,10 +141,20 @@ export class SocialScreen {
             () => this.game.cloud.cloud!.leaderboard(page),
             (result) => {
                 if (!result.rows.length) this.game.ui.text(n, '还没有通关成绩', 0, 80, 30);
-                result.rows.forEach((row, i) => drawWorldPlayer(this.game, n, row, 300 - i * 51));
-                this.game.ui.button(n, '微信头像昵称', 0, -270, 230, 48, PAPER, () =>
-                    showWorldIdentity(this.game, page),
-                );
+                result.rows.forEach((row, i) => {
+                    const y = 300 - i * 51;
+                    this.game.ui.text(n, String(row.rank), -255, y, 24, INK, 45);
+                    this.game.ui.text(
+                        n,
+                        row.self ? '我' : row.player,
+                        -15,
+                        y,
+                        24,
+                        row.self ? '#366650' : INK,
+                        350,
+                    );
+                    this.game.ui.text(n, `第 ${row.highest} 关`, 207, y, 24, INK, 135);
+                });
                 if (page > 0)
                     this.game.ui.button(n, '上一页', -215, -270, 150, 48, PAPER, () =>
                         this.worldLeaderboard(page - 1),
@@ -164,97 +164,8 @@ export class SocialScreen {
                         this.worldLeaderboard(page + 1),
                     );
                 this.game.ui.text(n, '展示前一百名玩家', 0, -210, 22, MUTED);
-                this.game.ui.button(n, '微信好友榜', 0, -270 - gap, 300, 48, PAPER, () =>
-                    this.friendLeaderboard(0),
-                );
             },
             '正在加载排行…',
-            true,
-        );
-    }
-
-    friendLeaderboard(page: number, settings = false) {
-        if (
-            !this.game.cloud.cloudReady ||
-            (this.game.cloud.cloudBusy && !this.game.cloud.cloudCancellable)
-        )
-            return;
-        const n = this.game.overlays.openModal(
-            '微信好友排行榜',
-            '通关越多越靠前 · 同关卡先到者在前',
-            1100,
-        );
-        this.game.ui.button(
-            n,
-            '返回',
-            0,
-            -465,
-            480,
-            64,
-            GREEN,
-            () => this.game.overlays.closeModal(),
-            '#FFFFFF',
-        );
-        this.game.overlays.modalStatusY = 80;
-        this.game.cloud.cloudTask(
-            async () => {
-                const allowed = await (settings ? openFriendSettings() : authorizeFriends());
-                if (allowed)
-                    await syncFriendScore(
-                        this.game.cloud.cloudHighest,
-                        this.game.cloud.cloudReachedAt,
-                    );
-                return allowed;
-            },
-            (allowed) => {
-                if (!allowed) {
-                    this.game.ui.text(n, '你尚未允许使用微信朋友信息', 0, 100, 26);
-                    this.game.ui.text(n, '允许后可查看好友的头像、昵称与成绩', 0, 40, 23, MUTED);
-                    this.game.ui.button(
-                        n,
-                        '打开授权设置',
-                        0,
-                        -70,
-                        360,
-                        64,
-                        GREEN,
-                        () => this.friendLeaderboard(page, true),
-                        '#FFFFFF',
-                    );
-                    return;
-                }
-                this.game.overlays.closeModal();
-                const content = this.game.overlays.openModal(
-                    '微信好友排行榜',
-                    '通关越多越靠前 · 同关卡先到者在前',
-                    1100,
-                );
-                const board = this.game.ui.node2d('Friend board', content, 0, 10, 440, 660);
-                const subContext = board.addComponent(SubContextView);
-                subContext.fps = 10;
-                showFriendPage(page);
-                this.game.ui.button(content, '刷新', 0, -365, 150, 48, PAPER, () =>
-                    showFriendPage(0),
-                );
-                this.game.ui.button(content, '上一页', -175, -365, 150, 48, PAPER, () =>
-                    changeFriendPage(-1),
-                );
-                this.game.ui.button(content, '下一页', 175, -365, 150, 48, PAPER, () =>
-                    changeFriendPage(1),
-                );
-                this.game.ui.button(
-                    content,
-                    '世界榜',
-                    0,
-                    -365 - Math.max(100, this.game.lifecycle.touchSize + 4),
-                    480,
-                    64,
-                    GREEN,
-                    () => this.worldLeaderboard(0),
-                    '#FFFFFF',
-                );
-            },
-            '正在加载好友…',
             true,
         );
     }

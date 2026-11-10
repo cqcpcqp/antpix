@@ -157,7 +157,6 @@ test('world board sorts progress descending, first achievement ascending; no pri
   assert.equal(result.rows[1].self, true);
   assert.deepEqual(Object.keys(result.rows[0]).sort(), [
     'highest',
-    'identity',
     'player',
     'rank',
     'reachedAt',
@@ -311,43 +310,37 @@ test('storing courtyard furniture preserves ownership and rejects invalid positi
   assert.equal(equipped.profile.courtyard.equipped.entrance, 'leaf-awning');
 });
 
-test('world identity is opt-in, account-scoped, retry-safe and removable', async () => {
+test('world leaderboard stays anonymous and public profile writes are rejected', async () => {
   const f = fixture();
-  const alice = await f.call('login');
+  const login = await f.call('login');
   await win(f, 0);
-  await f.call('login', {}, 'bob');
-  await win(f, 0, 'bob');
-  let board = await f.call('leaderboard', { page: 0 });
-  assert.ok(board.rows.every((row) => row.identity === null));
-  const values = {
-    nickname: '测试玩家🙂',
-    avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/test/132',
-    requestId: 'identity-request-00001',
-  };
-  const updated = await f.call('identity', values);
-  assert.equal(updated.ok, true);
-  assert.equal(updated.highest, 1);
-  assert.equal((await f.call('identity', values)).ok, true);
-  board = await f.call('leaderboard', { page: 0 });
-  assert.deepEqual(board.rows.find((row) => row.self).identity, {
-    nickname: values.nickname,
-    avatarUrl: values.avatarUrl,
-  });
-  assert.equal(board.rows.find((row) => !row.self).identity, null);
-  for (const invalid of [
-    { nickname: '', avatarUrl: values.avatarUrl },
-    { nickname: '玩家', avatarUrl: 'https://qlogo.cn.evil.example/avatar.png' },
-    { nickname: '玩家', avatarUrl: 'file:///private/avatar.png' },
-    { nickname: null, avatarUrl: values.avatarUrl },
-  ])
-    assert.equal((await f.call('identity', invalid)).code, 'INPUT');
-  await f.call('identity', { nickname: null, avatarUrl: null });
-  assert.equal((await f.call('leaderboard', { page: 0 })).rows[0].identity, null);
-  // Explicitly cover the schema upgrade for players created before identities existed.
   await f.store.transaction(async (tx) => {
-    const user = await tx.get('players', alice.output.userId);
-    delete user.identity;
-    await tx.set('players', alice.output.userId, user);
+    const user = await tx.get('players', login.output.userId);
+    // Legacy records must not leak their previously stored public profile.
+    user.identity = { nickname: 'old name', avatarUrl: 'https://example.com/avatar' };
+    await tx.set('players', login.output.userId, user);
   });
-  assert.equal((await f.call('leaderboard', { page: 0 })).rows[0].identity, null);
+  const board = await f.call('leaderboard', { page: 0 });
+  assert.match(board.rows[0].player, /^蚂蚁/);
+  assert.equal(Object.hasOwn(board.rows[0], 'identity'), false);
+  assert.equal((await f.call('identity')).code, 'INPUT');
+});
+
+test('login discards retired profile uploads while preserving cloud progress', async () => {
+  const f = fixture(),
+    storage = memory();
+  const oldClient = new CloudGame(async (request) => {
+    if (request.action === 'identity') throw new Error('offline');
+    return f.service(request, { APPID, OPENID: 'alice' });
+  }, storage);
+  await oldClient.login();
+  await assert.rejects(oldClient.mutate('identity', { nickname: 'old name' }), /offline/);
+  const actions = [];
+  const client = new CloudGame(async (request) => {
+    actions.push(request.action);
+    return f.service(request, { APPID, OPENID: 'alice' });
+  }, storage);
+  assert.equal((await client.login()).highest, 0);
+  assert.deepEqual(actions, ['login'], 'never replay retired personal data');
+  assert.equal((await client.mutate('claim')).profile.coins, 30);
 });

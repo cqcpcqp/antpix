@@ -7,7 +7,7 @@ import {
   readFileSync,
   readdirSync,
   statSync,
-  cpSync,
+  rmSync,
 } from 'node:fs';
 import { resolve } from 'node:path';
 const creator =
@@ -63,10 +63,11 @@ if (result.status === 0 || result.status === 36) {
   project.description = '生态蚂蚁窝 · 微信小游戏';
   project.cloudfunctionRoot = '../../cloudfunctions/';
   writeFileSync(path, JSON.stringify(project, null, 2));
-  cpSync('wechat/open-data', 'build/wechatgame/open-data', { recursive: true });
+  // Remove obsolete friend data from incremental builds as well.
+  rmSync('build/wechatgame/open-data', { recursive: true, force: true });
   const gamePath = resolve('build/wechatgame/game.json');
   const gameConfig = JSON.parse(readFileSync(gamePath, 'utf8'));
-  gameConfig.openDataContext = 'open-data';
+  delete gameConfig.openDataContext;
   writeFileSync(gamePath, JSON.stringify(gameConfig, null, 2));
   writeFileSync(
     resolve('build/wechatgame/THIRD_PARTY_NOTICES.txt'),
