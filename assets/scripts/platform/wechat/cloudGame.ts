@@ -56,14 +56,24 @@ export function wechatTransport(): Transport {
                     callFunction(options: {
                         name: string;
                         data: Request;
-                    }): Promise<{ result: unknown }>;
+                        success(response: { result: unknown }): void;
+                        fail(error: unknown): void;
+                    }): void;
                 };
             };
         }
     ).wx;
     wxApi.cloud.init({ env: CLOUD_ENV });
-    return async <T>(data: Request) =>
-        (await wxApi.cloud.callFunction({ name: 'game', data })).result as T | Failure;
+    // Wait for SDK callbacks; the direct call return is not the cloud response.
+    return <T>(data: Request) =>
+        new Promise<T | Failure>((resolve, reject) => {
+            wxApi.cloud.callFunction({
+                name: 'game',
+                data,
+                success: (response) => resolve(response.result as T | Failure),
+                fail: reject,
+            });
+        });
 }
 
 // Persist the exact request before sending; a timeout may have happened after commit.

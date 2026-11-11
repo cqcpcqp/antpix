@@ -48,15 +48,18 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   const wx = {
     cloud: {
       init: ({ env }) => assert.equal(env, 'cloudbase-d9glil4qk6b5865ba'),
-      callFunction: async ({ name, data }) => {
+      callFunction: ({ name, data, success, fail }) => {
         assert.equal(name, 'game');
         actions.push(data.action);
-        if (data.action === 'login' && loginGate) await loginGate;
-        if (data.action === 'leaderboard' && boardGate) await boardGate;
-        if (data.action === 'claim' && failClaim) throw new Error('test connection failure');
-        return {
-          result: await service(data, { APPID: 'wxd8e27ad9cd0289df', OPENID: 'scene-user' }),
+        const run = async () => {
+          if (data.action === 'login' && loginGate) await loginGate;
+          if (data.action === 'leaderboard' && boardGate) await boardGate;
+          if (data.action === 'claim' && failClaim) throw new Error('test connection failure');
+          return {
+            result: await service(data, { APPID: 'wxd8e27ad9cd0289df', OPENID: 'scene-user' }),
+          };
         };
+        run().then(success, fail);
       },
     },
   };

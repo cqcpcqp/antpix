@@ -83,6 +83,18 @@
 
 ## 请求状态展示
 
+### 启动 90% 与 SDK 回调回归
+
+审核截图中的 `Cannot read properties of undefined (reading 'result')` 对应旧客户端直接读取 `await wx.cloud.callFunction(...)` 的结果。用直接返回 `undefined`、稍后通过 `success/fail` 通知完成的 SDK 替身可稳定触发旧实现提前失败；这证明错误机制，不代表已确认审核真机上的 SDK 触发条件。
+
+客户端现在显式用 `success/fail` 封装 Promise，成功时直接读取固定的 `response.result`，失败时原样交给云会话重试，不添加后端响应兜底。可独立运行回归：
+
+```sh
+node --experimental-strip-types --import ./scripts/register-typescript.mjs --test tests/cloud-transport.test.mjs tests/cloud-ui.test.mjs
+```
+
+传输测试覆盖异步成功、平台失败、业务拒绝、同步抛错；场景测试使用直接返回 `undefined` 的回调 SDK，验证等待登录时停在 90%、登录成功后达到 100%，以及失败后重试。`npm run build:wechat` 也对真实构建产物执行场景回归。提审前仍需在微信开发者工具和 Android/iOS 真机上验证冷启动及断网恢复，并记录客户端版本、基础库版本和完整平台错误；本地测试不替代审核环境验证。
+
 云端请求不再打开独立的连接弹窗。首页同步、开局与领奖在首页内容区展示状态；商店在原抽屉内展示，排行榜先展示榜单容器再加载内容。错误在原内容区点击重试，写请求继续复用持久化的请求 ID，不提前发放资产。启动同步完成前不展示占位金币和关卡进度，也不允许开局；设置和收藏说明仍可使用。关闭榜单会忽略该次请求的迟到结果，登录完成不会关闭用户正在查看的设置。
 
 ## 2026-11-10 移除微信用户资料功能
