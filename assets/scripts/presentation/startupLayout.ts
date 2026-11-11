@@ -15,9 +15,12 @@ export const STARTUP = {
     ready: '加载完成',
     resourceError: '资源加载未完成，点击重试',
     healthTitle: '健康游戏忠告',
+    healthTextWidth: 336,
     healthLines: [
-        '抵制不良游戏  拒绝盗版游戏  注意自我保护',
-        '适度游戏益脑  沉迷游戏伤身  合理安排时间',
+        '抵制不良游戏，拒绝盗版游戏。',
+        '注意自我保护，谨防受骗上当。',
+        '适度游戏益脑，沉迷游戏伤身。',
+        '合理安排时间，享受健康生活。',
     ],
     registration: '沪ICP备2026059452',
 };

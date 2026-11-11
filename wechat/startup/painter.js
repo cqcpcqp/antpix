@@ -66,10 +66,13 @@ function paint(ctx, surface, images, progress, message, minimumTextSize = 24) {
     ctx.textAlign = 'center';
     ctx.fillStyle = '#65794C';
     ctx.font = `700 ${Math.max(22, minimumTextSize)}px sans-serif`;
-    ctx.fillText(layout.healthTitle, width / 2, height - 164);
+    ctx.fillText(layout.healthTitle, width / 2, height - 222);
+    ctx.textAlign = 'left';
     ctx.font = `700 ${Math.max(17, minimumTextSize)}px sans-serif`;
-    ctx.fillText(layout.healthLines[0], width / 2, height - 127);
-    ctx.fillText(layout.healthLines[1], width / 2, height - 98);
+    layout.healthLines.forEach((line, index) => {
+        ctx.fillText(line, (width - layout.healthTextWidth) / 2, height - 185 + index * 29);
+    });
+    ctx.textAlign = 'center';
     ctx.font = `700 ${Math.max(19, minimumTextSize)}px sans-serif`;
     ctx.fillText(layout.registration, width / 2, height - 44);
     ctx.restore();

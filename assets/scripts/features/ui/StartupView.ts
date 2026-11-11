@@ -74,9 +74,19 @@ export class StartupView {
         );
         this.percentage.horizontalAlign = Label.HorizontalAlign.RIGHT;
         this.bar = ui.graphics(root, 'Honey gold progress');
-        ui.text(root, STARTUP.healthTitle, 0, bottom + 164, 22, '#65794C');
-        ui.text(root, STARTUP.healthLines[0], 0, bottom + 127, 17, '#71805A');
-        ui.text(root, STARTUP.healthLines[1], 0, bottom + 98, 17, '#71805A');
+        ui.text(root, STARTUP.healthTitle, 0, bottom + 222, 22, '#65794C');
+        STARTUP.healthLines.forEach((line, index) => {
+            const label = ui.text(
+                root,
+                line,
+                0,
+                bottom + 185 - index * 29,
+                17,
+                '#71805A',
+                STARTUP.healthTextWidth,
+            );
+            label.horizontalAlign = Label.HorizontalAlign.LEFT;
+        });
         ui.text(root, STARTUP.registration, 0, bottom + 44, 19, '#65794C');
     }
 
