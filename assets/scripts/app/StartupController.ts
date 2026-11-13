@@ -5,7 +5,7 @@ import { STARTUP } from '../presentation/startupLayout';
 
 type StartupTask = { done: boolean; failed: boolean; run: () => void };
 
-/** Owns startup readiness: applied resource callbacks plus authoritative cloud login. */
+/** Waits for applied resources and either cloud login or an isolated local session. */
 export class StartupController {
     constructor(
         private readonly game: Pick<GardenRuntime, 'host' | 'startupView' | 'home' | 'cloud'>,

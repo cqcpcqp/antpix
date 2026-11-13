@@ -137,12 +137,18 @@ export class CloudGame {
     }
     private async send(request: Request): Promise<CloudState> {
         this.busy = true;
+        const serialized = JSON.stringify(request);
+        // A timed-out client can finish after reconnect created a newer pending write.
+        const clearOwnRequest = () => {
+            if (this.storage.getItem(this.key()) === serialized)
+                this.storage.removeItem(this.key());
+        };
         try {
             const state = await this.call<CloudState>(request);
-            this.storage.removeItem(this.key());
+            clearOwnRequest();
             return state;
         } catch (error) {
-            if (error instanceof CloudGameError) this.storage.removeItem(this.key());
+            if (error instanceof CloudGameError) clearOwnRequest();
             throw error;
         } finally {
             this.busy = false;

@@ -31,6 +31,7 @@ export class BoostController {
             this.game.layout.speedLabel.string = `${this.game.session.speed}×`;
             return;
         }
+        if (this.offlineAdUnavailable()) return;
         const n = this.game.overlays.openModal('开启二倍速', '', 360);
         const status = this.game.ui.text(
             n,
@@ -66,6 +67,12 @@ export class BoostController {
         this.rewardAdDemo = { remaining: 3, label: status, complete };
     }
 
+    private offlineAdUnavailable() {
+        if (this.game.cloud.cloudMode || !rewardedVideoConfigured()) return false;
+        this.game.notices.notify('广告暂不可用', '请联网后使用云存档再观看广告', 'info');
+        return true;
+    }
+
     updateExpansionBoard() {
         const expanded = this.game.session.model.slots.length - 5;
         this.game.layout.expansionBoard.active = expanded < EXPANSION_COLUMNS.length;
@@ -84,6 +91,7 @@ export class BoostController {
             this.game.cloud.cloudBusy
         )
             return;
+        if (this.offlineAdUnavailable()) return;
         const n = this.game.overlays.openModal('扩展收集槽位', '', 360);
         const status = this.game.ui.text(
             n,

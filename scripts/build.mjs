@@ -111,6 +111,7 @@ if (result.status === 0 || result.status === 36) {
       './scripts/register-typescript.mjs',
       '--test',
       'tests/cloud-ui.test.mjs',
+      'tests/offline-ui.test.mjs',
       'tests/startup.test.mjs',
       'tests/startup-package.test.mjs',
       'tests/courtyard-ui.test.mjs',

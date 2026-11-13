@@ -1,6 +1,7 @@
 import { Node, sys } from 'cc';
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { GREEN, INK, MUTED, PAPER } from '../../presentation/gameVisuals';
+import { wechatAvailable } from '../../platform/wechat/cloudGame';
 import { EXPANSION_COLUMNS } from '../../presentation/boardLayout';
 
 /** Presents device preferences, controls and restart actions. */
@@ -8,7 +9,15 @@ export class SettingsScreen {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
-            'overlays' | 'ui' | 'lifecycle' | 'home' | 'profile' | 'audio' | 'session' | 'boosts'
+            | 'overlays'
+            | 'ui'
+            | 'lifecycle'
+            | 'home'
+            | 'profile'
+            | 'audio'
+            | 'session'
+            | 'boosts'
+            | 'cloud'
         >,
     ) {}
     controlsSeen = false;
@@ -39,7 +48,8 @@ export class SettingsScreen {
 
     settings() {
         const gap = Math.max(110, this.game.lifecycle.touchSize + 12);
-        const count = this.game.home.home ? 3 : 6;
+        const modeEntry = !!this.game.home.home && wechatAvailable();
+        const count = this.game.home.home ? (modeEntry ? 4 : 3) : 6;
         const height = 252 + gap * count + 86;
         const n = this.game.overlays.openDrawer('小窝设置', '', height);
         const top = height / 2 - 252;
@@ -83,17 +93,29 @@ export class SettingsScreen {
                 this.game.home.showHome(),
             );
         }
+        if (modeEntry)
+            this.game.ui.button(
+                n,
+                this.game.cloud.cloudMode ? '存档：云端' : '存档：本机',
+                0,
+                top - gap * 2,
+                440,
+                68,
+                PAPER,
+                () => this.playMode(),
+            );
+        const lastRow = this.game.home.home ? (modeEntry ? 3 : 2) : 5;
         this.game.ui.button(
             n,
             this.game.home.home ? '完成' : '继续游戏',
             0,
-            top - gap * (this.game.home.home ? 2 : 5),
+            top - gap * lastRow,
             440,
             72,
             PAPER,
             () => this.game.overlays.dismissOverlay(),
         );
-        const credit = top - gap * (this.game.home.home ? 2 : 5) - gap;
+        const credit = top - gap * lastRow - gap;
         const credits = this.game.ui.node2d(
             'Music credits',
             n,
@@ -107,6 +129,25 @@ export class SettingsScreen {
             this.game.audio.play('tap');
             this.musicCredits();
         });
+    }
+
+    playMode() {
+        const n = this.game.overlays.openModal(
+            '选择存档',
+            '本机与云存档独立保留，切换不会合并进度',
+            580,
+        );
+        this.game.ui.text(n, '离线进度仅保存在本机，不上传世界榜', 0, 40, 24, MUTED, 560);
+        this.game.ui.text(n, '切换后返回主页，当前关卡需重新开始', 0, -5, 23, MUTED, 560);
+        this.game.ui.button(n, '离线游玩', -142, -80, 240, 70, PAPER, () => {
+            if (this.game.cloud.cloudMode) this.game.cloud.enterOffline();
+            else this.game.home.showHome();
+        });
+        this.game.ui.button(n, '使用云存档', 142, -80, 240, 70, GREEN, () => {
+            if (!this.game.cloud.cloudMode) this.game.cloud.useCloud();
+            else this.game.home.showHome();
+        });
+        this.game.ui.button(n, '返回', 0, -170, 440, 64, PAPER, () => this.settings());
     }
 
     musicCredits() {

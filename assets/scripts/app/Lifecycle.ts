@@ -65,6 +65,7 @@ export class Lifecycle {
     };
 
     onLoad() {
+        this.game.cloud.initializeMode();
         this.game.profile.readSave();
         // Expand the logical canvas to the device aspect ratio instead of letterboxing.
         // Keep the existing 750 × 1500 content centred and fully visible.

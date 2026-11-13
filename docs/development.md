@@ -86,8 +86,8 @@ Prettier 负责排版，ESLint 使用 JavaScript / TypeScript 推荐规则检查
 微信启动页使用首页草地背景、木牌标题和蜂蜜金进度条，底部显示健康游戏忠告与沪ICP备2026059452。`presentation/startupLayout.ts` 是场景与引擎启动前绘制的共同布局和文案来源。
 
 - `scripts/install-startup.mjs` 在微信构建后替换生成的 `first-screen.js`、关闭引擎 Splash，保留微信真机打包仍会读取的 `logo.png`、`slogan.png`，但不显示默认启动画面；背景与标题直接引用构建资源，不重复打包。
-- 引擎初始化占 0–30%，`app/StartupController.ts` 记录音频、首页、游戏素材回调完成情况，占 60%；首次云登录占 10%。资源应用与登录均成功后才显示 100%，并在完成帧之后展示首页。
-- 启动资源失败只重试失败的加载，登录错误沿用 `CloudSession` 的原始错误和重试入口；启动过程中不额外展示首页登录 loading。进入首页后的业务请求仍使用原有局部状态展示。
+- 引擎初始化占 0–30%，`app/StartupController.ts` 记录音频、首页、游戏素材回调完成情况，占 60%；首次云登录占 10%。资源应用完成且云登录成功或已进入本地模式后显示 100%，并在完成帧之后展示首页。
+- 启动资源失败只重试失败的加载，首次登录的平台/网络失败或约 8 秒无响应会由 `CloudSession` 切入独立本地模式，业务拒绝仍展示原错误和重试入口；启动过程中不额外展示首页登录 loading。进入首页后的业务请求仍使用原有局部状态展示。
 - `NODE_PATH=<canvas 依赖目录> node scripts/preview-startup.cjs` 可生成启动前与场景内的离线布局预览，不打开浏览器。微信 WebGL 接管与真机启动耗时仍需要微信开发者工具/设备验证。
 
 启动前的布局和素材路径由构建器输出为 `startup/layout.js`、`startup/assets.js`，通过 `module.exports` 导出。微信小游戏的 `require` 不按 Node 方式加载 JSON；包体检查会按微信的 JS 模块解析规则装载完整启动依赖链，避免仅在 Node 测试中通过。

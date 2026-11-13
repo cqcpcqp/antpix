@@ -24,7 +24,10 @@ export class GameLoop {
         >,
     ) {}
     update(dt: number) {
-        if (!this.game.lifecycle.paused) this.game.startup.update(dt);
+        if (!this.game.lifecycle.paused) {
+            this.game.cloud.update(dt);
+            this.game.startup.update(dt);
+        }
         this.game.courtyard.updateCourtyard(dt);
         if (!this.game.lifecycle.paused) {
             this.game.overlays.updateOverlays(Math.min(dt, 0.05));

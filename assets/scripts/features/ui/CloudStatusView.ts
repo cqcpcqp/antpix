@@ -1,6 +1,6 @@
 import { Node } from 'cc';
 import type { GardenRuntime } from '../../app/GardenRuntime';
-import { INK, MUTED } from '../../presentation/gameVisuals';
+import { INK, MUTED, PAPER } from '../../presentation/gameVisuals';
 
 /** Displays cloud progress and retry actions in the active screen. */
 export class CloudStatusView {
@@ -63,16 +63,28 @@ export class CloudStatusView {
             this.game.lifecycle.touchSize,
         );
         this.cloudStatus = n;
+        const inlineOffline = this.game.cloud.offlineAvailable && !inGame;
         this.game.ui.text(
             n,
             this.game.cloud.cloudMessage,
-            0,
+            inlineOffline ? -100 : 0,
             0,
             homeLogin ? 28 : 22,
             homeLogin ? INK : MUTED,
-            width,
+            inlineOffline ? width - 200 : width,
         );
         n.on(Node.EventType.TOUCH_END, () => this.game.cloud.cloudRetry?.());
+        if (this.game.cloud.offlineAvailable)
+            this.game.ui.button(
+                n,
+                '离线游玩',
+                inlineOffline ? width / 2 - 95 : 0,
+                inlineOffline ? 0 : -85,
+                inlineOffline ? 180 : 260,
+                64,
+                PAPER,
+                () => this.game.cloud.enterOffline(),
+            );
     }
 
     cloudStatus: Node | null = null;

@@ -344,3 +344,42 @@ test('login discards retired profile uploads while preserving cloud progress', a
   assert.deepEqual(actions, ['login'], 'never replay retired personal data');
   assert.equal((await client.mutate('claim')).profile.coins, 30);
 });
+
+test('late writes from a timed-out client cannot clear newer pending cloud requests', async () => {
+  const f = fixture(),
+    storage = memory();
+  let finishOld;
+  const transport = (request) => f.service(request, { APPID, OPENID: 'alice' });
+  const old = new CloudGame((request) => {
+    if (request.action === 'claim')
+      return new Promise((resolve) => {
+        finishOld = resolve;
+      });
+    return transport(request);
+  }, storage);
+  const login = await old.login();
+  const oldWrite = old.mutate('claim');
+  let finishNew;
+  const current = new CloudGame((request) => {
+    if (request.action === 'start')
+      return new Promise((resolve) => {
+        finishNew = resolve;
+      });
+    return transport(request);
+  }, storage);
+  const replayed = await current.login();
+  assert.equal(replayed.profile.coins, 30);
+  const newWrite = current.mutate('start', { level: 0 });
+  const key = `ant-cloud-pending:cloudbase-d9glil4qk6b5865ba:${login.output.userId}`;
+  const pending = storage.getItem(key);
+  assert.equal(JSON.parse(pending).action, 'start');
+  finishOld(replayed);
+  await oldWrite;
+  assert.equal(storage.getItem(key), pending, 'late completion preserves the newer receipt');
+  await assert.rejects(current.mutate('claim'), /Another cloud request/);
+  finishNew({ ...replayed, output: { runId: 'new-run' } });
+  await newWrite;
+  assert.equal(storage.getItem(key), null);
+  const reopened = new CloudGame(transport, storage);
+  assert.equal((await reopened.login()).profile.coins, 30);
+});
