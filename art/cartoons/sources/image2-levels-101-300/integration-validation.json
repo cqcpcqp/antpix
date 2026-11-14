@@ -41,5 +41,13 @@
   },
   "catalogSha256": "3d18c5159c31c0c3a110650319501196e5454cb220f8e2bdc15ef9dd288b3e92",
   "published": false,
-  "cloudDeployed": false
+  "cloudDeployed": true,
+  "cloudVerification": {
+    "environment": "cloudbase-d9glil4qk6b5865ba",
+    "function": "game",
+    "status": "Active",
+    "matchingFiles": 6,
+    "levelCount": 300,
+    "date": "2026-11-14"
+  }
 }
