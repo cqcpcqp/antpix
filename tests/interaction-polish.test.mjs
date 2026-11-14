@@ -4,6 +4,7 @@ import headless from '../scripts/headless-game.cjs';
 const { load, cc, Texture2D, resourceLoads } = headless;
 const { PixelGarden } = load(process.cwd() + '/assets/scripts/PixelGarden.ts');
 const { FURNISHINGS } = load(process.cwd() + '/assets/scripts/domain/profile/profile.ts');
+const { LEVEL_COUNT } = load(process.cwd() + '/assets/scripts/domain/levels/levels.ts');
 const create = () => {
   const game = new PixelGarden();
   game.onLoad();
@@ -164,7 +165,11 @@ test('canceling a level switch preserves the page being browsed', () => {
   game.runtime.album.levelPicker(1);
   game.runtime.overlays.modal.children.find((n) => n.name.startsWith('第 11 关')).emit('end');
   game.runtime.overlays.modal.children.find((n) => n.name === '选择关卡').emit('end');
-  assert.ok(strings(game.runtime.overlays.modal).some((s) => s.startsWith('第 2 / 10 页')));
+  assert.ok(
+    strings(game.runtime.overlays.modal).some((s) =>
+      s.startsWith(`第 2 / ${Math.ceil(LEVEL_COUNT / 10)} 页`),
+    ),
+  );
   game.onDestroy();
 });
 

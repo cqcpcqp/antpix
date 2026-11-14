@@ -43,7 +43,7 @@ test('installed startup loads actual dependency modules under WeChat script reso
     );
     for (const source of ['assets/resources/home/garden.jpg', 'assets/resources/home/title.png']) {
       const { uuid } = JSON.parse(readFileSync(source + '.meta', 'utf8'));
-      const directory = resolve(root, 'assets/resources/native', uuid.slice(0, 2));
+      const directory = resolve(root, 'subpackages/resources/native', uuid.slice(0, 2));
       mkdirSync(directory, { recursive: true });
       writeFileSync(resolve(directory, uuid + source.slice(source.lastIndexOf('.'))), '');
     }

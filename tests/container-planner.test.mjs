@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { makeLevel, LEVEL_COUNT } from '../assets/scripts/domain/levels/levels.ts';
+import { readFileSync } from 'node:fs';
+import { makeLevel } from '../assets/scripts/domain/levels/levels.ts';
 import { GardenModel } from '../assets/scripts/domain/game/model.ts';
 import {
   encodeContainerPlan,
@@ -115,9 +116,11 @@ test('reserved opening column does not prevent long intervening sequences from b
 });
 
 test('saved early, middle and late plans reproduce with the current generator', () => {
-  for (const index of [0, 49, 99]) {
+  // Appending levels preserves the difficulty used when each plan was generated.
+  const report = JSON.parse(readFileSync('art/container-plan-report.json', 'utf8'));
+  for (const index of [0, 49, 99, 199, 299]) {
     const level = makeLevel(index),
-      difficulty = index / (LEVEL_COUNT - 1),
+      difficulty = report[index].generationDifficulty,
       seed = 1009;
     const { jars } = planContainers(level, seed, difficulty);
     assert.deepEqual(selectLayout(level, jars, seed, difficulty).plan, level.containerPlans[0]);

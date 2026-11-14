@@ -3,7 +3,9 @@ require('./check-wechat-package.cjs');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 // Check the real bundle address and native image, not just a mocked load callback.
-const bundle = JSON.parse(fs.readFileSync('build/wechatgame/assets/resources/config.json', 'utf8'));
+const bundle = JSON.parse(
+  fs.readFileSync('build/wechatgame/subpackages/resources/config.json', 'utf8'),
+);
 const bitmapPath = Object.values(bundle.paths).find((path) => path[0] === 'fonts/ant-nest-bitmap');
 assert.ok(bitmapPath, 'platform-independent bitmap font must be bundled');
 assert.equal(bundle.types[bitmapPath[1]], 'cc.BitmapFont');
@@ -12,7 +14,7 @@ const fontUuid = JSON.parse(
 ).uuid;
 assert.deepEqual(
   fs.readFileSync(
-    `build/wechatgame/assets/resources/native/${fontUuid.slice(0, 2)}/${fontUuid}.png`,
+    `build/wechatgame/subpackages/resources/native/${fontUuid.slice(0, 2)}/${fontUuid}.png`,
   ),
   fs.readFileSync('assets/resources/fonts/ant-nest-bitmap.png'),
   'built UI font must match the complete clean glyph atlas',
@@ -24,7 +26,7 @@ const atlasUuid = JSON.parse(
   fs.readFileSync('assets/resources/ants/workers.png.meta', 'utf8'),
 ).uuid;
 const atlasImage = fs.readFileSync(
-  `build/wechatgame/assets/resources/native/${atlasUuid.slice(0, 2)}/${atlasUuid}.png`,
+  `build/wechatgame/subpackages/resources/native/${atlasUuid.slice(0, 2)}/${atlasUuid}.png`,
 );
 assert.deepEqual(
   atlasImage,
@@ -37,7 +39,7 @@ assert.equal(bundle.types[titlePath[1]], 'cc.Texture2D');
 const titleUuid = JSON.parse(fs.readFileSync('assets/resources/home/title.png.meta', 'utf8')).uuid;
 assert.deepEqual(
   fs.readFileSync(
-    `build/wechatgame/assets/resources/native/${titleUuid.slice(0, 2)}/${titleUuid}.png`,
+    `build/wechatgame/subpackages/resources/native/${titleUuid.slice(0, 2)}/${titleUuid}.png`,
   ),
   fs.readFileSync('assets/resources/home/title.png'),
   'built title must match the generated transparent asset',
@@ -48,7 +50,9 @@ for (const name of ['play', 'play-start', 'play-resume', 'album', 'shop', 'rank'
   assert.equal(bundle.types[path[1]], 'cc.Texture2D');
   const uuid = JSON.parse(fs.readFileSync(`assets/resources/home/${name}.png.meta`)).uuid;
   assert.deepEqual(
-    fs.readFileSync(`build/wechatgame/assets/resources/native/${uuid.slice(0, 2)}/${uuid}.png`),
+    fs.readFileSync(
+      `build/wechatgame/subpackages/resources/native/${uuid.slice(0, 2)}/${uuid}.png`,
+    ),
     fs.readFileSync(`assets/resources/home/${name}.png`),
   );
 }
@@ -62,7 +66,7 @@ for (const [name, extension] of [
   const uuid = JSON.parse(fs.readFileSync(file + '.meta', 'utf8')).uuid;
   assert.deepEqual(
     fs.readFileSync(
-      `build/wechatgame/assets/resources/native/${uuid.slice(0, 2)}/${uuid}.${extension}`,
+      `build/wechatgame/subpackages/resources/native/${uuid.slice(0, 2)}/${uuid}.${extension}`,
     ),
     fs.readFileSync(file),
   );

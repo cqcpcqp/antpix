@@ -1,14 +1,7 @@
 import { installStartup } from './install-startup.mjs';
+import wechatPackage from './wechat-package.cjs';
 import { spawnSync } from 'node:child_process';
-import {
-  existsSync,
-  mkdirSync,
-  writeFileSync,
-  readFileSync,
-  readdirSync,
-  statSync,
-  rmSync,
-} from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
 const creator =
   process.env.COCOS_CREATOR ||
@@ -50,6 +43,8 @@ const config = {
 };
 const configPath = resolve('temp/build-wechat.json');
 writeFileSync(configPath, JSON.stringify(config, null, 2));
+// Bundle layout changes must not leave old main-package copies in the upload.
+rmSync('build/wechatgame', { recursive: true, force: true });
 const result = spawnSync(
   creator,
   ['--project', process.cwd(), '--build', `configPath=${configPath}`],
@@ -74,18 +69,11 @@ if (result.status === 0 || result.status === 36) {
     readFileSync('THIRD_PARTY_NOTICES.md', 'utf8'),
   );
   installStartup();
-  // Keep the whole local package below WeChat's 4 MiB main-package limit.
-  const folderSize = (dir) =>
-    readdirSync(dir, { withFileTypes: true }).reduce((total, entry) => {
-      const file = resolve(dir, entry.name);
-      return total + (entry.isDirectory() ? folderSize(file) : statSync(file).size);
-    }, 0);
-  const bytes = folderSize(resolve('build/wechatgame'));
-  console.log(`微信包体（包含本地配置）：${(bytes / 1024).toFixed(1)} KB / 4096 KB`);
-  if (bytes >= 4 * 1024 * 1024) {
-    console.error('微信包体超过 4 MiB，请减小包体后再上传。');
-    process.exit(1);
-  }
+  const { mainBytes, totalBytes, packages } = wechatPackage.checkPackageSize('build/wechatgame');
+  console.log(`微信主包：${(mainBytes / 1024).toFixed(1)} / 4096 KiB`);
+  for (const pkg of packages)
+    console.log(`微信分包 ${pkg.name}：${(pkg.bytes / 1024).toFixed(1)} KiB`);
+  console.log(`微信总包：${(totalBytes / 1024).toFixed(1)} / 30720 KiB`);
 }
 // Verify the emitted code, since Cocos compilation can change iterable semantics.
 if (result.status === 0 || result.status === 36) {

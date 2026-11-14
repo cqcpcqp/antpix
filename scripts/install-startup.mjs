@@ -3,10 +3,11 @@ import { readFileSync, writeFileSync, cpSync, mkdirSync, readdirSync, rmSync } f
 import { resolve } from 'node:path';
 import { STARTUP } from '../assets/scripts/presentation/startupLayout.ts';
 
-/** Replace Creator's generated first screen without duplicating home artwork. */
+/** Keep the first screen drawable before the resource subpackage is downloaded. */
 export function installStartup(root = resolve('build/wechatgame')) {
-  const native = resolve(root, 'assets/resources/native');
+  const native = resolve(root, 'subpackages/resources/native');
   const files = readdirSync(native, { recursive: true });
+  mkdirSync(resolve(root, 'startup/artwork'), { recursive: true });
   const artwork = (source) => {
     const { uuid } = JSON.parse(readFileSync(source + '.meta', 'utf8'));
     const matches = files.filter((file) =>
@@ -16,7 +17,9 @@ export function installStartup(root = resolve('build/wechatgame')) {
         .startsWith(uuid + '.'),
     );
     assert.equal(matches.length, 1, `Expected one emitted startup texture: ${source}`);
-    return 'assets/resources/native/' + matches[0];
+    const path = 'startup/artwork/' + source.split('/').pop();
+    cpSync(resolve(native, matches[0]), resolve(root, path));
+    return path;
   };
   const paths = {
     background: artwork('assets/resources/home/garden.jpg'),

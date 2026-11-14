@@ -4,7 +4,7 @@
 
 ## 从哪里开始读
 
-当前版本包含 100 幅已验收的原创画作，网格为 48×60。关卡顺序以 `assets/scripts/domain/levels/levels.ts` 及 `art/cartoons/runtime-catalog.json` 指定的 manifest 为准。素材重建见 [素材维护](assets.md)。
+当前版本包含 300 幅原创画作，网格为 48×60。关卡顺序以 `assets/scripts/domain/levels/levels.ts` 及 `art/cartoons/runtime-catalog.json` 指定的 manifest 为准。素材重建见 [素材维护](assets.md)。
 
 | 要理解或修改的内容                   | 入口                                           | 职责边界                                 |
 | ------------------------------------ | ---------------------------------------------- | ---------------------------------------- |

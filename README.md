@@ -1,10 +1,10 @@
 # antpix · 生态蚂蚁窝
 
-Cocos Creator **3.8.8** / TypeScript / 微信小游戏。当前版本包含 100 幅已验收的 AI 原创画作，每关 48×60、2880 个像素。微信端保留 CloudBase 云存档与匿名世界榜，同时支持离线本地游玩；本机和云存档独立保存，可从首页设置切换。
+Cocos Creator **3.8.8** / TypeScript / 微信小游戏。当前版本包含 300 幅 AI 原创画作，每关 48×60、2880 个像素。微信端保留 CloudBase 云存档与匿名世界榜，同时支持离线本地游玩；本机和云存档独立保存，可从首页设置切换。
 
 ## 版本管理
 
-当前项目版本为 **0.5.0**，以根目录 `package.json` 的 `version` 为准，Git 标签格式为 `vX.Y.Z`。升级步骤见 [版本管理](docs/versioning.md)，每版变更记录在 [更新日志](CHANGELOG.md)。
+当前项目版本为 **0.6.0**，以根目录 `package.json` 的 `version` 为准，Git 标签格式为 `vX.Y.Z`。升级步骤见 [版本管理](docs/versioning.md)，每版变更记录在 [更新日志](CHANGELOG.md)。
 
 实现与重构规范见 [agent.md](agent.md)，模块导航与验证说明见 [开发指南](docs/development.md)。
 

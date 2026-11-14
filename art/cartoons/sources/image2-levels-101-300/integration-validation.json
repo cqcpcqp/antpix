@@ -1,0 +1,45 @@
+{
+  "levels": 300,
+  "addedLevels": 200,
+  "artworkAuthorization": "2026-11-14 用户明确授权图片无需逐图验收，直接接入",
+  "originalSize": [
+    1024,
+    1280
+  ],
+  "runtimeGrid": [
+    48,
+    60
+  ],
+  "addedLevelColors": [
+    19,
+    24
+  ],
+  "cropped": false,
+  "first100LevelsUnchanged": true,
+  "catalogPixelsMatchReviewPngs": true,
+  "sourceWitnessSolutions": 900,
+  "builtWitnessSolutions": 900,
+  "builtRandomGames": 9030,
+  "levelPickerPages": 30,
+  "fontGlyphs": 911,
+  "wechatPackageKiB": {
+    "main": 3156.5,
+    "resources": 2044.5,
+    "total": 5200.9
+  },
+  "checks": {
+    "sourceTests": {
+      "total": 1061,
+      "initialPass": 1060,
+      "correctedFailure": "分页断言由固定10页改为按关卡数计算；所在7项交互测试复跑全部通过"
+    },
+    "builtFinalTests": {
+      "pass": 33,
+      "fail": 0
+    },
+    "formatLintArchitectureTypecheckHeadlessUi": "passed"
+  },
+  "catalogSha256": "3d18c5159c31c0c3a110650319501196e5454cb220f8e2bdc15ef9dd288b3e92",
+  "published": false,
+  "cloudDeployed": false
+}

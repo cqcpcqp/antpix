@@ -1,6 +1,6 @@
 // Validate the final package, including files copied after the Creator build.
 const assert = require('node:assert/strict');
-const { readFileSync, existsSync, readdirSync, statSync } = require('node:fs');
+const { readFileSync, existsSync } = require('node:fs');
 const { resolve } = require('node:path');
 const root = resolve('build/wechatgame');
 const game = JSON.parse(readFileSync(resolve(root, 'game.json'), 'utf8'));
@@ -34,13 +34,16 @@ for (const name of ['logo.png', 'slogan.png'])
     Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]),
     `Invalid WeChat upload image: ${name}`,
   );
-const size = (dir) =>
-  readdirSync(dir, { withFileTypes: true }).reduce((total, entry) => {
-    const path = resolve(dir, entry.name);
-    return total + (entry.isDirectory() ? size(path) : statSync(path).size);
-  }, 0);
-const bytes = size(root);
-assert.ok(bytes < 4 * 1024 * 1024, `WeChat main package is ${(bytes / 1024).toFixed(1)} KiB`);
+const { checkPackageSize } = require('./wechat-package.cjs');
+const { mainBytes, totalBytes } = checkPackageSize(root);
+assert.equal(existsSync(resolve(root, 'assets/resources')), false);
+assert.ok(game.subpackages.some((entry) => entry.name === 'resources'));
+assert.ok(settings.assets.subpackages.includes('resources'));
+for (const path of Object.values(artwork))
+  assert.ok(
+    path.startsWith('startup/artwork/'),
+    'first-screen artwork must be in the main package',
+  );
 console.log(
-  `WeChat package complete: ${(bytes / 1024).toFixed(1)} / 4096 KiB, anonymous leaderboard package verified.`,
+  `WeChat package complete: main ${(mainBytes / 1024).toFixed(1)} / 4096 KiB, total ${(totalBytes / 1024).toFixed(1)} / 30720 KiB.`,
 );

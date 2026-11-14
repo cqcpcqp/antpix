@@ -40,6 +40,20 @@ npm run check
 
 新增画作名称后还需重建字库；客户端与云函数 catalog 要配套部署，构建不会自动部署云端。
 
+追加关卡时可在容器生成命令的第三、四个位置参数传入旧关卡文件和对应报告，以保留已发布关卡的容器方案。复用前会校验像素、调色板映射与来源哈希；图片发生变化时拒绝复用。
+
+```sh
+node --experimental-strip-types --import ./scripts/register-typescript.mjs scripts/generate-container-plans.mjs 新目录/levels.ts 新目录/container-plan-report.json 旧目录/levels.ts 旧目录/container-plan-report.json
+```
+
+待验收目录不能写入正式 `runtime-catalog.json`。可以先用 `--candidate` 生成放在 `art/` 下的完整候选目录，生成容器方案后通过真实模型验证全部三套方案：
+
+```sh
+node --experimental-strip-types --import ./scripts/register-typescript.mjs scripts/check-candidate-levels.mjs art/候选目录/levels.ts art/候选目录/container-plan-report.json art/候选目录/gameplay-validation.json
+```
+
+这只证明候选数据和基础五槽通关解法有效，不能替代用户对图片的逐图验收。
+
 ## 新图片转换与审阅
 
 在独立来源目录准备原图和 manifest，未经用户确认的条目保持 `approved: false`。用 `scripts/optimize-level-pixels.py --source 来源目录` 生成 48×60 像素和对照图。第 11–100 关使用 `--anchor-dark` 转换，第一批 10 关不带此参数；转换算法变化会改变图像，须重新验收。

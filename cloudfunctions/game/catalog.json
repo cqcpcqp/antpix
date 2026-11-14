@@ -1,5 +1,5 @@
 {
-  "levelCount": 100,
+  "levelCount": 300,
   "levels": [
     {
       "moves": [
@@ -758,6 +758,1522 @@
         102
       ],
       "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        101,
+        100
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        105,
+        100,
+        104
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        103,
+        106,
+        107
+      ],
+      "minimumSeconds": 36.513888888888886
+    },
+    {
+      "moves": [
+        92,
+        94
+      ],
+      "minimumSeconds": 36.69444444444444
+    },
+    {
+      "moves": [
+        98,
+        101,
+        97
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        100,
+        99
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        95,
+        98,
+        99
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        98,
+        99,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        96,
+        97,
+        92
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        100,
+        105,
+        98
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        101,
+        100
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        95,
+        98,
+        103
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        100,
+        97,
+        103
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        99,
+        106,
+        100
+      ],
+      "minimumSeconds": 36.52777777777778
+    },
+    {
+      "moves": [
+        94,
+        92,
+        93
+      ],
+      "minimumSeconds": 36.69444444444444
+    },
+    {
+      "moves": [
+        101,
+        105
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        100,
+        98,
+        99
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        104,
+        99,
+        102
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        98,
+        95,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        102,
+        100,
+        101
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        105,
+        101
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        92,
+        89,
+        91
+      ],
+      "minimumSeconds": 36.72222222222222
+    },
+    {
+      "moves": [
+        101,
+        99
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        92,
+        91
+      ],
+      "minimumSeconds": 36.72222222222222
+    },
+    {
+      "moves": [
+        102,
+        108,
+        106
+      ],
+      "minimumSeconds": 36.5
+    },
+    {
+      "moves": [
+        101,
+        98
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        100,
+        106,
+        102
+      ],
+      "minimumSeconds": 36.52777777777778
+    },
+    {
+      "moves": [
+        94,
+        96,
+        97
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        99,
+        100
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        102,
+        101
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        93,
+        95
+      ],
+      "minimumSeconds": 36.68055555555556
+    },
+    {
+      "moves": [
+        99,
+        97,
+        96
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        95,
+        94
+      ],
+      "minimumSeconds": 36.68055555555556
+    },
+    {
+      "moves": [
+        98,
+        100
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        99,
+        98,
+        100
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        100,
+        99,
+        96
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        88,
+        90
+      ],
+      "minimumSeconds": 36.75
+    },
+    {
+      "moves": [
+        109,
+        106,
+        103
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        101,
+        95,
+        102
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        94,
+        96,
+        93
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        93,
+        98
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        93,
+        92
+      ],
+      "minimumSeconds": 36.708333333333336
+    },
+    {
+      "moves": [
+        99,
+        98,
+        102
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        99
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        96,
+        99,
+        102
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        92,
+        96,
+        94
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        96,
+        100,
+        99
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        99,
+        101,
+        96
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        93,
+        91
+      ],
+      "minimumSeconds": 36.708333333333336
+    },
+    {
+      "moves": [
+        96,
+        95
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        96,
+        95
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        97,
+        103
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        95,
+        96
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        103,
+        109
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        102,
+        100,
+        108
+      ],
+      "minimumSeconds": 36.5
+    },
+    {
+      "moves": [
+        104,
+        103,
+        101
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        100,
+        99
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        95,
+        94
+      ],
+      "minimumSeconds": 36.68055555555556
+    },
+    {
+      "moves": [
+        100,
+        98
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        98,
+        96
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        100,
+        94,
+        97
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        101,
+        99,
+        104
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        109,
+        101,
+        108
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        103,
+        100
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        89,
+        90,
+        91
+      ],
+      "minimumSeconds": 36.736111111111114
+    },
+    {
+      "moves": [
+        101,
+        100,
+        97
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        102,
+        105
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        97,
+        95,
+        96
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        96,
+        101,
+        95
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        97,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        99,
+        97,
+        98
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        100,
+        95,
+        96
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        96,
+        93,
+        95
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        105,
+        101,
+        100
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        97,
+        96
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        91,
+        93,
+        94
+      ],
+      "minimumSeconds": 36.69444444444444
+    },
+    {
+      "moves": [
+        95,
+        98,
+        97
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        96,
+        95,
+        93
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        105,
+        103,
+        108
+      ],
+      "minimumSeconds": 36.5
+    },
+    {
+      "moves": [
+        99,
+        100,
+        102
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        106,
+        109,
+        105
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        99,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        100,
+        98
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        100,
+        96,
+        94
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        95,
+        93
+      ],
+      "minimumSeconds": 36.68055555555556
+    },
+    {
+      "moves": [
+        100,
+        102
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        92,
+        96,
+        91
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        100,
+        102,
+        101
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        105,
+        104
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        100,
+        102,
+        98
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        106,
+        103
+      ],
+      "minimumSeconds": 36.52777777777778
+    },
+    {
+      "moves": [
+        98,
+        100,
+        97
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        96,
+        94
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        90,
+        91
+      ],
+      "minimumSeconds": 36.736111111111114
+    },
+    {
+      "moves": [
+        97,
+        98,
+        99
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        100,
+        102,
+        103
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        94,
+        96,
+        95
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        97,
+        100
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        100,
+        104,
+        102
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        100,
+        99,
+        103
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        99,
+        95,
+        94
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        105,
+        106,
+        108
+      ],
+      "minimumSeconds": 36.5
+    },
+    {
+      "moves": [
+        95,
+        97
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        99,
+        97
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        90,
+        88
+      ],
+      "minimumSeconds": 36.75
+    },
+    {
+      "moves": [
+        98,
+        103,
+        97
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        102,
+        101,
+        99
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        101,
+        98
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        96,
+        100,
+        98
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        106,
+        103,
+        105
+      ],
+      "minimumSeconds": 36.52777777777778
+    },
+    {
+      "moves": [
+        107,
+        109
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        104,
+        101,
+        103
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        93,
+        94,
+        95
+      ],
+      "minimumSeconds": 36.68055555555556
+    },
+    {
+      "moves": [
+        93,
+        96
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        97,
+        99
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        98
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        105,
+        102
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        93,
+        94,
+        90
+      ],
+      "minimumSeconds": 36.69444444444444
+    },
+    {
+      "moves": [
+        99,
+        104
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        105,
+        97,
+        101
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        101,
+        102
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        102,
+        97
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        98,
+        97,
+        96
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        100,
+        105,
+        99
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        97,
+        100
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        94,
+        96,
+        97
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        97,
+        102,
+        103
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        103,
+        99,
+        98
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        102,
+        98
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        98,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        97,
+        98
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        102,
+        97,
+        99
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        101,
+        102,
+        99
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        102,
+        103,
+        101
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        97,
+        98
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        98,
+        97,
+        99
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        95,
+        97,
+        98
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        101,
+        102,
+        104
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        99,
+        102
+      ],
+      "minimumSeconds": 36.583333333333336
+    },
+    {
+      "moves": [
+        96,
+        98,
+        97
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        101,
+        104,
+        98
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        97,
+        98,
+        96
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        97,
+        98
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        94,
+        93,
+        92
+      ],
+      "minimumSeconds": 36.69444444444444
+    },
+    {
+      "moves": [
+        97,
+        98,
+        99
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        100
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        109,
+        107,
+        106
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        91,
+        92,
+        90
+      ],
+      "minimumSeconds": 36.72222222222222
+    },
+    {
+      "moves": [
+        95,
+        96
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        95,
+        97,
+        99
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        97,
+        99,
+        98
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        96,
+        98,
+        95
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        103,
+        105,
+        101
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        105,
+        101,
+        100
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        107,
+        105,
+        102
+      ],
+      "minimumSeconds": 36.513888888888886
+    },
+    {
+      "moves": [
+        96,
+        99,
+        91
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        91,
+        92
+      ],
+      "minimumSeconds": 36.72222222222222
+    },
+    {
+      "moves": [
+        89,
+        88,
+        94
+      ],
+      "minimumSeconds": 36.69444444444444
+    },
+    {
+      "moves": [
+        96,
+        97,
+        98
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        102,
+        107
+      ],
+      "minimumSeconds": 36.513888888888886
+    },
+    {
+      "moves": [
+        109,
+        107,
+        108
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        107,
+        109
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        97,
+        100,
+        98
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        98,
+        100,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        100,
+        97,
+        103
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        93,
+        91
+      ],
+      "minimumSeconds": 36.708333333333336
+    },
+    {
+      "moves": [
+        94,
+        98
+      ],
+      "minimumSeconds": 36.638888888888886
+    },
+    {
+      "moves": [
+        105,
+        109
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        113,
+        109,
+        110
+      ],
+      "minimumSeconds": 36.43055555555556
+    },
+    {
+      "moves": [
+        109,
+        106,
+        103
+      ],
+      "minimumSeconds": 36.486111111111114
+    },
+    {
+      "moves": [
+        101,
+        99,
+        96
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        95,
+        94,
+        96
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        92,
+        94
+      ],
+      "minimumSeconds": 36.69444444444444
+    },
+    {
+      "moves": [
+        105,
+        104,
+        101
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        93,
+        95
+      ],
+      "minimumSeconds": 36.68055555555556
+    },
+    {
+      "moves": [
+        103,
+        99,
+        104
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        97,
+        95,
+        96
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        96,
+        98,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        105,
+        99,
+        96
+      ],
+      "minimumSeconds": 36.541666666666664
+    },
+    {
+      "moves": [
+        97,
+        94,
+        93
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        93,
+        94,
+        95
+      ],
+      "minimumSeconds": 36.68055555555556
+    },
+    {
+      "moves": [
+        109,
+        114
+      ],
+      "minimumSeconds": 36.416666666666664
+    },
+    {
+      "moves": [
+        103,
+        98,
+        101
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        95,
+        96
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        93
+      ],
+      "minimumSeconds": 36.708333333333336
+    },
+    {
+      "moves": [
+        94,
+        95
+      ],
+      "minimumSeconds": 36.68055555555556
+    },
+    {
+      "moves": [
+        97,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        100,
+        97,
+        98
+      ],
+      "minimumSeconds": 36.611111111111114
+    },
+    {
+      "moves": [
+        98,
+        99
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        103,
+        96,
+        100
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        100,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        96,
+        97
+      ],
+      "minimumSeconds": 36.65277777777778
+    },
+    {
+      "moves": [
+        94,
+        92
+      ],
+      "minimumSeconds": 36.69444444444444
+    },
+    {
+      "moves": [
+        95,
+        99,
+        96
+      ],
+      "minimumSeconds": 36.625
+    },
+    {
+      "moves": [
+        90,
+        94,
+        96
+      ],
+      "minimumSeconds": 36.666666666666664
+    },
+    {
+      "moves": [
+        101,
+        98,
+        103
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        97,
+        98,
+        101
+      ],
+      "minimumSeconds": 36.59722222222222
+    },
+    {
+      "moves": [
+        104,
+        103
+      ],
+      "minimumSeconds": 36.55555555555556
+    },
+    {
+      "moves": [
+        103,
+        100,
+        96
+      ],
+      "minimumSeconds": 36.56944444444444
+    },
+    {
+      "moves": [
+        105,
+        100,
+        102
+      ],
+      "minimumSeconds": 36.541666666666664
     }
   ]
 }
