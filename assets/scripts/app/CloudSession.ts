@@ -238,7 +238,7 @@ export class CloudSession {
             (state) => {
                 this.game.overlays.openModal('准备中', '', 360);
                 const request = this.cloudRequest;
-                showRewardedVideo().then((ok) => {
+                showRewardedVideo(placement).then((ok) => {
                     if (!this.game.host.isValid || !this.cloudMode || request !== this.cloudRequest)
                         return;
                     this.game.overlays.closeModal();

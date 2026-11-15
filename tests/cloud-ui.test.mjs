@@ -245,10 +245,7 @@ test('reward video grants only on complete close, removes listeners and recovers
       removed++;
     },
   };
-  const source = readFileSync('assets/scripts/platform/wechat/rewardAd.ts', 'utf8').replace(
-    "REWARDED_VIDEO_AD_UNIT_ID = ''",
-    "REWARDED_VIDEO_AD_UNIT_ID = 'test-placement'",
-  );
+  const source = readFileSync('assets/scripts/platform/wechat/rewardAd.ts', 'utf8');
   const module = { exports: {} };
   vm.runInNewContext(
     ts.transpileModule(source, {
@@ -257,14 +254,15 @@ test('reward video grants only on complete close, removes listeners and recovers
     { module, exports: module.exports, wx: { createRewardedVideoAd: () => ad } },
   );
   const show = module.exports.showRewardedVideo;
-  const cancelled = show();
-  assert.equal(await show(), false);
+  const cancelled = show('speed');
+  assert.equal(await show('slot'), false);
   close({ isEnded: false });
   assert.equal(await cancelled, false);
-  const completed = show();
+  const completed = show('speed');
   close({ isEnded: true });
   assert.equal(await completed, true);
-  const failed = show();
+  const failed = show('slot');
+  await flush();
   error();
   assert.equal(await failed, false);
   assert.equal(removed, 6);

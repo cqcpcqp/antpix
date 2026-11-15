@@ -219,3 +219,62 @@ test('invalid sessions offer a new run instead of retrying an expired run', asyn
   assert.equal(game.runtime.session.won, false);
   assert.equal(game.runtime.overlays.modal, null);
 });
+
+test('both boost buttons pass their placement and grant only after cloud confirmation', async () => {
+  const originalShow = ads.showRewardedVideo;
+  const originalConfigured = ads.rewardedVideoConfigured;
+  ads.rewardedVideoConfigured = () => true;
+  try {
+    for (const placement of ['speed', 'slot']) {
+      for (const outcome of ['completed', 'cancelled', 'confirmation-failed']) {
+        const game = create();
+        const r = game.runtime;
+        r.cloud.cloudMode = true;
+        r.cloud.cloudReady = true;
+        r.cloud.cloudRunId = 'run';
+        const actions = [];
+        const shown = [];
+        ads.showRewardedVideo = async (value) => {
+          shown.push(value);
+          return outcome !== 'cancelled';
+        };
+        r.cloud.cloud = {
+          mutate: async (action, values) => {
+            actions.push(action);
+            if (action === 'adStart') assert.equal(values.placement, placement);
+            if (action === 'adComplete') {
+              assert.equal(values.adId, 'ad');
+              assert.equal(r.session.speedUnlocked, false);
+              assert.equal(r.session.model.slots.length, 5);
+              if (outcome === 'confirmation-failed') throw new Error('confirmation unavailable');
+            }
+            return {
+              profile: r.profile.save,
+              highest: 0,
+              reachedAt: 0,
+              serverTime: Date.now(),
+              output: { adId: 'ad' },
+            };
+          },
+        };
+        if (placement === 'speed') r.boosts.requestSpeed();
+        else r.boosts.requestSlotExpansion();
+        await flush();
+        assert.deepEqual(shown, [placement]);
+        assert.deepEqual(
+          actions,
+          outcome === 'cancelled' ? ['adStart'] : ['adStart', 'adComplete'],
+        );
+        assert.equal(r.session.speedUnlocked, placement === 'speed' && outcome === 'completed');
+        assert.equal(
+          r.session.model.slots.length,
+          placement === 'slot' && outcome === 'completed' ? 6 : 5,
+        );
+        assert.equal(r.boosts.rewardAdDemo, null);
+      }
+    }
+  } finally {
+    ads.showRewardedVideo = originalShow;
+    ads.rewardedVideoConfigured = originalConfigured;
+  }
+});

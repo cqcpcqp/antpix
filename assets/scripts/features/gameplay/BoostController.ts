@@ -56,7 +56,7 @@ export class BoostController {
                 this.game.cloud.watchCloudAd('speed', complete);
                 return;
             }
-            showRewardedVideo().then((ok) => {
+            showRewardedVideo('speed').then((ok) => {
                 if (!this.game.host.isValid || this.game.overlays.modal !== n) return;
                 this.game.overlays.closeModal();
                 if (ok) complete();
@@ -122,7 +122,7 @@ export class BoostController {
                 this.game.cloud.watchCloudAd('slot', complete);
                 return;
             }
-            showRewardedVideo().then((ok) => {
+            showRewardedVideo('slot').then((ok) => {
                 if (!this.game.host.isValid || this.game.overlays.modal !== n) return;
                 this.game.overlays.closeModal();
                 if (ok) complete();
