@@ -5,6 +5,7 @@ export class GameLoop {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
+            | 'identity'
             | 'startup'
             | 'courtyard'
             | 'lifecycle'
@@ -24,6 +25,7 @@ export class GameLoop {
         >,
     ) {}
     update(dt: number) {
+        this.game.identity.update();
         if (!this.game.lifecycle.paused) {
             this.game.cloud.update(dt);
             this.game.startup.update(dt);

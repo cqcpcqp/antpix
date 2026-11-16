@@ -8,6 +8,7 @@ export class OverlayController {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
+            | 'identity'
             | 'boosts'
             | 'session'
             | 'home'
@@ -121,6 +122,7 @@ export class OverlayController {
     }
 
     openDrawer(title: string, subtitle: string, height: number) {
+        this.game.identity.hide();
         this.game.preview.clearPreview();
         this.closeModal();
         const n = this.game.ui.node2d('Bottom drawer', this.game.lifecycle.root);
@@ -227,6 +229,7 @@ export class OverlayController {
     }
 
     openModal(title: string, subtitle: string, height = 500) {
+        this.game.identity.hide();
         this.game.preview.clearPreview();
         this.closeModal();
         const n = this.game.ui.node2d(

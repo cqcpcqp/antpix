@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, truncateSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync, truncateSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
+import { createRequire } from 'node:module';
 import wechatPackage from '../scripts/wechat-package.cjs';
 
 function withPackage(run) {
@@ -14,6 +15,7 @@ function withPackage(run) {
       JSON.stringify({ subpackages: [{ name: 'resources', root: 'subpackages/resources/' }] }),
     );
     writeFileSync(resolve(root, 'game.js'), '');
+    writeFileSync(resolve(root, 'subpackages/resources/index.js'), '');
     writeFileSync(resolve(root, 'subpackages/resources/data.bin'), '');
     run(root);
   } finally {
@@ -59,5 +61,34 @@ test('a missing declared subpackage is rejected', () => {
   withPackage((root) => {
     rmSync(resolve(root, 'subpackages/resources'), { recursive: true });
     assert.throws(() => wechatPackage.checkPackageSize(root), /ENOENT/);
+  });
+});
+
+test('device upload rejects a resource subpackage without index.js', () => {
+  withPackage((root) => {
+    rmSync(resolve(root, 'subpackages/resources/index.js'));
+    writeFileSync(resolve(root, 'subpackages/resources/game.js'), '');
+    assert.throws(() => wechatPackage.checkPackageSize(root), /subpackage.*index\.js/);
+  });
+});
+
+test('installed index executes Creator code once and preserves existing entries', () => {
+  withPackage((root) => {
+    const entry = resolve(root, 'subpackages/resources/index.js');
+    const generated = resolve(root, 'subpackages/resources/game.js');
+    rmSync(entry);
+    writeFileSync(generated, 'module.exports = { loaded: true };');
+    wechatPackage.installSubpackageEntries(root);
+    wechatPackage.checkPackageSize(root);
+    const require = createRequire(resolve(root, 'game.js'));
+    require('./subpackages/resources/index.js');
+    assert.equal(require(generated).loaded, true);
+    const module = require.cache[generated];
+    wechatPackage.installSubpackageEntries(root);
+    require('./subpackages/resources/index.js');
+    assert.equal(require.cache[generated], module);
+    writeFileSync(entry, 'module.exports = "existing entry";');
+    wechatPackage.installSubpackageEntries(root);
+    assert.equal(readFileSync(entry, 'utf8'), 'module.exports = "existing entry";');
   });
 });

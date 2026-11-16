@@ -5,6 +5,13 @@ const resources =
   process.env.COCOS_RESOURCES ||
   '/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources';
 const ts = require(resources + '/app.asar.unpacked/node_modules/typescript');
+const engineSelection = JSON.parse(
+  fs.readFileSync(
+    require('path').resolve(__dirname, '../settings/v2/packages/engine.json'),
+    'utf8',
+  ),
+).modules;
+const engineModules = engineSelection.configs[engineSelection.globalConfigKey].includeModules;
 const transformWrites = { position: 0, angle: 0, scale: 0 };
 class Node {
   constructor(name) {
@@ -39,7 +46,14 @@ class Node {
   getComponent(C) {
     return this.components.find((c) => c instanceof C) || null;
   }
-  setSiblingIndex() {}
+  getSiblingIndex() {
+    return this.parent.children.indexOf(this);
+  }
+  setSiblingIndex(index) {
+    const siblings = this.parent.children;
+    siblings.splice(this.getSiblingIndex(), 1);
+    siblings.splice(index, 0, this);
+  }
   setScale(x, y, z) {
     transformWrites.scale++;
     this.scale = { x, y, z };
@@ -171,10 +185,21 @@ class Rect {
   }
 }
 const resourceLoads = new Map();
-class Label {}
+class Label {
+  updateRenderData() {
+    if (this.overflow === Label.Overflow.NONE)
+      this.node
+        .getComponent(UITransform)
+        .setContentSize(
+          Array.from(this.string).reduce((n, c) => n + (c.codePointAt(0) > 255 ? 1 : 0.6), 0) *
+            this.fontSize,
+          this.fontSize * 1.6,
+        );
+  }
+}
 Label.HorizontalAlign = { CENTER: 0, LEFT: 1, RIGHT: 2 };
 Label.VerticalAlign = { CENTER: 0 };
-Label.Overflow = { SHRINK: 0 };
+Label.Overflow = { NONE: 0, CLAMP: 1, SHRINK: 2 };
 class UITransform {
   setContentSize(width, height) {
     this.width = width;
@@ -208,6 +233,12 @@ const cc = {
   Node,
   Sprite,
   SpriteFrame,
+  // Match the real stripped engine instead of fabricating an unavailable component.
+  Mask: engineModules.includes('mask')
+    ? class {
+        static Type = { GRAPHICS_ELLIPSE: 1 };
+      }
+    : undefined,
   Texture2D,
   Rect,
   Size,

@@ -15,6 +15,7 @@ import { AlbumScreen } from '../features/home/AlbumScreen';
 import { HomeScreen } from '../features/home/HomeScreen';
 import { SettingsScreen } from '../features/home/SettingsScreen';
 import { ShopScreen } from '../features/home/ShopScreen';
+import { LeaderboardIdentity } from '../features/home/LeaderboardIdentity';
 import { SocialScreen } from '../features/home/SocialScreen';
 import { CloudStatusView } from '../features/ui/CloudStatusView';
 import { Notifications } from '../features/ui/Notifications';
@@ -41,6 +42,7 @@ export class GardenRuntime {
     readonly layout: BoardView = new BoardView(this);
     readonly home: HomeScreen = new HomeScreen(this);
     readonly album: AlbumScreen = new AlbumScreen(this);
+    readonly identity: LeaderboardIdentity = new LeaderboardIdentity(this);
     readonly social: SocialScreen = new SocialScreen(this);
     readonly courtyard: CourtyardController = new CourtyardController(this);
     readonly shop: ShopScreen = new ShopScreen(this);

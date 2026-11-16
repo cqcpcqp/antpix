@@ -22,11 +22,13 @@ export class HomeScreen {
             | 'album'
             | 'shop'
             | 'social'
+            | 'identity'
             | 'notices'
             | 'cloudStatus'
         >,
     ) {}
     hideHome() {
+        this.game.identity.detach();
         if (this.home) {
             this.home.active = false;
             this.home.destroy();
@@ -79,6 +81,7 @@ export class HomeScreen {
         const caption = this.game.ui.graphics(node, 'Home caption');
         this.game.ui.box(caption, 0, -47, 110, 36, 18, '#FFF7DF');
         this.game.ui.text(node, title, 0, -47, 24, '#4E6239', 104);
+        if (kind === 'rank') this.game.identity.attach(node);
         this.homePress(node, x, y, () => {
             if (this.game.cloud.cloudMode && !this.game.cloud.cloudReady) return;
             action();
@@ -86,6 +89,7 @@ export class HomeScreen {
     }
 
     showHome(keepModal = false) {
+        this.game.identity.detach();
         this.game.preview.clearPreview();
         if (!keepModal) this.game.overlays.closeModal();
         if (this.home) {
@@ -196,7 +200,7 @@ export class HomeScreen {
         });
         this.homeTile(n, '关卡', -220, 'album', () => this.game.album.levelPicker());
         this.homeTile(n, '装饰', 0, 'shop', () => this.game.shop.shop());
-        this.homeTile(n, '排行榜', 220, 'rank', () => this.game.social.leaderboard());
+        this.homeTile(n, '排行榜', 220, 'rank', () => this.game.identity.open());
         const rewards = rewardAmount(this.game.profile.save, this.game.cloud.rewardDay());
         this.homeRewardButton = null;
         if (rewards > 0 && (!this.game.cloud.cloudMode || this.game.cloud.cloudReady)) {

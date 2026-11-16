@@ -85,7 +85,12 @@ test('courtyard previews never charge or persist, closing restores actual furnis
   const before = JSON.stringify(game.runtime.profile.save);
   game.runtime.shop.shop('entrance', 'flower-arch');
   assert.equal(game.runtime.courtyard.courtyardPreview.id, 'flower-arch');
-  assert.equal(game.runtime.courtyard.courtyardNode.children[0].name, 'Furnishing flower-arch');
+  assert.deepEqual(
+    game.runtime.courtyard.courtyardNode.children
+      .filter((node) => node.name.startsWith('Furnishing '))
+      .map((node) => node.name),
+    ['Furnishing flower-arch'],
+  );
   assert.equal(JSON.stringify(game.runtime.profile.save), before);
   game.runtime.overlays.closeModal();
   assert.equal(game.runtime.courtyard.courtyardPreview, undefined);
@@ -205,7 +210,9 @@ test('insufficient funds preserve wallet and preview; resource arrival fills ope
   texture.height = 768;
   resourceLoads.get('home/furnishings/texture')(null, texture);
   assert.equal(game.runtime.assets.furnishingFrames.size, 12);
-  const selected = game.runtime.courtyard.courtyardNode.children[0].getComponent(cc.Sprite);
+  const selected = game.runtime.courtyard.courtyardNode.children
+    .find((node) => node.name === 'Furnishing leaf-awning')
+    .getComponent(cc.Sprite);
   assert.equal(selected.spriteFrame, game.runtime.assets.furnishingFrames.get('leaf-awning'));
   const samples = [];
   const walk = (node) => {

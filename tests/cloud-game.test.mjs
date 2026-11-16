@@ -157,6 +157,7 @@ test('world board sorts progress descending, first achievement ascending; no pri
   assert.equal(result.rows[1].self, true);
   assert.deepEqual(Object.keys(result.rows[0]).sort(), [
     'highest',
+    'identity',
     'player',
     'rank',
     'reachedAt',
@@ -310,7 +311,7 @@ test('storing courtyard furniture preserves ownership and rejects invalid positi
   assert.equal(equipped.profile.courtyard.equipped.entrance, 'leaf-awning');
 });
 
-test('world leaderboard stays anonymous and public profile writes are rejected', async () => {
+test('world leaderboard hides legacy public profiles until fresh consent', async () => {
   const f = fixture();
   const login = await f.call('login');
   await win(f, 0);
@@ -318,11 +319,12 @@ test('world leaderboard stays anonymous and public profile writes are rejected',
     const user = await tx.get('players', login.output.userId);
     // Legacy records must not leak their previously stored public profile.
     user.identity = { nickname: 'old name', avatarUrl: 'https://example.com/avatar' };
+    delete user.identityConsentVersion;
     await tx.set('players', login.output.userId, user);
   });
   const board = await f.call('leaderboard', { page: 0 });
   assert.match(board.rows[0].player, /^蚂蚁/);
-  assert.equal(Object.hasOwn(board.rows[0], 'identity'), false);
+  assert.equal(board.rows[0].identity, null);
   assert.equal((await f.call('identity')).code, 'INPUT');
 });
 

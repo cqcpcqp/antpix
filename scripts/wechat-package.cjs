@@ -1,8 +1,24 @@
 // Measure upload budgets from game.json: ordinary subpackages share the total
 // allowance, while only files outside their roots count toward the main package.
 const assert = require('node:assert/strict');
-const { readFileSync, readdirSync, statSync } = require('node:fs');
+const { existsSync, readFileSync, readdirSync, statSync, writeFileSync } = require('node:fs');
 const { resolve, relative, isAbsolute } = require('node:path');
+
+// Creator 3.8 emits game.js, while current WeChat device upload requires index.js.
+// Execute the generated module so its System.register prerequisites are retained.
+function installSubpackageEntries(root) {
+  root = resolve(root);
+  const game = JSON.parse(readFileSync(resolve(root, 'game.json'), 'utf8'));
+  for (const entry of game.subpackages) {
+    const path = resolve(root, entry.root);
+    const within = relative(root, path);
+    assert.ok(within && !within.startsWith('..') && !isAbsolute(within), entry.root);
+    const index = resolve(path, 'index.js');
+    if (existsSync(index)) continue;
+    assert.ok(statSync(resolve(path, 'game.js')).isFile());
+    writeFileSync(index, "require('./game.js');\n");
+  }
+}
 
 function checkPackageSize(root) {
   root = resolve(root);
@@ -31,7 +47,13 @@ function checkPackageSize(root) {
     }
   };
   // Read every declared root as well, so a missing subpackage cannot pass.
-  for (const pkg of packages) readdirSync(pkg.path);
+  for (const pkg of packages) {
+    readdirSync(pkg.path);
+    assert.ok(
+      existsSync(resolve(pkg.path, 'index.js')),
+      `Incomplete WeChat subpackage: ${pkg.root}index.js`,
+    );
+  }
   walk(root);
   const totalBytes = mainBytes + packages.reduce((sum, pkg) => sum + pkg.bytes, 0);
   assert.ok(mainBytes < 4 * 1024 ** 2, `WeChat main package: ${mainBytes} bytes >= 4 MiB`);
@@ -43,4 +65,4 @@ function checkPackageSize(root) {
   return { mainBytes, totalBytes, packages };
 }
 
-module.exports = { checkPackageSize };
+module.exports = { checkPackageSize, installSubpackageEntries };

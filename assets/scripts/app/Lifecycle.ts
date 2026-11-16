@@ -19,6 +19,7 @@ export class Lifecycle {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
+            | 'identity'
             | 'startup'
             | 'preview'
             | 'audio'
@@ -51,6 +52,7 @@ export class Lifecycle {
     paused = false;
 
     hideHandler = () => {
+        this.game.identity.hide();
         this.game.preview.clearPreview();
         this.paused = true;
         this.game.audio.music.pause();
@@ -61,7 +63,7 @@ export class Lifecycle {
     showHandler = () => {
         this.paused = false;
         this.game.audio.syncMusic();
-        if (this.game.home.home) this.game.home.showHome(true);
+        if (this.game.home.home && !this.game.identity.retainEntry) this.game.home.showHome(true);
     };
 
     onLoad() {
@@ -135,6 +137,7 @@ export class Lifecycle {
     }
 
     onDestroy() {
+        this.game.identity.detach();
         this.game.startup.destroy();
         for (const frame of this.game.assets.residentFrames) frame.destroy();
         this.game.assets.residentTexture?.decRef();

@@ -57,6 +57,7 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                     rows: rows.slice(0, 10).map((row, index) => ({
                         rank: event.page * 10 + index + 1,
                         player: row.player,
+                        identity: row.identityConsentVersion === 1 ? row.identity : null,
                         highest: row.highest,
                         reachedAt: row.reachedAt,
                         self: row._id === uid,
@@ -71,6 +72,8 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                         user = {
                             profile: freshProfile(),
                             player: '蚂蚁' + uuid().replace(/-/g, '').slice(0, 8),
+                            identity: null,
+                            identityConsentVersion: 1,
                             highest: 0,
                             reachedAt: 0,
                             adViews: 0,
@@ -85,8 +88,18 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                         'VERSION',
                         '存档版本需要升级',
                     );
+                    // Old public profiles require fresh consent; keep all progress and assets.
+                    const identityUpgraded = user.identityConsentVersion !== 1;
+                    if (identityUpgraded) {
+                        user.identity = null;
+                        user.identityConsentVersion = 1;
+                    }
                     const courtyardUpgraded = upgradeCourtyard(user.profile);
-                    if (unlockAppendedLevels(user.profile, levelCount) || courtyardUpgraded)
+                    if (
+                        unlockAppendedLevels(user.profile, levelCount) ||
+                        courtyardUpgraded ||
+                        identityUpgraded
+                    )
                         await tx.set('players', uid, user);
                     return response(user, now, { userId: uid });
                 }
@@ -112,6 +125,28 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                 }
                 const output = {};
                 switch (event.action) {
+                    case 'identity': {
+                        requireRule(event.consentVersion === 1, 'INPUT', '请重新授权微信头像昵称');
+                        const cleared = event.nickname === null && event.avatarUrl === null;
+                        requireRule(
+                            cleared ||
+                                (typeof event.nickname === 'string' &&
+                                    event.nickname.trim().length > 0 &&
+                                    Array.from(event.nickname).length <= 64 &&
+                                    typeof event.avatarUrl === 'string' &&
+                                    event.avatarUrl.length <= 2048 &&
+                                    /^https:\/\/(?:[a-z0-9-]+\.)*qlogo\.cn\//i.test(
+                                        event.avatarUrl,
+                                    )),
+                            'INPUT',
+                            '微信头像昵称无效',
+                        );
+                        user.identity = cleared
+                            ? null
+                            : { nickname: event.nickname, avatarUrl: event.avatarUrl };
+                        user.identityConsentVersion = 1;
+                        break;
+                    }
                     case 'start':
                         requireRule(
                             Number.isInteger(event.level) &&

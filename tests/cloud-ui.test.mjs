@@ -45,7 +45,42 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
     () => 'run-' + ++serial,
   );
   const actions = [];
+  let permission;
+  let needsPrivacy = false;
+  const nativeButtons = [];
+  const userInfo = { nickName: '微信测试玩家🙂', avatarUrl: 'https://thirdwx.qlogo.cn/avatar/0' };
   const wx = {
+    getSetting: ({ success }) => success({ authSetting: { 'scope.userInfo': permission } }),
+    getPrivacySetting: ({ success }) => success({ needAuthorization: needsPrivacy }),
+    requirePrivacyAuthorize: ({ success }) => {
+      needsPrivacy = false;
+      success();
+    },
+    getUserInfo: ({ success }) => success({ userInfo }),
+    openSetting: ({ success }) => success({ authSetting: { 'scope.userInfo': permission } }),
+    createUserInfoButton: (options) => {
+      const button = {
+        options,
+        visible: true,
+        destroyed: false,
+        tap: null,
+        onTap(callback) {
+          this.tap = callback;
+        },
+        show() {
+          this.visible = true;
+        },
+        hide() {
+          this.visible = false;
+        },
+        destroy() {
+          this.destroyed = true;
+          this.visible = false;
+        },
+      };
+      nativeButtons.push(button);
+      return button;
+    },
     cloud: {
       init: ({ env }) => assert.equal(env, 'cloudbase-d9glil4qk6b5865ba'),
       callFunction: ({ name, data, success, fail }) => {
@@ -63,6 +98,8 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
       },
     },
   };
+  const avatarLoads = [];
+  cc.assetManager = { loadRemote: (url, options, callback) => avatarLoads.push({ url, callback }) };
   cc.sys.localStorage = {
     getItem: (key) => local.get(key) ?? null,
     setItem: (key, value) => local.set(key, value),
@@ -184,6 +221,7 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
     game.runtime.overlays.modal,
     'rank loading stays in the rank content',
   );
+  await flush(); // Identity writes finish before the ranking becomes a cancellable read.
   game.runtime.overlays.closeModal();
   assert.equal(game.runtime.cloud.cloudBusy, false, 'leaving a read-only view releases the UI');
   game.runtime.settings.settings();
@@ -199,18 +237,109 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   game.runtime.overlays.closeModal();
   game.runtime.social.worldLeaderboard(0);
   await flush();
-  assert.deepEqual(
-    game.runtime.overlays.modal.children
-      .filter((node) => node.isValid && node.active && node.name !== 'Text')
-      .map((node) => node.name),
-    ['返回'],
-    'anonymous leaderboard has no profile authorization or friend entry',
-  );
   const labels = game.runtime.overlays.modal.children.map(
     (node) => node.getComponent(cc.Label)?.string,
   );
-  assert.ok(labels.includes('我'));
+  assert.ok(
+    labels.some((text) => /^蚂蚁/.test(text)),
+    'self remains anonymous without consent',
+  );
+  assert.equal(
+    game.runtime.overlays.modal.children.some((node) => node.name === '微信授权设置'),
+    false,
+  );
   assert.ok(labels.includes('第 1 关'));
+  assert.ok(game.runtime.overlays.modal.children.some((node) => node.name === 'Player avatar'));
+
+  game.runtime.overlays.closeModal();
+  game.runtime.notices.notification = null;
+  game.runtime.identity.update();
+  await flush(); // Closing board consent re-prepares the native home entry.
+  const native = nativeButtons.at(-1);
+  assert.equal(native.visible, true);
+  assert.equal(native.options.text, '');
+  assert.ok(native.options.style.width < cc.view.getFrameSize().width / 2);
+  game.runtime.settings.settings();
+  assert.equal(native.visible, false, 'native trigger cannot cover settings');
+  game.runtime.overlays.closeModal();
+  game.runtime.lifecycle.hideHandler();
+  game.runtime.lifecycle.showHandler();
+  assert.equal(native.destroyed, false, 'native callbacks survive native-dialog resume');
+  permission = true;
+  native.tap({ errMsg: 'getUserInfo:ok', userInfo });
+  await flush();
+  assert.equal(native.destroyed, true);
+  assert.equal(avatarLoads.at(-1).url, userInfo.avatarUrl);
+  const avatarNode = game.runtime.overlays.modal.children.find(
+    (node) => node.name === 'Player avatar',
+  );
+  const image = new cc.Texture2D();
+  avatarLoads.at(-1).callback(null, image);
+  assert.equal(image.refs, 1);
+  const avatarFrame = avatarNode.children[1].children[1].getComponent(cc.Sprite).spriteFrame;
+  assert.equal(avatarNode.children[1].children[0].active, false);
+  avatarNode.emit(cc.Node.EventType.NODE_DESTROYED);
+  assert.equal(avatarFrame.destroyed, true);
+  assert.equal(avatarFrame.texture.destroyed, true);
+  assert.equal(image.refs, 0, 'remote avatar references are released with their row');
+
+  assert.ok(
+    game.runtime.overlays.modal.children.some(
+      (node) => node.getComponent(cc.Label)?.string === userInfo.nickName,
+    ),
+  );
+  const player = [...records.values()].find((record) => record.identity);
+  assert.equal(player.identity.nickname, userInfo.nickName);
+  game.runtime.overlays.closeModal();
+  game.runtime.social.worldLeaderboard(0);
+  await flush();
+  const waitingAvatar = game.runtime.overlays.modal.children.find(
+    (node) => node.name === 'Player avatar',
+  );
+  const waitingLoad = avatarLoads.at(-1);
+  waitingAvatar.isValid = false;
+  waitingLoad.callback(null, image);
+  assert.equal(image.refs, 0, 'late avatar loads do not retain resources for destroyed rows');
+  const coins = game.runtime.profile.save.coins;
+  permission = false;
+  game.runtime.identity.settings();
+  await flush();
+  assert.equal([...records.values()].find((record) => record.profile)?.identity, null);
+  assert.equal(game.runtime.profile.save.coins, coins);
+  assert.equal(game.runtime.cloud.cloudHighest, 1);
+  game.runtime.overlays.closeModal();
+  game.runtime.home.showHome();
+  await flush();
+  const count = nativeButtons.length;
+  game.runtime.identity.open();
+  await flush();
+  assert.equal(nativeButtons.length, count, 'refused users are not prompted on every entry');
+  game.runtime.overlays.closeModal();
+  permission = undefined;
+  needsPrivacy = true;
+  game.runtime.home.showHome();
+  await flush();
+  game.runtime.identity.open();
+  await flush();
+  assert.ok(game.runtime.overlays.modal, 'privacy approval automatically opens the board');
+  game.runtime.notices.notification = null;
+  game.runtime.identity.update();
+  const firstUse = nativeButtons.at(-1);
+  permission = false;
+  firstUse.tap({ errMsg: 'getUserInfo:fail auth deny' });
+  await flush();
+  assert.ok(
+    game.runtime.overlays.modal,
+    'declining first authorization still opens the same board',
+  );
+  assert.equal([...records.values()].find((record) => record.profile)?.identity, null);
+  permission = true;
+  game.runtime.identity.settings();
+  await flush();
+  assert.equal(
+    [...records.values()].find((record) => record.profile)?.identity.nickname,
+    userInfo.nickName,
+  );
 
   game.runtime.overlays.closeModal();
   assert.equal(

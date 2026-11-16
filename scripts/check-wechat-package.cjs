@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const { readFileSync, existsSync } = require('node:fs');
 const { resolve } = require('node:path');
 const root = resolve('build/wechatgame');
+require('./check-engine-modules.cjs').checkEngineModules(root);
 const game = JSON.parse(readFileSync(resolve(root, 'game.json'), 'utf8'));
 assert.equal(Object.hasOwn(game, 'openDataContext'), false);
 assert.equal(existsSync(resolve(root, 'open-data')), false);

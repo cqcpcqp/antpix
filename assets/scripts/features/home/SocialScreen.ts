@@ -1,3 +1,5 @@
+import { WORLD_BOARD, worldBoardFooter } from '../../presentation/leaderboardLayout';
+import { worldPlayerView } from './WorldPlayerView';
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { GREEN, INK, MUTED, PAPER } from '../../presentation/gameVisuals';
 import { makeLevel } from '../../domain/levels/levels';
@@ -7,7 +9,7 @@ export class SocialScreen {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
-            'cloud' | 'profile' | 'lifecycle' | 'overlays' | 'ui' | 'home' | 'notices'
+            'cloud' | 'profile' | 'lifecycle' | 'overlays' | 'ui' | 'home' | 'notices' | 'identity'
         >,
     ) {}
     leaderboard(page = 0) {
@@ -119,51 +121,80 @@ export class SocialScreen {
             (this.game.cloud.cloudBusy && !this.game.cloud.cloudCancellable)
         )
             return;
-        const gap = Math.max(105, this.game.lifecycle.touchSize + 4);
+        const footer = worldBoardFooter(this.game.lifecycle.touchSize);
         const n = this.game.overlays.openModal(
             '世界排行榜',
             '通关越多越靠前 · 同关卡先到者在前',
-            1100 + 3 * (gap - 105),
+            footer.height,
         );
         this.game.ui.button(
             n,
             '返回',
             0,
-            -270 - gap * 2,
+            footer.returnY,
             480,
             64,
             GREEN,
             () => this.game.overlays.closeModal(),
             '#FFFFFF',
         );
+        this.game.identity.boardOpened(n, page);
         this.game.overlays.modalStatusY = 80;
+        this.game.cloud.cloudTask(
+            () => this.game.identity.synchronize(),
+            () => {
+                if (n.isValid && this.game.overlays.modal === n) this.loadWorldBoard(n, page);
+            },
+            '正在同步资料…',
+        );
+    }
+
+    private loadWorldBoard(n: import('cc').Node, page: number) {
         this.game.cloud.cloudTask(
             () => this.game.cloud.cloud!.leaderboard(page),
             (result) => {
+                if (!n.isValid || this.game.overlays.modal !== n) return;
                 if (!result.rows.length) this.game.ui.text(n, '还没有通关成绩', 0, 80, 30);
-                result.rows.forEach((row, i) => {
-                    const y = 300 - i * 51;
-                    this.game.ui.text(n, String(row.rank), -255, y, 24, INK, 45);
-                    this.game.ui.text(
-                        n,
-                        row.self ? '我' : row.player,
-                        -15,
-                        y,
-                        24,
-                        row.self ? '#366650' : INK,
-                        350,
-                    );
-                    this.game.ui.text(n, `第 ${row.highest} 关`, 207, y, 24, INK, 135);
-                });
+                result.rows.forEach((row, i) => worldPlayerView(this.game, n, row, i, page));
                 if (page > 0)
-                    this.game.ui.button(n, '上一页', -215, -270, 150, 48, PAPER, () =>
-                        this.worldLeaderboard(page - 1),
+                    this.game.ui.button(
+                        n,
+                        '上一页',
+                        -215,
+                        WORLD_BOARD.paginationY,
+                        150,
+                        48,
+                        PAPER,
+                        () => this.worldLeaderboard(page - 1),
                     );
                 if (result.hasNext)
-                    this.game.ui.button(n, '下一页', 215, -270, 150, 48, PAPER, () =>
-                        this.worldLeaderboard(page + 1),
+                    this.game.ui.button(
+                        n,
+                        '下一页',
+                        215,
+                        WORLD_BOARD.paginationY,
+                        150,
+                        48,
+                        PAPER,
+                        () => this.worldLeaderboard(page + 1),
                     );
-                this.game.ui.text(n, '展示前一百名玩家', 0, -210, 22, MUTED);
+                this.game.ui.text(n, '展示前一百名玩家', 0, WORLD_BOARD.summaryY, 22, MUTED);
+                if (this.game.identity.consentAvailable) {
+                    const y = worldBoardFooter(this.game.lifecycle.touchSize).consentY;
+                    this.game.ui.button(n, '微信资料授权', 0, y, 360, 60, PAPER, () => {});
+                    this.game.identity.offerConsent(n, y);
+                }
+                if (this.game.identity.settingsAvailable)
+                    this.game.ui.button(
+                        n,
+                        '微信授权设置',
+                        0,
+                        worldBoardFooter(this.game.lifecycle.touchSize).consentY,
+                        360,
+                        60,
+                        PAPER,
+                        () => this.game.identity.settings(),
+                    );
             },
             '正在加载排行…',
             true,

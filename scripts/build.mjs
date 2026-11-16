@@ -68,6 +68,7 @@ if (result.status === 0 || result.status === 36) {
     resolve('build/wechatgame/THIRD_PARTY_NOTICES.txt'),
     readFileSync('THIRD_PARTY_NOTICES.md', 'utf8'),
   );
+  wechatPackage.installSubpackageEntries('build/wechatgame');
   installStartup();
   const { mainBytes, totalBytes, packages } = wechatPackage.checkPackageSize('build/wechatgame');
   console.log(`微信主包：${(mainBytes / 1024).toFixed(1)} / 4096 KiB`);
@@ -99,6 +100,9 @@ if (result.status === 0 || result.status === 36) {
       './scripts/register-typescript.mjs',
       '--test',
       'tests/cloud-ui.test.mjs',
+      'tests/leaderboard-identity.test.mjs',
+      'tests/leaderboard-view.test.mjs',
+      'tests/engine-modules.test.mjs',
       'tests/reward-ad.test.mjs',
       'tests/offline-ui.test.mjs',
       'tests/startup.test.mjs',

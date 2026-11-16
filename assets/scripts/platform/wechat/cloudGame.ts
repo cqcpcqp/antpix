@@ -1,3 +1,4 @@
+import type { PlayerIdentity } from './playerIdentity';
 import type { Profile } from '../../domain/profile/profile';
 
 export const CLOUD_ENV = 'cloudbase-d9glil4qk6b5865ba';
@@ -18,6 +19,7 @@ export interface WorldBoard {
     rows: {
         rank: number;
         player: string;
+        identity: PlayerIdentity | null;
         highest: number;
         reachedAt: number;
         self: boolean;
@@ -103,7 +105,7 @@ export class CloudGame {
         const pending = this.storage.getItem(this.key());
         if (pending) {
             const request: Request = JSON.parse(pending);
-            // Retire old local profile uploads without replaying personal data after removal.
+            // Never replay personal data after relaunch without rechecking current WeChat consent.
             if (request.action === 'identity') this.storage.removeItem(this.key());
             else return this.send(request);
         }
