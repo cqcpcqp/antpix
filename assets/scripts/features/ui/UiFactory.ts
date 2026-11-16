@@ -33,6 +33,7 @@ export class UiFactory {
         size = 24,
         fill: string = INK,
         w = 640,
+        useSystemFont = false,
     ) {
         size = Math.max(size, this.game.lifecycle.minimumTextSize);
         const n = this.node2d('Text', parent, x, y, w, size * 1.6);
@@ -45,7 +46,10 @@ export class UiFactory {
         l.verticalAlign = Label.VerticalAlign.CENTER;
         l.overflow = Label.Overflow.SHRINK;
         l.enableWrapText = false;
-        if (this.gameFont) l.font = this.gameFont;
+        if (useSystemFont) {
+            l.useSystemFont = true;
+            this.systemFontLabels.add(l);
+        } else if (this.gameFont) l.font = this.gameFont;
         l.isBold = false;
         l.enableOutline = false;
         return l;
@@ -136,6 +140,9 @@ export class UiFactory {
     }
 
     gameFont: Font | null = null;
+
+    // System typography must survive the asynchronous application of the game font.
+    readonly systemFontLabels = new WeakSet<Label>();
 
     containerFont: BitmapFont | null = null;
 

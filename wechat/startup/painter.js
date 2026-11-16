@@ -65,15 +65,14 @@ function paint(ctx, surface, images, progress, message, minimumTextSize = 24) {
     ctx.fillText(`${Math.floor(progress)}%`, x + w, height - layout.statusBottom);
     ctx.textAlign = 'center';
     ctx.fillStyle = '#65794C';
-    ctx.font = `700 ${Math.max(22, minimumTextSize)}px sans-serif`;
+    ctx.font = `${Math.max(22, minimumTextSize)}px sans-serif`;
     ctx.fillText(layout.healthTitle, width / 2, height - 222);
-    ctx.textAlign = 'left';
-    ctx.font = `700 ${Math.max(17, minimumTextSize)}px sans-serif`;
+    ctx.font = `${Math.max(17, minimumTextSize)}px sans-serif`;
     layout.healthLines.forEach((line, index) => {
-        ctx.fillText(line, (width - layout.healthTextWidth) / 2, height - 185 + index * 29);
+        ctx.fillText(line, width / 2, height - 185 + index * 29, layout.healthTextWidth);
     });
     ctx.textAlign = 'center';
-    ctx.font = `700 ${Math.max(19, minimumTextSize)}px sans-serif`;
+    ctx.font = `${Math.max(19, minimumTextSize)}px sans-serif`;
     ctx.fillText(layout.registration, width / 2, height - 44);
     ctx.restore();
 }

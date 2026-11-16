@@ -136,7 +136,7 @@ export class BoardAssets {
             this.game.ui.gameFont = font;
             const apply = (node: Node) => {
                 const label = node.getComponent(Label);
-                if (label) {
+                if (label && !this.game.ui.systemFontLabels.has(label)) {
                     label.font =
                         this.game.ui.containerLabels.has(label) && this.game.ui.containerFont
                             ? this.game.ui.containerFont

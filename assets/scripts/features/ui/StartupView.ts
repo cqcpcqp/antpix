@@ -74,9 +74,10 @@ export class StartupView {
         );
         this.percentage.horizontalAlign = Label.HorizontalAlign.RIGHT;
         this.bar = ui.graphics(root, 'Honey gold progress');
-        ui.text(root, STARTUP.healthTitle, 0, bottom + 222, 22, '#65794C');
+        ui.text(root, STARTUP.healthTitle, 0, bottom + 222, 22, '#65794C', 640, true);
         STARTUP.healthLines.forEach((line, index) => {
-            const label = ui.text(
+            // Center the text itself so device font metrics cannot shift it to the left.
+            ui.text(
                 root,
                 line,
                 0,
@@ -84,10 +85,10 @@ export class StartupView {
                 17,
                 '#71805A',
                 STARTUP.healthTextWidth,
+                true,
             );
-            label.horizontalAlign = Label.HorizontalAlign.LEFT;
         });
-        ui.text(root, STARTUP.registration, 0, bottom + 44, 19, '#65794C');
+        ui.text(root, STARTUP.registration, 0, bottom + 44, 19, '#65794C', 640, true);
     }
 
     private createWash(root: Node, width: number, height: number) {

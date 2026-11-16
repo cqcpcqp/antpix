@@ -99,7 +99,7 @@ async function main() {
         if (component instanceof Label) {
           ctx.save();
           ctx.scale(1, -1);
-          ctx.font = `${component.fontSize}px Game`;
+          ctx.font = `${component.fontSize}px ${component.useSystemFont ? 'sans-serif' : 'Game'}`;
           ctx.fillStyle = css(component.color);
           ctx.textBaseline = 'middle';
           const size = node.getComponent(cc.UITransform);

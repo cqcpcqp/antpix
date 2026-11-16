@@ -211,6 +211,8 @@ test('startup surface fits supported viewports and releases only its own gradien
       const game = new PixelGarden();
       game.onLoad();
       const root = game.runtime.startupView.root;
+      const gameFont = new cc.Font();
+      headless.resourceLoads.get('fonts/ant-nest-bitmap')(null, gameFont);
       assert.ok(root.getComponent(cc.BlockInputEvents), 'loading must intercept homepage touches');
       const wash = root.children
         .find((child) => child.name === 'Startup footer wash')
@@ -231,6 +233,14 @@ test('startup surface fits supported viewports and releases only its own gradien
       for (const child of root.children) {
         const label = child.getComponent(cc.Label);
         if (!label) continue;
+        if (
+          [STARTUP.healthTitle, ...STARTUP.healthLines, STARTUP.registration].includes(label.string)
+        ) {
+          assert.equal(child.position.x, 0, 'footer stays on the viewport centerline');
+          assert.equal(label.horizontalAlign, cc.Label.HorizontalAlign.CENTER);
+          assert.equal(label.useSystemFont, true);
+          assert.notEqual(label.font, gameFont, 'late game font loading must preserve system text');
+        }
         const size = child.getComponent(cc.UITransform);
         assert.ok(
           Math.abs(child.position.x) + size.width / 2 <= game.runtime.lifecycle.screenWidth / 2,
