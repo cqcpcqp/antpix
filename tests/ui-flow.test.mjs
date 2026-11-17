@@ -1,3 +1,4 @@
+import { rankingNodes } from './helpers/leaderboard-view.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import headless from '../scripts/headless-game.cjs';
@@ -118,20 +119,20 @@ test('phone hit regions reach 44 pixels without overlapping queue rows or rank a
       );
       game.runtime.cloud.cloudMode = true;
       game.runtime.cloud.cloudReady = true;
-      game.runtime.cloud.cloud = { leaderboard: async () => ({ rows: [], hasNext: true }) };
-      game.runtime.social.worldLeaderboard(0);
+      game.runtime.cloud.cloud = {
+        leaderboardAll: async () => ({ ok: true, rows: [], hasNext: false }),
+      };
+      game.runtime.social.worldLeaderboard();
       await flush();
-      const actions = game.runtime.overlays.modal.children.filter((node) =>
-        ['返回', '下一页'].includes(node.name),
+      const { chrome, viewport } = rankingNodes(game.runtime);
+      const back = chrome.children.find((node) => node.name === '返回');
+      assert.ok(back);
+      assert.ok(bounds(back).height * scale >= 44 - 1e-8);
+      assert.ok(
+        viewport.position.y - bounds(viewport).height / 2 >
+          back.position.y + bounds(back).height / 2,
       );
-      for (let i = 0; i < actions.length; i++)
-        for (let j = i + 1; j < actions.length; j++)
-          assert.ok(
-            Math.abs(actions[i].position.y - actions[j].position.y) >=
-              (bounds(actions[i]).height + bounds(actions[j]).height) / 2 ||
-              Math.abs(actions[i].position.x - actions[j].position.x) >=
-                (bounds(actions[i]).width + bounds(actions[j]).width) / 2,
-          );
+      assert.ok(!chrome.children.some((node) => ['上一页', '下一页'].includes(node.name)));
     }
   } finally {
     cc.view.getFrameSize = getFrame;

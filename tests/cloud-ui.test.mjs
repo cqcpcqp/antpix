@@ -1,3 +1,4 @@
+import { rankingNodes } from './helpers/leaderboard-view.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
@@ -210,9 +211,12 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   boardGate = new Promise((resolve) => {
     releaseBoard = resolve;
   });
-  game.runtime.social.worldLeaderboard(0);
+  const playerNodes = () => rankingNodes(game.runtime).rows.children;
+  const rankingContent = () =>
+    game.runtime.overlays.modal.children.find((node) => node.name === 'Leaderboard content');
+  game.runtime.social.worldLeaderboard();
   assert.ok(
-    game.runtime.overlays.modal.children.some((node) =>
+    rankingContent().children.some((node) =>
       node.components.some((c) => c.string === '世界排行榜'),
     ),
   );
@@ -235,21 +239,19 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
     'late rank data must not reopen a dismissed view',
   );
   game.runtime.overlays.closeModal();
-  game.runtime.social.worldLeaderboard(0);
+  game.runtime.social.worldLeaderboard();
   await flush();
-  const labels = game.runtime.overlays.modal.children.map(
-    (node) => node.getComponent(cc.Label)?.string,
-  );
+  const labels = playerNodes().map((node) => node.getComponent(cc.Label)?.string);
   assert.ok(
     labels.some((text) => /^蚂蚁/.test(text)),
     'self remains anonymous without consent',
   );
   assert.equal(
-    game.runtime.overlays.modal.children.some((node) => node.name === '微信授权设置'),
+    rankingContent().children.some((node) => node.name === '微信授权设置'),
     false,
   );
-  assert.ok(labels.includes('第 1 关'));
-  assert.ok(game.runtime.overlays.modal.children.some((node) => node.name === 'Player avatar'));
+  assert.ok(labels.includes('1 关'));
+  assert.ok(playerNodes().some((node) => node.name === 'Player avatar'));
 
   game.runtime.overlays.closeModal();
   game.runtime.notices.notification = null;
@@ -270,9 +272,7 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   await flush();
   assert.equal(native.destroyed, true);
   assert.equal(avatarLoads.at(-1).url, userInfo.avatarUrl);
-  const avatarNode = game.runtime.overlays.modal.children.find(
-    (node) => node.name === 'Player avatar',
-  );
+  const avatarNode = playerNodes().find((node) => node.name === 'Player avatar');
   const image = new cc.Texture2D();
   avatarLoads.at(-1).callback(null, image);
   assert.equal(image.refs, 1);
@@ -284,18 +284,14 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   assert.equal(image.refs, 0, 'remote avatar references are released with their row');
 
   assert.ok(
-    game.runtime.overlays.modal.children.some(
-      (node) => node.getComponent(cc.Label)?.string === userInfo.nickName,
-    ),
+    playerNodes().some((node) => node.getComponent(cc.Label)?.string === userInfo.nickName),
   );
   const player = [...records.values()].find((record) => record.identity);
   assert.equal(player.identity.nickname, userInfo.nickName);
   game.runtime.overlays.closeModal();
-  game.runtime.social.worldLeaderboard(0);
+  game.runtime.social.worldLeaderboard();
   await flush();
-  const waitingAvatar = game.runtime.overlays.modal.children.find(
-    (node) => node.name === 'Player avatar',
-  );
+  const waitingAvatar = playerNodes().find((node) => node.name === 'Player avatar');
   const waitingLoad = avatarLoads.at(-1);
   waitingAvatar.isValid = false;
   waitingLoad.callback(null, image);

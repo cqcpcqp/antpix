@@ -156,6 +156,10 @@ export class CloudGame {
             this.busy = false;
         }
     }
+    /** The server reads the top 100 in one query; legacy pagination remains separate. */
+    leaderboardAll(): Promise<WorldBoard> {
+        return this.call({ action: 'leaderboardTop', catalogVersion: CATALOG_VERSION });
+    }
     leaderboard(page: number): Promise<WorldBoard> {
         return this.call({ action: 'leaderboard', catalogVersion: CATALOG_VERSION, page });
     }

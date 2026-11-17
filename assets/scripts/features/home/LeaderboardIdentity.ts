@@ -34,8 +34,10 @@ export class LeaderboardIdentity {
     private nativeError: Error | null = null;
     private visible = false;
     private board: Node | null = null;
-    private page = 0;
     private buttonBoard: Node | null = null;
+    private acknowledgedCloud: GardenRuntime['cloud']['cloud'] = null;
+    private acknowledgedIdentity: PlayerIdentity | null | undefined;
+    revision = 0;
     authorized = false;
 
     get settingsAvailable() {
@@ -145,7 +147,7 @@ export class LeaderboardIdentity {
                 this.button?.destroy();
                 this.button = null;
                 this.buttonBoard = null;
-                this.game.social.worldLeaderboard(board ? this.page : 0);
+                this.game.social.worldLeaderboard();
             },
         );
         this.button.hide();
@@ -153,9 +155,9 @@ export class LeaderboardIdentity {
     get consentAvailable() {
         return this.permission === undefined && !this.needsPrivacy;
     }
-    offerConsent(board: Node, y: number) {
+    offerConsent(board: Node, y: number, x = 0, width = 360) {
         if (!this.consentAvailable || this.game.overlays.modal !== board) return;
-        this.installButton(0, y, 360, 60, board);
+        this.installButton(x, y, width, 60, board);
         this.update();
     }
     private eligible() {
@@ -198,7 +200,7 @@ export class LeaderboardIdentity {
             return;
         }
         if (this.permission === 'error') {
-            this.game.social.worldLeaderboard(0);
+            this.game.social.worldLeaderboard();
             return;
         }
         if (this.needsPrivacy) {
@@ -209,13 +211,13 @@ export class LeaderboardIdentity {
                     if (generation !== this.generation || !this.entry?.isValid) return;
                     this.privacyPending = false;
                     this.needsPrivacy = false;
-                    this.game.social.worldLeaderboard(0);
+                    this.game.social.worldLeaderboard();
                 },
                 (error) => {
                     if (generation !== this.generation) return;
                     this.privacyPending = false;
                     this.report(error);
-                    this.game.social.worldLeaderboard(0);
+                    this.game.social.worldLeaderboard();
                 },
             );
             return;
@@ -229,15 +231,14 @@ export class LeaderboardIdentity {
             } else this.update();
             return;
         }
-        this.game.social.worldLeaderboard(0);
+        this.game.social.worldLeaderboard();
     }
-    boardOpened(board: Node, page: number) {
+    boardOpened(board: Node) {
         this.hide();
         this.button?.destroy();
         this.button = null;
         this.buttonBoard = null;
         this.board = board;
-        this.page = page;
         board.on(Node.EventType.NODE_DESTROYED, () => {
             if (this.board !== board) return;
             this.releaseBoard();
@@ -277,6 +278,7 @@ export class LeaderboardIdentity {
         } catch (error) {
             if (active()) {
                 this.permission = 'error';
+                this.revision++;
                 this.authorized = false;
                 this.report(error);
             }
@@ -289,11 +291,26 @@ export class LeaderboardIdentity {
         this.authorized = identity !== null;
         this.trace('synchronize');
         if (nativeError && permission !== false) this.report(nativeError);
+        const previous = this.acknowledgedIdentity;
+        const unchanged =
+            this.acknowledgedCloud === cloud &&
+            previous !== undefined &&
+            (identity === null
+                ? previous === null
+                : previous !== null &&
+                  previous.nickname === identity.nickname &&
+                  previous.avatarUrl === identity.avatarUrl);
+        if (unchanged) return;
+        // Invalidate cached public data before attempting a changed grant or revocation.
+        this.revision++;
         await cloud.mutate('identity', {
             consentVersion: 1,
             nickname: identity === null ? null : identity.nickname,
             avatarUrl: identity === null ? null : identity.avatarUrl,
         });
+        if (!active()) return;
+        this.acknowledgedCloud = cloud;
+        this.acknowledgedIdentity = identity === null ? null : { ...identity };
     }
     settings() {
         if (this.game.cloud.cloudBusy) return;
@@ -302,7 +319,7 @@ export class LeaderboardIdentity {
         openIdentitySettings().then(
             () => {
                 if (board?.isValid && this.game.overlays.modal === board)
-                    this.game.social.worldLeaderboard(this.page);
+                    this.game.social.worldLeaderboard();
             },
             (error) => this.report(error),
         );

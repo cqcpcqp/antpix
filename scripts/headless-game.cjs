@@ -201,9 +201,48 @@ Label.HorizontalAlign = { CENTER: 0, LEFT: 1, RIGHT: 2 };
 Label.VerticalAlign = { CENTER: 0 };
 Label.Overflow = { NONE: 0, CLAMP: 1, SHRINK: 2 };
 class UITransform {
+  setAnchorPoint(x, y) {
+    this.anchorPoint = { x, y };
+  }
   setContentSize(width, height) {
     this.width = width;
     this.height = height;
+  }
+}
+class Vec2 {
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+  }
+}
+// Configuration-only ScrollView double; drag physics stay in the actual Cocos engine.
+class ScrollView {
+  getScrollOffset() {
+    return new Vec2(0, this.content.position.y - this.node.getComponent(UITransform).height / 2);
+  }
+  getMaxScrollOffset() {
+    return new Vec2(
+      0,
+      Math.max(
+        0,
+        this.content.getComponent(UITransform).height - this.node.getComponent(UITransform).height,
+      ),
+    );
+  }
+  scrollToOffset(offset) {
+    this.content.setPosition(
+      0,
+      this.node.getComponent(UITransform).height / 2 +
+        Math.min(Math.max(0, offset.y), this.getMaxScrollOffset().y),
+    );
+  }
+  scrollToBottom() {
+    const viewport = this.node.getComponent(UITransform);
+    const height = this.content.getComponent(UITransform).height;
+    this.content.setPosition(0, height - viewport.height / 2);
+  }
+  scrollToTop() {
+    this.content.setPosition(0, this.node.getComponent(UITransform).height / 2);
   }
 }
 class Camera {}
@@ -233,10 +272,12 @@ const cc = {
   Node,
   Sprite,
   SpriteFrame,
+  ScrollView,
+  Vec2,
   // Match the real stripped engine instead of fabricating an unavailable component.
   Mask: engineModules.includes('mask')
     ? class {
-        static Type = { GRAPHICS_ELLIPSE: 1 };
+        static Type = { GRAPHICS_RECT: 0, GRAPHICS_ELLIPSE: 1 };
       }
     : undefined,
   Texture2D,

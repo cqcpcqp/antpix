@@ -50,18 +50,19 @@
 
 统一使用 `wx.cloud.callFunction({name: 'game', data})`，请求带 `catalogVersion: 4`。
 
-| action      | 额外参数                                             | 功能                           |
-| ----------- | ---------------------------------------------------- | ------------------------------ |
-| login       | 无                                                   | 创建或读取云存档               |
-| start       | requestId、level（0 起算）                           | 检查解锁并创建关卡会话         |
-| complete    | requestId、runId、seconds、moves                     | 结算通关、解锁、更新排名       |
-| claim       | requestId                                            | 领取当日及首通奖励             |
-| shop        | requestId、skin                                      | 购买或装备局内洞口装扮         |
-| furnish     | requestId、item                                      | 购买或装备指定庭院装饰         |
-| unfurnish   | requestId、slot（entrance / path / garden / living） | 收起指定位置的装饰，保留所有权 |
-| adStart     | requestId、runId、placement（speed / slot）          | 创建广告观看会话               |
-| adComplete  | requestId、adId                                      | 完整观看回调计数               |
-| leaderboard | page（0–9）                                          | 读取世界榜                     |
+| action         | 额外参数                                             | 功能                           |
+| -------------- | ---------------------------------------------------- | ------------------------------ |
+| login          | 无                                                   | 创建或读取云存档               |
+| start          | requestId、level（0 起算）                           | 检查解锁并创建关卡会话         |
+| complete       | requestId、runId、seconds、moves                     | 结算通关、解锁、更新排名       |
+| claim          | requestId                                            | 领取当日及首通奖励             |
+| shop           | requestId、skin                                      | 购买或装备局内洞口装扮         |
+| furnish        | requestId、item                                      | 购买或装备指定庭院装饰         |
+| unfurnish      | requestId、slot（entrance / path / garden / living） | 收起指定位置的装饰，保留所有权 |
+| adStart        | requestId、runId、placement（speed / slot）          | 创建广告观看会话               |
+| adComplete     | requestId、adId                                      | 完整观看回调计数               |
+| leaderboard    | page（0–9）                                          | 读取世界榜（旧版分页接口）     |
+| leaderboardTop | 无                                                   | 单次读取前 100 名              |
 
 存档成功响应：`{ok:true, profile, day, serverTime, adViews, highest, reachedAt, output}`。`output` 按操作返回 `userId/runId/adId/amount/purchase`；无额外结果时为空对象。榜单响应：`{ok:true, rows, hasNext}`。业务拒绝：`{ok:false, code, message}`；网络或平台故障由调用 Promise 抛出。客户端严格消费约定字段，不猜测字段、不填默认值。
 
@@ -107,6 +108,12 @@ node --experimental-strip-types --import ./scripts/register-typescript.mjs --tes
 传输测试覆盖异步成功、平台失败、业务拒绝、同步抛错；场景测试使用直接返回 `undefined` 的回调 SDK，验证等待登录时停在 90%、登录成功后达到 100%，以及请求失败后重试。首次登录平台/网络失败会进入本地模式，见下文离线回归。`npm run build:wechat` 也对真实构建产物执行场景回归。提审前仍需在微信开发者工具和 Android/iOS 真机上验证冷启动及断网恢复，并记录客户端版本、基础库版本和完整平台错误；本地测试不替代审核环境验证。
 
 云端请求不再打开独立的连接弹窗。首页同步、开局与领奖在首页内容区展示状态；商店在原抽屉内展示，排行榜先展示榜单容器再加载内容。错误在原内容区点击重试，写请求继续复用持久化的请求 ID，不提前发放资产。启动同步完成前不展示占位金币和关卡进度，也不允许开局；设置和收藏说明仍可使用。关闭榜单会忽略该次请求的迟到结果，登录完成不会关闭用户正在查看的设置。
+
+世界榜通过新增 `leaderboardTop` 一次读取前 100 名，使用 Cocos `ScrollView` 上下滚动，标题与返回/授权入口固定。原 `leaderboard(page)` 接口及其返回保持不变，旧版客户端可继续使用。新客户端必须在云函数部署后使用。
+
+打开时统一显示“正在加载排行榜…”及暖色骨架，权限核对、资料同步和榜单查询共用这一个状态。每次打开仍核对微信权限；只有头像昵称变化或云会话变化时才写入资料，失败的写入不会被记作成功。拒绝/撤销授权后先清除公开资料，再读取榜单。
+
+客户端仅在内存中缓存成功榜单 30 秒，权限核对后可先展示缓存并刷新；授权状态、成绩、云会话变化时失效。刷新保留滚动位置，过期/失败数据不作为接口返回兜底。关闭后的异步回调不会重新打开排行榜。
 
 ## 微信头像昵称授权与存量账号
 

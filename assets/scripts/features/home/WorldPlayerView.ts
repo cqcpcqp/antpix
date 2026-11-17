@@ -12,34 +12,21 @@ import {
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import type { WorldBoard } from '../../platform/wechat/cloudGame';
 import { color, INK } from '../../presentation/gameVisuals';
-import {
-    PODIUM,
-    rankingLaurel,
-    rankingMedal,
-    rankingPlaque,
-} from '../../presentation/leaderboardDecor';
+import { PODIUM } from '../../presentation/leaderboardDecor';
+import { leaderboardArtwork } from './LeaderboardArtwork';
 import { WORLD_BOARD } from '../../presentation/leaderboardLayout';
 import { ellipsizeNickname } from '../../presentation/playerNickname';
 
-type View = Pick<GardenRuntime, 'ui'>;
+type View = Pick<GardenRuntime, 'ui' | 'assets'>;
 type Player = WorldBoard['rows'][number];
 
 /** Live leaderboard cards. Every avatar owns its remote resources until its node is destroyed. */
-export function worldPlayerView(
-    game: View,
-    parent: Node,
-    row: Player,
-    index: number,
-    page: number,
-) {
-    if (page === 0 && row.rank <= 3) {
+export function worldPlayerView(game: View, parent: Node, row: Player) {
+    if (row.rank <= 3) {
         honorCard(game, parent, row);
         return;
     }
-    const y =
-        page === 0
-            ? WORLD_BOARD.firstRowY - (row.rank - 4) * WORLD_BOARD.rowStep
-            : WORLD_BOARD.laterPageY - index * WORLD_BOARD.laterPageStep;
+    const y = WORLD_BOARD.firstRowY - (row.rank - 4) * WORLD_BOARD.rowStep;
     const surface = game.ui.graphics(parent, `Rank ${row.rank} surface`);
     if (row.self) {
         game.ui.box(surface, 0, y, 574, 66, 20, '#E6F2DE');
@@ -57,7 +44,7 @@ export function worldPlayerView(
     game.ui.text(parent, String(row.rank), -265, y, 25, INK, 46);
     playerAvatar(game, parent, row, -202, y, 62);
     playerName(game, parent, row, row.self ? -32 : -20, y, row.self ? 228 : 252, 25, true);
-    game.ui.text(parent, `第 ${row.highest} 关`, 219, y, 25, INK, 132);
+    game.ui.text(parent, `${row.highest} 关`, 219, y, 25, INK, 132);
     if (row.self) selfTag(game, parent, 116, y);
 }
 
@@ -65,16 +52,20 @@ function honorCard(game: View, parent: Node, row: Player) {
     const champion = row.rank === 1;
     const x = champion ? 0 : row.rank === 2 ? -146 : 146;
     const y = champion ? WORLD_BOARD.championY : WORLD_BOARD.runnersY;
-    const card = game.ui.graphics(parent, `Rank ${row.rank} plaque`);
-    card.node.setPosition(x, y);
-    rankingPlaque(card, champion ? 574 : 278, champion ? 190 : 138, row.rank, row.self);
+    leaderboardArtwork(
+        game,
+        parent,
+        champion ? 'gold' : row.rank === 2 ? 'silver' : 'bronze',
+        x,
+        y,
+        champion ? 650 : 286,
+        champion ? 184 : 140,
+        `Rank ${row.rank} plaque`,
+    );
     const avatarX = x + (champion ? -170 : -83);
-    const avatar = playerAvatar(game, parent, row, avatarX, y, champion ? 128 : 86);
+    playerAvatar(game, parent, row, avatarX, y, champion ? 128 : 86);
     if (champion) {
-        const wreath = game.ui.node2d('Champion laurel', parent, avatarX, y, 190, 190);
-        rankingLaurel(84, (name) => game.ui.node2d(name, wreath, 0, 0, 32, 44));
-        // Keep the wreath behind the live portrait and its frame.
-        wreath.setSiblingIndex(avatar.getSiblingIndex());
+        leaderboardArtwork(game, parent, 'wreath', avatarX, y - 8, 200, 184, 'Champion laurel');
         game.ui.text(parent, '榜首', 78, y + 59, 21, '#9D7130', 100);
     }
     playerName(
@@ -88,7 +79,7 @@ function honorCard(game: View, parent: Node, row: Player) {
     );
     game.ui.text(
         parent,
-        `第 ${row.highest} 关`,
+        `${row.highest} 关`,
         x + (champion ? 78 : 44),
         y - (champion ? 46 : 23),
         champion ? 47 : 28,
@@ -97,10 +88,16 @@ function honorCard(game: View, parent: Node, row: Player) {
     );
     const medalX = avatarX - (champion ? 0 : 28);
     const medalY = y - (champion ? 55 : 30);
-    const medal = game.ui.graphics(parent, `Rank ${row.rank} medal`);
-    medal.node.setPosition(medalX, medalY);
-    rankingMedal(medal, row.rank, champion ? 24 : 18);
-    game.ui.text(parent, String(row.rank), medalX, medalY + 1, champion ? 28 : 22, '#765133', 36);
+    leaderboardArtwork(
+        game,
+        parent,
+        row.rank === 1 ? 'medal1' : row.rank === 2 ? 'medal2' : 'medal3',
+        medalX,
+        medalY - 7,
+        champion ? 54 : 42,
+        champion ? 64 : 50,
+        `Rank ${row.rank} medal`,
+    );
     if (row.self) selfTag(game, parent, x + (champion ? 250 : 111), y + (champion ? 62 : 49));
 }
 
@@ -160,15 +157,16 @@ function playerAvatar(game: View, parent: Node, row: Player, x: number, y: numbe
     rim.stroke();
     const clip = game.ui.node2d('Avatar clip', avatar, 0, 0, size, size);
     clip.addComponent(Mask).type = Mask.Type.GRAPHICS_ELLIPSE;
-    const placeholder = game.ui.graphics(clip, 'Default avatar');
-    placeholder.fillColor = color('#DCE6D5');
-    placeholder.circle(0, 0, size / 2);
-    placeholder.fill();
-    placeholder.fillColor = color('#82967A');
-    placeholder.circle(0, size * 0.13, size * 0.17);
-    placeholder.fill();
-    placeholder.roundRect(-size * 0.29, -size * 0.32, size * 0.58, size * 0.35, size * 0.16);
-    placeholder.fill();
+    const placeholder = leaderboardArtwork(
+        game,
+        clip,
+        'anonymous',
+        0,
+        0,
+        size,
+        size,
+        'Default avatar',
+    );
     const portrait = game.ui.node2d('Avatar image', clip, 0, 0, size, size);
     if (row.identity !== null) {
         assetManager.loadRemote<ImageAsset>(
@@ -184,7 +182,7 @@ function playerAvatar(game: View, parent: Node, row: Player, x: number, y: numbe
                 const sprite = portrait.addComponent(Sprite);
                 sprite.sizeMode = Sprite.SizeMode.CUSTOM;
                 sprite.spriteFrame = frame;
-                placeholder.node.active = false;
+                placeholder.active = false;
                 avatar.on(Node.EventType.NODE_DESTROYED, () => {
                     frame.destroy();
                     texture.destroy();

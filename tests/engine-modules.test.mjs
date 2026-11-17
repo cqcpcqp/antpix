@@ -9,6 +9,8 @@ test('avatar masking is enabled in both Creator engine selections', () => {
   const { modules } = JSON.parse(readFileSync('settings/v2/packages/engine.json', 'utf8'));
   const config = modules.configs[modules.globalConfigKey];
   assert.equal(config.cache.mask._value, true);
+  assert.equal(config.cache.ui._value, true);
+  assert.ok(config.includeModules.includes('ui'));
   assert.ok(config.includeModules.includes('mask'));
 });
 

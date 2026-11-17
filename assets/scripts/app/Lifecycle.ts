@@ -31,6 +31,7 @@ export class Lifecycle {
             | 'layout'
             | 'cloud'
             | 'homeAssets'
+            | 'leaderboardAssets'
             | 'boardAssets'
             | 'assets'
             | 'boosts'
@@ -132,6 +133,7 @@ export class Lifecycle {
         this.game.home.showHome();
         if (this.game.cloud.cloudMode) this.game.cloud.connectCloud();
         this.game.homeAssets.loadHomeAssets();
+        this.game.leaderboardAssets.load();
         this.game.boardAssets.loadBoardAssets();
         this.game.startup.seal();
     }
@@ -139,6 +141,7 @@ export class Lifecycle {
     onDestroy() {
         this.game.identity.detach();
         this.game.startup.destroy();
+        this.game.leaderboardAssets.destroy();
         for (const frame of this.game.assets.residentFrames) frame.destroy();
         this.game.assets.residentTexture?.decRef();
         this.game.assets.residentDoorFrame?.destroy();

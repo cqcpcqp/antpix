@@ -28,6 +28,8 @@ import { CloudSession } from './CloudSession';
 import { GameAssets } from './GameAssets';
 import { GameAudio } from './GameAudio';
 import { GameLoop } from './GameLoop';
+import { LeaderboardData } from './LeaderboardData';
+import { LeaderboardAssets } from './LeaderboardAssets';
 import { HomeAssets } from './HomeAssets';
 import { Lifecycle } from './Lifecycle';
 import { ProfileStore } from './ProfileStore';
@@ -43,6 +45,7 @@ export class GardenRuntime {
     readonly home: HomeScreen = new HomeScreen(this);
     readonly album: AlbumScreen = new AlbumScreen(this);
     readonly identity: LeaderboardIdentity = new LeaderboardIdentity(this);
+    readonly leaderboardData: LeaderboardData = new LeaderboardData(this);
     readonly social: SocialScreen = new SocialScreen(this);
     readonly courtyard: CourtyardController = new CourtyardController(this);
     readonly shop: ShopScreen = new ShopScreen(this);
@@ -65,6 +68,7 @@ export class GardenRuntime {
     readonly settings: SettingsScreen = new SettingsScreen(this);
     readonly victory: VictoryScreen = new VictoryScreen(this);
     readonly assets: GameAssets = new GameAssets();
+    readonly leaderboardAssets: LeaderboardAssets = new LeaderboardAssets(this);
     readonly homeAssets: HomeAssets = new HomeAssets(this);
     readonly boardAssets: BoardAssets = new BoardAssets(this);
 }

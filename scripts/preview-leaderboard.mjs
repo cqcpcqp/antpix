@@ -4,6 +4,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import {
   cc,
   leaderboardFixture,
+  rankingNodes,
   players,
   settleLeaderboard,
 } from '../tests/helpers/leaderboard-view.mjs';
@@ -14,26 +15,37 @@ GlobalFonts.registerFromPath('art/fonts/noto-NotoSansSC[wght].ttf', 'Nickname');
 const measure = createCanvas(1, 1).getContext('2d');
 cc.Label.prototype.updateRenderData = function () {
   if (this.overflow !== cc.Label.Overflow.NONE) return;
-  measure.font = `bold ${this.fontSize}px Nickname`;
+  measure.font = `${this.isBold ? 'bold ' : ''}${this.fontSize}px Nickname`;
   this.node
     .getComponent(cc.UITransform)
     .setContentSize(measure.measureText(this.string).width, this.fontSize * 1.6);
 };
 const background = await loadImage('assets/resources/home/garden.jpg');
-const out = 'output/leaderboard-c-implementation';
+const atlas = await loadImage('assets/resources/leaderboard/laurel.png');
+const out = 'output/leaderboard-laurel-v2';
 mkdirSync(out, { recursive: true });
 const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
 for (const [name, options] of [
-  ['first-page', {}],
-  ['later-page', { page: 1 }],
+  ['top-100', {}],
+  ['loading', { loading: true }],
+  ['anonymous', { anonymous: true }],
+  ['bottom-100', { bottom: true }],
   ['narrow-with-consent', { consent: true, touchSize: 116 }],
 ]) {
   const viewport = options.consent ? { width: 320, height: 568 } : { width: 390, height: 844 };
-  const { game, requests } = leaderboardFixture(players(options.page ? 11 : 1), {
-    ...options,
-    viewport,
-  });
+  const { game, requests } = leaderboardFixture(
+    players(1, 100).map((row) => (options.anonymous ? { ...row, identity: null } : row)),
+    {
+      ...options,
+      viewport,
+    },
+  );
+  if (options.loading) {
+    game.identity.synchronize = () => new Promise(() => {});
+    game.social.worldLeaderboard();
+  }
   await settleLeaderboard();
+  if (options.bottom) rankingNodes(game).scroll.scrollToBottom();
   // Distinct coloured sample portraits exercise the real remote-image and mask path.
   const portraits = new Map();
   for (let i = 0; i < requests.length; i++) {
@@ -77,7 +89,9 @@ for (const [name, options] of [
     const bounds = node.getComponent(cc.UITransform);
     if (node.getComponent(cc.Mask)) {
       ctx.beginPath();
-      ctx.ellipse(0, 0, bounds.width / 2, bounds.height / 2, 0, 0, Math.PI * 2);
+      if (node.getComponent(cc.Mask).type === cc.Mask.Type.GRAPHICS_RECT)
+        ctx.rect(-bounds.width / 2, -bounds.height / 2, bounds.width, bounds.height);
+      else ctx.ellipse(0, 0, bounds.width / 2, bounds.height / 2, 0, 0, Math.PI * 2);
       ctx.clip();
     }
     for (const component of node.components) {
@@ -102,13 +116,58 @@ for (const [name, options] of [
       if (component instanceof cc.Sprite && component.spriteFrame) {
         ctx.save();
         ctx.scale(1, -1);
-        ctx.drawImage(
-          portraits.get(component.spriteFrame.texture.image),
-          -bounds.width / 2,
-          -bounds.height / 2,
-          bounds.width,
-          bounds.height,
-        );
+        const frame = component.spriteFrame;
+        const portrait = portraits.get(frame.texture.image);
+        if (portrait)
+          ctx.drawImage(
+            portrait,
+            -bounds.width / 2,
+            -bounds.height / 2,
+            bounds.width,
+            bounds.height,
+          );
+        else if (component.type === cc.Sprite.Type.SLICED) {
+          // Integer offscreen tessellation avoids Canvas antialiasing seams between slices.
+          const surface = createCanvas(Math.round(bounds.width), Math.round(bounds.height));
+          const painter = surface.getContext('2d');
+          const sx = [0, frame.insetLeft, frame.rect.width - frame.insetRight, frame.rect.width];
+          const sy = [0, frame.insetTop, frame.rect.height - frame.insetBottom, frame.rect.height];
+          const dx = [0, frame.insetLeft, surface.width - frame.insetRight, surface.width];
+          const dy = [0, frame.insetTop, surface.height - frame.insetBottom, surface.height];
+          for (let row = 0; row < 3; row++)
+            for (let col = 0; col < 3; col++) {
+              if (sx[col + 1] === sx[col] || sy[row + 1] === sy[row]) continue;
+              painter.drawImage(
+                atlas,
+                frame.rect.x + sx[col],
+                frame.rect.y + sy[row],
+                sx[col + 1] - sx[col],
+                sy[row + 1] - sy[row],
+                dx[col],
+                dy[row],
+                dx[col + 1] - dx[col],
+                dy[row + 1] - dy[row],
+              );
+            }
+          ctx.drawImage(
+            surface,
+            -bounds.width / 2,
+            -bounds.height / 2,
+            bounds.width,
+            bounds.height,
+          );
+        } else
+          ctx.drawImage(
+            atlas,
+            frame.rect.x,
+            frame.rect.y,
+            frame.rect.width,
+            frame.rect.height,
+            -bounds.width / 2,
+            -bounds.height / 2,
+            bounds.width,
+            bounds.height,
+          );
         ctx.restore();
       }
       if (component instanceof cc.Label) {

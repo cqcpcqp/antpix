@@ -1,5 +1,9 @@
+import { ScrollView, Vec2 } from 'cc';
+import type { WorldBoard } from '../../platform/wechat/cloudGame';
+import { leaderboardSkeleton } from './LeaderboardLoading';
 import { WORLD_BOARD, worldBoardFooter } from '../../presentation/leaderboardLayout';
-import { worldPlayerView } from './WorldPlayerView';
+import { leaderboardChrome, artworkButton } from './LeaderboardArtwork';
+import { leaderboardList } from './LeaderboardList';
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { GREEN, INK, MUTED, PAPER } from '../../presentation/gameVisuals';
 import { makeLevel } from '../../domain/levels/levels';
@@ -9,12 +13,21 @@ export class SocialScreen {
     constructor(
         private readonly game: Pick<
             GardenRuntime,
-            'cloud' | 'profile' | 'lifecycle' | 'overlays' | 'ui' | 'home' | 'notices' | 'identity'
+            | 'assets'
+            | 'cloud'
+            | 'profile'
+            | 'lifecycle'
+            | 'overlays'
+            | 'ui'
+            | 'home'
+            | 'notices'
+            | 'identity'
+            | 'leaderboardData'
         >,
     ) {}
     leaderboard(page = 0) {
         if (this.game.cloud.cloudMode) {
-            this.worldLeaderboard(page);
+            this.worldLeaderboard();
             return;
         }
         const records = [...this.game.profile.save.best].sort((a, b) => a.seconds - b.seconds);
@@ -115,7 +128,7 @@ export class SocialScreen {
         );
     }
 
-    worldLeaderboard(page: number) {
+    worldLeaderboard() {
         if (
             !this.game.cloud.cloudReady ||
             (this.game.cloud.cloudBusy && !this.game.cloud.cloudCancellable)
@@ -126,78 +139,94 @@ export class SocialScreen {
             '世界排行榜',
             '通关越多越靠前 · 同关卡先到者在前',
             footer.height,
+            'custom',
         );
-        this.game.ui.button(
+        const initial = leaderboardChrome(
+            this.game,
             n,
-            '返回',
-            0,
-            footer.returnY,
-            480,
-            64,
-            GREEN,
+            this.game.lifecycle.touchSize,
+            this.game.identity.consentAvailable || this.game.identity.settingsAvailable,
             () => this.game.overlays.closeModal(),
-            '#FFFFFF',
         );
-        this.game.identity.boardOpened(n, page);
-        this.game.overlays.modalStatusY = 80;
+        leaderboardSkeleton(this.game, initial.content);
+        this.game.identity.boardOpened(n);
+        this.game.overlays.modalStatusY = WORLD_BOARD.summaryY;
         this.game.cloud.cloudTask(
             () => this.game.identity.synchronize(),
             () => {
-                if (n.isValid && this.game.overlays.modal === n) this.loadWorldBoard(n, page);
+                if (!n.isValid || this.game.overlays.modal !== n) return;
+                const cached = this.game.leaderboardData.cached();
+                if (cached) this.renderWorldBoard(n, cached, true);
+                this.loadWorldBoard(n);
             },
-            '正在同步资料…',
+            '正在加载排行榜…',
         );
     }
 
-    private loadWorldBoard(n: import('cc').Node, page: number) {
+    private loadWorldBoard(n: import('cc').Node) {
         this.game.cloud.cloudTask(
-            () => this.game.cloud.cloud!.leaderboard(page),
+            () => this.game.leaderboardData.load(),
             (result) => {
-                if (!n.isValid || this.game.overlays.modal !== n) return;
-                if (!result.rows.length) this.game.ui.text(n, '还没有通关成绩', 0, 80, 30);
-                result.rows.forEach((row, i) => worldPlayerView(this.game, n, row, i, page));
-                if (page > 0)
-                    this.game.ui.button(
-                        n,
-                        '上一页',
-                        -215,
-                        WORLD_BOARD.paginationY,
-                        150,
-                        48,
-                        PAPER,
-                        () => this.worldLeaderboard(page - 1),
-                    );
-                if (result.hasNext)
-                    this.game.ui.button(
-                        n,
-                        '下一页',
-                        215,
-                        WORLD_BOARD.paginationY,
-                        150,
-                        48,
-                        PAPER,
-                        () => this.worldLeaderboard(page + 1),
-                    );
-                this.game.ui.text(n, '展示前一百名玩家', 0, WORLD_BOARD.summaryY, 22, MUTED);
-                if (this.game.identity.consentAvailable) {
-                    const y = worldBoardFooter(this.game.lifecycle.touchSize).consentY;
-                    this.game.ui.button(n, '微信资料授权', 0, y, 360, 60, PAPER, () => {});
-                    this.game.identity.offerConsent(n, y);
-                }
-                if (this.game.identity.settingsAvailable)
-                    this.game.ui.button(
-                        n,
-                        '微信授权设置',
-                        0,
-                        worldBoardFooter(this.game.lifecycle.touchSize).consentY,
-                        360,
-                        60,
-                        PAPER,
-                        () => this.game.identity.settings(),
-                    );
+                if (n.isValid && this.game.overlays.modal === n) this.renderWorldBoard(n, result);
             },
-            '正在加载排行…',
+            '正在加载排行榜…',
             true,
         );
+    }
+
+    private renderWorldBoard(n: import('cc').Node, result: WorldBoard, refreshing = false) {
+        const loading = n.children.find((node) => node.name === 'Leaderboard content')!;
+        const offset = loading.children
+            .find((node) => node.name === 'Leaderboard viewport')
+            ?.getComponent(ScrollView)
+            ?.getScrollOffset();
+        loading.name = 'Retired leaderboard loading';
+        loading.active = false;
+        loading.destroy();
+        const { content, layout } = leaderboardChrome(
+            this.game,
+            n,
+            this.game.lifecycle.touchSize,
+            this.game.identity.consentAvailable || this.game.identity.settingsAvailable,
+            () => this.game.overlays.closeModal(),
+        );
+        if (!result.rows.length) this.game.ui.text(content, '还没有通关成绩', 0, 80, 30);
+        const scroll = leaderboardList(this.game, content, result.rows);
+        if (offset)
+            scroll.scrollToOffset(
+                new Vec2(0, Math.min(Math.max(0, offset.y), scroll.getMaxScrollOffset().y)),
+                0,
+            );
+        const caption = this.game.ui.text(
+            content,
+            '前一百名 · 上下滑动查看',
+            0,
+            WORLD_BOARD.summaryY,
+            22,
+            MUTED,
+        );
+        caption.node.active = !refreshing;
+        if (this.game.identity.consentAvailable) {
+            artworkButton(
+                this.game,
+                content,
+                '微信资料授权',
+                layout.consentX,
+                layout.consentY,
+                330,
+                () => {},
+            );
+            this.game.identity.offerConsent(n, layout.consentY, layout.consentX, 330);
+        }
+        if (this.game.identity.settingsAvailable)
+            artworkButton(
+                this.game,
+                content,
+                '微信授权设置',
+                layout.consentX,
+                layout.consentY,
+                330,
+                () => this.game.identity.settings(),
+            );
     }
 }

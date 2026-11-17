@@ -228,7 +228,12 @@ export class OverlayController {
         return sheet;
     }
 
-    openModal(title: string, subtitle: string, height = 500) {
+    openModal(
+        title: string,
+        subtitle: string,
+        height = 500,
+        surface: 'island' | 'custom' = 'island',
+    ) {
         this.game.identity.hide();
         this.game.preview.clearPreview();
         this.closeModal();
@@ -257,9 +262,11 @@ export class OverlayController {
         n.on(Node.EventType.TOUCH_END, (e: { propagationStopped: boolean }) => {
             e.propagationStopped = true;
         });
-        islandModal(veil, 650, height);
-        this.game.ui.text(n, title, 0, height / 2 - 64, 34, INK, 560).isBold = false;
-        this.game.ui.text(n, subtitle, 0, height / 2 - 119, 25, MUTED, 560);
+        if (surface === 'island') {
+            islandModal(veil, 650, height);
+            this.game.ui.text(n, title, 0, height / 2 - 64, 34, INK, 560).isBold = false;
+            this.game.ui.text(n, subtitle, 0, height / 2 - 119, 25, MUTED, 560);
+        }
         this.game.cloudStatus.refreshCloudStatus();
         return n;
     }

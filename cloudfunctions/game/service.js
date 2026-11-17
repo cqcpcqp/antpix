@@ -45,24 +45,28 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
             );
             const uid = digest(context.APPID + ':' + context.OPENID);
             const now = clock();
-            if (event.action === 'leaderboard') {
-                requireRule(
-                    Number.isInteger(event.page) && event.page >= 0 && event.page < 10,
-                    'INPUT',
-                    '排行榜页码无效',
-                );
-                const rows = await store.leaderboard(event.page * 10, 11);
+            if (event.action === 'leaderboard' || event.action === 'leaderboardTop') {
+                const top = event.action === 'leaderboardTop';
+                if (!top)
+                    requireRule(
+                        Number.isInteger(event.page) && event.page >= 0 && event.page < 10,
+                        'INPUT',
+                        '排行榜页码无效',
+                    );
+                const start = top ? 0 : event.page * 10;
+                const count = top ? 100 : 10;
+                const rows = await store.leaderboard(start, top ? 100 : 11);
                 return {
                     ok: true,
-                    rows: rows.slice(0, 10).map((row, index) => ({
-                        rank: event.page * 10 + index + 1,
+                    rows: rows.slice(0, count).map((row, index) => ({
+                        rank: start + index + 1,
                         player: row.player,
                         identity: row.identityConsentVersion === 1 ? row.identity : null,
                         highest: row.highest,
                         reachedAt: row.reachedAt,
                         self: row._id === uid,
                     })),
-                    hasNext: rows.length > 10 && event.page < 9,
+                    hasNext: !top && rows.length > 10 && event.page < 9,
                 };
             }
             const result = await store.transaction(async (tx) => {

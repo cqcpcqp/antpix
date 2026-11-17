@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { resolve } from 'node:path';
 import {
   cc,
+  installLeaderboardArt,
+  rankingNodes,
   load,
   leaderboardFixture,
   players,
@@ -32,7 +34,7 @@ test('nickname ellipsis preserves Unicode clusters and measures width instead of
 test('first page renders live champion, silver and bronze cards with enlarged circular portraits', async () => {
   const { game, requests } = leaderboardFixture(players());
   await settleLeaderboard();
-  const board = game.overlays.modal;
+  const board = rankingNodes(game).rows;
   assert.equal(board.children.filter((n) => n.name.endsWith('plaque')).length, 3);
   assert.equal(board.children.filter((n) => n.name.endsWith('medal')).length, 3);
   const avatars = board.children.filter((n) => n.name === 'Player avatar');
@@ -50,37 +52,50 @@ test('first page renders live champion, silver and bronze cards with enlarged ci
   assert.equal(board.children.filter((n) => n.name === 'My ranking').length, 1);
 });
 
-test('later page retains ranks and row spacing without awarding extra podium medals', async () => {
-  const { game } = leaderboardFixture(players(11), { page: 1 });
+test('all 100 players share one bounded native scroller with a fixed header and return', async () => {
+  const { game } = leaderboardFixture(players(1, 100));
   await settleLeaderboard();
-  const board = game.overlays.modal;
-  assert.equal(board.children.filter((n) => n.name.endsWith('medal')).length, 0);
-  const avatars = board.children.filter((n) => n.name === 'Player avatar');
-  assert.equal(avatars.length, 10);
-  assert.equal(avatars[0].position.y - avatars[9].position.y, 9 * 84);
-  assert.equal(
-    board.children.some((n) => n.name === '上一页'),
-    true,
-  );
-  assert.equal(
-    board.children.some((n) => n.name === '下一页'),
-    false,
-  );
+  const { chrome, viewport, scroll, rows } = rankingNodes(game);
+  assert.equal(rows.children.filter((n) => n.name === 'Player avatar').length, 100);
+  assert.equal(rows.children.filter((n) => n.name.endsWith('medal')).length, 3);
+  assert.equal(scroll.horizontal, false);
+  assert.equal(scroll.vertical, true);
+  assert.equal(scroll.inertia, true);
+  assert.equal(scroll.elastic, true);
+  assert.equal(viewport.getComponent(cc.Mask).type, cc.Mask.Type.GRAPHICS_RECT);
+  assert.deepEqual(scroll.content.getComponent(cc.UITransform).anchorPoint, { x: 0.5, y: 1 });
+  const contentHeight = scroll.content.getComponent(cc.UITransform).height;
+  const viewportHeight = viewport.getComponent(cc.UITransform).height;
+  assert.ok(contentHeight > viewportHeight * 7);
+  assert.ok(!chrome.children.some((n) => ['上一页', '下一页'].includes(n.name)));
+  const back = chrome.children.find((n) => n.name === '返回');
+  const fixedY = back.position.y;
+  scroll.scrollToBottom();
+  const avatars = rows.children.filter((n) => n.name === 'Player avatar');
+  const lastY =
+    viewport.position.y + scroll.content.position.y + rows.position.y + avatars[99].position.y;
+  assert.ok(lastY > -450 && lastY < -370, 'rank 100 clears the viewport bottom with padding');
+  assert.equal(back.position.y, fixedY);
+  scroll.scrollToTop();
+  assert.equal(scroll.content.position.y, viewportHeight / 2);
 });
 
-test('consent, pagination and return hit areas stay separate at narrow device sizes', async () => {
+test('consent, scroll viewport and return hit areas stay separate at narrow device sizes', async () => {
   for (const touchSize of [88, 104, 138]) {
     const { game } = leaderboardFixture(players(), { consent: true, touchSize });
     await settleLeaderboard();
-    const board = game.overlays.modal;
-    const back = board.children.find((n) => n.name === '返回');
-    const consent = board.children.find((n) => n.name === '微信资料授权');
-    const next = board.children.find((n) => n.name === '下一页');
+    const { chrome, viewport } = rankingNodes(game);
+    const back = chrome.children.find((n) => n.name === '返回');
+    const consent = chrome.children.find((n) => n.name === '微信资料授权');
     assert.equal(game.nativeConsent.y, consent.position.y);
-    assert.ok(consent.position.y - back.position.y > touchSize);
-    assert.ok(next.position.y - consent.position.y > touchSize);
+    assert.equal(consent.position.y, back.position.y);
+    assert.ok(consent.position.x - 330 / 2 > back.position.x + 210 / 2);
+    assert.equal(game.nativeConsent.x, consent.position.x);
+    assert.equal(game.nativeConsent.width, 330);
+    const bottom = viewport.position.y - viewport.getComponent(cc.UITransform).height / 2;
+    assert.ok(bottom > consent.position.y + touchSize / 2);
     const footer = worldBoardFooter(touchSize);
-    assert.ok(back.position.y - touchSize / 2 > -footer.height / 2);
+    assert.ok(back.position.y - touchSize / 2 > footer.panelY - footer.height / 2);
   }
 });
 
@@ -88,8 +103,36 @@ test('empty and partial boards preserve the return action and actual player coun
   for (const count of [0, 1, 2, 3]) {
     const { game } = leaderboardFixture(players(1, count));
     await settleLeaderboard();
-    const board = game.overlays.modal;
+    const board = rankingNodes(game).rows;
     assert.equal(board.children.filter((n) => n.name === 'Player avatar').length, count);
-    assert.ok(board.children.some((n) => n.name === '返回'));
+    assert.ok(rankingNodes(game).chrome.children.some((n) => n.name === '返回'));
+    assert.equal(rankingNodes(game).scroll.content.getComponent(cc.UITransform).height, 936);
   }
+});
+
+test('shared artwork frames stay inside the PNG atlas and release once with the app', async () => {
+  const { readFileSync } = await import('node:fs');
+  const png = readFileSync('assets/resources/leaderboard/laurel.png');
+  const width = png.readUInt32BE(16),
+    height = png.readUInt32BE(20);
+  const game = {};
+  const owner = installLeaderboardArt(game);
+  const texture = game.assets.leaderboardTexture;
+  const frames = [...game.assets.leaderboardFrames.values()];
+  assert.equal(texture.refs, 1);
+  assert.equal(frames.length, 11);
+  for (const frame of frames) {
+    assert.equal(frame.texture, texture);
+    assert.ok(frame.rect.x >= 0 && frame.rect.y >= 0);
+    assert.ok(frame.rect.x + frame.rect.width <= width);
+    assert.ok(frame.rect.y + frame.rect.height <= height);
+    assert.ok(frame.insetLeft + frame.insetRight < frame.rect.width);
+    assert.ok(frame.insetTop + frame.insetBottom < frame.rect.height);
+  }
+  owner.destroy();
+  assert.ok(frames.every((frame) => frame.destroyed));
+  assert.equal(game.assets.leaderboardFrames.size, 0);
+  assert.equal(texture.refs, 0);
+  owner.destroy();
+  assert.equal(texture.refs, 0, 'repeated teardown does not release twice');
 });

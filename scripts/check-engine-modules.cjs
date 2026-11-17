@@ -35,7 +35,15 @@ function engineExports(code) {
 
 function checkEngineModules(root) {
   const names = engineExports(readFileSync(resolve(root, 'cocos-js/cc.js'), 'utf8'));
-  for (const component of ['Node', 'UITransform', 'Graphics', 'Label', 'Sprite', 'Mask'])
+  for (const component of [
+    'Node',
+    'UITransform',
+    'Graphics',
+    'Label',
+    'Sprite',
+    'Mask',
+    'ScrollView',
+  ])
     assert.ok(
       names.has(component),
       `Built Cocos engine must export ${component}; check engine module stripping`,

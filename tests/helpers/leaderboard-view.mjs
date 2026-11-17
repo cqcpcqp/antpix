@@ -3,10 +3,24 @@ import { resolve } from 'node:path';
 const require = createRequire(import.meta.url);
 export const { cc, load } = require('../../scripts/headless-game.cjs');
 
+/** Load the production atlas via its actual resource owner, without a platform request. */
+export function installLeaderboardArt(game) {
+  const { LeaderboardAssets } = load(resolve('assets/scripts/app/LeaderboardAssets.ts'));
+  game.assets = { leaderboardFrames: new Map(), leaderboardTexture: null };
+  const texture = new cc.Texture2D();
+  const owner = new LeaderboardAssets({
+    assets: game.assets,
+    host: { isValid: true },
+    startup: { load: (_path, _type, complete) => complete(null, texture) },
+  });
+  owner.load();
+  return owner;
+}
+
 /** Real UI controllers with deterministic platform data; no network or browser. */
 export function leaderboardFixture(
   rows,
-  { page = 0, consent = false, touchSize = 88, viewport = null } = {},
+  { consent = false, touchSize = 88, viewport = null } = {},
 ) {
   const requests = [];
   const screenWidth = viewport ? Math.max(750, (1500 * viewport.width) / viewport.height) : 750;
@@ -16,6 +30,7 @@ export function leaderboardFixture(
   const { OverlayController } = load(resolve('assets/scripts/features/ui/OverlayController.ts'));
   const { SocialScreen } = load(resolve('assets/scripts/features/home/SocialScreen.ts'));
   const game = {
+    host: { isValid: true },
     lifecycle: {
       root: new cc.Node('Root'),
       screenWidth,
@@ -32,28 +47,34 @@ export function leaderboardFixture(
     preview: { clearPreview() {} },
     cloudStatus: { refreshCloudStatus() {} },
     identity: {
+      revision: 0,
       hide() {},
       boardOpened() {},
       synchronize: async () => {},
       consentAvailable: consent,
       settingsAvailable: false,
-      offerConsent(node, y) {
-        game.nativeConsent = { node, y };
+      offerConsent(node, y, x, width) {
+        game.nativeConsent = { node, y, x, width };
       },
     },
     cloud: {
+      cloudHighest: 0,
+      cloudReachedAt: 0,
       cloudReady: true,
       cloudBusy: false,
-      cloud: { leaderboard: async () => ({ rows, hasNext: page === 0 }) },
+      cloud: { leaderboardAll: async () => ({ ok: true, rows, hasNext: false }) },
       cloudTask(work, complete) {
         return work().then(complete);
       },
     },
   };
+  installLeaderboardArt(game);
+  const { LeaderboardData } = load(resolve('assets/scripts/app/LeaderboardData.ts'));
+  game.leaderboardData = new LeaderboardData(game);
   game.ui = new UiFactory(game);
   game.overlays = new OverlayController(game);
   game.social = new SocialScreen(game);
-  game.social.worldLeaderboard(page);
+  game.social.worldLeaderboard();
   return { game, requests };
 }
 export async function settleLeaderboard() {
@@ -73,4 +94,12 @@ export function players(first = 1, count = 10) {
             avatarUrl: `https://thirdwx.qlogo.cn/avatar-${i}/0`,
           },
   }));
+}
+
+/** Return the actual fixed chrome, scroller and player container for UI assertions. */
+export function rankingNodes(game) {
+  const chrome = game.overlays.modal.children.find((node) => node.name === 'Leaderboard content');
+  const viewport = chrome.children.find((node) => node.name === 'Leaderboard viewport');
+  const scroll = viewport.getComponent(cc.ScrollView);
+  return { chrome, viewport, scroll, rows: scroll.content.children[0] };
 }

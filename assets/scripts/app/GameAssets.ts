@@ -2,6 +2,10 @@ import { SpriteFrame, Texture2D } from 'cc';
 
 /** Retains textures and sprite frames for the component lifetime. */
 export class GameAssets {
+    leaderboardFrames = new Map<string, SpriteFrame>();
+
+    leaderboardTexture: Texture2D | null = null;
+
     homeFrame: SpriteFrame | null = null;
 
     homeTexture: Texture2D | null = null;

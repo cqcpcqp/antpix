@@ -83,8 +83,12 @@ node --experimental-strip-types --import ./scripts/register-typescript.mjs scrip
 
 绘图代码修改后运行 `npm run generate:ants`；`npm run generate:ants -- --check` 检查图集与共享绘图一致。修改运行素材后重新构建，不修改 `.meta` UUID。
 
+排行榜 C 方案的参考稿、原始 RGBA 素材、提示词和打包方式保存在 [美术源目录](../art/leaderboard/laurel-v2/README.md)。`LeaderboardAssets` 通过启动门控加载共享图集，在应用销毁时统一释放；榜单微信头像仍由对应玩家节点独立管理。
+
 ## 离线预览
 
 `node scripts/preview-ui.cjs` 默认输出 `temp/previews/ui-390x844/`。可用 `PREVIEW_WIDTH`、`PREVIEW_HEIGHT` 检查尺寸，用 `PREVIEW_OUT` 指定输出目录。首页和容器专项预览分别使用 `scripts/preview-home.cjs`、`scripts/preview-container-launch.cjs`，同样输出到 `temp/previews/`。
 
 这些工具读取当前组件与素材，不打开浏览器；离线结果不能替代 Cocos 或微信真机的触摸、性能验证。
+
+排行榜专项预览使用 `node scripts/preview-leaderboard.mjs`，输出到 `output/leaderboard-laurel-v2/`；设置 `CHECK_BUILT=1` 可检查真实微信构建代码。覆盖前三名、匿名头像、长昵称、前 100 名滚动到底和窄屏授权布局。

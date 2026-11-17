@@ -1,6 +1,6 @@
 // Validate the final package, including files copied after the Creator build.
 const assert = require('node:assert/strict');
-const { readFileSync, existsSync } = require('node:fs');
+const { readFileSync, existsSync, readdirSync } = require('node:fs');
 const { resolve } = require('node:path');
 const root = resolve('build/wechatgame');
 require('./check-engine-modules.cjs').checkEngineModules(root);
@@ -45,6 +45,22 @@ for (const path of Object.values(artwork))
     path.startsWith('startup/artwork/'),
     'first-screen artwork must be in the main package',
   );
+const resourceRoot = resolve(
+  root,
+  game.subpackages.find((entry) => entry.name === 'resources').root,
+);
+const resourceConfig = JSON.parse(readFileSync(resolve(resourceRoot, 'config.json'), 'utf8'));
+assert.ok(
+  Object.values(resourceConfig.paths).some((entry) => entry[0] === 'leaderboard/laurel/texture'),
+  'Leaderboard texture must be loadable from the resource subpackage',
+);
+const atlas = readFileSync('assets/resources/leaderboard/laurel.png');
+assert.ok(
+  readdirSync(resolve(resourceRoot, 'native'), { recursive: true })
+    .filter((path) => path.endsWith('.png'))
+    .some((path) => readFileSync(resolve(resourceRoot, 'native', path)).equals(atlas)),
+  'Built leaderboard atlas must match the verified source PNG',
+);
 console.log(
   `WeChat package complete: main ${(mainBytes / 1024).toFixed(1)} / 4096 KiB, total ${(totalBytes / 1024).toFixed(1)} / 30720 KiB.`,
 );
