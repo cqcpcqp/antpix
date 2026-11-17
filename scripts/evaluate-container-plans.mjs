@@ -43,12 +43,9 @@ for (const dataset of datasets) {
     }
   }
   const stages = [
-    [1, 10],
-    [11, 30],
-    [31, 60],
-    [61, 100],
-    [101, 200],
-    [201, 300],
+    [1, 20],
+    [21, 100],
+    [101, ARTWORKS.length],
   ].map(([from, to]) => {
     const subset = rows.filter((r) => r.level >= from && r.level <= to);
     return {

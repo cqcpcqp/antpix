@@ -9,6 +9,21 @@ import {
 
 export { colorClosure } from './container-simulation.mjs';
 
+// Stage boundaries never depend on catalog size, so appending levels cannot
+// lower the generation pressure of an existing stage.
+export function difficultyForLevel(number) {
+  if (!Number.isInteger(number) || number < 1) throw new Error('Invalid level number');
+  if (number <= 20) return { stage: 'early', difficulty: 0.25 };
+  if (number <= 100) return { stage: 'middle', difficulty: 0.6 };
+  return { stage: 'late', difficulty: 1 };
+}
+
+export function dependencySettings(difficulty) {
+  if (difficulty < 0.4) return { maxUnfinished: 2, dependencyRate: 0.25, dependencyBudget: 4 };
+  if (difficulty < 0.8) return { maxUnfinished: 2, dependencyRate: 0.65, dependencyBudget: 8 };
+  return { maxUnfinished: 3, dependencyRate: 0.8, dependencyBudget: 12 };
+}
+
 // Ordered entries retain a replayable solution; the third value explicitly assigns
 // each entry to a column. Increasing ids within each column preserve that solution.
 export function distributeColumns(jars, seed, repetitionPenalty = 6, openingCopies = 1) {
@@ -40,7 +55,20 @@ export function distributeColumns(jars, seed, repetitionPenalty = 6, openingCopi
   });
 }
 
-export function planContainers(level, seed = 1, difficulty = 0) {
+export function planContainers(level, seed = 1, difficulty = 0, options = {}) {
+  const { maxUnfinished, dependencyRate, dependencyBudget } = {
+    ...dependencySettings(difficulty),
+    ...options,
+  };
+  if (!Number.isInteger(maxUnfinished) || maxUnfinished < 1 || maxUnfinished > 4)
+    throw new Error('Unfinished-container limit must leave at least one of five slots free');
+  if (
+    dependencyRate < 0 ||
+    dependencyRate > 1 ||
+    !Number.isInteger(dependencyBudget) ||
+    dependencyBudget < 0
+  )
+    throw new Error('Invalid dependency experiment settings');
   const random = seededRandom(seed);
   // Use production nearest-contact pickup when constructing the witness. Partial
   // color collection changes which colors open next, so abstract flood order is insufficient.
@@ -51,7 +79,8 @@ export function planContainers(level, seed = 1, difficulty = 0) {
   let lastColor = -1,
     streak = 0,
     stages = 0,
-    dependencies = 0;
+    dependencies = 0,
+    peakUnfinished = 0;
   while (model.remaining) {
     const activeColors = new Set(model.slots.filter(Boolean).map((j) => j.color));
     const candidates = colors
@@ -74,19 +103,18 @@ export function planContainers(level, seed = 1, difficulty = 0) {
     candidates.sort((a, b) => b.score - a.score || a.color - b.color);
     const chosen = candidates[0],
       id = jars.length;
-    // Introduce a bounded number of visible cross-color dependencies after the
-    // tutorial. Only one unfinished container is allowed on the witness path.
-    // The remaining four slots can always collect an exposed, unallocated color.
+    // Stage limits retain space for the next productive color in the witness.
+    // Actual waiting depends on the artwork exposing only part of a color.
     const total = model.pixels.filter((c) => c === chosen.color).length;
     if (
       difficulty > 0.1 &&
       id >= 8 &&
-      !activeColors.size &&
+      activeColors.size < maxUnfinished &&
       chosen.count >= 8 &&
       chosen.count < level.capacity &&
       total > chosen.count &&
-      dependencies < Math.ceil(difficulty * 4) &&
-      random() < 0.25
+      dependencies < dependencyBudget &&
+      random() < dependencyRate
     ) {
       chosen.capacity = Math.min(
         level.capacity,
@@ -104,8 +132,8 @@ export function planContainers(level, seed = 1, difficulty = 0) {
     });
     if (model.place(id) < 0) throw new Error('Witness must have a free slot');
     settleContainers(model, true);
-    if (model.slots.filter(Boolean).length > 1)
-      throw new Error('Witness exceeds dependency budget');
+    peakUnfinished = Math.max(peakUnfinished, model.slots.filter(Boolean).length);
+    if (peakUnfinished > maxUnfinished) throw new Error('Witness exceeds dependency budget');
     if (chosen.color === lastColor) streak++;
     else {
       lastColor = chosen.color;
@@ -113,7 +141,7 @@ export function planContainers(level, seed = 1, difficulty = 0) {
       stages++;
     }
   }
-  return { jars, stages, dependencies };
+  return { jars, stages, dependencies, peakUnfinished };
 }
 
 // Candidate layouts are evaluated with fixed training seeds. The independent

@@ -274,7 +274,7 @@ for (let level = 0; level < LEVEL_COUNT; level++)
           progressed = true;
         }
       }
-      assert.ok(m.slots.filter(Boolean).length <= 1);
+      assert.ok(m.slots.filter(Boolean).length <= (level < 100 ? 2 : 3));
     }
     assert.equal(m.complete, true);
     assert.equal(m.collected, art.pixels.length);

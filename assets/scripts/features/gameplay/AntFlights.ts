@@ -20,6 +20,13 @@ import {
 } from '../../presentation/boardLayout';
 import type { AntTrip } from '../../presentation/gameVisuals';
 
+// Search waypoints use integer cell centers. Recover those exact values after
+// the world-space round trip so a tangent cannot change sides by a few ulps.
+function routeGridCoordinate(value: number): number {
+    const center = Math.round(value);
+    return Math.abs(value - center) < 1e-9 ? center : value;
+}
+
 /** Advances trip phases; real pixels govern clearance and lifting. */
 export class AntFlights {
     constructor(private readonly game: Pick<GardenRuntime, 'session' | 'ants' | 'layout'>) {}
@@ -38,12 +45,12 @@ export class AntFlights {
                 !clearSegment(
                     this.routeBoard,
                     {
-                        x: (a.x - BOARD_LEFT) / CELL_SIZE - 0.5,
-                        y: (BOARD_TOP - a.y) / CELL_SIZE - 0.5,
+                        x: routeGridCoordinate((a.x - BOARD_LEFT) / CELL_SIZE - 0.5),
+                        y: routeGridCoordinate((BOARD_TOP - a.y) / CELL_SIZE - 0.5),
                     },
                     {
-                        x: (b.x - BOARD_LEFT) / CELL_SIZE - 0.5,
-                        y: (BOARD_TOP - b.y) / CELL_SIZE - 0.5,
+                        x: routeGridCoordinate((b.x - BOARD_LEFT) / CELL_SIZE - 0.5),
+                        y: routeGridCoordinate((BOARD_TOP - b.y) / CELL_SIZE - 0.5),
                     },
                     0.45,
                 )
@@ -73,6 +80,12 @@ export class AntFlights {
                     }
                 }
                 if (trip.clearanceBlocked) {
+                    // Refresh before checking this frame's segment: a worker
+                    // held at a corner must also resume after obstacles disappear.
+                    if (trip.clearanceRemaining !== this.game.session.model.remaining) {
+                        trip.clearanceBlocked = this.routeHasBlockedSegment(trip.route);
+                        trip.clearanceRemaining = this.game.session.model.remaining;
+                    }
                     const from = samplePreparedRoute(
                         trip.route,
                         trip.distance * Math.min(1, previousElapsed / walk),
@@ -87,20 +100,15 @@ export class AntFlights {
                     trip.fromGrid.y = (BOARD_TOP - from.y) / CELL_SIZE - 0.5;
                     trip.toGrid.x = (to.x - BOARD_LEFT) / CELL_SIZE - 0.5;
                     trip.toGrid.y = (BOARD_TOP - to.y) / CELL_SIZE - 0.5;
-                    if (!clearSegment(this.routeBoard, trip.fromGrid, trip.toGrid, 0.45)) {
+                    if (
+                        trip.clearanceBlocked &&
+                        !clearSegment(this.routeBoard, trip.fromGrid, trip.toGrid, 0.45)
+                    ) {
                         // Hold at the last safe position until earlier workers
                         // actually clear the reserved corridor. Never tunnel.
                         trip.elapsed = previousElapsed;
                         this.game.ants.updateAntVisual(trip);
                         continue;
-                    }
-                    // Pixels only disappear during play, so once every segment
-                    // is clear this trip no longer needs per-frame scans.
-                    // remaining changes on each successful lift, including lifts
-                    // earlier in this frame. Reservations and arrivals do not alter obstacles.
-                    if (trip.clearanceRemaining !== this.game.session.model.remaining) {
-                        trip.clearanceBlocked = this.routeHasBlockedSegment(trip.route);
-                        trip.clearanceRemaining = this.game.session.model.remaining;
                     }
                 }
             }

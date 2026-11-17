@@ -3,7 +3,13 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
-import { planContainers, selectLayout, encodeContainerPlan } from './container-planner.mjs';
+import {
+  planContainers,
+  selectLayout,
+  encodeContainerPlan,
+  difficultyForLevel,
+  dependencySettings,
+} from './container-planner.mjs';
 const relayout = process.argv.includes('--relayout');
 const args = process.argv.slice(2).filter((arg) => arg !== '--relayout');
 const file = resolve(args[0] || 'assets/scripts/domain/levels/levels.ts');
@@ -26,12 +32,7 @@ if (reuseFile) {
     reused.set(art.id, {
       art,
       plans: previous.CONTAINER_PLANS[art.id],
-      report: {
-        ...previousReport[index],
-        generationDifficulty:
-          previousReport[index].generationDifficulty ??
-          index / Math.max(1, previous.ARTWORKS.length - 1),
-      },
+      report: previousReport[index],
     });
   });
 }
@@ -39,8 +40,12 @@ const plans = {},
   report = [];
 for (const [index, art] of ARTWORKS.entries()) {
   const level = { ...art, width: GRID_WIDTH, height: GRID_HEIGHT };
+  const stage = difficultyForLevel(index + 1);
   const previous = reused.get(art.id);
   if (previous) {
+    assert.equal(previous.report.generationStage, stage.stage, 'Regenerate outdated stages');
+    assert.equal(previous.report.generationDifficulty, stage.difficulty);
+    assert.deepEqual(previous.report.dependencySettings, dependencySettings(stage.difficulty));
     assert.deepEqual(art.pixels, previous.art.pixels, `Cannot reuse changed artwork: ${art.id}`);
     assert.deepEqual(art.swatches, previous.art.swatches);
     assert.equal(previous.report.id, art.id);
@@ -61,9 +66,7 @@ for (const [index, art] of ARTWORKS.entries()) {
       createHash('sha256').update(JSON.stringify(level.pixels)).digest('hex'),
     );
   }
-  const difficulty = relayout
-    ? layoutReport.generationDifficulty
-    : index / Math.max(1, ARTWORKS.length - 1);
+  const difficulty = relayout ? layoutReport.generationDifficulty : stage.difficulty;
   const variants = Array.from({ length: 3 }, (_, i) => {
     const seed = 1009 + i * 7919;
     const result = relayout
@@ -71,6 +74,7 @@ for (const [index, art] of ARTWORKS.entries()) {
           jars: CONTAINER_PLANS[art.id][i].map(([color, capacity]) => [color, capacity]),
           stages: layoutReport.variants[i].stages,
           dependencies: layoutReport.variants[i].dependencies,
+          peakUnfinished: layoutReport.variants[i].peakUnfinished,
         }
       : planContainers(level, seed, difficulty);
     const layout = selectLayout(level, result.jars, seed, difficulty);
@@ -86,12 +90,15 @@ for (const [index, art] of ARTWORKS.entries()) {
     id: art.id,
     name: art.name,
     generationDifficulty: difficulty,
+    generationStage: relayout ? layoutReport.generationStage : stage.stage,
+    dependencySettings: relayout ? layoutReport.dependencySettings : dependencySettings(difficulty),
     sourceHash: createHash('sha256').update(JSON.stringify(level.pixels)).digest('hex'),
     variants: variants.map((v) => ({
       ...v.metrics,
       planHash: createHash('sha256').update(JSON.stringify(v.jars)).digest('hex'),
       stages: v.stages,
       dependencies: v.dependencies,
+      peakUnfinished: v.peakUnfinished,
       trainingWins: v.trainingWins,
     })),
   });

@@ -41,6 +41,7 @@ for (let index = 0; index < LEVEL_COUNT; index++)
         createHash('sha256').update(JSON.stringify(plan)).digest('hex'),
       );
       let collected = 0;
+      let peakUnfinished = 0;
       for (let id = 0; id < plan.length; id++) {
         if (id % 7 === 0) {
           const before = m.columns.map((c) => c.map((j) => j.id).join(',')).sort();
@@ -52,10 +53,13 @@ for (let index = 0; index < LEVEL_COUNT; index++)
         const slot = m.place(id);
         assert.ok(slot >= 0, 'five basic slots must suffice');
         collected += settleContainers(m, true);
-        assert.ok(m.slots.filter(Boolean).length <= 1, 'at most one unresolved witness dependency');
+        const unfinished = m.slots.filter(Boolean).length;
+        peakUnfinished = Math.max(peakUnfinished, unfinished);
+        assert.ok(unfinished <= (index < 100 ? 2 : 3), 'stage waiting limit must hold');
       }
       assert.equal(collected, level.pixels.length);
       assert.equal(m.complete, true);
       assert.equal(m.inFlight, 0);
+      assert.equal(peakUnfinished, report[index].variants[variant].peakUnfinished);
     }
   });

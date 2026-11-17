@@ -9,6 +9,8 @@ import {
   distributeColumns,
   selectLayout,
   colorClosure,
+  difficultyForLevel,
+  dependencySettings,
 } from '../scripts/container-planner.mjs';
 import { settleContainers, simulatePlan, planMetrics } from '../scripts/container-simulation.mjs';
 
@@ -38,6 +40,47 @@ test('distribution disperses interleaved colors instead of stacking each color',
     );
     assert.ok(planMetrics(plan).columnMaxRun <= 2);
   }
+});
+
+test('fixed stages keep boundaries and future levels independent of catalog size', () => {
+  for (const [number, stage, maximum] of [
+    [1, 'early', 2],
+    [20, 'early', 2],
+    [21, 'middle', 2],
+    [100, 'middle', 2],
+    [101, 'late', 3],
+    [300, 'late', 3],
+    [10000, 'late', 3],
+  ]) {
+    const settings = difficultyForLevel(number);
+    assert.equal(settings.stage, stage);
+    assert.equal(dependencySettings(settings.difficulty).maxUnfinished, maximum);
+  }
+  assert.throws(() => difficultyForLevel(0), /Invalid level/);
+});
+
+test('dependency budgets support two or three waiting jars with five-slot solutions', () => {
+  // Eight single-use rows precede a nested set of three color barriers, so
+  // dependencies start after the existing opening protection at container 8.
+  const rows = [0, 1, 2, 3, 2, 1, 0, 4, 5, 6, 7, 8, 9, 10, 11];
+  const level = {
+    name: 'nested barriers',
+    width: 8,
+    height: rows.length,
+    pixels: rows.flatMap((color) => Array(8).fill(color)),
+    capacity: 16,
+  };
+  for (const maxUnfinished of [1, 2, 3]) {
+    const result = planContainers(level, 19, 1, {
+      maxUnfinished,
+      dependencyRate: 1,
+      dependencyBudget: 8,
+    });
+    assert.equal(result.peakUnfinished, maxUnfinished);
+    const plan = distributeColumns(result.jars, 31);
+    assert.equal(simulatePlan(level, plan, { policy: 'witness', nearest: true }).win, true);
+  }
+  assert.throws(() => planContainers(level, 19, 1, { maxUnfinished: 5 }), /leave at least one/);
 });
 
 test('explicit columns preserve prerequisites through permutation and independent advancement', () => {
@@ -144,12 +187,16 @@ test('reserved opening column does not prevent long intervening sequences from b
 });
 
 test('saved early, middle and late plans reproduce with the current generator', () => {
-  // Appending levels preserves the difficulty used when each plan was generated.
+  // Saved plans use fixed stages; future catalog growth does not alter them.
   const report = JSON.parse(readFileSync('art/container-plan-report.json', 'utf8'));
-  for (const index of [0, 49, 99, 199, 299]) {
+  for (const index of [0, 19, 20, 49, 99, 100, 199, 299]) {
     const level = makeLevel(index),
       difficulty = report[index].generationDifficulty,
       seed = 1009;
+    assert.equal(difficulty, difficultyForLevel(index + 1).difficulty);
+    assert.deepEqual(report[index].dependencySettings, dependencySettings(difficulty));
+    for (const variant of report[index].variants)
+      assert.ok(variant.peakUnfinished <= report[index].dependencySettings.maxUnfinished);
     const { jars } = planContainers(level, seed, difficulty);
     assert.deepEqual(selectLayout(level, jars, seed, difficulty).plan, level.containerPlans[0]);
   }

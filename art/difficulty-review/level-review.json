@@ -1,0 +1,6918 @@
+{
+  "status": "draft-not-human-difficulty-or-artwork-approval",
+  "method": "Five slots, at least five held-out seeds per variant. Capacity-heuristic win rate: >=80% easy proxy, >=40% mixed proxy, below40% planning-risk proxy. Neither repeated collection boredom nor human planning is measured.",
+  "summary": {
+    "image": {
+      "priority": 128,
+      "review": 134,
+      "candidate": 38
+    },
+    "strategy": {
+      "较易": 112,
+      "中等": 123,
+      "挑战风险": 65
+    }
+  },
+  "rows": [
+    {
+      "level": 1,
+      "id": "penguin-sailor",
+      "name": "企鹅船长",
+      "imageTier": "priority",
+      "maxComponent": 518,
+      "topThreeColorShare": 0.6048611111111111,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 2,
+      "id": "berry-basket",
+      "name": "野餐莓果篮",
+      "imageTier": "priority",
+      "maxComponent": 452,
+      "topThreeColorShare": 0.5041666666666667,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 3,
+      "id": "seaside-seal",
+      "name": "海边小海豹",
+      "imageTier": "priority",
+      "maxComponent": 617,
+      "topThreeColorShare": 0.5791666666666667,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 4,
+      "id": "rainy-day",
+      "name": "雨天小步舞",
+      "imageTier": "priority",
+      "maxComponent": 551,
+      "topThreeColorShare": 0.5229166666666667,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 5,
+      "id": "corgi-garden",
+      "name": "花园柯基",
+      "imageTier": "priority",
+      "maxComponent": 339,
+      "topThreeColorShare": 0.3909722222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 6
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 15
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 6,
+      "id": "little-gardener",
+      "name": "小小园丁",
+      "imageTier": "priority",
+      "maxComponent": 397,
+      "topThreeColorShare": 0.49756944444444445,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 7,
+      "id": "lemon-teapot",
+      "name": "柠檬茶时光",
+      "imageTier": "priority",
+      "maxComponent": 430,
+      "topThreeColorShare": 0.4621527777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 8,
+      "id": "baker-morning",
+      "name": "面包师的早晨",
+      "imageTier": "review",
+      "maxComponent": 170,
+      "topThreeColorShare": 0.36909722222222224,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 8
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 14
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 9,
+      "id": "red-panda",
+      "name": "竹林小熊猫",
+      "imageTier": "priority",
+      "maxComponent": 323,
+      "topThreeColorShare": 0.3951388888888889,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 10
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 14
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 10,
+      "id": "flower-bicycle",
+      "name": "花篮单车",
+      "imageTier": "review",
+      "maxComponent": 199,
+      "topThreeColorShare": 0.46493055555555557,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 11,
+      "id": "otter-shell",
+      "name": "抱贝壳的海獭",
+      "imageTier": "priority",
+      "maxComponent": 396,
+      "topThreeColorShare": 0.5666666666666667,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 10
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 14
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 12,
+      "id": "fruit-picnic",
+      "name": "果香野餐",
+      "imageTier": "priority",
+      "maxComponent": 332,
+      "topThreeColorShare": 0.4951388888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 13,
+      "id": "kite-child",
+      "name": "追风筝的孩子",
+      "imageTier": "priority",
+      "maxComponent": 923,
+      "topThreeColorShare": 0.5763888888888888,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 14,
+      "id": "sleepy-fox",
+      "name": "树下小狐狸",
+      "imageTier": "priority",
+      "maxComponent": 310,
+      "topThreeColorShare": 0.5083333333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 15,
+      "id": "rain-boots",
+      "name": "雨后小水洼",
+      "imageTier": "priority",
+      "maxComponent": 420,
+      "topThreeColorShare": 0.490625,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 16,
+      "id": "flower-florist",
+      "name": "小小花艺师",
+      "imageTier": "priority",
+      "maxComponent": 314,
+      "topThreeColorShare": 0.40069444444444446,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 14
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 17,
+      "id": "panda-bamboo",
+      "name": "竹笋午餐",
+      "imageTier": "review",
+      "maxComponent": 265,
+      "topThreeColorShare": 0.49409722222222224,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 15
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 18,
+      "id": "strawberry-cake",
+      "name": "草莓蛋糕",
+      "imageTier": "priority",
+      "maxComponent": 296,
+      "topThreeColorShare": 0.5055555555555555,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 11
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 19,
+      "id": "sailor-child",
+      "name": "小水手出航",
+      "imageTier": "priority",
+      "maxComponent": 535,
+      "topThreeColorShare": 0.5114583333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 20,
+      "id": "snail-leaf",
+      "name": "绿叶上的蜗牛",
+      "imageTier": "priority",
+      "maxComponent": 664,
+      "topThreeColorShare": 0.5954861111111112,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 5
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 21,
+      "id": "camping-lantern",
+      "name": "露营灯火",
+      "imageTier": "priority",
+      "maxComponent": 395,
+      "topThreeColorShare": 0.5388888888888889,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 8
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 13
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 22,
+      "id": "mushroom-picker",
+      "name": "蘑菇采集员",
+      "imageTier": "review",
+      "maxComponent": 210,
+      "topThreeColorShare": 0.39826388888888886,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 13
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 23,
+      "id": "koala-branch",
+      "name": "树枝上的考拉",
+      "imageTier": "priority",
+      "maxComponent": 887,
+      "topThreeColorShare": 0.6097222222222223,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 11
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 15
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 24,
+      "id": "cherry-jam",
+      "name": "樱桃果酱",
+      "imageTier": "priority",
+      "maxComponent": 311,
+      "topThreeColorShare": 0.49027777777777776,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 25,
+      "id": "young-painter",
+      "name": "小画家的调色盘",
+      "imageTier": "review",
+      "maxComponent": 236,
+      "topThreeColorShare": 0.39652777777777776,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 6
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 14
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 26,
+      "id": "duck-pond",
+      "name": "小鸭游春",
+      "imageTier": "priority",
+      "maxComponent": 700,
+      "topThreeColorShare": 0.6614583333333334,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 11
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 27,
+      "id": "toy-train",
+      "name": "积木小火车",
+      "imageTier": "review",
+      "maxComponent": 174,
+      "topThreeColorShare": 0.3836805555555556,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 13
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 28,
+      "id": "sunflower-girl",
+      "name": "向日葵女孩",
+      "imageTier": "priority",
+      "maxComponent": 538,
+      "topThreeColorShare": 0.4583333333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 29,
+      "id": "hamster-seed",
+      "name": "仓鼠的瓜子",
+      "imageTier": "priority",
+      "maxComponent": 461,
+      "topThreeColorShare": 0.484375,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 30,
+      "id": "lemonade-pitcher",
+      "name": "清凉柠檬水",
+      "imageTier": "priority",
+      "maxComponent": 440,
+      "topThreeColorShare": 0.4722222222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 5
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 11
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 31,
+      "id": "reading-child",
+      "name": "窗边读书",
+      "imageTier": "priority",
+      "maxComponent": 414,
+      "topThreeColorShare": 0.4479166666666667,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 5
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 13
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 32,
+      "id": "alpaca-meadow",
+      "name": "草地羊驼",
+      "imageTier": "priority",
+      "maxComponent": 442,
+      "topThreeColorShare": 0.5,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 14
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 33,
+      "id": "ceramic-pots",
+      "name": "陶罐与绿叶",
+      "imageTier": "priority",
+      "maxComponent": 293,
+      "topThreeColorShare": 0.3579861111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 34,
+      "id": "potter-wheel",
+      "name": "转动的陶轮",
+      "imageTier": "candidate",
+      "maxComponent": 134,
+      "topThreeColorShare": 0.31354166666666666,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 35,
+      "id": "hedgehog-apple",
+      "name": "刺猬与苹果",
+      "imageTier": "priority",
+      "maxComponent": 301,
+      "topThreeColorShare": 0.3350694444444444,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 36,
+      "id": "hot-air-balloon",
+      "name": "彩色热气球",
+      "imageTier": "priority",
+      "maxComponent": 379,
+      "topThreeColorShare": 0.4996527777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 37,
+      "id": "fishing-grandpa",
+      "name": "溪边垂钓",
+      "imageTier": "priority",
+      "maxComponent": 407,
+      "topThreeColorShare": 0.42777777777777776,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 11
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 38,
+      "id": "parrot-mango",
+      "name": "鹦鹉与芒果",
+      "imageTier": "priority",
+      "maxComponent": 288,
+      "topThreeColorShare": 0.5246527777777777,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 7
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 39,
+      "id": "sewing-basket",
+      "name": "缝纫篮",
+      "imageTier": "review",
+      "maxComponent": 221,
+      "topThreeColorShare": 0.39861111111111114,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 40,
+      "id": "icecream-vendor",
+      "name": "冰淇淋小摊",
+      "imageTier": "priority",
+      "maxComponent": 388,
+      "topThreeColorShare": 0.41875,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 41,
+      "id": "rabbit-carrot",
+      "name": "兔子的菜园",
+      "imageTier": "priority",
+      "maxComponent": 488,
+      "topThreeColorShare": 0.4263888888888889,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 15
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 42,
+      "id": "retro-camera",
+      "name": "旅行相机",
+      "imageTier": "priority",
+      "maxComponent": 328,
+      "topThreeColorShare": 0.28020833333333334,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 43,
+      "id": "violin-player",
+      "name": "林间小提琴",
+      "imageTier": "review",
+      "maxComponent": 201,
+      "topThreeColorShare": 0.453125,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 44,
+      "id": "sea-turtle",
+      "name": "珊瑚海龟",
+      "imageTier": "priority",
+      "maxComponent": 689,
+      "topThreeColorShare": 0.496875,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 11
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 14
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 45,
+      "id": "breakfast-tray",
+      "name": "阳光早餐盘",
+      "imageTier": "review",
+      "maxComponent": 260,
+      "topThreeColorShare": 0.45034722222222223,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 46,
+      "id": "astronaut-garden",
+      "name": "太空小园丁",
+      "imageTier": "priority",
+      "maxComponent": 691,
+      "topThreeColorShare": 0.5576388888888889,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 47,
+      "id": "chipmunk-acorn",
+      "name": "花栗鼠的橡果",
+      "imageTier": "review",
+      "maxComponent": 144,
+      "topThreeColorShare": 0.328125,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 48,
+      "id": "paper-lighthouse",
+      "name": "桌上的灯塔",
+      "imageTier": "review",
+      "maxComponent": 235,
+      "topThreeColorShare": 0.3802083333333333,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 49,
+      "id": "ballet-dancer",
+      "name": "花园舞步",
+      "imageTier": "priority",
+      "maxComponent": 463,
+      "topThreeColorShare": 0.5045138888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 50,
+      "id": "beaver-dam",
+      "name": "海狸的小木屋",
+      "imageTier": "priority",
+      "maxComponent": 364,
+      "topThreeColorShare": 0.49375,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 51,
+      "id": "spice-kitchen",
+      "name": "厨房香料罐",
+      "imageTier": "candidate",
+      "maxComponent": 138,
+      "topThreeColorShare": 0.3527777777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 52,
+      "id": "snowman-builder",
+      "name": "一起堆雪人",
+      "imageTier": "priority",
+      "maxComponent": 556,
+      "topThreeColorShare": 0.6211805555555555,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 53,
+      "id": "flamingo-lagoon",
+      "name": "浅湾火烈鸟",
+      "imageTier": "priority",
+      "maxComponent": 565,
+      "topThreeColorShare": 0.4965277777777778,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 54,
+      "id": "music-box",
+      "name": "旋转音乐盒",
+      "imageTier": "review",
+      "maxComponent": 218,
+      "topThreeColorShare": 0.33958333333333335,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 55,
+      "id": "mail-carrier",
+      "name": "骑车送信",
+      "imageTier": "priority",
+      "maxComponent": 324,
+      "topThreeColorShare": 0.4774305555555556,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 13
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 56,
+      "id": "raccoon-grapes",
+      "name": "浣熊摘葡萄",
+      "imageTier": "review",
+      "maxComponent": 171,
+      "topThreeColorShare": 0.3885416666666667,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 57,
+      "id": "sushi-lunch",
+      "name": "彩色便当",
+      "imageTier": "priority",
+      "maxComponent": 345,
+      "topThreeColorShare": 0.4527777777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 58,
+      "id": "scarf-knitter",
+      "name": "织围巾的人",
+      "imageTier": "review",
+      "maxComponent": 186,
+      "topThreeColorShare": 0.328125,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 59,
+      "id": "puffin-cliff",
+      "name": "海鹦望海",
+      "imageTier": "priority",
+      "maxComponent": 640,
+      "topThreeColorShare": 0.509375,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 60,
+      "id": "clay-whistle",
+      "name": "陶笛与花",
+      "imageTier": "priority",
+      "maxComponent": 342,
+      "topThreeColorShare": 0.3607638888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 61,
+      "id": "bubble-child",
+      "name": "吹泡泡的孩子",
+      "imageTier": "priority",
+      "maxComponent": 751,
+      "topThreeColorShare": 0.6142361111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 62,
+      "id": "fawn-forest",
+      "name": "林间小鹿",
+      "imageTier": "review",
+      "maxComponent": 179,
+      "topThreeColorShare": 0.3579861111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 6
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 13
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 63,
+      "id": "teacup-succulent",
+      "name": "茶杯多肉",
+      "imageTier": "priority",
+      "maxComponent": 340,
+      "topThreeColorShare": 0.3819444444444444,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 64,
+      "id": "chef-pumpkin",
+      "name": "南瓜浓汤",
+      "imageTier": "review",
+      "maxComponent": 189,
+      "topThreeColorShare": 0.32013888888888886,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 65,
+      "id": "owl-library",
+      "name": "书架上的猫头鹰",
+      "imageTier": "priority",
+      "maxComponent": 299,
+      "topThreeColorShare": 0.40520833333333334,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 66,
+      "id": "beach-bucket",
+      "name": "沙滩小城堡",
+      "imageTier": "priority",
+      "maxComponent": 663,
+      "topThreeColorShare": 0.6086805555555556,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 67,
+      "id": "skater-autumn",
+      "name": "秋日滑板",
+      "imageTier": "priority",
+      "maxComponent": 400,
+      "topThreeColorShare": 0.4,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 68,
+      "id": "capybara-orange",
+      "name": "水豚泡温泉",
+      "imageTier": "priority",
+      "maxComponent": 465,
+      "topThreeColorShare": 0.4427083333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 69,
+      "id": "woven-hat",
+      "name": "草帽与雏菊",
+      "imageTier": "priority",
+      "maxComponent": 289,
+      "topThreeColorShare": 0.38819444444444445,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 70,
+      "id": "mountain-hiker",
+      "name": "山间远足",
+      "imageTier": "priority",
+      "maxComponent": 491,
+      "topThreeColorShare": 0.37881944444444443,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 71,
+      "id": "kingfisher-reed",
+      "name": "翠鸟停靠",
+      "imageTier": "review",
+      "maxComponent": 286,
+      "topThreeColorShare": 0.3315972222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 72,
+      "id": "terrarium-house",
+      "name": "玻璃小花房",
+      "imageTier": "review",
+      "maxComponent": 194,
+      "topThreeColorShare": 0.24409722222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 73,
+      "id": "drummer-child",
+      "name": "小鼓手",
+      "imageTier": "priority",
+      "maxComponent": 294,
+      "topThreeColorShare": 0.2763888888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 74,
+      "id": "polar-bear",
+      "name": "冰原北极熊",
+      "imageTier": "priority",
+      "maxComponent": 618,
+      "topThreeColorShare": 0.5170138888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 75,
+      "id": "festival-lantern",
+      "name": "花园纸灯",
+      "imageTier": "candidate",
+      "maxComponent": 103,
+      "topThreeColorShare": 0.2375,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 76,
+      "id": "beekeeper-honey",
+      "name": "采蜜时光",
+      "imageTier": "review",
+      "maxComponent": 158,
+      "topThreeColorShare": 0.2652777777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 77,
+      "id": "lemur-fruit",
+      "name": "狐猴的水果",
+      "imageTier": "review",
+      "maxComponent": 161,
+      "topThreeColorShare": 0.315625,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 78,
+      "id": "wooden-robot",
+      "name": "木头小机器人",
+      "imageTier": "review",
+      "maxComponent": 193,
+      "topThreeColorShare": 0.3836805555555556,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 79,
+      "id": "conductor-train",
+      "name": "小站列车员",
+      "imageTier": "review",
+      "maxComponent": 280,
+      "topThreeColorShare": 0.36736111111111114,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 80,
+      "id": "dolphin-wave",
+      "name": "跃浪海豚",
+      "imageTier": "priority",
+      "maxComponent": 293,
+      "topThreeColorShare": 0.3763888888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 81,
+      "id": "origami-cranes",
+      "name": "纸鹤的午后",
+      "imageTier": "candidate",
+      "maxComponent": 109,
+      "topThreeColorShare": 0.2534722222222222,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 82,
+      "id": "orchard-worker",
+      "name": "果园采摘",
+      "imageTier": "review",
+      "maxComponent": 157,
+      "topThreeColorShare": 0.28680555555555554,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 83,
+      "id": "peacock-garden",
+      "name": "孔雀开屏",
+      "imageTier": "priority",
+      "maxComponent": 301,
+      "topThreeColorShare": 0.428125,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 84,
+      "id": "cuckoo-clock",
+      "name": "森林小屋钟",
+      "imageTier": "review",
+      "maxComponent": 217,
+      "topThreeColorShare": 0.45416666666666666,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 85,
+      "id": "pizza-maker",
+      "name": "披萨出炉",
+      "imageTier": "review",
+      "maxComponent": 165,
+      "topThreeColorShare": 0.3,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 86,
+      "id": "seahorse-coral",
+      "name": "珊瑚里的海马",
+      "imageTier": "review",
+      "maxComponent": 214,
+      "topThreeColorShare": 0.29791666666666666,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 14
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 87,
+      "id": "harvest-basket",
+      "name": "秋收南瓜篮",
+      "imageTier": "review",
+      "maxComponent": 272,
+      "topThreeColorShare": 0.315625,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 88,
+      "id": "ceramic-painter",
+      "name": "彩绘陶盘",
+      "imageTier": "candidate",
+      "maxComponent": 123,
+      "topThreeColorShare": 0.3107638888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 89,
+      "id": "squirrel-kite",
+      "name": "松鼠的风筝",
+      "imageTier": "priority",
+      "maxComponent": 883,
+      "topThreeColorShare": 0.5006944444444444,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 90,
+      "id": "star-telescope",
+      "name": "星空望远镜",
+      "imageTier": "priority",
+      "maxComponent": 296,
+      "topThreeColorShare": 0.34131944444444445,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 91,
+      "id": "street-musician",
+      "name": "街角手风琴",
+      "imageTier": "priority",
+      "maxComponent": 311,
+      "topThreeColorShare": 0.31145833333333334,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 92,
+      "id": "tropical-fish",
+      "name": "珊瑚小丑鱼",
+      "imageTier": "review",
+      "maxComponent": 237,
+      "topThreeColorShare": 0.25729166666666664,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 93,
+      "id": "botanical-vase",
+      "name": "彩色花瓶",
+      "imageTier": "review",
+      "maxComponent": 145,
+      "topThreeColorShare": 0.2833333333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 94,
+      "id": "costume-child",
+      "name": "小小飞行员",
+      "imageTier": "priority",
+      "maxComponent": 437,
+      "topThreeColorShare": 0.34791666666666665,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 95,
+      "id": "elephant-water",
+      "name": "小象戏水",
+      "imageTier": "review",
+      "maxComponent": 282,
+      "topThreeColorShare": 0.35694444444444445,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 96,
+      "id": "lantern-boat",
+      "name": "莲灯小船",
+      "imageTier": "review",
+      "maxComponent": 204,
+      "topThreeColorShare": 0.3958333333333333,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 97,
+      "id": "tea-master",
+      "name": "庭院泡茶",
+      "imageTier": "review",
+      "maxComponent": 158,
+      "topThreeColorShare": 0.2746527777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 98,
+      "id": "macaw-jungle",
+      "name": "雨林金刚鹦鹉",
+      "imageTier": "review",
+      "maxComponent": 233,
+      "topThreeColorShare": 0.2725694444444444,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 99,
+      "id": "celebration-cake",
+      "name": "花园庆祝蛋糕",
+      "imageTier": "review",
+      "maxComponent": 154,
+      "topThreeColorShare": 0.35659722222222223,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 1
+        }
+      }
+    },
+    {
+      "level": 100,
+      "id": "flower-parade",
+      "name": "鲜花游行",
+      "imageTier": "review",
+      "maxComponent": 154,
+      "topThreeColorShare": 0.28888888888888886,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 101,
+      "id": "red-panda-strawberries",
+      "name": "草莓园小熊猫",
+      "imageTier": "review",
+      "maxComponent": 144,
+      "topThreeColorShare": 0.32743055555555556,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 102,
+      "id": "level-102",
+      "name": "陶艺小工坊",
+      "imageTier": "candidate",
+      "maxComponent": 129,
+      "topThreeColorShare": 0.2989583333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 103,
+      "id": "level-103",
+      "name": "彩虹工具箱",
+      "imageTier": "review",
+      "maxComponent": 166,
+      "topThreeColorShare": 0.29930555555555555,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 1
+        }
+      }
+    },
+    {
+      "level": 104,
+      "id": "level-104",
+      "name": "荷塘白鹭",
+      "imageTier": "review",
+      "maxComponent": 282,
+      "topThreeColorShare": 0.44340277777777776,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 105,
+      "id": "level-105",
+      "name": "果园采摘员",
+      "imageTier": "review",
+      "maxComponent": 222,
+      "topThreeColorShare": 0.28229166666666666,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 7
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 106,
+      "id": "level-106",
+      "name": "柠檬树下午茶",
+      "imageTier": "priority",
+      "maxComponent": 317,
+      "topThreeColorShare": 0.33993055555555557,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 107,
+      "id": "level-107",
+      "name": "面包店刺猬",
+      "imageTier": "candidate",
+      "maxComponent": 122,
+      "topThreeColorShare": 0.32569444444444445,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 108,
+      "id": "level-108",
+      "name": "海边小画家",
+      "imageTier": "review",
+      "maxComponent": 222,
+      "topThreeColorShare": 0.36319444444444443,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 109,
+      "id": "level-109",
+      "name": "蓝色小帆船",
+      "imageTier": "priority",
+      "maxComponent": 429,
+      "topThreeColorShare": 0.34270833333333334,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 110,
+      "id": "level-110",
+      "name": "牧场小羊驼",
+      "imageTier": "priority",
+      "maxComponent": 330,
+      "topThreeColorShare": 0.49166666666666664,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 111,
+      "id": "level-111",
+      "name": "烘焙师的早晨",
+      "imageTier": "review",
+      "maxComponent": 173,
+      "topThreeColorShare": 0.3440972222222222,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 1
+        }
+      }
+    },
+    {
+      "level": 112,
+      "id": "level-112",
+      "name": "花盆小提琴",
+      "imageTier": "review",
+      "maxComponent": 198,
+      "topThreeColorShare": 0.3128472222222222,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 113,
+      "id": "level-113",
+      "name": "南瓜田浣熊",
+      "imageTier": "review",
+      "maxComponent": 151,
+      "topThreeColorShare": 0.259375,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 114,
+      "id": "level-114",
+      "name": "花店小帮手",
+      "imageTier": "candidate",
+      "maxComponent": 120,
+      "topThreeColorShare": 0.28680555555555554,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 115,
+      "id": "level-115",
+      "name": "橡果小屋",
+      "imageTier": "review",
+      "maxComponent": 204,
+      "topThreeColorShare": 0.3729166666666667,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 5
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 116,
+      "id": "level-116",
+      "name": "海葵里的小丑鱼",
+      "imageTier": "review",
+      "maxComponent": 193,
+      "topThreeColorShare": 0.31631944444444443,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 117,
+      "id": "level-117",
+      "name": "星空观察员",
+      "imageTier": "priority",
+      "maxComponent": 369,
+      "topThreeColorShare": 0.3611111111111111,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 118,
+      "id": "level-118",
+      "name": "木马摇摇乐",
+      "imageTier": "review",
+      "maxComponent": 219,
+      "topThreeColorShare": 0.35173611111111114,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 119,
+      "id": "level-119",
+      "name": "雨后小鹿",
+      "imageTier": "review",
+      "maxComponent": 282,
+      "topThreeColorShare": 0.42951388888888886,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 120,
+      "id": "level-120",
+      "name": "木匠小木凳",
+      "imageTier": "candidate",
+      "maxComponent": 124,
+      "topThreeColorShare": 0.2902777777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 121,
+      "id": "level-121",
+      "name": "蓝莓松饼",
+      "imageTier": "candidate",
+      "maxComponent": 119,
+      "topThreeColorShare": 0.346875,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 122,
+      "id": "level-122",
+      "name": "樱桃树松鼠",
+      "imageTier": "review",
+      "maxComponent": 274,
+      "topThreeColorShare": 0.39166666666666666,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 11
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 123,
+      "id": "level-123",
+      "name": "温室园丁",
+      "imageTier": "review",
+      "maxComponent": 273,
+      "topThreeColorShare": 0.34756944444444443,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 124,
+      "id": "level-124",
+      "name": "邮筒与花束",
+      "imageTier": "review",
+      "maxComponent": 256,
+      "topThreeColorShare": 0.3375,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 125,
+      "id": "level-125",
+      "name": "书屋猫头鹰",
+      "imageTier": "candidate",
+      "maxComponent": 80,
+      "topThreeColorShare": 0.2638888888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 126,
+      "id": "level-126",
+      "name": "森林小向导",
+      "imageTier": "review",
+      "maxComponent": 249,
+      "topThreeColorShare": 0.31354166666666666,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 127,
+      "id": "level-127",
+      "name": "野餐留声机",
+      "imageTier": "review",
+      "maxComponent": 214,
+      "topThreeColorShare": 0.28402777777777777,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 128,
+      "id": "level-128",
+      "name": "海边鹈鹕",
+      "imageTier": "priority",
+      "maxComponent": 550,
+      "topThreeColorShare": 0.4829861111111111,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 129,
+      "id": "level-129",
+      "name": "海港小船长",
+      "imageTier": "priority",
+      "maxComponent": 415,
+      "topThreeColorShare": 0.35868055555555556,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 130,
+      "id": "level-130",
+      "name": "玻璃瓶花园",
+      "imageTier": "review",
+      "maxComponent": 199,
+      "topThreeColorShare": 0.3295138888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 131,
+      "id": "level-131",
+      "name": "热气球小兔",
+      "imageTier": "review",
+      "maxComponent": 166,
+      "topThreeColorShare": 0.4510416666666667,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 132,
+      "id": "level-132",
+      "name": "缝纫小裁缝",
+      "imageTier": "candidate",
+      "maxComponent": 138,
+      "topThreeColorShare": 0.3104166666666667,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 133,
+      "id": "level-133",
+      "name": "彩色毛线篮",
+      "imageTier": "priority",
+      "maxComponent": 368,
+      "topThreeColorShare": 0.31875,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 134,
+      "id": "level-134",
+      "name": "花圃蜜蜂",
+      "imageTier": "review",
+      "maxComponent": 250,
+      "topThreeColorShare": 0.3923611111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 135,
+      "id": "level-135",
+      "name": "草帽养蜂人",
+      "imageTier": "priority",
+      "maxComponent": 321,
+      "topThreeColorShare": 0.30694444444444446,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 136,
+      "id": "level-136",
+      "name": "樱桃小塔",
+      "imageTier": "candidate",
+      "maxComponent": 113,
+      "topThreeColorShare": 0.2875,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 137,
+      "id": "level-137",
+      "name": "雪地北极狐",
+      "imageTier": "priority",
+      "maxComponent": 643,
+      "topThreeColorShare": 0.63125,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 13
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 138,
+      "id": "level-138",
+      "name": "玻璃工匠",
+      "imageTier": "candidate",
+      "maxComponent": 84,
+      "topThreeColorShare": 0.23715277777777777,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 1
+        }
+      }
+    },
+    {
+      "level": 139,
+      "id": "level-139",
+      "name": "花园独轮车",
+      "imageTier": "review",
+      "maxComponent": 270,
+      "topThreeColorShare": 0.28402777777777777,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 0
+        }
+      }
+    },
+    {
+      "level": 140,
+      "id": "level-140",
+      "name": "竹桥水豚",
+      "imageTier": "priority",
+      "maxComponent": 364,
+      "topThreeColorShare": 0.3753472222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 141,
+      "id": "level-141",
+      "name": "花田摄影师",
+      "imageTier": "review",
+      "maxComponent": 280,
+      "topThreeColorShare": 0.3125,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 142,
+      "id": "level-142",
+      "name": "海星宝藏盒",
+      "imageTier": "review",
+      "maxComponent": 245,
+      "topThreeColorShare": 0.4114583333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 143,
+      "id": "level-143",
+      "name": "苹果园小马",
+      "imageTier": "review",
+      "maxComponent": 258,
+      "topThreeColorShare": 0.29756944444444444,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 144,
+      "id": "level-144",
+      "name": "香草厨师",
+      "imageTier": "review",
+      "maxComponent": 198,
+      "topThreeColorShare": 0.3684027777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 145,
+      "id": "level-145",
+      "name": "小熊积木车",
+      "imageTier": "candidate",
+      "maxComponent": 136,
+      "topThreeColorShare": 0.3607638888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 146,
+      "id": "level-146",
+      "name": "海草海马",
+      "imageTier": "review",
+      "maxComponent": 280,
+      "topThreeColorShare": 0.43680555555555556,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 147,
+      "id": "level-147",
+      "name": "小小气象员",
+      "imageTier": "priority",
+      "maxComponent": 348,
+      "topThreeColorShare": 0.39340277777777777,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 148,
+      "id": "level-148",
+      "name": "绿植咖啡壶",
+      "imageTier": "review",
+      "maxComponent": 262,
+      "topThreeColorShare": 0.3302083333333333,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 149,
+      "id": "level-149",
+      "name": "蘑菇小鼹鼠",
+      "imageTier": "review",
+      "maxComponent": 273,
+      "topThreeColorShare": 0.3767361111111111,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 150,
+      "id": "level-150",
+      "name": "秋日扫叶人",
+      "imageTier": "priority",
+      "maxComponent": 300,
+      "topThreeColorShare": 0.34965277777777776,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 151,
+      "id": "level-151",
+      "name": "彩色风车架",
+      "imageTier": "review",
+      "maxComponent": 189,
+      "topThreeColorShare": 0.38819444444444445,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 152,
+      "id": "level-152",
+      "name": "枫叶小熊",
+      "imageTier": "review",
+      "maxComponent": 286,
+      "topThreeColorShare": 0.35625,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 153,
+      "id": "level-153",
+      "name": "滑板少年",
+      "imageTier": "priority",
+      "maxComponent": 408,
+      "topThreeColorShare": 0.39618055555555554,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 154,
+      "id": "level-154",
+      "name": "南瓜汤小锅",
+      "imageTier": "review",
+      "maxComponent": 195,
+      "topThreeColorShare": 0.30833333333333335,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 155,
+      "id": "level-155",
+      "name": "稻田白鸭",
+      "imageTier": "priority",
+      "maxComponent": 329,
+      "topThreeColorShare": 0.4239583333333333,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 156,
+      "id": "level-156",
+      "name": "甜品师布丁",
+      "imageTier": "review",
+      "maxComponent": 186,
+      "topThreeColorShare": 0.4131944444444444,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 157,
+      "id": "level-157",
+      "name": "海边灯塔模型",
+      "imageTier": "candidate",
+      "maxComponent": 142,
+      "topThreeColorShare": 0.30416666666666664,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 158,
+      "id": "level-158",
+      "name": "玉米田仓鼠",
+      "imageTier": "priority",
+      "maxComponent": 361,
+      "topThreeColorShare": 0.36215277777777777,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 159,
+      "id": "level-159",
+      "name": "山间采茶人",
+      "imageTier": "priority",
+      "maxComponent": 302,
+      "topThreeColorShare": 0.31840277777777776,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 160,
+      "id": "level-160",
+      "name": "蝴蝶结雨靴",
+      "imageTier": "review",
+      "maxComponent": 228,
+      "topThreeColorShare": 0.32013888888888886,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 161,
+      "id": "level-161",
+      "name": "月光蝙蝠",
+      "imageTier": "review",
+      "maxComponent": 273,
+      "topThreeColorShare": 0.4267361111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 162,
+      "id": "level-162",
+      "name": "修鞋小工匠",
+      "imageTier": "candidate",
+      "maxComponent": 114,
+      "topThreeColorShare": 0.3548611111111111,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 163,
+      "id": "level-163",
+      "name": "橘子汽水车",
+      "imageTier": "review",
+      "maxComponent": 166,
+      "topThreeColorShare": 0.3159722222222222,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 164,
+      "id": "level-164",
+      "name": "贝壳寄居蟹",
+      "imageTier": "priority",
+      "maxComponent": 397,
+      "topThreeColorShare": 0.3333333333333333,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 165,
+      "id": "level-165",
+      "name": "湖边钓鱼人",
+      "imageTier": "priority",
+      "maxComponent": 541,
+      "topThreeColorShare": 0.4826388888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 166,
+      "id": "level-166",
+      "name": "蘑菇台灯",
+      "imageTier": "review",
+      "maxComponent": 212,
+      "topThreeColorShare": 0.3371527777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 167,
+      "id": "level-167",
+      "name": "薰衣草蝴蝶",
+      "imageTier": "review",
+      "maxComponent": 252,
+      "topThreeColorShare": 0.240625,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 168,
+      "id": "level-168",
+      "name": "小小昆虫家",
+      "imageTier": "review",
+      "maxComponent": 270,
+      "topThreeColorShare": 0.2857638888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 169,
+      "id": "level-169",
+      "name": "纸飞机机场",
+      "imageTier": "review",
+      "maxComponent": 198,
+      "topThreeColorShare": 0.3628472222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 170,
+      "id": "level-170",
+      "name": "池边翠鸟",
+      "imageTier": "priority",
+      "maxComponent": 296,
+      "topThreeColorShare": 0.36875,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 171,
+      "id": "level-171",
+      "name": "果酱制作师",
+      "imageTier": "review",
+      "maxComponent": 181,
+      "topThreeColorShare": 0.2829861111111111,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 172,
+      "id": "level-172",
+      "name": "樱花茶具",
+      "imageTier": "review",
+      "maxComponent": 224,
+      "topThreeColorShare": 0.3451388888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 173,
+      "id": "level-173",
+      "name": "松林野猪",
+      "imageTier": "priority",
+      "maxComponent": 453,
+      "topThreeColorShare": 0.46875,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 174,
+      "id": "level-174",
+      "name": "纸艺小达人",
+      "imageTier": "review",
+      "maxComponent": 231,
+      "topThreeColorShare": 0.3836805555555556,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 175,
+      "id": "level-175",
+      "name": "手鼓和花环",
+      "imageTier": "priority",
+      "maxComponent": 477,
+      "topThreeColorShare": 0.3704861111111111,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 176,
+      "id": "level-176",
+      "name": "柠檬园变色龙",
+      "imageTier": "priority",
+      "maxComponent": 336,
+      "topThreeColorShare": 0.42118055555555556,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 7
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 11
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 177,
+      "id": "level-177",
+      "name": "冬日堆雪人",
+      "imageTier": "priority",
+      "maxComponent": 388,
+      "topThreeColorShare": 0.4534722222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 178,
+      "id": "level-178",
+      "name": "蜂蜜早餐盘",
+      "imageTier": "priority",
+      "maxComponent": 293,
+      "topThreeColorShare": 0.340625,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 179,
+      "id": "level-179",
+      "name": "榛果睡鼠",
+      "imageTier": "candidate",
+      "maxComponent": 90,
+      "topThreeColorShare": 0.3013888888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 180,
+      "id": "level-180",
+      "name": "花街手风琴手",
+      "imageTier": "review",
+      "maxComponent": 262,
+      "topThreeColorShare": 0.3173611111111111,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 181,
+      "id": "level-181",
+      "name": "竹编野餐篮",
+      "imageTier": "review",
+      "maxComponent": 228,
+      "topThreeColorShare": 0.271875,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 182,
+      "id": "level-182",
+      "name": "草地瓢虫",
+      "imageTier": "review",
+      "maxComponent": 204,
+      "topThreeColorShare": 0.37256944444444445,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 183,
+      "id": "level-183",
+      "name": "乡村送奶员",
+      "imageTier": "review",
+      "maxComponent": 221,
+      "topThreeColorShare": 0.284375,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 184,
+      "id": "level-184",
+      "name": "花窗缝纫机",
+      "imageTier": "review",
+      "maxComponent": 227,
+      "topThreeColorShare": 0.33541666666666664,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 185,
+      "id": "level-185",
+      "name": "海浪海狮",
+      "imageTier": "priority",
+      "maxComponent": 332,
+      "topThreeColorShare": 0.4197916666666667,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 186,
+      "id": "level-186",
+      "name": "风车修理员",
+      "imageTier": "priority",
+      "maxComponent": 371,
+      "topThreeColorShare": 0.3489583333333333,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 187,
+      "id": "level-187",
+      "name": "海螺音乐盒",
+      "imageTier": "priority",
+      "maxComponent": 307,
+      "topThreeColorShare": 0.4440972222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 188,
+      "id": "level-188",
+      "name": "围巾斑马",
+      "imageTier": "review",
+      "maxComponent": 226,
+      "topThreeColorShare": 0.29756944444444444,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 189,
+      "id": "level-189",
+      "name": "巧克力工坊",
+      "imageTier": "candidate",
+      "maxComponent": 99,
+      "topThreeColorShare": 0.2604166666666667,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 190,
+      "id": "level-190",
+      "name": "迷你蒸汽船",
+      "imageTier": "review",
+      "maxComponent": 170,
+      "topThreeColorShare": 0.29618055555555556,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 191,
+      "id": "level-191",
+      "name": "风铃小猫",
+      "imageTier": "review",
+      "maxComponent": 167,
+      "topThreeColorShare": 0.3625,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 192,
+      "id": "level-192",
+      "name": "小小消防员",
+      "imageTier": "review",
+      "maxComponent": 200,
+      "topThreeColorShare": 0.33368055555555554,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 193,
+      "id": "level-193",
+      "name": "草莓刨冰",
+      "imageTier": "review",
+      "maxComponent": 284,
+      "topThreeColorShare": 0.42777777777777776,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 0
+        }
+      }
+    },
+    {
+      "level": 194,
+      "id": "level-194",
+      "name": "山坡山羊",
+      "imageTier": "priority",
+      "maxComponent": 513,
+      "topThreeColorShare": 0.5288194444444444,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 195,
+      "id": "level-195",
+      "name": "花园小护士",
+      "imageTier": "review",
+      "maxComponent": 154,
+      "topThreeColorShare": 0.30520833333333336,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 196,
+      "id": "level-196",
+      "name": "小小鸟浴盆",
+      "imageTier": "review",
+      "maxComponent": 185,
+      "topThreeColorShare": 0.33402777777777776,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 197,
+      "id": "level-197",
+      "name": "芦苇火烈鸟",
+      "imageTier": "review",
+      "maxComponent": 243,
+      "topThreeColorShare": 0.3350694444444444,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 198,
+      "id": "level-198",
+      "name": "水果摊摊主",
+      "imageTier": "candidate",
+      "maxComponent": 135,
+      "topThreeColorShare": 0.3211805555555556,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 199,
+      "id": "level-199",
+      "name": "彩色滑板车",
+      "imageTier": "review",
+      "maxComponent": 171,
+      "topThreeColorShare": 0.3034722222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 200,
+      "id": "level-200",
+      "name": "茶园小猴",
+      "imageTier": "review",
+      "maxComponent": 287,
+      "topThreeColorShare": 0.33611111111111114,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 201,
+      "id": "level-201",
+      "name": "竹篮编织师",
+      "imageTier": "priority",
+      "maxComponent": 296,
+      "topThreeColorShare": 0.35520833333333335,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 202,
+      "id": "level-202",
+      "name": "手绘陶盘",
+      "imageTier": "candidate",
+      "maxComponent": 125,
+      "topThreeColorShare": 0.3138888888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 203,
+      "id": "level-203",
+      "name": "花窗金丝雀",
+      "imageTier": "review",
+      "maxComponent": 184,
+      "topThreeColorShare": 0.27708333333333335,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 204,
+      "id": "level-204",
+      "name": "游泳小选手",
+      "imageTier": "priority",
+      "maxComponent": 295,
+      "topThreeColorShare": 0.41423611111111114,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 205,
+      "id": "level-205",
+      "name": "花边烤面包机",
+      "imageTier": "priority",
+      "maxComponent": 373,
+      "topThreeColorShare": 0.4152777777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 206,
+      "id": "level-206",
+      "name": "胡萝卜田野兔",
+      "imageTier": "candidate",
+      "maxComponent": 98,
+      "topThreeColorShare": 0.27708333333333335,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 207,
+      "id": "level-207",
+      "name": "森林小提琴",
+      "imageTier": "priority",
+      "maxComponent": 300,
+      "topThreeColorShare": 0.3229166666666667,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 208,
+      "id": "level-208",
+      "name": "秋叶油灯",
+      "imageTier": "review",
+      "maxComponent": 204,
+      "topThreeColorShare": 0.3142361111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 209,
+      "id": "level-209",
+      "name": "溪边獾獾",
+      "imageTier": "priority",
+      "maxComponent": 302,
+      "topThreeColorShare": 0.29097222222222224,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 210,
+      "id": "level-210",
+      "name": "窗边织围巾",
+      "imageTier": "candidate",
+      "maxComponent": 91,
+      "topThreeColorShare": 0.2902777777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 211,
+      "id": "level-211",
+      "name": "风铃葡萄架",
+      "imageTier": "review",
+      "maxComponent": 255,
+      "topThreeColorShare": 0.3770833333333333,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 212,
+      "id": "level-212",
+      "name": "紫藤孔雀",
+      "imageTier": "review",
+      "maxComponent": 250,
+      "topThreeColorShare": 0.3972222222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 213,
+      "id": "level-213",
+      "name": "海边捡贝壳",
+      "imageTier": "review",
+      "maxComponent": 230,
+      "topThreeColorShare": 0.3541666666666667,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 214,
+      "id": "level-214",
+      "name": "桃子果汁杯",
+      "imageTier": "priority",
+      "maxComponent": 360,
+      "topThreeColorShare": 0.3763888888888889,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 215,
+      "id": "level-215",
+      "name": "稻草小毛驴",
+      "imageTier": "review",
+      "maxComponent": 196,
+      "topThreeColorShare": 0.3302083333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 5
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 11
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 216,
+      "id": "level-216",
+      "name": "骑行小旅人",
+      "imageTier": "review",
+      "maxComponent": 253,
+      "topThreeColorShare": 0.38819444444444445,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 217,
+      "id": "level-217",
+      "name": "松果玩具屋",
+      "imageTier": "review",
+      "maxComponent": 228,
+      "topThreeColorShare": 0.27291666666666664,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 218,
+      "id": "level-218",
+      "name": "海底鳐鱼",
+      "imageTier": "priority",
+      "maxComponent": 667,
+      "topThreeColorShare": 0.5204861111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 219,
+      "id": "level-219",
+      "name": "草莓蛋糕师",
+      "imageTier": "review",
+      "maxComponent": 216,
+      "topThreeColorShare": 0.3277777777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 220,
+      "id": "level-220",
+      "name": "绿豆芽小罐",
+      "imageTier": "review",
+      "maxComponent": 149,
+      "topThreeColorShare": 0.3232638888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 221,
+      "id": "level-221",
+      "name": "芭蕉树考拉",
+      "imageTier": "review",
+      "maxComponent": 263,
+      "topThreeColorShare": 0.35347222222222224,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 222,
+      "id": "level-222",
+      "name": "花灯手艺人",
+      "imageTier": "candidate",
+      "maxComponent": 135,
+      "topThreeColorShare": 0.2777777777777778,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 223,
+      "id": "level-223",
+      "name": "蘑菇储物罐",
+      "imageTier": "review",
+      "maxComponent": 274,
+      "topThreeColorShare": 0.38472222222222224,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 1
+        }
+      }
+    },
+    {
+      "level": 224,
+      "id": "level-224",
+      "name": "向日葵豚鼠",
+      "imageTier": "review",
+      "maxComponent": 231,
+      "topThreeColorShare": 0.3145833333333333,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 225,
+      "id": "level-225",
+      "name": "修表小师傅",
+      "imageTier": "review",
+      "maxComponent": 261,
+      "topThreeColorShare": 0.3295138888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 226,
+      "id": "level-226",
+      "name": "木琴小舞台",
+      "imageTier": "priority",
+      "maxComponent": 327,
+      "topThreeColorShare": 0.4236111111111111,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 227,
+      "id": "level-227",
+      "name": "红莓知更鸟",
+      "imageTier": "review",
+      "maxComponent": 227,
+      "topThreeColorShare": 0.409375,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 228,
+      "id": "level-228",
+      "name": "小小考古家",
+      "imageTier": "priority",
+      "maxComponent": 328,
+      "topThreeColorShare": 0.3503472222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 229,
+      "id": "level-229",
+      "name": "海湾望远镜",
+      "imageTier": "candidate",
+      "maxComponent": 132,
+      "topThreeColorShare": 0.378125,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 230,
+      "id": "level-230",
+      "name": "花园乌龟",
+      "imageTier": "review",
+      "maxComponent": 246,
+      "topThreeColorShare": 0.2857638888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 231,
+      "id": "level-231",
+      "name": "田间插秧人",
+      "imageTier": "review",
+      "maxComponent": 252,
+      "topThreeColorShare": 0.39791666666666664,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 232,
+      "id": "level-232",
+      "name": "番茄小菜篮",
+      "imageTier": "review",
+      "maxComponent": 250,
+      "topThreeColorShare": 0.2635416666666667,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 233,
+      "id": "level-233",
+      "name": "麦田田鼠",
+      "imageTier": "priority",
+      "maxComponent": 368,
+      "topThreeColorShare": 0.33611111111111114,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 234,
+      "id": "level-234",
+      "name": "木偶表演者",
+      "imageTier": "candidate",
+      "maxComponent": 142,
+      "topThreeColorShare": 0.3215277777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 235,
+      "id": "level-235",
+      "name": "花瓣香薰炉",
+      "imageTier": "priority",
+      "maxComponent": 322,
+      "topThreeColorShare": 0.2864583333333333,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 236,
+      "id": "level-236",
+      "name": "溪流河狸",
+      "imageTier": "priority",
+      "maxComponent": 415,
+      "topThreeColorShare": 0.4270833333333333,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 237,
+      "id": "level-237",
+      "name": "雪橇小伙伴",
+      "imageTier": "priority",
+      "maxComponent": 485,
+      "topThreeColorShare": 0.4965277777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 238,
+      "id": "level-238",
+      "name": "草地羽毛球",
+      "imageTier": "priority",
+      "maxComponent": 291,
+      "topThreeColorShare": 0.346875,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 239,
+      "id": "level-239",
+      "name": "冰湖企鹅宝宝",
+      "imageTier": "review",
+      "maxComponent": 227,
+      "topThreeColorShare": 0.42430555555555555,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 240,
+      "id": "level-240",
+      "name": "花束送货员",
+      "imageTier": "review",
+      "maxComponent": 240,
+      "topThreeColorShare": 0.33055555555555555,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 241,
+      "id": "level-241",
+      "name": "玻璃糖果罐",
+      "imageTier": "candidate",
+      "maxComponent": 142,
+      "topThreeColorShare": 0.28125,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 242,
+      "id": "level-242",
+      "name": "西瓜小猪",
+      "imageTier": "priority",
+      "maxComponent": 387,
+      "topThreeColorShare": 0.3329861111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 243,
+      "id": "level-243",
+      "name": "草地大提琴",
+      "imageTier": "review",
+      "maxComponent": 147,
+      "topThreeColorShare": 0.2722222222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 244,
+      "id": "level-244",
+      "name": "木制小火箭",
+      "imageTier": "review",
+      "maxComponent": 278,
+      "topThreeColorShare": 0.36041666666666666,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 245,
+      "id": "level-245",
+      "name": "雨林犀鸟",
+      "imageTier": "review",
+      "maxComponent": 169,
+      "topThreeColorShare": 0.3489583333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 246,
+      "id": "level-246",
+      "name": "木屋修屋顶",
+      "imageTier": "priority",
+      "maxComponent": 303,
+      "topThreeColorShare": 0.31805555555555554,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 247,
+      "id": "level-247",
+      "name": "杏子派出炉",
+      "imageTier": "review",
+      "maxComponent": 168,
+      "topThreeColorShare": 0.3170138888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 1
+        }
+      }
+    },
+    {
+      "level": 248,
+      "id": "level-248",
+      "name": "沙丘耳廓狐",
+      "imageTier": "priority",
+      "maxComponent": 436,
+      "topThreeColorShare": 0.5114583333333333,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 249,
+      "id": "level-249",
+      "name": "冰淇淋小车",
+      "imageTier": "review",
+      "maxComponent": 263,
+      "topThreeColorShare": 0.4097222222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 250,
+      "id": "level-250",
+      "name": "玫瑰浇水壶",
+      "imageTier": "review",
+      "maxComponent": 243,
+      "topThreeColorShare": 0.3440972222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 251,
+      "id": "level-251",
+      "name": "花架鹦鹉",
+      "imageTier": "review",
+      "maxComponent": 239,
+      "topThreeColorShare": 0.31840277777777776,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 252,
+      "id": "level-252",
+      "name": "书店整理员",
+      "imageTier": "candidate",
+      "maxComponent": 108,
+      "topThreeColorShare": 0.321875,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 253,
+      "id": "level-253",
+      "name": "彩色泳圈",
+      "imageTier": "priority",
+      "maxComponent": 346,
+      "topThreeColorShare": 0.35520833333333335,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 7
+        }
+      }
+    },
+    {
+      "level": 254,
+      "id": "level-254",
+      "name": "橡树林小狼",
+      "imageTier": "priority",
+      "maxComponent": 368,
+      "topThreeColorShare": 0.3684027777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 255,
+      "id": "level-255",
+      "name": "竹笛小乐手",
+      "imageTier": "review",
+      "maxComponent": 185,
+      "topThreeColorShare": 0.2701388888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 256,
+      "id": "level-256",
+      "name": "海滩沙堡",
+      "imageTier": "priority",
+      "maxComponent": 789,
+      "topThreeColorShare": 0.6055555555555555,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 257,
+      "id": "level-257",
+      "name": "菖蒲青蛙",
+      "imageTier": "priority",
+      "maxComponent": 298,
+      "topThreeColorShare": 0.4059027777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 258,
+      "id": "level-258",
+      "name": "小小航海家",
+      "imageTier": "priority",
+      "maxComponent": 357,
+      "topThreeColorShare": 0.3607638888888889,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 259,
+      "id": "level-259",
+      "name": "竹篮抹茶点心",
+      "imageTier": "review",
+      "maxComponent": 159,
+      "topThreeColorShare": 0.26145833333333335,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 12
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 260,
+      "id": "level-260",
+      "name": "果篮果蝠",
+      "imageTier": "candidate",
+      "maxComponent": 83,
+      "topThreeColorShare": 0.24131944444444445,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 261,
+      "id": "level-261",
+      "name": "香皂制作师",
+      "imageTier": "candidate",
+      "maxComponent": 76,
+      "topThreeColorShare": 0.28402777777777777,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 262,
+      "id": "level-262",
+      "name": "多肉小温室",
+      "imageTier": "candidate",
+      "maxComponent": 101,
+      "topThreeColorShare": 0.24618055555555557,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 263,
+      "id": "level-263",
+      "name": "稻草窝母鸡",
+      "imageTier": "review",
+      "maxComponent": 240,
+      "topThreeColorShare": 0.42604166666666665,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 264,
+      "id": "level-264",
+      "name": "桃园采桃人",
+      "imageTier": "priority",
+      "maxComponent": 304,
+      "topThreeColorShare": 0.35173611111111114,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 11
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 265,
+      "id": "level-265",
+      "name": "橡皮鸭浴盆",
+      "imageTier": "priority",
+      "maxComponent": 443,
+      "topThreeColorShare": 0.42604166666666665,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 266,
+      "id": "level-266",
+      "name": "礁石海獭宝宝",
+      "imageTier": "priority",
+      "maxComponent": 348,
+      "topThreeColorShare": 0.4236111111111111,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 10
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 267,
+      "id": "level-267",
+      "name": "轮滑小女孩",
+      "imageTier": "priority",
+      "maxComponent": 292,
+      "topThreeColorShare": 0.4059027777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 268,
+      "id": "level-268",
+      "name": "樱桃收音机",
+      "imageTier": "review",
+      "maxComponent": 149,
+      "topThreeColorShare": 0.3451388888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 269,
+      "id": "level-269",
+      "name": "雪山牦牛",
+      "imageTier": "priority",
+      "maxComponent": 366,
+      "topThreeColorShare": 0.3215277777777778,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 270,
+      "id": "level-270",
+      "name": "蘑菇研究员",
+      "imageTier": "candidate",
+      "maxComponent": 90,
+      "topThreeColorShare": 0.2746527777777778,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 271,
+      "id": "level-271",
+      "name": "薄荷冰棒",
+      "imageTier": "priority",
+      "maxComponent": 305,
+      "topThreeColorShare": 0.33229166666666665,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 5
+        }
+      }
+    },
+    {
+      "level": 272,
+      "id": "level-272",
+      "name": "木桥鹅鹅",
+      "imageTier": "priority",
+      "maxComponent": 320,
+      "topThreeColorShare": 0.44548611111111114,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 273,
+      "id": "level-273",
+      "name": "棉花糖小摊",
+      "imageTier": "review",
+      "maxComponent": 272,
+      "topThreeColorShare": 0.3454861111111111,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 274,
+      "id": "level-274",
+      "name": "织布小木机",
+      "imageTier": "candidate",
+      "maxComponent": 127,
+      "topThreeColorShare": 0.2815972222222222,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 275,
+      "id": "level-275",
+      "name": "风筝小狗",
+      "imageTier": "priority",
+      "maxComponent": 692,
+      "topThreeColorShare": 0.5034722222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 276,
+      "id": "level-276",
+      "name": "蓝染手艺人",
+      "imageTier": "candidate",
+      "maxComponent": 137,
+      "topThreeColorShare": 0.25590277777777776,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 277,
+      "id": "level-277",
+      "name": "云朵八音盒",
+      "imageTier": "review",
+      "maxComponent": 219,
+      "topThreeColorShare": 0.3388888888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 9
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 11
+        }
+      }
+    },
+    {
+      "level": 278,
+      "id": "level-278",
+      "name": "麦穗火鸡",
+      "imageTier": "priority",
+      "maxComponent": 343,
+      "topThreeColorShare": 0.35659722222222223,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 279,
+      "id": "level-279",
+      "name": "雨中送伞人",
+      "imageTier": "candidate",
+      "maxComponent": 139,
+      "topThreeColorShare": 0.3072916666666667,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 280,
+      "id": "level-280",
+      "name": "仙人掌小推车",
+      "imageTier": "priority",
+      "maxComponent": 632,
+      "topThreeColorShare": 0.4222222222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 281,
+      "id": "level-281",
+      "name": "香草小蜗牛",
+      "imageTier": "priority",
+      "maxComponent": 355,
+      "topThreeColorShare": 0.4722222222222222,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 9
+        }
+      }
+    },
+    {
+      "level": 282,
+      "id": "level-282",
+      "name": "花园调香师",
+      "imageTier": "review",
+      "maxComponent": 151,
+      "topThreeColorShare": 0.33645833333333336,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 283,
+      "id": "level-283",
+      "name": "苹果厨房秤",
+      "imageTier": "review",
+      "maxComponent": 229,
+      "topThreeColorShare": 0.3107638888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 284,
+      "id": "level-284",
+      "name": "蕉叶树懒",
+      "imageTier": "priority",
+      "maxComponent": 313,
+      "topThreeColorShare": 0.32013888888888886,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 6
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 14
+        }
+      }
+    },
+    {
+      "level": 285,
+      "id": "level-285",
+      "name": "草地放风筝",
+      "imageTier": "priority",
+      "maxComponent": 793,
+      "topThreeColorShare": 0.5194444444444445,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 286,
+      "id": "level-286",
+      "name": "花田小水井",
+      "imageTier": "priority",
+      "maxComponent": 312,
+      "topThreeColorShare": 0.3347222222222222,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 2
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 287,
+      "id": "level-287",
+      "name": "花丛长颈鹿",
+      "imageTier": "review",
+      "maxComponent": 245,
+      "topThreeColorShare": 0.28194444444444444,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 4
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 15
+        }
+      }
+    },
+    {
+      "level": 288,
+      "id": "level-288",
+      "name": "陶笛小演奏",
+      "imageTier": "review",
+      "maxComponent": 167,
+      "topThreeColorShare": 0.31666666666666665,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 4
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 289,
+      "id": "level-289",
+      "name": "紫莓果冻",
+      "imageTier": "candidate",
+      "maxComponent": 138,
+      "topThreeColorShare": 0.3034722222222222,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    },
+    {
+      "level": 290,
+      "id": "level-290",
+      "name": "栗子鹿鹿",
+      "imageTier": "review",
+      "maxComponent": 252,
+      "topThreeColorShare": 0.37430555555555556,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 3
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 291,
+      "id": "level-291",
+      "name": "马厩小骑手",
+      "imageTier": "review",
+      "maxComponent": 169,
+      "topThreeColorShare": 0.36527777777777776,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 10
+        }
+      }
+    },
+    {
+      "level": 292,
+      "id": "level-292",
+      "name": "雨滴玻璃伞",
+      "imageTier": "review",
+      "maxComponent": 202,
+      "topThreeColorShare": 0.32743055555555556,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 3
+        }
+      }
+    },
+    {
+      "level": 293,
+      "id": "level-293",
+      "name": "海湾鲸宝宝",
+      "imageTier": "priority",
+      "maxComponent": 335,
+      "topThreeColorShare": 0.4131944444444444,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 2
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 4
+        }
+      }
+    },
+    {
+      "level": 294,
+      "id": "level-294",
+      "name": "石榴采摘人",
+      "imageTier": "candidate",
+      "maxComponent": 116,
+      "topThreeColorShare": 0.30520833333333336,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 3
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 8
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 295,
+      "id": "level-295",
+      "name": "星星小夜灯",
+      "imageTier": "priority",
+      "maxComponent": 335,
+      "topThreeColorShare": 0.4170138888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 8
+        }
+      }
+    },
+    {
+      "level": 296,
+      "id": "level-296",
+      "name": "花园袋鼠",
+      "imageTier": "review",
+      "maxComponent": 180,
+      "topThreeColorShare": 0.29756944444444444,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 5
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 297,
+      "id": "level-297",
+      "name": "海岛救生员",
+      "imageTier": "priority",
+      "maxComponent": 350,
+      "topThreeColorShare": 0.4197916666666667,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 1
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 12
+        }
+      }
+    },
+    {
+      "level": 298,
+      "id": "level-298",
+      "name": "桃花野餐盒",
+      "imageTier": "review",
+      "maxComponent": 232,
+      "topThreeColorShare": 0.3232638888888889,
+      "provisionalTier": "中等",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 7
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 6
+        }
+      }
+    },
+    {
+      "level": 299,
+      "id": "level-299",
+      "name": "木屋狐狸邮差",
+      "imageTier": "priority",
+      "maxComponent": 358,
+      "topThreeColorShare": 0.3173611111111111,
+      "provisionalTier": "较易",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 1
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 6
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 13
+        }
+      }
+    },
+    {
+      "level": 300,
+      "id": "level-300",
+      "name": "露台咖啡师",
+      "imageTier": "candidate",
+      "maxComponent": 118,
+      "topThreeColorShare": 0.2513888888888889,
+      "provisionalTier": "挑战风险",
+      "policies": {
+        "random": {
+          "games": 15,
+          "wins": 0
+        },
+        "exposed": {
+          "games": 15,
+          "wins": 0
+        },
+        "capacity": {
+          "games": 15,
+          "wins": 2
+        }
+      }
+    }
+  ]
+}
