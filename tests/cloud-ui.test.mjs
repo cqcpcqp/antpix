@@ -1,4 +1,5 @@
 import { rankingNodes } from './helpers/leaderboard-view.mjs';
+import { sharingFixture } from './helpers/wechat-sharing.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
@@ -51,6 +52,7 @@ test('WeChat scene waits for cloud, settles victories and resumes with server pr
   const nativeButtons = [];
   const userInfo = { nickName: '微信测试玩家🙂', avatarUrl: 'https://thirdwx.qlogo.cn/avatar/0' };
   const wx = {
+    ...sharingFixture().api,
     getSetting: ({ success }) => success({ authSetting: { 'scope.userInfo': permission } }),
     getPrivacySetting: ({ success }) => success({ needAuthorization: needsPrivacy }),
     requirePrivacyAuthorize: ({ success }) => {

@@ -13,6 +13,7 @@ import {
 } from 'cc';
 import type { GardenRuntime } from './GardenRuntime';
 import { color } from '../presentation/gameVisuals';
+import { initializeWechatSharing } from '../platform/wechat/sharing';
 
 /** Owns engine startup, subscriptions and teardown. */
 export class Lifecycle {
@@ -52,6 +53,8 @@ export class Lifecycle {
 
     paused = false;
 
+    private disposeSharing: (() => void) | null = null;
+
     hideHandler = () => {
         this.game.identity.hide();
         this.game.preview.clearPreview();
@@ -68,6 +71,7 @@ export class Lifecycle {
     };
 
     onLoad() {
+        this.disposeSharing = initializeWechatSharing();
         this.game.cloud.initializeMode();
         this.game.profile.readSave();
         // Expand the logical canvas to the device aspect ratio instead of letterboxing.
@@ -139,6 +143,8 @@ export class Lifecycle {
     }
 
     onDestroy() {
+        this.disposeSharing?.();
+        this.disposeSharing = null;
         this.game.identity.detach();
         this.game.startup.destroy();
         this.game.leaderboardAssets.destroy();

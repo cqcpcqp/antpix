@@ -108,6 +108,7 @@ if (result.status === 0 || result.status === 36) {
       'tests/leaderboard-loading.test.mjs',
       'tests/engine-modules.test.mjs',
       'tests/reward-ad.test.mjs',
+      'tests/sharing.test.mjs',
       'tests/offline-ui.test.mjs',
       'tests/startup.test.mjs',
       'tests/startup-package.test.mjs',

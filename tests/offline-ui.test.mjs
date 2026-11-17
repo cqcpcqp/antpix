@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { sharingFixture } from './helpers/wechat-sharing.mjs';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { readFileSync } from 'node:fs';
@@ -48,6 +49,7 @@ function fixture({ local = new Map(), handler, cloudMissing = false } = {}) {
           throw new Error('offline play must not request advertisements');
         },
       };
+  Object.assign(wx, sharingFixture().api);
   cc.sys.localStorage = {
     getItem: (key) => (key === 'ant-controls-seen' ? '1' : (local.get(key) ?? null)),
     setItem: (key, value) => local.set(key, value),
