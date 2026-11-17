@@ -11,7 +11,7 @@ export { colorClosure } from './container-simulation.mjs';
 
 // Ordered entries retain a replayable solution; the third value explicitly assigns
 // each entry to a column. Increasing ids within each column preserve that solution.
-export function distributeColumns(jars, seed, concentration = 6, openingCopies = 1) {
+export function distributeColumns(jars, seed, repetitionPenalty = 6, openingCopies = 1) {
   const random = seededRandom(seed),
     columns = Array.from({ length: 5 }, () => []);
   return jars.map(([color, capacity]) => {
@@ -21,7 +21,9 @@ export function distributeColumns(jars, seed, concentration = 6, openingCopies =
     const candidates = columns
       .map((c, column) => ({
         column,
-        score: c.length - (c.at(-1)?.[0] === color ? concentration : 0) + random() * 0.8,
+        // Penalize a matching tail so interleaved witness colors stay interleaved
+        // in the actual vertical queues, while keeping each prerequisite chain.
+        score: c.length + (c.at(-1)?.[0] === color ? repetitionPenalty : 0) + random() * 0.8,
       }))
       .filter((c) => {
         const column = columns[c.column];
@@ -141,6 +143,8 @@ export function selectLayout(level, jars, seed, difficulty = 0.5) {
       Math.abs(wins / runs.length - targetWinRate) * 4 +
       earlyFailures * 0.75 +
       Math.max(0, 3 - metrics.openingColors) * 0.6 +
+      metrics.columnAdjacentRepeats / plan.length +
+      Math.max(0, metrics.columnMaxRun - 2) * 0.6 +
       spread * 0.015;
     return { plan, metrics, trainingWins: wins, score };
   });

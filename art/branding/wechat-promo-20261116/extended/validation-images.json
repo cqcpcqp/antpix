@@ -1,0 +1,32 @@
+[
+  {
+    "file": "01-promotion-landscape.jpg",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 614882
+  },
+  {
+    "file": "02-promotion-portrait.jpg",
+    "width": 1080,
+    "height": 1620,
+    "bytes": 526941
+  },
+  {
+    "file": "03-share-challenge.jpg",
+    "width": 1000,
+    "height": 800,
+    "bytes": 330200
+  },
+  {
+    "file": "04-share-funny.jpg",
+    "width": 1000,
+    "height": 800,
+    "bytes": 342574
+  },
+  {
+    "file": "05-share-relax.jpg",
+    "width": 1000,
+    "height": 800,
+    "bytes": 332847
+  }
+]

@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { makeLevel, LEVEL_COUNT } from '../assets/scripts/domain/levels/levels.ts';
 import { GardenModel } from '../assets/scripts/domain/game/model.ts';
-import { settleContainers } from '../scripts/container-simulation.mjs';
+import { settleContainers, planMetrics } from '../scripts/container-simulation.mjs';
 const report = JSON.parse(
   readFileSync(new URL('../art/container-plan-report.json', import.meta.url)),
 );
@@ -20,6 +20,14 @@ for (let index = 0; index < LEVEL_COUNT; index++)
     for (let variant = 0; variant < 3; variant++) {
       const plan = level.containerPlans[variant],
         m = new GardenModel(level, () => (variant + 0.1) / 3);
+      const metrics = planMetrics(plan);
+      for (const key of ['columnMaxRun', 'columnAdjacentRepeats', 'columnLongRunContainers'])
+        assert.equal(report[index].variants[variant][key], metrics[key]);
+      if (index === 24)
+        assert.ok(
+          metrics.columnMaxRun <= 2,
+          'painter queues must not restore long same-color stacks',
+        );
       const counts = new Map();
       for (const [c, n, column] of plan) {
         assert.ok(Number.isInteger(column) && column >= 0 && column < 5);

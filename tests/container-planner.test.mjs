@@ -10,7 +10,35 @@ import {
   selectLayout,
   colorClosure,
 } from '../scripts/container-planner.mjs';
-import { settleContainers, simulatePlan } from '../scripts/container-simulation.mjs';
+import { settleContainers, simulatePlan, planMetrics } from '../scripts/container-simulation.mjs';
+
+test('column metrics detect same-color stacks hidden by interleaved witness order', () => {
+  const plan = Array.from({ length: 6 }, () => [
+    [0, 2, 0],
+    [1, 2, 1],
+  ]).flat();
+  const metrics = planMetrics(plan);
+  assert.equal(metrics.maxRun, 1);
+  assert.equal(metrics.columnMaxRun, 6);
+  assert.equal(metrics.columnAdjacentRepeats, 10);
+  assert.equal(metrics.columnLongRunContainers, 12);
+});
+
+test('distribution disperses interleaved colors instead of stacking each color', () => {
+  const jars = Array.from({ length: 30 }, () => [
+    [0, 2],
+    [1, 2],
+    [2, 2],
+  ]).flat();
+  for (const seed of [1, 31, 7919]) {
+    const plan = distributeColumns(jars, seed);
+    assert.deepEqual(
+      plan.map(([color, capacity]) => [color, capacity]),
+      jars,
+    );
+    assert.ok(planMetrics(plan).columnMaxRun <= 2);
+  }
+});
 
 test('explicit columns preserve prerequisites through permutation and independent advancement', () => {
   const level = {

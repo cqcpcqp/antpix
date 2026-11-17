@@ -1,0 +1,32 @@
+[
+  {
+    "file": "01-one-more-block.jpg",
+    "size": [
+      720,
+      1280
+    ],
+    "format": "JPEG",
+    "bytes": 193746,
+    "quality": 74
+  },
+  {
+    "file": "02-ant-off-duty.jpg",
+    "size": [
+      720,
+      1280
+    ],
+    "format": "JPEG",
+    "bytes": 193281,
+    "quality": 72
+  },
+  {
+    "file": "03-color-challenge.jpg",
+    "size": [
+      720,
+      1280
+    ],
+    "format": "JPEG",
+    "bytes": 192307,
+    "quality": 70
+  }
+]

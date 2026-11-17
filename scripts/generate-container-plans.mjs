@@ -4,12 +4,18 @@ import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { planContainers, selectLayout, encodeContainerPlan } from './container-planner.mjs';
-const file = resolve(process.argv[2] || 'assets/scripts/domain/levels/levels.ts');
-const reportFile = resolve(process.argv[3] || 'art/container-plan-report.json');
-const { ARTWORKS, GRID_WIDTH, GRID_HEIGHT } = await import(pathToFileURL(file));
+const relayout = process.argv.includes('--relayout');
+const args = process.argv.slice(2).filter((arg) => arg !== '--relayout');
+const file = resolve(args[0] || 'assets/scripts/domain/levels/levels.ts');
+const reportFile = resolve(args[1] || 'art/container-plan-report.json');
+const { ARTWORKS, GRID_WIDTH, GRID_HEIGHT, CONTAINER_PLANS } = await import(pathToFileURL(file));
+// Repartition shipped witnesses without changing capacities, move counts or
+// their original generation difficulty. Only the explicit column field changes.
+const layoutReports = relayout ? JSON.parse(readFileSync(reportFile, 'utf8')) : [];
 // Optional catalog/report pair preserves already shipped plans during an append.
-const reuseFile = process.argv[4];
-const reuseReportFile = process.argv[5];
+const reuseFile = args[2];
+const reuseReportFile = args[3];
+assert.ok(!relayout || !reuseFile, 'Relayout and shipped-plan reuse are exclusive');
 assert.equal(Boolean(reuseFile), Boolean(reuseReportFile));
 const reused = new Map();
 if (reuseFile) {
@@ -47,10 +53,27 @@ for (const [index, art] of ARTWORKS.entries()) {
     console.log(`${report.length}/${ARTWORKS.length} ${art.id}: preserved shipped plans`);
     continue;
   }
+  const layoutReport = layoutReports[index];
+  if (relayout) {
+    assert.equal(layoutReport.id, art.id);
+    assert.equal(
+      layoutReport.sourceHash,
+      createHash('sha256').update(JSON.stringify(level.pixels)).digest('hex'),
+    );
+  }
+  const difficulty = relayout
+    ? layoutReport.generationDifficulty
+    : index / Math.max(1, ARTWORKS.length - 1);
   const variants = Array.from({ length: 3 }, (_, i) => {
     const seed = 1009 + i * 7919;
-    const result = planContainers(level, seed, index / Math.max(1, ARTWORKS.length - 1));
-    const layout = selectLayout(level, result.jars, seed, index / Math.max(1, ARTWORKS.length - 1));
+    const result = relayout
+      ? {
+          jars: CONTAINER_PLANS[art.id][i].map(([color, capacity]) => [color, capacity]),
+          stages: layoutReport.variants[i].stages,
+          dependencies: layoutReport.variants[i].dependencies,
+        }
+      : planContainers(level, seed, difficulty);
+    const layout = selectLayout(level, result.jars, seed, difficulty);
     return {
       ...result,
       jars: layout.plan,
@@ -62,7 +85,7 @@ for (const [index, art] of ARTWORKS.entries()) {
   report.push({
     id: art.id,
     name: art.name,
-    generationDifficulty: index / Math.max(1, ARTWORKS.length - 1),
+    generationDifficulty: difficulty,
     sourceHash: createHash('sha256').update(JSON.stringify(level.pixels)).digest('hex'),
     variants: variants.map((v) => ({
       ...v.metrics,

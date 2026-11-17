@@ -134,11 +134,25 @@ export function planMetrics(plan) {
     if (runs.at(-1)?.color === color) runs.at(-1).count++;
     else runs.push({ color, count: 1 });
   }
+  // Global witness order is different from the vertical sequences players draw.
+  const columnRuns = columns.flatMap((column) => {
+    const result = [];
+    for (const [color] of column) {
+      if (result.at(-1)?.color === color) result.at(-1).count++;
+      else result.push({ color, count: 1 });
+    }
+    return result;
+  });
   return {
     containers: plan.length,
     openingColors: new Set(columns.filter((c) => c.length).map((c) => c[0][0])).size,
     maxRun: Math.max(...runs.map((r) => r.count)),
     longRunContainers: runs.filter((r) => r.count >= 5).reduce((s, r) => s + r.count, 0),
+    columnMaxRun: Math.max(0, ...columnRuns.map((r) => r.count)),
+    columnAdjacentRepeats: columnRuns.reduce((sum, r) => sum + r.count - 1, 0),
+    columnLongRunContainers: columnRuns
+      .filter((r) => r.count >= 5)
+      .reduce((s, r) => s + r.count, 0),
     columnLengths: columns.map((c) => c.length),
     minCapacity: Math.min(...plan.map((j) => j[1])),
     maxCapacity: Math.max(...plan.map((j) => j[1])),

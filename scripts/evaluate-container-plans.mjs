@@ -47,6 +47,8 @@ for (const dataset of datasets) {
     [11, 30],
     [31, 60],
     [61, 100],
+    [101, 200],
+    [201, 300],
   ].map(([from, to]) => {
     const subset = rows.filter((r) => r.level >= from && r.level <= to);
     return {
@@ -56,6 +58,9 @@ for (const dataset of datasets) {
       singleColorOpenings: subset.filter((r) => r.openingColors === 1).length,
       containers: subset.reduce((s, r) => s + r.containers, 0),
       longRunContainers: subset.reduce((s, r) => s + r.longRunContainers, 0),
+      columnMaxRun: Math.max(0, ...subset.map((r) => r.columnMaxRun)),
+      columnAdjacentRepeats: subset.reduce((s, r) => s + r.columnAdjacentRepeats, 0),
+      columnLongRunContainers: subset.reduce((s, r) => s + r.columnLongRunContainers, 0),
       policies: Object.fromEntries(
         ['random', 'exposed', 'capacity'].map((policy) => [
           policy,
