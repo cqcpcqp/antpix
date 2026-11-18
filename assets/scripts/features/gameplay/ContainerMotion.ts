@@ -71,7 +71,7 @@ export class ContainerMotion {
     updateContainerLaunches(dt: number) {
         for (const view of this.game.containers.slotViews) {
             if (view.launchElapsed < 0) continue;
-            view.launchElapsed += dt * this.game.session.effectiveSpeed;
+            view.launchElapsed += dt * this.game.session.gameplaySpeed;
             const t = view.launchElapsed;
             let stretch = 0;
             if (t < 0.055) stretch = -0.13 * Math.sin(((t / 0.055) * Math.PI) / 2);

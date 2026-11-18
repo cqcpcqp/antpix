@@ -93,7 +93,7 @@ test('generated server rules match client catalog and assets', () => {
     const level = makeLevel(index);
     assert.deepEqual(levels[index].moves, [...new Set(level.containerPlans.map((p) => p.length))]);
     for (const plan of level.containerPlans) {
-      const fastestDispatch = ((level.pixels.length - plan.length) * 0.125) / 9;
+      const fastestDispatch = ((level.pixels.length - plan.length) * (0.5 / 5.2)) / 9;
       assert.ok(levels[index].minimumSeconds <= fastestDispatch, `level ${index + 1}`);
     }
   }

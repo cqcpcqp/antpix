@@ -12,7 +12,7 @@ test('a waiting flight resumes after removal despite world-space corner roundoff
   const pixels = Array(48 * 60).fill(-1);
   pixels[41 * 48 + 8] = 1;
   pixels[20 * 48 + 8] = 1;
-  const session = { model: { remaining: 2 }, effectiveSpeed: 1 };
+  const session = { model: { remaining: 2 }, gameplaySpeed: 1.3 };
   const flights = new AntFlights({ session, ants: { updateAntVisual() {} }, layout: {} });
   flights.routeBoard = { width: 48, height: 60, pixels };
   const route = prepareRoute(

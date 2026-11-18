@@ -83,8 +83,10 @@ test('automatic 4x accelerates dispatch and flights, keeps real time, and needs 
     assert.equal(game.runtime.layout.speedLabel.string, '4×');
     assert.equal(game.runtime.layout.speedVideo.active, false);
     assert.match(game.runtime.queue.queueCaption(), /收尾加速/);
-    assert.equal(game.runtime.flights.flights[0].elapsed, 0.08);
-    assert.equal(game.runtime.containers.slotViews[0].launchElapsed, 0.08);
+    assert.equal(game.runtime.session.effectiveSpeed, 4);
+    assert.equal(game.runtime.session.gameplaySpeed, 5.2);
+    assert.ok(Math.abs(game.runtime.flights.flights[0].elapsed - 0.104) < 1e-12);
+    assert.ok(Math.abs(game.runtime.containers.slotViews[0].launchElapsed - 0.104) < 1e-12);
     assert.equal(game.runtime.session.elapsed, 0.02);
     for (let i = 0; i < 7; i++) game.update(0.02);
     assert.equal(
@@ -121,17 +123,31 @@ test('automatic 4x accelerates dispatch and flights, keeps real time, and needs 
   }
 });
 
-test('waiting for a slot while containers remain preserves the chosen speed', () => {
-  const game = create();
-  game.runtime.session.model.place(
-    game.runtime.session.model.queue.find((jar) => jar.color === 0).id,
-  );
-  game.runtime.containers.drawSlots();
-  game.runtime.queue.drawQueue();
-  game.update(0.02);
-  assert.equal(game.runtime.session.finishing, false);
-  assert.equal(game.runtime.flights.flights[0].elapsed, 0.02);
-  game.onDestroy();
+test('normal and manual 2x scale dispatch and animations by 1.3 while keeping real time', () => {
+  for (const speed of [1, 2]) {
+    const game = create();
+    game.runtime.session.speed = speed;
+    game.runtime.session.model.place(
+      game.runtime.session.model.queue.find((jar) => jar.color === 0).id,
+    );
+    game.runtime.containers.drawSlots();
+    game.runtime.queue.drawQueue();
+    game.update(0.02);
+    assert.equal(game.runtime.session.finishing, false);
+    assert.equal(game.runtime.session.effectiveSpeed, speed);
+    assert.equal(game.runtime.session.gameplaySpeed, speed === 1 ? 1.3 : 2.6);
+    const expectedProgress = speed === 1 ? 0.026 : 0.052;
+    assert.ok(Math.abs(game.runtime.flights.flights[0].elapsed - expectedProgress) < 1e-12);
+    assert.ok(
+      Math.abs(game.runtime.containers.slotViews[0].launchElapsed - expectedProgress) < 1e-12,
+    );
+    for (let i = 0; i < 7; i++) game.update(0.05 / speed);
+    assert.equal(game.runtime.flights.flights.length, 1, 'wait for the scaled dispatch interval');
+    game.update(0.04 / speed);
+    assert.equal(game.runtime.flights.flights.length, 2, 'dispatch after 0.5 / (1.3 * speed)');
+    assert.ok(Math.abs(game.runtime.session.elapsed - (0.02 + 0.39 / speed)) < 1e-12);
+    game.onDestroy();
+  }
 });
 
 test('4x followers wait for real clearance when prerequisite workers are delayed', () => {

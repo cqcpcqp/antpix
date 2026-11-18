@@ -1,6 +1,11 @@
 import { createRequire } from 'node:module';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { LEVEL_COUNT, makeLevel } from '../assets/scripts/domain/levels/levels.ts';
+import {
+  BASE_GAME_SPEED,
+  DISPATCH_INTERVAL,
+  FINISHING_SPEED,
+} from '../assets/scripts/domain/game/timing.ts';
 const require = createRequire(import.meta.url);
 const base =
   process.env.COCOS_RESOURCES ||
@@ -20,11 +25,17 @@ const levels = Array.from({ length: LEVEL_COUNT }, (_, index) => {
   const moves = [...new Set(level.containerPlans.map((plan) => plan.length))];
   return {
     moves,
-    // Conservative lower bound: nine slots, 4x finishing speed throughout,
+    // Conservative lower bound: nine slots, base-scaled finishing speed throughout,
     // and no walking/entry time. Every new jar dispatches its first ant
-    // immediately; only the remaining ants require a 0.5 / 4 second interval.
+    // immediately; only the remaining ants require a scaled dispatch interval.
     // Use the largest plan so this shared bound accepts every allowed plan.
-    minimumSeconds: Math.max(0, ((level.pixels.length - Math.max(...moves)) * (0.5 / 4)) / 9 - 2),
+    minimumSeconds: Math.max(
+      0,
+      ((level.pixels.length - Math.max(...moves)) *
+        (DISPATCH_INTERVAL / (BASE_GAME_SPEED * FINISHING_SPEED))) /
+        9 -
+        2,
+    ),
   };
 });
 writeFileSync(

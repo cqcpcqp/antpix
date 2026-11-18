@@ -34,7 +34,7 @@ export class AntDispatch {
             if (this.game.containers.slotViews[slot].entryElapsed >= 0) continue;
             this.dispatchClocks[slot] = Math.min(
                 DISPATCH_INTERVAL,
-                this.dispatchClocks[slot] + dt * this.game.session.effectiveSpeed,
+                this.dispatchClocks[slot] + dt * this.game.session.gameplaySpeed,
             );
             if (this.dispatchClocks[slot] < DISPATCH_INTERVAL) continue;
             const origin = worldToGrid({

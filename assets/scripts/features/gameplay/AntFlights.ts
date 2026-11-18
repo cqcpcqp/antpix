@@ -65,7 +65,7 @@ export class AntFlights {
         for (let i = this.flights.length - 1; i >= 0; i--) {
             const trip = this.flights[i];
             const previousElapsed = trip.elapsed;
-            trip.elapsed += dt * this.game.session.effectiveSpeed;
+            trip.elapsed += dt * this.game.session.gameplaySpeed;
             const walk = Math.max(0.8, trip.distance / (trip.phase === 'return' ? 160 : 210));
             if (trip.phase === 'outbound') {
                 // A frame that crosses a bend must stop on its waypoint first;

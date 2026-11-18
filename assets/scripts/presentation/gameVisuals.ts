@@ -7,7 +7,7 @@ export const INK = ISLAND.ink,
     PAPER = ISLAND.paper,
     GREEN = ISLAND.primary;
 
-export const DISPATCH_INTERVAL = 0.5; // Seconds per container at 1× speed.
+export { DISPATCH_INTERVAL } from '../domain/game/timing';
 export const LAUNCH_DURATION = 0.28;
 export const ANT_LAUNCH_DURATION = 0.14;
 

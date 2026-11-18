@@ -34,16 +34,20 @@ module.exports = function checkDispatch({
   game.update(0.016);
   assert.equal(game.runtime.flights.flights.length, 5);
   assert.equal(new Set(game.runtime.flights.flights.map((f) => f.pickup.slot)).size, 5);
-  for (let i = 0; i < 9; i++) game.update(0.05);
-  assert.equal(game.runtime.flights.flights.length, 5, 'must not dispatch before 0.5 seconds');
-  for (let i = 0; i < 13; i++) game.update(0.05);
+  for (let i = 0; i < 9; i++) game.update(0.05 / 1.3);
+  assert.equal(
+    game.runtime.flights.flights.length,
+    5,
+    'must not dispatch before 0.5 simulation seconds (0.5 / 1.3 real seconds)',
+  );
+  for (let i = 0; i < 13; i++) game.update(0.05 / 1.3);
   assert.equal(game.runtime.flights.flights.length, 15);
   for (let slot = 0; slot < 5; slot++)
     assert.equal(game.runtime.flights.flights.filter((f) => f.pickup.slot === slot).length, 3);
-  game.update(0.05);
+  game.update(0.05 / 1.3);
   assert.equal(game.runtime.flights.flights.length, 15);
   assert.equal(new Set(game.runtime.flights.flights.map((f) => f.pickup.pixel)).size, 15);
-  for (let i = 0; i < 21; i++) game.update(0.05);
+  for (let i = 0; i < 21; i++) game.update(0.05 / 1.3);
   assert.equal(
     dispatched.length,
     25,

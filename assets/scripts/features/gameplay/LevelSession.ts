@@ -1,5 +1,6 @@
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { GardenModel } from '../../domain/game/model';
+import { BASE_GAME_SPEED, FINISHING_SPEED } from '../../domain/game/timing';
 import { LEVEL_COUNT, makeLevel } from '../../domain/levels/levels';
 
 /** Owns level state and transition from home to active play. */
@@ -105,7 +106,12 @@ export class LevelSession {
     finishing = false;
 
     get effectiveSpeed() {
-        return this.finishing ? 4 : this.speed;
+        return this.finishing ? FINISHING_SPEED : this.speed;
+    }
+
+    /** Scale gameplay clocks while keeping mode labels and real elapsed time separate. */
+    get gameplaySpeed() {
+        return BASE_GAME_SPEED * this.effectiveSpeed;
     }
 
     elapsed = 0;

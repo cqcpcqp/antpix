@@ -6,7 +6,7 @@
         85,
         87
       ],
-      "minimumSeconds": 36.791666666666664
+      "minimumSeconds": 27.839743589743584
     },
     {
       "moves": [
@@ -14,7 +14,7 @@
         90,
         84
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
@@ -22,7 +22,7 @@
         86,
         89
       ],
-      "minimumSeconds": 36.763888888888886
+      "minimumSeconds": 27.818376068376065
     },
     {
       "moves": [
@@ -30,14 +30,14 @@
         85,
         84
       ],
-      "minimumSeconds": 36.791666666666664
+      "minimumSeconds": 27.839743589743584
     },
     {
       "moves": [
         89,
         90
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
@@ -45,7 +45,7 @@
         87,
         88
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
@@ -53,14 +53,14 @@
         87,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
         96,
         93
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -68,7 +68,7 @@
         92,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -76,34 +76,34 @@
         95,
         97
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         88,
         89
       ],
-      "minimumSeconds": 36.763888888888886
+      "minimumSeconds": 27.818376068376065
     },
     {
       "moves": [
         89,
         88
       ],
-      "minimumSeconds": 36.763888888888886
+      "minimumSeconds": 27.818376068376065
     },
     {
       "moves": [
         84
       ],
-      "minimumSeconds": 36.833333333333336
+      "minimumSeconds": 27.87179487179487
     },
     {
       "moves": [
         83,
         85
       ],
-      "minimumSeconds": 36.81944444444444
+      "minimumSeconds": 27.86111111111111
     },
     {
       "moves": [
@@ -111,21 +111,21 @@
         88,
         86
       ],
-      "minimumSeconds": 36.77777777777778
+      "minimumSeconds": 27.82905982905983
     },
     {
       "moves": [
         92,
         91
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
         90,
         89
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
@@ -133,7 +133,7 @@
         93,
         94
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -141,7 +141,7 @@
         86,
         87
       ],
-      "minimumSeconds": 36.763888888888886
+      "minimumSeconds": 27.818376068376065
     },
     {
       "moves": [
@@ -149,7 +149,7 @@
         86,
         85
       ],
-      "minimumSeconds": 36.80555555555556
+      "minimumSeconds": 27.85042735042735
     },
     {
       "moves": [
@@ -157,7 +157,7 @@
         87,
         88
       ],
-      "minimumSeconds": 36.77777777777778
+      "minimumSeconds": 27.82905982905983
     },
     {
       "moves": [
@@ -165,14 +165,14 @@
         94,
         93
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         86,
         84
       ],
-      "minimumSeconds": 36.80555555555556
+      "minimumSeconds": 27.85042735042735
     },
     {
       "moves": [
@@ -180,7 +180,7 @@
         88,
         85
       ],
-      "minimumSeconds": 36.77777777777778
+      "minimumSeconds": 27.82905982905983
     },
     {
       "moves": [
@@ -188,7 +188,7 @@
         95,
         97
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -196,7 +196,7 @@
         84,
         80
       ],
-      "minimumSeconds": 36.833333333333336
+      "minimumSeconds": 27.87179487179487
     },
     {
       "moves": [
@@ -204,7 +204,7 @@
         86,
         88
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
@@ -212,35 +212,35 @@
         91,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
         84,
         83
       ],
-      "minimumSeconds": 36.833333333333336
+      "minimumSeconds": 27.87179487179487
     },
     {
       "moves": [
         91,
         88
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
         91,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
         88,
         86
       ],
-      "minimumSeconds": 36.77777777777778
+      "minimumSeconds": 27.82905982905983
     },
     {
       "moves": [
@@ -248,14 +248,14 @@
         94,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         92,
         94
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -263,14 +263,14 @@
         90,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
         91,
         90
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
@@ -278,14 +278,14 @@
         91,
         93
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
         91,
         89
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
@@ -293,28 +293,28 @@
         94,
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         91,
         90
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
         90,
         89
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
         95,
         93
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -322,14 +322,14 @@
         97,
         94
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         89,
         90
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
@@ -337,20 +337,20 @@
         98,
         92
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
         97,
         96
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -358,7 +358,7 @@
         99,
         93
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -366,14 +366,14 @@
         92,
         94
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
         91,
         90
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
@@ -381,7 +381,7 @@
         98,
         96
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -389,14 +389,14 @@
         91,
         88
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
         92,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -404,7 +404,7 @@
         91,
         92
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -412,28 +412,28 @@
         93,
         91
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         97,
         96
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         88,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
         96,
         97
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -441,7 +441,7 @@
         92,
         88
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -449,14 +449,14 @@
         91,
         94
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         85,
         87
       ],
-      "minimumSeconds": 36.791666666666664
+      "minimumSeconds": 27.839743589743584
     },
     {
       "moves": [
@@ -464,7 +464,7 @@
         95,
         94
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -472,7 +472,7 @@
         89,
         91
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -480,21 +480,21 @@
         94,
         95
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         97,
         93
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         90,
         91
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
@@ -502,14 +502,14 @@
         90,
         89
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
         93,
         92
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -517,7 +517,7 @@
         91,
         95
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -525,7 +525,7 @@
         92,
         91
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -533,7 +533,7 @@
         96,
         95
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -541,13 +541,13 @@
         103,
         97
       ],
-      "minimumSeconds": 36.56944444444444
+      "minimumSeconds": 27.66880341880342
     },
     {
       "moves": [
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -555,7 +555,7 @@
         91,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -563,7 +563,7 @@
         109,
         117
       ],
-      "minimumSeconds": 36.375
+      "minimumSeconds": 27.519230769230766
     },
     {
       "moves": [
@@ -571,7 +571,7 @@
         112,
         108
       ],
-      "minimumSeconds": 36.44444444444444
+      "minimumSeconds": 27.57264957264957
     },
     {
       "moves": [
@@ -579,7 +579,7 @@
         105,
         103
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
@@ -587,7 +587,7 @@
         98,
         96
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -595,21 +595,21 @@
         93,
         92
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         96,
         94
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         101,
         104
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
@@ -617,7 +617,7 @@
         99,
         103
       ],
-      "minimumSeconds": 36.5
+      "minimumSeconds": 27.61538461538461
     },
     {
       "moves": [
@@ -625,7 +625,7 @@
         93,
         95
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -633,41 +633,41 @@
         98,
         94
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         100,
         104
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
         95
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         103,
         105
       ],
-      "minimumSeconds": 36.541666666666664
+      "minimumSeconds": 27.647435897435894
     },
     {
       "moves": [
         109,
         111
       ],
-      "minimumSeconds": 36.458333333333336
+      "minimumSeconds": 27.583333333333332
     },
     {
       "moves": [
         94,
         91
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -675,7 +675,7 @@
         94,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -683,7 +683,7 @@
         104,
         107
       ],
-      "minimumSeconds": 36.513888888888886
+      "minimumSeconds": 27.626068376068375
     },
     {
       "moves": [
@@ -691,7 +691,7 @@
         103,
         100
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
@@ -699,7 +699,7 @@
         106,
         109
       ],
-      "minimumSeconds": 36.486111111111114
+      "minimumSeconds": 27.60470085470085
     },
     {
       "moves": [
@@ -707,7 +707,7 @@
         98,
         93
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -715,14 +715,14 @@
         99,
         98
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         105,
         103
       ],
-      "minimumSeconds": 36.541666666666664
+      "minimumSeconds": 27.647435897435894
     },
     {
       "moves": [
@@ -730,7 +730,7 @@
         98,
         95
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -738,7 +738,7 @@
         97,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -746,7 +746,7 @@
         101,
         100
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
@@ -754,7 +754,7 @@
         102,
         104
       ],
-      "minimumSeconds": 36.541666666666664
+      "minimumSeconds": 27.647435897435894
     },
     {
       "moves": [
@@ -762,7 +762,7 @@
         99,
         97
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
@@ -770,14 +770,14 @@
         94,
         99
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
         106,
         104
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
@@ -785,7 +785,7 @@
         93,
         94
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -793,28 +793,28 @@
         98,
         94
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         97,
         96
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         95,
         97
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         93,
         97
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -822,21 +822,21 @@
         95,
         91
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         97,
         95
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         97,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -844,14 +844,14 @@
         97,
         94
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         98,
         97
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -859,7 +859,7 @@
         102,
         97
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
@@ -867,7 +867,7 @@
         91,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -875,14 +875,14 @@
         97,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         95,
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -890,7 +890,7 @@
         98,
         94
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
@@ -898,7 +898,7 @@
         98,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -906,7 +906,7 @@
         101,
         106
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
@@ -914,7 +914,7 @@
         96,
         97
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
@@ -922,7 +922,7 @@
         86,
         89
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
@@ -930,7 +930,7 @@
         97,
         96
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -938,7 +938,7 @@
         93,
         92
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -946,7 +946,7 @@
         104,
         106
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
@@ -954,14 +954,14 @@
         95,
         97
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
         98,
         100
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
@@ -969,7 +969,7 @@
         94,
         92
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -977,7 +977,7 @@
         97,
         98
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
@@ -985,14 +985,14 @@
         98,
         96
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
         91,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -1000,21 +1000,21 @@
         97,
         99
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
         92,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
         94,
         92
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -1022,14 +1022,14 @@
         95,
         98
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         95,
         97
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -1037,14 +1037,14 @@
         90,
         87
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
         103,
         104
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
@@ -1052,14 +1052,14 @@
         97,
         95
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         95,
         90
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -1067,7 +1067,7 @@
         94,
         92
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -1075,14 +1075,14 @@
         88,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
         95,
         94
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -1090,35 +1090,35 @@
         95,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         97,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         92,
         91
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
         97,
         95
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         96,
         95
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -1126,14 +1126,14 @@
         90,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
         91,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -1141,21 +1141,21 @@
         90,
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         96,
         95
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         91,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -1163,7 +1163,7 @@
         102,
         99
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
@@ -1171,21 +1171,21 @@
         99,
         97
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
         98,
         101
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
         97,
         95
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -1193,7 +1193,7 @@
         94,
         93
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -1201,14 +1201,14 @@
         95,
         94
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         96,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -1216,14 +1216,14 @@
         95,
         93
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         100,
         102
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
@@ -1231,28 +1231,28 @@
         98,
         103
       ],
-      "minimumSeconds": 36.513888888888886
+      "minimumSeconds": 27.626068376068375
     },
     {
       "moves": [
         97,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         89,
         91
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
         102,
         99
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
@@ -1260,7 +1260,7 @@
         98,
         101
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
@@ -1268,7 +1268,7 @@
         95,
         93
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -1276,28 +1276,28 @@
         96,
         95
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         94,
         95
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         95,
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         98,
         97
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -1305,7 +1305,7 @@
         93,
         94
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -1313,7 +1313,7 @@
         99,
         102
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
@@ -1321,14 +1321,14 @@
         95,
         91
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         92,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -1336,7 +1336,7 @@
         94,
         93
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -1344,7 +1344,7 @@
         94,
         92
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -1352,27 +1352,27 @@
         104,
         99
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
         104,
         99
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
         98,
         106
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -1380,21 +1380,21 @@
         99,
         102
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
         94,
         93
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
         91,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -1402,7 +1402,7 @@
         98,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -1410,7 +1410,7 @@
         89,
         93
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -1418,7 +1418,7 @@
         100,
         99
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
@@ -1426,7 +1426,7 @@
         103,
         102
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
@@ -1434,35 +1434,35 @@
         103,
         99
       ],
-      "minimumSeconds": 36.56944444444444
+      "minimumSeconds": 27.66880341880342
     },
     {
       "moves": [
         101,
         100
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
         97,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         91,
         94
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
         91,
         88
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
@@ -1470,14 +1470,14 @@
         97,
         94
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         100,
         97
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
@@ -1485,7 +1485,7 @@
         93,
         92
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -1493,7 +1493,7 @@
         95,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -1501,14 +1501,14 @@
         102,
         99
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
         95,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -1516,14 +1516,14 @@
         96,
         94
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         102,
         105
       ],
-      "minimumSeconds": 36.541666666666664
+      "minimumSeconds": 27.647435897435894
     },
     {
       "moves": [
@@ -1531,35 +1531,35 @@
         96,
         93
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         94,
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         89,
         90
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
         96,
         100
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
         94,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -1567,14 +1567,14 @@
         99,
         98
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         99,
         93
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -1582,7 +1582,7 @@
         97,
         105
       ],
-      "minimumSeconds": 36.541666666666664
+      "minimumSeconds": 27.647435897435894
     },
     {
       "moves": [
@@ -1590,7 +1590,7 @@
         107,
         113
       ],
-      "minimumSeconds": 36.43055555555556
+      "minimumSeconds": 27.561965811965806
     },
     {
       "moves": [
@@ -1598,14 +1598,14 @@
         104,
         99
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
         91,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -1613,7 +1613,7 @@
         94,
         88
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -1621,7 +1621,7 @@
         89,
         94
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -1629,7 +1629,7 @@
         96,
         97
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -1637,14 +1637,14 @@
         96,
         104
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
         91,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -1652,35 +1652,35 @@
         100,
         103
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
         99,
         98
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         92,
         95
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         97,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         95,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -1688,14 +1688,14 @@
         94,
         96
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         98,
         96
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -1703,7 +1703,7 @@
         95,
         94
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -1711,42 +1711,42 @@
         97,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         99,
         100
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
         97,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         95,
         94
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         95,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         97,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -1754,14 +1754,14 @@
         93,
         98
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         99,
         96
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -1769,7 +1769,7 @@
         96,
         95
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -1777,14 +1777,14 @@
         97,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         95,
         94
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -1792,20 +1792,20 @@
         96,
         101
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
         98,
         97
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         95
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -1813,7 +1813,7 @@
         102,
         98
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
@@ -1821,7 +1821,7 @@
         95,
         93
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -1829,14 +1829,14 @@
         100,
         102
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
         93,
         92
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -1844,7 +1844,7 @@
         94,
         92
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -1852,7 +1852,7 @@
         101,
         99
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
@@ -1860,14 +1860,14 @@
         105,
         103
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
         90,
         89
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
@@ -1875,7 +1875,7 @@
         94,
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -1883,7 +1883,7 @@
         97,
         95
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -1891,27 +1891,27 @@
         98,
         95
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         98,
         96
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         97,
         100
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
@@ -1919,14 +1919,14 @@
         106,
         100
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
         92,
         87
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -1934,14 +1934,14 @@
         90,
         88
       ],
-      "minimumSeconds": 36.75
+      "minimumSeconds": 27.807692307692307
     },
     {
       "moves": [
         87,
         86
       ],
-      "minimumSeconds": 36.791666666666664
+      "minimumSeconds": 27.839743589743584
     },
     {
       "moves": [
@@ -1949,14 +1949,14 @@
         97,
         98
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         102,
         106
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
@@ -1964,7 +1964,7 @@
         105,
         112
       ],
-      "minimumSeconds": 36.44444444444444
+      "minimumSeconds": 27.57264957264957
     },
     {
       "moves": [
@@ -1972,35 +1972,35 @@
         103,
         104
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
         97,
         94
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         97,
         94
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
         98,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
         88,
         92
       ],
-      "minimumSeconds": 36.72222222222222
+      "minimumSeconds": 27.786324786324784
     },
     {
       "moves": [
@@ -2008,7 +2008,7 @@
         93,
         95
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -2016,7 +2016,7 @@
         103,
         101
       ],
-      "minimumSeconds": 36.55555555555556
+      "minimumSeconds": 27.658119658119656
     },
     {
       "moves": [
@@ -2024,7 +2024,7 @@
         111,
         107
       ],
-      "minimumSeconds": 36.458333333333336
+      "minimumSeconds": 27.583333333333332
     },
     {
       "moves": [
@@ -2032,28 +2032,28 @@
         100,
         104
       ],
-      "minimumSeconds": 36.52777777777778
+      "minimumSeconds": 27.636752136752136
     },
     {
       "moves": [
         97,
         100
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
         94,
         93
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
         94,
         90
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -2061,7 +2061,7 @@
         101,
         110
       ],
-      "minimumSeconds": 36.47222222222222
+      "minimumSeconds": 27.59401709401709
     },
     {
       "moves": [
@@ -2069,7 +2069,7 @@
         93,
         92
       ],
-      "minimumSeconds": 36.708333333333336
+      "minimumSeconds": 27.775641025641026
     },
     {
       "moves": [
@@ -2077,7 +2077,7 @@
         99,
         97
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -2085,7 +2085,7 @@
         97,
         96
       ],
-      "minimumSeconds": 36.65277777777778
+      "minimumSeconds": 27.73290598290598
     },
     {
       "moves": [
@@ -2093,14 +2093,14 @@
         94,
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         96,
         99
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -2108,7 +2108,7 @@
         92,
         95
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
@@ -2116,7 +2116,7 @@
         90,
         91
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
@@ -2124,7 +2124,7 @@
         106,
         104
       ],
-      "minimumSeconds": 36.513888888888886
+      "minimumSeconds": 27.626068376068375
     },
     {
       "moves": [
@@ -2132,14 +2132,14 @@
         101,
         103
       ],
-      "minimumSeconds": 36.56944444444444
+      "minimumSeconds": 27.66880341880342
     },
     {
       "moves": [
         95,
         93
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -2147,7 +2147,7 @@
         89,
         90
       ],
-      "minimumSeconds": 36.736111111111114
+      "minimumSeconds": 27.797008547008545
     },
     {
       "moves": [
@@ -2155,7 +2155,7 @@
         94,
         95
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
@@ -2163,7 +2163,7 @@
         98,
         97
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -2171,7 +2171,7 @@
         98,
         94
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
@@ -2179,7 +2179,7 @@
         101,
         102
       ],
-      "minimumSeconds": 36.583333333333336
+      "minimumSeconds": 27.679487179487175
     },
     {
       "moves": [
@@ -2187,7 +2187,7 @@
         94,
         100
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
@@ -2195,14 +2195,14 @@
         96,
         98
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
         94,
         93
       ],
-      "minimumSeconds": 36.69444444444444
+      "minimumSeconds": 27.76495726495726
     },
     {
       "moves": [
@@ -2210,28 +2210,28 @@
         92,
         96
       ],
-      "minimumSeconds": 36.666666666666664
+      "minimumSeconds": 27.74358974358974
     },
     {
       "moves": [
         98,
         93
       ],
-      "minimumSeconds": 36.638888888888886
+      "minimumSeconds": 27.72222222222222
     },
     {
       "moves": [
         93,
         95
       ],
-      "minimumSeconds": 36.68055555555556
+      "minimumSeconds": 27.7542735042735
     },
     {
       "moves": [
         100,
         98
       ],
-      "minimumSeconds": 36.611111111111114
+      "minimumSeconds": 27.700854700854695
     },
     {
       "moves": [
@@ -2239,7 +2239,7 @@
         99,
         94
       ],
-      "minimumSeconds": 36.625
+      "minimumSeconds": 27.71153846153846
     },
     {
       "moves": [
@@ -2247,7 +2247,7 @@
         96,
         103
       ],
-      "minimumSeconds": 36.56944444444444
+      "minimumSeconds": 27.66880341880342
     },
     {
       "moves": [
@@ -2255,14 +2255,14 @@
         97,
         95
       ],
-      "minimumSeconds": 36.59722222222222
+      "minimumSeconds": 27.69017094017094
     },
     {
       "moves": [
         105,
         98
       ],
-      "minimumSeconds": 36.541666666666664
+      "minimumSeconds": 27.647435897435894
     }
   ]
 }
