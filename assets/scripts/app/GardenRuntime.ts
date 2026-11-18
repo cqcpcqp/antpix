@@ -33,6 +33,11 @@ import { LeaderboardAssets } from './LeaderboardAssets';
 import { HomeAssets } from './HomeAssets';
 import { Lifecycle } from './Lifecycle';
 import { ProfileStore } from './ProfileStore';
+import {
+    GAME_CLUB_OPENLINK,
+    RECOMMENDATION_OPENLINK,
+    WechatPage,
+} from '../platform/wechat/WechatPage';
 
 /** Composition root. Constructors allocate state only; onLoad starts effects after wiring. */
 export class GardenRuntime {
@@ -43,6 +48,8 @@ export class GardenRuntime {
     readonly ui: UiFactory = new UiFactory(this);
     readonly layout: BoardView = new BoardView(this);
     readonly home: HomeScreen = new HomeScreen(this);
+    readonly recommendation: WechatPage = new WechatPage(RECOMMENDATION_OPENLINK);
+    readonly gameClub: WechatPage = new WechatPage(GAME_CLUB_OPENLINK);
     readonly album: AlbumScreen = new AlbumScreen(this);
     readonly identity: LeaderboardIdentity = new LeaderboardIdentity(this);
     readonly leaderboardData: LeaderboardData = new LeaderboardData(this);

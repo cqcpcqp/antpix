@@ -21,6 +21,8 @@ export class Lifecycle {
         private readonly game: Pick<
             GardenRuntime,
             | 'identity'
+            | 'recommendation'
+            | 'gameClub'
             | 'startup'
             | 'preview'
             | 'audio'
@@ -143,6 +145,8 @@ export class Lifecycle {
     }
 
     onDestroy() {
+        this.game.recommendation.destroy();
+        this.game.gameClub.destroy();
         this.disposeSharing?.();
         this.disposeSharing = null;
         this.game.identity.detach();

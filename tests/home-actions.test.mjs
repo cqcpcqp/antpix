@@ -20,6 +20,24 @@ test('home actions leave separate touch targets for rewards and bottom navigatio
       game.runtime.profile.save.daily = '';
       game.runtime.home.showHome();
       const home = game.runtime.home;
+      const settings = home.home.children.find((n) => n.name === 'Settings menu');
+      const recommend = home.home.children.find((n) => n.name === 'Recommend game');
+      const favorite = home.home.children.find((n) => n.name === 'Favorite game');
+      const circle = home.home.children.find((n) => n.name === 'Game club');
+      assert.equal(circle.position.x, favorite.position.x);
+      assert.ok(
+        favorite.position.y - favorite.getComponent(cc.UITransform).height / 2 >
+          circle.position.y + circle.getComponent(cc.UITransform).height / 2,
+      );
+      assert.equal(
+        recommend.children.some((n) => n.getComponent(cc.Label)),
+        false,
+      );
+      assert.equal(recommend.position.x, settings.position.x);
+      assert.ok(
+        settings.position.y - settings.getComponent(cc.UITransform).height / 2 >
+          recommend.position.y + recommend.getComponent(cc.UITransform).height / 2,
+      );
       const play = home.home.children.find((n) => n.name === '开始游戏');
       const reward = home.homeRewardButton;
       const navigation = home.home.children.filter((n) =>
@@ -41,6 +59,34 @@ test('home actions leave separate touch targets for rewards and bottom navigatio
     }
   } finally {
     cc.view.getFrameSize = originalFrame;
+  }
+});
+
+test('home game circle entry opens its page repeatedly and leaves gameplay without an entry', async () => {
+  const game = new PixelGarden();
+  game.onLoad();
+  let opens = 0;
+  game.runtime.gameClub.show = async () => {
+    opens++;
+    return 'shown';
+  };
+  const click = () =>
+    game.runtime.home.home.children.find((n) => n.name === 'Game club').emit('end');
+  try {
+    click();
+    await Promise.resolve();
+    game.runtime.home.showHome();
+    click();
+    await Promise.resolve();
+    assert.equal(opens, 2);
+    game.runtime.home.hideHome();
+    assert.equal(game.runtime.home.home, null);
+    assert.equal(
+      game.runtime.lifecycle.gameRoot.children.some((n) => n.name === 'Game club'),
+      false,
+    );
+  } finally {
+    game.onDestroy();
   }
 });
 
@@ -77,6 +123,11 @@ test('illustrated start/resume lettering loads asynchronously and yields to clou
   cloudStatus.refreshCloudStatus();
   assert.equal(home.homePlayArtwork.active, true);
   home.home.children.find((n) => n.name === '开始游戏').emit('end');
+  assert.equal(home.home, null, 'starting gameplay removes the home recommendation entry');
+  assert.equal(
+    game.runtime.lifecycle.gameRoot.children.some((n) => n.name === 'Recommend game'),
+    false,
+  );
   home.showHome();
   assert.equal(home.homePlayArtwork.name, 'Home asset play-resume');
   assert.equal(
@@ -85,4 +136,65 @@ test('illustrated start/resume lettering loads asynchronously and yields to clou
   );
   game.onDestroy();
   assert.ok(textures.every((texture) => texture.refs === 0));
+});
+
+test('clicking recommendation hides the icon immediately and across home rebuilds and restarts', async () => {
+  const originalStorage = cc.sys.localStorage;
+  const stored = new Map();
+  cc.sys.localStorage = {
+    getItem: (key) => stored.get(key) ?? null,
+    setItem: (key, value) => stored.set(key, value),
+  };
+  let game;
+  try {
+    game = new PixelGarden();
+    game.onLoad();
+    const { home, recommendation } = game.runtime;
+    let requests = 0;
+    recommendation.show = async () => {
+      requests++;
+      throw new Error('unavailable');
+    };
+    const icon = home.home.children.find((n) => n.name === 'Recommend game');
+    const favorite = home.home.children.find((n) => n.name === 'Favorite game');
+    const circle = home.home.children.find((n) => n.name === 'Game club');
+    const recommendationY = icon.position.y;
+    const favoriteY = favorite.position.y;
+    icon.emit('end');
+    assert.equal(icon.active, false, 'a click hides the entry before the SDK settles');
+    assert.equal(favorite.position.y, recommendationY, 'favorite fills the empty row immediately');
+    assert.equal(circle.position.y, favoriteY, 'game circle follows favorite upward');
+    icon.emit('end');
+    assert.equal(requests, 1, 'repeated taps cannot reopen the component');
+    await Promise.resolve();
+    home.showHome();
+    assert.equal(
+      home.home.children.find((n) => n.name === 'Favorite game').position.y,
+      recommendationY,
+    );
+    assert.equal(home.home.children.find((n) => n.name === 'Game club').position.y, favoriteY);
+    assert.equal(
+      home.home.children.some((n) => n.name === 'Recommend game'),
+      false,
+    );
+    game.onDestroy();
+    game = new PixelGarden();
+    game.onLoad();
+    assert.equal(
+      game.runtime.home.home.children.find((n) => n.name === 'Favorite game').position.y,
+      recommendationY,
+    );
+    assert.equal(
+      game.runtime.home.home.children.find((n) => n.name === 'Game club').position.y,
+      favoriteY,
+    );
+    assert.equal(game.runtime.profile.recommendationClicked, true);
+    assert.equal(
+      game.runtime.home.home.children.some((n) => n.name === 'Recommend game'),
+      false,
+    );
+  } finally {
+    game?.onDestroy();
+    cc.sys.localStorage = originalStorage;
+  }
 });

@@ -33,12 +33,12 @@ module.exports = function checkResponsive({
     assert.equal(background.p[3], responsive.runtime.lifecycle.screenHeight);
     assert.equal(
       responsive.runtime.home.home.children.find((n) => n.name === 'Settings menu').position.x,
-      -286,
+      -306,
     );
     assert.ok(
       responsive.runtime.home.home.children.some(
         (n) =>
-          n.position.x === 216 &&
+          n.position.x === 236 &&
           n.components.some((c) => c instanceof Label && c.string.startsWith('金币')),
       ),
     );

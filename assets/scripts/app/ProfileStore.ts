@@ -8,6 +8,17 @@ import type { GardenRuntime } from './GardenRuntime';
 export class ProfileStore {
     constructor(private readonly game: Pick<GardenRuntime, 'cloud'>) {}
     save: Profile = freshProfile();
+    recommendationClicked = false;
+
+    /** This local entry preference must survive cloud profile replacement. */
+    markRecommendationClicked() {
+        this.recommendationClicked = true;
+        try {
+            sys.localStorage.setItem('ant-recommendation-clicked', '1');
+        } catch {
+            console.warn('本机存储不可用');
+        }
+    }
 
     persist() {
         try {
@@ -23,6 +34,12 @@ export class ProfileStore {
     }
 
     readSave() {
+        try {
+            this.recommendationClicked =
+                sys.localStorage.getItem('ant-recommendation-clicked') === '1';
+        } catch {
+            // Keep the session preference when device storage is unavailable.
+        }
         try {
             this.save = this.game.cloud.cloudMode
                 ? freshProfile()

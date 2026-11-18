@@ -130,12 +130,117 @@ export class UiFactory {
         g.fillColor = color(PAPER);
         g.circle(0, 0, 8);
         g.fill();
+        this.homeIconPress(button, () => this.game.settings.settings());
+    }
+
+    /** Draw a thumb rather than a font glyph so its appearance is stable on WeChat. */
+    recommendationButton(parent: Node, x: number, y: number, callback: () => void) {
+        const button = this.node2d(
+            'Recommend game',
+            parent,
+            x,
+            y,
+            this.game.lifecycle.touchSize,
+            this.game.lifecycle.touchSize,
+        );
+        const face = button.addComponent(Graphics);
+        islandPanel(face, 0, 0, 76, 68, PAPER);
+        // Centre the asymmetric thumb and leave padding inside the unchanged button face.
+        const icon = this.node2d('Recommendation icon', button, 0, -4.5, 60, 60);
+        icon.setScale(0.75, 0.75, 1);
+        // Keep the badge on the button so it disappears with the one-time entry.
+        face.fillColor = color(PAPER);
+        face.circle(29, 26, 10);
+        face.fill();
+        face.fillColor = color('#F05252');
+        face.circle(29, 26, 8);
+        face.fill();
+        const g = icon.addComponent(Graphics);
+        g.fillColor = color(GREEN);
+        g.roundRect(-23, -19, 10, 29, 3);
+        g.fill();
+        g.moveTo(-9, -18);
+        for (const [px, py] of [
+            [17, -18],
+            [23, 6],
+            [21, 12],
+            [5, 12],
+            [8, 26],
+            [5, 31],
+            [0, 31],
+            [-5, 16],
+            [-9, 10],
+        ])
+            g.lineTo(px, py);
+        g.close();
+        g.fill();
+        this.homeIconPress(button, callback);
+        return button;
+    }
+
+    /** Match the other home controls with a padded, font-independent collection star. */
+    favoriteButton(parent: Node, x: number, y: number, callback: () => void) {
+        const button = this.node2d(
+            'Favorite game',
+            parent,
+            x,
+            y,
+            this.game.lifecycle.touchSize,
+            this.game.lifecycle.touchSize,
+        );
+        const g = button.addComponent(Graphics);
+        islandPanel(g, 0, 0, 76, 68, PAPER);
+        g.fillColor = color(GREEN);
+        for (let i = 0; i < 10; i++) {
+            const angle = Math.PI / 2 + (i * Math.PI) / 5;
+            const radius = i % 2 === 0 ? 22 : 10;
+            const px = Math.cos(angle) * radius;
+            const py = Math.sin(angle) * radius - 2;
+            if (i === 0) g.moveTo(px, py);
+            else g.lineTo(px, py);
+        }
+        g.close();
+        g.fill();
+        this.homeIconPress(button, callback);
+        return button;
+    }
+
+    /** A conversation bubble identifies the game community without adding a text label. */
+    gameClubButton(parent: Node, x: number, y: number, callback: () => void) {
+        const button = this.node2d(
+            'Game club',
+            parent,
+            x,
+            y,
+            this.game.lifecycle.touchSize,
+            this.game.lifecycle.touchSize,
+        );
+        const g = button.addComponent(Graphics);
+        islandPanel(g, 0, 0, 76, 68, PAPER);
+        g.fillColor = color(GREEN);
+        g.roundRect(-23, -13, 46, 32, 10);
+        g.fill();
+        g.moveTo(-12, -10);
+        g.lineTo(-15, -22);
+        g.lineTo(1, -12);
+        g.close();
+        g.fill();
+        g.fillColor = color(PAPER);
+        for (const dotX of [-12, 0, 12]) {
+            g.circle(dotX, 3, 3);
+            g.fill();
+        }
+        this.homeIconPress(button, callback);
+        return button;
+    }
+
+    private homeIconPress(button: Node, callback: () => void) {
         button.on(Node.EventType.TOUCH_START, () => button.setScale(0.94, 0.94, 1));
         button.on(Node.EventType.TOUCH_CANCEL, () => button.setScale(1, 1, 1));
         button.on(Node.EventType.TOUCH_END, () => {
             button.setScale(1, 1, 1);
             this.game.audio.play('tap');
-            this.game.settings.settings();
+            callback();
         });
     }
 

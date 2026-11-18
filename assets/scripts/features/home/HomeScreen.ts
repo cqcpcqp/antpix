@@ -25,6 +25,8 @@ export class HomeScreen {
             | 'identity'
             | 'notices'
             | 'cloudStatus'
+            | 'recommendation'
+            | 'gameClub'
         >,
     ) {}
     hideHome() {
@@ -133,20 +135,49 @@ export class HomeScreen {
         this.game.courtyard.courtyardNode = null;
         this.game.courtyard.refreshCourtyard();
         const g = this.game.ui.graphics(n, 'Home controls');
-        this.game.ui.box(g, 216, 633, 214, 60, 30, PAPER);
+        this.game.ui.box(g, 236, 633, 214, 60, 30, PAPER);
         this.game.ui.text(
             n,
             this.game.cloud.cloudMode && !this.game.cloud.cloudReady
                 ? '金币  …'
                 : `金币  ${this.game.profile.save.coins}`,
-            216,
+            236,
             633,
             25,
             INK,
             195,
         ).isBold = false;
-        this.game.ui.button(n, '收藏', -163, 633, 104, 60, PAPER, () => this.favoriteGuide());
-        this.game.ui.gearButton(n, -286, 633);
+        this.game.ui.gearButton(n, -306, 633);
+        const actions: Node[] = [];
+        // Only visible actions occupy a row, including immediately after recommendation is clicked.
+        const layoutActions = () => {
+            let row = 1;
+            for (const action of actions) {
+                if (!action.active) continue;
+                action.setPosition(-306, 633 - (this.game.lifecycle.touchSize + 16) * row++);
+            }
+        };
+        if (!this.game.profile.recommendationClicked) {
+            const recommend = this.game.ui.recommendationButton(
+                n,
+                -306,
+                633 - this.game.lifecycle.touchSize - 16,
+                () => {
+                    if (this.game.profile.recommendationClicked) return;
+                    this.game.profile.markRecommendationClicked();
+                    recommend.active = false;
+                    recommend.destroy();
+                    layoutActions();
+                    void this.recommend();
+                },
+            );
+            actions.push(recommend);
+        }
+        actions.push(
+            this.game.ui.favoriteButton(n, -306, 0, () => this.favoriteGuide()),
+            this.game.ui.gameClubButton(n, -306, 0, () => void this.openGameClub()),
+        );
+        layoutActions();
         this.homeTitle = this.game.ui
             .node2d('Home title', n, 0, 493, 560, 560 / 3)
             .addComponent(Sprite);
@@ -243,6 +274,30 @@ export class HomeScreen {
         if (this.game.overlays.modal) this.game.overlays.modal.setSiblingIndex(998);
         if (this.game.notices.notification)
             this.game.notices.notification.node.setSiblingIndex(999);
+    }
+
+    async recommend() {
+        const home = this.home;
+        try {
+            const result = await this.game.recommendation.show();
+            if (result === 'unsupported' && home?.isValid && home === this.home)
+                this.game.notices.notify('暂不支持推荐', '请在新版微信中体验推荐功能');
+        } catch {
+            if (home?.isValid && home === this.home)
+                this.game.notices.notify('推荐暂时无法打开', '请稍后再试');
+        }
+    }
+
+    async openGameClub() {
+        const home = this.home;
+        try {
+            const result = await this.game.gameClub.show();
+            if (result === 'unsupported' && home?.isValid && home === this.home)
+                this.game.notices.notify('暂不支持游戏圈', '请在新版微信中体验');
+        } catch {
+            if (home?.isValid && home === this.home)
+                this.game.notices.notify('游戏圈暂时无法打开', '请稍后再试');
+        }
     }
 
     favoriteGuide() {
