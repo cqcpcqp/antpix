@@ -1,0 +1,3758 @@
+[
+  {
+    "level": 116,
+    "id": "clownfish-arch",
+    "name": "小丑鱼穿过礁石拱",
+    "before": {
+      "occupied": 2880,
+      "colors": 24,
+      "componentCount": 408,
+      "maxComponent": 193,
+      "maxComponentShare": 0.06701388888888889,
+      "topThreeColorShare": 0.31631944444444443,
+      "bulkPixelShare": 0.11388888888888889,
+      "largestOpening": 100,
+      "openingColors": 5,
+      "sweepCount": 48,
+      "largestSweep": 229,
+      "opportunityStates": 33,
+      "topComponents": [
+        {
+          "color": 1907,
+          "size": 193,
+          "origin": 44,
+          "hex": "#0C94E1"
+        },
+        {
+          "color": 1914,
+          "size": 135,
+          "origin": 188,
+          "hex": "#EC3D32"
+        },
+        {
+          "color": 1923,
+          "size": 95,
+          "origin": 2045,
+          "hex": "#AB2374"
+        },
+        {
+          "color": 1917,
+          "size": 92,
+          "origin": 1449,
+          "hex": "#FDD582"
+        },
+        {
+          "color": 1930,
+          "size": 76,
+          "origin": 1970,
+          "hex": "#DE71D2"
+        },
+        {
+          "color": 1925,
+          "size": 76,
+          "origin": 2578,
+          "hex": "#FDD454"
+        }
+      ],
+      "topColors": [
+        {
+          "color": 1917,
+          "count": 383,
+          "hex": "#FDD582"
+        },
+        {
+          "color": 1907,
+          "count": 316,
+          "hex": "#0C94E1"
+        },
+        {
+          "color": 1918,
+          "count": 212,
+          "hex": "#FC729D"
+        },
+        {
+          "color": 1910,
+          "count": 180,
+          "hex": "#1B7ACB"
+        },
+        {
+          "color": 1923,
+          "count": 157,
+          "hex": "#AB2374"
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 1925,
+          "count": 100,
+          "opportunities": 3
+        },
+        {
+          "color": 1923,
+          "count": 95,
+          "opportunities": 6
+        },
+        {
+          "color": 1926,
+          "count": 120,
+          "opportunities": 5
+        },
+        {
+          "color": 1917,
+          "count": 93,
+          "opportunities": 7
+        },
+        {
+          "color": 1918,
+          "count": 94,
+          "opportunities": 9
+        },
+        {
+          "color": 1917,
+          "count": 161,
+          "opportunities": 9
+        },
+        {
+          "color": 1910,
+          "count": 104,
+          "opportunities": 8
+        },
+        {
+          "color": 1914,
+          "count": 143,
+          "opportunities": 7
+        },
+        {
+          "color": 1907,
+          "count": 229,
+          "opportunities": 7
+        },
+        {
+          "color": 1916,
+          "count": 104,
+          "opportunities": 8
+        },
+        {
+          "color": 1917,
+          "count": 99,
+          "opportunities": 8
+        },
+        {
+          "color": 1918,
+          "count": 114,
+          "opportunities": 9
+        },
+        {
+          "color": 1922,
+          "count": 127,
+          "opportunities": 11
+        },
+        {
+          "color": 1927,
+          "count": 102,
+          "opportunities": 12
+        },
+        {
+          "color": 1913,
+          "count": 97,
+          "opportunities": 13
+        },
+        {
+          "color": 1919,
+          "count": 91,
+          "opportunities": 12
+        },
+        {
+          "color": 1909,
+          "count": 82,
+          "opportunities": 11
+        },
+        {
+          "color": 1930,
+          "count": 80,
+          "opportunities": 10
+        },
+        {
+          "color": 1924,
+          "count": 81,
+          "opportunities": 7
+        },
+        {
+          "color": 1910,
+          "count": 76,
+          "opportunities": 8
+        },
+        {
+          "color": 1923,
+          "count": 62,
+          "opportunities": 8
+        },
+        {
+          "color": 1929,
+          "count": 55,
+          "opportunities": 8
+        },
+        {
+          "color": 1925,
+          "count": 54,
+          "opportunities": 8
+        },
+        {
+          "color": 1911,
+          "count": 51,
+          "opportunities": 7
+        },
+        {
+          "color": 1907,
+          "count": 50,
+          "opportunities": 7
+        },
+        {
+          "color": 1920,
+          "count": 44,
+          "opportunities": 7
+        },
+        {
+          "color": 1921,
+          "count": 45,
+          "opportunities": 8
+        },
+        {
+          "color": 1915,
+          "count": 44,
+          "opportunities": 9
+        },
+        {
+          "color": 1908,
+          "count": 33,
+          "opportunities": 5
+        },
+        {
+          "color": 1907,
+          "count": 35,
+          "opportunities": 3
+        },
+        {
+          "color": 1911,
+          "count": 35,
+          "opportunities": 3
+        },
+        {
+          "color": 1917,
+          "count": 30,
+          "opportunities": 2
+        },
+        {
+          "color": 1913,
+          "count": 29,
+          "opportunities": 1
+        },
+        {
+          "color": 1912,
+          "count": 27,
+          "opportunities": 0
+        },
+        {
+          "color": 1922,
+          "count": 19,
+          "opportunities": 0
+        },
+        {
+          "color": 1920,
+          "count": 15,
+          "opportunities": 0
+        },
+        {
+          "color": 1919,
+          "count": 12,
+          "opportunities": 0
+        },
+        {
+          "color": 1926,
+          "count": 10,
+          "opportunities": 0
+        },
+        {
+          "color": 1914,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 1916,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 1908,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 1918,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 1928,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 1907,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 1909,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 1925,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 1915,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 1924,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "after": {
+      "occupied": 2880,
+      "colors": 24,
+      "componentCount": 379,
+      "maxComponent": 235,
+      "maxComponentShare": 0.08159722222222222,
+      "topThreeColorShare": 0.44131944444444443,
+      "bulkPixelShare": 0.12881944444444443,
+      "largestOpening": 67,
+      "openingColors": 8,
+      "sweepCount": 40,
+      "largestSweep": 240,
+      "opportunityStates": 26,
+      "topComponents": [
+        {
+          "color": 10,
+          "size": 235,
+          "origin": 1060
+        },
+        {
+          "color": 23,
+          "size": 136,
+          "origin": 922
+        },
+        {
+          "color": 10,
+          "size": 101,
+          "origin": 0
+        },
+        {
+          "color": 23,
+          "size": 99,
+          "origin": 739
+        },
+        {
+          "color": 23,
+          "size": 87,
+          "origin": 1146
+        },
+        {
+          "color": 21,
+          "size": 86,
+          "origin": 2344
+        }
+      ],
+      "topColors": [
+        {
+          "color": 10,
+          "count": 504
+        },
+        {
+          "color": 23,
+          "count": 407
+        },
+        {
+          "color": 22,
+          "count": 360
+        },
+        {
+          "color": 21,
+          "count": 248
+        },
+        {
+          "color": 18,
+          "count": 146
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 21,
+          "count": 67,
+          "opportunities": 4
+        },
+        {
+          "color": 18,
+          "count": 136,
+          "opportunities": 5
+        },
+        {
+          "color": 10,
+          "count": 240,
+          "opportunities": 4
+        },
+        {
+          "color": 22,
+          "count": 234,
+          "opportunities": 10
+        },
+        {
+          "color": 23,
+          "count": 220,
+          "opportunities": 10
+        },
+        {
+          "color": 21,
+          "count": 181,
+          "opportunities": 11
+        },
+        {
+          "color": 14,
+          "count": 88,
+          "opportunities": 10
+        },
+        {
+          "color": 22,
+          "count": 76,
+          "opportunities": 10
+        },
+        {
+          "color": 23,
+          "count": 99,
+          "opportunities": 10
+        },
+        {
+          "color": 1,
+          "count": 85,
+          "opportunities": 11
+        },
+        {
+          "color": 23,
+          "count": 88,
+          "opportunities": 9
+        },
+        {
+          "color": 20,
+          "count": 72,
+          "opportunities": 8
+        },
+        {
+          "color": 7,
+          "count": 55,
+          "opportunities": 7
+        },
+        {
+          "color": 10,
+          "count": 196,
+          "opportunities": 6
+        },
+        {
+          "color": 5,
+          "count": 108,
+          "opportunities": 4
+        },
+        {
+          "color": 6,
+          "count": 82,
+          "opportunities": 3
+        },
+        {
+          "color": 0,
+          "count": 84,
+          "opportunities": 4
+        },
+        {
+          "color": 2,
+          "count": 84,
+          "opportunities": 3
+        },
+        {
+          "color": 11,
+          "count": 79,
+          "opportunities": 2
+        },
+        {
+          "color": 15,
+          "count": 72,
+          "opportunities": 2
+        },
+        {
+          "color": 10,
+          "count": 68,
+          "opportunities": 2
+        },
+        {
+          "color": 7,
+          "count": 54,
+          "opportunities": 1
+        },
+        {
+          "color": 8,
+          "count": 50,
+          "opportunities": 1
+        },
+        {
+          "color": 22,
+          "count": 49,
+          "opportunities": 1
+        },
+        {
+          "color": 6,
+          "count": 45,
+          "opportunities": 1
+        },
+        {
+          "color": 19,
+          "count": 43,
+          "opportunities": 1
+        },
+        {
+          "color": 17,
+          "count": 39,
+          "opportunities": 0
+        },
+        {
+          "color": 4,
+          "count": 38,
+          "opportunities": 0
+        },
+        {
+          "color": 16,
+          "count": 34,
+          "opportunities": 0
+        },
+        {
+          "color": 13,
+          "count": 24,
+          "opportunities": 0
+        },
+        {
+          "color": 9,
+          "count": 22,
+          "opportunities": 0
+        },
+        {
+          "color": 5,
+          "count": 16,
+          "opportunities": 0
+        },
+        {
+          "color": 3,
+          "count": 14,
+          "opportunities": 0
+        },
+        {
+          "color": 1,
+          "count": 10,
+          "opportunities": 0
+        },
+        {
+          "color": 18,
+          "count": 10,
+          "opportunities": 0
+        },
+        {
+          "color": 12,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 20,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 11,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 0,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 22,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "review": {
+      "tier": "review",
+      "reasons": [
+        "large-connected-region",
+        "dominant-three-colors"
+      ]
+    }
+  },
+  {
+    "level": 177,
+    "id": "ski-workbench",
+    "name": "小孩装配木滑雪板",
+    "before": {
+      "occupied": 2880,
+      "colors": 21,
+      "componentCount": 383,
+      "maxComponent": 388,
+      "maxComponentShare": 0.13472222222222222,
+      "topThreeColorShare": 0.4534722222222222,
+      "bulkPixelShare": 0.3138888888888889,
+      "largestOpening": 388,
+      "openingColors": 3,
+      "sweepCount": 40,
+      "largestSweep": 388,
+      "opportunityStates": 26,
+      "topComponents": [
+        {
+          "color": 3211,
+          "size": 388,
+          "origin": 1800,
+          "hex": "#F4F5FB"
+        },
+        {
+          "color": 3208,
+          "size": 272,
+          "origin": 0,
+          "hex": "#09B5FA"
+        },
+        {
+          "color": 3211,
+          "size": 122,
+          "origin": 1035,
+          "hex": "#F4F5FB"
+        },
+        {
+          "color": 3227,
+          "size": 122,
+          "origin": 1556,
+          "hex": "#015ADD"
+        },
+        {
+          "color": 3209,
+          "size": 117,
+          "origin": 2582,
+          "hex": "#7CDCFC"
+        },
+        {
+          "color": 3212,
+          "size": 100,
+          "origin": 43,
+          "hex": "#8D3B11"
+        }
+      ],
+      "topColors": [
+        {
+          "color": 3211,
+          "count": 752,
+          "hex": "#F4F5FB"
+        },
+        {
+          "color": 3208,
+          "count": 350,
+          "hex": "#09B5FA"
+        },
+        {
+          "color": 3209,
+          "count": 204,
+          "hex": "#7CDCFC"
+        },
+        {
+          "color": 3213,
+          "count": 172,
+          "hex": "#FDDD02"
+        },
+        {
+          "color": 3216,
+          "count": 153,
+          "hex": "#CBE2F3"
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 3211,
+          "count": 388,
+          "opportunities": 1
+        },
+        {
+          "color": 3209,
+          "count": 158,
+          "opportunities": 8
+        },
+        {
+          "color": 3227,
+          "count": 122,
+          "opportunities": 11
+        },
+        {
+          "color": 3216,
+          "count": 93,
+          "opportunities": 13
+        },
+        {
+          "color": 3220,
+          "count": 88,
+          "opportunities": 12
+        },
+        {
+          "color": 3211,
+          "count": 140,
+          "opportunities": 12
+        },
+        {
+          "color": 3223,
+          "count": 81,
+          "opportunities": 11
+        },
+        {
+          "color": 3225,
+          "count": 93,
+          "opportunities": 10
+        },
+        {
+          "color": 3221,
+          "count": 75,
+          "opportunities": 11
+        },
+        {
+          "color": 3208,
+          "count": 288,
+          "opportunities": 10
+        },
+        {
+          "color": 3211,
+          "count": 171,
+          "opportunities": 8
+        },
+        {
+          "color": 3212,
+          "count": 128,
+          "opportunities": 7
+        },
+        {
+          "color": 3213,
+          "count": 106,
+          "opportunities": 7
+        },
+        {
+          "color": 3214,
+          "count": 80,
+          "opportunities": 7
+        },
+        {
+          "color": 3228,
+          "count": 70,
+          "opportunities": 7
+        },
+        {
+          "color": 3215,
+          "count": 61,
+          "opportunities": 7
+        },
+        {
+          "color": 3220,
+          "count": 61,
+          "opportunities": 8
+        },
+        {
+          "color": 3222,
+          "count": 70,
+          "opportunities": 7
+        },
+        {
+          "color": 3213,
+          "count": 65,
+          "opportunities": 5
+        },
+        {
+          "color": 3218,
+          "count": 72,
+          "opportunities": 4
+        },
+        {
+          "color": 3208,
+          "count": 59,
+          "opportunities": 4
+        },
+        {
+          "color": 3216,
+          "count": 60,
+          "opportunities": 3
+        },
+        {
+          "color": 3221,
+          "count": 59,
+          "opportunities": 3
+        },
+        {
+          "color": 3211,
+          "count": 52,
+          "opportunities": 3
+        },
+        {
+          "color": 3209,
+          "count": 46,
+          "opportunities": 1
+        },
+        {
+          "color": 3210,
+          "count": 45,
+          "opportunities": 1
+        },
+        {
+          "color": 3217,
+          "count": 43,
+          "opportunities": 0
+        },
+        {
+          "color": 3219,
+          "count": 41,
+          "opportunities": 0
+        },
+        {
+          "color": 3224,
+          "count": 29,
+          "opportunities": 0
+        },
+        {
+          "color": 3223,
+          "count": 8,
+          "opportunities": 0
+        },
+        {
+          "color": 3215,
+          "count": 6,
+          "opportunities": 0
+        },
+        {
+          "color": 3214,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 3226,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 3208,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3212,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3218,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3211,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3213,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3220,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3222,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "after": {
+      "occupied": 2880,
+      "colors": 21,
+      "componentCount": 543,
+      "maxComponent": 178,
+      "maxComponentShare": 0.06180555555555556,
+      "topThreeColorShare": 0.3972222222222222,
+      "bulkPixelShare": 0.15104166666666666,
+      "largestOpening": 178,
+      "openingColors": 9,
+      "sweepCount": 43,
+      "largestSweep": 193,
+      "opportunityStates": 33,
+      "topComponents": [
+        {
+          "color": 10,
+          "size": 178,
+          "origin": 1967
+        },
+        {
+          "color": 14,
+          "size": 136,
+          "origin": 23
+        },
+        {
+          "color": 14,
+          "size": 121,
+          "origin": 1254
+        },
+        {
+          "color": 17,
+          "size": 118,
+          "origin": 746
+        },
+        {
+          "color": 19,
+          "size": 109,
+          "origin": 2316
+        },
+        {
+          "color": 20,
+          "size": 83,
+          "origin": 353
+        }
+      ],
+      "topColors": [
+        {
+          "color": 14,
+          "count": 434
+        },
+        {
+          "color": 10,
+          "count": 385
+        },
+        {
+          "color": 17,
+          "count": 325
+        },
+        {
+          "color": 4,
+          "count": 232
+        },
+        {
+          "color": 19,
+          "count": 204
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 10,
+          "count": 178,
+          "opportunities": 6
+        },
+        {
+          "color": 19,
+          "count": 116,
+          "opportunities": 9
+        },
+        {
+          "color": 14,
+          "count": 188,
+          "opportunities": 10
+        },
+        {
+          "color": 4,
+          "count": 168,
+          "opportunities": 8
+        },
+        {
+          "color": 17,
+          "count": 193,
+          "opportunities": 8
+        },
+        {
+          "color": 14,
+          "count": 182,
+          "opportunities": 6
+        },
+        {
+          "color": 10,
+          "count": 181,
+          "opportunities": 7
+        },
+        {
+          "color": 7,
+          "count": 127,
+          "opportunities": 7
+        },
+        {
+          "color": 20,
+          "count": 138,
+          "opportunities": 7
+        },
+        {
+          "color": 17,
+          "count": 115,
+          "opportunities": 7
+        },
+        {
+          "color": 8,
+          "count": 112,
+          "opportunities": 7
+        },
+        {
+          "color": 15,
+          "count": 107,
+          "opportunities": 6
+        },
+        {
+          "color": 0,
+          "count": 94,
+          "opportunities": 6
+        },
+        {
+          "color": 19,
+          "count": 88,
+          "opportunities": 8
+        },
+        {
+          "color": 2,
+          "count": 85,
+          "opportunities": 8
+        },
+        {
+          "color": 18,
+          "count": 80,
+          "opportunities": 9
+        },
+        {
+          "color": 16,
+          "count": 75,
+          "opportunities": 10
+        },
+        {
+          "color": 3,
+          "count": 69,
+          "opportunities": 10
+        },
+        {
+          "color": 14,
+          "count": 64,
+          "opportunities": 9
+        },
+        {
+          "color": 13,
+          "count": 59,
+          "opportunities": 8
+        },
+        {
+          "color": 4,
+          "count": 58,
+          "opportunities": 8
+        },
+        {
+          "color": 9,
+          "count": 59,
+          "opportunities": 8
+        },
+        {
+          "color": 12,
+          "count": 53,
+          "opportunities": 8
+        },
+        {
+          "color": 20,
+          "count": 48,
+          "opportunities": 9
+        },
+        {
+          "color": 6,
+          "count": 41,
+          "opportunities": 8
+        },
+        {
+          "color": 5,
+          "count": 33,
+          "opportunities": 8
+        },
+        {
+          "color": 0,
+          "count": 30,
+          "opportunities": 7
+        },
+        {
+          "color": 10,
+          "count": 25,
+          "opportunities": 4
+        },
+        {
+          "color": 7,
+          "count": 24,
+          "opportunities": 2
+        },
+        {
+          "color": 17,
+          "count": 17,
+          "opportunities": 2
+        },
+        {
+          "color": 11,
+          "count": 15,
+          "opportunities": 1
+        },
+        {
+          "color": 18,
+          "count": 10,
+          "opportunities": 1
+        },
+        {
+          "color": 2,
+          "count": 9,
+          "opportunities": 1
+        },
+        {
+          "color": 3,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 1,
+          "count": 7,
+          "opportunities": 0
+        },
+        {
+          "color": 4,
+          "count": 6,
+          "opportunities": 0
+        },
+        {
+          "color": 16,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 8,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 15,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 6,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 0,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 10,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 13,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "review": {
+      "tier": "review",
+      "reasons": [
+        "large-connected-region"
+      ]
+    }
+  },
+  {
+    "level": 202,
+    "id": "ceramic-glaze-tools",
+    "name": "陶盘与宽刷",
+    "before": {
+      "occupied": 2880,
+      "colors": 24,
+      "componentCount": 791,
+      "maxComponent": 125,
+      "maxComponentShare": 0.043402777777777776,
+      "topThreeColorShare": 0.3138888888888889,
+      "bulkPixelShare": 0.043402777777777776,
+      "largestOpening": 110,
+      "openingColors": 6,
+      "sweepCount": 60,
+      "largestSweep": 139,
+      "opportunityStates": 51,
+      "topComponents": [
+        {
+          "color": 3755,
+          "size": 125,
+          "origin": 784,
+          "hex": "#F10D0E"
+        },
+        {
+          "color": 3744,
+          "size": 110,
+          "origin": 2304,
+          "hex": "#F262A2"
+        },
+        {
+          "color": 3733,
+          "size": 85,
+          "origin": 2035,
+          "hex": "#E16D1D"
+        },
+        {
+          "color": 3734,
+          "size": 57,
+          "origin": 2576,
+          "hex": "#A6480E"
+        },
+        {
+          "color": 3738,
+          "size": 47,
+          "origin": 28,
+          "hex": "#FBE4A1"
+        },
+        {
+          "color": 3738,
+          "size": 43,
+          "origin": 943,
+          "hex": "#FBE4A1"
+        }
+      ],
+      "topColors": [
+        {
+          "color": 3733,
+          "count": 417,
+          "hex": "#E16D1D"
+        },
+        {
+          "color": 3751,
+          "count": 272,
+          "hex": "#FDF6E1"
+        },
+        {
+          "color": 3734,
+          "count": 215,
+          "hex": "#A6480E"
+        },
+        {
+          "color": 2333,
+          "count": 189,
+          "hex": "#FDCC1B"
+        },
+        {
+          "color": 3738,
+          "count": 187,
+          "hex": "#FBE4A1"
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 3744,
+          "count": 110,
+          "opportunities": 4
+        },
+        {
+          "color": 3734,
+          "count": 64,
+          "opportunities": 8
+        },
+        {
+          "color": 3733,
+          "count": 130,
+          "opportunities": 7
+        },
+        {
+          "color": 3745,
+          "count": 48,
+          "opportunities": 10
+        },
+        {
+          "color": 3734,
+          "count": 44,
+          "opportunities": 11
+        },
+        {
+          "color": 3746,
+          "count": 49,
+          "opportunities": 12
+        },
+        {
+          "color": 3733,
+          "count": 94,
+          "opportunities": 14
+        },
+        {
+          "color": 3738,
+          "count": 45,
+          "opportunities": 15
+        },
+        {
+          "color": 2333,
+          "count": 62,
+          "opportunities": 15
+        },
+        {
+          "color": 3749,
+          "count": 49,
+          "opportunities": 17
+        },
+        {
+          "color": 3752,
+          "count": 46,
+          "opportunities": 18
+        },
+        {
+          "color": 3738,
+          "count": 62,
+          "opportunities": 16
+        },
+        {
+          "color": 3741,
+          "count": 53,
+          "opportunities": 16
+        },
+        {
+          "color": 3751,
+          "count": 76,
+          "opportunities": 17
+        },
+        {
+          "color": 3755,
+          "count": 139,
+          "opportunities": 16
+        },
+        {
+          "color": 3751,
+          "count": 77,
+          "opportunities": 15
+        },
+        {
+          "color": 2333,
+          "count": 84,
+          "opportunities": 16
+        },
+        {
+          "color": 3754,
+          "count": 79,
+          "opportunities": 15
+        },
+        {
+          "color": 3741,
+          "count": 82,
+          "opportunities": 15
+        },
+        {
+          "color": 3733,
+          "count": 110,
+          "opportunities": 16
+        },
+        {
+          "color": 3734,
+          "count": 72,
+          "opportunities": 15
+        },
+        {
+          "color": 3738,
+          "count": 72,
+          "opportunities": 13
+        },
+        {
+          "color": 3736,
+          "count": 82,
+          "opportunities": 14
+        },
+        {
+          "color": 3751,
+          "count": 90,
+          "opportunities": 13
+        },
+        {
+          "color": 3743,
+          "count": 66,
+          "opportunities": 14
+        },
+        {
+          "color": 3739,
+          "count": 63,
+          "opportunities": 13
+        },
+        {
+          "color": 3733,
+          "count": 58,
+          "opportunities": 13
+        },
+        {
+          "color": 3735,
+          "count": 58,
+          "opportunities": 13
+        },
+        {
+          "color": 3746,
+          "count": 57,
+          "opportunities": 13
+        },
+        {
+          "color": 3740,
+          "count": 87,
+          "opportunities": 12
+        },
+        {
+          "color": 3736,
+          "count": 52,
+          "opportunities": 12
+        },
+        {
+          "color": 3747,
+          "count": 53,
+          "opportunities": 11
+        },
+        {
+          "color": 3744,
+          "count": 48,
+          "opportunities": 12
+        },
+        {
+          "color": 3737,
+          "count": 46,
+          "opportunities": 12
+        },
+        {
+          "color": 3748,
+          "count": 45,
+          "opportunities": 11
+        },
+        {
+          "color": 3745,
+          "count": 44,
+          "opportunities": 12
+        },
+        {
+          "color": 2333,
+          "count": 43,
+          "opportunities": 12
+        },
+        {
+          "color": 3752,
+          "count": 34,
+          "opportunities": 9
+        },
+        {
+          "color": 3742,
+          "count": 33,
+          "opportunities": 8
+        },
+        {
+          "color": 3734,
+          "count": 31,
+          "opportunities": 6
+        },
+        {
+          "color": 3749,
+          "count": 30,
+          "opportunities": 4
+        },
+        {
+          "color": 3751,
+          "count": 29,
+          "opportunities": 2
+        },
+        {
+          "color": 3754,
+          "count": 29,
+          "opportunities": 1
+        },
+        {
+          "color": 3741,
+          "count": 26,
+          "opportunities": 1
+        },
+        {
+          "color": 3733,
+          "count": 25,
+          "opportunities": 1
+        },
+        {
+          "color": 3736,
+          "count": 23,
+          "opportunities": 1
+        },
+        {
+          "color": 3750,
+          "count": 17,
+          "opportunities": 1
+        },
+        {
+          "color": 3739,
+          "count": 9,
+          "opportunities": 1
+        },
+        {
+          "color": 3746,
+          "count": 9,
+          "opportunities": 1
+        },
+        {
+          "color": 3755,
+          "count": 9,
+          "opportunities": 1
+        },
+        {
+          "color": 3738,
+          "count": 7,
+          "opportunities": 1
+        },
+        {
+          "color": 3743,
+          "count": 7,
+          "opportunities": 0
+        },
+        {
+          "color": 3740,
+          "count": 6,
+          "opportunities": 0
+        },
+        {
+          "color": 3753,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 3734,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 3747,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3745,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 3738,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3742,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3748,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "after": {
+      "occupied": 2880,
+      "colors": 24,
+      "componentCount": 416,
+      "maxComponent": 155,
+      "maxComponentShare": 0.05381944444444445,
+      "topThreeColorShare": 0.30833333333333335,
+      "bulkPixelShare": 0.05381944444444445,
+      "largestOpening": 35,
+      "openingColors": 5,
+      "sweepCount": 50,
+      "largestSweep": 246,
+      "opportunityStates": 33,
+      "topComponents": [
+        {
+          "color": 1,
+          "size": 155,
+          "origin": 641
+        },
+        {
+          "color": 21,
+          "size": 106,
+          "origin": 837
+        },
+        {
+          "color": 0,
+          "size": 98,
+          "origin": 894
+        },
+        {
+          "color": 23,
+          "size": 97,
+          "origin": 1113
+        },
+        {
+          "color": 20,
+          "size": 91,
+          "origin": 1454
+        },
+        {
+          "color": 20,
+          "size": 80,
+          "origin": 2555
+        }
+      ],
+      "topColors": [
+        {
+          "color": 23,
+          "count": 325
+        },
+        {
+          "color": 20,
+          "count": 289
+        },
+        {
+          "color": 11,
+          "count": 274
+        },
+        {
+          "color": 19,
+          "count": 207
+        },
+        {
+          "color": 21,
+          "count": 207
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 5,
+          "count": 35,
+          "opportunities": 5
+        },
+        {
+          "color": 20,
+          "count": 81,
+          "opportunities": 3
+        },
+        {
+          "color": 0,
+          "count": 71,
+          "opportunities": 4
+        },
+        {
+          "color": 13,
+          "count": 68,
+          "opportunities": 11
+        },
+        {
+          "color": 18,
+          "count": 67,
+          "opportunities": 12
+        },
+        {
+          "color": 20,
+          "count": 55,
+          "opportunities": 13
+        },
+        {
+          "color": 14,
+          "count": 52,
+          "opportunities": 14
+        },
+        {
+          "color": 1,
+          "count": 156,
+          "opportunities": 13
+        },
+        {
+          "color": 23,
+          "count": 246,
+          "opportunities": 12
+        },
+        {
+          "color": 11,
+          "count": 241,
+          "opportunities": 13
+        },
+        {
+          "color": 21,
+          "count": 170,
+          "opportunities": 13
+        },
+        {
+          "color": 20,
+          "count": 136,
+          "opportunities": 12
+        },
+        {
+          "color": 0,
+          "count": 125,
+          "opportunities": 11
+        },
+        {
+          "color": 2,
+          "count": 91,
+          "opportunities": 11
+        },
+        {
+          "color": 19,
+          "count": 75,
+          "opportunities": 12
+        },
+        {
+          "color": 22,
+          "count": 70,
+          "opportunities": 15
+        },
+        {
+          "color": 19,
+          "count": 80,
+          "opportunities": 15
+        },
+        {
+          "color": 4,
+          "count": 68,
+          "opportunities": 14
+        },
+        {
+          "color": 6,
+          "count": 72,
+          "opportunities": 14
+        },
+        {
+          "color": 15,
+          "count": 68,
+          "opportunities": 14
+        },
+        {
+          "color": 23,
+          "count": 79,
+          "opportunities": 12
+        },
+        {
+          "color": 18,
+          "count": 65,
+          "opportunities": 9
+        },
+        {
+          "color": 5,
+          "count": 64,
+          "opportunities": 9
+        },
+        {
+          "color": 12,
+          "count": 64,
+          "opportunities": 9
+        },
+        {
+          "color": 16,
+          "count": 58,
+          "opportunities": 9
+        },
+        {
+          "color": 10,
+          "count": 55,
+          "opportunities": 7
+        },
+        {
+          "color": 14,
+          "count": 61,
+          "opportunities": 5
+        },
+        {
+          "color": 1,
+          "count": 48,
+          "opportunities": 5
+        },
+        {
+          "color": 19,
+          "count": 37,
+          "opportunities": 5
+        },
+        {
+          "color": 22,
+          "count": 36,
+          "opportunities": 4
+        },
+        {
+          "color": 21,
+          "count": 37,
+          "opportunities": 2
+        },
+        {
+          "color": 7,
+          "count": 34,
+          "opportunities": 2
+        },
+        {
+          "color": 9,
+          "count": 33,
+          "opportunities": 1
+        },
+        {
+          "color": 11,
+          "count": 33,
+          "opportunities": 0
+        },
+        {
+          "color": 3,
+          "count": 28,
+          "opportunities": 0
+        },
+        {
+          "color": 8,
+          "count": 25,
+          "opportunities": 0
+        },
+        {
+          "color": 17,
+          "count": 19,
+          "opportunities": 0
+        },
+        {
+          "color": 20,
+          "count": 17,
+          "opportunities": 0
+        },
+        {
+          "color": 19,
+          "count": 15,
+          "opportunities": 0
+        },
+        {
+          "color": 2,
+          "count": 13,
+          "opportunities": 0
+        },
+        {
+          "color": 13,
+          "count": 11,
+          "opportunities": 0
+        },
+        {
+          "color": 10,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 12,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 0,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 9,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 15,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 7,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 16,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 18,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 22,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "review": {
+      "tier": "review",
+      "reasons": [
+        "large-connected-region"
+      ]
+    }
+  },
+  {
+    "level": 207,
+    "id": "crank-music-box",
+    "name": "手摇八音盒",
+    "before": {
+      "occupied": 2880,
+      "colors": 20,
+      "componentCount": 524,
+      "maxComponent": 300,
+      "maxComponentShare": 0.10416666666666667,
+      "topThreeColorShare": 0.3229166666666667,
+      "bulkPixelShare": 0.21145833333333333,
+      "largestOpening": 124,
+      "openingColors": 2,
+      "sweepCount": 40,
+      "largestSweep": 300,
+      "opportunityStates": 25,
+      "topComponents": [
+        {
+          "color": 3861,
+          "size": 300,
+          "origin": 1504,
+          "hex": "#3363AC"
+        },
+        {
+          "color": 3849,
+          "size": 185,
+          "origin": 44,
+          "hex": "#61BEFC"
+        },
+        {
+          "color": 3847,
+          "size": 124,
+          "origin": 2523,
+          "hex": "#AACD25"
+        },
+        {
+          "color": 3843,
+          "size": 87,
+          "origin": 956,
+          "hex": "#65B44D"
+        },
+        {
+          "color": 3857,
+          "size": 66,
+          "origin": 332,
+          "hex": "#FCEECC"
+        },
+        {
+          "color": 3852,
+          "size": 60,
+          "origin": 1009,
+          "hex": "#B2531D"
+        }
+      ],
+      "topColors": [
+        {
+          "color": 3847,
+          "count": 336,
+          "hex": "#AACD25"
+        },
+        {
+          "color": 3861,
+          "count": 322,
+          "hex": "#3363AC"
+        },
+        {
+          "color": 3843,
+          "count": 272,
+          "hex": "#65B44D"
+        },
+        {
+          "color": 3853,
+          "count": 249,
+          "hex": "#FCC561"
+        },
+        {
+          "color": 3849,
+          "count": 246,
+          "hex": "#61BEFC"
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 3847,
+          "count": 124,
+          "opportunities": 1
+        },
+        {
+          "color": 3843,
+          "count": 50,
+          "opportunities": 7
+        },
+        {
+          "color": 3862,
+          "count": 60,
+          "opportunities": 8
+        },
+        {
+          "color": 3852,
+          "count": 82,
+          "opportunities": 11
+        },
+        {
+          "color": 3861,
+          "count": 300,
+          "opportunities": 10
+        },
+        {
+          "color": 3847,
+          "count": 80,
+          "opportunities": 10
+        },
+        {
+          "color": 3843,
+          "count": 129,
+          "opportunities": 9
+        },
+        {
+          "color": 3849,
+          "count": 226,
+          "opportunities": 8
+        },
+        {
+          "color": 3857,
+          "count": 120,
+          "opportunities": 9
+        },
+        {
+          "color": 3844,
+          "count": 132,
+          "opportunities": 9
+        },
+        {
+          "color": 3847,
+          "count": 115,
+          "opportunities": 8
+        },
+        {
+          "color": 3848,
+          "count": 87,
+          "opportunities": 8
+        },
+        {
+          "color": 3853,
+          "count": 154,
+          "opportunities": 8
+        },
+        {
+          "color": 3854,
+          "count": 97,
+          "opportunities": 9
+        },
+        {
+          "color": 3846,
+          "count": 108,
+          "opportunities": 9
+        },
+        {
+          "color": 3852,
+          "count": 96,
+          "opportunities": 9
+        },
+        {
+          "color": 3851,
+          "count": 102,
+          "opportunities": 10
+        },
+        {
+          "color": 3845,
+          "count": 113,
+          "opportunities": 10
+        },
+        {
+          "color": 3853,
+          "count": 94,
+          "opportunities": 10
+        },
+        {
+          "color": 3856,
+          "count": 101,
+          "opportunities": 10
+        },
+        {
+          "color": 3843,
+          "count": 93,
+          "opportunities": 7
+        },
+        {
+          "color": 3850,
+          "count": 84,
+          "opportunities": 6
+        },
+        {
+          "color": 3855,
+          "count": 44,
+          "opportunities": 5
+        },
+        {
+          "color": 3844,
+          "count": 43,
+          "opportunities": 2
+        },
+        {
+          "color": 3846,
+          "count": 34,
+          "opportunities": 1
+        },
+        {
+          "color": 3858,
+          "count": 34,
+          "opportunities": 0
+        },
+        {
+          "color": 3857,
+          "count": 31,
+          "opportunities": 0
+        },
+        {
+          "color": 3851,
+          "count": 29,
+          "opportunities": 0
+        },
+        {
+          "color": 3861,
+          "count": 22,
+          "opportunities": 0
+        },
+        {
+          "color": 3852,
+          "count": 21,
+          "opportunities": 0
+        },
+        {
+          "color": 3849,
+          "count": 20,
+          "opportunities": 0
+        },
+        {
+          "color": 3859,
+          "count": 19,
+          "opportunities": 0
+        },
+        {
+          "color": 3847,
+          "count": 17,
+          "opportunities": 0
+        },
+        {
+          "color": 3845,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 3848,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3846,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 3850,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 3853,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3856,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3860,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "after": {
+      "occupied": 2880,
+      "colors": 20,
+      "componentCount": 444,
+      "maxComponent": 249,
+      "maxComponentShare": 0.08645833333333333,
+      "topThreeColorShare": 0.4048611111111111,
+      "bulkPixelShare": 0.2642361111111111,
+      "largestOpening": 73,
+      "openingColors": 7,
+      "sweepCount": 42,
+      "largestSweep": 335,
+      "opportunityStates": 34,
+      "topComponents": [
+        {
+          "color": 0,
+          "size": 249,
+          "origin": 210
+        },
+        {
+          "color": 10,
+          "size": 189,
+          "origin": 33
+        },
+        {
+          "color": 19,
+          "size": 181,
+          "origin": 1151
+        },
+        {
+          "color": 19,
+          "size": 142,
+          "origin": 69
+        },
+        {
+          "color": 13,
+          "size": 94,
+          "origin": 2193
+        },
+        {
+          "color": 0,
+          "size": 86,
+          "origin": 1855
+        }
+      ],
+      "topColors": [
+        {
+          "color": 19,
+          "count": 473
+        },
+        {
+          "color": 0,
+          "count": 368
+        },
+        {
+          "color": 13,
+          "count": 325
+        },
+        {
+          "color": 10,
+          "count": 202
+        },
+        {
+          "color": 15,
+          "count": 165
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 13,
+          "count": 73,
+          "opportunities": 5
+        },
+        {
+          "color": 5,
+          "count": 66,
+          "opportunities": 7
+        },
+        {
+          "color": 14,
+          "count": 36,
+          "opportunities": 10
+        },
+        {
+          "color": 13,
+          "count": 133,
+          "opportunities": 9
+        },
+        {
+          "color": 16,
+          "count": 39,
+          "opportunities": 11
+        },
+        {
+          "color": 19,
+          "count": 228,
+          "opportunities": 10
+        },
+        {
+          "color": 18,
+          "count": 112,
+          "opportunities": 10
+        },
+        {
+          "color": 19,
+          "count": 197,
+          "opportunities": 6
+        },
+        {
+          "color": 0,
+          "count": 335,
+          "opportunities": 5
+        },
+        {
+          "color": 15,
+          "count": 149,
+          "opportunities": 5
+        },
+        {
+          "color": 10,
+          "count": 191,
+          "opportunities": 3
+        },
+        {
+          "color": 11,
+          "count": 85,
+          "opportunities": 4
+        },
+        {
+          "color": 17,
+          "count": 118,
+          "opportunities": 3
+        },
+        {
+          "color": 6,
+          "count": 84,
+          "opportunities": 3
+        },
+        {
+          "color": 3,
+          "count": 82,
+          "opportunities": 4
+        },
+        {
+          "color": 16,
+          "count": 78,
+          "opportunities": 5
+        },
+        {
+          "color": 13,
+          "count": 100,
+          "opportunities": 6
+        },
+        {
+          "color": 4,
+          "count": 65,
+          "opportunities": 7
+        },
+        {
+          "color": 9,
+          "count": 63,
+          "opportunities": 7
+        },
+        {
+          "color": 2,
+          "count": 60,
+          "opportunities": 5
+        },
+        {
+          "color": 8,
+          "count": 59,
+          "opportunities": 5
+        },
+        {
+          "color": 14,
+          "count": 85,
+          "opportunities": 7
+        },
+        {
+          "color": 5,
+          "count": 71,
+          "opportunities": 7
+        },
+        {
+          "color": 12,
+          "count": 65,
+          "opportunities": 6
+        },
+        {
+          "color": 7,
+          "count": 56,
+          "opportunities": 6
+        },
+        {
+          "color": 19,
+          "count": 48,
+          "opportunities": 5
+        },
+        {
+          "color": 6,
+          "count": 37,
+          "opportunities": 5
+        },
+        {
+          "color": 0,
+          "count": 33,
+          "opportunities": 4
+        },
+        {
+          "color": 18,
+          "count": 28,
+          "opportunities": 4
+        },
+        {
+          "color": 13,
+          "count": 18,
+          "opportunities": 4
+        },
+        {
+          "color": 1,
+          "count": 17,
+          "opportunities": 2
+        },
+        {
+          "color": 15,
+          "count": 16,
+          "opportunities": 2
+        },
+        {
+          "color": 10,
+          "count": 11,
+          "opportunities": 2
+        },
+        {
+          "color": 16,
+          "count": 11,
+          "opportunities": 2
+        },
+        {
+          "color": 11,
+          "count": 11,
+          "opportunities": 0
+        },
+        {
+          "color": 9,
+          "count": 10,
+          "opportunities": 0
+        },
+        {
+          "color": 8,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 2,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 6,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 7,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 13,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 14,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "review": {
+      "tier": "review",
+      "reasons": [
+        "large-connected-region",
+        "dominant-three-colors",
+        "bulk-area"
+      ]
+    }
+  },
+  {
+    "level": 210,
+    "id": "toy-mending",
+    "name": "窗边补绒兔",
+    "before": {
+      "occupied": 2880,
+      "colors": 24,
+      "componentCount": 738,
+      "maxComponent": 91,
+      "maxComponentShare": 0.03159722222222222,
+      "topThreeColorShare": 0.2902777777777778,
+      "bulkPixelShare": 0,
+      "largestOpening": 77,
+      "openingColors": 7,
+      "sweepCount": 70,
+      "largestSweep": 128,
+      "opportunityStates": 55,
+      "topComponents": [
+        {
+          "color": 3905,
+          "size": 91,
+          "origin": 255,
+          "hex": "#92370B"
+        },
+        {
+          "color": 3900,
+          "size": 86,
+          "origin": 0,
+          "hex": "#FAEDD1"
+        },
+        {
+          "color": 3914,
+          "size": 81,
+          "origin": 548,
+          "hex": "#F6C99B"
+        },
+        {
+          "color": 3920,
+          "size": 67,
+          "origin": 1790,
+          "hex": "#0E60BD"
+        },
+        {
+          "color": 3922,
+          "size": 67,
+          "origin": 2388,
+          "hex": "#FC3A91"
+        },
+        {
+          "color": 3900,
+          "size": 66,
+          "origin": 1182,
+          "hex": "#FAEDD1"
+        }
+      ],
+      "topColors": [
+        {
+          "color": 3902,
+          "count": 299,
+          "hex": "#FDDA03"
+        },
+        {
+          "color": 3900,
+          "count": 289,
+          "hex": "#FAEDD1"
+        },
+        {
+          "color": 3901,
+          "count": 248,
+          "hex": "#4D220C"
+        },
+        {
+          "color": 3909,
+          "count": 236,
+          "hex": "#1ABDFC"
+        },
+        {
+          "color": 3905,
+          "count": 224,
+          "hex": "#92370B"
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 3922,
+          "count": 77,
+          "opportunities": 6
+        },
+        {
+          "color": 3915,
+          "count": 84,
+          "opportunities": 9
+        },
+        {
+          "color": 3919,
+          "count": 48,
+          "opportunities": 12
+        },
+        {
+          "color": 3904,
+          "count": 27,
+          "opportunities": 15
+        },
+        {
+          "color": 3913,
+          "count": 26,
+          "opportunities": 14
+        },
+        {
+          "color": 3901,
+          "count": 27,
+          "opportunities": 13
+        },
+        {
+          "color": 3920,
+          "count": 91,
+          "opportunities": 12
+        },
+        {
+          "color": 3900,
+          "count": 55,
+          "opportunities": 16
+        },
+        {
+          "color": 3902,
+          "count": 60,
+          "opportunities": 16
+        },
+        {
+          "color": 3909,
+          "count": 54,
+          "opportunities": 16
+        },
+        {
+          "color": 3921,
+          "count": 61,
+          "opportunities": 16
+        },
+        {
+          "color": 3910,
+          "count": 41,
+          "opportunities": 17
+        },
+        {
+          "color": 3918,
+          "count": 97,
+          "opportunities": 17
+        },
+        {
+          "color": 3916,
+          "count": 61,
+          "opportunities": 19
+        },
+        {
+          "color": 3902,
+          "count": 40,
+          "opportunities": 18
+        },
+        {
+          "color": 3918,
+          "count": 46,
+          "opportunities": 15
+        },
+        {
+          "color": 3901,
+          "count": 46,
+          "opportunities": 17
+        },
+        {
+          "color": 3905,
+          "count": 57,
+          "opportunities": 15
+        },
+        {
+          "color": 3900,
+          "count": 106,
+          "opportunities": 15
+        },
+        {
+          "color": 3905,
+          "count": 93,
+          "opportunities": 14
+        },
+        {
+          "color": 3914,
+          "count": 128,
+          "opportunities": 13
+        },
+        {
+          "color": 3901,
+          "count": 112,
+          "opportunities": 14
+        },
+        {
+          "color": 3904,
+          "count": 98,
+          "opportunities": 12
+        },
+        {
+          "color": 3900,
+          "count": 89,
+          "opportunities": 11
+        },
+        {
+          "color": 3909,
+          "count": 71,
+          "opportunities": 12
+        },
+        {
+          "color": 3902,
+          "count": 118,
+          "opportunities": 14
+        },
+        {
+          "color": 3906,
+          "count": 78,
+          "opportunities": 15
+        },
+        {
+          "color": 3907,
+          "count": 74,
+          "opportunities": 16
+        },
+        {
+          "color": 3903,
+          "count": 65,
+          "opportunities": 15
+        },
+        {
+          "color": 3905,
+          "count": 66,
+          "opportunities": 14
+        },
+        {
+          "color": 3909,
+          "count": 78,
+          "opportunities": 13
+        },
+        {
+          "color": 3902,
+          "count": 54,
+          "opportunities": 10
+        },
+        {
+          "color": 3901,
+          "count": 52,
+          "opportunities": 11
+        },
+        {
+          "color": 3912,
+          "count": 52,
+          "opportunities": 14
+        },
+        {
+          "color": 3913,
+          "count": 49,
+          "opportunities": 15
+        },
+        {
+          "color": 3910,
+          "count": 42,
+          "opportunities": 15
+        },
+        {
+          "color": 3900,
+          "count": 38,
+          "opportunities": 14
+        },
+        {
+          "color": 3904,
+          "count": 36,
+          "opportunities": 13
+        },
+        {
+          "color": 3917,
+          "count": 36,
+          "opportunities": 13
+        },
+        {
+          "color": 3908,
+          "count": 34,
+          "opportunities": 12
+        },
+        {
+          "color": 3911,
+          "count": 34,
+          "opportunities": 12
+        },
+        {
+          "color": 3909,
+          "count": 33,
+          "opportunities": 12
+        },
+        {
+          "color": 3916,
+          "count": 30,
+          "opportunities": 12
+        },
+        {
+          "color": 3902,
+          "count": 25,
+          "opportunities": 11
+        },
+        {
+          "color": 3906,
+          "count": 26,
+          "opportunities": 10
+        },
+        {
+          "color": 3919,
+          "count": 22,
+          "opportunities": 11
+        },
+        {
+          "color": 3915,
+          "count": 20,
+          "opportunities": 10
+        },
+        {
+          "color": 3921,
+          "count": 17,
+          "opportunities": 8
+        },
+        {
+          "color": 3907,
+          "count": 16,
+          "opportunities": 8
+        },
+        {
+          "color": 2785,
+          "count": 11,
+          "opportunities": 6
+        },
+        {
+          "color": 3918,
+          "count": 11,
+          "opportunities": 6
+        },
+        {
+          "color": 3901,
+          "count": 10,
+          "opportunities": 6
+        },
+        {
+          "color": 3917,
+          "count": 10,
+          "opportunities": 3
+        },
+        {
+          "color": 3905,
+          "count": 8,
+          "opportunities": 1
+        },
+        {
+          "color": 3919,
+          "count": 7,
+          "opportunities": 1
+        },
+        {
+          "color": 3913,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 3914,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 3903,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3904,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3912,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3920,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 3902,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 3915,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 3916,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 3922,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 3900,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3901,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3910,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3911,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 3917,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "after": {
+      "occupied": 2880,
+      "colors": 24,
+      "componentCount": 344,
+      "maxComponent": 237,
+      "maxComponentShare": 0.08229166666666667,
+      "topThreeColorShare": 0.3284722222222222,
+      "bulkPixelShare": 0.23055555555555557,
+      "largestOpening": 237,
+      "openingColors": 6,
+      "sweepCount": 43,
+      "largestSweep": 237,
+      "opportunityStates": 26,
+      "topComponents": [
+        {
+          "color": 1,
+          "size": 237,
+          "origin": 2236
+        },
+        {
+          "color": 20,
+          "size": 175,
+          "origin": 684
+        },
+        {
+          "color": 21,
+          "size": 131,
+          "origin": 1287
+        },
+        {
+          "color": 10,
+          "size": 121,
+          "origin": 172
+        },
+        {
+          "color": 22,
+          "size": 118,
+          "origin": 66
+        },
+        {
+          "color": 10,
+          "size": 116,
+          "origin": 360
+        }
+      ],
+      "topColors": [
+        {
+          "color": 22,
+          "count": 420
+        },
+        {
+          "color": 1,
+          "count": 263
+        },
+        {
+          "color": 11,
+          "count": 263
+        },
+        {
+          "color": 10,
+          "count": 249
+        },
+        {
+          "color": 20,
+          "count": 236
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 1,
+          "count": 237,
+          "opportunities": 2
+        },
+        {
+          "color": 20,
+          "count": 175,
+          "opportunities": 6
+        },
+        {
+          "color": 22,
+          "count": 227,
+          "opportunities": 11
+        },
+        {
+          "color": 10,
+          "count": 120,
+          "opportunities": 9
+        },
+        {
+          "color": 23,
+          "count": 201,
+          "opportunities": 10
+        },
+        {
+          "color": 11,
+          "count": 179,
+          "opportunities": 12
+        },
+        {
+          "color": 21,
+          "count": 183,
+          "opportunities": 9
+        },
+        {
+          "color": 22,
+          "count": 161,
+          "opportunities": 10
+        },
+        {
+          "color": 10,
+          "count": 128,
+          "opportunities": 8
+        },
+        {
+          "color": 13,
+          "count": 99,
+          "opportunities": 6
+        },
+        {
+          "color": 12,
+          "count": 100,
+          "opportunities": 4
+        },
+        {
+          "color": 14,
+          "count": 82,
+          "opportunities": 5
+        },
+        {
+          "color": 19,
+          "count": 79,
+          "opportunities": 5
+        },
+        {
+          "color": 9,
+          "count": 78,
+          "opportunities": 5
+        },
+        {
+          "color": 12,
+          "count": 71,
+          "opportunities": 5
+        },
+        {
+          "color": 11,
+          "count": 69,
+          "opportunities": 4
+        },
+        {
+          "color": 17,
+          "count": 61,
+          "opportunities": 3
+        },
+        {
+          "color": 4,
+          "count": 57,
+          "opportunities": 1
+        },
+        {
+          "color": 20,
+          "count": 56,
+          "opportunities": 2
+        },
+        {
+          "color": 16,
+          "count": 55,
+          "opportunities": 2
+        },
+        {
+          "color": 0,
+          "count": 52,
+          "opportunities": 2
+        },
+        {
+          "color": 8,
+          "count": 51,
+          "opportunities": 2
+        },
+        {
+          "color": 12,
+          "count": 59,
+          "opportunities": 2
+        },
+        {
+          "color": 18,
+          "count": 46,
+          "opportunities": 2
+        },
+        {
+          "color": 21,
+          "count": 41,
+          "opportunities": 2
+        },
+        {
+          "color": 2,
+          "count": 38,
+          "opportunities": 1
+        },
+        {
+          "color": 22,
+          "count": 32,
+          "opportunities": 0
+        },
+        {
+          "color": 7,
+          "count": 27,
+          "opportunities": 0
+        },
+        {
+          "color": 1,
+          "count": 26,
+          "opportunities": 0
+        },
+        {
+          "color": 15,
+          "count": 18,
+          "opportunities": 0
+        },
+        {
+          "color": 11,
+          "count": 15,
+          "opportunities": 0
+        },
+        {
+          "color": 23,
+          "count": 13,
+          "opportunities": 0
+        },
+        {
+          "color": 6,
+          "count": 10,
+          "opportunities": 0
+        },
+        {
+          "color": 5,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 3,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 20,
+          "count": 5,
+          "opportunities": 0
+        },
+        {
+          "color": 13,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 0,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 4,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 9,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 17,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 10,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 14,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "review": {
+      "tier": "review",
+      "reasons": [
+        "large-connected-region"
+      ]
+    }
+  },
+  {
+    "level": 243,
+    "id": "courtyard-flute",
+    "name": "庭院吹奏长笛",
+    "before": {
+      "occupied": 2880,
+      "colors": 20,
+      "componentCount": 591,
+      "maxComponent": 147,
+      "maxComponentShare": 0.051041666666666666,
+      "topThreeColorShare": 0.2722222222222222,
+      "bulkPixelShare": 0.051041666666666666,
+      "largestOpening": 93,
+      "openingColors": 2,
+      "sweepCount": 48,
+      "largestSweep": 236,
+      "opportunityStates": 37,
+      "topComponents": [
+        {
+          "color": 4624,
+          "size": 147,
+          "origin": 1500,
+          "hex": "#0B49AC"
+        },
+        {
+          "color": 4624,
+          "size": 76,
+          "origin": 1664,
+          "hex": "#0B49AC"
+        },
+        {
+          "color": 4611,
+          "size": 73,
+          "origin": 41,
+          "hex": "#39B6FC"
+        },
+        {
+          "color": 4623,
+          "size": 64,
+          "origin": 522,
+          "hex": "#FC8AAD"
+        },
+        {
+          "color": 4619,
+          "size": 60,
+          "origin": 1602,
+          "hex": "#FC7303"
+        },
+        {
+          "color": 4613,
+          "size": 57,
+          "origin": 2677,
+          "hex": "#BCABB2"
+        }
+      ],
+      "topColors": [
+        {
+          "color": 4608,
+          "count": 285,
+          "hex": "#FDDAAD"
+        },
+        {
+          "color": 4624,
+          "count": 260,
+          "hex": "#0B49AC"
+        },
+        {
+          "color": 4610,
+          "count": 239,
+          "hex": "#FDB276"
+        },
+        {
+          "color": 4613,
+          "count": 196,
+          "hex": "#BCABB2"
+        },
+        {
+          "color": 4619,
+          "count": 181,
+          "hex": "#FC7303"
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 4613,
+          "count": 93,
+          "opportunities": 1
+        },
+        {
+          "color": 4608,
+          "count": 53,
+          "opportunities": 4
+        },
+        {
+          "color": 4615,
+          "count": 90,
+          "opportunities": 5
+        },
+        {
+          "color": 4624,
+          "count": 236,
+          "opportunities": 5
+        },
+        {
+          "color": 4613,
+          "count": 86,
+          "opportunities": 10
+        },
+        {
+          "color": 4608,
+          "count": 83,
+          "opportunities": 11
+        },
+        {
+          "color": 4610,
+          "count": 105,
+          "opportunities": 12
+        },
+        {
+          "color": 4620,
+          "count": 115,
+          "opportunities": 13
+        },
+        {
+          "color": 4619,
+          "count": 121,
+          "opportunities": 12
+        },
+        {
+          "color": 4621,
+          "count": 143,
+          "opportunities": 11
+        },
+        {
+          "color": 4617,
+          "count": 82,
+          "opportunities": 12
+        },
+        {
+          "color": 4612,
+          "count": 72,
+          "opportunities": 12
+        },
+        {
+          "color": 4618,
+          "count": 102,
+          "opportunities": 14
+        },
+        {
+          "color": 4610,
+          "count": 85,
+          "opportunities": 12
+        },
+        {
+          "color": 4616,
+          "count": 78,
+          "opportunities": 11
+        },
+        {
+          "color": 4608,
+          "count": 81,
+          "opportunities": 11
+        },
+        {
+          "color": 4619,
+          "count": 54,
+          "opportunities": 10
+        },
+        {
+          "color": 4617,
+          "count": 49,
+          "opportunities": 11
+        },
+        {
+          "color": 4614,
+          "count": 49,
+          "opportunities": 10
+        },
+        {
+          "color": 4615,
+          "count": 47,
+          "opportunities": 10
+        },
+        {
+          "color": 4608,
+          "count": 43,
+          "opportunities": 10
+        },
+        {
+          "color": 4611,
+          "count": 55,
+          "opportunities": 9
+        },
+        {
+          "color": 4612,
+          "count": 94,
+          "opportunities": 13
+        },
+        {
+          "color": 4611,
+          "count": 73,
+          "opportunities": 12
+        },
+        {
+          "color": 4609,
+          "count": 67,
+          "opportunities": 9
+        },
+        {
+          "color": 4607,
+          "count": 73,
+          "opportunities": 9
+        },
+        {
+          "color": 4623,
+          "count": 102,
+          "opportunities": 10
+        },
+        {
+          "color": 4606,
+          "count": 87,
+          "opportunities": 9
+        },
+        {
+          "color": 4605,
+          "count": 87,
+          "opportunities": 9
+        },
+        {
+          "color": 4610,
+          "count": 49,
+          "opportunities": 8
+        },
+        {
+          "color": 4609,
+          "count": 41,
+          "opportunities": 6
+        },
+        {
+          "color": 4618,
+          "count": 40,
+          "opportunities": 6
+        },
+        {
+          "color": 4620,
+          "count": 39,
+          "opportunities": 6
+        },
+        {
+          "color": 4607,
+          "count": 29,
+          "opportunities": 1
+        },
+        {
+          "color": 4621,
+          "count": 27,
+          "opportunities": 1
+        },
+        {
+          "color": 4622,
+          "count": 26,
+          "opportunities": 2
+        },
+        {
+          "color": 4608,
+          "count": 25,
+          "opportunities": 1
+        },
+        {
+          "color": 4624,
+          "count": 24,
+          "opportunities": 0
+        },
+        {
+          "color": 4613,
+          "count": 17,
+          "opportunities": 0
+        },
+        {
+          "color": 4606,
+          "count": 10,
+          "opportunities": 0
+        },
+        {
+          "color": 4614,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 4615,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 4617,
+          "count": 9,
+          "opportunities": 0
+        },
+        {
+          "color": 4605,
+          "count": 7,
+          "opportunities": 0
+        },
+        {
+          "color": 4619,
+          "count": 6,
+          "opportunities": 0
+        },
+        {
+          "color": 4616,
+          "count": 4,
+          "opportunities": 0
+        },
+        {
+          "color": 4620,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 4611,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "after": {
+      "occupied": 2880,
+      "colors": 20,
+      "componentCount": 259,
+      "maxComponent": 202,
+      "maxComponentShare": 0.07013888888888889,
+      "topThreeColorShare": 0.40902777777777777,
+      "bulkPixelShare": 0.2378472222222222,
+      "largestOpening": 167,
+      "openingColors": 8,
+      "sweepCount": 32,
+      "largestSweep": 368,
+      "opportunityStates": 23,
+      "topComponents": [
+        {
+          "color": 9,
+          "size": 202,
+          "origin": 272
+        },
+        {
+          "color": 16,
+          "size": 163,
+          "origin": 2085
+        },
+        {
+          "color": 19,
+          "size": 162,
+          "origin": 1343
+        },
+        {
+          "color": 18,
+          "size": 158,
+          "origin": 702
+        },
+        {
+          "color": 15,
+          "size": 117,
+          "origin": 22
+        },
+        {
+          "color": 18,
+          "size": 106,
+          "origin": 1219
+        }
+      ],
+      "topColors": [
+        {
+          "color": 19,
+          "count": 532
+        },
+        {
+          "color": 18,
+          "count": 408
+        },
+        {
+          "color": 16,
+          "count": 238
+        },
+        {
+          "color": 6,
+          "count": 210
+        },
+        {
+          "color": 9,
+          "count": 208
+        }
+      ],
+      "sweeps": [
+        {
+          "color": 16,
+          "count": 167,
+          "opportunities": 7
+        },
+        {
+          "color": 19,
+          "count": 263,
+          "opportunities": 7
+        },
+        {
+          "color": 18,
+          "count": 368,
+          "opportunities": 8
+        },
+        {
+          "color": 9,
+          "count": 206,
+          "opportunities": 4
+        },
+        {
+          "color": 19,
+          "count": 217,
+          "opportunities": 5
+        },
+        {
+          "color": 17,
+          "count": 152,
+          "opportunities": 4
+        },
+        {
+          "color": 6,
+          "count": 208,
+          "opportunities": 3
+        },
+        {
+          "color": 10,
+          "count": 140,
+          "opportunities": 4
+        },
+        {
+          "color": 15,
+          "count": 134,
+          "opportunities": 4
+        },
+        {
+          "color": 2,
+          "count": 118,
+          "opportunities": 4
+        },
+        {
+          "color": 8,
+          "count": 103,
+          "opportunities": 5
+        },
+        {
+          "color": 7,
+          "count": 88,
+          "opportunities": 2
+        },
+        {
+          "color": 14,
+          "count": 74,
+          "opportunities": 1
+        },
+        {
+          "color": 12,
+          "count": 71,
+          "opportunities": 1
+        },
+        {
+          "color": 16,
+          "count": 71,
+          "opportunities": 1
+        },
+        {
+          "color": 5,
+          "count": 68,
+          "opportunities": 1
+        },
+        {
+          "color": 10,
+          "count": 58,
+          "opportunities": 1
+        },
+        {
+          "color": 13,
+          "count": 57,
+          "opportunities": 1
+        },
+        {
+          "color": 0,
+          "count": 53,
+          "opportunities": 1
+        },
+        {
+          "color": 19,
+          "count": 52,
+          "opportunities": 1
+        },
+        {
+          "color": 11,
+          "count": 49,
+          "opportunities": 1
+        },
+        {
+          "color": 4,
+          "count": 41,
+          "opportunities": 1
+        },
+        {
+          "color": 18,
+          "count": 40,
+          "opportunities": 1
+        },
+        {
+          "color": 3,
+          "count": 39,
+          "opportunities": 0
+        },
+        {
+          "color": 2,
+          "count": 29,
+          "opportunities": 0
+        },
+        {
+          "color": 1,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 14,
+          "count": 3,
+          "opportunities": 0
+        },
+        {
+          "color": 6,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 9,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 17,
+          "count": 2,
+          "opportunities": 0
+        },
+        {
+          "color": 8,
+          "count": 1,
+          "opportunities": 0
+        },
+        {
+          "color": 13,
+          "count": 1,
+          "opportunities": 0
+        }
+      ]
+    },
+    "review": {
+      "tier": "review",
+      "reasons": [
+        "large-connected-region",
+        "dominant-three-colors"
+      ]
+    }
+  }
+]

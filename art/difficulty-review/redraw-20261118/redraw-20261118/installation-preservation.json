@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "preservedLevels": 294,
+  "preservedVariants": 882,
+  "changedLevels": [
+    13,
+    23,
+    26,
+    89,
+    256,
+    285
+  ],
+  "catalogPixels": "300 reviewed PNGs match the generated catalog exactly",
+  "method": "Compare actual RGB color, capacity, column and sequence; global palette indices can change without changing colors."
+}

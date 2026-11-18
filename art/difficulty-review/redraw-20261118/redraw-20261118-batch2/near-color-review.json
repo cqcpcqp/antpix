@@ -1,0 +1,59 @@
+{
+  "method": "Exploratory four-way adjacency using OKLab Euclidean edge distance. Transitive chains can join distant end colors. Cutoffs are sensitivity probes, not acceptance limits.",
+  "rows": [
+    {
+      "level": 52,
+      "id": "snowman-shed",
+      "largestAdjacentNearColorComponent": {
+        "0": 227,
+        "0.06": 227,
+        "0.1": 460
+      }
+    },
+    {
+      "level": 66,
+      "id": "shell-chimes",
+      "largestAdjacentNearColorComponent": {
+        "0": 114,
+        "0.06": 150,
+        "0.1": 150
+      }
+    },
+    {
+      "level": 110,
+      "id": "alpaca-blankets",
+      "largestAdjacentNearColorComponent": {
+        "0": 196,
+        "0.06": 196,
+        "0.1": 364
+      }
+    },
+    {
+      "level": 170,
+      "id": "kingfisher-dive",
+      "largestAdjacentNearColorComponent": {
+        "0": 175,
+        "0.06": 175,
+        "0.1": 229
+      }
+    },
+    {
+      "level": 221,
+      "id": "koala-potting-cart",
+      "largestAdjacentNearColorComponent": {
+        "0": 184,
+        "0.06": 198,
+        "0.1": 200
+      }
+    },
+    {
+      "level": 275,
+      "id": "dog-play-tunnel",
+      "largestAdjacentNearColorComponent": {
+        "0": 144,
+        "0.06": 144,
+        "0.1": 144
+      }
+    }
+  ]
+}

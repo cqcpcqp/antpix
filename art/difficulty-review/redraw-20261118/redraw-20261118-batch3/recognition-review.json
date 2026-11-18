@@ -1,0 +1,84 @@
+{
+  "method": "Pixel-only full view followed by diagnostic crop with nearest-neighbor grid and original comparison. Same reviewer has prior image context; this is not an independent blind recognition experiment or automated semantic validation.",
+  "coordinateSystem": "48x60 pixel grid; half-open [left,top,right,bottom]",
+  "rows": [
+    {
+      "level": 116,
+      "id": "clownfish-arch",
+      "pixelSha256": "55e75acff40e2ff5f5ce654856083f23f070d27a22d39af81cff916399eaa80a",
+      "diagnosticBox": [
+        2,
+        17,
+        23,
+        40
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "鱼的眼睛、张口、条纹、尾部可辨，礁石与鱼分离；最大同色区235格，大于旧图193格，不能称作难度改善，仅作为差异化候选。"
+    },
+    {
+      "level": 177,
+      "id": "ski-workbench",
+      "pixelSha256": "c0172c7ccbe7c8c31bdafb7c487a342ca10f38e6874ee1a99229a6dc3bdd7c11",
+      "diagnosticBox": [
+        10,
+        7,
+        30,
+        30
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "孩子双眼鼻口及工具可辨；滑雪板与绑定结构在像素图中容易被看成普通木板，具体活动需用户看图判断。"
+    },
+    {
+      "level": 202,
+      "id": "ceramic-glaze-tools",
+      "pixelSha256": "128c0ef5f62296d6bd0da6459c99b096828d80b0f6dc98d6d9a40f61c28d5c0c",
+      "diagnosticBox": [
+        8,
+        15,
+        43,
+        47
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "盘沿、倾斜盘面与宽刷可以区分；刷柄和托架仍有靠近处，几何盘面是否像陶盘需用户判断，未把器物识别当成自动通过。"
+    },
+    {
+      "level": 207,
+      "id": "crank-music-box",
+      "pixelSha256": "f4de9d186bb9b74b7fe0c49e51271ebf0d416468551f0fab1097645f6d42732b",
+      "diagnosticBox": [
+        23,
+        14,
+        48,
+        38
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "改为俯视器物静物，开盖盒、梳齿和右侧大曲柄可辨；取消与其他关重复的戴帽人物。249格连通区和近色区域仍待复核。"
+    },
+    {
+      "level": 210,
+      "id": "toy-mending",
+      "pixelSha256": "22b728c89abb80d9fb3fcad19ff49d530f7297dada7412205aa00ebcafd7785d",
+      "diagnosticBox": [
+        1,
+        9,
+        40,
+        43
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "改为人物朝左在扶手椅上抱绒兔，面部、兔耳、双手和布补丁可辨；修补动作仍不如抱玩具直观，保留动作复核，237格同色区高于旧91格。"
+    },
+    {
+      "level": 243,
+      "id": "courtyard-flute",
+      "pixelSha256": "154982ed4e853a9b18ce3c269f0c0d9472a68023fcbd1bb85f5d72f7031a8841",
+      "diagnosticBox": [
+        0,
+        6,
+        46,
+        36
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "改为无帽男孩朝左吹横笛，眼鼻口与横向管状乐器、两只浅色手可以区分；202格同色区高于旧147格，仍需评估难度而非直接替换。"
+    }
+  ]
+}

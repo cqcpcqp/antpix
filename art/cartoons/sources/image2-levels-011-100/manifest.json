@@ -32,20 +32,32 @@
     "conversion": "oklab-source-palette+dark-anchor+local-color-support"
   },
   {
-    "id": "kite-child",
-    "name": "追风筝的孩子",
-    "subtitle": "把每一抹颜色送回小家",
-    "file": "kite-child.png",
     "level": 13,
+    "id": "kite-workbench",
+    "name": "风筝修补台",
+    "subtitle": "A child repairing a small red diamond kite at a slanted wooden workbench under a vine pergola. Three-quarter close view from above, child at lower left, kite diagonally across right, large wooden spool and folded blue fabric. Overlapping pergola beams, leaves, shelf boxes and wall panels fill the background; only small separate gaps of sky. The kite has cream and teal paper sections with visible broad seams. The child wears a blue shirt and yellow overalls with large pockets. No broad meadow, sea or sky. This is a hands-on kite workshop, NOT a child standing on a lawn flying a kite.",
+    "file": "kite-workbench.png",
     "colors": 12,
     "approved": true,
+    "provider": "underelay",
+    "model": "gpt-image-2",
+    "prompt": "Create ONE original cheerful game-level illustration, full-bleed portrait canvas EXACTLY 1024x1280, native aspect ratio 4:5. Not a collage or a grid. It must remain instantly recognizable when reduced to 48 columns by 60 rows and 12 distinct colors. Refined flat paper-cut storybook art, crisp broad contours, restrained cel shading, bright clearly separated hues; no gradients, grain, dithering, texture speckles, confetti, micro-details or near-identical color variations. One clear focal story with meaningful foreground/midground/background overlap. Avoid large continuous areas of any one color in BOTH background and subject: use real overlapping objects, structural seams and broad meaningful material sections, not decorative random dots. Reuse some colors in separated upper and lower areas, with other-color objects between them; visible chunky shapes must survive pixel conversion. No single color should dominate the composition. Large eyes and identifying props must survive 48x60 reduction. No landscape-only image, pure flat backdrop, lettering, digits, logos, watermark, border, known copyrighted character, game UI or pixel-art mosaic. Render as clean illustration for subsequent pixelization. Limit palette to approximately 12 well-distinguished colors. Scene: A child wearing a SMALL PATCHWORK CREAM AND TEAL WORK CAP WITH A YELLOW BAND, repairing a red, cream and blue diamond kite across a diagonal wooden workbench. Very little dark hair visible: separate short brown fringe tufts only, NOT a large solid head of dark hair. Broad peach face with TWO LARGE DARK SOLID EYES at least 65 pixels wide each, visible mouth and simple nose, no eye highlights smaller than a pixel. Head is only about one quarter of total picture area including cap, not an oversized face portrait. Blue sleeves, yellow overalls and cream pocket. The kite at right has four broad red, blue, cream and ochre sections separated by actual wooden spars, no tiny decorative seams. One broad wooden spool at lower left, a coral tool tray, teal storage boxes on right, vine leaves and diagonally intersecting pergola beams above. All background spaces are divided by real beams and objects. Warm bright flat paper-cut art, only 12 well separated colors, strong visual distinction between skin, hair, cap, wood and kite. The subject must have readable eyes without a giant continuous dark hair silhouette. No lawn, no sky, no text.",
+    "sourceId": "kite-child",
+    "sourceName": "追风筝的孩子",
+    "sourceDirectory": "art/cartoons/sources/image2-levels-011-100",
+    "sourceFile": "kite-child.png",
+    "sourcePixelFile": "review-48x60/kite-child-48x60.png",
     "runtimeGrid": [
       48,
       60
     ],
-    "runtimePixelFile": "review-48x60/kite-child-48x60.png",
-    "stage": "early",
-    "conversion": "oklab-source-palette+dark-anchor+local-color-support"
+    "runtimePixelFile": "review-48x60/kite-workbench-48x60.png",
+    "status": "user-approved-installed",
+    "revision": 3,
+    "visualReview": "第三轮双眼、工作帽、手、线轴和四色风筝可辨认；用帽子分开深色头发，未靠噪点切块。",
+    "similarityReview": "No direct duplicate observed against retrieved neighbors and known semantic groups; not a mathematical uniqueness guarantee.",
+    "approvedAt": "2026-11-18",
+    "installedAt": "2026-11-18"
   },
   {
     "id": "sleepy-fox",
@@ -192,20 +204,31 @@
     "conversion": "oklab-source-palette+dark-anchor+local-color-support"
   },
   {
-    "id": "koala-branch",
-    "name": "树枝上的考拉",
-    "subtitle": "把每一抹颜色送回小家",
-    "file": "koala-branch.png",
     "level": 23,
+    "id": "koala-hammock",
+    "name": "考拉的树屋吊床",
+    "subtitle": "A small gray koala reclining sideways in a woven coral-and-cream hammock strung between two eucalyptus trunks. Asymmetric side-view composition, koala upper right, hammock crossing middle diagonally. Large mint leaves, dark teal leaves, trunk branches and a few broad cream bark patches overlap in layers; a russet wooden treehouse stair and ochre storage basket below. Koala is modest in size, with clearly distinct ears, face, white chest and gray paws. Tree trunks, leaves and hammock divide all large surfaces. No giant koala portrait, banana leaves, open grass or broad blue sky.",
+    "file": "koala-hammock.png",
     "colors": 10,
     "approved": true,
+    "provider": "underelay",
+    "model": "gpt-image-2",
+    "prompt": "Create ONE original cheerful game-level illustration, full-bleed portrait canvas EXACTLY 1024x1280, native aspect ratio 4:5. Not a collage or a grid. It must remain instantly recognizable when reduced to 48 columns by 60 rows and 10 distinct colors. Refined flat paper-cut storybook art, crisp broad contours, restrained cel shading, bright clearly separated hues; no gradients, grain, dithering, texture speckles, confetti, micro-details or near-identical color variations. One clear focal story with meaningful foreground/midground/background overlap. Avoid large continuous areas of any one color in BOTH background and subject: use real overlapping objects, structural seams and broad meaningful material sections, not decorative random dots. Reuse some colors in separated upper and lower areas, with other-color objects between them; visible chunky shapes must survive pixel conversion. No single color should dominate the composition. Large eyes and identifying props must survive 48x60 reduction. No landscape-only image, pure flat backdrop, lettering, digits, logos, watermark, border, known copyrighted character, game UI or pixel-art mosaic. Render as clean illustration for subsequent pixelization. Limit palette to approximately 10 well-distinguished colors. Scene: A small gray koala reclining sideways in a woven coral-and-cream hammock strung between two eucalyptus trunks. Asymmetric side-view composition, koala upper right, hammock crossing middle diagonally. Large mint leaves, dark teal leaves, trunk branches and a few broad cream bark patches overlap in layers; a russet wooden treehouse stair and ochre storage basket below. Koala is modest in size, with clearly distinct ears, face, white chest and gray paws. Tree trunks, leaves and hammock divide all large surfaces. No giant koala portrait, banana leaves, open grass or broad blue sky.",
+    "sourceId": "koala-branch",
+    "sourceName": "树枝上的考拉",
+    "sourceDirectory": "art/cartoons/sources/image2-levels-011-100",
+    "sourceFile": "koala-branch.png",
+    "sourcePixelFile": "review-48x60/koala-branch-48x60.png",
     "runtimeGrid": [
       48,
       60
     ],
-    "runtimePixelFile": "review-48x60/koala-branch-48x60.png",
-    "stage": "early",
-    "conversion": "oklab-source-palette+dark-anchor+local-color-support"
+    "runtimePixelFile": "review-48x60/koala-hammock-48x60.png",
+    "status": "user-approved-installed",
+    "visualReview": "考拉耳鼻、吊床及树屋可辨；仅10色导致前三色集中仍偏高，但分散在实际不同物体，保留结构复核标记。",
+    "similarityReview": "No direct duplicate observed against retrieved neighbors and known semantic groups; not a mathematical uniqueness guarantee.",
+    "approvedAt": "2026-11-18",
+    "installedAt": "2026-11-18"
   },
   {
     "id": "cherry-jam",
@@ -240,20 +263,32 @@
     "conversion": "oklab-source-palette+dark-anchor+local-color-support"
   },
   {
-    "id": "duck-pond",
-    "name": "小鸭游春",
-    "subtitle": "把每一抹颜色送回小家",
-    "file": "duck-pond.png",
     "level": 26,
-    "colors": 10,
+    "id": "duck-lilies",
+    "name": "荷叶间的小鸭",
+    "subtitle": "One small yellow duck in a narrow winding pond among five large overlapping lotus leaves, coral lotus blossoms, cream stepping stones and reddish-brown wooden footbridge slats. Top-down diagonal composition, duck off-center upper left, leaf/stone/water shapes interlock from top to bottom. Duck has distinct ochre wing, pale cream chest and orange beak. Water is ONE consistent teal hue split into disconnected pockets by actual leaves, stones and bridge, not by random speckling or near-color gradients. Duck occupies about one sixth of the canvas, not a huge yellow silhouette. No horizon, no sky, no broad continuous water.",
+    "file": "duck-lilies.png",
+    "colors": 12,
     "approved": true,
+    "provider": "underelay",
+    "model": "gpt-image-2",
+    "prompt": "Create ONE original cheerful game-level illustration, full-bleed portrait canvas EXACTLY 1024x1280, native aspect ratio 4:5. Not a collage or a grid. It must remain instantly recognizable when reduced to 48 columns by 60 rows and 12 distinct colors. Refined flat paper-cut storybook art, crisp broad contours, restrained cel shading, bright clearly separated hues; no gradients, grain, dithering, texture speckles, confetti, micro-details or near-identical color variations. One clear focal story with meaningful foreground/midground/background overlap. Avoid large continuous areas of any one color in BOTH background and subject: use real overlapping objects, structural seams and broad meaningful material sections, not decorative random dots. Reuse some colors in separated upper and lower areas, with other-color objects between them; visible chunky shapes must survive pixel conversion. No single color should dominate the composition. Large eyes and identifying props must survive 48x60 reduction. No landscape-only image, pure flat backdrop, lettering, digits, logos, watermark, border, known copyrighted character, game UI or pixel-art mosaic. Render as clean illustration for subsequent pixelization. Limit palette to approximately 12 well-distinguished colors. Scene: A SMALL yellow duck walking between three lotus planters beside a little red wooden garden footbridge. High oblique overhead view. The duck is upper left and occupies no more than 12 percent of canvas. Three separated terracotta pots contain respectively a broad blue-green round lotus leaf, one coral blossom with cream petals, and a purple iris with ochre center. A narrow teal water channel zigzags among broad cream stones, lavender stones and orange-brown bridge slats. Water is at most 15 percent of canvas and split by real stone crossings. NO huge green lily leaves filling the page; greenery at most 20 percent. Large real objects in six distinct material/color families divide the entire scene. No horizon, no broad sky, no gradients, no pattern of dots. Duck has large dark eye, ochre wing and orange beak; lotus shapes and duck must remain legible with 12 colors.",
+    "sourceId": "duck-pond",
+    "sourceName": "小鸭游春",
+    "sourceDirectory": "art/cartoons/sources/image2-levels-011-100",
+    "sourceFile": "duck-pond.png",
+    "sourcePixelFile": "review-48x60/duck-pond-48x60.png",
     "runtimeGrid": [
       48,
       60
     ],
-    "runtimePixelFile": "review-48x60/duck-pond-48x60.png",
-    "stage": "early",
-    "conversion": "oklab-source-palette+dark-anchor+local-color-support"
+    "runtimePixelFile": "review-48x60/duck-lilies-48x60.png",
+    "status": "user-approved-installed",
+    "revision": 2,
+    "visualReview": "第二轮去掉大片荷叶，鸭、石路、三盆植物和窄桥可辨；当前小鸭较小，需用户确认主体权重。",
+    "similarityReview": "No direct duplicate observed against retrieved neighbors and known semantic groups; not a mathematical uniqueness guarantee.",
+    "approvedAt": "2026-11-18",
+    "installedAt": "2026-11-18"
   },
   {
     "id": "toy-train",
@@ -1248,20 +1283,31 @@
     "conversion": "oklab-source-palette+dark-anchor+local-color-support"
   },
   {
-    "id": "squirrel-kite",
-    "name": "松鼠的风筝",
-    "subtitle": "把每一抹颜色送回小家",
-    "file": "squirrel-kite.png",
     "level": 89,
+    "id": "squirrel-parcels",
+    "name": "松鼠的树阶包裹",
+    "subtitle": "A russet squirrel carrying one small teal parcel down a spiraling wooden staircase around a tree trunk. Energetic curved diagonal composition, squirrel on middle left with segmented tail partly behind the stair rail. Large maple leaves, cream bark panels, purple shelf mushrooms and two contrasting fabric parcels create visible overlapping shapes. A distinctive small tree-door at upper right, ochre steps at lower right. Each stair and foliage cluster breaks up the background; no horizon or large grassy field. No kite, no fruit-picking, no animal holding an acorn. The parcels have plain colored ribbon and no writing.",
+    "file": "squirrel-parcels.png",
     "colors": 19,
     "approved": true,
+    "provider": "underelay",
+    "model": "gpt-image-2",
+    "prompt": "Create ONE original cheerful game-level illustration, full-bleed portrait canvas EXACTLY 1024x1280, native aspect ratio 4:5. Not a collage or a grid. It must remain instantly recognizable when reduced to 48 columns by 60 rows and 19 distinct colors. Refined flat paper-cut storybook art, crisp broad contours, restrained cel shading, bright clearly separated hues; no gradients, grain, dithering, texture speckles, confetti, micro-details or near-identical color variations. One clear focal story with meaningful foreground/midground/background overlap. Avoid large continuous areas of any one color in BOTH background and subject: use real overlapping objects, structural seams and broad meaningful material sections, not decorative random dots. Reuse some colors in separated upper and lower areas, with other-color objects between them; visible chunky shapes must survive pixel conversion. No single color should dominate the composition. Large eyes and identifying props must survive 48x60 reduction. No landscape-only image, pure flat backdrop, lettering, digits, logos, watermark, border, known copyrighted character, game UI or pixel-art mosaic. Render as clean illustration for subsequent pixelization. Limit palette to approximately 19 well-distinguished colors. Scene: A russet squirrel carrying one small teal parcel down a spiraling wooden staircase around a tree trunk. Energetic curved diagonal composition, squirrel on middle left with segmented tail partly behind the stair rail. Large maple leaves, cream bark panels, purple shelf mushrooms and two contrasting fabric parcels create visible overlapping shapes. A distinctive small tree-door at upper right, ochre steps at lower right. Each stair and foliage cluster breaks up the background; no horizon or large grassy field. No kite, no fruit-picking, no animal holding an acorn. The parcels have plain colored ribbon and no writing.",
+    "sourceId": "squirrel-kite",
+    "sourceName": "松鼠的风筝",
+    "sourceDirectory": "art/cartoons/sources/image2-levels-011-100",
+    "sourceFile": "squirrel-kite.png",
+    "sourcePixelFile": "review-48x60/squirrel-kite-48x60.png",
     "runtimeGrid": [
       48,
       60
     ],
-    "runtimePixelFile": "review-48x60/squirrel-kite-48x60.png",
-    "stage": "late",
-    "conversion": "oklab-source-palette+dark-anchor+local-color-support"
+    "runtimePixelFile": "review-48x60/squirrel-parcels-48x60.png",
+    "status": "user-approved-installed",
+    "visualReview": "包裹、树门、楼梯、松鼠及尾巴可辨；整体偏暖木色，需检查近色不是靠细微换色切块。",
+    "similarityReview": "No direct duplicate observed against retrieved neighbors and known semantic groups; not a mathematical uniqueness guarantee.",
+    "approvedAt": "2026-11-18",
+    "installedAt": "2026-11-18"
   },
   {
     "id": "star-telescope",

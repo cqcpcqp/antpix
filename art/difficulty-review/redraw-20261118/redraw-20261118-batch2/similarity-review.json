@@ -1,0 +1,1967 @@
+{
+  "method": "63-bit luminance DCT hash + spatial RGB + HSV histogram, ranking only; no semantic model or acceptance threshold",
+  "catalogCount": 300,
+  "pairsCompared": 44850,
+  "candidateCount": 6,
+  "peerCandidateCount": 6,
+  "candidateRows": [
+    {
+      "level": 52,
+      "id": "snowman-shed",
+      "installedNeighbors": [
+        {
+          "level": 89,
+          "name": "松鼠的树阶包裹",
+          "id": "squirrel-parcels",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/squirrel-parcels-48x60.png",
+          "rankDistance": 0.3840494095149928,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.267805569135807,
+          "paletteDistance": 0.5944444444444446,
+          "exactDuplicate": false
+        },
+        {
+          "level": 45,
+          "name": "阳光早餐盘",
+          "id": "breakfast-tray",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/breakfast-tray-48x60.png",
+          "rankDistance": 0.38487492484336977,
+          "shapeHamming": 0.4444444444444444,
+          "spatialRgbRMSE": 0.28357121383819944,
+          "paletteDistance": 0.42812500000000003,
+          "exactDuplicate": false
+        },
+        {
+          "level": 291,
+          "name": "马厩小骑手",
+          "id": "level-291",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-291-48x60.png",
+          "rankDistance": 0.39192186612833146,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.2857348102532826,
+          "paletteDistance": 0.6024305555555556,
+          "exactDuplicate": false
+        },
+        {
+          "level": 78,
+          "name": "木头小机器人",
+          "id": "wooden-robot",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/wooden-robot-48x60.png",
+          "rankDistance": 0.3957244447011039,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.2680278918897752,
+          "paletteDistance": 0.6524305555555556,
+          "exactDuplicate": false
+        },
+        {
+          "level": 85,
+          "name": "披萨出炉",
+          "id": "pizza-maker",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/pizza-maker-48x60.png",
+          "rankDistance": 0.39636987738235313,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.2744921666706687,
+          "paletteDistance": 0.5729166666666667,
+          "exactDuplicate": false
+        }
+      ],
+      "candidateNeighbors": [
+        {
+          "level": 110,
+          "name": "羊驼探看马鞍毯",
+          "rankDistance": 0.39168966944504097,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.2546859036298224,
+          "paletteDistance": 0.4413194444444444,
+          "exactDuplicate": false
+        },
+        {
+          "level": 275,
+          "name": "小狗穿越彩布隧道",
+          "rankDistance": 0.3998970887078654,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.26246106977757466,
+          "paletteDistance": 0.46875,
+          "exactDuplicate": false
+        },
+        {
+          "level": 221,
+          "name": "考拉的盆栽推车",
+          "rankDistance": 0.4260610449351132,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.2618184050300287,
+          "paletteDistance": 0.6006944444444444,
+          "exactDuplicate": false
+        },
+        {
+          "level": 66,
+          "name": "贝壳风铃架",
+          "rankDistance": 0.45858402099955536,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.28237724820734633,
+          "paletteDistance": 0.6559027777777778,
+          "exactDuplicate": false
+        },
+        {
+          "level": 170,
+          "name": "树根旁探鱼的翠鸟",
+          "rankDistance": 0.47982424587328665,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.29371553242707754,
+          "paletteDistance": 0.6708333333333334,
+          "exactDuplicate": false
+        }
+      ],
+      "otherBatchNeighbors": [
+        {
+          "level": 116,
+          "name": "小丑鱼穿过礁石拱",
+          "id": "clownfish-arch",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/clownfish-arch-48x60.png",
+          "rankDistance": 0.3861638603330656,
+          "shapeHamming": 0.3492063492063492,
+          "spatialRgbRMSE": 0.27577429482916704,
+          "paletteDistance": 0.6624999999999999,
+          "exactDuplicate": false
+        },
+        {
+          "level": 202,
+          "name": "陶盘与宽刷",
+          "id": "ceramic-glaze-tools",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ceramic-glaze-tools-48x60.png",
+          "rankDistance": 0.400331638154074,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.28479107499803463,
+          "paletteDistance": 0.3604166666666667,
+          "exactDuplicate": false
+        },
+        {
+          "level": 207,
+          "name": "手摇八音盒",
+          "id": "crank-music-box",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/crank-music-box-48x60.png",
+          "rankDistance": 0.41120167085260495,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.28047416161968763,
+          "paletteDistance": 0.49375,
+          "exactDuplicate": false
+        },
+        {
+          "level": 243,
+          "name": "庭院吹奏长笛",
+          "id": "courtyard-flute",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/courtyard-flute-48x60.png",
+          "rankDistance": 0.42126237429276303,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.290426511584765,
+          "paletteDistance": 0.4552083333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 210,
+          "name": "窗边补绒兔",
+          "id": "toy-mending",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/toy-mending-48x60.png",
+          "rankDistance": 0.43437489234847315,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.2929702139661592,
+          "paletteDistance": 0.5163194444444444,
+          "exactDuplicate": false
+        },
+        {
+          "level": 177,
+          "name": "小孩装配木滑雪板",
+          "id": "ski-workbench",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ski-workbench-48x60.png",
+          "rankDistance": 0.47627014236314064,
+          "shapeHamming": 0.6031746031746031,
+          "spatialRgbRMSE": 0.26998385346384857,
+          "paletteDistance": 0.5517361111111111,
+          "exactDuplicate": false
+        }
+      ]
+    },
+    {
+      "level": 66,
+      "id": "shell-chimes",
+      "installedNeighbors": [
+        {
+          "level": 132,
+          "name": "缝纫小裁缝",
+          "id": "level-132",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-132-48x60.png",
+          "rankDistance": 0.3742511109965465,
+          "shapeHamming": 0.2857142857142857,
+          "spatialRgbRMSE": 0.2745609974050988,
+          "paletteDistance": 0.7479166666666668,
+          "exactDuplicate": false
+        },
+        {
+          "level": 222,
+          "name": "花灯手艺人",
+          "id": "level-222",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-222-48x60.png",
+          "rankDistance": 0.38814501578799965,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.2828803172174139,
+          "paletteDistance": 0.5885416666666666,
+          "exactDuplicate": false
+        },
+        {
+          "level": 18,
+          "name": "草莓蛋糕",
+          "id": "strawberry-cake",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/strawberry-cake-48x60.png",
+          "rankDistance": 0.3934048567355285,
+          "shapeHamming": 0.31746031746031744,
+          "spatialRgbRMSE": 0.30553315076364157,
+          "paletteDistance": 0.7180555555555557,
+          "exactDuplicate": false
+        },
+        {
+          "level": 138,
+          "name": "玻璃工匠",
+          "id": "level-138",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-138-48x60.png",
+          "rankDistance": 0.3965841900795134,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.23760448866255515,
+          "paletteDistance": 0.6385416666666667,
+          "exactDuplicate": false
+        },
+        {
+          "level": 294,
+          "name": "石榴采摘人",
+          "id": "level-294",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-294-48x60.png",
+          "rankDistance": 0.39742660675660146,
+          "shapeHamming": 0.3492063492063492,
+          "spatialRgbRMSE": 0.29287420524561875,
+          "paletteDistance": 0.6888888888888889,
+          "exactDuplicate": false
+        }
+      ],
+      "candidateNeighbors": [
+        {
+          "level": 275,
+          "name": "小狗穿越彩布隧道",
+          "rankDistance": 0.4304027870886916,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.24689911957313257,
+          "paletteDistance": 0.5770833333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 110,
+          "name": "羊驼探看马鞍毯",
+          "rankDistance": 0.4478173337252036,
+          "shapeHamming": 0.4444444444444444,
+          "spatialRgbRMSE": 0.25487492175455,
+          "paletteDistance": 0.7930555555555555,
+          "exactDuplicate": false
+        },
+        {
+          "level": 52,
+          "name": "棚下装扮小雪人",
+          "rankDistance": 0.45858402099955536,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.28237724820734633,
+          "paletteDistance": 0.6559027777777778,
+          "exactDuplicate": false
+        },
+        {
+          "level": 170,
+          "name": "树根旁探鱼的翠鸟",
+          "rankDistance": 0.49353852015829675,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.28071663355885235,
+          "paletteDistance": 0.7621527777777778,
+          "exactDuplicate": false
+        },
+        {
+          "level": 221,
+          "name": "考拉的盆栽推车",
+          "rankDistance": 0.5026457303255033,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.2644753292746805,
+          "paletteDistance": 0.8361111111111111,
+          "exactDuplicate": false
+        }
+      ],
+      "otherBatchNeighbors": [
+        {
+          "level": 207,
+          "name": "手摇八音盒",
+          "id": "crank-music-box",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/crank-music-box-48x60.png",
+          "rankDistance": 0.34485745254934796,
+          "shapeHamming": 0.31746031746031744,
+          "spatialRgbRMSE": 0.27654850388249075,
+          "paletteDistance": 0.5260416666666667,
+          "exactDuplicate": false
+        },
+        {
+          "level": 210,
+          "name": "窗边补绒兔",
+          "id": "toy-mending",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/toy-mending-48x60.png",
+          "rankDistance": 0.41664311002107246,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.27328870436859704,
+          "paletteDistance": 0.6763888888888889,
+          "exactDuplicate": false
+        },
+        {
+          "level": 202,
+          "name": "陶盘与宽刷",
+          "id": "ceramic-glaze-tools",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ceramic-glaze-tools-48x60.png",
+          "rankDistance": 0.4448358510731318,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.25777930238581875,
+          "paletteDistance": 0.6302083333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 116,
+          "name": "小丑鱼穿过礁石拱",
+          "id": "clownfish-arch",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/clownfish-arch-48x60.png",
+          "rankDistance": 0.44784989523078644,
+          "shapeHamming": 0.4444444444444444,
+          "spatialRgbRMSE": 0.2998092244689136,
+          "paletteDistance": 0.7145833333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 177,
+          "name": "小孩装配木滑雪板",
+          "id": "ski-workbench",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ski-workbench-48x60.png",
+          "rankDistance": 0.4806620488732932,
+          "shapeHamming": 0.5714285714285714,
+          "spatialRgbRMSE": 0.2620389604996587,
+          "paletteDistance": 0.6590277777777778,
+          "exactDuplicate": false
+        },
+        {
+          "level": 243,
+          "name": "庭院吹奏长笛",
+          "id": "courtyard-flute",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/courtyard-flute-48x60.png",
+          "rankDistance": 0.49069106824116704,
+          "shapeHamming": 0.5714285714285714,
+          "spatialRgbRMSE": 0.2932726666300917,
+          "paletteDistance": 0.6545138888888888,
+          "exactDuplicate": false
+        }
+      ]
+    },
+    {
+      "level": 110,
+      "id": "alpaca-blankets",
+      "installedNeighbors": [
+        {
+          "level": 25,
+          "name": "小画家的调色盘",
+          "id": "young-painter",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/young-painter-48x60.png",
+          "rankDistance": 0.3598521817955961,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.24807539469943554,
+          "paletteDistance": 0.5079861111111111,
+          "exactDuplicate": false
+        },
+        {
+          "level": 89,
+          "name": "松鼠的树阶包裹",
+          "id": "squirrel-parcels",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/squirrel-parcels-48x60.png",
+          "rankDistance": 0.36710518821345484,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.2148300162107779,
+          "paletteDistance": 0.6024305555555556,
+          "exactDuplicate": false
+        },
+        {
+          "level": 261,
+          "name": "香皂制作师",
+          "id": "level-261",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-261-48x60.png",
+          "rankDistance": 0.38252741077975105,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.2416882938378374,
+          "paletteDistance": 0.5611111111111111,
+          "exactDuplicate": false
+        },
+        {
+          "level": 244,
+          "name": "木制小火箭",
+          "id": "level-244",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-244-48x60.png",
+          "rankDistance": 0.39368074130611197,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.26482479375442425,
+          "paletteDistance": 0.5763888888888888,
+          "exactDuplicate": false
+        },
+        {
+          "level": 189,
+          "name": "巧克力工坊",
+          "id": "level-189",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-189-48x60.png",
+          "rankDistance": 0.39751529966568333,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.24403464303573907,
+          "paletteDistance": 0.6319444444444445,
+          "exactDuplicate": false
+        }
+      ],
+      "candidateNeighbors": [
+        {
+          "level": 52,
+          "name": "棚下装扮小雪人",
+          "rankDistance": 0.39168966944504097,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.2546859036298224,
+          "paletteDistance": 0.4413194444444444,
+          "exactDuplicate": false
+        },
+        {
+          "level": 170,
+          "name": "树根旁探鱼的翠鸟",
+          "rankDistance": 0.42282983772212246,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.2810444343081049,
+          "paletteDistance": 0.69375,
+          "exactDuplicate": false
+        },
+        {
+          "level": 275,
+          "name": "小狗穿越彩布隧道",
+          "rankDistance": 0.4409823627651487,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.25634983465779443,
+          "paletteDistance": 0.5420138888888888,
+          "exactDuplicate": false
+        },
+        {
+          "level": 221,
+          "name": "考拉的盆栽推车",
+          "rankDistance": 0.44465040440174397,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.25070183570566323,
+          "paletteDistance": 0.6416666666666666,
+          "exactDuplicate": false
+        },
+        {
+          "level": 66,
+          "name": "贝壳风铃架",
+          "rankDistance": 0.4478173337252036,
+          "shapeHamming": 0.4444444444444444,
+          "spatialRgbRMSE": 0.25487492175455,
+          "paletteDistance": 0.7930555555555555,
+          "exactDuplicate": false
+        }
+      ],
+      "otherBatchNeighbors": [
+        {
+          "level": 210,
+          "name": "窗边补绒兔",
+          "id": "toy-mending",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/toy-mending-48x60.png",
+          "rankDistance": 0.363126875279219,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.24274912211296132,
+          "paletteDistance": 0.5336805555555555,
+          "exactDuplicate": false
+        },
+        {
+          "level": 202,
+          "name": "陶盘与宽刷",
+          "id": "ceramic-glaze-tools",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ceramic-glaze-tools-48x60.png",
+          "rankDistance": 0.3831001118831707,
+          "shapeHamming": 0.4444444444444444,
+          "spatialRgbRMSE": 0.2610400022058846,
+          "paletteDistance": 0.4586805555555556,
+          "exactDuplicate": false
+        },
+        {
+          "level": 177,
+          "name": "小孩装配木滑雪板",
+          "id": "ski-workbench",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ski-workbench-48x60.png",
+          "rankDistance": 0.4460314227750407,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.2453788950035177,
+          "paletteDistance": 0.5864583333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 243,
+          "name": "庭院吹奏长笛",
+          "id": "courtyard-flute",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/courtyard-flute-48x60.png",
+          "rankDistance": 0.4474649158312508,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.2685222084974513,
+          "paletteDistance": 0.553125,
+          "exactDuplicate": false
+        },
+        {
+          "level": 207,
+          "name": "手摇八音盒",
+          "id": "crank-music-box",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/crank-music-box-48x60.png",
+          "rankDistance": 0.4677959167763039,
+          "shapeHamming": 0.5714285714285714,
+          "spatialRgbRMSE": 0.26892937673048284,
+          "paletteDistance": 0.5826388888888889,
+          "exactDuplicate": false
+        },
+        {
+          "level": 116,
+          "name": "小丑鱼穿过礁石拱",
+          "id": "clownfish-arch",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/clownfish-arch-48x60.png",
+          "rankDistance": 0.5184632457186934,
+          "shapeHamming": 0.6349206349206349,
+          "spatialRgbRMSE": 0.31698115556814893,
+          "paletteDistance": 0.6090277777777778,
+          "exactDuplicate": false
+        }
+      ]
+    },
+    {
+      "level": 170,
+      "id": "kingfisher-dive",
+      "installedNeighbors": [
+        {
+          "level": 111,
+          "name": "烘焙师的早晨",
+          "id": "level-111",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-111-48x60.png",
+          "rankDistance": 0.37033702667250507,
+          "shapeHamming": 0.31746031746031744,
+          "spatialRgbRMSE": 0.2939901442343682,
+          "paletteDistance": 0.6229166666666667,
+          "exactDuplicate": false
+        },
+        {
+          "level": 38,
+          "name": "鹦鹉与芒果",
+          "id": "parrot-mango",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/parrot-mango-48x60.png",
+          "rankDistance": 0.38332644227574275,
+          "shapeHamming": 0.31746031746031744,
+          "spatialRgbRMSE": 0.3001503792912377,
+          "paletteDistance": 0.6770833333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 198,
+          "name": "水果摊摊主",
+          "id": "level-198",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-198-48x60.png",
+          "rankDistance": 0.38399453833124525,
+          "shapeHamming": 0.3492063492063492,
+          "spatialRgbRMSE": 0.29775083514142625,
+          "paletteDistance": 0.6131944444444445,
+          "exactDuplicate": false
+        },
+        {
+          "level": 122,
+          "name": "樱桃树松鼠",
+          "id": "level-122",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-122-48x60.png",
+          "rankDistance": 0.4034110360307833,
+          "shapeHamming": 0.3492063492063492,
+          "spatialRgbRMSE": 0.3123535269813764,
+          "paletteDistance": 0.6847222222222222,
+          "exactDuplicate": false
+        },
+        {
+          "level": 156,
+          "name": "甜品师布丁",
+          "id": "level-156",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-156-48x60.png",
+          "rankDistance": 0.40349203558368385,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.30972214248399466,
+          "paletteDistance": 0.546875,
+          "exactDuplicate": false
+        }
+      ],
+      "candidateNeighbors": [
+        {
+          "level": 110,
+          "name": "羊驼探看马鞍毯",
+          "rankDistance": 0.42282983772212246,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.2810444343081049,
+          "paletteDistance": 0.69375,
+          "exactDuplicate": false
+        },
+        {
+          "level": 221,
+          "name": "考拉的盆栽推车",
+          "rankDistance": 0.44533409165940874,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.2889080623375396,
+          "paletteDistance": 0.6496527777777779,
+          "exactDuplicate": false
+        },
+        {
+          "level": 52,
+          "name": "棚下装扮小雪人",
+          "rankDistance": 0.47982424587328665,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.29371553242707754,
+          "paletteDistance": 0.6708333333333334,
+          "exactDuplicate": false
+        },
+        {
+          "level": 66,
+          "name": "贝壳风铃架",
+          "rankDistance": 0.49353852015829675,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.28071663355885235,
+          "paletteDistance": 0.7621527777777778,
+          "exactDuplicate": false
+        },
+        {
+          "level": 275,
+          "name": "小狗穿越彩布隧道",
+          "rankDistance": 0.5128384590547809,
+          "shapeHamming": 0.6349206349206349,
+          "spatialRgbRMSE": 0.28345001906808137,
+          "paletteDistance": 0.6395833333333334,
+          "exactDuplicate": false
+        }
+      ],
+      "otherBatchNeighbors": [
+        {
+          "level": 177,
+          "name": "小孩装配木滑雪板",
+          "id": "ski-workbench",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ski-workbench-48x60.png",
+          "rankDistance": 0.39343541633370704,
+          "shapeHamming": 0.3492063492063492,
+          "spatialRgbRMSE": 0.2594469945135395,
+          "paletteDistance": 0.7274305555555556,
+          "exactDuplicate": false
+        },
+        {
+          "level": 202,
+          "name": "陶盘与宽刷",
+          "id": "ceramic-glaze-tools",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ceramic-glaze-tools-48x60.png",
+          "rankDistance": 0.4045938417282422,
+          "shapeHamming": 0.4444444444444444,
+          "spatialRgbRMSE": 0.27443478589021575,
+          "paletteDistance": 0.5427083333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 243,
+          "name": "庭院吹奏长笛",
+          "id": "courtyard-flute",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/courtyard-flute-48x60.png",
+          "rankDistance": 0.4286608631533958,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.31992672919110804,
+          "paletteDistance": 0.6548611111111111,
+          "exactDuplicate": false
+        },
+        {
+          "level": 210,
+          "name": "窗边补绒兔",
+          "id": "toy-mending",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/toy-mending-48x60.png",
+          "rankDistance": 0.4847127286531838,
+          "shapeHamming": 0.5714285714285714,
+          "spatialRgbRMSE": 0.28412820431521907,
+          "paletteDistance": 0.640625,
+          "exactDuplicate": false
+        },
+        {
+          "level": 116,
+          "name": "小丑鱼穿过礁石拱",
+          "id": "clownfish-arch",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/clownfish-arch-48x60.png",
+          "rankDistance": 0.48738013011971115,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.3323105758522359,
+          "paletteDistance": 0.7125,
+          "exactDuplicate": false
+        },
+        {
+          "level": 207,
+          "name": "手摇八音盒",
+          "id": "crank-music-box",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/crank-music-box-48x60.png",
+          "rankDistance": 0.49449728452525893,
+          "shapeHamming": 0.5714285714285714,
+          "spatialRgbRMSE": 0.3138697925211481,
+          "paletteDistance": 0.6375,
+          "exactDuplicate": false
+        }
+      ]
+    },
+    {
+      "level": 221,
+      "id": "koala-potting-cart",
+      "installedNeighbors": [
+        {
+          "level": 67,
+          "name": "秋日滑板",
+          "id": "skater-autumn",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/skater-autumn-48x60.png",
+          "rankDistance": 0.38827528077122103,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.2632128203440782,
+          "paletteDistance": 0.6236111111111111,
+          "exactDuplicate": false
+        },
+        {
+          "level": 243,
+          "name": "草地大提琴",
+          "id": "level-243",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-243-48x60.png",
+          "rankDistance": 0.3916521527005273,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.27385308934844527,
+          "paletteDistance": 0.621875,
+          "exactDuplicate": false
+        },
+        {
+          "level": 97,
+          "name": "庭院泡茶",
+          "id": "tea-master",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/tea-master-48x60.png",
+          "rankDistance": 0.39634456122648576,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.24882459670152401,
+          "paletteDistance": 0.6177083333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 25,
+          "name": "小画家的调色盘",
+          "id": "young-painter",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/young-painter-48x60.png",
+          "rankDistance": 0.40316860797372345,
+          "shapeHamming": 0.4444444444444444,
+          "spatialRgbRMSE": 0.24556110214714635,
+          "paletteDistance": 0.586111111111111,
+          "exactDuplicate": false
+        },
+        {
+          "level": 295,
+          "name": "星星小夜灯",
+          "id": "level-295",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-295-48x60.png",
+          "rankDistance": 0.40491262674003814,
+          "shapeHamming": 0.31746031746031744,
+          "spatialRgbRMSE": 0.286428366649542,
+          "paletteDistance": 0.8090277777777779,
+          "exactDuplicate": false
+        }
+      ],
+      "candidateNeighbors": [
+        {
+          "level": 275,
+          "name": "小狗穿越彩布隧道",
+          "rankDistance": 0.4162527685063065,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.23438999618581904,
+          "paletteDistance": 0.5996527777777777,
+          "exactDuplicate": false
+        },
+        {
+          "level": 52,
+          "name": "棚下装扮小雪人",
+          "rankDistance": 0.4260610449351132,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.2618184050300287,
+          "paletteDistance": 0.6006944444444444,
+          "exactDuplicate": false
+        },
+        {
+          "level": 110,
+          "name": "羊驼探看马鞍毯",
+          "rankDistance": 0.44465040440174397,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.25070183570566323,
+          "paletteDistance": 0.6416666666666666,
+          "exactDuplicate": false
+        },
+        {
+          "level": 170,
+          "name": "树根旁探鱼的翠鸟",
+          "rankDistance": 0.44533409165940874,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.2889080623375396,
+          "paletteDistance": 0.6496527777777779,
+          "exactDuplicate": false
+        },
+        {
+          "level": 66,
+          "name": "贝壳风铃架",
+          "rankDistance": 0.5026457303255033,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.2644753292746805,
+          "paletteDistance": 0.8361111111111111,
+          "exactDuplicate": false
+        }
+      ],
+      "otherBatchNeighbors": [
+        {
+          "level": 202,
+          "name": "陶盘与宽刷",
+          "id": "ceramic-glaze-tools",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ceramic-glaze-tools-48x60.png",
+          "rankDistance": 0.3607403492044928,
+          "shapeHamming": 0.3492063492063492,
+          "spatialRgbRMSE": 0.24916743763641938,
+          "paletteDistance": 0.5819444444444445,
+          "exactDuplicate": false
+        },
+        {
+          "level": 243,
+          "name": "庭院吹奏长笛",
+          "id": "courtyard-flute",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/courtyard-flute-48x60.png",
+          "rankDistance": 0.42163333588083796,
+          "shapeHamming": 0.4444444444444444,
+          "spatialRgbRMSE": 0.2677619120404894,
+          "paletteDistance": 0.6395833333333334,
+          "exactDuplicate": false
+        },
+        {
+          "level": 207,
+          "name": "手摇八音盒",
+          "id": "crank-music-box",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/crank-music-box-48x60.png",
+          "rankDistance": 0.44668244483172304,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.26007909407703167,
+          "paletteDistance": 0.6354166666666667,
+          "exactDuplicate": false
+        },
+        {
+          "level": 210,
+          "name": "窗边补绒兔",
+          "id": "toy-mending",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/toy-mending-48x60.png",
+          "rankDistance": 0.45651941197958024,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.2733037621185287,
+          "paletteDistance": 0.6614583333333334,
+          "exactDuplicate": false
+        },
+        {
+          "level": 177,
+          "name": "小孩装配木滑雪板",
+          "id": "ski-workbench",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ski-workbench-48x60.png",
+          "rankDistance": 0.4847190980729966,
+          "shapeHamming": 0.6031746031746031,
+          "spatialRgbRMSE": 0.2498776951745484,
+          "paletteDistance": 0.6291666666666667,
+          "exactDuplicate": false
+        },
+        {
+          "level": 116,
+          "name": "小丑鱼穿过礁石拱",
+          "id": "clownfish-arch",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/clownfish-arch-48x60.png",
+          "rankDistance": 0.4877270016899682,
+          "shapeHamming": 0.5714285714285714,
+          "spatialRgbRMSE": 0.2988912066425396,
+          "paletteDistance": 0.6298611111111111,
+          "exactDuplicate": false
+        }
+      ]
+    },
+    {
+      "level": 275,
+      "id": "dog-play-tunnel",
+      "installedNeighbors": [
+        {
+          "level": 26,
+          "name": "荷叶间的小鸭",
+          "id": "duck-lilies",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/duck-lilies-48x60.png",
+          "rankDistance": 0.37328193320703923,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.26501754158927304,
+          "paletteDistance": 0.5454861111111111,
+          "exactDuplicate": false
+        },
+        {
+          "level": 67,
+          "name": "秋日滑板",
+          "id": "skater-autumn",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/skater-autumn-48x60.png",
+          "rankDistance": 0.38010615179106405,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.26546768992458214,
+          "paletteDistance": 0.5788194444444444,
+          "exactDuplicate": false
+        },
+        {
+          "level": 99,
+          "name": "花园庆祝蛋糕",
+          "id": "celebration-cake",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/celebration-cake-48x60.png",
+          "rankDistance": 0.3804063281658356,
+          "shapeHamming": 0.38095238095238093,
+          "spatialRgbRMSE": 0.2742618446461515,
+          "paletteDistance": 0.5649305555555555,
+          "exactDuplicate": false
+        },
+        {
+          "level": 228,
+          "name": "小小考古家",
+          "id": "level-228",
+          "pixelFile": "art/cartoons/sources/image2-levels-101-300/review-48x60/level-228-48x60.png",
+          "rankDistance": 0.3813913428597,
+          "shapeHamming": 0.31746031746031744,
+          "spatialRgbRMSE": 0.27755803175333804,
+          "paletteDistance": 0.7069444444444444,
+          "exactDuplicate": false
+        },
+        {
+          "level": 13,
+          "name": "风筝修补台",
+          "id": "kite-workbench",
+          "pixelFile": "art/cartoons/sources/image2-levels-011-100/review-48x60/kite-workbench-48x60.png",
+          "rankDistance": 0.38484180040030563,
+          "shapeHamming": 0.3492063492063492,
+          "spatialRgbRMSE": 0.24501285375144016,
+          "paletteDistance": 0.7097222222222221,
+          "exactDuplicate": false
+        }
+      ],
+      "candidateNeighbors": [
+        {
+          "level": 52,
+          "name": "棚下装扮小雪人",
+          "rankDistance": 0.3998970887078654,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.26246106977757466,
+          "paletteDistance": 0.46875,
+          "exactDuplicate": false
+        },
+        {
+          "level": 221,
+          "name": "考拉的盆栽推车",
+          "rankDistance": 0.4162527685063065,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.23438999618581904,
+          "paletteDistance": 0.5996527777777777,
+          "exactDuplicate": false
+        },
+        {
+          "level": 66,
+          "name": "贝壳风铃架",
+          "rankDistance": 0.4304027870886916,
+          "shapeHamming": 0.5079365079365079,
+          "spatialRgbRMSE": 0.24689911957313257,
+          "paletteDistance": 0.5770833333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 110,
+          "name": "羊驼探看马鞍毯",
+          "rankDistance": 0.4409823627651487,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.25634983465779443,
+          "paletteDistance": 0.5420138888888888,
+          "exactDuplicate": false
+        },
+        {
+          "level": 170,
+          "name": "树根旁探鱼的翠鸟",
+          "rankDistance": 0.5128384590547809,
+          "shapeHamming": 0.6349206349206349,
+          "spatialRgbRMSE": 0.28345001906808137,
+          "paletteDistance": 0.6395833333333334,
+          "exactDuplicate": false
+        }
+      ],
+      "otherBatchNeighbors": [
+        {
+          "level": 207,
+          "name": "手摇八音盒",
+          "id": "crank-music-box",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/crank-music-box-48x60.png",
+          "rankDistance": 0.37164919288061826,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.2602108458720612,
+          "paletteDistance": 0.47430555555555554,
+          "exactDuplicate": false
+        },
+        {
+          "level": 210,
+          "name": "窗边补绒兔",
+          "id": "toy-mending",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/toy-mending-48x60.png",
+          "rankDistance": 0.3948471463429267,
+          "shapeHamming": 0.4126984126984127,
+          "spatialRgbRMSE": 0.27014150655802194,
+          "paletteDistance": 0.5729166666666666,
+          "exactDuplicate": false
+        },
+        {
+          "level": 243,
+          "name": "庭院吹奏长笛",
+          "id": "courtyard-flute",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/courtyard-flute-48x60.png",
+          "rankDistance": 0.4170129677425083,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.2804112003527447,
+          "paletteDistance": 0.5229166666666667,
+          "exactDuplicate": false
+        },
+        {
+          "level": 116,
+          "name": "小丑鱼穿过礁石拱",
+          "id": "clownfish-arch",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/clownfish-arch-48x60.png",
+          "rankDistance": 0.4323290373060312,
+          "shapeHamming": 0.47619047619047616,
+          "spatialRgbRMSE": 0.27575870069296904,
+          "paletteDistance": 0.6076388888888888,
+          "exactDuplicate": false
+        },
+        {
+          "level": 202,
+          "name": "陶盘与宽刷",
+          "id": "ceramic-glaze-tools",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ceramic-glaze-tools-48x60.png",
+          "rankDistance": 0.43953662735914045,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.257179479529517,
+          "paletteDistance": 0.5333333333333333,
+          "exactDuplicate": false
+        },
+        {
+          "level": 177,
+          "name": "小孩装配木滑雪板",
+          "id": "ski-workbench",
+          "pixelFile": "art/cartoons/candidates/redraw-20261118-batch3/review-48x60/ski-workbench-48x60.png",
+          "rankDistance": 0.4621271707283695,
+          "shapeHamming": 0.5396825396825397,
+          "spatialRgbRMSE": 0.2699381748701713,
+          "paletteDistance": 0.6239583333333333,
+          "exactDuplicate": false
+        }
+      ]
+    }
+  ],
+  "catalogNearestPairs": [
+    {
+      "levels": [
+        71,
+        170
+      ],
+      "names": [
+        "翠鸟停靠",
+        "池边翠鸟"
+      ],
+      "rankDistance": 0.2719340921042283,
+      "shapeHamming": 0.2222222222222222,
+      "spatialRgbRMSE": 0.18965296156763647,
+      "paletteDistance": 0.5277777777777778,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        254,
+        296
+      ],
+      "names": [
+        "橡树林小狼",
+        "花园袋鼠"
+      ],
+      "rankDistance": 0.29493416216656887,
+      "shapeHamming": 0.19047619047619047,
+      "spatialRgbRMSE": 0.2684059962128724,
+      "paletteDistance": 0.576388888888889,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        127,
+        181
+      ],
+      "names": [
+        "野餐留声机",
+        "竹编野餐篮"
+      ],
+      "rankDistance": 0.29610289292587194,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.25312277797414656,
+      "paletteDistance": 0.3232638888888889,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        230,
+        231
+      ],
+      "names": [
+        "花园乌龟",
+        "田间插秧人"
+      ],
+      "rankDistance": 0.3020241622423281,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.27644658599848854,
+      "paletteDistance": 0.240625,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        11,
+        50
+      ],
+      "names": [
+        "抱贝壳的海獭",
+        "海狸的小木屋"
+      ],
+      "rankDistance": 0.3042225041214963,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.2334078349049556,
+      "paletteDistance": 0.46979166666666666,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        163,
+        180
+      ],
+      "names": [
+        "橘子汽水车",
+        "花街手风琴手"
+      ],
+      "rankDistance": 0.30917833222253543,
+      "shapeHamming": 0.25396825396825395,
+      "spatialRgbRMSE": 0.2278677972798064,
+      "paletteDistance": 0.5756944444444445,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        227,
+        246
+      ],
+      "names": [
+        "红莓知更鸟",
+        "木屋修屋顶"
+      ],
+      "rankDistance": 0.3101789359082958,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.30484798014615144,
+      "paletteDistance": 0.303125,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        50,
+        70
+      ],
+      "names": [
+        "海狸的小木屋",
+        "山间远足"
+      ],
+      "rankDistance": 0.3111134110711475,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.2394623536273149,
+      "paletteDistance": 0.4222222222222222,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        227,
+        258
+      ],
+      "names": [
+        "红莓知更鸟",
+        "小小航海家"
+      ],
+      "rankDistance": 0.31192599066174076,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.2734733520040667,
+      "paletteDistance": 0.43819444444444444,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        223,
+        265
+      ],
+      "names": [
+        "蘑菇储物罐",
+        "橡皮鸭浴盆"
+      ],
+      "rankDistance": 0.3162967418282199,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.3233194891237123,
+      "paletteDistance": 0.30138888888888893,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        168,
+        230
+      ],
+      "names": [
+        "小小昆虫家",
+        "花园乌龟"
+      ],
+      "rankDistance": 0.3167426612611445,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.31917971244680726,
+      "paletteDistance": 0.3822916666666667,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        175,
+        299
+      ],
+      "names": [
+        "手鼓和花环",
+        "木屋狐狸邮差"
+      ],
+      "rankDistance": 0.3172599889884703,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.2610489481303232,
+      "paletteDistance": 0.34375,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        110,
+        194
+      ],
+      "names": [
+        "牧场小羊驼",
+        "山坡山羊"
+      ],
+      "rankDistance": 0.3179047648498443,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.3018650877796006,
+      "paletteDistance": 0.4184027777777778,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        89,
+        270
+      ],
+      "names": [
+        "松鼠的树阶包裹",
+        "蘑菇研究员"
+      ],
+      "rankDistance": 0.3199726040677159,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.25153737216626304,
+      "paletteDistance": 0.37395833333333334,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        214,
+        271
+      ],
+      "names": [
+        "桃子果汁杯",
+        "薄荷冰棒"
+      ],
+      "rankDistance": 0.32052184195314976,
+      "shapeHamming": 0.25396825396825395,
+      "spatialRgbRMSE": 0.3404365552402918,
+      "paletteDistance": 0.4354166666666667,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        217,
+        296
+      ],
+      "names": [
+        "松果玩具屋",
+        "花园袋鼠"
+      ],
+      "rankDistance": 0.3210205220008111,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.25929332816558276,
+      "paletteDistance": 0.365625,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        28,
+        71
+      ],
+      "names": [
+        "向日葵女孩",
+        "翠鸟停靠"
+      ],
+      "rankDistance": 0.32151311968223945,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.2845953079356502,
+      "paletteDistance": 0.4666666666666667,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        67,
+        79
+      ],
+      "names": [
+        "秋日滑板",
+        "小站列车员"
+      ],
+      "rankDistance": 0.3215712163947213,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.2901184413998839,
+      "paletteDistance": 0.45729166666666665,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        45,
+        76
+      ],
+      "names": [
+        "阳光早餐盘",
+        "采蜜时光"
+      ],
+      "rankDistance": 0.3217110707010914,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.2435509049509641,
+      "paletteDistance": 0.46805555555555556,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        179,
+        223
+      ],
+      "names": [
+        "榛果睡鼠",
+        "蘑菇储物罐"
+      ],
+      "rankDistance": 0.32304710557407296,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.25972642408918806,
+      "paletteDistance": 0.37499999999999994,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        175,
+        254
+      ],
+      "names": [
+        "手鼓和花环",
+        "橡树林小狼"
+      ],
+      "rankDistance": 0.3230643247200181,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.2753935354812309,
+      "paletteDistance": 0.41909722222222223,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        162,
+        171
+      ],
+      "names": [
+        "修鞋小工匠",
+        "果酱制作师"
+      ],
+      "rankDistance": 0.3236614559727663,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.2511075612827336,
+      "paletteDistance": 0.46458333333333335,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        11,
+        49
+      ],
+      "names": [
+        "抱贝壳的海獭",
+        "花园舞步"
+      ],
+      "rankDistance": 0.3237533414394253,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.230593447196544,
+      "paletteDistance": 0.42951388888888886,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        33,
+        57
+      ],
+      "names": [
+        "陶罐与绿叶",
+        "彩色便当"
+      ],
+      "rankDistance": 0.3242497346312708,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.24762962729115937,
+      "paletteDistance": 0.4736111111111111,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        163,
+        233
+      ],
+      "names": [
+        "橘子汽水车",
+        "麦田田鼠"
+      ],
+      "rankDistance": 0.32426628416586634,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.2995193153038358,
+      "paletteDistance": 0.31145833333333334,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        254,
+        299
+      ],
+      "names": [
+        "橡树林小狼",
+        "木屋狐狸邮差"
+      ],
+      "rankDistance": 0.3251241118349608,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.2640734261044233,
+      "paletteDistance": 0.37777777777777777,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        227,
+        299
+      ],
+      "names": [
+        "红莓知更鸟",
+        "木屋狐狸邮差"
+      ],
+      "rankDistance": 0.32635971973669753,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.26145294074430586,
+      "paletteDistance": 0.3885416666666667,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        143,
+        244
+      ],
+      "names": [
+        "苹果园小马",
+        "木制小火箭"
+      ],
+      "rankDistance": 0.3268613608880724,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.3042410764602521,
+      "paletteDistance": 0.45902777777777776,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        152,
+        153
+      ],
+      "names": [
+        "枫叶小熊",
+        "滑板少年"
+      ],
+      "rankDistance": 0.32722834949883867,
+      "shapeHamming": 0.25396825396825395,
+      "spatialRgbRMSE": 0.25701864029146654,
+      "paletteDistance": 0.6149305555555555,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        14,
+        35
+      ],
+      "names": [
+        "树下小狐狸",
+        "刺猬与苹果"
+      ],
+      "rankDistance": 0.32755912578121754,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.22678457706198213,
+      "paletteDistance": 0.4552083333333333,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        47,
+        62
+      ],
+      "names": [
+        "花栗鼠的橡果",
+        "林间小鹿"
+      ],
+      "rankDistance": 0.3278215389971262,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.22291414770153972,
+      "paletteDistance": 0.5347222222222222,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        152,
+        296
+      ],
+      "names": [
+        "枫叶小熊",
+        "花园袋鼠"
+      ],
+      "rankDistance": 0.32837724572288085,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.2590256907275055,
+      "paletteDistance": 0.47430555555555554,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        172,
+        235
+      ],
+      "names": [
+        "樱花茶具",
+        "花瓣香薰炉"
+      ],
+      "rankDistance": 0.328952742752753,
+      "shapeHamming": 0.38095238095238093,
+      "spatialRgbRMSE": 0.23737064822782047,
+      "paletteDistance": 0.37222222222222223,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        122,
+        200
+      ],
+      "names": [
+        "樱桃树松鼠",
+        "茶园小猴"
+      ],
+      "rankDistance": 0.3302068666930308,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.26564206810253704,
+      "paletteDistance": 0.471875,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        140,
+        230
+      ],
+      "names": [
+        "竹桥水豚",
+        "花园乌龟"
+      ],
+      "rankDistance": 0.33040350003410207,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.25449752844210566,
+      "paletteDistance": 0.49236111111111114,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        233,
+        290
+      ],
+      "names": [
+        "麦田田鼠",
+        "栗子鹿鹿"
+      ],
+      "rankDistance": 0.3308482523482024,
+      "shapeHamming": 0.38095238095238093,
+      "spatialRgbRMSE": 0.23901654865926308,
+      "paletteDistance": 0.3788194444444445,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        263,
+        290
+      ],
+      "names": [
+        "稻草窝母鸡",
+        "栗子鹿鹿"
+      ],
+      "rankDistance": 0.33139114410350423,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.28555066115740435,
+      "paletteDistance": 0.3715277777777778,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        172,
+        288
+      ],
+      "names": [
+        "樱花茶具",
+        "陶笛小演奏"
+      ],
+      "rankDistance": 0.3316223539655737,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.2747033242553805,
+      "paletteDistance": 0.39166666666666666,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        207,
+        217
+      ],
+      "names": [
+        "森林小提琴",
+        "松果玩具屋"
+      ],
+      "rankDistance": 0.3318587877058802,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.28280515308256016,
+      "paletteDistance": 0.5215277777777778,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        242,
+        296
+      ],
+      "names": [
+        "西瓜小猪",
+        "花园袋鼠"
+      ],
+      "rankDistance": 0.3322803837676549,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.2551548379756127,
+      "paletteDistance": 0.42916666666666664,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        196,
+        249
+      ],
+      "names": [
+        "小小鸟浴盆",
+        "冰淇淋小车"
+      ],
+      "rankDistance": 0.3336074955026989,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.31702481708254115,
+      "paletteDistance": 0.3989583333333333,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        227,
+        233
+      ],
+      "names": [
+        "红莓知更鸟",
+        "麦田田鼠"
+      ],
+      "rankDistance": 0.33380206623648023,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.29768277428109996,
+      "paletteDistance": 0.5052083333333334,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        140,
+        296
+      ],
+      "names": [
+        "竹桥水豚",
+        "花园袋鼠"
+      ],
+      "rankDistance": 0.3342421709808892,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.3243937311472119,
+      "paletteDistance": 0.38923611111111106,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        135,
+        287
+      ],
+      "names": [
+        "草帽养蜂人",
+        "花丛长颈鹿"
+      ],
+      "rankDistance": 0.3342800001092876,
+      "shapeHamming": 0.38095238095238093,
+      "spatialRgbRMSE": 0.27659932004014154,
+      "paletteDistance": 0.3302083333333333,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        15,
+        91
+      ],
+      "names": [
+        "雨后小水洼",
+        "街角手风琴"
+      ],
+      "rankDistance": 0.3348718331295474,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.2765329019120855,
+      "paletteDistance": 0.5475694444444444,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        139,
+        232
+      ],
+      "names": [
+        "花园独轮车",
+        "番茄小菜篮"
+      ],
+      "rankDistance": 0.3350673111443915,
+      "shapeHamming": 0.4126984126984127,
+      "spatialRgbRMSE": 0.256484834562207,
+      "paletteDistance": 0.29791666666666666,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        175,
+        230
+      ],
+      "names": [
+        "手鼓和花环",
+        "花园乌龟"
+      ],
+      "rankDistance": 0.3355377992876117,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.3130728505723146,
+      "paletteDistance": 0.3440972222222222,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        231,
+        258
+      ],
+      "names": [
+        "田间插秧人",
+        "小小航海家"
+      ],
+      "rankDistance": 0.3362879005184719,
+      "shapeHamming": 0.38095238095238093,
+      "spatialRgbRMSE": 0.3174552259711443,
+      "paletteDistance": 0.26874999999999993,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        221,
+        242
+      ],
+      "names": [
+        "芭蕉树考拉",
+        "西瓜小猪"
+      ],
+      "rankDistance": 0.33644919599901,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.24558046929422364,
+      "paletteDistance": 0.5381944444444444,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        101,
+        179
+      ],
+      "names": [
+        "草莓园小熊猫",
+        "榛果睡鼠"
+      ],
+      "rankDistance": 0.33692888666848103,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.26818117279429965,
+      "paletteDistance": 0.5010416666666666,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        67,
+        70
+      ],
+      "names": [
+        "秋日滑板",
+        "山间远足"
+      ],
+      "rankDistance": 0.3370828915905038,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.26847946350121266,
+      "paletteDistance": 0.42986111111111114,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        203,
+        267
+      ],
+      "names": [
+        "花窗金丝雀",
+        "轮滑小女孩"
+      ],
+      "rankDistance": 0.3375544679616054,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.31103997648894055,
+      "paletteDistance": 0.42916666666666664,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        158,
+        181
+      ],
+      "names": [
+        "玉米田仓鼠",
+        "竹编野餐篮"
+      ],
+      "rankDistance": 0.3376900181022044,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.28747601543940493,
+      "paletteDistance": 0.3996527777777778,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        138,
+        276
+      ],
+      "names": [
+        "玻璃工匠",
+        "蓝染手艺人"
+      ],
+      "rankDistance": 0.3382878767560713,
+      "shapeHamming": 0.25396825396825395,
+      "spatialRgbRMSE": 0.2971490356295916,
+      "paletteDistance": 0.6,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        258,
+        299
+      ],
+      "names": [
+        "小小航海家",
+        "木屋狐狸邮差"
+      ],
+      "rankDistance": 0.33828932045339444,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.284369713767068,
+      "paletteDistance": 0.47951388888888896,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        111,
+        189
+      ],
+      "names": [
+        "烘焙师的早晨",
+        "巧克力工坊"
+      ],
+      "rankDistance": 0.338491283452384,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.23474833820862537,
+      "paletteDistance": 0.5673611111111111,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        232,
+        276
+      ],
+      "names": [
+        "番茄小菜篮",
+        "蓝染手艺人"
+      ],
+      "rankDistance": 0.33918025002272906,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.3248120522191352,
+      "paletteDistance": 0.4131944444444444,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        22,
+        153
+      ],
+      "names": [
+        "蘑菇采集员",
+        "滑板少年"
+      ],
+      "rankDistance": 0.3393405085127099,
+      "shapeHamming": 0.2857142857142857,
+      "spatialRgbRMSE": 0.26549102205445463,
+      "paletteDistance": 0.5892361111111111,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        41,
+        82
+      ],
+      "names": [
+        "兔子的菜园",
+        "果园采摘"
+      ],
+      "rankDistance": 0.33962208368939817,
+      "shapeHamming": 0.31746031746031744,
+      "spatialRgbRMSE": 0.2973045928540629,
+      "paletteDistance": 0.46354166666666663,
+      "exactDuplicate": false
+    },
+    {
+      "levels": [
+        86,
+        92
+      ],
+      "names": [
+        "珊瑚里的海马",
+        "珊瑚小丑鱼"
+      ],
+      "rankDistance": 0.3396230031301646,
+      "shapeHamming": 0.3492063492063492,
+      "spatialRgbRMSE": 0.26799882980500533,
+      "paletteDistance": 0.4434027777777778,
+      "exactDuplicate": false
+    }
+  ]
+}

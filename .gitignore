@@ -22,3 +22,6 @@ project.private.config.json
 /art/cartoons/sources/*/review-48x60/*
 !/art/cartoons/sources/*/review-48x60/*-48x60.png
 /art/branding/wechat-promo-*/**/*-preview*.jpg
+
+# Local artwork candidates, rejected attempts and review previews
+/art/cartoons/candidates/

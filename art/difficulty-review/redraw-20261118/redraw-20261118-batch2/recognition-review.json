@@ -1,0 +1,84 @@
+{
+  "method": "Pixel-only full view followed by diagnostic crop with nearest-neighbor grid and original comparison. Same reviewer has prior image context; this is not an independent blind recognition experiment or automated semantic validation.",
+  "coordinateSystem": "48x60 pixel grid; half-open [left,top,right,bottom]",
+  "rows": [
+    {
+      "level": 52,
+      "id": "snowman-shed",
+      "pixelSha256": "add8523984c5e011d0ec367c999f48e584e49019982ac7b12031dbdd5725d792",
+      "diagnosticBox": [
+        22,
+        10,
+        43,
+        33
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "重绘后孩子双眼、鼻口与雪人脸能在像素图中区分；围巾和双手可见。雪人和衣物较大，连通区227格，近色仍敏感，保留复核。"
+    },
+    {
+      "level": 66,
+      "id": "shell-chimes",
+      "pixelSha256": "1290dafc588b1b08d687bae7c75dbd12717fdb9b3828eb60439c0393d1c6dec3",
+      "diagnosticBox": [
+        10,
+        13,
+        42,
+        42
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "三只不同贝壳和悬挂支撑的轮廓可辨；悬绳在低分辨率下简化，风铃的具体机制不如器物本身明显。"
+    },
+    {
+      "level": 110,
+      "id": "alpaca-blankets",
+      "pixelSha256": "780a1a6584421debdcc292d9bccef0ccd1087ef097e6c0db0423286492a5e50f",
+      "diagnosticBox": [
+        0,
+        9,
+        27,
+        40
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "羊驼耳朵、眼睛和口鼻可辨，与马鞍毯有区别；墙面和毛色近色合并敏感，仍需复核。"
+    },
+    {
+      "level": 170,
+      "id": "kingfisher-dive",
+      "pixelSha256": "ef5ea98d53d35b010cea985e19abab0a038c766db19cda6b945b4fc2de283282",
+      "diagnosticBox": [
+        1,
+        11,
+        31,
+        30
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "重绘为较大侧面头部：眼、浅色眼周、橙色面颊与向左粗喙能分开看清。头及喙诊断框约30×19格，并非头部本身尺寸。175格连通区比退回版本83格大，但可辨识性优先。"
+    },
+    {
+      "level": 221,
+      "id": "koala-potting-cart",
+      "pixelSha256": "12237c6f8794bacee047b50e258215ee7b6e43a6c5234db02404489523a099b5",
+      "diagnosticBox": [
+        19,
+        8,
+        47,
+        34
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "考拉大耳、眼鼻、脸部与托盆双手可辨；灰色连通区及紫叶背景仍保留复核。"
+    },
+    {
+      "level": 275,
+      "id": "dog-play-tunnel",
+      "pixelSha256": "cf7506202f52a81a7b2757ce1e7926ab318fa51b28b9055576221a56ec5f4704",
+      "diagnosticBox": [
+        3,
+        24,
+        32,
+        49
+      ],
+      "status": "reviewer-checked-awaiting-user-review",
+      "notes": "小狗双耳、眼鼻、前爪和隧道出口可以分开辨认，钻出动作明确；隧道色段仍需结构复核。"
+    }
+  ]
+}
