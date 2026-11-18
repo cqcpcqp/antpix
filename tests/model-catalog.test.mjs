@@ -12,12 +12,12 @@ for (let level = 0; level < LEVEL_COUNT; level++) {
     assert.equal(l.width, 48);
     assert.equal(l.height, 60);
     assert.equal(l.pixels.length, 2880);
-    assert.ok(new Set(l.pixels).size <= 24);
+    assert.equal(new Set(l.pixels.filter((c) => c >= 0)).size, l.colors);
     const counts = Array(PALETTE.length).fill(0),
       capacity = [...counts];
     l.pixels.forEach((c) => {
-      assert.ok(c >= 0 && c < PALETTE.length);
-      counts[c]++;
+      assert.ok(Number.isInteger(c) && c >= -1 && c < PALETTE.length);
+      if (c >= 0) counts[c]++;
     });
     m.queue.forEach((j) => {
       assert.ok(j.capacity > 0);
@@ -53,14 +53,14 @@ for (let level = 0; level < LEVEL_COUNT; level++) {
           const i = Math.floor(random() * flights.length);
           m.arrive(flights.splice(i, 1)[0]);
         }
-        assert.equal(m.remaining + m.inFlight + m.collected, m.level.pixels.length);
+        assert.equal(m.remaining + m.inFlight + m.collected, m.totalPixels);
         m.slots.forEach((j) => {
           if (j) assert.ok(j.remaining > 0 && j.remaining <= j.capacity);
         });
       }
       assert.ok(m.complete || m.blocked, `seed ${seed} did not terminate`);
       if (m.complete) {
-        assert.equal(seen.size, m.level.pixels.length);
+        assert.equal(seen.size, m.totalPixels);
         assert.equal(m.queue.length, 0);
       } else {
         assert.equal(m.inFlight, 0);
@@ -72,7 +72,7 @@ for (let level = 0; level < LEVEL_COUNT; level++) {
 }
 
 test('full slots, hidden containers and repeat clicks do not mutate the queue', () => {
-  const m = new GardenModel(makeLevel(0), seeded(2));
+  const m = new GardenModel(makeLevel(3), seeded(2));
   assert.equal(m.place(m.queue[10].id), -1);
   const first = m.queue[0].id;
   assert.equal(m.place(first), 0);
@@ -83,11 +83,11 @@ test('full slots, hidden containers and repeat clicks do not mutate the queue', 
   assert.equal(JSON.stringify(m.queue), before);
 });
 
-test('catalog uses the ten approved image2 illustrations in difficulty order', () => {
+test('catalog starts with three approved tutorials and preserves subsequent artwork order', () => {
   const expectedIds = [
-    'penguin-sailor',
-    'berry-basket',
-    'seaside-seal',
+    'tutorial-watermelon',
+    'tutorial-mushroom',
+    'tutorial-plant',
     'rainy-day',
     'corgi-garden',
     'little-gardener',
@@ -107,8 +107,19 @@ test('catalog uses the ten approved image2 illustrations in difficulty order', (
     assert.equal(level.width, 48);
     assert.equal(level.height, 60);
     assert.equal(level.pixels.length, 2880);
-    assert.equal(level.colors, new Set(level.pixels).size);
-    const [minimum, maximum] = index < 30 ? [10, 12] : index < 70 ? [13, 18] : [19, 24];
+    assert.equal(level.colors, new Set(level.pixels.filter((c) => c >= 0)).size);
+    const [minimum, maximum] =
+      index < 3
+        ? [
+            [3, 3],
+            [4, 4],
+            [6, 6],
+          ][index]
+        : index < 30
+          ? [10, 12]
+          : index < 70
+            ? [13, 18]
+            : [19, 24];
     assert.ok(level.colors >= minimum && level.colors <= maximum);
     pictures.add(JSON.stringify(level.pixels));
   }

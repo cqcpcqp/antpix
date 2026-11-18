@@ -1,0 +1,44 @@
+[
+  {
+    "id": "penguin-sailor",
+    "file": "04-penguin-sailor.png",
+    "name": "企鹅船长",
+    "subtitle": "海湾里的小帆船",
+    "colors": 10,
+    "approved": true,
+    "level": 1,
+    "runtimePixelFile": "review-48x60/penguin-sailor-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "berry-basket",
+    "file": "06-berry-basket.png",
+    "name": "野餐莓果篮",
+    "subtitle": "草地上的甜点",
+    "colors": 11,
+    "approved": true,
+    "level": 2,
+    "runtimePixelFile": "review-48x60/berry-basket-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  },
+  {
+    "id": "seaside-seal",
+    "file": "10-seaside-seal.png",
+    "name": "海边小海豹",
+    "subtitle": "浪花送来的贝壳",
+    "colors": 12,
+    "approved": true,
+    "level": 3,
+    "runtimePixelFile": "review-48x60/seaside-seal-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ]
+  }
+]

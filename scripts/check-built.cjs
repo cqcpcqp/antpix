@@ -112,7 +112,7 @@ function simulate(level, seed) {
     assert.equal(m.inFlight, jobs.length);
     const carrying = jobs.filter((p) => m.pixels[p.pixel] < 0).length;
     assert.equal(m.carrying, carrying);
-    assert.equal(m.remaining + carrying + m.collected, level.pixels.length);
+    assert.equal(m.remaining + carrying + m.collected, m.totalPixels);
     const jars = m.queue.concat(m.slots.filter(Boolean));
     assert.equal(new Set(jars.map((j) => j.id)).size, jars.length);
     const activeIds = new Set(jars.map((j) => j.id));
@@ -163,7 +163,7 @@ function simulate(level, seed) {
   assert.ok(m.complete || m.blocked, 'simulation must reach a terminal state');
   if (m.complete) {
     finished++;
-    assert.equal(picked.size, level.pixels.length);
+    assert.equal(picked.size, m.totalPixels);
   } else blocked++;
 }
 for (let seed = 1; seed <= 30; seed++)
@@ -210,7 +210,10 @@ assert.equal(
   LEVEL_COUNT,
   JSON.parse(fs.readFileSync('cloudfunctions/game/catalog.json', 'utf8')).levelCount,
 );
-assert.equal(makeLevel(0).id, 'penguin-sailor');
+assert.deepEqual(
+  [0, 1, 2].map((index) => makeLevel(index).id),
+  ['tutorial-watermelon', 'tutorial-mushroom', 'tutorial-plant'],
+);
 const legacy = {
   catalogVersion: 2,
   unlocked: 99,
@@ -274,10 +277,10 @@ for (let level = 0; level < LEVEL_COUNT; level++)
           progressed = true;
         }
       }
-      assert.ok(m.slots.filter(Boolean).length <= (level < 100 ? 2 : 3));
+      assert.ok(m.slots.filter(Boolean).length <= (level < 3 ? 0 : level < 100 ? 2 : 3));
     }
     assert.equal(m.complete, true);
-    assert.equal(m.collected, art.pixels.length);
+    assert.equal(m.collected, m.totalPixels);
     solvedPlans++;
   }
 console.log(JSON.stringify({ verifiedContainerPlans: solvedPlans, allPixelsDelivered: true }));

@@ -84,7 +84,9 @@ export class VictoryScreen {
             const strip = this.game.ui.node2d('Restored row ' + row, art),
                 g = strip.addComponent(Graphics);
             for (let col = 0; col < level.width; col++) {
-                g.fillColor = color(PALETTE[level.pixels[row * level.width + col]]);
+                const pixel = level.pixels[row * level.width + col];
+                if (pixel < 0) continue;
+                g.fillColor = color(PALETTE[pixel]);
                 g.rect(-200 + col * step, -step, step + 0.1, step + 0.1);
                 g.fill();
             }

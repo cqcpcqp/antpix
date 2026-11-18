@@ -22,7 +22,9 @@ export function createContainerColumns(
     } else {
         // Synthetic test boards retain their explicitly requested fixed capacities.
         const counts = new Map<number, number>();
-        pixels.forEach((c) => counts.set(c, (counts.get(c) || 0) + 1));
+        pixels.forEach((c) => {
+            if (c >= 0) counts.set(c, (counts.get(c) || 0) + 1);
+        });
         counts.forEach((count, color) => {
             while (count > 0) {
                 const capacity = Math.min(count, level.capacity);

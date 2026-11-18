@@ -20,11 +20,24 @@ for (let index = 0; index < LEVEL_COUNT; index++) {
   assert.equal(level.width, 48);
   assert.equal(level.height, 60);
   assert.equal(level.pixels.length, 2880);
-  const colors = new Set(level.pixels);
-  const [minimum, maximum] = index < 30 ? [10, 12] : index < 70 ? [13, 18] : [19, 24];
+  const colors = new Set(level.pixels.filter((c) => c >= 0));
+  const [minimum, maximum] = level.tutorial
+    ? [
+        [3, 3],
+        [4, 4],
+        [6, 6],
+      ][index]
+    : index < 30
+      ? [10, 12]
+      : index < 70
+        ? [13, 18]
+        : [19, 24];
   assert.equal(colors.size, level.colors);
   assert.ok(colors.size >= minimum && colors.size <= maximum);
-  assert.ok(level.pixels.every((color) => Number.isInteger(color) && PALETTE[color]));
+  assert.ok(
+    level.pixels.every((color) => Number.isInteger(color) && (color === -1 || PALETTE[color])),
+  );
+  assert.ok(level.tutorial || level.pixels.every((color) => color >= 0));
   const picture = JSON.stringify(level.pixels);
   assert.ok(!pictures.has(picture), `Duplicate artwork: ${level.id}`);
   pictures.add(picture);
@@ -51,9 +64,9 @@ for (let index = 0; index < LEVEL_COUNT; index++) {
       assert.ok(model.columns.some((column) => column[0]?.id === id));
       assert.ok(model.place(id) >= 0, `Five slots must suffice: ${level.id}, variant ${variant}`);
       collected += settleContainers(model, true);
-      assert.ok(model.slots.filter(Boolean).length <= (index < 100 ? 2 : 3));
+      assert.ok(model.slots.filter(Boolean).length <= (level.tutorial ? 0 : index < 100 ? 2 : 3));
     }
-    assert.equal(collected, 2880);
+    assert.equal(collected, model.totalPixels);
     assert.equal(model.complete, true);
     assert.equal(model.inFlight, 0);
     variants++;

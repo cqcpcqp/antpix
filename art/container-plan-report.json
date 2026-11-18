@@ -1,7 +1,7 @@
 [
   {
-    "id": "penguin-sailor",
-    "name": "企鹅船长",
+    "id": "tutorial-watermelon",
+    "name": "清甜西瓜",
     "generationDifficulty": 0.25,
     "generationStage": "early",
     "dependencySettings": {
@@ -9,165 +9,82 @@
       "dependencyRate": 0.25,
       "dependencyBudget": 4
     },
-    "sourceHash": "267f36481232f0ffe218df6d6df30fcec8759ad01a7b48aaa048a7bd38d60557",
+    "sourceHash": "9fd71a6f3b2edc01773076d6b5b8321cc76d061393be3debeffe3aeab3f180dc",
     "variants": [
       {
-        "containers": 85,
-        "openingColors": 2,
-        "maxRun": 2,
+        "containers": 5,
+        "openingColors": 3,
+        "maxRun": 1,
         "longRunContainers": 0,
         "columnMaxRun": 1,
         "columnAdjacentRepeats": 0,
         "columnLongRunContainers": 0,
         "columnLengths": [
-          17,
-          17,
-          17,
-          17,
-          17
+          1,
+          1,
+          1,
+          1,
+          1
         ],
-        "minCapacity": 1,
-        "maxCapacity": 40,
-        "planHash": "1c2ec7d3adb473a1dee973617ce35e7bb2f67c9ee88871c06a21bed67960aa76",
-        "stages": 83,
+        "minCapacity": 19,
+        "maxCapacity": 36,
+        "planHash": "78a881da84e3fc7d84c174fe47d68525f8e5e783eabca50766fcfe30d19548dd",
+        "stages": 5,
         "dependencies": 0,
         "peakUnfinished": 0,
-        "trainingWins": 1
+        "trainingWins": 4
       },
       {
-        "containers": 87,
-        "openingColors": 2,
-        "maxRun": 2,
-        "longRunContainers": 0,
-        "columnMaxRun": 2,
-        "columnAdjacentRepeats": 2,
-        "columnLongRunContainers": 0,
-        "columnLengths": [
-          18,
-          17,
-          17,
-          18,
-          17
-        ],
-        "minCapacity": 1,
-        "maxCapacity": 40,
-        "planHash": "d26e66f56547865c92567af10ed457dc287e1d4d304b48b715a255542ef79fb1",
-        "stages": 82,
-        "dependencies": 2,
-        "peakUnfinished": 2,
-        "trainingWins": 3
-      },
-      {
-        "containers": 87,
-        "openingColors": 2,
-        "maxRun": 2,
-        "longRunContainers": 0,
-        "columnMaxRun": 1,
-        "columnAdjacentRepeats": 0,
-        "columnLongRunContainers": 0,
-        "columnLengths": [
-          17,
-          17,
-          18,
-          17,
-          18
-        ],
-        "minCapacity": 2,
-        "maxCapacity": 40,
-        "planHash": "86407b476ba6df6dd1f8fef44be96ccdee76f77c4443b7827fef09677593064e",
-        "stages": 86,
-        "dependencies": 1,
-        "peakUnfinished": 1,
-        "trainingWins": 3
-      }
-    ]
-  },
-  {
-    "id": "berry-basket",
-    "name": "野餐莓果篮",
-    "generationDifficulty": 0.25,
-    "generationStage": "early",
-    "dependencySettings": {
-      "maxUnfinished": 2,
-      "dependencyRate": 0.25,
-      "dependencyBudget": 4
-    },
-    "sourceHash": "e8ee36bcc81aac05ae9bd334d45280d95b8fcd4d63a7d769fcb089e6e769813a",
-    "variants": [
-      {
-        "containers": 89,
-        "openingColors": 4,
+        "containers": 5,
+        "openingColors": 3,
         "maxRun": 1,
         "longRunContainers": 0,
         "columnMaxRun": 1,
         "columnAdjacentRepeats": 0,
         "columnLongRunContainers": 0,
         "columnLengths": [
-          18,
-          18,
-          17,
-          18,
-          18
+          1,
+          1,
+          1,
+          1,
+          1
         ],
-        "minCapacity": 1,
-        "maxCapacity": 40,
-        "planHash": "fdedca094c93171143ae635b1e7f0feeb25cb308f2e59265fabf82d01c7d0acb",
-        "stages": 89,
-        "dependencies": 3,
-        "peakUnfinished": 1,
-        "trainingWins": 3
+        "minCapacity": 19,
+        "maxCapacity": 36,
+        "planHash": "9f58f4322e171ccc06dadd14043b752c4f7ad8a584356a0f40132d95358c7e48",
+        "stages": 5,
+        "dependencies": 0,
+        "peakUnfinished": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 90,
-        "openingColors": 4,
+        "containers": 5,
+        "openingColors": 3,
         "maxRun": 1,
         "longRunContainers": 0,
         "columnMaxRun": 1,
         "columnAdjacentRepeats": 0,
         "columnLongRunContainers": 0,
         "columnLengths": [
-          18,
-          18,
-          18,
-          18,
-          18
+          1,
+          1,
+          1,
+          1,
+          1
         ],
-        "minCapacity": 1,
-        "maxCapacity": 40,
-        "planHash": "976220680e9f2856b4a1edd8642cc79c5af54274cd28ba021dd720400bdae865",
-        "stages": 90,
-        "dependencies": 1,
-        "peakUnfinished": 1,
-        "trainingWins": 3
-      },
-      {
-        "containers": 84,
-        "openingColors": 4,
-        "maxRun": 2,
-        "longRunContainers": 0,
-        "columnMaxRun": 1,
-        "columnAdjacentRepeats": 0,
-        "columnLongRunContainers": 0,
-        "columnLengths": [
-          16,
-          17,
-          17,
-          17,
-          17
-        ],
-        "minCapacity": 2,
-        "maxCapacity": 40,
-        "planHash": "b1fabbefecf320b5b45ff0d75315fc9aa10fc12a3336098b0c3bd9ed375e1b1e",
-        "stages": 83,
-        "dependencies": 3,
-        "peakUnfinished": 1,
+        "minCapacity": 19,
+        "maxCapacity": 36,
+        "planHash": "41dc3de71848a415b8e3c5ae0973177b9f7788bf6e9100d6c621bd6199daa697",
+        "stages": 5,
+        "dependencies": 0,
+        "peakUnfinished": 0,
         "trainingWins": 4
       }
     ]
   },
   {
-    "id": "seaside-seal",
-    "name": "海边小海豹",
+    "id": "tutorial-mushroom",
+    "name": "小小蘑菇",
     "generationDifficulty": 0.25,
     "generationStage": "early",
     "dependencySettings": {
@@ -175,76 +92,159 @@
       "dependencyRate": 0.25,
       "dependencyBudget": 4
     },
-    "sourceHash": "7220e43d4f3a7930b04d6c0b99a58faf4c70bc0a55589c0050a9f48ba0da3952",
+    "sourceHash": "fc7a5ac3234f1c459d7b113c0d6f38f02c5b6ae1931491a5be124868db9112c1",
     "variants": [
       {
-        "containers": 87,
-        "openingColors": 2,
-        "maxRun": 3,
+        "containers": 12,
+        "openingColors": 4,
+        "maxRun": 1,
         "longRunContainers": 0,
         "columnMaxRun": 1,
         "columnAdjacentRepeats": 0,
         "columnLongRunContainers": 0,
         "columnLengths": [
-          17,
-          17,
-          18,
-          17,
-          18
+          2,
+          3,
+          2,
+          3,
+          2
         ],
-        "minCapacity": 1,
-        "maxCapacity": 40,
-        "planHash": "98c758c6b8217c533e03d62f6b4e559c17b091e7261c42d6568de1374882128a",
-        "stages": 84,
+        "minCapacity": 25,
+        "maxCapacity": 39,
+        "planHash": "9c3c93400266c3149c915afa8adef859d80e4b50dc1aa5e5a9680ae0de0e6d1c",
+        "stages": 12,
         "dependencies": 0,
         "peakUnfinished": 0,
-        "trainingWins": 3
+        "trainingWins": 4
       },
       {
-        "containers": 86,
-        "openingColors": 2,
-        "maxRun": 3,
+        "containers": 12,
+        "openingColors": 4,
+        "maxRun": 1,
         "longRunContainers": 0,
         "columnMaxRun": 1,
         "columnAdjacentRepeats": 0,
         "columnLongRunContainers": 0,
         "columnLengths": [
-          18,
-          17,
-          17,
-          17,
-          17
+          2,
+          2,
+          3,
+          3,
+          2
         ],
-        "minCapacity": 1,
-        "maxCapacity": 40,
-        "planHash": "568ee49c7103de79942bcc035ea772ff4aa2e7d0da5575263c56930c3d641ff0",
-        "stages": 83,
-        "dependencies": 1,
-        "peakUnfinished": 1,
-        "trainingWins": 1
+        "minCapacity": 25,
+        "maxCapacity": 39,
+        "planHash": "0be3c51fb465f568c7856dbd50b1d122c5d66501266b5cfe47ae7dcebc714e91",
+        "stages": 12,
+        "dependencies": 0,
+        "peakUnfinished": 0,
+        "trainingWins": 4
       },
       {
-        "containers": 89,
-        "openingColors": 2,
-        "maxRun": 3,
+        "containers": 13,
+        "openingColors": 3,
+        "maxRun": 2,
         "longRunContainers": 0,
         "columnMaxRun": 1,
         "columnAdjacentRepeats": 0,
         "columnLongRunContainers": 0,
         "columnLengths": [
-          18,
-          17,
-          18,
-          18,
-          18
+          2,
+          3,
+          3,
+          2,
+          3
         ],
         "minCapacity": 1,
-        "maxCapacity": 40,
-        "planHash": "4548d51f497643d27eb98400ed535459d6ba964048ed7fc6d55f45c917184479",
-        "stages": 86,
-        "dependencies": 1,
-        "peakUnfinished": 1,
-        "trainingWins": 3
+        "maxCapacity": 39,
+        "planHash": "9c09d8315caef0d9aecc0eab41fcfa610abf479c36dd802cff6261fa2fadfe5d",
+        "stages": 11,
+        "dependencies": 0,
+        "peakUnfinished": 0,
+        "trainingWins": 4
+      }
+    ]
+  },
+  {
+    "id": "tutorial-plant",
+    "name": "向阳小花",
+    "generationDifficulty": 0.25,
+    "generationStage": "early",
+    "dependencySettings": {
+      "maxUnfinished": 2,
+      "dependencyRate": 0.25,
+      "dependencyBudget": 4
+    },
+    "sourceHash": "b8432dd8e0a47e735a292afd56cff9a49691919762c83251914168bc38d32fd3",
+    "variants": [
+      {
+        "containers": 25,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnMaxRun": 1,
+        "columnAdjacentRepeats": 0,
+        "columnLongRunContainers": 0,
+        "columnLengths": [
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 39,
+        "planHash": "ad85c444cc990d538411ada719eb6d9840ce02775c709ab34fa6ebfd217b9b58",
+        "stages": 25,
+        "dependencies": 0,
+        "peakUnfinished": 0,
+        "trainingWins": 4
+      },
+      {
+        "containers": 25,
+        "openingColors": 4,
+        "maxRun": 1,
+        "longRunContainers": 0,
+        "columnMaxRun": 1,
+        "columnAdjacentRepeats": 0,
+        "columnLongRunContainers": 0,
+        "columnLengths": [
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "minCapacity": 1,
+        "maxCapacity": 39,
+        "planHash": "ead084435d4fd8efa7e6feab55e53c07feabb2f4db65e55d680915d97a82e158",
+        "stages": 25,
+        "dependencies": 0,
+        "peakUnfinished": 0,
+        "trainingWins": 4
+      },
+      {
+        "containers": 24,
+        "openingColors": 3,
+        "maxRun": 2,
+        "longRunContainers": 0,
+        "columnMaxRun": 1,
+        "columnAdjacentRepeats": 0,
+        "columnLongRunContainers": 0,
+        "columnLengths": [
+          5,
+          5,
+          4,
+          5,
+          5
+        ],
+        "minCapacity": 9,
+        "maxCapacity": 39,
+        "planHash": "c7fa2a8bb031b4a1899a8f2f0b179be09e9e13476c3930bd9578c2cc39bad320",
+        "stages": 23,
+        "dependencies": 0,
+        "peakUnfinished": 0,
+        "trainingWins": 4
       }
     ]
   },

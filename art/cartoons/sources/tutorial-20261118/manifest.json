@@ -1,0 +1,59 @@
+[
+  {
+    "level": 1,
+    "id": "tutorial-watermelon",
+    "file": "watermelon.png",
+    "compositionFile": "watermelon-composition.png",
+    "name": "清甜西瓜",
+    "subtitle": "三种颜色，轻松开始",
+    "colors": 3,
+    "approved": true,
+    "tutorial": true,
+    "runtimePixelFile": "review-48x60/tutorial-watermelon-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ],
+    "provider": "underelay",
+    "model": "gpt-image-2",
+    "prompt": "Create ONE polished charming flat cartoon casual-game illustration, portrait 4:5 canvas, pure white empty background. Professional art direction: beautiful organic silhouette, joyful saturated palette, carefully balanced broad shapes, no cheap geometric clip-art appearance. Single centered isolated subject with generous blank margins. Designed to remain clearly recognizable on a 48 column by 60 row pixel board. Use only the stated foreground colors, large identifying features. No gradients, texture, dithering, tiny detail, cast shadow, floor, scenery, text, letters, logos, watermark, frame, facial expression added to objects, or black outline unless charcoal is in the palette. White background represents empty cells, not collectible pixels. One juicy triangular watermelon wedge with a gently curved bottom, width 45% and height 28% of canvas. Coral-red flesh, thick fresh-green rind, FIVE large charcoal teardrop seeds, clearly separated. Exactly three foreground colors: coral red, green, charcoal; no white inner rind or highlights."
+  },
+  {
+    "level": 2,
+    "id": "tutorial-mushroom",
+    "file": "mushroom.png",
+    "compositionFile": "mushroom-composition.png",
+    "name": "小小蘑菇",
+    "subtitle": "收集颜色，拼出小蘑菇",
+    "colors": 4,
+    "approved": true,
+    "tutorial": true,
+    "runtimePixelFile": "review-48x60/tutorial-mushroom-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ],
+    "provider": "underelay",
+    "model": "gpt-image-2",
+    "prompt": "Create ONE polished charming flat cartoon casual-game illustration, portrait 4:5 canvas, pure white empty background. Professional art direction: beautiful organic silhouette, joyful saturated palette, carefully balanced broad shapes, no cheap geometric clip-art appearance. Single centered isolated subject with generous blank margins. Designed to remain clearly recognizable on a 48 column by 60 row pixel board. Use only the stated foreground colors, large identifying features. No gradients, texture, dithering, tiny detail, cast shadow, floor, scenery, text, letters, logos, watermark, frame, facial expression added to objects, or black outline unless charcoal is in the palette. White background represents empty cells, not collectible pixels. One charming wide rounded red mushroom with a thick cream stem and three large cream cap spots. Width 53% and height 43% of canvas. Dark burgundy underside visible as a broad arc, two small broad green leaves beside its base. Exactly four foreground colors: warm red, cream, dark burgundy, green. No face. Clear cap-versus-stem silhouette, big spots, graceful asymmetric shape."
+  },
+  {
+    "level": 3,
+    "id": "tutorial-plant",
+    "file": "plant.png",
+    "compositionFile": "plant-composition.png",
+    "name": "向阳小花",
+    "subtitle": "让一朵小花盛开",
+    "colors": 6,
+    "approved": true,
+    "tutorial": true,
+    "runtimePixelFile": "review-48x60/tutorial-plant-48x60.png",
+    "runtimeGrid": [
+      48,
+      60
+    ],
+    "provider": "underelay",
+    "model": "gpt-image-2",
+    "prompt": "Create ONE polished charming flat cartoon casual-game illustration, portrait 4:5 canvas, pure white empty background. Professional art direction: beautiful organic silhouette, joyful saturated palette, carefully balanced broad shapes, no cheap geometric clip-art appearance. Single centered isolated subject with generous blank margins. Designed to remain clearly recognizable on a 48 column by 60 row pixel board. Use only the stated foreground colors, large identifying features. No gradients, texture, dithering, tiny detail, cast shadow, floor, scenery, text, letters, logos, watermark, frame, facial expression added to objects, or black outline unless charcoal is in the palette. White background represents empty cells, not collectible pixels. One delightful potted flowering plant with three broad green leaves, sturdy dark green stems, a single large five-petal golden yellow flower with charcoal central disk, in a terracotta pot with a broad cream rim. Width 68% and height 66% of canvas. Exactly six foreground colors: fresh green, dark green, yellow, charcoal, terracotta, cream. Flower center and leaf silhouettes generously sized for 48x60 reduction; no tiny veins or soil speckles, no table, no face."
+  }
+]

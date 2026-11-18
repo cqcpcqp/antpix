@@ -51,13 +51,16 @@ export class GardenModel {
     private neighborCache: number[][] = [];
     private readonly planned: PlannedExposure;
     readonly level: Level;
+    /** Initial collectible cells; empty space never becomes collection work. */
+    readonly totalPixels: number;
     private random: () => number;
 
     constructor(level: Level, random: () => number = Math.random) {
         this.level = level;
         this.random = random;
         this.pixels = [...level.pixels];
-        this.remaining = this.pixels.length;
+        this.totalPixels = this.pixels.filter((color) => color >= 0).length;
+        this.remaining = this.totalPixels;
         this.planned = new PlannedExposure(level, this.pixels, this.pending, (pixel) =>
             this.neighbors(pixel),
         );

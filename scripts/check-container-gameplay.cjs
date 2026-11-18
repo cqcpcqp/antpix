@@ -43,7 +43,7 @@ for (const number of levels)
       game.update(0.05);
     }
     assert.ok(game.runtime.session.model.complete, `level ${number} variant ${variant}: timed out`);
-    assert.equal(game.runtime.session.model.collected, level.pixels.length);
+    assert.equal(game.runtime.session.model.collected, game.runtime.session.model.totalPixels);
     console.log(
       JSON.stringify({
         level: number,

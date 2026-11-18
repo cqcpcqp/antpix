@@ -85,6 +85,8 @@ test('first-run instructions pause play, persist completion and remain accessibl
     reopened.runtime.settings.settings();
     click(reopened.runtime.overlays.drawerSheet, '操作说明');
     assert.ok(reopened.runtime.overlays.modal);
+    game.runtime.profile.save.unlocked = 3;
+    game.runtime.session.startLevel(3);
     game.runtime.queue.cardViews.find((view) => view.row === 1).node.emit('start');
     game.runtime.queue.cardViews.find((view) => view.row === 1).node.emit('end');
     assert.ok(game.runtime.notices.notification);
@@ -105,6 +107,8 @@ test('phone hit regions reach 44 pixels without overlapping queue rows or rank a
       cc.view.getFrameSize = () => frame;
       const game = create(),
         scale = frame.width / game.runtime.lifecycle.screenWidth;
+      game.runtime.profile.save.unlocked = 3;
+      game.runtime.session.startLevel(3);
       const bounds = (node) => node.getComponent(cc.UITransform);
       assert.ok(bounds(game.runtime.layout.speedLabel.node.parent).height * scale >= 44 - 1e-8);
       const rows = game.runtime.queue.cardViews
@@ -172,7 +176,7 @@ test('ad confirmation pauses a nearly complete run and settlement is submitted e
     await flush();
     game.runtime.session.model.pixels.fill(-1);
     game.runtime.session.model.remaining = 0;
-    game.runtime.session.model.collected = game.runtime.session.model.level.pixels.length;
+    game.runtime.session.model.collected = game.runtime.session.model.totalPixels;
     game.update(0.05);
     assert.equal(game.runtime.session.elapsed, 0);
     assert.equal(game.runtime.session.won, false);

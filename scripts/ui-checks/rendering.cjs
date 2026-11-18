@@ -20,7 +20,9 @@ module.exports = function checkRendering({
   assert.equal(game.runtime.preview.hintRows.length, GRID_HEIGHT);
   assert.equal(CELL_SIZE * GRID_WIDTH, 584);
   assert.equal(CELL_SIZE * GRID_HEIGHT, 730);
-  game.runtime.session.startLevel(0);
+  // Multi-row queue fixtures use the first full-board level.
+  game.runtime.profile.save.unlocked = Math.max(game.runtime.profile.save.unlocked, 3);
+  game.runtime.session.startLevel(3);
   for (let column = 0; column < 5; column++) {
     const card = game.runtime.queue.cardViews.find((v) => v.column === column && v.row === 0);
     assert.equal(
@@ -160,8 +162,7 @@ module.exports = function checkRendering({
     'same-colored workers must reuse cached geometry',
   );
   assert.ok(
-    rowDraws <=
-      2 * (game.runtime.session.model.level.pixels.length - game.runtime.session.model.remaining),
+    rowDraws <= 2 * (game.runtime.session.model.totalPixels - game.runtime.session.model.remaining),
     'a pickup redraws only its own row and the newly exposed wall above',
   );
   for (const f of game.runtime.flights.flights) {

@@ -8,7 +8,9 @@ module.exports = function checkInteraction({
   GardenModel,
 }) {
   // Short taps place; holds preview without placing, and cancellation never commits.
-  game.runtime.session.startLevel(0);
+  // Multi-row queue fixtures use the first full-board level.
+  game.runtime.profile.save.unlocked = Math.max(game.runtime.profile.save.unlocked, 3);
+  game.runtime.session.startLevel(3);
   let card = game.runtime.queue.cardViews.find((v) => v.row === 0),
     moves = game.runtime.session.model.moves;
   card.node.emit('start');
@@ -59,7 +61,7 @@ module.exports = function checkInteraction({
   game.runtime.session.startLevel(0);
   const originalPixels = [...game.runtime.session.model.level.pixels];
   game.runtime.session.model.pixels.fill(-1);
-  game.runtime.session.model.collected = game.runtime.session.model.level.pixels.length;
+  game.runtime.session.model.collected = game.runtime.session.model.totalPixels;
   game.runtime.session.model.remaining = 0;
   game.runtime.victory.victory();
   let celebration = game.runtime.victory.celebration;
@@ -68,7 +70,7 @@ module.exports = function checkInteraction({
   assert.equal(celebration.rows.length, GRID_HEIGHT);
   assert.equal(
     celebration.rows.reduce((sum, r) => sum + r.getComponent(Graphics).commands.length, 0),
-    GRID_WIDTH * GRID_HEIGHT,
+    game.runtime.session.model.totalPixels,
   );
   assert.deepEqual([...game.runtime.session.model.level.pixels], originalPixels);
   game.update(0.05);

@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-18",
+  "approved": true,
+  "installed": [
+    {
+      "level": 1,
+      "id": "tutorial-watermelon",
+      "colors": 3,
+      "activeCells": 158,
+      "emptyCells": 2722,
+      "pixelSHA256": "5bfd10c4fbae37eedd2c9b983d5d74786776f4d80f1b6b5d2b226960b8e886b2",
+      "exactApprovedPixelCopy": true
+    },
+    {
+      "level": 2,
+      "id": "tutorial-mushroom",
+      "colors": 4,
+      "activeCells": 400,
+      "emptyCells": 2480,
+      "pixelSHA256": "559b96cfe1a5f11c4eb39a2ebf4648e26baf2e7763b5a98c4256d34b6d1600be",
+      "exactApprovedPixelCopy": true
+    },
+    {
+      "level": 3,
+      "id": "tutorial-plant",
+      "colors": 6,
+      "activeCells": 836,
+      "emptyCells": 2044,
+      "pixelSHA256": "5611adf6cd8b5c8379398e64136666573c6e83c6ac24d51f48af7fb207009034",
+      "exactApprovedPixelCopy": true
+    }
+  ],
+  "unchanged": {
+    "levels": [
+      4,
+      300
+    ],
+    "images": 297,
+    "plans": 891,
+    "comparison": "Exact level objects, including palette indices, metadata and every plan"
+  },
+  "initialEmptyEncoding": -1,
+  "originals": "art/cartoons/sources/tutorial-20261118",
+  "replacedManifest": "art/cartoons/sources/image2-20261010/replaced-first-three-20261118.json",
+  "profileCatalogVersion": 4,
+  "profileReset": false,
+  "nearestPolicySimulations": 270,
+  "nearestPolicyWins": 270,
+  "realDispatchReplays": [
+    {
+      "level": 1,
+      "variant": 0,
+      "frames": 1463,
+      "moves": 5,
+      "complete": true
+    },
+    {
+      "level": 1,
+      "variant": 1,
+      "frames": 1463,
+      "moves": 5,
+      "complete": true
+    },
+    {
+      "level": 1,
+      "variant": 2,
+      "frames": 1463,
+      "moves": 5,
+      "complete": true
+    },
+    {
+      "level": 2,
+      "variant": 0,
+      "frames": 4088,
+      "moves": 12,
+      "complete": true
+    },
+    {
+      "level": 2,
+      "variant": 1,
+      "frames": 4098,
+      "moves": 12,
+      "complete": true
+    },
+    {
+      "level": 2,
+      "variant": 2,
+      "frames": 4391,
+      "moves": 13,
+      "complete": true
+    },
+    {
+      "level": 3,
+      "variant": 0,
+      "frames": 9182,
+      "moves": 25,
+      "complete": true
+    },
+    {
+      "level": 3,
+      "variant": 1,
+      "frames": 9199,
+      "moves": 25,
+      "complete": true
+    },
+    {
+      "level": 3,
+      "variant": 2,
+      "frames": 9032,
+      "moves": 24,
+      "complete": true
+    }
+  ],
+  "pacingReplays": [
+    {
+      "level": 1,
+      "variant": 0,
+      "seconds": 6.4,
+      "firstDispatch": 0,
+      "firstArrival": 2.35,
+      "moves": 5
+    },
+    {
+      "level": 1,
+      "variant": 1,
+      "seconds": 6.4,
+      "firstDispatch": 0,
+      "firstArrival": 2.35,
+      "moves": 5
+    },
+    {
+      "level": 1,
+      "variant": 2,
+      "seconds": 6.4,
+      "firstDispatch": 0,
+      "firstArrival": 2.35,
+      "moves": 5
+    },
+    {
+      "level": 2,
+      "variant": 0,
+      "seconds": 32.15,
+      "firstDispatch": 0,
+      "firstArrival": 3.6,
+      "moves": 12
+    },
+    {
+      "level": 2,
+      "variant": 1,
+      "seconds": 32.4,
+      "firstDispatch": 0,
+      "firstArrival": 4.25,
+      "moves": 12
+    },
+    {
+      "level": 2,
+      "variant": 2,
+      "seconds": 32.550000000000004,
+      "firstDispatch": 0,
+      "firstArrival": 3.9000000000000004,
+      "moves": 13
+    },
+    {
+      "level": 3,
+      "variant": 0,
+      "seconds": 66.85000000000001,
+      "firstDispatch": 0,
+      "firstArrival": 3,
+      "moves": 25
+    },
+    {
+      "level": 3,
+      "variant": 1,
+      "seconds": 68.9,
+      "firstDispatch": 0,
+      "firstArrival": 2.45,
+      "moves": 25
+    },
+    {
+      "level": 3,
+      "variant": 2,
+      "seconds": 66.25,
+      "firstDispatch": 0,
+      "firstArrival": 2.45,
+      "moves": 24
+    }
+  ],
+  "pacingMethod": "Headless production components, next witness every 0.4 seconds when a slot is free, dt=0.05; not human play times or device FPS.",
+  "cloudDeployment": {
+    "date": "2026-11-18",
+    "environment": "cloudbase-d9glil4qk6b5865ba",
+    "function": "game",
+    "status": "Active",
+    "verifiedDownloadedFiles": [
+      "index.js",
+      "service.js",
+      "profile.js",
+      "catalog.json",
+      "package.json",
+      "package-lock.json"
+    ],
+    "catalogSHA256": "71e6ea05e6824f196b00a35c6fadbd708dc1afeed0e4196601ee505b4fec50ab",
+    "beforeBackup": "output/cloud-backups/before-tutorial-20261118",
+    "afterDownload": "output/cloud-backups/after-tutorial-20261118",
+    "cloudRegressionTests": 20,
+    "clientReplayAfterDeployment": "user-reported-passed"
+  },
+  "validation": {
+    "sourceCheck": "npm run check: passed",
+    "sourceTests": 1119,
+    "sourceFailures": 0,
+    "wechatBuild": "npm run build:wechat: passed",
+    "builtContainerWitnesses": 900,
+    "builtModelSimulations": 9030,
+    "builtTests": 69,
+    "builtFailures": 0,
+    "mainPackageKiB": 3190.2,
+    "totalPackageKiB": 6337.0,
+    "browserUsed": false,
+    "devicePlaytested": false
+  }
+}

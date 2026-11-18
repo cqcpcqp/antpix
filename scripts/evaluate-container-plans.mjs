@@ -34,8 +34,9 @@ for (const dataset of datasets) {
         policies[policy] = {
           games: runs.length,
           wins: runs.filter((r) => r.win).length,
-          earlyFailures: runs.filter((r) => !r.win && r.collected < level.pixels.length * 0.15)
-            .length,
+          earlyFailures: runs.filter(
+            (r) => !r.win && r.collected < level.pixels.filter((c) => c >= 0).length * 0.15,
+          ).length,
           maxStalled: Math.max(...runs.map((r) => r.maxStalled)),
         };
       }

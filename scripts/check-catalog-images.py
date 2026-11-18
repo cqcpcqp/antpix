@@ -10,8 +10,8 @@ expected=sorted([(source,e) for source in args.sources for e in json.loads((sour
 assert len(data['artworks'])==len(expected)
 for art,(source,e) in zip(data['artworks'],expected):
  assert art['id']==e['id']
- im=Image.open(source/e['runtimePixelFile']).convert('RGB')
- decoded=[data['palette'][index] for index in art['pixels']]
- assert decoded==['#%02X%02X%02X'%rgb for rgb in im.getdata()],e['id']
- assert len(set(decoded))==e['colors']
+ im=Image.open(source/e['runtimePixelFile']).convert('RGBA')
+ decoded=[None if index<0 else data['palette'][index] for index in art['pixels']]
+ assert decoded==[None if rgba[3]==0 else '#%02X%02X%02X'%rgba[:3] for rgba in im.getdata()],e['id']
+ assert len({color for color in decoded if color is not None})==e['colors']
 print(f'{len(expected)} catalog images match reviewed PNGs exactly, including all colors and pixel positions.')

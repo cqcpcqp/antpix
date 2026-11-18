@@ -34,7 +34,7 @@ for (let index = 0; index < LEVEL_COUNT; index++)
         assert.ok(n >= 1 && n <= 40);
         counts.set(c, (counts.get(c) || 0) + n);
       }
-      for (const c of new Set(level.pixels))
+      for (const c of new Set(level.pixels.filter((c) => c >= 0)))
         assert.equal(counts.get(c), level.pixels.filter((p) => p === c).length);
       assert.equal(
         report[index].variants[variant].planHash,
@@ -55,9 +55,12 @@ for (let index = 0; index < LEVEL_COUNT; index++)
         collected += settleContainers(m, true);
         const unfinished = m.slots.filter(Boolean).length;
         peakUnfinished = Math.max(peakUnfinished, unfinished);
-        assert.ok(unfinished <= (index < 100 ? 2 : 3), 'stage waiting limit must hold');
+        assert.ok(
+          unfinished <= (index < 3 ? 0 : index < 100 ? 2 : 3),
+          'stage waiting limit must hold',
+        );
       }
-      assert.equal(collected, level.pixels.length);
+      assert.equal(collected, m.totalPixels);
       assert.equal(m.complete, true);
       assert.equal(m.inFlight, 0);
       assert.equal(peakUnfinished, report[index].variants[variant].peakUnfinished);

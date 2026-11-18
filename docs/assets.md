@@ -26,9 +26,13 @@ export NODE_PATH="$PWD/temp/level-image-font-tools/node_modules"
 python3 scripts/generate-image2-levels.py
 npm run generate:containers
 npm run prepare:cloud
-python3 scripts/check-catalog-images.py assets/scripts/domain/levels/levels.ts art/cartoons/sources/image2-20261010 art/cartoons/sources/image2-levels-011-100
+python3 scripts/check-catalog-images.py assets/scripts/domain/levels/levels.ts art/cartoons/sources/tutorial-20261118 art/cartoons/sources/image2-20261010 art/cartoons/sources/image2-levels-011-100 art/cartoons/sources/image2-levels-101-300
 npm run check
 ```
+
+前三关为西瓜、蘑菇、花的新手段：3/4/6色、158/400/836个收集格。已验收 PNG 使用二值透明通道，透明格编码为 `-1`（压缩数据中为 `_`），不进入调色板和容器容量；棋盘仍为48×60。运行时收集总量、进度、通关还原和云端最低用时都排除空格。只有 manifest 明确标记 `tutorial: true` 的图片可含初始空格；前三关关闭生成器人为增加的等待依赖。
+
+只替换部分图片并复用其他关卡的已发布方案时，先备份旧 `levels.ts` 和报告，再运行 `python3 scripts/generate-image2-levels.py --reuse-palette-from 旧目录/levels.ts`，保留现有颜色编号，然后按下文的旧目录复用方式生成容器方案。本次第4–300关的像素、元数据及891套方案逐项保持一致。旧前三关 manifest 另存 `art/cartoons/sources/image2-20261010/replaced-first-three-20261118.json`，原图保留，存档版本不因这次替换而重置。
 
 每关离线生成三个容器方案，每个条目保存 `[颜色, 容量, 列号]`，顺序同时作为已验证解法。打包时将三个字段合并为两个 Base85 字符，控制微信包体大小。开局随机选方案并交换整列位置，列内顺序固定。生成器每完成一个容器就用实际最近路径取块结果重新规划，对重复同色施加软惩罚，再从八种五列布局中选择方案。像素数量允许时，开局为同一可收集颜色保留两个可完成的列头，避免为了颜色丰富而暴露过多未解锁选项。每种颜色的容量总和严格等于画作像素数，单容器容量不超过 40。
 

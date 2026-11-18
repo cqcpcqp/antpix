@@ -299,7 +299,7 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
   game.runtime.session.startLevel(levelIndex);
   game.runtime.session.model.pixels.fill(-1);
   game.runtime.session.model.remaining = 0;
-  game.runtime.session.model.collected = game.runtime.session.model.level.pixels.length;
+  game.runtime.session.model.collected = game.runtime.session.model.totalPixels;
   game.runtime.layout.drawBoard();
   game.runtime.layout.queueCount.string = game.runtime.queue.queueCaption();
   game.runtime.victory.victory();

@@ -89,7 +89,7 @@ module.exports = function checkPreferences({ cc, Label, PixelGarden, game, asser
     fontGame.runtime.layout.speedLabel.node.parent.getComponent(cc.UITransform).height >= 88,
   );
   assert.equal(fontGame.runtime.layout.queueCount.string, '已收集 0%');
-  fontGame.runtime.session.model.collected = fontGame.runtime.session.model.level.pixels.length / 2;
+  fontGame.runtime.session.model.collected = fontGame.runtime.session.model.totalPixels / 2;
   fontGame.update(0.016);
   assert.equal(fontGame.runtime.layout.queueCount.string, '已收集 50%');
   for (const card of fontGame.runtime.queue.cardViews) {

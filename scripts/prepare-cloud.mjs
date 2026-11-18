@@ -31,7 +31,7 @@ const levels = Array.from({ length: LEVEL_COUNT }, (_, index) => {
     // Use the largest plan so this shared bound accepts every allowed plan.
     minimumSeconds: Math.max(
       0,
-      ((level.pixels.length - Math.max(...moves)) *
+      ((level.pixels.filter((color) => color >= 0).length - Math.max(...moves)) *
         (DISPATCH_INTERVAL / (BASE_GAME_SPEED * FINISHING_SPEED))) /
         9 -
         2,

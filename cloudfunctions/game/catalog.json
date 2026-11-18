@@ -3,26 +3,23 @@
   "levels": [
     {
       "moves": [
-        85,
-        87
+        5
       ],
-      "minimumSeconds": 27.839743589743584
+      "minimumSeconds": 0
     },
     {
       "moves": [
-        89,
-        90,
-        84
+        12,
+        13
       ],
-      "minimumSeconds": 27.807692307692307
+      "minimumSeconds": 2.134615384615384
     },
     {
       "moves": [
-        87,
-        86,
-        89
+        25,
+        24
       ],
-      "minimumSeconds": 27.818376068376065
+      "minimumSeconds": 6.664529914529915
     },
     {
       "moves": [

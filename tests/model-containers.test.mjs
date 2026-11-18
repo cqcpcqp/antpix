@@ -4,8 +4,9 @@ import { GardenModel } from '../assets/scripts/domain/game/model.ts';
 import { makeLevel } from '../assets/scripts/domain/levels/levels.ts';
 import { placeColor, seeded, small } from './helpers/model-fixtures.mjs';
 
+// Multi-row interaction needs a full-board fixture; tutorial one has only five jars.
 test('selecting a top card advances only its column in original order', () => {
-  const m = new GardenModel(makeLevel(0), seeded(1));
+  const m = new GardenModel(makeLevel(3), seeded(1));
   const before = m.columns.map((c) => c.map((j) => j.id));
   const id = m.columns[2][0].id;
   assert.equal(m.place(id), 0);
@@ -22,7 +23,7 @@ test('selecting a top card advances only its column in original order', () => {
 });
 
 test('second-row selection is rejected without mutating columns, slots or moves', () => {
-  const m = new GardenModel(makeLevel(0), seeded(2));
+  const m = new GardenModel(makeLevel(3), seeded(2));
   const before = m.columns.map((c) => c.map((j) => j.id));
   for (const column of m.columns) assert.equal(m.place(column[1].id), -1);
   assert.deepEqual(
@@ -34,7 +35,7 @@ test('second-row selection is rejected without mutating columns, slots or moves'
 });
 
 test('second-row card becomes selectable only after its own first-row card is removed', () => {
-  const m = new GardenModel(makeLevel(0), seeded(2));
+  const m = new GardenModel(makeLevel(3), seeded(2));
   const first = m.columns[3][0].id,
     second = m.columns[3][1].id;
   assert.equal(m.place(second), -1);

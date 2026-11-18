@@ -167,7 +167,7 @@ export class QueueView {
 
     queueCaption() {
         if (!this.game.session.model) return '';
-        const progress = `已收集 ${Math.floor((this.game.session.model.collected / this.game.session.model.level.pixels.length) * 100)}%`;
+        const progress = `已收集 ${Math.floor((this.game.session.model.collected / this.game.session.model.totalPixels) * 100)}%`;
         return this.game.session.finishing ? `收尾加速 · ${progress}` : progress;
     }
 

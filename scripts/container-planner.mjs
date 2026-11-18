@@ -107,6 +107,7 @@ export function planContainers(level, seed = 1, difficulty = 0, options = {}) {
     // Actual waiting depends on the artwork exposing only part of a color.
     const total = model.pixels.filter((c) => c === chosen.color).length;
     if (
+      !level.tutorial &&
       difficulty > 0.1 &&
       id >= 8 &&
       activeColors.size < maxUnfinished &&
@@ -164,7 +165,7 @@ export function selectLayout(level, jars, seed, difficulty = 0.5) {
     );
     const wins = runs.filter((r) => r.win).length;
     const earlyFailures = runs.filter(
-      (r) => !r.win && r.collected < level.pixels.length * 0.15,
+      (r) => !r.win && r.collected < level.pixels.filter((c) => c >= 0).length * 0.15,
     ).length;
     const spread = Math.max(...metrics.columnLengths) - Math.min(...metrics.columnLengths);
     const score =

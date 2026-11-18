@@ -2,7 +2,7 @@
 Use --source multiple times to combine manifests. --candidate writes only to art/.
 Always regenerate container plans after this command.
 """
-import argparse,json
+import argparse,json,re
 from pathlib import Path
 from PIL import Image
 root=Path(__file__).resolve().parents[1]
@@ -10,6 +10,7 @@ parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--source',action='append',type=Path)
 parser.add_argument('--output',type=Path,default=root/'assets/scripts/domain/levels/levels.ts')
 parser.add_argument('--candidate',action='store_true')
+parser.add_argument('--reuse-palette-from',type=Path,help='Retain shipped color indices when replacing a subset of artwork')
 args=parser.parse_args()
 output=args.output.resolve()
 if args.candidate:
@@ -21,6 +22,9 @@ assert len({e['id'] for _,e in entries})==len(entries)
 if not args.candidate:
     assert all(e['approved'] is True for _,e in entries), 'Catalog contains artwork awaiting user approval'
 palette=[];artworks=[]
+if args.reuse_palette_from:
+    previous=args.reuse_palette_from.read_text()
+    palette=json.loads(re.search(r'export const PALETTE: string\[\] = (\[.*?\]);',previous).group(1))
 def base36(n):
     digits='0123456789abcdefghijklmnopqrstuvwxyz';s=''
     while n:s=digits[n%36]+s;n//=36
@@ -28,11 +32,17 @@ def base36(n):
 for source,e in entries:
     if not args.candidate: assert e['approved'] is True, e['id']
     assert e['runtimeGrid']==[48,60]
-    small=Image.open(source/e['runtimePixelFile']).convert('RGB')
+    small=Image.open(source/e['runtimePixelFile']).convert('RGBA')
     assert small.size==(48,60)
-    assert len(small.getcolors(2880))==e['colors']
+    assert all(a in (0,255) for *_,a in small.getdata()), 'Runtime alpha must be binary'
+    assert len({rgba[:3] for rgba in small.getdata() if rgba[3]})==e['colors']
+    assert e.get('tutorial',False) or all(rgba[3]==255 for rgba in small.getdata())
     local=[];ids=[]
-    for rgb in small.getdata():
+    for *rgb,alpha in small.getdata():
+        if alpha==0:
+            ids.append(-1)
+            continue
+        rgb=tuple(rgb)
         value='#%02X%02X%02X'%rgb
         if value not in palette:palette.append(value)
         global_id=palette.index(value)
@@ -43,23 +53,24 @@ for source,e in entries:
         end=start+1
         while end<len(ids) and ids[end]==ids[start]:end+=1
         length=end-start
-        runs.append(chr(65+ids[start])+(base36(length) if length>1 else ''))
+        runs.append(('_' if ids[start]<0 else chr(65+ids[start]))+(base36(length) if length>1 else ''))
         start=end
     artworks.append(dict(id=e['id'],name=e['name'],subtitle=e['subtitle'],colors=e['colors'],difficulty=16000,capacity=40,swatches=local,data=''.join(runs)))
+    if e.get('tutorial',False):artworks[-1]['tutorial']=True
 lines=[
  'const PACKED_CONTAINER_PLANS: Record<string, string[]> = {};',
  '// Generated from underelay image2 illustrations. Source manifests retain review status.',
  'export const GRID_WIDTH = 48;', 'export const GRID_HEIGHT = 60;',
  'export const PALETTE: string[] = '+json.dumps(palette,separators=(',',':'))+';',
- 'export interface Level { containerPlans?: [number,number,number][][]; id?: string; difficulty?: number; colors?: number; name: string; subtitle: string; width: number; height: number; pixels: number[]; capacity: number; }',
+ 'export interface Level { containerPlans?: [number,number,number][][]; id?: string; tutorial?: boolean; difficulty?: number; colors?: number; name: string; subtitle: string; width: number; height: number; pixels: number[]; capacity: number; }',
  'const PACKED_ARTWORKS = '+json.dumps(artworks,ensure_ascii=False,separators=(',',':'))+';',
  '''export const ARTWORKS = PACKED_ARTWORKS.map(({data, ...art}) => {
  const pixels: number[] = [];
- const runs = /([A-X])([0-9a-z]*)/g;
+ const runs = /([A-X_])([0-9a-z]*)/g;
  let match: RegExpExecArray | null;
  while ((match = runs.exec(data))) {
   const count = match[2] ? parseInt(match[2], 36) : 1;
-  const color = art.swatches[match[1].charCodeAt(0) - 65];
+  const color = match[1] === '_' ? -1 : art.swatches[match[1].charCodeAt(0) - 65];
   for (let i = 0; i < count; i++) pixels.push(color);
  }
  return {...art, pixels};
