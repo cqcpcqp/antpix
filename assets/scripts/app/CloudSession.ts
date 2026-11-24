@@ -132,7 +132,7 @@ export class CloudSession {
     cloudTask<T>(
         task: () => Promise<T>,
         complete: (result: T) => void,
-        message: string,
+        message = '',
         cancellable = false,
         offlineOnFailure = false,
     ) {

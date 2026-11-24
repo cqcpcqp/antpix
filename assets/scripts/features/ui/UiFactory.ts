@@ -239,19 +239,20 @@ export class UiFactory {
         const button = this.node2d('Share courtyard', parent, x, y, size, size);
         const art = button.addComponent(Graphics);
         islandPanel(art, 0, 0, 76, 68, PAPER);
-        art.strokeColor = color(GREEN);
-        art.lineWidth = 6;
-        art.moveTo(17, 15);
-        art.lineTo(-16, 0);
-        art.lineTo(17, -15);
-        art.stroke();
         art.fillColor = color(GREEN);
-        for (const [px, py] of [
-            [17, 15],
-            [-16, 0],
-            [17, -15],
-        ])
-            art.circle(px, py, 7);
+        art.moveTo(-22, 2);
+        art.lineTo(21, 20);
+        art.lineTo(11, -19);
+        art.lineTo(-1, -8);
+        art.lineTo(-9, -15);
+        art.lineTo(-10, -4);
+        art.close();
+        art.fill();
+        art.fillColor = color(PAPER);
+        art.moveTo(-10, -4);
+        art.lineTo(13, 13);
+        art.lineTo(-1, -8);
+        art.close();
         art.fill();
         this.homeIconPress(button, callback);
         return button;

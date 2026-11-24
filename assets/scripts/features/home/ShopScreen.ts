@@ -94,7 +94,6 @@ export class ShopScreen {
                     this.game.cloud.applyCloudState(state);
                     finish();
                 },
-                '正在布置庭院…',
             );
         } else {
             buyOrEquipFurnishing(this.game.profile.save, item.id);
@@ -123,7 +122,6 @@ export class ShopScreen {
                     this.game.cloud.applyCloudState(state);
                     finish();
                 },
-                '正在收好装饰…',
             );
         } else {
             this.game.profile.save.courtyard.equipped[slot] = '';
@@ -213,7 +211,6 @@ export class ShopScreen {
                                 this.game.cloud.applyCloudState(state);
                                 finish();
                             },
-                            '正在更新装扮…',
                         );
                         return;
                     }

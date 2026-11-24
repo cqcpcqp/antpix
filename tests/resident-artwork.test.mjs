@@ -243,6 +243,47 @@ test('the icon-only resident arc opens renaming and feeds without a drawer', () 
   game.onDestroy();
 });
 
+test('cloud petting saves quietly and still offers retry after a connection failure', async () => {
+  const game = new PixelGarden();
+  game.onLoad();
+  const { cloud, cloudStatus, courtyard, home, profile } = game.runtime;
+  Object.assign(cloud, { cloudMode: true, cloudReady: true });
+  let settle;
+  cloud.cloud = {
+    mutate(action, input) {
+      assert.equal(action, 'pet');
+      assert.equal(input.operation, 'pat');
+      return new Promise((resolve, reject) => {
+        settle = { resolve, reject };
+      });
+    },
+  };
+  const life = courtyard.courtyardLife;
+  life.y = 864;
+  life.stay('rest', 20);
+  game.update(1 / 60);
+  courtyard.courtyardResident.root.emit('end');
+  for (let i = 0; i < 16; i++) game.update(1 / 60);
+  findNode(courtyard.courtyardNode, 'Resident pet').emit('end');
+  assert.equal(cloud.cloudBusy, true);
+  assert.equal(cloudStatus.cloudStatus, null);
+  assert.equal(home.homeRewardButton.active, true);
+  settle.reject(new Error('test connection failure'));
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.ok(cloudStatus.cloudStatus);
+  cloudStatus.cloudStatus.emit('end');
+  assert.equal(cloudStatus.cloudStatus, null);
+  const updated = structuredClone(profile.save);
+  updated.pets.residents[0].care.mood = 68;
+  settle.resolve({ profile: updated, highest: 0, reachedAt: 0, serverTime: Date.now() });
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(cloud.cloudBusy, false);
+  assert.equal(cloudStatus.cloudStatus, null);
+  assert.equal(profile.save.pets.residents[0].care.mood, 68);
+  assert.ok(findNode(courtyard.courtyardNode, 'Resident reaction'));
+  game.onDestroy();
+});
+
 test('Lili eats once, finishes her Spine reaction and resumes the same walk', () => {
   const game = new PixelGarden();
   game.onLoad();

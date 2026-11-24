@@ -211,7 +211,6 @@ export class PetController {
                     complete();
                     this.game.home.refreshHomeCoins();
                 },
-                '正在保存蚁窝',
             );
             return;
         }

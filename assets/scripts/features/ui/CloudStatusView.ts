@@ -11,6 +11,7 @@ export class CloudStatusView {
         >,
     ) {}
     refreshCloudStatus() {
+        const message = this.game.cloud.cloudMessage;
         if (this.cloudStatus) {
             this.cloudStatus.active = false;
             this.cloudStatus.destroy();
@@ -18,25 +19,20 @@ export class CloudStatusView {
         }
         if (this.game.layout.queueCount)
             this.game.layout.queueCount.node.active =
-                (!this.game.cloud.cloudBusy && !this.game.cloud.cloudMessage) ||
-                !!this.game.home.home ||
-                !!this.game.overlays.modal;
+                !message || !!this.game.home.home || !!this.game.overlays.modal;
         if (this.game.home.homePlayArtwork)
             this.game.home.homePlayArtwork.active =
                 !!this.game.overlays.modal ||
                 this.game.cloud.cloudReady ||
                 !this.game.cloud.cloudMode;
-        if (this.game.home.homeRewardButton)
-            this.game.home.homeRewardButton.active =
-                !this.game.cloud.cloudBusy && !this.game.cloud.cloudMessage;
+        if (this.game.home.homeRewardButton) this.game.home.homeRewardButton.active = !message;
         if (this.game.overlays.drawerSubtitle)
-            this.game.overlays.drawerSubtitle.node.active =
-                !this.game.cloud.cloudBusy && !this.game.cloud.cloudMessage;
+            this.game.overlays.drawerSubtitle.node.active = !message;
         if (this.game.startup.active && this.game.cloud.cloudMode && !this.game.cloud.cloudReady) {
             this.game.startup.refresh();
             return;
         }
-        if (!this.game.cloud.cloudBusy && !this.game.cloud.cloudMessage) return;
+        if (!message) return;
         const parent =
             this.game.overlays.drawerSheet ??
             this.game.overlays.modal ??
@@ -66,7 +62,7 @@ export class CloudStatusView {
         const inlineOffline = this.game.cloud.offlineAvailable && !inGame;
         this.game.ui.text(
             n,
-            this.game.cloud.cloudMessage,
+            message,
             inlineOffline ? -100 : 0,
             0,
             homeLogin ? 28 : 22,

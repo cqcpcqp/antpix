@@ -247,6 +247,8 @@ test('cloud purchase has no optimistic spend and ignores additional taps while p
   const before = JSON.stringify(game.runtime.profile.save);
   game.runtime.shop.purchaseFurnishing(item('leaf-awning'));
   game.runtime.shop.purchaseFurnishing(item('leaf-awning'));
+  assert.equal(game.runtime.cloudStatus.cloudStatus, null);
+  assert.equal(game.runtime.overlays.drawerSubtitle.node.active, true);
   assert.equal(requests, 1);
   assert.equal(JSON.stringify(game.runtime.profile.save), before);
   game.runtime.overlays.closeModal();
