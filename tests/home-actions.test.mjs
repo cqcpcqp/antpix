@@ -41,7 +41,7 @@ test('home actions leave separate touch targets for rewards and bottom navigatio
       const play = home.home.children.find((n) => n.name === '开始游戏');
       const reward = home.homeRewardButton;
       const navigation = home.home.children.filter((n) =>
-        ['关卡', '装饰', '排行榜'].includes(n.name),
+        ['关卡', '商店', '排行榜'].includes(n.name),
       );
       const halfHeight = (n) => n.getComponent(cc.UITransform).height / 2;
       assert.ok(play.position.y - halfHeight(play) > reward.position.y + halfHeight(reward));

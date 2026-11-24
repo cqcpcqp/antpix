@@ -1,5 +1,6 @@
-import { Node, Rect, Size, Sprite, SpriteFrame, Texture2D } from 'cc';
+import { Node, Rect, Size, sp, Sprite, SpriteFrame, Texture2D } from 'cc';
 import { FURNISHINGS } from '../domain/profile/profile';
+import { ResidentArtwork } from '../features/courtyard/residentArtwork';
 import type { GardenRuntime } from './GardenRuntime';
 
 /** Loads home artwork and refreshes already mounted views. */
@@ -33,38 +34,23 @@ export class HomeAssets {
             this.game.assets.homeFrame = frame;
             if (this.game.home.homeScene) this.game.home.homeScene.spriteFrame = frame;
         });
-        this.game.startup.load('home/resident-door/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('home/resident-rig/texture', Texture2D, (error, texture) => {
             if (!this.game.host.isValid) return;
             if (error) {
-                console.error('Resident doorway artwork load failed', error);
+                console.error('庭院图集加载失败', error);
                 return;
             }
-            this.game.assets.residentDoorTexture = texture;
-            texture.addRef();
-            const frame = new SpriteFrame();
-            frame.texture = texture;
-            frame.rect = new Rect(0, 0, 180, 143);
-            frame.originalSize = new Size(180, 143);
-            frame.packable = false;
-            this.game.assets.residentDoorFrame = frame;
+            this.game.assets.residentArtwork = new ResidentArtwork(texture);
             this.game.courtyard.refreshCourtyard();
         });
-        this.game.startup.load('home/resident/texture', Texture2D, (error, texture) => {
+        this.game.startup.load('home/lili', sp.SkeletonData, (error, skeleton) => {
             if (!this.game.host.isValid) return;
             if (error) {
-                console.error('庭院小蚂蚁加载失败', error);
+                console.error('Unable to load resident Spine asset', error);
                 return;
             }
-            this.game.assets.residentTexture = texture;
-            texture.addRef();
-            for (let i = 0; i < 12; i++) {
-                const frame = new SpriteFrame();
-                frame.texture = texture;
-                frame.rect = new Rect((i % 4) * 128, Math.floor(i / 4) * 128, 128, 128);
-                frame.originalSize = new Size(128, 128);
-                frame.packable = false;
-                this.game.assets.residentFrames.push(frame);
-            }
+            this.game.assets.residentSkeleton = skeleton;
+            skeleton.addRef();
             this.game.courtyard.refreshCourtyard();
         });
         this.game.startup.load('home/furnishings/texture', Texture2D, (error, texture) => {

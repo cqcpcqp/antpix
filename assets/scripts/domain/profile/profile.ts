@@ -1,3 +1,6 @@
+import { freshPets, readPetCare } from './pets';
+import type { Pets } from './pets';
+
 export interface BestRun {
     level: number;
     seconds: number;
@@ -17,6 +20,7 @@ export interface Profile {
     owned: string[];
     nest: string;
     courtyard: Courtyard;
+    pets: Pets;
     best: BestRun[];
 }
 
@@ -102,14 +106,14 @@ export const FURNISHINGS: Furnishing[] = [
         slot: 'living',
         name: '叶片躺椅',
         price: 350,
-        description: '搬运之后有个歇脚的地方',
+        description: '给栗栗添一个歇脚的地方',
     },
     {
         id: 'seed-pantry',
         slot: 'living',
         name: '种子粮仓',
         price: 850,
-        description: '把收集的种子整齐地存起来',
+        description: '给庭院添个种子粮仓',
     },
     {
         id: 'dew-pond',
@@ -179,7 +183,7 @@ export const SKINS = [
     },
 ];
 
-export function freshProfile(): Profile {
+export function freshProfile(now = Date.now()): Profile {
     return {
         catalogVersion: 4,
         unlocked: 0,
@@ -193,12 +197,13 @@ export function freshProfile(): Profile {
         owned: ['sand'],
         nest: 'sand',
         courtyard: freshCourtyard(),
+        pets: freshPets(now),
         best: [],
     };
 }
 
-export function readProfile(raw: string | null, levelCount: number): Profile {
-    const base = freshProfile();
+export function readProfile(raw: string | null, levelCount: number, now = Date.now()): Profile {
+    const base = freshProfile(now);
     if (!raw) return base;
     try {
         const profile = JSON.parse(raw);
@@ -248,6 +253,29 @@ export function readProfile(raw: string | null, levelCount: number): Profile {
                 ]),
             ) as string[];
         if (base.owned.includes(profile.nest)) base.nest = profile.nest;
+        if (profile.pets && Array.isArray(profile.pets.residents)) {
+            const queen = profile.pets.residents.find(
+                (resident: { id: number } | null) => resident?.id === 0,
+            );
+            if (
+                queen &&
+                typeof queen.name === 'string' &&
+                Number.isSafeInteger(queen.fedUntil) &&
+                queen.fedUntil >= 0 &&
+                typeof queen.rationDay === 'string'
+            ) {
+                const { name, fedUntil, rationDay } = queen;
+                base.pets.residents[0] = {
+                    id: 0,
+                    name,
+                    fedUntil,
+                    rationDay,
+                    care: readPetCare(queen.care, now),
+                };
+            }
+            if (Number.isSafeInteger(profile.pets.melons) && profile.pets.melons >= 0)
+                base.pets.melons = profile.pets.melons;
+        }
         if (profile.courtyard && Array.isArray(profile.courtyard.owned)) {
             base.courtyard.owned = Array.from(
                 new Set<string>(

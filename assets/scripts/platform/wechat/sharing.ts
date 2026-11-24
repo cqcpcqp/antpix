@@ -8,6 +8,15 @@ type WechatSharing = {
     offShareTimeline?(handler: ShareHandler): void;
 };
 
+export function shareCourtyard(): boolean {
+    const wxApi = (
+        globalThis as unknown as { wx?: { shareAppMessage?: (content: ShareContent) => void } }
+    ).wx;
+    if (!wxApi?.shareAppMessage) return false;
+    wxApi.shareAppMessage({ title: '快来看看我的生态蚂蚁窝' });
+    return true;
+}
+
 /** Owns native menu sharing; scene teardown must release both SDK subscriptions. */
 export function initializeWechatSharing(): () => void {
     const wxApi = (globalThis as unknown as { wx?: WechatSharing }).wx;

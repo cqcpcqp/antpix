@@ -1,4 +1,6 @@
 import { SpriteFrame, Texture2D } from 'cc';
+import type { sp } from 'cc';
+import type { ResidentArtwork } from '../features/courtyard/residentArtwork';
 
 /** Retains textures and sprite frames for the component lifetime. */
 export class GameAssets {
@@ -18,13 +20,9 @@ export class GameAssets {
 
     homeActionTextures: Texture2D[] = [];
 
-    residentFrames: SpriteFrame[] = [];
+    residentArtwork: ResidentArtwork | null = null;
 
-    residentTexture: Texture2D | null = null;
-
-    residentDoorFrame: SpriteFrame | null = null;
-
-    residentDoorTexture: Texture2D | null = null;
+    residentSkeleton: sp.SkeletonData | undefined;
 
     furnishingFrames = new Map<string, SpriteFrame>();
 

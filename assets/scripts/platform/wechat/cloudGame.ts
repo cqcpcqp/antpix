@@ -27,6 +27,13 @@ export interface WorldBoard {
     hasNext: boolean;
 }
 type Failure = { ok: false; code: string; message: string };
+
+function requirePetProfile(state: CloudState): CloudState {
+    if (!state.profile.pets?.residents[0]?.care)
+        throw new CloudGameError('VERSION', '云存档服务需要更新');
+    return state;
+}
+
 type Request = {
     action: string;
     catalogVersion: number;
@@ -97,10 +104,9 @@ export class CloudGame {
         return result;
     }
     async login(): Promise<CloudState> {
-        const state = await this.call<CloudState>({
-            action: 'login',
-            catalogVersion: CATALOG_VERSION,
-        });
+        const state = requirePetProfile(
+            await this.call<CloudState>({ action: 'login', catalogVersion: CATALOG_VERSION }),
+        );
         this.userId = state.output.userId!;
         const pending = this.storage.getItem(this.key());
         if (pending) {
@@ -146,12 +152,14 @@ export class CloudGame {
                 this.storage.removeItem(this.key());
         };
         try {
-            const state = await this.call<CloudState>(request);
+            const state = requirePetProfile(
+                await this.call<CloudState>(request).catch((error: unknown) => {
+                    if (error instanceof CloudGameError) clearOwnRequest();
+                    throw error;
+                }),
+            );
             clearOwnRequest();
             return state;
-        } catch (error) {
-            if (error instanceof CloudGameError) clearOwnRequest();
-            throw error;
         } finally {
             this.busy = false;
         }

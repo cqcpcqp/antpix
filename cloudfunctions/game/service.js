@@ -10,6 +10,27 @@ const {
     COURTYARD_SLOTS,
 } = require('./profile');
 const { levelCount, levels } = require('./catalog.json');
+const { petAction, freshPets, readPetCare } = require('./pets');
+
+// Migrate stored player documents before any profile is returned or mutated.
+function upgradePets(profile, now) {
+    if (!profile.pets) {
+        profile.pets = freshPets(now);
+        return true;
+    }
+    const { residents } = profile.pets;
+    const queen = residents.find((resident) => resident.id === 0);
+    if (residents.length === 1 && queen?.care && Object.keys(queen).length === 5) return false;
+    if (queen) {
+        const { name, fedUntil, rationDay } = queen;
+        profile.pets.residents = [
+            { id: 0, name, fedUntil, rationDay, care: readPetCare(queen.care, now) },
+        ];
+    } else {
+        profile.pets.residents = freshPets(now).residents;
+    }
+    return true;
+}
 
 const APP_ID = 'wxd8e27ad9cd0289df';
 const dayAt = (now) => {
@@ -74,7 +95,7 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                 if (event.action === 'login') {
                     if (!user) {
                         user = {
-                            profile: freshProfile(),
+                            profile: freshProfile(now),
                             player: '蚂蚁' + uuid().replace(/-/g, '').slice(0, 8),
                             identity: null,
                             identityConsentVersion: 1,
@@ -99,9 +120,11 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                         user.identityConsentVersion = 1;
                     }
                     const courtyardUpgraded = upgradeCourtyard(user.profile);
+                    const petsUpgraded = upgradePets(user.profile, now);
                     if (
                         unlockAppendedLevels(user.profile, levelCount) ||
                         courtyardUpgraded ||
+                        petsUpgraded ||
                         identityUpgraded
                     )
                         await tx.set('players', uid, user);
@@ -113,7 +136,9 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                     'VERSION',
                     '存档版本需要升级',
                 );
-                if (upgradeCourtyard(user.profile)) await tx.set('players', uid, user);
+                const courtyardUpgraded = upgradeCourtyard(user.profile);
+                if (upgradePets(user.profile, now) || courtyardUpgraded)
+                    await tx.set('players', uid, user);
                 requireRule(
                     typeof event.requestId === 'string' &&
                         /^[a-zA-Z0-9_-]{16,100}$/.test(event.requestId),
@@ -129,6 +154,18 @@ function createService(store, clock = Date.now, uuid = randomUUID) {
                 }
                 const output = {};
                 switch (event.action) {
+                    case 'pet': {
+                        const error = petAction(
+                            user.profile,
+                            event.operation,
+                            event.petId,
+                            event.value,
+                            now,
+                            dayAt(now),
+                        );
+                        requireRule(!error, 'PET', error);
+                        break;
+                    }
                     case 'identity': {
                         requireRule(event.consentVersion === 1, 'INPUT', '请重新授权微信头像昵称');
                         const cleared = event.nickname === null && event.avatarUrl === null;

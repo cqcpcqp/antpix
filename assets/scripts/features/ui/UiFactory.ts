@@ -234,6 +234,29 @@ export class UiFactory {
         return button;
     }
 
+    shareButton(parent: Node, x: number, y: number, callback: () => void) {
+        const size = this.game.lifecycle.touchSize;
+        const button = this.node2d('Share courtyard', parent, x, y, size, size);
+        const art = button.addComponent(Graphics);
+        islandPanel(art, 0, 0, 76, 68, PAPER);
+        art.strokeColor = color(GREEN);
+        art.lineWidth = 6;
+        art.moveTo(17, 15);
+        art.lineTo(-16, 0);
+        art.lineTo(17, -15);
+        art.stroke();
+        art.fillColor = color(GREEN);
+        for (const [px, py] of [
+            [17, 15],
+            [-16, 0],
+            [17, -15],
+        ])
+            art.circle(px, py, 7);
+        art.fill();
+        this.homeIconPress(button, callback);
+        return button;
+    }
+
     private homeIconPress(button: Node, callback: () => void) {
         button.on(Node.EventType.TOUCH_START, () => button.setScale(0.94, 0.94, 1));
         button.on(Node.EventType.TOUCH_CANCEL, () => button.setScale(1, 1, 1));

@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { PET_HOUR, petAction, petVitals } from '../assets/scripts/domain/profile/pets.ts';
 import {
   freshProfile,
   readProfile,
@@ -8,6 +9,26 @@ import {
   buyOrEquip,
   recordWin,
 } from '../assets/scripts/domain/profile/profile.ts';
+
+test('offline care respects the hunger grace period, recovery and the daily mood cap', () => {
+  const profile = freshProfile(0);
+  const [pet] = profile.pets.residents;
+  const hour = (hours) => hours * PET_HOUR;
+  assert.equal(petVitals(pet, hour(86)).health, 100);
+  assert.equal(petVitals(pet, hour(87)).health, 99);
+  assert.equal(petVitals(pet, hour(240)).health, 60);
+  assert.equal(petAction(profile, 'feed', 0, 'ration', hour(240), 'day-1'), '');
+  assert.deepEqual(petVitals(pet, hour(242)), { health: 62, satiety: 2200 / 72, mood: 64 });
+  for (let i = 0; i < 4; i++)
+    assert.equal(petAction(profile, 'pat', 0, '', hour(242), 'day-1'), '');
+  assert.equal(petVitals(pet, hour(242)).mood, 88);
+  const restored = readProfile(JSON.stringify(profile), 6, hour(248));
+  const [savedPet] = restored.pets.residents;
+  assert.equal(petVitals(savedPet, hour(248)).mood, 87);
+  assert.equal(petVitals(savedPet, hour(248)).health, 68);
+  assert.equal(petAction(restored, 'pat', 0, '', hour(248), 'day-2'), '');
+  assert.equal(petVitals(savedPet, hour(248)).mood, 95);
+});
 test('existing save upgrades without losing progress', () => {
   const p = readProfile(
     JSON.stringify({
@@ -82,7 +103,7 @@ test('damaged local fields cannot grant invalid skins or negative coins', () => 
   assert.deepEqual(restored.owned, ['sand']);
   assert.equal(restored.nest, 'sand');
   assert.deepEqual(restored.best, []);
-  assert.deepEqual(readProfile('broken', 6), freshProfile());
+  assert.deepEqual(readProfile('broken', 6, 0), freshProfile(0));
 });
 
 test('replacing the catalog clears artwork identities but preserves wallet and skins', () => {
@@ -155,4 +176,27 @@ test('100-level extension unlocks level 11 for an old full-clear save and preser
   assert.equal(restored.unlocked, 99);
   assert.equal(restored.completed.length, 100);
   assert.equal(readProfile(JSON.stringify(restored), 100).unlocked, 99);
+});
+
+test('local migration drops old companions and keeps Lili, food and coins', () => {
+  const profile = freshProfile(0);
+  const queen = { id: 0, name: '小栗', fedUntil: 1234, rationDay: '2026-11-23' };
+  const saved = {
+    ...profile,
+    coins: 49,
+    pets: {
+      residents: [
+        { ...queen, jobDay: '', returnsAt: 0 },
+        { id: 1, name: '工蚁', returnsAt: 5678 },
+        { id: 2, name: '兵蚁', returnsAt: 0 },
+      ],
+      melons: 2,
+    },
+  };
+  const restored = readProfile(JSON.stringify(saved), 8, 2000);
+  assert.deepEqual(restored.pets, {
+    residents: [{ ...queen, care: freshProfile(2000).pets.residents[0].care }],
+    melons: 2,
+  });
+  assert.equal(restored.coins, 49);
 });

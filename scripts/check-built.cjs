@@ -59,6 +59,7 @@ for (const name of ['play', 'play-start', 'play-resume', 'album', 'shop', 'rank'
 for (const [name, extension] of [
   ['garden', 'jpg'],
   ['furnishings', 'png'],
+  ['resident-rig', 'png'],
 ]) {
   const path = Object.values(bundle.paths).find((path) => path[0] === `home/${name}/texture`);
   assert.ok(path, `courtyard texture ${name} must be bundled`);
@@ -71,6 +72,10 @@ for (const [name, extension] of [
     fs.readFileSync(file),
   );
 }
+const homeSkeletons = Object.values(bundle.paths)
+  .filter(([path, type]) => path.startsWith('home/') && bundle.types[type] === 'sp.SkeletonData')
+  .map(([path]) => path);
+assert.deepEqual(homeSkeletons, ['home/lili'], 'Lili is the only bundled home skeleton');
 const assertContact = require('./assert-contact.cjs');
 const load = require('./load-built.cjs')({ cclegacy: { _RF: { push() {}, pop() {} } } });
 const { GardenModel } = load('chunks:///_virtual/model.ts');

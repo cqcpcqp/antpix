@@ -1,8 +1,10 @@
 import { Graphics, Node, Sprite } from 'cc';
+import type { Label } from 'cc';
 import type { GardenRuntime } from '../../app/GardenRuntime';
 import { color, GREEN, INK, MUTED, PAPER } from '../../presentation/gameVisuals';
 import { claimRewards, rewardAmount } from '../../domain/profile/profile';
 import { islandPanel } from '../../presentation/islandTheme';
+import { shareCourtyard } from '../../platform/wechat/sharing';
 
 /** Owns home screen nodes and artwork interactions. */
 export class HomeScreen {
@@ -27,9 +29,12 @@ export class HomeScreen {
             | 'cloudStatus'
             | 'recommendation'
             | 'gameClub'
+            | 'pets'
+            | 'host'
         >,
     ) {}
     hideHome() {
+        this.game.pets.close();
         this.game.identity.detach();
         if (this.home) {
             this.home.active = false;
@@ -110,6 +115,9 @@ export class HomeScreen {
                 : this.game.profile.save.selected;
         const n = this.game.ui.node2d('Home', this.game.lifecycle.root);
         this.home = n;
+        n.on(Node.EventType.TOUCH_START, (event: { target: Node }) => {
+            if (event.target === n) this.game.pets.close();
+        });
         const background = this.game.ui.graphics(n, 'Home background');
         this.game.ui.box(
             background,
@@ -136,7 +144,7 @@ export class HomeScreen {
         this.game.courtyard.refreshCourtyard();
         const g = this.game.ui.graphics(n, 'Home controls');
         this.game.ui.box(g, 236, 633, 214, 60, 30, PAPER);
-        this.game.ui.text(
+        this.coinLabel = this.game.ui.text(
             n,
             this.game.cloud.cloudMode && !this.game.cloud.cloudReady
                 ? '金币  …'
@@ -146,7 +154,7 @@ export class HomeScreen {
             25,
             INK,
             195,
-        ).isBold = false;
+        );
         this.game.ui.gearButton(n, -306, 633);
         const actions: Node[] = [];
         // Only visible actions occupy a row, including immediately after recommendation is clicked.
@@ -176,6 +184,13 @@ export class HomeScreen {
         actions.push(
             this.game.ui.favoriteButton(n, -306, 0, () => this.favoriteGuide()),
             this.game.ui.gameClubButton(n, -306, 0, () => void this.openGameClub()),
+            this.game.ui.shareButton(n, -306, 0, () => {
+                this.game.pets.cheer();
+                this.game.host.scheduleOnce(() => {
+                    if (this.home !== n || !n.isValid) return;
+                    if (!shareCourtyard()) this.game.notices.notify('分享', '请在微信小游戏中分享');
+                }, 0.32);
+            }),
         );
         layoutActions();
         this.homeTitle = this.game.ui
@@ -230,7 +245,7 @@ export class HomeScreen {
             } else this.game.session.startLevel(target);
         });
         this.homeTile(n, '关卡', -220, 'album', () => this.game.album.levelPicker());
-        this.homeTile(n, '装饰', 0, 'shop', () => this.game.shop.shop());
+        this.homeTile(n, '商店', 0, 'shop', () => this.openShop());
         this.homeTile(n, '排行榜', 220, 'rank', () => this.game.identity.open());
         const rewards = rewardAmount(this.game.profile.save, this.game.cloud.rewardDay());
         this.homeRewardButton = null;
@@ -325,6 +340,22 @@ export class HomeScreen {
     home: Node | null = null;
 
     homeScene: Sprite | null = null;
+    private coinLabel: Label | null = null;
+
+    refreshHomeCoins() {
+        if (this.coinLabel?.isValid)
+            this.coinLabel.string = `金币  ${this.game.profile.save.coins}`;
+    }
+
+    private openShop() {
+        this.game.pets.close();
+        const panel = this.game.overlays.openModal('商店', '', 330);
+        this.game.ui.button(panel, '装饰', -138, 0, 230, 72, PAPER, () => this.game.shop.shop());
+        this.game.ui.button(panel, '食物', 138, 0, 230, 72, PAPER, () => this.game.pets.shop());
+        this.game.ui.button(panel, '返回', 0, -94, 220, 54, PAPER, () =>
+            this.game.overlays.closeModal(),
+        );
+    }
 
     homeTitle: Sprite | null = null;
 

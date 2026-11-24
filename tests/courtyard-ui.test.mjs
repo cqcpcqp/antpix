@@ -277,10 +277,6 @@ test('cloud purchase has no optimistic spend and ignores additional taps while p
 
 test('homepage life survives decoration refresh and pauses behind overlays or in background', () => {
   const game = makeGame();
-  const texture = new Texture2D();
-  texture.width = 512;
-  texture.height = 384;
-  resourceLoads.get('home/resident/texture')(null, texture);
   const life = game.runtime.courtyard.courtyardLife;
   for (let i = 0; i < 180; i++) game.update(1 / 60);
   assert.notEqual(life.action, 'inside');
@@ -302,56 +298,56 @@ test('homepage life survives decoration refresh and pauses behind overlays or in
   game.onDestroy();
 });
 
-test('three residents and night lighting stay below home controls and pause together', () => {
+test('Lili and night lighting stay below home controls and pause together', () => {
   const game = makeGame();
-  const texture = new Texture2D();
-  texture.width = 512;
-  texture.height = 384;
-  resourceLoads.get('home/resident/texture')(null, texture);
-  game.runtime.courtyard.courtyardHour = () => 22;
-  game.runtime.profile.save.courtyard.equipped.garden = 'lantern-garden';
-  game.runtime.courtyard.refreshCourtyard();
-  assert.equal(game.runtime.courtyard.courtyardResidents.length, 3);
-  for (const view of game.runtime.courtyard.courtyardResidents)
-    assert.equal(view.root.parent, game.runtime.courtyard.courtyardNode);
+  const { courtyard, profile, shop, overlays } = game.runtime;
+  profile.save.completed = Array.from({ length: 8 }, (_, index) => index);
+  profile.save.courtyard.equipped.garden = 'lantern-garden';
+  courtyard.courtyardHour = () => 22;
+  courtyard.refreshCourtyard();
+  assert.equal(courtyard.courtyardResident.root.parent.parent, courtyard.courtyardNode);
+  const life = courtyard.courtyardLife;
   for (let i = 0; i < 120; i++) game.update(1 / 60);
-  assert.equal(game.runtime.courtyard.courtyardColony.night, true);
-  const before = game.runtime.courtyard.courtyardColony.residents.map((r) => [r.x, r.y, r.elapsed]);
-  game.runtime.shop.shop('living', 'dew-pond');
+  assert.equal(courtyard.courtyardColony.night, true);
+  const anchor = () => [life.x, life.y, life.elapsed];
+  const before = anchor();
+  shop.shop('living', 'dew-pond');
   for (let i = 0; i < 60; i++) game.update(1 / 60);
-  assert.deepEqual(
-    game.runtime.courtyard.courtyardColony.residents.map((r) => [r.x, r.y, r.elapsed]),
-    before,
-  );
-  assert.ok(game.runtime.courtyard.courtyardResidents.every((v) => !v.root.active));
-  game.runtime.overlays.closeModal();
+  assert.deepEqual(anchor(), before);
+  assert.equal(courtyard.courtyardResident.root.active, false);
+  overlays.closeModal();
+  for (let i = 0; i < 720; i++) game.update(1 / 60);
+  const outside = courtyard.courtyardResident.root.parent;
+  assert.equal(outside.name, 'Residents outside');
+  assert.deepEqual(outside.children, [courtyard.courtyardResident.root]);
+  assert.ok(courtyard.courtyardResident.root.active);
+  courtyard.courtyardHour = () => 12;
   game.update(1 / 60);
-  assert.ok(game.runtime.courtyard.courtyardResidents.every((v) => v.root.active));
-  game.runtime.courtyard.courtyardHour = () => 12;
-  game.update(1 / 60);
-  assert.equal(game.runtime.courtyard.courtyardColony.night, false);
+  assert.equal(courtyard.courtyardColony.night, false);
   game.onDestroy();
 });
 
-test('different-sized residents share the same ground anchor as their shadow', () => {
+test('a hungry Lili keeps walking with her shadow on the same ground anchor', () => {
   const game = makeGame();
-  const texture = new Texture2D();
-  texture.width = 512;
-  texture.height = 384;
-  resourceLoads.get('home/resident/texture')(null, texture);
-  game.runtime.courtyard.courtyardColony.residents.forEach((r, i) => {
-    r.x = 450 + i * 60;
-    r.y = 870;
-    r.action = 'rest';
-    r.activity = 'sun';
-    r.elapsed = 0;
-    const view = game.runtime.courtyard.courtyardResidents[i];
-    view.render(r, false);
-    const body = view.root.children.find((n) => n.name === 'Resident pose');
-    const shadow = view.root.children.find((n) => n.name === 'Resident ground shadow');
-    const height = body.getComponent(cc.UITransform).height;
-    assert.ok(Math.abs(shadow.position.y + (height * 58) / 128) < 1e-8);
-    assert.ok(Math.abs(view.root.position.y + shadow.position.y - (768 - r.y) * view.scale) < 1e-8);
-  });
+  const { courtyard, profile } = game.runtime;
+  profile.save.pets.residents[0].fedUntil = 0;
+  const r = courtyard.courtyardLife;
+  r.x = 450;
+  r.y = 870;
+  r.move('walk', 550, 870);
+  const view = courtyard.courtyardResident;
+  view.render(r, false);
+  const body = view.root.children.find((n) => n.name === 'Resident pose');
+  const shadow = view.root.children.find((n) => n.name === 'Resident ground shadow');
+  assert.ok(view.root.getComponent(cc.UITransform).height / view.scale > 120);
+  const thorax = body.children.find((node) => node.name === 'Thorax joint');
+  const leg = thorax.children.find((node) => node.name === 'Leg 1');
+  const knee = leg.children.find((node) => node.name === 'Leg 1 hinge');
+  const before = view.root.position.x;
+  const firstKnee = knee.angle;
+  for (let i = 0; i < 60; i++) game.update(1 / 60);
+  assert.ok(view.root.position.x > before);
+  assert.notEqual(knee.angle, firstKnee);
+  assert.ok(Math.abs(view.root.position.y + shadow.position.y - (768 - r.y) * view.scale) < 1e-8);
   game.onDestroy();
 });

@@ -13,6 +13,7 @@ exports.rewardAmount = rewardAmount;
 exports.claimRewards = claimRewards;
 exports.buyOrEquip = buyOrEquip;
 exports.recordWin = recordWin;
+const pets_1 = require("./pets");
 exports.COURTYARD_SLOTS = ['entrance', 'path', 'garden', 'living'];
 exports.FURNISHINGS = [
     {
@@ -83,14 +84,14 @@ exports.FURNISHINGS = [
         slot: 'living',
         name: '叶片躺椅',
         price: 350,
-        description: '搬运之后有个歇脚的地方',
+        description: '给栗栗添一个歇脚的地方',
     },
     {
         id: 'seed-pantry',
         slot: 'living',
         name: '种子粮仓',
         price: 850,
-        description: '把收集的种子整齐地存起来',
+        description: '给庭院添个种子粮仓',
     },
     {
         id: 'dew-pond',
@@ -155,7 +156,7 @@ exports.SKINS = [
         light: '#9FBAD8',
     },
 ];
-function freshProfile() {
+function freshProfile(now = Date.now()) {
     return {
         catalogVersion: 4,
         unlocked: 0,
@@ -169,11 +170,12 @@ function freshProfile() {
         owned: ['sand'],
         nest: 'sand',
         courtyard: freshCourtyard(),
+        pets: (0, pets_1.freshPets)(now),
         best: [],
     };
 }
-function readProfile(raw, levelCount) {
-    const base = freshProfile();
+function readProfile(raw, levelCount, now = Date.now()) {
+    const base = freshProfile(now);
     if (!raw)
         return base;
     try {
@@ -217,6 +219,25 @@ function readProfile(raw, levelCount) {
             ]));
         if (base.owned.includes(profile.nest))
             base.nest = profile.nest;
+        if (profile.pets && Array.isArray(profile.pets.residents)) {
+            const queen = profile.pets.residents.find((resident) => resident?.id === 0);
+            if (queen &&
+                typeof queen.name === 'string' &&
+                Number.isSafeInteger(queen.fedUntil) &&
+                queen.fedUntil >= 0 &&
+                typeof queen.rationDay === 'string') {
+                const { name, fedUntil, rationDay } = queen;
+                base.pets.residents[0] = {
+                    id: 0,
+                    name,
+                    fedUntil,
+                    rationDay,
+                    care: (0, pets_1.readPetCare)(queen.care, now),
+                };
+            }
+            if (Number.isSafeInteger(profile.pets.melons) && profile.pets.melons >= 0)
+                base.pets.melons = profile.pets.melons;
+        }
         if (profile.courtyard && Array.isArray(profile.courtyard.owned)) {
             base.courtyard.owned = Array.from(new Set(profile.courtyard.owned.filter((id) => exports.FURNISHINGS.some((item) => item.id === id))));
             for (const slot of exports.COURTYARD_SLOTS) {

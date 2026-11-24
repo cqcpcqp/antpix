@@ -58,7 +58,7 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
       resourceLoads.get(`home/${name}/texture`)(null, texture);
       sources.set(texture, image);
     }
-    for (const name of ['furnishings', 'resident', 'resident-door']) {
+    for (const name of ['furnishings', 'resident-rig']) {
       const image = await loadImage(`assets/resources/home/${name}.png`);
       const texture = new Texture2D();
       texture.width = image.width;
@@ -68,15 +68,8 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
     }
     if (process.env.RESIDENT_PREVIEW) {
       game.runtime.courtyard.courtyardColony.random = () => 0.5;
-      game.runtime.courtyard.courtyardColony.residents.forEach((r) => {
-        r.random = () => 0.5;
-      });
-      const furniture =
-        process.env.RESIDENT_PREVIEW === 'pond'
-          ? 'dew-pond'
-          : process.env.RESIDENT_PREVIEW === 'seed'
-            ? 'seed-pantry'
-            : 'leaf-bed';
+      game.runtime.courtyard.courtyardLife.random = () => 0.5;
+      const furniture = process.env.RESIDENT_PREVIEW === 'pond' ? 'dew-pond' : 'leaf-bed';
       game.runtime.profile.save.courtyard.equipped.living = furniture;
       game.runtime.profile.save.courtyard.owned.push(furniture);
       game.runtime.courtyard.courtyardHour = () =>
@@ -116,7 +109,9 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
               p.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
               ctx.closePath();
             }
-            if (command.stroke) {
+            if (node.getComponent(cc.Mask)?.type === cc.Mask.Type.GRAPHICS_STENCIL) {
+              ctx.clip();
+            } else if (command.stroke) {
               ctx.strokeStyle = css(command.color);
               ctx.lineWidth = command.stroke;
               ctx.stroke();
@@ -199,6 +194,81 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
         writeFileSync(
           `temp/previews/resident-${process.env.RESIDENT_PREVIEW}/${String(frame).padStart(4, '0')}.png`,
           canvas.toBuffer('image/png'),
+        );
+      }
+    }
+    if (process.env.QUEEN_PREVIEW && width === 390) {
+      const courtyard = game.runtime.courtyard;
+      const queen = courtyard.courtyardResident;
+      const life = courtyard.courtyardLife;
+      life.x = 513;
+      life.y = 834;
+      life.facing = 1;
+      for (const pose of ['idle', 'walk', 'rest', 'pet', 'eat', 'cheer', 'interaction', 'care']) {
+        life.stay(pose === 'walk' || pose === 'rest' ? pose : 'rest', 3);
+        life.stride = 0.32;
+        queen.render(life, false);
+        if (pose === 'pet' || pose === 'cheer') queen.react(pose, 0.85, 1.35);
+        if (pose === 'eat') queen.react('eat', 2.05, 3.2, 'melon');
+        if (pose === 'interaction' || pose === 'care') {
+          if (pose === 'interaction') queen.root.emit('end');
+          for (let i = 0; i < 16; i++) game.update(1 / 60);
+          if (pose === 'care') {
+            const interactions = courtyard.courtyardNode.children.find(
+              (node) => node.name === 'Resident interactions',
+            );
+            const arc = interactions.children.find(
+              (node) => node.active && node.name === 'Resident arc',
+            );
+            arc.children.find((node) => node.name === 'Resident info').emit('end');
+          }
+        }
+        ctx.save();
+        ctx.resetTransform();
+        ctx.clearRect(0, 0, width, height);
+        ctx.restore();
+        draw(game.runtime.home.home);
+        writeFileSync(`temp/previews/queen-${pose}.png`, canvas.toBuffer('image/png'));
+      }
+    }
+    if (process.env.MEAL_PREVIEW && width === 390) {
+      const { courtyard, profile, pets } = game.runtime;
+      pets.close();
+      profile.save.pets.melons = 2;
+      profile.save.pets.residents[0].fedUntil = Date.now() + 30 * 3600000;
+      const life = courtyard.courtyardLife;
+      life.x = 515;
+      life.y = 834;
+      life.stay('rest', 20);
+      game.update(1 / 60);
+      const renderFrame = () => {
+        ctx.save();
+        ctx.resetTransform();
+        ctx.clearRect(0, 0, width, height);
+        ctx.restore();
+        draw(game.runtime.home.home);
+        return canvas.toBuffer('image/png');
+      };
+      const layer = courtyard.courtyardNode.children.find(
+        (child) => child.name === 'Resident interactions',
+      );
+      const activeArc = () =>
+        layer.children.findLast((child) => child.active && child.name === 'Resident arc');
+      courtyard.courtyardResident.root.emit('end');
+      for (let i = 0; i < 16; i++) game.update(1 / 60);
+      activeArc()
+        .children.find((child) => child.name === 'Resident feed')
+        .emit('end');
+      for (let i = 0; i < 16; i++) game.update(1 / 60);
+      activeArc()
+        .children.find((child) => child.name === 'Resident melon')
+        .emit('end');
+      mkdirSync('temp/previews/pet-meal', { recursive: true });
+      for (let frame = 0; frame < 48; frame++) {
+        for (let tick = 0; tick < 5; tick++) game.update(1 / 60);
+        writeFileSync(
+          `temp/previews/pet-meal/${String(frame).padStart(3, '0')}.png`,
+          renderFrame(),
         );
       }
     }

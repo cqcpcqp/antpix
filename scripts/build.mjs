@@ -75,6 +75,7 @@ if (result.status === 0 || result.status === 36) {
   for (const pkg of packages)
     console.log(`微信分包 ${pkg.name}：${(pkg.bytes / 1024).toFixed(1)} KiB`);
   console.log(`微信总包：${(totalBytes / 1024).toFixed(1)} / 30720 KiB`);
+  if (process.env.ANTPIX_PET_TRIAL === '1') await import('./package-pet-trial.mjs');
 }
 // Verify the emitted code, since Cocos compilation can change iterable semantics.
 if (result.status === 0 || result.status === 36) {
@@ -113,6 +114,7 @@ if (result.status === 0 || result.status === 36) {
       'tests/startup.test.mjs',
       'tests/startup-package.test.mjs',
       'tests/courtyard-ui.test.mjs',
+      'tests/resident-artwork.test.mjs',
       'tests/interaction-polish.test.mjs',
     ],
     { stdio: 'inherit', env: { ...process.env, CHECK_BUILT: '1' } },

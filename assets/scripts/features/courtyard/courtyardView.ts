@@ -1,4 +1,5 @@
-import { Label, Layers, Node, Sprite, SpriteFrame, UITransform } from 'cc';
+import { Graphics, Label, Layers, Mask, Node, Sprite, SpriteFrame, UITransform } from 'cc';
+import { DOORSTEP_Y } from '../../domain/courtyard/courtyardLife';
 import type { Courtyard, CourtyardSlot, Furnishing, Profile } from '../../domain/profile/profile';
 import { COURTYARD_SLOTS, FURNISHINGS } from '../../domain/profile/profile';
 
@@ -15,6 +16,46 @@ const PLACEMENTS: Record<CourtyardSlot, readonly [number, number, number, number
     garden: [290, 736, 220, 200],
     living: [735, 747, 230, 190],
 };
+
+/** The aperture follows the inner arch in garden.jpg, in the same 1024 × 1536 coordinates. */
+export function residentLayers(parent: Node, scale: number) {
+    const doorway = new Node('Resident doorway');
+    doorway.layer = parent.layer;
+    doorway.parent = parent;
+    doorway.setSiblingIndex(0);
+    doorway.addComponent(UITransform).setContentSize(1024 * scale, 1536 * scale);
+    doorway.addComponent(Mask).type = Mask.Type.GRAPHICS_STENCIL;
+    const opening = doorway.getComponent(Graphics)!;
+    opening.clear();
+    const outline = [
+        [453, DOORSTEP_Y],
+        [453, 679],
+        [460, 655],
+        [471, 631],
+        [489, 611],
+        [502, 602],
+        [515, 599],
+        [532, 602],
+        [549, 613],
+        [568, 639],
+        [577, 663],
+        [578, 686],
+        [578, DOORSTEP_Y],
+    ];
+    outline.forEach(([x, y], index) => {
+        const drawX = (x - 512) * scale;
+        const drawY = (768 - y) * scale;
+        if (index === 0) opening.moveTo(drawX, drawY);
+        else opening.lineTo(drawX, drawY);
+    });
+    opening.close();
+    opening.fill();
+
+    const outside = new Node('Residents outside');
+    outside.layer = parent.layer;
+    outside.parent = parent;
+    return { doorway, outside };
+}
 
 export function courtyardPreviewOffset(
     slot: CourtyardSlot,

@@ -1,109 +1,153 @@
-import { Color, Graphics, Layers, Node, Sprite, SpriteFrame, UIOpacity, UITransform } from 'cc';
-import { CourtyardLife } from '../../domain/courtyard/courtyardLife';
+import { Color, Graphics, Node, UIOpacity, UITransform } from 'cc';
+import type { CourtyardLife } from '../../domain/courtyard/courtyardLife';
+import { DOORSTEP_Y } from '../../domain/courtyard/courtyardLife';
+import type { sp } from 'cc';
+import { ResidentSpineRig } from './residentSpineRig';
+import type { ResidentArtwork } from './residentArtwork';
+import type { PetFood, ResidentPose } from './residentMotion';
+import { ResidentRig } from './residentRig';
 
-/** View is disposable when decorations refresh; the life simulation is not. */
+const moving = ['emerge', 'walk', 'return', 'enter'];
+
+function leisurePose(life: CourtyardLife): ResidentPose {
+    if (moving.includes(life.action)) return 'walk';
+    if (!['sit', 'rest', 'rise'].includes(life.action)) return 'idle';
+    if (life.activity === 'hungry' || life.activity === 'happy') {
+        if (life.action !== 'rest') return 'idle';
+        return life.activity === 'hungry' ? 'hungry' : 'cheer';
+    }
+    switch (life.activity) {
+        case 'look':
+        case 'mirror':
+            return 'look';
+        case 'groom':
+            return 'groom';
+        case 'drink':
+            return 'sip';
+        case 'lantern':
+            return 'cheer';
+        default:
+            return 'rest';
+    }
+}
+
+/** Owns the ground anchor and maps courtyard actions to the resident's joint hierarchy. */
 export class CourtyardResident {
     readonly root: Node;
-    private body: Node;
-    private footHeight: number;
-    private sprite: Sprite;
-    private opacity: UIOpacity;
-    private shadow: Node;
-    private accessory: Node;
-    private reflection: Node;
-    private reflectionSprite: Sprite;
-    private reflectionOpacity: UIOpacity;
+    readonly artScale: number;
+    private readonly rig: ResidentRig | ResidentSpineRig;
+    private readonly reflection: ResidentRig | ResidentSpineRig;
+    private readonly opacity: UIOpacity;
+    private readonly shadow: Node;
+    readonly footHeight: number;
+    private clock = 0;
+    private gait = 0;
+
     constructor(
-        parent: Node,
-        private frames: SpriteFrame[],
-        private scale: number,
-        private identity = 0,
+        private readonly layers: { doorway: Node; outside: Node },
+        private readonly scale: number,
+        artwork: ResidentArtwork | null = null,
+        skeleton: sp.SkeletonData | undefined = undefined,
     ) {
+        this.artScale = (artwork ? 1.45 : 1.2) * scale;
+        this.footHeight = 51 * this.artScale;
         this.root = new Node('Courtyard resident');
-        this.root.layer = Layers.Enum.UI_2D;
-        this.root.parent = parent;
-        this.root.addComponent(UITransform);
+        this.root.layer = layers.outside.layer;
+        this.root.parent = layers.outside;
+        this.root
+            .addComponent(UITransform)
+            .setContentSize(124 * this.artScale, 126 * this.artScale);
         this.opacity = this.root.addComponent(UIOpacity);
         this.shadow = new Node('Resident ground shadow');
-        this.shadow.layer = Layers.Enum.UI_2D;
+        this.shadow.layer = this.root.layer;
         this.shadow.parent = this.root;
         const shadowArt = this.shadow.addComponent(Graphics);
-        shadowArt.fillColor = new Color(65, 49, 24, 38);
-        shadowArt.ellipse(0, 0, 20 * scale, 5 * scale);
+        shadowArt.ellipse(0, 0, 29 * this.artScale, 6 * this.artScale);
+        shadowArt.fillColor = new Color(65, 49, 24, 45);
         shadowArt.fill();
-        this.body = new Node('Resident pose');
-        this.body.layer = Layers.Enum.UI_2D;
-        this.body.parent = this.root;
-        const size = [88, 78, 82][identity] * scale;
-        // Atlas feet are aligned at row 122 of a 128px cell.
-        this.footHeight = ((size / scale) * (122 - 64)) / 128;
-        this.body.addComponent(UITransform).setContentSize(size, size);
-        this.sprite = this.body.addComponent(Sprite);
-        this.sprite.sizeMode = Sprite.SizeMode.CUSTOM;
-        this.accessory = new Node('Resident personal scarf');
-        this.accessory.layer = Layers.Enum.UI_2D;
-        this.accessory.parent = this.body;
-        const accessory = this.accessory.addComponent(Graphics);
-        accessory.fillColor = new Color(255, 235, 178, 255);
-        accessory.moveTo(-9 * scale, -2 * scale);
-        accessory.lineTo(8 * scale, -4 * scale);
-        accessory.lineTo(-8 * scale, -13 * scale);
-        accessory.close();
-        accessory.fill();
-        this.reflection = new Node('Resident water reflection');
-        this.reflection.layer = Layers.Enum.UI_2D;
-        this.reflection.parent = parent;
-        this.reflection.addComponent(UITransform).setContentSize(size * 0.65, size * 0.45);
-        this.reflectionOpacity = this.reflection.addComponent(UIOpacity);
-        this.reflectionOpacity.opacity = 55;
-        this.reflectionSprite = this.reflection.addComponent(Sprite);
-        this.reflectionSprite.sizeMode = Sprite.SizeMode.CUSTOM;
-        this.reflectionSprite.color = new Color(90, 155, 165, 255);
+        const createRig = () =>
+            skeleton
+                ? new ResidentSpineRig(this.root, skeleton, artwork)
+                : new ResidentRig(this.root, artwork);
+        this.rig = createRig();
+        this.reflection = createRig();
+        this.reflection.root.name = 'Resident water reflection';
+        this.reflection.root.setSiblingIndex(0);
+        this.reflection.root.addComponent(UIOpacity).opacity = 53;
+        this.reflection.root.active = false;
     }
-    render(life: CourtyardLife, hidden: boolean) {
-        this.root.active = !hidden && this.frames.length === 12;
-        this.reflection.active = false;
+
+    get canInteract() {
+        return this.root.active && this.root.parent === this.layers.outside;
+    }
+
+    advanceRig(dt: number) {
         if (!this.root.active) return;
-        this.sprite.spriteFrame = this.frames[life.frame];
-        this.opacity.opacity = Math.round(255 * life.opacity);
-        const resting = life.action === 'rest';
-        const sitting = life.chair && ['sit', 'rest', 'rise'].includes(life.action);
-        const lift = life.seatProgress * 43;
-        const bob =
-            (life.frame < 4 || life.action === 'carry') && !life.pausedForTraffic
-                ? Math.sin(life.stride * Math.PI * 2) * 1.3
-                : 0;
+        if (this.rig instanceof ResidentSpineRig) this.rig.advance(dt);
+        if (this.reflection instanceof ResidentSpineRig && this.reflection.root.active)
+            this.reflection.advance(dt);
+    }
+
+    render(life: CourtyardLife, hidden: boolean, dt = 1 / 60, held = false) {
+        this.root.active = !hidden && life.opacity > 0;
+        if (!this.root.active) return;
+        const inDoorway = life.y < DOORSTEP_Y;
+        const layer = inDoorway ? this.layers.doorway : this.layers.outside;
+        if (this.root.parent !== layer) this.root.parent = layer;
+        const depth = Math.max(0, Math.min(1, (life.y - DOORSTEP_Y) / 65));
+        const perspective = 0.64 + 0.36 * depth * depth * (3 - 2 * depth);
+        const footHeight = this.footHeight * perspective;
+        const lift = life.seatProgress * 43 * this.scale;
+        const groundY = (768 - life.y) * this.scale;
         this.root.setPosition(
-            (life.x + life.avoidX - 512 + lift * 0.8) * this.scale,
-            (768 - life.y - life.avoidY + this.footHeight + lift + bob) * this.scale,
+            (life.x - 512) * this.scale + lift * 0.8,
+            groundY + footHeight + lift,
         );
-        this.shadow.setPosition(0, (-this.footHeight - lift - bob) * this.scale);
-        this.shadow.active = !sitting;
-        this.body.setScale(life.facing, resting ? 1 + Math.sin(life.elapsed * 2) * 0.012 : 1, 1);
-        this.body.angle = resting
-            ? Math.sin(life.elapsed * 1.2) * (life.activity === 'drink' ? 3 : 0.6)
-            : 0;
-        this.accessory.active = this.identity === 1 && [0, 1, 2, 3, 4, 10, 11].includes(life.frame);
-        if (life.action === 'rest' && life.activity === 'mirror') {
-            this.reflection.active = true;
-            this.reflectionSprite.spriteFrame = this.frames[9];
-            this.reflection.setPosition(
-                (life.x - 529) * this.scale,
-                (768 - life.y - 13) * this.scale,
+        this.opacity.opacity = Math.round(255 * life.opacity);
+        this.shadow.setPosition(0, -footHeight - lift);
+        this.shadow.active = !inDoorway && life.seatProgress === 0;
+        const size = this.artScale * perspective;
+        this.rig.root.setScale(size * life.facing, size, 1);
+        const pose = held && moving.includes(life.action) ? 'idle' : leisurePose(life);
+        this.clock += Math.min(0.05, dt);
+        const movingNow = pose === 'walk';
+        this.gait += (Number(movingNow) - this.gait) * (1 - Math.exp(-Math.min(0.05, dt) * 9));
+        const activityProgress =
+            life.action === 'sit'
+                ? life.progress
+                : life.action === 'rise'
+                  ? 1 - life.progress
+                  : life.action === 'rest'
+                    ? 1
+                    : 0;
+        this.rig.animate(
+            pose,
+            this.clock,
+            life.stride,
+            life.seatProgress,
+            activityProgress || (life.action === 'rise' || life.action === 'sit' ? 0 : 1),
+            this.gait,
+            undefined,
+            life.elapsed,
+        );
+        this.reflection.root.active = life.action === 'rest' && life.activity === 'mirror';
+        if (this.reflection.root.active) {
+            this.reflection.root.setPosition(
+                -17 * this.scale,
+                -this.footHeight - 40 * this.artScale,
             );
-            this.reflection.setScale(-1, -1, 1);
+            this.reflection.root.setScale(
+                this.artScale * life.facing * 0.72,
+                -this.artScale * 0.55,
+                1,
+            );
+            this.reflection.animate(pose, this.clock, life.stride, 0, 1, this.gait);
         }
-        const light = Math.round(150 + life.opacity * 105);
-        const tint = [
-            [1, 1, 1],
-            [0.75, 0.75, 0.82],
-            [1, 0.87, 0.75],
-        ][this.identity];
-        this.sprite.color = new Color(
-            Math.round(light * tint[0]),
-            Math.round(light * tint[1]),
-            Math.round(light * tint[2]),
-            255,
-        );
+    }
+
+    react(pose: ResidentPose, remaining: number, duration: number, food?: PetFood) {
+        const strength = Math.min(1, remaining * 5, (duration - remaining) * 7);
+        const elapsed = duration - remaining;
+        this.rig.animate(pose, this.clock + (food ? elapsed : 0), 0, 0, strength, 0, food, elapsed);
     }
 }

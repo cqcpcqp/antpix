@@ -18,8 +18,31 @@ const memory = () => {
     removeItem: (key) => values.delete(key),
   };
 };
+test('old cloud profile schemas are rejected before applying or discarding a pending claim', async () => {
+  const f = fixture();
+  let legacy = true;
+  const storage = memory();
+  const transport = async (request) => {
+    const state = await f.service(request, { APPID, OPENID: 'alice' });
+    if (legacy && state.ok) delete state.profile.pets;
+    return state;
+  };
+  const client = new CloudGame(transport, storage);
+  await assert.rejects(client.login(), { code: 'VERSION' });
+  await assert.rejects(client.mutate('claim'), /Cloud login is required/);
+
+  legacy = false;
+  assert.equal((await client.login()).profile.pets.residents.length, 1);
+  legacy = true;
+  await assert.rejects(client.mutate('claim'), { code: 'VERSION' });
+
+  legacy = false;
+  const resumed = await new CloudGame(transport, storage).login();
+  assert.equal(resumed.output.amount, 30);
+  assert.equal(resumed.profile.coins, 30);
+});
 test('generated server rules match client catalog and assets', () => {
-  assert.deepEqual(generated.freshProfile(), freshProfile());
+  assert.deepEqual(generated.freshProfile(0), freshProfile(0));
   assert.deepEqual(generated.SKINS, SKINS);
   assert.equal(levels.length, LEVEL_COUNT);
   for (let index = 0; index < LEVEL_COUNT; index++) {
@@ -75,6 +98,62 @@ test('progress advances sequentially and ranking timestamps survive replays', as
   assert.ok(next.reachedAt > first.reachedAt);
   const resumed = await f.call('login');
   assert.deepEqual(resumed.profile.completed, [0, 1]);
+});
+test('progress keeps one resident and only Lili can be fed', async () => {
+  const f = fixture();
+  const pet = (operation, petId, value) => f.call('pet', { operation, petId, value });
+  assert.equal((await f.call('login')).profile.pets.residents.length, 1);
+  for (let level = 0; level < 8; level++) {
+    assert.equal((await win(f, level)).profile.pets.residents.length, 1);
+  }
+  assert.equal((await pet('dispatch', 1)).code, 'PET');
+  assert.equal((await pet('claim', 2)).code, 'PET');
+  assert.equal((await pet('feed', 1, 'ration')).code, 'PET');
+  f.advance(73 * 3600000);
+  assert.equal((await pet('feed', 0, 'ration')).ok, true);
+  assert.equal((await pet('feed', 0, 'ration')).code, 'PET');
+  await f.call('claim');
+  const bought = await pet('buy', -1);
+  assert.equal(bought.profile.pets.melons, 1);
+  const fed = await pet('feed', 0, 'melon');
+  assert.equal(fed.profile.pets.melons, 0);
+  assert.equal(fed.profile.pets.residents[0].fedUntil, fed.serverTime + 72 * 3600000);
+  assert.equal((await pet('rename', 0, '小栗')).profile.pets.residents[0].name, '小栗');
+  const patRequest = { operation: 'pat', petId: 0, requestId: 'pat-care-retry-0001' };
+  const pat = await f.call('pet', patRequest);
+  assert.equal(pat.profile.pets.residents[0].care.pats, 1);
+  const retry = await f.call('pet', patRequest);
+  assert.deepEqual(retry.profile.pets, pat.profile.pets);
+});
+
+test('cloud migration stores only Lili and preserves her care history and the wallet', async () => {
+  const f = fixture();
+  const login = await f.call('login');
+  const queen = { id: 0, name: '小栗', fedUntil: login.serverTime, rationDay: login.day };
+  const userId = login.output.userId;
+  await f.store.transaction(async (tx) => {
+    const user = await tx.get('players', userId);
+    user.profile.coins = 50;
+    user.profile.pets = {
+      residents: [
+        { ...queen, jobDay: '', returnsAt: 0 },
+        { id: 1, name: '工蚁', jobDay: login.day, returnsAt: login.serverTime },
+        { id: 2, name: '兵蚁', jobDay: '', returnsAt: 0 },
+      ],
+      melons: 3,
+    };
+    await tx.set('players', userId, user);
+  });
+  const migrated = await f.call('login');
+  assert.deepEqual(migrated.profile.pets, {
+    residents: [{ ...queen, care: freshProfile(migrated.serverTime).pets.residents[0].care }],
+    melons: 3,
+  });
+  assert.equal(migrated.profile.coins, 50);
+  assert.deepEqual(
+    (await f.store.transaction((tx) => tx.get('players', userId))).profile.pets,
+    migrated.profile.pets,
+  );
 });
 test('world board sorts progress descending, first achievement ascending; no private profiles', async () => {
   const f = fixture();

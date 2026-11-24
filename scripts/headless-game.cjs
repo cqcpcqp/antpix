@@ -26,8 +26,10 @@ class Node {
     this.active = true;
   }
   set parent(p) {
+    if (this._parent === p) return;
+    if (this._parent) this._parent.children.splice(this.getSiblingIndex(), 1);
     this._parent = p;
-    p.children.push(this);
+    if (p) p.children.push(this);
   }
   get parent() {
     return this._parent;
@@ -274,10 +276,34 @@ const cc = {
   SpriteFrame,
   ScrollView,
   Vec2,
+  sp: {
+    SkeletonData: class extends Texture2D {},
+    Skeleton: class {
+      setMix() {}
+      setAnimation(_track, animation, loop) {
+        this.animation = animation;
+        this.loop = loop;
+      }
+      updateAnimation(dt) {
+        this.lastStep = dt;
+      }
+      findBone(name) {
+        this.lastBone = name;
+        return { worldX: 0, worldY: 25, a: 1, b: 0, c: 0, d: 1 };
+      }
+    },
+  },
   // Match the real stripped engine instead of fabricating an unavailable component.
   Mask: engineModules.includes('mask')
     ? class {
-        static Type = { GRAPHICS_RECT: 0, GRAPHICS_ELLIPSE: 1 };
+        static Type = { GRAPHICS_RECT: 0, GRAPHICS_ELLIPSE: 1, GRAPHICS_STENCIL: 2 };
+        set type(value) {
+          this.maskType = value;
+          if (value === 2) this.node.addComponent(Graphics);
+        }
+        get type() {
+          return this.maskType;
+        }
       }
     : undefined,
   Texture2D,
@@ -291,6 +317,9 @@ const cc = {
   Graphics,
   Color,
   Label,
+  EditBox: class {
+    static InputMode = { SINGLE_LINE: 0 };
+  },
   UIOpacity: class {
     opacity = 255;
   },

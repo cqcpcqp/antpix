@@ -152,10 +152,8 @@ export class Lifecycle {
         this.game.identity.detach();
         this.game.startup.destroy();
         this.game.leaderboardAssets.destroy();
-        for (const frame of this.game.assets.residentFrames) frame.destroy();
-        this.game.assets.residentTexture?.decRef();
-        this.game.assets.residentDoorFrame?.destroy();
-        this.game.assets.residentDoorTexture?.decRef();
+        this.game.assets.residentArtwork?.destroy();
+        this.game.assets.residentSkeleton?.decRef();
         this.game.boosts.rewardAdDemo = null;
         this.game.audio.music.stop();
         this.game.audio.audio.stop();

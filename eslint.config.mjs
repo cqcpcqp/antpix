@@ -18,6 +18,7 @@ export default defineConfig([
     'art/**',
     'assets/scripts/domain/levels/levels.ts',
     'cloudfunctions/game/profile.js',
+    'cloudfunctions/game/pets.js',
   ]),
   {
     files: ['**/*.{js,mjs,cjs,ts}'],

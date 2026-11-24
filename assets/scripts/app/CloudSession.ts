@@ -27,13 +27,21 @@ export class CloudSession {
             | 'notices'
         >,
     ) {}
+    now() {
+        return Date.now() + (this.cloudMode ? this.serverOffset : 0);
+    }
+
     rewardDay() {
         if (!this.cloudMode) return todayKey();
-        const date = new Date(Date.now() + this.serverOffset + 8 * 3600000);
+        const date = new Date(this.now() + 8 * 3600000);
         return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}`;
     }
 
     initializeMode() {
+        if (this.petTrial) {
+            this.cloudMode = false;
+            return;
+        }
         try {
             if (sys.localStorage.getItem('ant-play-mode') === 'local') this.cloudMode = false;
         } catch {
@@ -73,7 +81,7 @@ export class CloudSession {
     }
 
     useCloud() {
-        if (this.cloudMode || !wechatAvailable()) return;
+        if (this.petTrial || this.cloudMode || !wechatAvailable()) return;
         this.game.profile.persist();
         this.cloudMode = true;
         this.cloudReady = false;
@@ -179,6 +187,13 @@ export class CloudSession {
                     );
                     return;
                 }
+                if (rejected && error.code === 'PET') {
+                    this.cloudRetry = null;
+                    this.cloudMessage = '';
+                    this.game.cloudStatus.refreshCloudStatus();
+                    this.game.notices.notify(error.message, '', 'warning');
+                    return;
+                }
                 this.cloudMessage = rejected
                     ? `${error.message} · 点击重试`
                     : '连接未完成，点击重试';
@@ -265,6 +280,7 @@ export class CloudSession {
     offlineAvailable = false;
 
     cloudMode = wechatAvailable();
+    readonly petTrial = (globalThis as { ANTPIX_PET_TRIAL?: boolean }).ANTPIX_PET_TRIAL === true;
 
     cloud: CloudGame | null = null;
 

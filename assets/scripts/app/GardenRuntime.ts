@@ -1,5 +1,6 @@
 import type { Component } from 'cc';
 import { CourtyardController } from '../features/courtyard/CourtyardController';
+import { PetController } from '../features/courtyard/PetController';
 import { AntDispatch } from '../features/gameplay/AntDispatch';
 import { AntFlights } from '../features/gameplay/AntFlights';
 import { AntRenderer } from '../features/gameplay/AntRenderer';
@@ -55,6 +56,7 @@ export class GardenRuntime {
     readonly leaderboardData: LeaderboardData = new LeaderboardData(this);
     readonly social: SocialScreen = new SocialScreen(this);
     readonly courtyard: CourtyardController = new CourtyardController(this);
+    readonly pets: PetController = new PetController(this);
     readonly shop: ShopScreen = new ShopScreen(this);
     readonly session: LevelSession = new LevelSession(this);
     readonly ants: AntRenderer = new AntRenderer(this);
