@@ -48,7 +48,7 @@ export class SettingsScreen {
 
     settings() {
         const gap = Math.max(110, this.game.lifecycle.touchSize + 12);
-        const modeEntry = !!this.game.home.home && !this.game.cloud.petTrial && wechatAvailable();
+        const modeEntry = !!this.game.home.home && wechatAvailable();
         const count = this.game.home.home ? (modeEntry ? 4 : 3) : 6;
         const height = 252 + gap * count + 86;
         const n = this.game.overlays.openDrawer('小窝设置', '', height);

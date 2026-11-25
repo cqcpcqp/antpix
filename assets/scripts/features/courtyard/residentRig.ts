@@ -2,6 +2,7 @@ import { Graphics, Node } from 'cc';
 import { joint, oval, polygon } from './residentRigNodes';
 import type { ResidentArtwork } from './residentArtwork';
 import { ResidentMeal } from './residentMeal';
+import { ResidentActivityArt } from './residentActivityArt';
 import { armMotion, easeBetween, footCycle, mealMotion, pointLimb } from './residentMotion';
 import type { PetFood, ResidentPose } from './residentMotion';
 
@@ -21,10 +22,12 @@ export class ResidentRig {
     private arms: { upper: Node; lower: Node }[];
     private meal: ResidentMeal;
     private readonly painted: boolean;
+    private readonly activityArt?: ResidentActivityArt;
 
     constructor(
         parent: Node,
         private readonly artwork: ResidentArtwork | null = null,
+        reflection = false,
     ) {
         this.painted = artwork !== null;
         this.root = joint(parent, 'Resident pose');
@@ -71,6 +74,7 @@ export class ResidentRig {
             this.head.setSiblingIndex(this.arms[0].upper.getSiblingIndex());
             this.closedFace.active = false;
             this.meal = new ResidentMeal(this.root, this.head, artwork);
+            if (!reflection) this.activityArt = new ResidentActivityArt(this.root, artwork);
             return;
         }
         const abdomen = this.abdomen.addComponent(Graphics);
@@ -113,6 +117,7 @@ export class ResidentRig {
         );
         oval(gear, 0, 44, 3, 4, '#E77546');
         this.meal = new ResidentMeal(this.root, this.head, artwork);
+        if (!reflection) this.activityArt = new ResidentActivityArt(this.root, artwork);
     }
 
     private limb(
@@ -166,46 +171,81 @@ export class ResidentRig {
         const fast = Math.sin(time * 9);
         const meal = food ? mealMotion(reactionTime) : undefined;
         const pick = meal ? meal.reach * (1 - meal.lift) : 0;
+        const lean =
+            pose === 'petHappy'
+                ? easeBetween(reactionTime, 0.16, 0.57) *
+                  (1 - easeBetween(reactionTime, 1.14, 1.65))
+                : 0;
         const stretch = pose === 'rest' ? strength * Math.max(0, breath) ** 7 : 0;
         const excited = pose === 'cheer';
         const anticipation =
             easeBetween(reactionTime, 0.03, 0.22) * (1 - easeBetween(reactionTime, 0.23, 0.4));
         const jumpPhase = Math.max(0, Math.min(1, (reactionTime - 0.24) / 0.66));
-        const jump = pose === 'cheer' ? Math.sin(jumpPhase * Math.PI) * 15 * strength : 0;
+        const exerciseTime = reactionTime - 0.98;
+        const jump =
+            pose === 'cheer'
+                ? Math.sin(jumpPhase * Math.PI) * 15 * strength
+                : pose === 'exercise' && exerciseTime >= 0 && exerciseTime < 3.04
+                  ? Math.sin(Math.PI * Math.min(1, (exerciseTime % 1.16) / 0.67)) * 10
+                  : 0;
+        const recline =
+            pose === 'sleep'
+                ? 1
+                : pose === 'lieDown'
+                  ? easeBetween(reactionTime, 0.18, 1.1)
+                  : pose === 'lieUp'
+                    ? 1 - easeBetween(reactionTime, 0, 0.92)
+                    : 0;
+        this.activityArt?.render(pose, reactionTime);
         const tuck = sit;
         const weight = Math.sin(step) * gait;
-        const trunkX = weight * 2.1 + pick * 4;
+        const trunkX = weight * 2.1 + pick * 4 + lean * 2 + recline * 1.5;
         const trunkY =
             -21 -
-            9 * tuck +
+            9 * tuck -
+            recline * 10 +
             jump +
             breath * 0.65 +
             Math.sin(step * 2) * gait * 0.9 -
             pick * 7 -
             (pose === 'cheer' ? anticipation * 5 : 0);
         this.torso.setPosition(trunkX, trunkY);
-        this.torso.angle = weight * 2.6 + pick * -13 + (pose === 'sip' ? -14 * strength : 0);
+        this.torso.angle =
+            weight * 2.6 +
+            pick * -9 -
+            lean * 4 -
+            recline * 76 +
+            (pose === 'sip' ? -9 * strength : 0) +
+            (pose === 'run' ? -8 : 0);
         this.abdomen.angle = breath * 2.5 + Math.sin(step - 0.9) * 5.2 * gait + tuck * 9 + pick * 8;
         this.abdomen.setScale(1 + breath * 0.023, 1 - breath * 0.016, 1);
         this.head.angle =
             -this.torso.angle * 0.45 + breath * 1.9 - Math.sin(step - 0.55) * 3 * gait;
-        if (pose === 'look') this.head.angle += wave * 12 * strength;
+        if (pose === 'look' || pose === 'mirror' || pose === 'lantern')
+            this.head.angle += wave * 8 * strength;
         if (pose === 'hungry') this.head.angle += wave * 6 * strength;
-        if (pose === 'pet') this.head.angle += (-13 + wave * 5) * strength;
-        if (this.painted)
-            this.head.setPosition(
-                pose === 'pet' ? 4 * strength : 0,
-                10 + (pose === 'pet' ? 3 * strength : 0),
-            );
+        if (pose === 'pet') this.head.angle += (6 + wave * 2) * strength;
+        this.head.angle -= lean * (5 + Math.sin(reactionTime * 13) * 2) + recline * 31;
+        if (['read', 'news', 'game', 'pantry'].includes(pose)) this.head.angle -= 5 * strength;
+        this.head.setPosition(
+            (this.painted ? 0 : 6) + lean * 2.5,
+            (this.painted ? 10 : 13) - (pose === 'pet' ? strength : 0) + lean * 0.6,
+        );
         if (pose === 'groom' || pose === 'sip') this.head.angle += (wave * 5 - 9) * strength;
-        if (meal) this.head.angle += -pick * 16 + meal.chew * 4 + meal.swallow * 9;
+        if (meal)
+            this.head.angle += -pick * 16 + meal.chew * 4 + meal.swallow * 9 + meal.bellyPat * 3;
         this.head.setScale(1 + (meal?.chew ?? 0) * 0.031, 1 - (meal?.chew ?? 0) * 0.026, 1);
         const blink = time % 4.1 > 3.94;
         const closed =
             blink ||
             (pose === 'pet' && strength > 0.35) ||
+            lean > 0.74 ||
+            recline > 0.65 ||
             (pose === 'rest' && sit > 0.85 && breath > -0.1) ||
-            (!!meal && (meal.swallow > 0.18 || (meal.bites === 3 && meal.settle < 0.55)));
+            (!!meal &&
+                (meal.swallow > 0.18 ||
+                    meal.bellyPat > 0.4 ||
+                    (meal.bites === 3 && meal.settle < 0.55)));
         if (this.closedFace) {
             this.eyes.active = !closed;
             this.closedFace.active = closed;
@@ -216,7 +256,8 @@ export class ResidentRig {
                 side * (this.artwork ? -10 + stretch * 9 : 155 - stretch * 17) +
                 Math.sin(time * 3.8 - index * 0.85) * 7 +
                 Math.sin(step - index * 0.6 - 1) * 12 * gait -
-                pick * 13;
+                pick * 13 -
+                lean * 11;
             lower.angle =
                 side * (this.artwork ? 4 : 28) + Math.sin(time * 6.3 - index) * (excited ? 11 : 4);
         });
@@ -226,7 +267,10 @@ export class ResidentRig {
             const angles = armMotion(pose, index, signals);
             upper.angle = angles.upper;
             lower.angle = angles.lower;
-            if (this.painted && (pose === 'idle' || pose === 'pet' || pose === 'look')) {
+            if (
+                this.painted &&
+                (pose === 'idle' || pose === 'pet' || pose === 'petHappy' || pose === 'look')
+            ) {
                 const side = index === 0 ? -1 : 1;
                 upper.angle = -side * 110 + breath * 5;
                 lower.angle = -side * 24;
@@ -245,6 +289,9 @@ export class ResidentRig {
                 );
                 upper.angle += (target.upper - upper.angle) * grip;
                 lower.angle += (target.lower - lower.angle) * grip;
+                const belly = pointLimb(-side * 11, -9, 10, 9, side);
+                upper.angle += (belly.upper - upper.angle) * meal.bellyPat;
+                lower.angle += (belly.lower - lower.angle) * meal.bellyPat;
             }
         });
         if (meal && food)

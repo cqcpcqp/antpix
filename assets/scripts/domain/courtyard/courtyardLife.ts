@@ -1,15 +1,34 @@
 /** Homepage-only life simulation, in the background's 1024 × 1536 coordinates. */
 export type ResidentAction =
-    'inside' | 'emerge' | 'walk' | 'sit' | 'rest' | 'rise' | 'return' | 'enter';
+    'inside' | 'emerge' | 'walk' | 'run' | 'sit' | 'rest' | 'rise' | 'return' | 'enter';
 export type ResidentActivity =
-    'sun' | 'chair' | 'drink' | 'mirror' | 'lantern' | 'look' | 'groom' | 'hungry' | 'happy';
+    | 'sun'
+    | 'chair'
+    | 'drink'
+    | 'mirror'
+    | 'pantry'
+    | 'lantern'
+    | 'look'
+    | 'groom'
+    | 'hungry'
+    | 'happy'
+    | 'exercise'
+    | 'read'
+    | 'news'
+    | 'game'
+    | 'sleep'
+    | 'talk';
 export interface ResidentPlan {
     activity: ResidentActivity;
     x: number;
     y: number;
     facing: number;
+    restSeconds?: number;
+    run?: boolean;
+    speech?: string;
 }
 export const DOORSTEP_Y = 727;
+export const RESIDENT_TRANSITION_SECONDS = 1.1;
 
 export interface ResidentCondition {
     hungry: boolean;
@@ -39,8 +58,10 @@ export class CourtyardLife {
     private restTime = 8;
     private riseFrom = 1;
     private random: () => number;
-    constructor(random: () => number = Math.random) {
+    private readonly outdoorStops: number;
+    constructor(random: () => number = Math.random, outdoorStops = 3) {
         this.random = random;
+        this.outdoorStops = outdoorStops;
     }
 
     move(action: ResidentAction, x: number, y: number) {
@@ -50,7 +71,8 @@ export class CourtyardLife {
         this.fromY = this.y;
         this.targetX = x;
         this.targetY = y;
-        this.duration = Math.max(0.8, Math.hypot(x - this.x, y - this.y) / 32);
+        const speed = action === 'run' ? 80 : 32;
+        this.duration = Math.max(0.8, Math.hypot(x - this.x, y - this.y) / speed);
         this.facing = x < this.x ? -1 : 1;
     }
     stay(action: ResidentAction, seconds: number) {
@@ -65,16 +87,17 @@ export class CourtyardLife {
                 this.visit(false);
             } else {
                 this.riseFrom = this.seatProgress;
-                this.stay('rise', 1.1);
+                this.stay('rise', RESIDENT_TRANSITION_SECONDS);
             }
         }
-        const moving = ['emerge', 'walk', 'return', 'enter'].includes(this.action);
+        const moving = ['emerge', 'walk', 'run', 'return', 'enter'].includes(this.action);
         this.elapsed += Math.min(Math.max(dt, 0), 0.05) * (moving && tired ? 0.8 : 1);
         if (moving) {
             const t = Math.min(1, this.elapsed / this.duration);
             const ease = t * t * (3 - 2 * t);
             const x = this.fromX + (this.targetX - this.fromX) * ease;
-            const y = this.fromY + (this.targetY - this.fromY) * ease;
+            const detour = this.action === 'run' ? Math.sin(ease * Math.PI) * 23 : 0;
+            const y = this.fromY + (this.targetY - this.fromY) * ease + detour;
             this.stride += Math.hypot(x - this.x, y - this.y) / 11;
             this.x = x;
             this.y = y;
@@ -84,22 +107,24 @@ export class CourtyardLife {
             case 'inside':
                 this.chair = false;
                 this.stop = 0;
-                this.stopsPerOuting = (tired ? 4 : 3) + Math.floor(this.random() * 2);
+                this.stopsPerOuting =
+                    this.outdoorStops + Number(tired) + Math.floor(this.random() * 2);
                 this.move('emerge', 510, DOORSTEP_Y);
                 break;
             case 'emerge':
                 this.visit(leafChair);
                 break;
             case 'walk':
+            case 'run':
                 this.facing = this.plan ? this.plan.facing : 1;
-                this.stay('sit', 1.1);
+                this.stay('sit', RESIDENT_TRANSITION_SECONDS);
                 break;
             case 'sit':
                 this.stay('rest', this.restTime * (tired ? 1.2 : 1));
                 break;
             case 'rest':
                 this.riseFrom = 1;
-                this.stay('rise', 1.1);
+                this.stay('rise', RESIDENT_TRANSITION_SECONDS);
                 break;
             case 'rise':
                 if (++this.stop < this.stopsPerOuting) this.visit(leafChair);
@@ -110,7 +135,7 @@ export class CourtyardLife {
                 break;
             case 'enter':
                 this.cycle++;
-                this.stay('inside', 2 + this.random() * 3);
+                this.stay('inside', 1.6 + this.random() * 1.2);
                 break;
         }
     }
@@ -124,8 +149,14 @@ export class CourtyardLife {
         this.activity = this.plan.activity;
         this.chair = this.activity === 'chair';
         this.restTime =
-            this.activity === 'hungry' || this.activity === 'happy' ? 3 : 16 + this.random() * 9;
-        this.move('walk', this.plan.x, this.plan.y);
+            this.plan.restSeconds ??
+            (this.activity === 'hungry' || this.activity === 'happy' ? 3 : 16 + this.random() * 9);
+        this.move(this.plan.run ? 'run' : 'walk', this.plan.x, this.plan.y);
+    }
+    finishSeekingFood() {
+        if (this.plan?.activity !== 'hungry') return;
+        this.plan.activity = 'look';
+        this.activity = 'look';
     }
     leaveFurnishing(leafChair: boolean) {
         this.visit(leafChair);

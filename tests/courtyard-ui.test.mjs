@@ -12,30 +12,17 @@ const makeGame = () => {
   return game;
 };
 
-test('night tint leaves the courtyard visible without relying on Graphics node opacity', () => {
+test('courtyard renders local furnishing effects without a full-screen tint', () => {
   const game = makeGame();
-  const courtyard = game.runtime.courtyard;
-  for (const hour of [12, 22, 5, 6, 18, 12]) {
-    courtyard.courtyardHour = () => hour;
-    courtyard.refreshCourtyard();
-    const veil = courtyard.courtyardNode.children.find((n) => n.name === 'Courtyard evening light');
-    assert.equal(veil.active, hour >= 18 || hour < 6);
-    // The WebGL Graphics assembler uses fill colours as vertex colours, not UIOpacity.
-    const fills = veil.getComponent(cc.Graphics).commands;
-    assert.equal(fills.length, 1);
-    assert.ok(
-      fills[0].color.a > 0 && fills[0].color.a < 128,
-      'most background light must remain visible',
-    );
-    assert.equal(veil.getComponent(cc.UIOpacity), null);
-    // Dawn must also remove an existing night veil without rebuilding the page.
-    courtyard.courtyardColony.night = false;
-    courtyard.courtyardAtmosphere.render(courtyard.courtyardColony, false);
-    assert.equal(veil.active, false);
-    courtyard.courtyardColony.night = true;
-    courtyard.courtyardAtmosphere.render(courtyard.courtyardColony, true);
-    assert.equal(veil.active, true);
-  }
+  const { courtyard } = game.runtime;
+  const nodes = courtyard.courtyardNode.children;
+  assert.equal(
+    nodes.find((n) => n.name === 'Courtyard evening light'),
+    undefined,
+  );
+  const effects = nodes.find((n) => n.name === 'Courtyard furniture effects');
+  assert.ok(effects.active);
+  assert.equal(effects.getComponent(cc.Graphics).commands.length, 0);
   game.onDestroy();
 });
 
@@ -300,17 +287,15 @@ test('homepage life survives decoration refresh and pauses behind overlays or in
   game.onDestroy();
 });
 
-test('Lili and night lighting stay below home controls and pause together', () => {
+test('Lili and furnishing effects stay below home controls and pause together', () => {
   const game = makeGame();
   const { courtyard, profile, shop, overlays } = game.runtime;
   profile.save.completed = Array.from({ length: 8 }, (_, index) => index);
   profile.save.courtyard.equipped.garden = 'lantern-garden';
-  courtyard.courtyardHour = () => 22;
   courtyard.refreshCourtyard();
   assert.equal(courtyard.courtyardResident.root.parent.parent, courtyard.courtyardNode);
   const life = courtyard.courtyardLife;
   for (let i = 0; i < 120; i++) game.update(1 / 60);
-  assert.equal(courtyard.courtyardColony.night, true);
   const anchor = () => [life.x, life.y, life.elapsed];
   const before = anchor();
   shop.shop('living', 'dew-pond');
@@ -323,9 +308,7 @@ test('Lili and night lighting stay below home controls and pause together', () =
   assert.equal(outside.name, 'Residents outside');
   assert.deepEqual(outside.children, [courtyard.courtyardResident.root]);
   assert.ok(courtyard.courtyardResident.root.active);
-  courtyard.courtyardHour = () => 12;
   game.update(1 / 60);
-  assert.equal(courtyard.courtyardColony.night, false);
   game.onDestroy();
 });
 
@@ -351,5 +334,49 @@ test('a hungry Lili keeps walking with her shadow on the same ground anchor', ()
   assert.ok(view.root.position.x > before);
   assert.notEqual(knee.angle, firstKnee);
   assert.ok(Math.abs(view.root.position.y + shadow.position.y - (768 - r.y) * view.scale) < 1e-8);
+  game.onDestroy();
+});
+
+test('outdoor activities show the correct prop or speech and hide it during other activities', () => {
+  const game = makeGame();
+  const { courtyard } = game.runtime;
+  resourceLoads.get('home/lili')(null, new cc.sp.SkeletonData());
+  const life = courtyard.courtyardLife;
+  life.x = 500;
+  life.y = 880;
+  const view = courtyard.courtyardResident;
+  const rig = view.root.children.find((node) => node.name === 'Resident pose');
+  const skeleton = rig.children[0].getComponent(cc.sp.Skeleton);
+  const layer = courtyard.courtyardNode.children.find(
+    (node) => node.name === 'Resident interactions',
+  );
+  const show = (activity) => {
+    life.activity = activity;
+    life.stay('rest', 6.2);
+    life.elapsed = 1.3;
+    game.update(1 / 60);
+  };
+  for (const [activity, prop] of [
+    ['read', 'Resident book'],
+    ['news', 'Resident newspaper'],
+    ['game', 'Resident phone'],
+  ]) {
+    show(activity);
+    assert.equal(skeleton.animation, activity);
+    assert.equal(rig.children.find((node) => node.name === prop).active, true);
+  }
+  life.plan = { activity: 'talk', x: life.x, y: life.y, facing: 1, speech: '主人，帮我分享下吧' };
+  show('talk');
+  const bubble = layer.children.find((node) => node.name === 'Resident speech');
+  assert.equal(
+    bubble.children.find((node) => node.name === 'Text').getComponent(cc.Label).string,
+    life.plan.speech,
+  );
+  assert.equal(bubble.active, true);
+  view.root.emit('end');
+  game.update(1 / 60);
+  assert.equal(bubble.active, false);
+  assert.equal(rig.children.find((node) => node.name === 'Resident phone').active, false);
+  assert.equal(life.elapsed, 1.3 + 1 / 60);
   game.onDestroy();
 });

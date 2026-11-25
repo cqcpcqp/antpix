@@ -38,10 +38,6 @@ export class CloudSession {
     }
 
     initializeMode() {
-        if (this.petTrial) {
-            this.cloudMode = false;
-            return;
-        }
         try {
             if (sys.localStorage.getItem('ant-play-mode') === 'local') this.cloudMode = false;
         } catch {
@@ -81,7 +77,7 @@ export class CloudSession {
     }
 
     useCloud() {
-        if (this.petTrial || this.cloudMode || !wechatAvailable()) return;
+        if (this.cloudMode || !wechatAvailable()) return;
         this.game.profile.persist();
         this.cloudMode = true;
         this.cloudReady = false;
@@ -280,7 +276,6 @@ export class CloudSession {
     offlineAvailable = false;
 
     cloudMode = wechatAvailable();
-    readonly petTrial = (globalThis as { ANTPIX_PET_TRIAL?: boolean }).ANTPIX_PET_TRIAL === true;
 
     cloud: CloudGame | null = null;
 

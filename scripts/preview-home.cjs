@@ -38,7 +38,6 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
     const game = new PixelGarden();
     game.onLoad();
     // Stable daylight makes asset and spacing comparisons independent of local time.
-    game.runtime.courtyard.courtyardHour = () => Number(process.env.HOME_PREVIEW_HOUR ?? 12);
     const texture = new Texture2D();
     texture.width = image.width;
     texture.height = image.height;
@@ -72,9 +71,7 @@ const css = (c) => `rgba(${c.r},${c.g},${c.b},${c.a / 255})`;
       const furniture = process.env.RESIDENT_PREVIEW === 'pond' ? 'dew-pond' : 'leaf-bed';
       game.runtime.profile.save.courtyard.equipped.living = furniture;
       game.runtime.profile.save.courtyard.owned.push(furniture);
-      game.runtime.courtyard.courtyardHour = () =>
-        process.env.RESIDENT_PREVIEW === 'night' ? 22 : 12;
-      if (process.env.RESIDENT_PREVIEW === 'night') {
+      if (process.env.RESIDENT_PREVIEW === 'lantern') {
         game.runtime.profile.save.courtyard.equipped.garden = 'lantern-garden';
         game.runtime.profile.save.courtyard.owned.push('lantern-garden');
       }

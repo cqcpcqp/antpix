@@ -68,7 +68,7 @@ export class PetController {
 
     private select() {
         const view = this.view;
-        if (!view?.canInteract || this.game.overlays.modal || this.isEating()) return;
+        if (!view?.canInteract || this.game.overlays.modal || this.isReacting()) return;
         const wasOpen = this.isInteracting();
         this.close();
         this.game.audio.play('tap');
@@ -194,7 +194,8 @@ export class PetController {
     }
 
     private pat() {
-        const done = () => this.react('pet');
+        const pose = this.vitals().mood >= 80 ? 'petHappy' : 'pet';
+        const done = () => this.react(pose);
         if (canBoostMood(this.pet, this.game.cloud.rewardDay())) this.apply('pat', '', done);
         else done();
     }
@@ -283,17 +284,27 @@ export class PetController {
             this.bubbles.show(this.game.ui, this.layer, this.view, caption, this.time + duration);
     }
 
-    isEating() {
-        return this.bubbles.eating(this.time);
+    isReacting() {
+        return this.bubbles.active(this.time);
     }
 
     cheer() {
-        if (this.view?.canInteract) this.react('cheer', '耶');
+        if (this.view?.canInteract && !this.game.cloud.cloudBusy && !this.isReacting())
+            this.react('cheer', '耶');
     }
 
-    update(dt: number) {
+    update(dt: number, speech = '') {
         this.time += Math.min(0.05, Math.max(0, dt));
-        if (this.view) this.bubbles.render(this.view, this.time);
+        if (this.view && this.layer?.isValid) {
+            this.bubbles.render(this.view, this.time);
+            this.bubbles.speak(
+                this.game.ui,
+                this.layer,
+                this.view,
+                this.isInteracting() || this.isReacting() ? '' : speech,
+                this.game.lifecycle.screenWidth,
+            );
+        }
         this.bubbles.update(this.time);
         this.card?.update(this.vitals());
         this.positionMenu();

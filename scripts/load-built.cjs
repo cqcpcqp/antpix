@@ -17,6 +17,7 @@ module.exports = function loadBuilt(cc, platformGlobals = {}) {
   const context = vm.createContext({ System, console, ...platformGlobals });
   for (const file of [
     'build/wechatgame/src/chunks/bundle.js',
+    'build/wechatgame/subpackages/level-catalog/game.js',
     'build/wechatgame/assets/main/index.js',
   ])
     vm.runInContext(fs.readFileSync(file, 'utf8'), context, { filename: file });

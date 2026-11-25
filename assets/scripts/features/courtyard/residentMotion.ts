@@ -1,8 +1,33 @@
 export type PetFood = 'ration' | 'melon';
 export type ResidentPose =
-    'idle' | 'walk' | 'rest' | 'look' | 'groom' | 'sip' | 'pet' | 'eat' | 'cheer' | 'hungry';
+    | 'idle'
+    | 'walk'
+    | 'rest'
+    | 'look'
+    | 'groom'
+    | 'sip'
+    | 'pet'
+    | 'petHappy'
+    | 'eat'
+    | 'cheer'
+    | 'hungry'
+    | 'run'
+    | 'exercise'
+    | 'read'
+    | 'news'
+    | 'game'
+    | 'talk'
+    | 'lieDown'
+    | 'sleep'
+    | 'lieUp'
+    | 'chairDown'
+    | 'chairRest'
+    | 'chairUp'
+    | 'mirror'
+    | 'pantry'
+    | 'lantern';
 
-export const MEAL_DURATION = 3.2;
+export const MEAL_DURATION = 4.15;
 
 export function easeBetween(time: number, start: number, end: number) {
     const progress = Math.max(0, Math.min(1, (time - start) / (end - start)));
@@ -13,7 +38,7 @@ export function easeBetween(time: number, start: number, end: number) {
 export function mealMotion(time: number) {
     const reach = easeBetween(time, 0.12, 0.53);
     const lift = easeBetween(time, 0.54, 0.92);
-    const settle = easeBetween(time, 2.48, MEAL_DURATION);
+    const settle = easeBetween(time, 2.48, 3.2);
     const biteTimes = [1.02, 1.45, 1.88];
     let bites = 0;
     let crumbAge = 1;
@@ -32,7 +57,20 @@ export function mealMotion(time: number) {
         easeBetween(time, biteTimes[0], biteTimes[0] + 0.1) * (1 - easeBetween(time, 2.09, 2.3));
     const chew = Math.sin((time - biteTimes[0]) * 24) * chewing;
     const swallow = easeBetween(time, 2.17, 2.32) * (1 - easeBetween(time, 2.33, 2.58));
-    return { reach, lift, settle, bites, crumbAge, open, chew, swallow, time };
+    const firstPat = easeBetween(time, 3.19, 3.37) * (1 - easeBetween(time, 3.38, 3.52));
+    const secondPat = easeBetween(time, 3.52, 3.67) * (1 - easeBetween(time, 3.69, 3.95));
+    return {
+        reach,
+        lift,
+        settle,
+        bites,
+        crumbAge,
+        open,
+        chew,
+        swallow,
+        bellyPat: firstPat + secondPat,
+        time,
+    };
 }
 
 /** The foot stays low during stance and clears the ground only on the return swing. */
@@ -76,6 +114,10 @@ export function armMotion(
     if (pose === 'sip') lift = 51 * strength;
     if (pose === 'groom' && index === 1) lift = (74 + fast * 7) * strength;
     if (pose === 'hungry' && index === 0) lift = (36 + fast * 6) * strength;
+    if (pose === 'exercise') lift = jump * 5;
+    if (['read', 'news', 'game'].includes(pose)) lift = 29 * strength + fast * 4;
+    if (['pantry', 'lantern', 'mirror', 'talk'].includes(pose) && index === 1)
+        lift = (25 + fast * 9) * strength;
     return {
         upper: side * (18 + lift) + Math.sin(step - index * Math.PI - 0.4) * 19 * gait,
         lower: side * (26 + lift * 0.48) - weight * 12,

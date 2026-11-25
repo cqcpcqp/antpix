@@ -39,6 +39,12 @@ const { checkPackageSize } = require('./wechat-package.cjs');
 const { mainBytes, totalBytes } = checkPackageSize(root);
 assert.equal(existsSync(resolve(root, 'assets/resources')), false);
 assert.ok(game.subpackages.some((entry) => entry.name === 'resources'));
+const catalog = game.subpackages.find((entry) => entry.name === 'level-catalog');
+assert.ok(catalog);
+const catalogEntry = readFileSync(resolve(root, catalog.root, 'game.js'), 'utf8');
+assert.ok(catalogEntry.startsWith('System.register("chunks:///_virtual/levels.ts",'));
+assert.ok(!readFileSync(resolve(root, 'assets/main/index.js'), 'utf8').includes(catalogEntry));
+assert.ok(readFileSync(resolve(root, 'game.js'), 'utf8').includes("name: 'level-catalog'"));
 assert.ok(settings.assets.subpackages.includes('resources'));
 for (const path of Object.values(artwork))
   assert.ok(

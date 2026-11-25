@@ -4,6 +4,7 @@ import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, existsSync, rmSync
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import { createRequire } from 'node:module';
+import { runInNewContext } from 'node:vm';
 import { installStartup } from '../scripts/install-startup.mjs';
 import { STARTUP } from '../assets/scripts/presentation/startupLayout.ts';
 const require = createRequire(import.meta.url);
@@ -74,3 +75,60 @@ test('installed startup loads actual dependency modules under WeChat script reso
     assert.equal(checkStartupModules(root).layout.registration, STARTUP.registration);
   });
 });
+
+if (process.env.CHECK_BUILT)
+  test('WeChat boots after the level catalog registers, and retries an initial load failure', async () => {
+    const root = resolve('build/wechatgame');
+    const catalog = resolve(root, 'subpackages/level-catalog/game.js');
+    const modules = new Set();
+    const events = [];
+    const screen = {
+      start: async () => events.push('screen'),
+      setProgress: async () => {},
+      end: async () => {},
+    };
+    let finish;
+    const started = new Promise((resolve) => (finish = resolve));
+    let attempts = 0;
+    const system = {
+      warmup() {},
+      register(name) {
+        modules.add(name);
+      },
+      async import(name) {
+        assert.ok(modules.has('chunks:///_virtual/levels.ts'));
+        if (name === 'cc') return {};
+        return {
+          Application: class {
+            init() {}
+            start() {
+              finish();
+            }
+          },
+        };
+      },
+    };
+    runInNewContext(readFileSync(resolve(root, 'game.js'), 'utf8'), {
+      canvas: null,
+      console: { error: () => finish(new Error('Cocos startup failed')) },
+      require: (name) => (name === './first-screen' ? screen : {}),
+      System: system,
+      wx: {
+        getSystemInfoSync: () => ({ platform: 'ios' }),
+        loadSubpackage({ name, success, fail }) {
+          assert.equal(name, 'level-catalog');
+          if (++attempts === 1) return fail(new Error('test network failure'));
+          runInNewContext(readFileSync(catalog, 'utf8'), { System: system });
+          success();
+        },
+        showModal({ success }) {
+          events.push('retry');
+          success({ confirm: true });
+        },
+      },
+    });
+    const error = await started;
+    assert.ifError(error);
+    assert.deepEqual(events, ['screen', 'retry']);
+    assert.equal(attempts, 2);
+  });

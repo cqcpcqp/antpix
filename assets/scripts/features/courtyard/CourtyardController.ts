@@ -1,6 +1,6 @@
 import type { Node } from 'cc';
 import type { GardenRuntime } from '../../app/GardenRuntime';
-import { CourtyardColony } from '../../domain/courtyard/courtyardColony';
+import { CourtyardColony, FEEDING_SPOT } from '../../domain/courtyard/courtyardColony';
 import type { Furnishing } from '../../domain/profile/profile';
 import { CourtyardAtmosphere } from './courtyardAtmosphere';
 import { CourtyardResident } from './courtyardResident';
@@ -39,6 +39,13 @@ export class CourtyardController {
             this.game.lifecycle.screenHeight / 1536,
         );
         const layers = residentLayers(this.courtyardNode, scale);
+        const bowl = this.game.assets.residentArtwork?.prop(layers.outside, 'bowl', 48 * scale);
+        if (bowl) {
+            bowl.name = 'Resident feeding spot';
+            bowl.setPosition((FEEDING_SPOT.x - 512) * scale, (768 - FEEDING_SPOT.y) * scale);
+            bowl.active = false;
+        }
+        this.feedingSpot = bowl;
         const resident = new CourtyardResident(
             layers,
             scale,
@@ -47,14 +54,8 @@ export class CourtyardController {
         );
         resident.render(this.courtyardLife, !!this.courtyardPreview);
         this.courtyardResident = resident;
-        this.courtyardAtmosphere = new CourtyardAtmosphere(
-            this.courtyardNode,
-            scale,
-            this.game.lifecycle.screenWidth,
-            this.game.lifecycle.screenHeight,
-        );
+        this.courtyardAtmosphere = new CourtyardAtmosphere(this.courtyardNode, scale);
         this.game.pets.attach(this.courtyardNode, resident);
-        this.courtyardColony.night = this.courtyardHour() >= 18 || this.courtyardHour() < 6;
         this.courtyardAtmosphere.render(this.courtyardColony, !!this.courtyardPreview);
         let previewOffset = this.courtyardPreview
             ? courtyardPreviewOffset(
@@ -82,9 +83,9 @@ export class CourtyardController {
 
     courtyardResident: CourtyardResident | null = null;
 
-    courtyardAtmosphere: CourtyardAtmosphere | null = null;
+    private feedingSpot: Node | undefined;
 
-    courtyardHour = () => new Date().getHours();
+    courtyardAtmosphere: CourtyardAtmosphere | null = null;
 
     courtyardPreview: Furnishing | undefined;
 
@@ -95,20 +96,25 @@ export class CourtyardController {
             !this.game.overlays.modal &&
             !this.courtyardPreview
         ) {
-            const held = this.game.pets.isEating() || this.game.pets.isInteracting();
+            const reacting = this.game.pets.isReacting();
+            const held = reacting || this.game.pets.isInteracting();
             const { health, satiety, mood } = this.game.pets.vitals();
             this.courtyardColony.update(
                 dt,
                 this.game.profile.save.courtyard.equipped.living,
                 this.game.profile.save.courtyard.equipped.garden,
-                this.courtyardHour(),
                 held,
                 { hungry: satiety < 25, tired: health < 80, happy: mood >= 80 },
             );
             this.courtyardResident?.render(this.courtyardLife, false, dt, held);
+            if (this.feedingSpot)
+                this.feedingSpot.active = this.courtyardLife.activity === 'hungry';
             this.courtyardAtmosphere?.render(this.courtyardColony, false);
-            this.game.pets.update(dt);
-            this.courtyardResident?.advanceRig(dt);
+            const { action, elapsed, plan } = this.courtyardLife;
+            const speech =
+                action === 'rest' && elapsed >= 0.42 && elapsed < 4.6 ? plan?.speech : '';
+            this.game.pets.update(dt, speech);
+            this.courtyardResident?.advanceRig(held && !reacting ? 0 : dt);
         }
     }
 }

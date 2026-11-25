@@ -25,6 +25,7 @@ palette=[];artworks=[]
 if args.reuse_palette_from:
     previous=args.reuse_palette_from.read_text()
     palette=json.loads(re.search(r'export const PALETTE: string\[\] = (\[.*?\]);',previous).group(1))
+palette_indices={color:index for index,color in enumerate(palette)}
 def base36(n):
     digits='0123456789abcdefghijklmnopqrstuvwxyz';s=''
     while n:s=digits[n%36]+s;n//=36
@@ -37,17 +38,21 @@ for source,e in entries:
     assert all(a in (0,255) for *_,a in small.getdata()), 'Runtime alpha must be binary'
     assert len({rgba[:3] for rgba in small.getdata() if rgba[3]})==e['colors']
     assert e.get('tutorial',False) or all(rgba[3]==255 for rgba in small.getdata())
-    local=[];ids=[]
+    local=[];ids=[];local_indices={}
     for *rgb,alpha in small.getdata():
         if alpha==0:
             ids.append(-1)
             continue
         rgb=tuple(rgb)
         value='#%02X%02X%02X'%rgb
-        if value not in palette:palette.append(value)
-        global_id=palette.index(value)
-        if global_id not in local:local.append(global_id)
-        ids.append(local.index(global_id))
+        if value not in palette_indices:
+            palette_indices[value]=len(palette)
+            palette.append(value)
+        global_id=palette_indices[value]
+        if global_id not in local_indices:
+            local_indices[global_id]=len(local)
+            local.append(global_id)
+        ids.append(local_indices[global_id])
     runs=[];start=0
     while start<len(ids):
         end=start+1

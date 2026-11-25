@@ -26,7 +26,7 @@ export NODE_PATH="$PWD/temp/level-image-font-tools/node_modules"
 python3 scripts/generate-image2-levels.py
 npm run generate:containers
 npm run prepare:cloud
-python3 scripts/check-catalog-images.py assets/scripts/domain/levels/levels.ts art/cartoons/sources/tutorial-20261118 art/cartoons/sources/image2-20261010 art/cartoons/sources/image2-levels-011-100 art/cartoons/sources/image2-levels-101-300
+python3 scripts/check-catalog-images.py assets/scripts/domain/levels/levels.ts art/cartoons/sources/tutorial-20261118 art/cartoons/sources/image2-20261010 art/cartoons/sources/image2-levels-011-100 art/cartoons/sources/image2-levels-101-300 art/cartoons/sources/image2-levels-301-1000
 npm run check
 ```
 
@@ -58,7 +58,7 @@ node --experimental-strip-types --import ./scripts/register-typescript.mjs scrip
 node --experimental-strip-types --import ./scripts/register-typescript.mjs scripts/check-candidate-levels.mjs art/候选目录/levels.ts art/候选目录/container-plan-report.json art/候选目录/gameplay-validation.json
 ```
 
-这只证明候选数据和基础五槽通关解法有效，不能替代用户对图片的逐图验收。
+候选图仍需按对应批次的授权和美术规则审核，第 301–1000 关由 Codex 对照原图和 48×60 像素图验收。
 
 ## 新图片转换与审阅
 

@@ -10,7 +10,8 @@ def clip(duration, tracks, closed=(), attachments=None):
             timeline = [dict(time=time, **dict(zip(fields[channel], values)))
                         for time, *values in frames]
             for keyframe in timeline[:-1]:
-                keyframe['curve'] = [0.3, 0, 0.65, 1]
+                # The Cocos Spine 3.8 runtime reads the four control points as named fields.
+                keyframe.update(curve=0.3, c2=0, c3=0.65, c4=1)
             if timeline[-1]['time'] < duration:
                 timeline.append(dict(timeline[-1], time=duration))
             bones[name][channel] = timeline

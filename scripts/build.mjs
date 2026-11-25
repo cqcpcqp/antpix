@@ -1,4 +1,5 @@
 import { installStartup } from './install-startup.mjs';
+import { installLevelCatalog } from './install-level-catalog.mjs';
 import wechatPackage from './wechat-package.cjs';
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
@@ -68,6 +69,7 @@ if (result.status === 0 || result.status === 36) {
     resolve('build/wechatgame/THIRD_PARTY_NOTICES.txt'),
     readFileSync('THIRD_PARTY_NOTICES.md', 'utf8'),
   );
+  installLevelCatalog('build/wechatgame');
   wechatPackage.installSubpackageEntries('build/wechatgame');
   installStartup();
   const { mainBytes, totalBytes, packages } = wechatPackage.checkPackageSize('build/wechatgame');
@@ -75,7 +77,6 @@ if (result.status === 0 || result.status === 36) {
   for (const pkg of packages)
     console.log(`微信分包 ${pkg.name}：${(pkg.bytes / 1024).toFixed(1)} KiB`);
   console.log(`微信总包：${(totalBytes / 1024).toFixed(1)} / 30720 KiB`);
-  if (process.env.ANTPIX_PET_TRIAL === '1') await import('./package-pet-trial.mjs');
 }
 // Verify the emitted code, since Cocos compilation can change iterable semantics.
 if (result.status === 0 || result.status === 36) {

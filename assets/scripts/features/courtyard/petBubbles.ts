@@ -1,4 +1,5 @@
 import type { Node } from 'cc';
+import type { Label } from 'cc';
 import { INK } from '../../presentation/gameVisuals';
 import { islandPanel } from '../../presentation/islandTheme';
 import type { UiFactory } from '../ui/UiFactory';
@@ -15,24 +16,21 @@ export class PetBubbles {
     private entries: { node: Node; view: CourtyardResident; until: number }[] = [];
     private reaction:
         { pose: ResidentPose; start: number; duration: number; food?: PetFood } | undefined;
+    private speech?: { node: Node; label: Label };
 
     reset() {
         this.entries = [];
+        this.reaction = undefined;
+        this.speech = undefined;
     }
 
-    eating(time: number) {
-        const reaction = this.reaction;
-        return !!reaction?.food && reaction.start + reaction.duration > time;
+    active(time: number) {
+        return !!this.reaction && this.reaction.start + this.reaction.duration > time;
     }
 
     play(pose: ResidentPose, time: number, food?: PetFood) {
-        const previous = this.reaction;
-        if (
-            this.eating(time) ||
-            (pose === 'pet' && previous && previous.start + previous.duration > time)
-        )
-            return 0;
-        const duration = food ? MEAL_DURATION : 1.35;
+        if (this.active(time)) return 0;
+        const duration = food ? MEAL_DURATION : pose === 'petHappy' ? 1.65 : 1.35;
         this.reaction = { pose, start: time, duration, food };
         return duration;
     }
@@ -53,6 +51,26 @@ export class PetBubbles {
         islandPanel(ui.graphics(node), 0, 0, width, 46, '#FFF6D8');
         ui.text(node, caption, 0, 0, 23, INK, width - 14);
         this.entries.push({ node, view, until });
+    }
+
+    speak(ui: UiFactory, layer: Node, view: CourtyardResident, line: string, screenWidth: number) {
+        if (!line || !view.canInteract) {
+            if (this.speech) this.speech.node.active = false;
+            return;
+        }
+        const width = Math.min(324, screenWidth - 30);
+        if (!this.speech) {
+            const node = ui.node2d('Resident speech', layer, 0, 0, width, 45);
+            islandPanel(ui.graphics(node), 0, 0, width, 45, '#FFF6D8');
+            const label = ui.text(node, line, 0, 0, 23, INK, width - 20);
+            this.speech = { node, label };
+        }
+        const { node, label } = this.speech;
+        const { x, y } = view.root.position;
+        const limit = (screenWidth - width) / 2 - 8;
+        node.setPosition(Math.max(-limit, Math.min(limit, x)), y + petLabelOffset(view));
+        if (label.string !== line) label.string = line;
+        node.active = true;
     }
 
     update(time: number) {
